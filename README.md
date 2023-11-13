@@ -1,1 +1,3 @@
 ![alt text](https://raw.githubusercontent.com/wilwe21/dots/main/screens/1699870193.png)
+waybar
+![alt text](https://github.com/wilwe21/dots/blob/main/screens/1699906210.png?raw=true)
