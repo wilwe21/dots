@@ -1,0 +1,14 @@
+#!/bin/bash
+THEME="Catppuccin-Macchiato-Standard-Mauve-Dark"
+ICONS="Catppuccin-Macchiato"
+CURSOR="Future-dark-cursors"
+
+SCHEMA='gsettings set org.gnome.desktop.interface'
+
+apply_themes() {
+	${SCHEMA} gtk-theme "$THEME"
+	${SCHEMA} icon-theme "$ICONS"
+	${SCHEMA} cursor-theme "$CURSOR"
+}
+
+apply_themes
