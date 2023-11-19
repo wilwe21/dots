@@ -147,8 +147,8 @@ label:focus {
 }
 
 #cpu {
-    background-color: #2ecc71;
-    color: #000000;
+    background-color: shade(@base, 0.85);
+    color: shade(@text, 1);
 }
 
 #memory {
@@ -192,7 +192,7 @@ label:focus {
     background-color: #f53c3c;
 }
 
-#custom-media {
+#custom-media{
     background-color: shade(@base, 0.85);
     color: shade(@text, 1);
     min-width: 100px;
@@ -208,12 +208,12 @@ label:focus {
 
 #temperature {
     background-color: shade(@base, 0.85);
-    color: shade(@text, 0.85);
+    color: shade(@text, 1);
 }
 
 #temperature.critical {
     background-color: shade(@base, 0.85);
-    color: shade(@text, 0.85);
+    color: shade(@text, 1);
 }
 
 #tray {
