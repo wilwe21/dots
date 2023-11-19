@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="256"
+   height="256"
+   style="isolation:isolate"
+   version="1.1"
+   id="svg9"
+   sodipodi:docname="stock_folder.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     id="namedview9"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050" />
+  <path
+     fill="#7DC4E4"
+     d="M 53.039,21 C 16.724,21 13,23.055 13,59.371 v 52.167 H 243 V 79.563 C 243,43.247 239.276,37.461 202.961,37.461 H 113.625 L 97.198,21 Z"
+     id="path1"
+     style="fill:#ab67e4;fill-opacity:1" />
+  <path
+     fill="#24273a"
+     d="M 53.039,70.384 C 16.722,70.384 13,74.114 13,110.429 v 84.524 C 13,231.269 16.722,235 53.039,235 H 202.961 C 239.278,235 243,231.269 243,194.953 V 93.969 C 243,57.653 239.278,53.922 202.961,53.922 H 119.53 l -16.438,16.462 z"
+     id="path2" />
+  <linearGradient
+     id="a"
+     x2="0"
+     y1="0.5"
+     y2="-0.5"
+     gradientTransform="matrix(230,0,0,181.078,13,53.922)"
+     gradientUnits="userSpaceOnUse">
+    <stop
+       offset="0%"
+       stop-color="#ffffff"
+       stop-opacity=".07"
+       id="stop2" />
+    <stop
+       offset="67.282%"
+       stop-color="#fcefe8"
+       stop-opacity="0"
+       id="stop3" />
+  </linearGradient>
+  <path
+     fill="url(#a)"
+     d="M 53.039,70.384 C 16.722,70.384 13,74.114 13,110.429 v 84.524 C 13,231.269 16.722,235 53.039,235 H 202.961 C 239.278,235 243,231.269 243,194.953 V 93.969 C 243,57.653 239.278,53.922 202.961,53.922 H 119.53 l -16.438,16.462 z"
+     id="path3"
+     style="fill:url(#a)" />
+  <g
+     opacity="0.4"
+     id="g5">
+    <radialGradient
+       id="b"
+       cx="0.5"
+       cy="0.5"
+       r="0.27200001"
+       fx="0.5"
+       fy="0.13600001"
+       gradientTransform="matrix(230,0,0,60.62,13,21)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         stop-color="#ffffff"
+         id="stop4" />
+      <stop
+         offset="100%"
+         stop-color="#ffffff"
+         stop-opacity=".204"
+         id="stop5" />
+    </radialGradient>
+    <path
+       fill="url(#b)"
+       d="M 53.039,21 C 16.724,21 13,23.055 13,59.371 V 61.43 C 13,25.114 16.724,23.057 53.039,23.057 h 44.159 l 16.427,16.461 h 89.336 C 239.276,39.518 243,45.304 243,81.62 V 79.563 C 243,43.247 239.276,37.461 202.961,37.461 H 113.625 L 97.198,21 Z"
+       id="path5"
+       style="fill:url(#b)" />
+  </g>
+  <g
+     opacity="0.4"
+     id="g7">
+    <radialGradient
+       id="c"
+       cx="0.5"
+       cy="0.5"
+       r="0.27200001"
+       fx="0.48199999"
+       fy="0.211"
+       gradientTransform="matrix(230,0,0,58.565,13,53.922)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         stop-color="#ffffff"
+         id="stop6" />
+      <stop
+         offset="100%"
+         stop-color="#ffffff"
+         stop-opacity=".204"
+         id="stop7" />
+    </radialGradient>
+    <path
+       fill="url(#c)"
+       d="M 119.53,53.922 103.092,70.384 H 53.039 C 16.724,70.384 13,74.112 13,110.427 v 2.06 C 13,76.171 16.724,72.441 53.039,72.441 h 50.053 l 16.438,-16.46 h 83.431 c 36.315,0 40.039,3.727 40.039,40.043 v -2.057 c 0,-36.316 -3.724,-40.045 -40.039,-40.045 z"
+       id="path7"
+       style="fill:url(#c)" />
+  </g>
+  <path
+     fill="#ffffff"
+     opacity="0.1"
+     d="m 243,167.096 -65.715,65.845 h 25.676 c 36.315,0 40.039,-3.727 40.039,-40.043 z"
+     id="path8" />
+  <path
+     opacity="0.2"
+     d="m 13,192.898 v 2.057 C 13,231.271 16.724,235 53.039,235 H 202.961 C 239.276,235 243,231.271 243,194.955 v -2.057 c 0,36.316 -3.724,40.043 -40.039,40.043 H 53.039 C 16.724,232.941 13,229.214 13,192.898 Z"
+     id="path9" />
+</svg>

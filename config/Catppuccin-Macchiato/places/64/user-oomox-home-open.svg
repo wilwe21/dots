@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   style="isolation:isolate"
+   width="256"
+   height="256"
+   viewBox="0 0 256 256"
+   version="1.1"
+   id="svg11"
+   sodipodi:docname="user-oomox-home-open.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs11" />
+  <sodipodi:namedview
+     id="namedview11"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050" />
+  <g
+     id="g11">
+    <path
+       fill="#7DC4E4"
+       d="M 53.705,21 C 17.39,21 13.667,23.055 13.667,59.371 v 92.167 h 230 V 79.563 c 0,-36.316 -3.724,-42.102 -40.039,-42.102 H 114.292 L 97.864,21 Z"
+       id="path1"
+       style="fill:#ab67e4;fill-opacity:1" />
+    <defs
+       id="defs1">
+      <filter
+         id="zTANgMqHtvVWxj7EHM5aInDklVkhVKbg"
+         width="1.1046254"
+         height="1.1975521"
+         x="-0.052312692"
+         y="-0.098776038"
+         color-interpolation-filters="sRGB"
+         filterUnits="objectBoundingBox">
+        <feGaussianBlur
+           in="SourceGraphic"
+           stdDeviation="4.294"
+           id="feGaussianBlur1" />
+        <feOffset
+           dx="0"
+           dy="0"
+           result="pf_100_offsetBlur"
+           id="feOffset1" />
+        <feFlood
+           flood-opacity=".4"
+           id="feFlood1" />
+        <feComposite
+           in2="pf_100_offsetBlur"
+           operator="in"
+           result="pf_100_dropShadow"
+           id="feComposite1" />
+        <feBlend
+           in="SourceGraphic"
+           in2="pf_100_dropShadow"
+           mode="normal"
+           id="feBlend1" />
+      </filter>
+    </defs>
+    <g
+       filter="url(#zTANgMqHtvVWxj7EHM5aInDklVkhVKbg)"
+       id="g2">
+      <path
+         fill="#ebebeb"
+         d="M 40.767,56.667 H 216.9 c 5.758,0 10.433,4.675 10.433,10.433 v 83.467 c 0,5.758 -4.675,10.433 -10.433,10.433 H 40.767 c -5.759,0 -10.434,-4.675 -10.434,-10.433 V 67.1 c 0,-5.758 4.675,-10.433 10.434,-10.433 z"
+         id="path2" />
+    </g>
+    <path
+       fill="#24273a"
+       d="m 53.705,100.384 c -36.317,0 -40.038,3.73 -40.038,40.045 v 54.524 c 0,36.316 3.721,40.047 40.038,40.047 h 149.923 c 36.317,0 40.039,-3.731 40.039,-40.047 v -70.984 c 0,-36.316 -3.722,-40.047 -40.039,-40.047 h -83.431 l -16.438,16.462 z"
+       id="path3" />
+    <linearGradient
+       id="_lgradient_16"
+       x1="0"
+       x2="0"
+       y1="0.5"
+       y2="-0.5"
+       gradientTransform="matrix(230,0,0,151.078,13.667,83.922)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         stop-opacity=".07"
+         style="stop-color:#fff"
+         id="stop3" />
+      <stop
+         offset="67.282%"
+         stop-opacity="0"
+         style="stop-color:#fcefe8"
+         id="stop4" />
+    </linearGradient>
+    <path
+       fill="url(#_lgradient_16)"
+       d="m 53.705,100.384 c -36.317,0 -40.038,3.73 -40.038,40.045 v 54.524 c 0,36.316 3.721,40.047 40.038,40.047 h 149.923 c 36.317,0 40.039,-3.731 40.039,-40.047 v -70.984 c 0,-36.316 -3.722,-40.047 -40.039,-40.047 h -83.431 l -16.438,16.462 z"
+       id="path4"
+       style="fill:url(#_lgradient_16)" />
+    <g
+       opacity="0.4"
+       id="g6">
+      <radialGradient
+         id="_rgradient_32"
+         cx="0.5"
+         cy="0.5"
+         r="0.27200001"
+         fx="0.5"
+         fy="0.13600001"
+         gradientTransform="matrix(230,0,0,60.62,13.667,21)"
+         gradientUnits="userSpaceOnUse">
+        <stop
+           offset="0%"
+           style="stop-color:#fff"
+           id="stop5" />
+        <stop
+           offset="100%"
+           stop-opacity=".204"
+           style="stop-color:#fff"
+           id="stop6" />
+      </radialGradient>
+      <path
+         fill="url(#_rgradient_32)"
+         d="M 53.705,21 C 17.39,21 13.667,23.055 13.667,59.371 v 2.059 c 0,-36.316 3.723,-38.373 40.038,-38.373 h 44.159 l 16.428,16.461 h 89.336 c 36.315,0 40.039,5.786 40.039,42.102 v -2.057 c 0,-36.316 -3.724,-42.102 -40.039,-42.102 H 114.292 L 97.864,21 Z"
+         id="path6"
+         style="fill:url(#_rgradient_32)" />
+    </g>
+    <g
+       opacity="0.4"
+       id="g8">
+      <radialGradient
+         id="_rgradient_33"
+         cx="0.5"
+         cy="0.5"
+         r="0.27200001"
+         fx="0.48199999"
+         fy="0.211"
+         gradientTransform="matrix(230,0,0,58.565,13.667,83.922)"
+         gradientUnits="userSpaceOnUse">
+        <stop
+           offset="0%"
+           style="stop-color:#fff"
+           id="stop7" />
+        <stop
+           offset="100%"
+           stop-opacity=".204"
+           style="stop-color:#fff"
+           id="stop8" />
+      </radialGradient>
+      <path
+         fill="url(#_rgradient_33)"
+         d="m 120.197,83.922 -16.438,16.462 H 53.705 c -36.315,0 -40.038,3.728 -40.038,40.043 v 2.06 c 0,-36.316 3.723,-40.046 40.038,-40.046 h 50.054 l 16.438,-16.46 h 83.431 c 36.315,0 40.039,3.727 40.039,40.043 v -2.057 c 0,-36.316 -3.724,-40.045 -40.039,-40.045 z"
+         id="path8"
+         style="fill:url(#_rgradient_33)" />
+    </g>
+    <g
+       opacity="0.1"
+       id="g9">
+      <path
+         fill="#ffffff"
+         d="m 243.667,167.096 -65.715,65.845 h 25.676 c 36.315,0 40.039,-3.727 40.039,-40.043 z"
+         id="path9" />
+    </g>
+    <g
+       opacity="0.2"
+       id="g10">
+      <path
+         d="m 13.667,192.898 v 2.057 c 0,36.316 3.723,40.045 40.038,40.045 h 149.923 c 36.315,0 40.039,-3.729 40.039,-40.045 v -2.057 c 0,36.316 -3.724,40.043 -40.039,40.043 H 53.705 c -36.315,0 -40.038,-3.727 -40.038,-40.043 z"
+         id="path10" />
+    </g>
+  </g>
+  <path
+     fill="#f5a97f"
+     d="m 125.112,204.416 h -31.1 l -0.01,-50.358 34.997,-35.952 34.999,35.954 v 54.273 h 3.901 l -0.011,-50.278 8.33,8.557 L 179,163.877 129.001,112.5 79,163.877 l 2.782,2.735 8.33,-8.558 v 50.279 h 54.443 v -28.025 c 0,-1.648 -0.154,-3.156 -0.463,-4.524 -0.309,-1.367 -0.849,-2.533 -1.62,-3.497 -0.741,-0.995 -1.744,-1.756 -3.01,-2.285 -1.264,-0.56 -2.855,-0.84 -4.768,-0.84 -2.129,0 -4.012,0.14 -5.647,0.42 -1.636,0.281 -2.948,0.545 -3.935,0.793 z m 42.775,-62.673 v -11.751 h -11.676 z"
+     id="path11" />
+</svg>
