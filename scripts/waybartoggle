@@ -1,0 +1,7 @@
+#!/bin/bash
+if ps -C waybar > /dev/null
+then
+    killall waybar
+else
+    waybar &
+fi
