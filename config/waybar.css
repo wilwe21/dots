@@ -90,9 +90,11 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #mpd {
-    padding: 0 10px;
-    color: #ffffff;
-    background-color: shade(@base, 0.85);
+    padding: 0 12px;
+    color: rgba(219,216,197,1);
+    /*background-color: rgba(198,160,246,0.5); */
+    background-color: rgba(92,21,255,0.65);
+    border-radius: 20px 5px;
 }
 
 #window,
@@ -111,18 +113,12 @@ button:hover {
 }
 
 #clock {
-    background-color: shade(@base, 0.85);
-    color: shade(@text, 1);
 }
 
 #battery {
-    background-color: shade(@base, 0.85);
-    color: shade(@text, 1);
 }
 
 #battery.charging, #battery.plugged {
-    color: shade(@text, 1);
-    background-color: shade(@base, 0.85);
 }
 
 @keyframes blink {
@@ -133,7 +129,7 @@ button:hover {
 }
 
 #battery.critical:not(.charging) {
-    background-color: shade(@red, 0.85);
+    background-color: shade(@lred, 0.85);
     color: shade(@text, 1);
     animation-name: blink;
     animation-duration: 0.5s;
@@ -147,8 +143,6 @@ label:focus {
 }
 
 #cpu {
-    background-color: shade(@base, 0.85);
-    color: shade(@text, 1);
 }
 
 #memory {
@@ -164,22 +158,18 @@ label:focus {
 }
 
 #network {
-    background-color: shade(@base, 0.85);
-    color: shade(@text, 1);
 }
 
 #network.disconnected {
-    background-color: shade(@red, 0.85);
+    background-color: shade(@lred, 0.85);
     color: shade(@text, 1);
 }
 
 #pulseaudio {
-    background-color: shade(@base, 0.85);
-    color: shade(@text, 1);
 }
 
 #pulseaudio.muted {
-    background-color: shade(@red, 0.85);
+    background-color: shade(@lred, 0.85);
     color: shade(@text, 1);
 }
 
@@ -193,8 +183,6 @@ label:focus {
 }
 
 #custom-media{
-    background-color: shade(@base, 0.85);
-    color: shade(@text, 1);
     min-width: 100px;
 }
 
@@ -207,12 +195,10 @@ label:focus {
 }
 
 #temperature {
-    background-color: shade(@base, 0.85);
-    color: shade(@text, 1);
 }
 
 #temperature.critical {
-    background-color: shade(@base, 0.85);
+    background-color: shade(@lred, 0.85);
     color: shade(@text, 1);
 }
 
