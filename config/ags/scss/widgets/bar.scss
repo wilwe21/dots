@@ -60,7 +60,7 @@ $bar-spacing: $spacing / 2;
 .panel {
     .cpu {
         padding-left: $spacing/2;
-        color: $accent;
+        color: $yellow;
         font-size: $font_size/4.5;
         border-radius: max($radii - $border_width, 0);
         margin: $spacing;
@@ -76,7 +76,37 @@ $bar-spacing: $spacing / 2;
     }
 
     .ram {
-        color: $yellow;
+        color: $accent;
+        font-size: $font_size/4.5;
+        border-radius: max($radii - $border_width, 0);
+        margin: $spacing;
+        min-height: $font_size * 1.35;
+        min-width: $font_size * 1.35;
+
+        @if $bar_style =='separated' {
+            padding: $wm_gaps $wm_gaps+5px $wm_gaps $wm_gaps+5px;
+            border-radius: max($radii - $border_width, 0);
+            margin-left: $spacing/4;
+            margin-right: $spacing/4;
+        }
+    }
+    .download {
+        color: $green;
+        font-size: $font_size/4.5;
+        border-radius: max($radii - $border_width, 0);
+        margin: $spacing;
+        min-height: $font_size * 1.35;
+        min-width: $font_size * 1.35;
+
+        @if $bar_style =='separated' {
+            padding: $wm_gaps $wm_gaps+5px $wm_gaps $wm_gaps+5px;
+            border-radius: max($radii - $border_width, 0);
+            margin-left: $spacing/4;
+            margin-right: $spacing/4;
+        }
+    }
+    .upload {
+        color: $blue;
         font-size: $font_size/4.5;
         border-radius: max($radii - $border_width, 0);
         margin: $spacing;
@@ -93,7 +123,7 @@ $bar-spacing: $spacing / 2;
 
     .temp {
         padding-right: $spacing*2;
-        color: $magenta;
+        color: $red;
         font-size: $font_size/4.5;
         border-radius: max($radii - $border_width, 0);
         margin: $spacing;
@@ -108,20 +138,13 @@ $bar-spacing: $spacing / 2;
         }
     }
 
-    .circular-progress-box {
-        .circular-progress {
-            margin: $spacing/2.5;
-            background-color: $widget-bg;
-            font-size: 1em;
-            
-
-            @if $bar_style =='separated' {
-                padding: $wm_gaps $wm_gaps+5px $wm_gaps $wm_gaps+5px;
-                border-radius: max($radii - $border_width, 0);
-                margin-left: $spacing/4;
-                margin-right: $spacing/4;
-            }
-        }
+    .progress-box {
+         margin: $spacing/3;
+         font-size: 1.0em;
+    }
+    .progress-label {
+    	margin-top: -2.5px;
+    	margin-left: 2px;
     }
 
     @if $bar-style =='normal' {

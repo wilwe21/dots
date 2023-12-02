@@ -17,7 +17,9 @@ import options from '../options.js';
 import * as vars from '../variables.js';
 import { execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
 import Media from '../quicksettings/widgets/MediaBar.js';
+import icons from '../icons.js'
 
+const intval = options.systemFetchInterval;
 const submenuItems = Variable(1);
 SystemTray.connect('changed', () => {
     submenuItems.setValue(SystemTray.items.length + 1);
@@ -46,19 +48,22 @@ const SeparatorDot = (service, condition) => {
     });
 };
 
-//const SysProgress = (type, title, unit) => Widget.Box({
-//    class_name: `circular-progress-box ${type}`,
-//    hexpand: false,
-//    binds: [['tooltipText', vars[type], 'value', v =>
-//        `${title}: ${Math.floor(v * 100)}${unit}`]],
-//    child: Widget.CircularProgress({
-//        hexpand: true,
-//        inverted: false,
-//        class_name: `circular-progress ${type}`,
-//        binds: [['value', vars[type]]],
-//        start_at: 0.75,
-//    }),
-//});
+const SysProgress = (type, title, unit) => Widget.Box({
+    class_name: `progress-box ${type}`,
+    hexpand: false,
+    binds: [['tooltipText', vars[type], 'value', v => `${title}: ${v}${unit}`]],
+    children: [
+        Widget.Icon({
+            class_name: 'progress-icon',
+            icon: icons.system[type],
+        }),
+        Widget.Label({
+            class_name: 'progress-label',
+            binds: [['label', vars[type], 'value', p => `${p}${unit} `]],
+        }),
+    ],
+});
+
 
 const Start = () => Widget.Box({
     class_name: 'start',
@@ -81,6 +86,15 @@ const End = () => Widget.Box({
     children: [
         Widget.Box({ hexpand: true }),
 
+        Widget.Box({
+            class_name: 'system-info horizontal',
+            children: [
+                SysProgress('cpu', 'Cpu', '%'),
+                SysProgress('upload', 'tx', ''),
+                SysProgress('download', 'rx', ''),
+                SysProgress('temp', 'Temperature', '°C'),
+            ],
+        }),
         SubMenu({
             imtes: submenuItems,
             children: [
@@ -88,14 +102,6 @@ const End = () => Widget.Box({
             ]
         }),
         ColorPicker(),
-        //Widget.Box({
-        //    class_name: 'system-info horizontal',
-        //    children: [
-        //        SysProgress('cpu', 'Cpu', '%'),
-        //        SysProgress('ram', 'Ram', '%'),
-        //        SysProgress('temp', 'Temperature', '°C'),
-        //    ],
-        //}),
         SeparatorDot(),
         ScreenRecord(),
         SeparatorDot(Recorder, r => r.recording),

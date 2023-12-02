@@ -1,0 +1,17 @@
+#!/bin/bash
+w1=$(cat /sys/class/net/wlo1/statistics/tx_bytes)
+e1=$(cat /sys/class/net/enp2s0/statistics/tx_bytes)
+sum=$((w1 + e1))
+if [ $sum -ge 1000 ]; then
+  if [ $sum -ge 1000000 ]; then
+    if [ $sum -ge 1000000000 ]; then
+      echo "$((sum / 1000000000))GB/s"
+      exit
+    fi
+    echo "$((sum / 1000000))MB/s"
+    exit
+  fi
+  echo "$((sum / 1000))KB/s"
+else
+  echo "${sum}B/s"
+fi

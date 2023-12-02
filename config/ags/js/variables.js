@@ -36,10 +36,9 @@ export const distroIcon = (() => {
 const divide = ([total, free]) => Number.parseInt(free) / Number.parseInt(total);
 
 export const cpu = Variable(0, {
-    poll: [intval, 'top -b -n 1', out => divide(['100', out.split('\n')
-        .find(line => line.includes('CPU(s)'))
-        ?.split(/\s+/)[1]
-        .replace(',', '.') || '0'])],
+    poll: [intval, '/home/wilwe/.hyprland.conf/scripts/cpu', n => {
+        return String(n);
+    }],
 });
 
 export const ram = Variable(0, {
@@ -51,6 +50,18 @@ export const ram = Variable(0, {
 
 export const temp = Variable(0, {
     poll: [intval, 'cat ' + options.temperature, n => {
-        return Number.parseInt(n) / 100_000;
+        return Number.parseInt(n) / 1000;
+    }],
+});
+
+export const download = Variable(0, {
+    poll: [intval, '/home/wilwe/.hyprland.conf/scripts/rx', n => {
+        return String(n);
+    }],
+});
+
+export const upload = Variable(0, {
+    poll: [intval, '/home/wilwe/.hyprland.conf/scripts/tx', n => {
+        return String(n);
     }],
 });

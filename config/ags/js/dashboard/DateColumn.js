@@ -14,7 +14,7 @@ export default () => Widget.Box({
                 Clock({ format: '%H:%M' }),
                 Widget.Label({
                     class_name: 'uptime',
-                    binds: [['label', vars.uptime, 'value', t => `uptime: ${t}`]],
+                    binds: [['label', vars.temp, 'value', n => `Temperatura: ${n}°C`]],
                 }),
             ],
         }),

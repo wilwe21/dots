@@ -90,6 +90,8 @@ export default {
         cpu: 'org.gnome.SystemMonitor-symbolic',
         ram: 'drive-harddisk-solidstate-symbolic',
         temp: 'temperature-symbolic',
+        download: 'applications-internet-symbolic',
+        upload: 'applications-internet-symbolic',
     },
     dialog: {
         Search: ' ',
