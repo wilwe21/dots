@@ -54,6 +54,13 @@ export const temp = Variable(0, {
     }],
 });
 
+export const pog = Variable(0, {
+    poll: [intval, '/home/wilwe/.hyprland.conf/scripts/pog', n => {
+        return String(n);
+    }],
+});
+
+
 export const download = Variable(0, {
     poll: [intval, '/home/wilwe/.hyprland.conf/scripts/rx', n => {
         return String(n);

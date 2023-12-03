@@ -16,7 +16,7 @@ import Recorder from '../services/screenrecord.js';
 import options from '../options.js';
 import * as vars from '../variables.js';
 import { execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
-import Media from '../quicksettings/widgets/MediaBar.js';
+import Media from './buttons/MediaBar.js';
 import icons from '../icons.js'
 
 const intval = options.systemFetchInterval;
@@ -89,7 +89,7 @@ const End = () => Widget.Box({
         Widget.Box({
             class_name: 'system-info horizontal',
             children: [
-                SysProgress('cpu', 'Cpu', '%'),
+                SysProgress('cpu', 'Cpu', ''),
                 SysProgress('upload', 'tx', ''),
                 SysProgress('download', 'rx', ''),
                 SysProgress('temp', 'Temperature', '°C'),
