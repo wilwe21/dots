@@ -15,7 +15,7 @@ export const TitleLabel = (player, props) => Widget.Label({
     binds: [['label', player, 'track-title', n => {
         if (n.length > 50) {
             n = n.substring(0, 50);
-            return String(n + ' ...');
+            return String(n + '...');
         } else {
             return String(n);
         }
