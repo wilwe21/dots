@@ -37,8 +37,9 @@ const Footer = player => Widget.CenterBox({
 const TextBox = player => Widget.Box({
     children: [
         mpris.CoverArt(player, {
+            class_name: 'cover',
             hpack: 'end',
-            hexpand: false,
+            hexpand: true,
             child: Widget.Box({
                 class_name: 'shader',
                 hexpand: true,

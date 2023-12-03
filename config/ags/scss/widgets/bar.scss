@@ -252,6 +252,7 @@ $bar-spacing: $spacing / 2;
     .media {
         button {
             all: unset;
+            color: $orange;
             margin-left: 5px;
         }
         label {

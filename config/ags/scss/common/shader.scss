@@ -11,7 +11,7 @@
     }
 
     @if $color-scheme == 'light' {
-        background-color: transparentize($bg-color, 0.8);
+        background-color: transparentize($bg-color, 0.5);
     }
 }
 

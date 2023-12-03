@@ -48,8 +48,8 @@ export default {
         recording: 'media-record-symbolic',
     },
     notifications: {
-        noisy: 'preferences-system-notifications-symbolic',
-        silent: 'process-stop-symbolic',
+        noisy: 'mail-mark-unread-symbolic',
+        silent: 'mail-mark-read-symbolic',
     },
     trash: {
         full: 'user-trash-full-symbolic',

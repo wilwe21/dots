@@ -1,7 +1,8 @@
 window#overview .window-content {
     @include floating-widget;
     @include spacing;
-
+    
+    
     .workspace {
         &.active > widget {
             border-color: $accent
