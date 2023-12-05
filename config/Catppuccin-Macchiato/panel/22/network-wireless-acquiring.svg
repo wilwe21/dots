@@ -1,11 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" version="1.1">
- <defs>
-  <style id="current-color-scheme" type="text/css">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="22"
+   height="22"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="network-wireless-acquiring.svg"
+   inkscape:version="1.3.1 (91b66b0783, 2023-11-16)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="39.681818"
+     inkscape:cx="11"
+     inkscape:cy="11"
+     inkscape:window-width="1243"
+     inkscape:window-height="808"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <defs
+     id="defs1">
+    <style
+       id="current-color-scheme"
+       type="text/css">
    .ColorScheme-Text { color:#F5A97F; } .ColorScheme-Highlight { color:#5294e2; }
   </style>
- </defs>
- <path style="fill:currentColor" class="ColorScheme-Text" d="M 8,11 A 2,2 0 0 1 6,13 2,2 0 0 1 4,11 2,2 0 0 1 6,9 2,2 0 0 1 8,11 Z"/>
- <path style="fill:currentColor" class="ColorScheme-Text" d="m 13,11 a 2,2 0 0 1 -2,2 2,2 0 0 1 -2,-2 2,2 0 0 1 2,-2 2,2 0 0 1 2,2 z"/>
- <path style="fill:currentColor" class="ColorScheme-Text" d="m 18,11 a 2,2 0 0 1 -2,2 2,2 0 0 1 -2,-2 2,2 0 0 1 2,-2 2,2 0 0 1 2,2 z"/>
- <path style="opacity:0.3;fill:currentColor" class="ColorScheme-Text" d="M 11,4 C 7.9494,4 5.0806,5.0732 3,7 L 3.7265625,8 H 18.273438 L 19,7 C 16.919,5.0731 14.051,4 11,4 Z M 8.0917969,14 11,18 13.908203,14 Z"/>
+  </defs>
+  <path
+     style="fill:#f5a0ff;fill-opacity:1"
+     class="ColorScheme-Text"
+     d="M 8,11 A 2,2 0 0 1 6,13 2,2 0 0 1 4,11 2,2 0 0 1 6,9 2,2 0 0 1 8,11 Z"
+     id="path1" />
+  <path
+     style="fill:#f5a0ff;fill-opacity:1"
+     class="ColorScheme-Text"
+     d="m 13,11 a 2,2 0 0 1 -2,2 2,2 0 0 1 -2,-2 2,2 0 0 1 2,-2 2,2 0 0 1 2,2 z"
+     id="path2" />
+  <path
+     style="fill:#f5a0ff;fill-opacity:1"
+     class="ColorScheme-Text"
+     d="m 18,11 a 2,2 0 0 1 -2,2 2,2 0 0 1 -2,-2 2,2 0 0 1 2,-2 2,2 0 0 1 2,2 z"
+     id="path3" />
+  <path
+     style="opacity:0.3;fill:#f5a0ff;fill-opacity:1"
+     class="ColorScheme-Text"
+     d="M 11,4 C 7.9494,4 5.0806,5.0732 3,7 L 3.7265625,8 H 18.273438 L 19,7 C 16.919,5.0731 14.051,4 11,4 Z M 8.0917969,14 11,18 13.908203,14 Z"
+     id="path4" />
 </svg>

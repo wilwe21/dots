@@ -1,9 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" version="1.1">
- <defs>
-  <style id="current-color-scheme" type="text/css">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="24"
+   height="24"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="network-wired-secure.svg"
+   inkscape:version="1.3.1 (91b66b0783, 2023-11-16)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="36.375"
+     inkscape:cx="12"
+     inkscape:cy="12.013746"
+     inkscape:window-width="1522"
+     inkscape:window-height="1035"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs1">
+    <style
+       id="current-color-scheme"
+       type="text/css">
    .ColorScheme-Text { color:#F5A97F; } .ColorScheme-Highlight { color:#5294e2; }
   </style>
- </defs>
- <path style="fill:currentColor" class="ColorScheme-Text" d="M 6 6 C 6 6 5 6 5 7 L 5 16 C 5 17 6 17 6 17 L 8 17 L 9 18 L 13 18 L 13 16 L 10 16 L 9 15 L 7 15 L 7 8 L 17 8 L 17 12 C 17.774415 12 18.470818 12.309484 19 12.800781 L 19 7 C 19 6 18 6 18 6 L 6 6 z"/>
- <path style="fill:currentColor" class="ColorScheme-Text" d="m 17,13 c -1.108,0 -2,0.91085 -2,2.0312 l 0,0.96875 -1,0 0,4 6,0 0,-4 -1,0 0,-0.96875 C 19,13.9113 18.108,13 17,13 Z m 0,1 c 0.554,0 1,0.4424 1,1 l 0,1 -2,0 0,-1 c 0,-0.5576 0.446,-1 1,-1 z"/>
+  </defs>
+  <path
+     style="fill:#f5a0ff;fill-opacity:1"
+     class="ColorScheme-Text"
+     d="M 6 6 C 6 6 5 6 5 7 L 5 16 C 5 17 6 17 6 17 L 8 17 L 9 18 L 13 18 L 13 16 L 10 16 L 9 15 L 7 15 L 7 8 L 17 8 L 17 12 C 17.774415 12 18.470818 12.309484 19 12.800781 L 19 7 C 19 6 18 6 18 6 L 6 6 z"
+     id="path1" />
+  <path
+     style="fill:#f5a0ff;fill-opacity:1"
+     class="ColorScheme-Text"
+     d="m 17,13 c -1.108,0 -2,0.91085 -2,2.0312 l 0,0.96875 -1,0 0,4 6,0 0,-4 -1,0 0,-0.96875 C 19,13.9113 18.108,13 17,13 Z m 0,1 c 0.554,0 1,0.4424 1,1 l 0,1 -2,0 0,-1 c 0,-0.5576 0.446,-1 1,-1 z"
+     id="path2" />
 </svg>

@@ -1,8 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" version="1.1">
- <defs>
-  <style id="current-color-scheme" type="text/css">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="nm-vpn-lock.svg"
+   inkscape:version="1.3.1 (91b66b0783, 2023-11-16)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="54.5625"
+     inkscape:cx="8"
+     inkscape:cy="8.0091638"
+     inkscape:window-width="1910"
+     inkscape:window-height="767"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs1">
+    <style
+       id="current-color-scheme"
+       type="text/css">
    .ColorScheme-Text { color:#F5A97F; } .ColorScheme-Highlight { color:#5294e2; }
   </style>
- </defs>
- <path style="fill:currentColor" class="ColorScheme-Text" d="M 13,9 C 11.89,9 11,9.91 11,11.03 V 12 H 10 V 16 H 16 V 12 H 15 V 11.03 C 15,9.91 14.11,9 13,9 Z M 13,10 C 13.55,10 14,10.44 14,11 V 12 H 12 V 11 C 12,10.44 12.45,10 13,10 Z"/>
+  </defs>
+  <path
+     style="fill:#f5a0ff;fill-opacity:1"
+     class="ColorScheme-Text"
+     d="M 13,9 C 11.89,9 11,9.91 11,11.03 V 12 H 10 V 16 H 16 V 12 H 15 V 11.03 C 15,9.91 14.11,9 13,9 Z M 13,10 C 13.55,10 14,10.44 14,11 V 12 H 12 V 11 C 12,10.44 12.45,10 13,10 Z"
+     id="path1" />
 </svg>

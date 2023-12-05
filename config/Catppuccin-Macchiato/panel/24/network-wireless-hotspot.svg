@@ -1,8 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" version="1.1">
- <defs>
-  <style id="current-color-scheme" type="text/css">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="24"
+   height="24"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="network-wireless-hotspot.svg"
+   inkscape:version="1.3.1 (91b66b0783, 2023-11-16)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="36.375"
+     inkscape:cx="12"
+     inkscape:cy="12"
+     inkscape:window-width="1219"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs1">
+    <style
+       id="current-color-scheme"
+       type="text/css">
    .ColorScheme-Text { color:#F5A97F; } .ColorScheme-Highlight { color:#5294e2; }
   </style>
- </defs>
- <path style="fill:currentColor" class="ColorScheme-Text" d="M 12,4 C 8.6,4 5.78,6.5636364 5,10 l 2,0 c 0.74,-2.5309091 2.43,-4 5,-4 2.57,0 4.26,1.4690909 5,4 l 2,0 C 18.22,6.5636364 15.4,4 12,4 Z m 0,4 C 10.7,8 9.58,8.8044693 9,10 l 6,0 C 14.42,8.8156425 13.3,8 12,8 Z m -7,4 7,8 7,-8 z"/>
+  </defs>
+  <path
+     style="fill:#f5a0ff;fill-opacity:1"
+     class="ColorScheme-Text"
+     d="M 12,4 C 8.6,4 5.78,6.5636364 5,10 l 2,0 c 0.74,-2.5309091 2.43,-4 5,-4 2.57,0 4.26,1.4690909 5,4 l 2,0 C 18.22,6.5636364 15.4,4 12,4 Z m 0,4 C 10.7,8 9.58,8.8044693 9,10 l 6,0 C 14.42,8.8156425 13.3,8 12,8 Z m -7,4 7,8 7,-8 z"
+     id="path1" />
 </svg>

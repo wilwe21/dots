@@ -1,9 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" version="1.1">
- <defs>
-  <style id="current-color-scheme" type="text/css">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="both-low-signal.svg"
+   inkscape:version="1.3.1 (91b66b0783, 2023-11-16)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="54.5625"
+     inkscape:cx="8"
+     inkscape:cy="8.0091638"
+     inkscape:window-width="1910"
+     inkscape:window-height="1035"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs1">
+    <style
+       id="current-color-scheme"
+       type="text/css">
    .ColorScheme-Text { color:#F5A97F; } .ColorScheme-Highlight { color:#5294e2; }
   </style>
- </defs>
- <path style="opacity:0.3;fill:currentColor" class="ColorScheme-Text" d="M 0,5 C 2.0806,3.0732 4.9494,2 8,2 11.051,2 13.919,3.0731 16,5 L 8,14 Z"/>
- <path style="fill:currentColor" class="ColorScheme-Text" d="M 3.3335,8.75 C 4.5472,7.626 6.2207,7 8.0002,7 9.7797,7 11.453,7.626 12.666,8.75 L 8.0002,14 Z"/>
+  </defs>
+  <path
+     style="opacity:0.3;fill:#f5a0ff;fill-opacity:1"
+     class="ColorScheme-Text"
+     d="M 0,5 C 2.0806,3.0732 4.9494,2 8,2 11.051,2 13.919,3.0731 16,5 L 8,14 Z"
+     id="path1" />
+  <path
+     style="fill:#f5a0ff;fill-opacity:1"
+     class="ColorScheme-Text"
+     d="M 3.3335,8.75 C 4.5472,7.626 6.2207,7 8.0002,7 9.7797,7 11.453,7.626 12.666,8.75 L 8.0002,14 Z"
+     id="path2" />
 </svg>

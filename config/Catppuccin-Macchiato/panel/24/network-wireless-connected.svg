@@ -1,8 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" version="1.1">
- <defs>
-  <style id="current-color-scheme" type="text/css">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="24"
+   height="24"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="network-wireless-connected.svg"
+   inkscape:version="1.3.1 (91b66b0783, 2023-11-16)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="36.375"
+     inkscape:cx="11.986254"
+     inkscape:cy="12"
+     inkscape:window-width="1894"
+     inkscape:window-height="748"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs1">
+    <style
+       id="current-color-scheme"
+       type="text/css">
    .ColorScheme-Text { color:#F5A97F; } .ColorScheme-Highlight { color:#5294e2; }
   </style>
- </defs>
- <path d="m 12,4.9999998 c -3.0506,0 -5.9194,1.0732 -8,3.0000001 L 12,19 20,7.9999999 c -2.081,-1.9269 -4.949,-3 -8,-3.0000001 z m 0,2.0000001 c 1.928417,0 3.635471,0.64124 5.130859,1.546875 L 12,15.601562 6.86914,8.5468749 C 8.36453,7.6413188 10.07196,6.9999999 12,6.9999999 Z" style="fill:currentColor" class="ColorScheme-Text"/>
+  </defs>
+  <path
+     d="m 12,4.9999998 c -3.0506,0 -5.9194,1.0732 -8,3.0000001 L 12,19 20,7.9999999 c -2.081,-1.9269 -4.949,-3 -8,-3.0000001 z m 0,2.0000001 c 1.928417,0 3.635471,0.64124 5.130859,1.546875 L 12,15.601562 6.86914,8.5468749 C 8.36453,7.6413188 10.07196,6.9999999 12,6.9999999 Z"
+     style="fill:#f5a0ff;fill-opacity:1"
+     class="ColorScheme-Text"
+     id="path1" />
 </svg>

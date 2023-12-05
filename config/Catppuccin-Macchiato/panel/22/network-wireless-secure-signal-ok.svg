@@ -1,10 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" version="1.1">
- <defs>
-  <style id="current-color-scheme" type="text/css">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="22"
+   height="22"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="network-wireless-secure-signal-ok.svg"
+   inkscape:version="1.3.1 (91b66b0783, 2023-11-16)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="39.681818"
+     inkscape:cx="15.97709"
+     inkscape:cy="11.352806"
+     inkscape:window-width="926"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3" />
+  <defs
+     id="defs1">
+    <style
+       id="current-color-scheme"
+       type="text/css">
    .ColorScheme-Text { color:#F5A97F; } .ColorScheme-Highlight { color:#5294e2; }
   </style>
- </defs>
- <path style="fill:currentColor" class="ColorScheme-Text" d="m 16,12 c -1.108,0 -2,0.9109 -2,2.03125 V 15 h -1 v 4 h 6 V 15 H 18 V 14.03125 C 18,12.91135 17.108,12 16,12 Z m 0,1 c 0.554,0 1,0.4424 1,1 v 1 h -2 v -1 c 0,-0.5576 0.446,-1 1,-1 z"/>
- <path style="opacity:0.3;fill:currentColor" class="ColorScheme-Text" d="M 11,4 C 7.9494,4 5.0806,5.0732 3,7 l 8,11 1,-1.375 V 14 h 1.013672 C 13.033321,12.365092 14.356157,11 16,11 c 0.02882,0 0.05537,0.0089 0.08398,0.0098 L 19,7 C 16.919,5.0731 14.051,4 11,4 Z"/>
- <path style="fill:currentColor" class="ColorScheme-Text" d="M 11,9 A 7.5,7.5 0 0 0 5.9101562,11.001953 L 11,18 12,16.625 V 14 h 1.013672 C 13.033321,12.365092 14.356157,11 16,11 c 0.02882,0 0.05537,0.0089 0.08398,0.0098 l 0.0039,-0.0059 A 7.5,7.5 0 0 0 11,9 Z"/>
+  </defs>
+  <path
+     style="fill:#f5a0ff;fill-opacity:1"
+     class="ColorScheme-Text"
+     d="m 16,12 c -1.108,0 -2,0.9109 -2,2.03125 V 15 h -1 v 4 h 6 V 15 H 18 V 14.03125 C 18,12.91135 17.108,12 16,12 Z m 0,1 c 0.554,0 1,0.4424 1,1 v 1 h -2 v -1 c 0,-0.5576 0.446,-1 1,-1 z"
+     id="path1" />
+  <path
+     style="opacity:0.3;fill:#f5a0ff;fill-opacity:1"
+     class="ColorScheme-Text"
+     d="M 11,4 C 7.9494,4 5.0806,5.0732 3,7 l 8,11 1,-1.375 V 14 h 1.013672 C 13.033321,12.365092 14.356157,11 16,11 c 0.02882,0 0.05537,0.0089 0.08398,0.0098 L 19,7 C 16.919,5.0731 14.051,4 11,4 Z"
+     id="path2" />
+  <path
+     style="fill:#f5a0ff;fill-opacity:1"
+     class="ColorScheme-Text"
+     d="M 11,9 A 7.5,7.5 0 0 0 5.9101562,11.001953 L 11,18 12,16.625 V 14 h 1.013672 C 13.033321,12.365092 14.356157,11 16,11 c 0.02882,0 0.05537,0.0089 0.08398,0.0098 l 0.0039,-0.0059 A 7.5,7.5 0 0 0 11,9 Z"
+     id="path3" />
 </svg>

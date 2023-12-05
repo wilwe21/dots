@@ -1,8 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" version="1.1">
- <defs>
-  <style id="current-color-scheme" type="text/css">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="22"
+   height="22"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="network-wireless-connected.svg"
+   inkscape:version="1.3.1 (91b66b0783, 2023-11-16)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="39.681818"
+     inkscape:cx="10.9874"
+     inkscape:cy="11.0126"
+     inkscape:window-width="1894"
+     inkscape:window-height="895"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs1">
+    <style
+       id="current-color-scheme"
+       type="text/css">
    .ColorScheme-Text { color:#F5A97F; } .ColorScheme-Highlight { color:#5294e2; }
   </style>
- </defs>
- <path d="m 11,3.9999997 c -3.0506,0 -5.9194,1.0732 -8,3.0000001 L 11,18 19,6.9999998 c -2.081,-1.9269 -4.949,-3 -8,-3.0000001 z m 0,2.0000001 c 1.928417,0 3.635471,0.64124 5.130859,1.546875 L 11,14.601562 5.86914,7.5468748 C 7.36453,6.6413187 9.07196,5.9999998 11,5.9999998 Z" style="fill:currentColor" class="ColorScheme-Text"/>
+  </defs>
+  <path
+     d="m 11,3.9999997 c -3.0506,0 -5.9194,1.0732 -8,3.0000001 L 11,18 19,6.9999998 c -2.081,-1.9269 -4.949,-3 -8,-3.0000001 z m 0,2.0000001 c 1.928417,0 3.635471,0.64124 5.130859,1.546875 L 11,14.601562 5.86914,7.5468748 C 7.36453,6.6413187 9.07196,5.9999998 11,5.9999998 Z"
+     style="fill:#f5a0ff;fill-opacity:1"
+     class="ColorScheme-Text"
+     id="path1" />
 </svg>
