@@ -1,0 +1,9 @@
+#!/bin/bash
+x=$(pactl get-source-volume @DEFAULT_SOURCE@)
+x=$(echo $x | tr -d 'abcdefghijklmnopqrstuvxyz /, -%ABCDEFGHIJKLMNOPQRSTUVXYZ:-:--')
+echo $x
+if [ $x = 0000000 ]; then
+  pactl set-source-volume @DEFAULT_SOURCE@ 150%
+else
+  pactl set-source-volume @DEFAULT_SOURCE@ 0%
+fi

@@ -9,6 +9,7 @@ apply_themes() {
 	${SCHEMA} gtk-theme "$THEME"
 	${SCHEMA} icon-theme "$ICONS"
 	${SCHEMA} cursor-theme "$CURSOR"
+	flatpak override --env=XCURSOR_THEME="$CURSOR"
 }
 
 apply_themes
