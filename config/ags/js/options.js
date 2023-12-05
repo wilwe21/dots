@@ -55,9 +55,14 @@ export default {
         green: Option('#2ec27e', { 'scss': 'green' }),
         yellow: Option('#f5c211', { 'scss': 'yellow' }),
         blue: Option('#3584e4', { 'scss': 'blue' }),
+        temp: Option('#c01c28', { 'scss': 'temp' }),
+        download: Option('#2ec27e', { 'scss': 'download' }),
+        cpucolor: Option('#f5c211', { 'scss': 'cpucolor' }),
+        upload: Option('#3584e4', { 'scss': 'upload' }),
         magenta: Option('#813d9c', { 'scss': 'magenta' }),
         teal: Option('#99c1f1', { 'scss': 'teal' }),
         orange: Option('#e66100', { 'scss': 'orange' }),
+        playcolor: Option('#e66100', { 'scss': 'playcolor' }),
     },
 
     theme: {

@@ -60,7 +60,7 @@ $bar-spacing: $spacing / 2;
 .panel {
     .cpu {
         padding-left: $spacing/2;
-        color: $yellow;
+        color: $cpucolor;
         font-size: $font_size/4.5;
         border-radius: max($radii - $border_width, 0);
         margin: $spacing;
@@ -91,7 +91,7 @@ $bar-spacing: $spacing / 2;
         }
     }
     .download {
-        color: $green;
+        color: $download;
         font-size: $font_size/4.5;
         border-radius: max($radii - $border_width, 0);
         margin: $spacing;
@@ -106,7 +106,7 @@ $bar-spacing: $spacing / 2;
         }
     }
     .upload {
-        color: $blue;
+        color: $upload;
         font-size: $font_size/4.5;
         border-radius: max($radii - $border_width, 0);
         margin: $spacing;
@@ -123,7 +123,7 @@ $bar-spacing: $spacing / 2;
 
     .temp {
         padding-right: $spacing*2;
-        color: $red;
+        color: $temp;
         font-size: $font_size/4.5;
         border-radius: max($radii - $border_width, 0);
         margin: $spacing;
@@ -252,7 +252,7 @@ $bar-spacing: $spacing / 2;
     .media {
         button {
             all: unset;
-            color: $orange;
+            color: $playcolor;
             margin-left: 5px;
         }
         label {
