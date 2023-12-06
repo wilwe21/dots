@@ -39,7 +39,7 @@ const TextBox = player => Widget.Box({
         mpris.CoverArt(player, {
             class_name: 'cover',
             hpack: 'end',
-            hexpand: true,
+            hexpand: false,
             child: Widget.Box({
                 class_name: 'shader',
                 hexpand: true,
