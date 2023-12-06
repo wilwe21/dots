@@ -94,8 +94,15 @@ window#dashboard .window-content {
             font-size: 5em;
         }
 
-        .uptime {
+        .temperatura {
             color: transparentize($fg-color, 0.2);
+        }
+        .chmury {
+            color: transparentize($fg-color, 0.2);
+        }
+        .moon {
+            color: transparentize($fg-color, 0.2);
+            margin-top: -5px;
         }
     }
 

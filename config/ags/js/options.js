@@ -270,7 +270,7 @@ export default {
     }),
 
     temperature: '/sys/class/thermal/thermal_zone0/temp',
-    systemFetchInterval: 1000,
+    systemFetchInterval: 2500,
     brightnessctlKBD: 'asus::kbd_backlight',
     substitutions: {
         icons: [

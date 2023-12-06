@@ -55,10 +55,12 @@ const SysProgress = (type, title, unit) => Widget.Box({
     children: [
         Widget.Icon({
             class_name: 'progress-icon',
+            hexpand: false,
             icon: icons.system[type],
         }),
         Widget.Label({
             class_name: 'progress-label',
+            hexpand: false,
             binds: [['label', vars[type], 'value', p => `${p}${unit} `]],
         }),
     ],
@@ -89,9 +91,9 @@ const End = () => Widget.Box({
         Widget.Box({
             class_name: 'system-info horizontal',
             children: [
-                SysProgress('cpu', 'Cpu', ''),
                 SysProgress('upload', 'tx', ''),
                 SysProgress('download', 'rx', ''),
+                SysProgress('cpu', 'Cpu', ''),
                 SysProgress('temp', 'Temperature', '°C'),
             ],
         }),

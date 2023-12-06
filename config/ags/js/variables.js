@@ -54,12 +54,23 @@ export const temp = Variable(0, {
     }],
 });
 
-export const pog = Variable(0, {
-    poll: [intval, '/home/wilwe/.hyprland.conf/scripts/pog', n => {
+export const temperatura = Variable(0, {
+    poll: [intval, 'curl wttr.in/?format=Temperatura:%20%t', n => {
         return String(n);
     }],
 });
 
+export const chmury = Variable(0, {
+    poll: [intval, 'curl wttr.in/?format=Zachmurzenie:%20%c', n => {
+        return String(n);
+    }],
+});
+
+export const moon = Variable(0, {
+    poll: [intval, 'curl wttr.in/?format=Faza%20Księżyca:%20%m', n => {
+        return String(n);
+    }],
+});
 
 export const download = Variable(0, {
     poll: [intval, '/home/wilwe/.hyprland.conf/scripts/rx', n => {

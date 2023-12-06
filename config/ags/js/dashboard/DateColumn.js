@@ -13,8 +13,16 @@ export default () => Widget.Box({
             children: [
                 Clock({ format: '%H:%M' }),
                 Widget.Label({
-                    class_name: 'uptime',
-                    binds: [['label', vars.pog, 'value', n => `Temperatura: ${n}`]],
+                    class_name: 'temperatura',
+                    binds: [['label', vars.temperatura, 'value', n => `${n}`]],
+                }),
+                Widget.Label({
+                    class_name: 'chmury',
+                    binds: [['label', vars.chmury, 'value', n => `${n}`]],
+                }),
+                Widget.Label({
+                    class_name: 'moon',
+                    binds: [['label', vars.moon, 'value', n => `${n}`]],
                 }),
             ],
         }),
