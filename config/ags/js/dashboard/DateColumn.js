@@ -20,9 +20,18 @@ export default () => Widget.Box({
                     class_name: 'chmury',
                     binds: [['label', vars.chmury, 'value', n => `${n}`]],
                 }),
-                Widget.Label({
-                    class_name: 'moon',
-                    binds: [['label', vars.moon, 'value', n => `${n}`]],
+                Widget.Box ({
+                    class_name: 'moon-box',
+                    children: [
+                        Widget.Label({
+                            class_name: 'moon-name',
+                            label: 'Faza Księżyca: ',
+                        }),
+                        Widget.Label({
+                            class_name: 'moon',
+                            binds: [['label', vars.moon, 'value', n => `${n}`]],
+                        }),
+                    ]
                 }),
             ],
         }),

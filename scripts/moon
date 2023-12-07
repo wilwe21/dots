@@ -1,0 +1,30 @@
+#!/bin/bash
+x=$(curl wttr.in/?format=%m)
+if [ $x == 🌑 ]; then
+  echo 🌕
+  exit
+elif [ $x == 🌕 ]; then
+  echo 🌑
+  exit
+elif [ $x == 🌒 ]; then
+  echo 🌖
+  exit
+elif [ $x == 🌘 ]; then 
+  echo 🌔
+  exit
+elif [ $x == 🌓 ]; then
+  echo 🌗
+  exit
+elif [ $x == 🌗 ]; then
+  echo 🌓
+  exit
+elif [ $x == 🌔 ]; then
+  echo 🌘
+  exit
+elif [ $x == 🌖 ]; then
+  echo 🌒
+  exit
+else
+  echo err
+  exit
+fi
