@@ -203,9 +203,10 @@ export default {
         }),
         flat_buttons: Option(true, { 'scss': 'bar-flat-buttons' }),
         separators: Option(true),
-        icon: Option('distro-icon', {
-            'note': '"distro-icon" or a single font',
-        }),
+        icon: Option(themes[0].options['bar.icon'], {
+                'scssFormat': v => `"${v}"`,
+                'type': 'img',
+            }),
     },
 
     battery: {

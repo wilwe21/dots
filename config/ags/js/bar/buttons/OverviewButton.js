@@ -1,4 +1,5 @@
 import App from 'resource:///com/github/Aylur/ags/app.js';
+import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import PanelButton from '../PanelButton.js';
 import FontIcon from '../../misc/FontIcon.js';
 import { distroIcon } from '../../variables.js';
@@ -8,7 +9,7 @@ export default () => PanelButton({
     class_name: 'overview',
     window: 'overview',
     on_clicked: () => App.toggleWindow('overview'),
-    content: FontIcon({
+    content: Widget.Icon({
         binds: [['icon', options.bar.icon, 'value', v => {
             return v === 'distro-icon' ? distroIcon : v;
         }]],
