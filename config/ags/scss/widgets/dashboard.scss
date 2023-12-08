@@ -95,25 +95,20 @@ window#dashboard .window-content {
         }
 
         .temperatura {
-            margin-top: $padding/4;
-            margin-bottom: $padding/8;
             color: transparentize($fg-color, 0.2);
         }
         .chmury {
-            margin-top: $padding/4;
-            margin-bottom: $padding/8;
             color: transparentize($fg-color, 0.2);
+            margin-bottom: -4px;
         }
         .moon-name {
             color: transparentize($fg-color, 0.2);
         }
         .moon {
             color: transparentize($moon, 0.2);
-            margin-top: 2px;
+            margin-top: 3px;
         }
         .moon-box {
-            margin-top: $padding/4;
-            margin-bottom: $padding/8;
             margin-left: 95px;
             color: transparentize($fg-color, 0.2);
         }
