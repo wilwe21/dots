@@ -54,6 +54,7 @@ export default {
         red: Option('#c01c28', { 'scss': 'red' }),
         green: Option('#2ec27e', { 'scss': 'green' }),
         yellow: Option('#f5c211', { 'scss': 'yellow' }),
+        moon: Option('#F9E2AF', { 'scss': 'moon' }),
         blue: Option('#3584e4', { 'scss': 'blue' }),
         temp: Option('#c01c28', { 'scss': 'temp' }),
         download: Option('#2ec27e', { 'scss': 'download' }),
