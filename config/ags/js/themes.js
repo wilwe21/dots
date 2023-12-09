@@ -226,7 +226,7 @@ export default [
   }),
   
   Theme({
-    name: 'Pony',
+    name: 'My Little Pony',
     icon: "/home/wilwe/.hyprland.conf/screens/fluttershy.png",
 
     "spacing": 2,
