@@ -72,12 +72,11 @@ export default {
             'note': 'Name to show as active in quicktoggles',
         }),
 
-        //icon: Option(themes[0].icon, {
-        //    'category': 'exclude',
-        //    'note': 'Icon to show as active in quicktoggles',
-        //}),
         icon: Option(themes[0].icon, {
-                'type': 'img',
+            'category': 'exclude',
+            'note': 'Icon to show as active in quicktoggles',
+            'scssFormat': v => `"${v}"`,
+            'type': 'img',
         }),
 
         scheme: Option('dark', {
