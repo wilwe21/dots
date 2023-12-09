@@ -8,7 +8,7 @@ export default [
 
  Theme({
     name: 'Catppuccin Macchiato',
-    icon: '󰄛 ',
+    icon: "/home/wilwe/.hyprland.conf/screens/cat.png",
 
     "spacing": 2,
     "padding": 7,
@@ -81,7 +81,7 @@ export default [
 
  Theme({
     name: 'Catppuccin Latte',
-    icon: '󰄛 ',
+    icon: "/home/wilwe/.hyprland.conf/screens/cat.png",
 
     "spacing": 2,
     "padding": 7,
@@ -154,7 +154,7 @@ export default [
 
   Theme({
     name: 'Flying Spaghetti Monster',
-    icon: '󰄛 ',
+    icon: "/home/wilwe/.hyprland.conf/screens/spaghetti-monster.png",
 
     "spacing": 2,
     "padding": 7,
@@ -224,6 +224,80 @@ export default [
     "mpris.preferred": "spotify",
     "workspaces": 5,
   }),
+  
+  Theme({
+    name: 'Pony',
+    icon: "/home/wilwe/.hyprland.conf/screens/fluttershy.png",
+
+    "spacing": 2,
+    "padding": 7,
+    "radii": 5,
+    "popover_padding_multiplier": 1.4,
+    "misc.pywal.theme": "base16-seti",
+    "misc.gtk.theme": "Catppuccin-Macchiato-Standard-Mauve-Dark",
+    "misc.gtkIcons.theme": "Catppuccin-Macchiato",
+    "color.red": "#ED488D",
+    "color.green": "#67BD52",
+    "color.yellow": "#FFF9B1",
+    "color.moon": "#FFF9B1",
+    "color.blue": "#A2DBF8",
+    "color.temp": "#F38BA8",
+    "color.download": "#A6E3A1",
+    "color.cpucolor": "#F9E2AF",
+    "color.upload": "#A2DBF8",
+    "color.magenta": "#C8A2C9",
+    "color.teal": "#83B9E7",
+    "color.orange": "#FCBA64",
+    "color.playcolor": "#FCBA64",
+    "theme.scheme": "dark",
+    "theme.bg": "#35325D",
+    "theme.fg": "#F9FAFC",
+    "theme.accent.accent": "$magenta",
+    "theme.accent.fg": "$bg-color",
+    "theme.accent.gradient": "to right, #ED4E91, #F8B9D4",
+    "theme.widget.bg": "$fg-color",
+    "theme.widget.opacity": 94,
+    "border.color.": "$teal",
+    "border.opacity": 100,
+    "border.width": 2,
+    "border.barcolor": "$accent",
+    "hypr.inactive_border": "rgba(333333ff)",
+    "hypr.wm_gaps": 3,
+    "font.font": "Ubuntu Nerd Font",
+    "font.mono": "Mononoki Nerd Font",
+    "font.size": 13,
+    "applauncher.width": 500,
+    "applauncher.height": 400,
+    "applauncher.icon_size": 32,
+    "bar.position": "top",
+    "bar.style": "floating",
+    "bar.flat_buttons": true,
+    "bar.separators": false,
+    "bar.icon": "/home/wilwe/.hyprland.conf/screens/fluttershy.png",
+    "battery.bar.width": 50,
+    "battery.bar.height": 14,
+    "battery.low": 15,
+    "battery.medium": 35,
+    "desktop.wallpaper.fg": "#fff",
+    "desktop.wallpaper.img": "/home/wilwe/.hyprland.conf/screens/pony.png",
+    "desktop.avatar": "/home/wilwe/.hyprland.conf/screens/fluttershy.png",
+    "desktop.drop_shadow": false,
+    "desktop.shadow": "rgba(0, 0, 0, .6)",
+    "notifications.black_list": [
+      "Spotify"
+    ],
+    "notifications.position": [
+      "top"
+    ],
+    "notifications.width": 450,
+    "dashboard.sys_info_size": 70,
+    "mpris.black_list": [
+      "Caprine"
+    ],
+    "mpris.preferred": "spotify",
+    "workspaces": 5,
+  }),
+  
 ];
 
 
