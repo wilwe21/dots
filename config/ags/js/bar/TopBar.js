@@ -66,7 +66,6 @@ const SysProgress = (type, title, unit) => Widget.Box({
     ],
 });
 
-
 const Start = () => Widget.Box({
     class_name: 'start',
     children: [
@@ -79,7 +78,15 @@ const Start = () => Widget.Box({
 const Center = () => Widget.Box({
     class_name: 'center',
     children: [
+        Widget.Icon({
+            class_name: 'decorator',
+            binds: [['icon', options.bar.decorator1]],
+        }),
         DateButton(),
+        Widget.Icon({
+            class_name: 'decorator',
+            binds: [['icon', options.bar.decorator2]],
+        }),
     ],
 });
 

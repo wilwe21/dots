@@ -213,6 +213,11 @@ $bar-spacing: $spacing / 2;
             color: $accent-fg;
         }
     }
+    .decorator {
+    	margin-left: 20px;
+    	margin-right: 20px;
+    	font-size: 120%;
+    }
 
     .powermenu,
     .recorder {

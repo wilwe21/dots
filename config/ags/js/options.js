@@ -209,6 +209,14 @@ export default {
                 'scssFormat': v => `"${v}"`,
                 'type': 'img',
             }),
+        decorator1: Option(themes[0].options['bar.decorator1'], {
+                'scssFormat': v => `"${v}"`,
+                'type': 'img',
+            }),
+        decorator2: Option(themes[0].options['bar.decorator2'], {
+                'scssFormat': v => `"${v}"`,
+                'type': 'img',
+            }),
     },
 
     battery: {

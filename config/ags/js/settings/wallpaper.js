@@ -13,7 +13,7 @@ export function initWallpaper() {
 }
 
 export function wallpaper() {
-    const backgrounds = GLib.get_home_dir() + '/.config/backgrounds';
+    const backgrounds = '/home/wilwe/.config/backgrounds';
     if (!exec('which swww'))
         return print('missing dependancy: swww');
 
