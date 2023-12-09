@@ -10,6 +10,7 @@ export default () => PanelButton({
     window: 'overview',
     on_clicked: () => App.toggleWindow('overview'),
     content: Widget.Icon({
+        class_name: 'overviewicon',
         binds: [['icon', options.bar.icon, 'value', v => {
             return v === 'distro-icon' ? distroIcon : v;
         }]],
