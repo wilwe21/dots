@@ -34,16 +34,16 @@ window#verification .window-content {
 
 window#powermenu .window-content {
     @include floating-widget;
-    @include spacing(2);
+    @include spacing(0);
     padding: $popover-padding + $spacing * 1.5;
     border-radius: if($radii == 0, 0, $popover-radius + ($popover-padding + $spacing * 1.5));
-
     button {
         @include unset;
 
         image {
             @include button;
-            border-radius: $popover-radius;
+            margin: 3px;
+            border-radius: 20px;
             min-width: 1.7em;
             min-height: 1.7em;
             font-size: 4em;
