@@ -40,6 +40,7 @@ export default [
     "theme.widget.opacity": 94,
     "bar.decorator1": "/home/wilwe/.hyprland.conf/screens/icons/null.png",
     "bar.decorator2": "/home/wilwe/.hyprland.conf/screens/icons/null.png",
+    "bar.dsize": 120,
     "border.color.": "$teal",
     "border.opacity": 100,
     "border.width": 2,
@@ -190,6 +191,7 @@ export default [
     "theme.widget.opacity": 94,
     "bar.decorator1": "/home/wilwe/.hyprland.conf/screens/icons/meatball.png",
     "bar.decorator2": "/home/wilwe/.hyprland.conf/screens/icons/meatball.png",
+    "bar.dsize": '180%',
     "border.color.": "$teal",
     "border.opacity": 100,
     "border.width": 2,
@@ -265,6 +267,7 @@ export default [
     "theme.widget.opacity": 94,
     "bar.decorator1": "/home/wilwe/.hyprland.conf/screens/icons/pinky.png",
     "bar.decorator2": "/home/wilwe/.hyprland.conf/screens/icons/pinky2.png",
+    "bar.dsize": '180%',
     "border.color.": "$teal",
     "border.opacity": 100,
     "border.width": 2,
@@ -340,6 +343,7 @@ export default [
     "theme.widget.opacity": 94,
     "bar.decorator1": "/home/wilwe/.hyprland.conf/screens/icons/ghost.png",
     "bar.decorator2": "/home/wilwe/.hyprland.conf/screens/icons/ghost2.png",
+    "bar.dsize": '165%',
     "border.color.": "#0000FB",
     "border.opacity": 100,
     "border.width": 3,
@@ -382,7 +386,7 @@ export default [
   }),
   
   Theme({
-    name: 'Wierdmagedon',
+    name: 'Weirdmagedon',
     icon: "/home/wilwe/.hyprland.conf/screens/icons/eye.png",
 
     "spacing": 2,
@@ -415,6 +419,7 @@ export default [
     "theme.widget.opacity": 94,
     "bar.decorator1": "/home/wilwe/.hyprland.conf/screens/icons/waddles.png",
     "bar.decorator2": "/home/wilwe/.hyprland.conf/screens/icons/waddles2.png",
+    "bar.dsize": '180%',
     "border.color.": "#ECEA79",
     "border.opacity": 100,
     "border.width": 2,

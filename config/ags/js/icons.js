@@ -12,7 +12,7 @@ export default {
             low: 'audio-volume-low-symbolic',
             medium: 'audio-volume-medium-symbolic',
             high: 'audio-volume-high-symbolic',
-            overamplified: 'audio-volume-overamplified-symbolic',
+            overamplified: 'audio-volume-high-symbolic',
         },
         type: {
             headset: 'audio-headphones-symbolic',

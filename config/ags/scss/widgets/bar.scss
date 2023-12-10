@@ -216,7 +216,7 @@ $bar-spacing: $spacing / 2;
     .decorator {
     	margin-left: 20px;
     	margin-right: 20px;
-    	font-size: 120%;
+    	font-size: $dsize;
     }
 
     .powermenu,

@@ -217,6 +217,10 @@ export default {
                 'scssFormat': v => `"${v}"`,
                 'type': 'img',
             }),
+        dsize: Option('120%', {
+                'scss': 'dsize',
+                'unit': '%',
+            }),
     },
 
     battery: {
