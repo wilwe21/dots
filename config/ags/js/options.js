@@ -240,7 +240,7 @@ export default {
     desktop: {
         wallpaper: {
             fg: Option('#fff', { 'scss': 'wallpaper-fg' }),
-            img: Option(themes[0].options['desktop.wallpaper.img'], {
+            img: Option('/home/wilwe/.hyprland.conf/screens/wallpapers/black.png', {
                 'scssFormat': v => `"${v}"`,
                 'type': 'img',
             }),
