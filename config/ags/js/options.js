@@ -239,15 +239,15 @@ export default {
         color: Option('#ffffff', {
             'scss': 'clockcolor',
         }),
-        mt: Option('0', {
-            'scssFormat': v => `"${v}"`,
-        }),
-        a1: Option('top', {
-        }),
         ml: Option('0', {
             'scssFormat': v => `"${v}"`,
         }),
+        mt: Option('0', {
+            'scssFormat': v => `"${v}"`,
+        }),
         a2: Option('right', {
+        }),
+        a1: Option('top', {
         }),
     },
 

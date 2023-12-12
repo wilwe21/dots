@@ -13,16 +13,23 @@ const clock = ({interval = 1000,
     ]],
 });
 
+const updateMargins = (mt, ml) => {
+    return [mt, ml];
+};
+
+const updateAnchor = (a1, a2) => {
+    return [a1, a2];
+};
+
 export default monitor => Widget.Window({
     name: `clock${monitor}`,
     class_name: 'clockmain',
     layer: 'background',
     exclusivity: 'ignore',
     binds: [
-        ['anchor', options.clock.a1, 'value', (a1) => ([a1, options.clock.a2.value])],
-        ['margins', options.clock.mt, 'value', (mt) => ([mt, options.clock.ml.value])],
+        ['anchor', options.clock.a1, 'value', (a1) => updateAnchor(a1, options.clock.a2.value)],
+        ['margins', options.clock.mt, 'value', (mt) => updateMargins(mt, options.clock.ml.value)],
     ],
-    //margins: [options.clock.mt.value, options.clock.ml.value],
     monitor,
     child: Widget.Box({
         class_name: 'wclock',
