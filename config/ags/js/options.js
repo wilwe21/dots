@@ -222,6 +222,34 @@ export default {
                 'unit': '%',
             }),
     },
+    
+    clock: {
+        main: Option(' ', {
+            'scssFormat': v => `"${v}"`,
+            'type': 'string',
+        }),
+        font: Option('Ubuntu Nerd Font', {
+            'scss': 'clockfont',
+            'type': 'font',
+        }),
+        fontsize: Option('10', {
+            'scss': 'clocksize',
+            'type': 'number',
+        }),
+        color: Option('#ffffff', {
+            'scss': 'clockcolor',
+        }),
+        mt: Option('0', {
+            'scssFormat': v => `"${v}"`,
+        }),
+        a1: Option('top', {
+        }),
+        ml: Option('0', {
+            'scssFormat': v => `"${v}"`,
+        }),
+        a2: Option('right', {
+        }),
+    },
 
     battery: {
         show_percentage: Option(true, {

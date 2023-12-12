@@ -10,6 +10,7 @@ import Verification from './powermenu/Verification.js';
 import { init } from './settings/setup.js';
 import { forMonitors } from './utils.js';
 import options from './options.js';
+import Clock from './clock/clock.js';
 
 init();
 
@@ -17,6 +18,7 @@ const windows = () => [
     forMonitors(Notifications),
     forMonitors(OSD),
     forMonitors(TopBar),
+    //forMonitors(Clock),
     Applauncher(),
     Dashboard(),
     Overview(),

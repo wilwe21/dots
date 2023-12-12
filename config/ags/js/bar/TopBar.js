@@ -81,13 +81,11 @@ const Center = () => Widget.Box({
         Widget.Icon({
             class_name: 'decorator',
             binds: [['icon', options.bar.decorator1]],
-            //css: "font-size:" + options.bar.dsize + "%;",
         }),
         DateButton(),
         Widget.Icon({
             class_name: 'decorator',
             binds: [['icon', options.bar.decorator2]],
-            //css: 'font-size: ' + options.bar.dsize,
         }),
     ],
 });
