@@ -17,17 +17,13 @@ const updateMargins = (mt, ml) => {
     return [mt, ml];
 };
 
-const updateAnchor = (a1, a2) => {
-    return [a1, a2];
-};
-
 export default monitor => Widget.Window({
     name: `clock${monitor}`,
     class_name: 'clockmain',
     layer: 'background',
     exclusivity: 'ignore',
     binds: [
-        ['anchor', options.clock.a1, 'value', (a1) => updateAnchor(a1, options.clock.a2.value)],
+        ['anchor', options.clock.a1, 'value', (a1) => ([a1, 'right'])],
         ['margins', options.clock.mt, 'value', (mt) => updateMargins(mt, options.clock.ml.value)],
     ],
     monitor,

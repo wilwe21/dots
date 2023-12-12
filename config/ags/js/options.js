@@ -245,8 +245,6 @@ export default {
         mt: Option('0', {
             'scssFormat': v => `"${v}"`,
         }),
-        a2: Option('right', {
-        }),
         a1: Option('top', {
         }),
     },

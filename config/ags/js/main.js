@@ -10,7 +10,7 @@ import Verification from './powermenu/Verification.js';
 import { init } from './settings/setup.js';
 import { forMonitors } from './utils.js';
 import options from './options.js';
-import Clock from './clock/clock.js';
+import Clock from './widget/clock.js';
 
 init();
 
