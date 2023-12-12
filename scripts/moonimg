@@ -1,0 +1,31 @@
+#!/bin/bash
+path=$1
+x=$(curl wttr.in/?format=%m)
+if [ $x == 🌑 ]; then
+  echo "8quart.png"
+  exit
+elif [ $x == 🌕 ]; then
+  echo "4quart.png"
+  exit
+elif [ $x == 🌒 ]; then
+  echo "7quart.png"
+  exit
+elif [ $x == 🌘 ]; then 
+  echo "1quart.png"
+  exit
+elif [ $x == 🌓 ]; then
+  echo "1quart.png"
+  exit
+elif [ $x == 🌗 ]; then
+  echo "2quart.png"
+  exit
+elif [ $x == 🌔 ]; then
+  echo "5quart.png"
+  exit
+elif [ $x == 🌖 ]; then
+  echo "3quart.png"
+  exit
+else
+  echo "null.png"
+  exit
+fi

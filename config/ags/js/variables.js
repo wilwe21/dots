@@ -83,3 +83,9 @@ export const upload = Variable(0, {
         return String(n);
     }],
 });
+
+export const moonva = Variable(0, {
+    poll: [32,'/home/wilwe/.hyprland.conf/scripts/moonimg ' + options.moon.path, n => {
+        return String(n);
+    }],
+});

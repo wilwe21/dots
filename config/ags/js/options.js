@@ -246,6 +246,21 @@ export default {
             'scssFormat': v => `"${v}"`,
         }),
         a1: Option('top', {
+            'scssFormat': v => `"${v}"`,
+        }),
+    },
+    moon: {
+        path: Option(' ', {
+            'scssFormat': v => `"${v}"`,
+        }),
+        anchor: Option('top', {
+            'scssFormat': v => `"${v}"`,
+        }),
+        ml: Option('0', {
+            'scssFormat': v => `"${v}"`,
+        }),
+        mt: Option('0', {
+            'scssFormat': v => `"${v}"`,
         }),
     },
 

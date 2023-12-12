@@ -11,6 +11,7 @@ import { init } from './settings/setup.js';
 import { forMonitors } from './utils.js';
 import options from './options.js';
 import Clock from './widget/clock.js';
+import Moon from './widget/moon.js';
 
 init();
 
@@ -18,6 +19,7 @@ const windows = () => [
     forMonitors(Notifications),
     forMonitors(OSD),
     forMonitors(TopBar),
+    //forMonitors(Moon),
     forMonitors(Clock),
     Applauncher(),
     Dashboard(),
