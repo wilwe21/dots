@@ -2,7 +2,6 @@ import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import Variable from 'resource:///com/github/Aylur/ags/variable.js';
 import GLib from 'gi://GLib';
 import options from '../options.js';
-import * as vars from '../variables.js';
 import { execAsync, interval } from 'resource:///com/github/Aylur/ags/utils.js';
 
 const intval = options.systemFetchInterval;
@@ -10,17 +9,6 @@ const intval = options.systemFetchInterval;
 const updateMargins = (mt, ml) => {
     return [mt, ml];
 };
-
-//const path = () => {
-//    return String(options.moon.path);
-//};
-
-//const icon = (value) => Widget.Icon({
-//    class_name: 'wmoon',
-//    binds: [
-//        ['icon', , 'value', v => `${v}${vars.moonva}.png`],
-//    ],
-//});
 
 const moonva = Variable(0, {
     poll: [intval, 'cat /home/wilwe/.cache/moon', n => {
