@@ -19,7 +19,7 @@ const windows = () => [
     forMonitors(Notifications),
     forMonitors(OSD),
     forMonitors(TopBar),
-    //forMonitors(Moon),
+    forMonitors(Moon),
     forMonitors(Clock),
     Applauncher(),
     Dashboard(),
