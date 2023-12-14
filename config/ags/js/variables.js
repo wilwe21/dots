@@ -55,19 +55,19 @@ export const temp = Variable(0, {
 });
 
 export const temperatura = Variable(0, {
-    poll: [intval, 'curl wttr.in/?format=Temperatura:%20%t', n => {
+    poll: [5000, 'curl wttr.in/?format=Temperatura:%20%t', n => {
         return String(n);
     }],
 });
 
 export const chmury = Variable(0, {
-    poll: [intval, 'curl -H Accept-Language:pl wttr.in/?format=%C%20%c', n => {
+    poll: [5000, 'curl -H Accept-Language:pl wttr.in/?format=%C%20%c', n => {
         return String(n);
     }],
 });
 
 export const moon = Variable(0, {
-    poll: [intval, '/home/wilwe/.hyprland.conf/scripts/moon', n => {
+    poll: [250000, '/home/wilwe/.hyprland.conf/scripts/moon', n => {
         return String(n);
     }],
 });

@@ -4,36 +4,44 @@ x=$(curl wttr.in/?format=%m)
 if [ $x == 🌑 ]; then
   echo 🌕
   echo "8quart" &> /home/wilwe/.cache/moon
+  echo "🌕" &> /home/wilwe/.cache/moone
   exit
 elif [ $x == 🌕 ]; then
   echo 🌑
   echo "4quart" &> /home/wilwe/.cache/moon
+  echo "🌑" &> /home/wilwe/.cache/moone
   exit
 elif [ $x == 🌒 ]; then
   echo 🌖
   echo "7quart" &> /home/wilwe/.cache/moon
+  echo "🌖" &> /home/wilwe/.cache/moone
   exit
 elif [ $x == 🌘 ]; then 
   echo 🌔
   echo "1quart" &> /home/wilwe/.cache/moon
+  echo "🌔" &> /home/wilwe/.cache/moone
   exit
 elif [ $x == 🌓 ]; then
   echo 🌗
   echo "6quart" &> /home/wilwe/.cache/moon
+  echo "🌗" &> /home/wilwe/.cache/moone
   exit
 elif [ $x == 🌗 ]; then
   echo 🌓
   echo "2quart" &> /home/wilwe/.cache/moon
+  echo "🌓" &> /home/wilwe/.cache/moone
   exit
 elif [ $x == 🌔 ]; then
   echo 🌘
   echo "5quart" &> /home/wilwe/.cache/moon
+  echo "🌘" &> /home/wilwe/.cache/moone
   exit
 elif [ $x == 🌖 ]; then
   echo 🌒
   echo "3quart" &> /home/wilwe/.cache/moon
+  echo "🌒" &> /home/wilwe/.cache/moone
   exit
 else
-  echo err
+  cat /home/wilwe/.cache/moone
   exit
 fi
