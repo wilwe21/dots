@@ -251,7 +251,7 @@ export default {
         }),
     },
     moon: {
-        path: Option('/home/wilwe/.hyprland.conf/screens/wallpapers/nullmoon/', {
+        path: Option('', {
             'scssFormat': v => `"${v}"`,
             'type': 'string',
         }),
