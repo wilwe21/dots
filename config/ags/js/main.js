@@ -12,6 +12,7 @@ import { forMonitors } from './utils.js';
 import options from './options.js';
 import Clock from './widget/clock.js';
 import Moon from './widget/moon.js';
+import menu from './widget/menu.js';
 
 init();
 
@@ -20,6 +21,7 @@ const windows = () => [
     forMonitors(OSD),
     forMonitors(TopBar),
     forMonitors(Moon),
+    forMonitors(menu),
     forMonitors(Clock),
     Applauncher(),
     Dashboard(),

@@ -16,6 +16,11 @@ const moonva = Variable(0, {
     }],
 });
 
+const visibility = self => {
+        if (!options.moon.visible.value)
+            return self.visible = false;
+};
+
 export default monitor => Widget.Window({
     name: `moon${monitor}`,
     class_name: 'moonmain',
@@ -23,6 +28,7 @@ export default monitor => Widget.Window({
     exclusivity: 'ignore',
     //anchor: ['top', 'bottom', 'left', 'right'],
     binds: [
+        ['visible', options.moon.visible],
         ['anchor', options.moon.anchor, 'value', (am) => ([am, 'right'])],
         ['margins', options.moon.mt, 'value', (mt) => updateMargins(mt, options.moon.ml.value)],
     ],

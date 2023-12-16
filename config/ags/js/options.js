@@ -228,6 +228,7 @@ export default {
             'scssFormat': v => `"${v}"`,
             'type': 'string',
         }),
+        visible: Option(false),
         font: Option('Ubuntu Nerd Font', {
             'scss': 'clockfont',
             'type': 'font',
@@ -254,6 +255,7 @@ export default {
             'scssFormat': v => `"${v}"`,
             'type': 'string',
         }),
+        visible: Option(false),
         anchor: Option('top', {
             'scssFormat': v => `"${v}"`,
         }),
@@ -266,6 +268,9 @@ export default {
         size: Option('0', {
             'scss': 'moonsize',
         }),
+    },
+    menu: {
+        visible: Option(false),
     },
 
     battery: {
