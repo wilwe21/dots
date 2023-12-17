@@ -86,9 +86,6 @@ export default [
     ],
     "notifications.width": 450,
     "dashboard.sys_info_size": 70,
-    "mpris.black_list": [
-      "Caprine"
-    ],
     "mpris.preferred": "spotify",
     "workspaces": 5,
   }),
@@ -164,9 +161,6 @@ export default [
     ],
     "notifications.width": 450,
     "dashboard.sys_info_size": 70,
-    "mpris.black_list": [
-      "Caprine"
-    ],
     "mpris.preferred": "spotify",
     "workspaces": 5,
   }),
@@ -243,9 +237,6 @@ export default [
     ],
     "notifications.width": 450,
     "dashboard.sys_info_size": 70,
-    "mpris.black_list": [
-      "Caprine"
-    ],
     "mpris.preferred": "spotify",
     "workspaces": 5,
   }),
@@ -322,9 +313,6 @@ export default [
     ],
     "notifications.width": 450,
     "dashboard.sys_info_size": 70,
-    "mpris.black_list": [
-      "Caprine"
-    ],
     "mpris.preferred": "spotify",
     "workspaces": 5,
   }),
@@ -401,9 +389,6 @@ export default [
     ],
     "notifications.width": 450,
     "dashboard.sys_info_size": 70,
-    "mpris.black_list": [
-      "Caprine"
-    ],
     "mpris.preferred": "spotify",
     "workspaces": 5,
   }),
@@ -487,9 +472,6 @@ export default [
     ],
     "notifications.width": 450,
     "dashboard.sys_info_size": 70,
-    "mpris.black_list": [
-      "Caprine"
-    ],
     "mpris.preferred": "spotify",
     "workspaces": 5,
   }),
@@ -565,9 +547,6 @@ export default [
     ],
     "notifications.width": 450,
     "dashboard.sys_info_size": 70,
-    "mpris.black_list": [
-      "Caprine"
-    ],
     "mpris.preferred": "spotify",
     "workspaces": 5,
   }),
@@ -649,9 +628,6 @@ export default [
     ],
     "notifications.width": 450,
     "dashboard.sys_info_size": 70,
-    "mpris.black_list": [
-      "Caprine"
-    ],
     "mpris.preferred": "spotify",
     "workspaces": 5,
   }),
@@ -733,9 +709,6 @@ export default [
     ],
     "notifications.width": 450,
     "dashboard.sys_info_size": 70,
-    "mpris.black_list": [
-      "Caprine"
-    ],
     "mpris.preferred": "spotify",
     "workspaces": 5,
   }),
@@ -785,6 +758,11 @@ export default [
     "clock.visible": true,
     "moon.visible": false,
     "menu.visible": false,
+    "sound.visible": true,
+    "sound.sound": '/home/wilwe/Muzyka/click.mp3',
+    "sound.anchor": 'top',
+    "sound.ml": '1025',
+    "sound.mt": '490',
     "border.color.": "#A16437",
     "border.opacity": 100,
     "border.width": 2,
@@ -819,9 +797,6 @@ export default [
     ],
     "notifications.width": 450,
     "dashboard.sys_info_size": 70,
-    "mpris.black_list": [
-      "Caprine"
-    ],
     "mpris.preferred": "spotify",
     "workspaces": 5,
   }),

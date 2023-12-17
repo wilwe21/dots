@@ -272,6 +272,24 @@ export default {
     menu: {
         visible: Option(false),
     },
+    sound: {
+        sound: Option(' ', {
+            'scssFormat': v => `"${v}"`,
+        }),
+        visible: Option(false),
+        anchor: Option('top', {
+            'scssFormat': v => `"${v}"`,
+        }),
+        ml: Option('0', {
+            'scssFormat': v => `"${v}"`,
+        }),
+        mt: Option('0', {
+            'scssFormat': v => `"${v}"`,
+        }),
+        size: Option('0', {
+            'scss': 'soundsize',
+        }),
+    },
 
     battery: {
         show_percentage: Option(true, {
@@ -318,12 +336,12 @@ export default {
     },
 
     mpris: {
-        black_list: Option(['Caprine'], {
+        black_list: Option(['VLC media player'], {
             'category': 'Bar',
             'title': 'List of blacklisted mpris players',
             'note': 'filters for bus-name, name, identity, entry',
         }),
-        preferred: Option('spotify', {
+        preferred: Option('librewolf', {
             'category': 'Bar',
             'title': 'Preferred player',
         }),

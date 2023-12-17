@@ -13,6 +13,7 @@ import options from './options.js';
 import Clock from './widget/clock.js';
 import Moon from './widget/moon.js';
 import menu from './widget/menu.js';
+import sound from './widget/sound.js';
 
 init();
 
@@ -22,6 +23,7 @@ const windows = () => [
     forMonitors(TopBar),
     forMonitors(Moon),
     forMonitors(menu),
+    forMonitors(sound),
     forMonitors(Clock),
     Applauncher(),
     Dashboard(),
