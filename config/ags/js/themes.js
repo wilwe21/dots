@@ -783,6 +783,7 @@ export default [
     "applauncher.width": 500,
     "applauncher.height": 400,
     "applauncher.icon_size": 32,
+    "applauncher.label": 'O cholera czy to\nfreddy fastber\nHar Har Har\nHar Har Har Har',
     "bar.position": "top",
     "bar.style": "floating",
     "bar.flat_buttons": true,

@@ -1,5 +1,6 @@
 window#applauncher .window-content {
     @include floating_widget;
+    border: 2px solid $accent;
 
     entry {
         @include button;
@@ -10,10 +11,18 @@ window#applauncher .window-content {
             color: $fg-color;
         }
     }
+    .appicon {
+    	padding: $padding;
+    	font-size: 200px;
+    }
+    .applabel {
+    	min-width: 200px;
+    }
 
     separator {
         min-height: 1px;
         background-color: $hover;
+        //margin-left: 300px;
     }
 
     scrolledwindow {
@@ -27,6 +36,7 @@ window#applauncher .window-content {
         > box { @include spacing(0.5); }
         transition: $transition;
         padding: $padding;
+        //margin-left: 200px;
 
         label {
             margin-left: $padding;

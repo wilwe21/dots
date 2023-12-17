@@ -5,6 +5,7 @@ import PopupWindow from '../misc/PopupWindow.js';
 import AppItem from './AppItem.js';
 import icons from '../icons.js';
 import { launchApp } from '../utils.js';
+import options from '../options.js';
 
 const WINDOW_NAME = 'applauncher';
 
@@ -48,12 +49,30 @@ const Applauncher = () => {
     });
 
     return Widget.Box({
-        vertical: true,
+        vertical: false,
         children: [
-            entry,
-            Widget.Scrollable({
-                hscroll: 'never',
-                child: list,
+            Widget.Box({
+                vertical: true,
+                children: [
+                    Widget.Icon({
+                        class_name: 'appicon',
+                        binds: [['icon', options.desktop.avatar, 'value']],
+                    }),
+                    Widget.Label({
+                        class_name: 'applabel',
+                        binds: [['label', options.applauncher.label]],
+                    }),
+                ],
+            }),
+            Widget.Box({
+                vertical: true,
+                children: [
+                    entry,
+                    Widget.Scrollable({
+                        hscroll: 'never',
+                        child: list,
+                    }),
+                ],
             }),
         ],
         connections: [[App, (_, name, visible) => {

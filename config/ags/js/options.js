@@ -192,6 +192,12 @@ export default {
         width: Option(500),
         height: Option(500),
         icon_size: Option(52),
+        descvisible: Option(false),
+        labvisible: Option(true),
+        icovisible: Option(true),
+        label: Option('I use arch btw', {
+            'scssFormat': s => `${s}`,
+        }),
     },
 
     bar: {
