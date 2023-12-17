@@ -7,13 +7,16 @@ import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
  * @param {'sleep' | 'reboot' | 'logout' | 'shutdown'} action
  * @param {string} label
  */
-const SysButton = (icon) => Widget.Button({
+const SysButton = () => Widget.Button({
     binds: [['on_clicked', options.sound.sound, 'value', s => () => Utils.exec(`play -q ${s}`)]],
     on_clicked: () => Utils.exec(action),
     child: Widget.Box({
         vertical: true,
         children: [
-            Widget.Icon(icon),
+            Widget.Icon({
+                binds: [['icon', options.sound.icon, 'value', i => `${i}`]],
+                class_name: 'bsound',
+            }),
         ],
     }),
 });
@@ -40,6 +43,6 @@ export default monitor => Widget.Window({
     layer: 'background',
     exclusivity: 'ignore',
     child: Widget.Box({
-        child: SysButton(''),
+        child: SysButton(),
     }),
 });

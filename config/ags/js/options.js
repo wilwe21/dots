@@ -289,6 +289,9 @@ export default {
         size: Option('0', {
             'scss': 'soundsize',
         }),
+        icon: Option('', {
+            'scssFormat': v => `"${v}"`,
+        }),
     },
 
     battery: {
