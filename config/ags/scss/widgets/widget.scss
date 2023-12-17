@@ -9,6 +9,12 @@
 .wmoon {
 	font-size: $moonsize;
 }
+.soundmain {
+	@include unset;
+	.soundbutt {
+		all: unset;
+	}
+}
 .bsound {
 	font-size: $soundsize;
 }

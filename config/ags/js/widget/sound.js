@@ -10,6 +10,7 @@ import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
 const SysButton = () => Widget.Button({
     binds: [['on_clicked', options.sound.sound, 'value', s => () => Utils.exec(`play -q ${s}`)]],
     on_clicked: () => Utils.exec(action),
+    class_name: 'soundbutt',
     child: Widget.Box({
         vertical: true,
         children: [
