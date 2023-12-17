@@ -65,7 +65,7 @@ export default () => Widget.Box({
                         }),
                         Widget.Button({
                             vpack: 'center',
-                            on_clicked: () => execAsync('gtklock'),
+                            on_clicked: () => execAsync('swaylock -C /home/wilwe/.hyprland.conf/config/swaylock'),
                             child: Widget.Icon(icons.lock),
                         }),
                         Widget.Button({

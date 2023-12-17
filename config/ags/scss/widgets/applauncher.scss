@@ -16,6 +16,7 @@ window#applauncher .window-content {
     	font-size: 200px;
     }
     .applabel {
+    	padding: $padding;
     	min-width: 200px;
     }
 
@@ -36,7 +37,6 @@ window#applauncher .window-content {
         > box { @include spacing(0.5); }
         transition: $transition;
         padding: $padding;
-        //margin-left: 200px;
 
         label {
             margin-left: $padding;
