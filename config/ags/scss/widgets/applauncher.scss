@@ -1,6 +1,8 @@
 window#applauncher .window-content {
     @include floating_widget;
-    border: 2px solid $accent;
+    border-color: $accent;
+    border-radius: 20px;
+    border: $bar-border;
 
     entry {
         @include button;
