@@ -8,6 +8,7 @@ import GLib from 'gi://GLib';
 import icons from '../icons.js';
 import options from '../options.js';
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
+import * as vars from '../variables.js';
 
 /**
  * @param {'sleep' | 'reboot' | 'logout' | 'shutdown'} action
