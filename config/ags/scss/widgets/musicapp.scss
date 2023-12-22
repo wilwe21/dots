@@ -6,16 +6,44 @@
 		font-size: 20px;
 		color: $accent;
 	}
+	.buttonbox {
+		margin-right: -30px;
+	}
 	background: $bg-color;
 	border: $border-width solid $accent;
 	border-radius: $radii;
 	min-width: 500px;
 	min-height: 200px;
 	.labels {
+		margin-top: $padding;
 		label {
-			font-size: 20px;
+			font-size: 1.1em;
+			text-shadow: $text-shadow;
+			&.title {
+				font-weight: bold;
+			}
 		}
 	}
+	.audioslider {
+		//@include widget;
+        	@include spacing($rec: true);
+        	@include spacing(0);
+        	padding: $padding;
+		color: $accent;
+		padding: $padding*2;
+		margin-right: 20px;
+		slider {
+			border: 5px solid #000000;
+			border-radius: 5px;
+			opacity: 0;
+			color: #ffffff;
+		}
+		slider:hover {
+		}
+		progress {
+			border-color: $accent;
+		}
+	}	
 	.cover {
         	//border-radius: $radii*0.8;
         	//border: $border-width solid $accent;

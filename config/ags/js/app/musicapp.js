@@ -1,4 +1,5 @@
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
+import Audio from 'resource:///com/github/Aylur/ags/service/audio.js';
 import Mpris from 'resource:///com/github/Aylur/ags/service/mpris.js';
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import Applications from 'resource:///com/github/Aylur/ags/service/applications.js';
@@ -7,6 +8,17 @@ import * as mpris from '../misc/mpris.js';
 import icons from '../icons.js';
 import { launchApp } from '../utils.js';
 import options from '../options.js';
+
+const VolumeSlider = (type = 'speaker') => Widget.Slider({
+    hexpand: false,
+    vertical: true,
+    class_name: 'audioslider',
+    draw_value: false,
+    on_change: ({ value }) => Audio[type].volume = value,
+    connections: [[Audio, slider => {
+        slider.value = Audio[type]?.volume;
+    }, `${type}-changed`]],
+});
 
 const Footer = player => Widget.CenterBox({
     class_name: 'footer-box',
@@ -22,17 +34,17 @@ const Footer = player => Widget.CenterBox({
         Widget.Box({
             class_name: 'controls',
             children: [
-                mpris.ShuffleButton(player),
-                mpris.PreviousButton(player),
-                mpris.PlayPauseButton(player),
-                mpris.NextButton(player),
-                mpris.LoopButton(player),
+                Widget.Box({
+                    class_name: 'buttonbox',
+                   children: [
+                    mpris.ShuffleButton(player),
+                    mpris.PreviousButton(player),
+                    mpris.PlayPauseButton(player),
+                    mpris.NextButton(player),
+                    mpris.LoopButton(player),
+                   ], 
+                }),
             ],
-        }),
-        mpris.PlayerIcon(player, {
-            symbolic: false,
-            hexpand: true,
-            hpack: 'end',
         }),
     ],
 });
@@ -78,11 +90,17 @@ const PlayerBox = player => Widget.Box({
         child: Widget.Box({
             class_name: 'shader',
             hexpand: true,
-            vertical: true,
+            vertical: false,
             children: [
-                TextBox(player),
-                mpris.PositionSlider(player),
-                Footer(player),
+                Widget.Box({
+                    vertical: true,
+                    children: [
+                        TextBox(player),
+                        mpris.PositionSlider(player),
+                        Footer(player),
+                    ],
+                }),
+                VolumeSlider(),
             ],
         }),
     }),
