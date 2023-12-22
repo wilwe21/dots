@@ -5,6 +5,7 @@ import App from 'resource:///com/github/Aylur/ags/app.js';
 import Applications from 'resource:///com/github/Aylur/ags/service/applications.js';
 import PopupWindow from '../misc/PopupWindow.js';
 import * as mpris from '../misc/mpris.js';
+import * as vars from '../variables.js';
 import icons from '../icons.js';
 import { launchApp } from '../utils.js';
 import options from '../options.js';
@@ -100,7 +101,15 @@ const PlayerBox = player => Widget.Box({
                         Footer(player),
                     ],
                 }),
-                VolumeSlider(),
+                Widget.Box({
+                    children: [
+                        VolumeSlider(),
+                        Widget.Label({
+                            class_name: 'volumelabel',
+                            binds: [['label', vars.volume, 'value', s => `${s}%`]],
+                        }),
+                    ],
+                }),
             ],
         }),
     }),

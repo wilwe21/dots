@@ -6,12 +6,19 @@
 		font-size: 20px;
 		color: $accent;
 	}
+	.volumelabel {
+		margin-left: -65px;
+		margin-top: -175px;
+		color: #ffffff;
+		font-size: 1.1em;
+		text-shadow: $text-shadow;
+	}
 	.buttonbox {
 		margin-right: -30px;
 	}
 	background: $bg-color;
 	border: $border-width*1.5 solid $accent;
-	border-radius: $radii;
+	border-radius: $radii*1.5;
 	min-width: 500px;
 	min-height: 200px;
 	.labels {
@@ -36,12 +43,13 @@
         		background-color: transparent;
         		border: $border-width solid transparent;
         		transition: $transition;
-        		border-radius: $radii;
+        		border-radius: $radii*1.3;
     		}
 		slider:hover {
 			background-color: $accent;
 		}
 		trough{
+			margin-top: 15px;
         		transition: $transition;
         		border-radius: $radii;
         		border: $border;

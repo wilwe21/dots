@@ -60,6 +60,12 @@ export const temperatura = Variable('Teperatura: error', {
     }],
 });
 
+export const volume = Variable('Teperatura: error', {
+    poll: [50, 'pamixer --get-volume', n => {
+        return String(n);
+    }],
+});
+
 export const chmury = Variable('error', {
     poll: [5000, 'curl -H Accept-Language:pl wttr.in/?format=%C%20%c', n => {
         return String(n);
