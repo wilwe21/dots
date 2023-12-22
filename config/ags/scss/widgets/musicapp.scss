@@ -10,7 +10,7 @@
 		margin-right: -30px;
 	}
 	background: $bg-color;
-	border: $border-width solid $accent;
+	border: $border-width*1.5 solid $accent;
 	border-radius: $radii;
 	min-width: 500px;
 	min-height: 200px;
@@ -25,7 +25,6 @@
 		}
 	}
 	.audioslider {
-		//@include widget;
         	@include spacing($rec: true);
         	@include spacing(0);
         	padding: $padding;
@@ -33,20 +32,27 @@
 		padding: $padding*2;
 		margin-right: 20px;
 		slider {
-			border: 5px solid #000000;
-			border-radius: 5px;
-			opacity: 0;
-			color: #ffffff;
-		}
+       			box-shadow: none;
+        		background-color: transparent;
+        		border: $border-width solid transparent;
+        		transition: $transition;
+        		border-radius: $radii;
+    		}
 		slider:hover {
+			background-color: $accent;
 		}
-		progress {
-			border-color: $accent;
-		}
+		trough{
+        		transition: $transition;
+        		border-radius: $radii;
+        		border: $border;
+        		background-color: $widget-bg;
+        		highlight, progress{
+            			border-radius: max($radii - $border-width, 0);
+            			background: $accent;
+        		}
+    		}
 	}	
 	.cover {
-        	//border-radius: $radii*0.8;
-        	//border: $border-width solid $accent;
 		border-radius: $radii;
         	min-height: 150px;
         	min-width: 150px;
@@ -55,8 +61,6 @@
 
            .shader {
             	background-color: transparent;
-		//border-radius: max($radii*0.8 - 1px, 0);
-		//border: $border-width solid $accent;
 		border-radius: $radii;
             	box-shadow: inset 0 0 0 999px transparentize($bg-color, 0.8);
            }
@@ -64,8 +68,6 @@
     	.blurred-cover, .cover {
         	background-size: cover;
         	background-position: center;
-        	//border: $border-width solid $accent;
 		border-radius: $radii;
-        	//border-radius: max($radii - $border-width, 0);
     	}
 }
