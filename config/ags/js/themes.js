@@ -12,7 +12,7 @@ export default [
 
     "spacing": 2,
     "padding": 7,
-    "radii": 5,
+    "radii": 7,
     "popover_padding_multiplier": 1.4,
     "misc.pywal.theme": "base16-seti",
     "misc.gtk.theme": "Catppuccin-Macchiato-Standard-Mauve-Dark",
@@ -96,7 +96,7 @@ export default [
 
     "spacing": 2,
     "padding": 7,
-    "radii": 5,
+    "radii": 7,
     "popover_padding_multiplier": 1.4,
     "misc.pywal.theme": "base16-seti",
     "misc.gtk.theme": "Catppuccin-Latte-Standard-Blue-Light",
@@ -171,7 +171,7 @@ export default [
 
     "spacing": 2,
     "padding": 7,
-    "radii": 5,
+    "radii": 7,
     "popover_padding_multiplier": 1.4,
     "misc.pywal.theme": "base16-seti",
     "misc.gtk.theme": "Catppuccin-Macchiato-Standard-Mauve-Dark",
@@ -247,7 +247,7 @@ export default [
 
     "spacing": 2,
     "padding": 7,
-    "radii": 5,
+    "radii": 7,
     "popover_padding_multiplier": 1.4,
     "misc.pywal.theme": "base16-seti",
     "misc.gtk.theme": "Catppuccin-Macchiato-Standard-Mauve-Dark",
@@ -323,7 +323,7 @@ export default [
 
     "spacing": 2,
     "padding": 7,
-    "radii": 5,
+    "radii": 7,
     "popover_padding_multiplier": 1.4,
     "misc.pywal.theme": "base16-seti",
     "misc.gtk.theme": "Catppuccin-Macchiato-Standard-Mauve-Dark",
@@ -399,7 +399,7 @@ export default [
 
     "spacing": 2,
     "padding": 7,
-    "radii": 5,
+    "radii": 7,
     "popover_padding_multiplier": 1.4,
     "misc.pywal.theme": "base16-seti",
     "misc.gtk.theme": "Catppuccin-Macchiato-Standard-Mauve-Dark",
@@ -482,7 +482,7 @@ export default [
 
     "spacing": 2,
     "padding": 7,
-    "radii": 5,
+    "radii": 7,
     "popover_padding_multiplier": 1.4,
     "misc.pywal.theme": "base16-seti",
     "misc.gtk.theme": "Catppuccin-Macchiato-Standard-Mauve-Dark",
@@ -557,7 +557,7 @@ export default [
 
     "spacing": 2,
     "padding": 7,
-    "radii": 5,
+    "radii": 7,
     "popover_padding_multiplier": 1.4,
     "misc.pywal.theme": "base16-seti",
     "misc.gtk.theme": "Catppuccin-Macchiato-Standard-Mauve-Dark",
@@ -638,7 +638,7 @@ export default [
 
     "spacing": 2,
     "padding": 7,
-    "radii": 5,
+    "radii": 7,
     "popover_padding_multiplier": 1.4,
     "misc.pywal.theme": "base16-seti",
     "misc.gtk.theme": "Catppuccin-Macchiato-Standard-Mauve-Dark",
@@ -694,6 +694,7 @@ export default [
     "applauncher.width": 500,
     "applauncher.height": 400,
     "applauncher.icon_size": 32,
+    "applauncher.label": 'Chowaj dzieci Papież leci\nczy to jest kurwa śmieszne\nTak',
     "bar.position": "top",
     "bar.style": "floating",
     "bar.flat_buttons": true,
@@ -726,7 +727,7 @@ export default [
 
     "spacing": 2,
     "padding": 7,
-    "radii": 5,
+    "radii": 7,
     "popover_padding_multiplier": 1.4,
     "misc.pywal.theme": "base16-seti",
     "misc.gtk.theme": "Catppuccin-Macchiato-Standard-Mauve-Dark",

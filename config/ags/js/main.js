@@ -14,6 +14,7 @@ import Clock from './widget/clock.js';
 import Moon from './widget/moon.js';
 import menu from './widget/menu.js';
 import sound from './widget/sound.js';
+import musicapp from './app/musicapp.js';
 
 init();
 
@@ -25,6 +26,7 @@ const windows = () => [
     forMonitors(menu),
     forMonitors(sound),
     forMonitors(Clock),
+    musicapp(),
     Applauncher(),
     Dashboard(),
     Overview(),

@@ -142,6 +142,7 @@ export default {
         width: Option(0, {
             'category': 'Border',
             'title': 'Border Width',
+            'scss': 'border-width',
         }),
         barcolor: Option('#ffffff', {
             'category': 'Border',
