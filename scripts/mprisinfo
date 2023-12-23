@@ -1,0 +1,11 @@
+#!/bin/bash
+while [ 0 == 0 ]; do
+m1=$(playerctl metadata | grep title)
+sleep 1
+m2=$(playerctl metadata | grep title)
+if [ "$m1" != "$m2" ]; then
+	ags -t info
+	sleep 2
+	ags -t info
+fi
+done

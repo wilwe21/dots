@@ -1,4 +1,6 @@
 import Variable from 'resource:///com/github/Aylur/ags/variable.js';
+import Mpris from 'resource:///com/github/Aylur/ags/service/mpris.js';
+import * as mpris from './misc/mpris.js';
 import GLib from 'gi://GLib';
 import options from './options.js';
 import { execAsync, interval } from 'resource:///com/github/Aylur/ags/utils.js';
@@ -60,7 +62,7 @@ export const temperatura = Variable('Teperatura: error', {
     }],
 });
 
-export const volume = Variable('Teperatura: error', {
+export const volume = Variable('', {
     poll: [50, 'pamixer --get-volume', n => {
         return String(n);
     }],

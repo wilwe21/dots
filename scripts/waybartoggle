@@ -3,5 +3,5 @@ if ps -C ags > /dev/null
 then
     killall ags
 else
-   ags -t
+   ags
 fi
