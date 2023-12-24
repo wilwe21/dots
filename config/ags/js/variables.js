@@ -1,5 +1,6 @@
 import Variable from 'resource:///com/github/Aylur/ags/variable.js';
 import Mpris from 'resource:///com/github/Aylur/ags/service/mpris.js';
+import * as Utils from 'resource:///com/github/Aylur/ags/utils.js'
 import * as mpris from './misc/mpris.js';
 import GLib from 'gi://GLib';
 import options from './options.js';
@@ -67,6 +68,7 @@ export const volume = Variable('', {
         return String(n);
     }],
 });
+
 
 export const chmury = Variable('error', {
     poll: [5000, 'curl -H Accept-Language:pl wttr.in/?format=%C%20%c', n => {

@@ -49,13 +49,16 @@ export default () => Widget.Window({
                 Widget.Box({
                     vertical: true,
                     hexpand: true,
-                    connections: [['draw', self => {
+                    connections: [
+                        ['draw', self => {
                         self.visible = Mpris.players.length > 0;
-                    }]],
+                        }],
+                    ],
                     binds: [
-                        ['children', Mpris, 'players', ps =>
+                        ['children', Mpris, 'players', ps =>  
                             ps.filter(p => !options.mpris.black_list.value
-                                .includes(p.identity)).map(PlayerBox)],
+                                .includes(p.identity)).map(PlayerBox)
+                        ]
                     ],
 	            }),
 	            Widget.Label({
