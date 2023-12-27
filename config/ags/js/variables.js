@@ -39,7 +39,7 @@ export const distroIcon = (() => {
 const divide = ([total, free]) => Number.parseInt(free) / Number.parseInt(total);
 
 export const cpu = Variable(0, {
-    poll: [intval, '/home/wilwe/.hyprland.conf/scripts/cpu', n => {
+    poll: [intval, "/home/wilwe/.hyprland.conf/scripts/cpu", n => {
         return String(n);
     }],
 });
@@ -69,7 +69,6 @@ export const volume = Variable('', {
     }],
 });
 
-
 export const chmury = Variable('error', {
     poll: [5000, 'curl -H Accept-Language:pl wttr.in/?format=%C%20%c', n => {
         return String(n);
@@ -77,19 +76,19 @@ export const chmury = Variable('error', {
 });
 
 export const moon = Variable(0, {
-    poll: [250000, '/home/wilwe/.hyprland.conf/scripts/moon', n => {
+    poll: [250000, "/home/wilwe/.hyprland.conf/scripts/moon", n => {
         return String(n);
     }],
 });
 
 export const download = Variable(0, {
-    poll: [intval, '/home/wilwe/.hyprland.conf/scripts/rx', n => {
+    poll: [intval, "/home/wilwe/.hyprland.conf/scripts/rx", n => {
         return String(n);
     }],
 });
 
 export const upload = Variable(0, {
-    poll: [intval, '/home/wilwe/.hyprland.conf/scripts/tx', n => {
+    poll: [intval, "/home/wilwe/.hyprland.conf/scripts/tx", n => {
         return String(n);
     }],
 });

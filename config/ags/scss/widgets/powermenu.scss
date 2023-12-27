@@ -36,6 +36,7 @@ window#powermenu .window-content {
     @include floating-widget;
     @include spacing(0);
     padding: $popover-padding + $spacing * 1.5;
+    border: $border-width*1.5 solid $accent;
     border-radius: if($radii == 0, 0, $popover-radius + ($popover-padding + $spacing * 1.5));
     button {
         @include unset;
