@@ -43,6 +43,7 @@ export default () => Widget.Window({
     class_name: 'info',
     anchor: ['right', 'bottom'],
     margins: ['20', '20'],
+    visible: false,
     child: 
         Widget.Box({
             children: [
