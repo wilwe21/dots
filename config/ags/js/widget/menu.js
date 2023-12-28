@@ -23,7 +23,7 @@ const visibility = self => {
 
 export default monitor => Widget.Window({
     binds: [['visible', options.menu.visible]],
-    name: 'menu',
+    name: `menu${monitor}`,
     expand: true,
     monitor,
     layer: 'background',
