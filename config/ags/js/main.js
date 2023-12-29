@@ -16,6 +16,7 @@ import Moon from './widget/moon.js';
 import sound from './widget/sound.js';
 import musicapp from './app/musicapp.js';
 import info from './app/info.js';
+import installer from './installer/installer.js';
 
 init();
 
@@ -27,6 +28,7 @@ const windows = () => [
     //forMonitors(menu),
     forMonitors(sound),
     forMonitors(Clock),
+    //installer(),
     info(),
     musicapp(),
     Applauncher(),

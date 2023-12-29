@@ -300,18 +300,6 @@ export default {
             'scssFormat': v => `"${v}"`,
         }),
     },
-    game: {
-        visible: Option(false),
-        anchor: Option('top', {
-            'scssFormat': v => `"${v}"`,
-        }),
-        ml: Option('0', {
-            'scssFormat': v => `"${v}"`,
-        }),
-        mt: Option('0', {
-            'scssFormat': v => `"${v}"`,
-        }),
-    },
 
     battery: {
         show_percentage: Option(true, {

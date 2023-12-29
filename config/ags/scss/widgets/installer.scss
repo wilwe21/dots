@@ -1,0 +1,16 @@
+.installerbox {
+	min-width: 200px;
+	min-height: 200px;
+	padding: $padding;
+	border: $border-width solid $accent;
+	border-radius: $radii;
+	background: $bg-color;
+	.ibicon {	
+		font-size: 60px;
+	}
+	.insbutton {
+		border: $border-width solid $accent;
+		border-radius: $radii;
+		min-width: 120px;
+	}
+}
