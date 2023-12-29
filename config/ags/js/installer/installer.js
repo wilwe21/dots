@@ -21,23 +21,23 @@ export default () => Widget.Window({
             vertical: true,
             children: [
                 Widget.Label('Installer'),
-                Widget.Box({
-                    children: [
-	                    Widget.Label(`chujnia z grzybnią gimpera`),
-	                ],
+                Widget.CenterBox({
+                    center_widget: Widget.Label(`chujnia z grzybnią gimpera i chuj z tego chuju jebany`),
 	            }),
-	            Widget.Box({
+	            Widget.CenterBox({
 	                class_name: 'footer',
 	                vertical: false,
-	                children: [
-	                    Widget.Icon({
-	                        class_name: 'ibicon',
-	                        icon: '/home/wilwe/.hyprland.conf/screens/icons/fluttershy.png',
-	                    }),
-	                    Widget.Label('LambOS Beta1.7.10'),
-	                    button('exit', 'Cancel', `Utils.exec('bash -c "echo chuj &> /home/wilwe/chuj"')`),
-	                    button('Continue', 'Continue'),
-	                ],
+	                start_widget: Widget.Icon({
+	                    class_name: 'ibicon',
+	                    icon: '/home/wilwe/.hyprland.conf/screens/icons/fluttershy.png',
+	                }),
+	                center_widget: Widget.Label('LambOS Beta1.7.10'),
+	                end_widget: Widget.Box({
+	                    children: [
+	                        button('exit', 'Cancel'),
+	                        button('Continue', 'Continue'),
+	                    ],
+	                }),
 	            }),
 	        ],
 	    }),
