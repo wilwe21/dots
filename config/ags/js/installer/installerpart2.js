@@ -4,7 +4,6 @@ import Applications from 'resource:///com/github/Aylur/ags/service/applications.
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
 import RegularWindow from '../misc/RegularWindow.js';
 import * as vars from '../variables.js';
-import icons from '../icons.js';
 
 const button = (type, label, action) => Widget.Button({
     class_name: `insbutton ${type}`,
@@ -13,8 +12,8 @@ const button = (type, label, action) => Widget.Button({
 });
 
 export default () => RegularWindow({
-    name: `installer`,
-    title: 'Installer',
+    name: `installerp2`,
+    title: 'Installerp2',
     class_name: 'installer', 
     child:
         Widget.Box({
@@ -23,7 +22,7 @@ export default () => RegularWindow({
             children: [
                 Widget.Label('Installer'),
                 Widget.CenterBox({
-                    center_widget: Widget.Label(`chujnia z grzybnią gimpera i chuj z tego chuju jebany`),
+                    center_widget: Widget.Label(`jebać czarnych czy coś`),
 	            }),
 	            Widget.CenterBox({
 	                class_name: 'footer',

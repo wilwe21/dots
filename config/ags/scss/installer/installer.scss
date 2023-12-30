@@ -5,12 +5,12 @@
 	border: $border-width solid $accent;
 	border-radius: $radii;
 	background: $bg-color;
-	.ibicon {	
-		font-size: 60px;
-	}
-	.insbutton {
-		border: $border-width solid $accent;
-		border-radius: $radii;
-		min-width: 120px;
-	}
+}
+.ibicon {	
+	font-size: 60px;
+}
+.insbutton {
+	border: $border-width solid $accent;
+	border-radius: $radii;
+	min-width: 120px;
 }

@@ -28,7 +28,7 @@ const windows = () => [
     //forMonitors(menu),
     forMonitors(sound),
     forMonitors(Clock),
-    //installer(),
+    installer(),
     info(),
     musicapp(),
     Applauncher(),
