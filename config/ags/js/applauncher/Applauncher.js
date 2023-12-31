@@ -57,7 +57,10 @@ const Applauncher = () => {
                 children: [
                     Widget.Icon({
                         class_name: 'appicon',
-                        binds: [['icon', options.desktop.avatar, 'value']],
+                        binds: [
+                            ['visible', options.applauncher.avatarvisible],
+                            ['icon', options.desktop.avatar, 'value']
+                        ],
                     }),
                     Widget.Label({
                         class_name: 'applabel',

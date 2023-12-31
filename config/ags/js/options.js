@@ -196,6 +196,7 @@ export default {
         descvisible: Option(false),
         labvisible: Option(true),
         icovisible: Option(true),
+        avatarvisible: Option(true),
         label: Option('I use arch btw', {
             'scssFormat': s => `${s}`,
         }),
