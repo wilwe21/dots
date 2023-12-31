@@ -13,12 +13,13 @@ window#applauncher .window-content {
             color: $fg-color;
         }
     }
-    .appicon {
+    .appicla {
     	padding: $padding;
+    }
+    .appicon {
     	font-size: 200px;
     }
     .applabel {
-    	padding: $padding;
     	min-width: 200px;
     }
 

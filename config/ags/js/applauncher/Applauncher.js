@@ -52,6 +52,7 @@ const Applauncher = () => {
         vertical: false,
         children: [
             Widget.Box({
+                class_name: 'appicla',
                 vertical: true,
                 children: [
                     Widget.Icon({

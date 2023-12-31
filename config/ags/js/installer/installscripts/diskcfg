@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "availble drives
+"
+lsblk
+echo "
+Recommended Partitions
+1GB /boot
+10% /
+90% /home
+"
+read -p 'what drive to partition /dev/' drive
+cfdisk /dev/${drive}
