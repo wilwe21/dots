@@ -38,7 +38,7 @@ export default () => RegularWindow({
 	                end_widget: Widget.Box({
 	                    children: [
 	                        button('Cancel', 'Cancel', '/home/wilwe/.hyprland.conf/config/ags/js/installer/installscripts/cancel'),
-	                        button('Continue', 'Continue', '/home/wilwe/.hyprland.conf/config/ags/js/installer/installscripts/continue'),
+	                        button('Continue', 'Continue', 'kitty /home/wilwe/.hyprland.conf/config/ags/js/installer/installscripts/diskcfg'),
 	                    ],
 	                }),
 	            }),

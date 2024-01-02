@@ -10,3 +10,4 @@ Recommended Partitions
 "
 read -p 'what drive to partition /dev/' drive
 cfdisk /dev/${drive}
+kill $(hyprctl activewindow | grep pid) | ags

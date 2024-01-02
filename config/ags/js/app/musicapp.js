@@ -117,6 +117,7 @@ const PlayerBox = player => Widget.Box({
 
 export default () => PopupWindow({
     name: 'musicapp',
+    layer: "overlay",
     transition: 'slide_down',
     child: Widget.Box({
         vertical: true,

@@ -94,6 +94,7 @@ const Applauncher = () => {
 
 export default () => PopupWindow({
     name: WINDOW_NAME,
+    layer: 'overlay',
     transition: 'slide_down',
     child: Applauncher(),
 });
