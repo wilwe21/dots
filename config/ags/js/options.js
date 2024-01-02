@@ -257,6 +257,9 @@ export default {
         a1: Option('top', {
             'scssFormat': v => `"${v}"`,
         }),
+        a2: Option('right', {
+            'scssFormat': v => `"${v}"`,
+        }),
     },
     moon: {
         path: Option('', {
@@ -264,7 +267,10 @@ export default {
             'type': 'string',
         }),
         visible: Option(false),
-        anchor: Option('top', {
+        a1: Option('top', {
+            'scssFormat': v => `"${v}"`,
+        }),
+        a2: Option('right', {
             'scssFormat': v => `"${v}"`,
         }),
         ml: Option('0', {
@@ -285,7 +291,10 @@ export default {
             'scssFormat': v => `"${v}"`,
         }),
         visible: Option(false),
-        anchor: Option('top', {
+        a1: Option('top', {
+            'scssFormat': v => `"${v}"`,
+        }),
+        a2: Option('right', {
             'scssFormat': v => `"${v}"`,
         }),
         ml: Option('0', {
@@ -298,6 +307,21 @@ export default {
             'scss': 'soundsize',
         }),
         icon: Option('', {
+            'scssFormat': v => `"${v}"`,
+        }),
+    },
+    
+    info: {
+        ml: Option('20', {
+            'scssFormat': v => `"${v}"`,
+        }),
+        mt: Option('20', {
+            'scssFormat': v => `"${v}"`,
+        }),
+        a1: Option('bottom', {
+            'scssFormat': v => `"${v}"`,
+        }),
+        a2: Option('right', {
             'scssFormat': v => `"${v}"`,
         }),
     },

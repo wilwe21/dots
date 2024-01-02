@@ -27,17 +27,13 @@ const visibility = self => {
             return self.visible = false;
 };
 
-const updateMargins = (mt, ml) => {
-    return [mt, ml];
-};
-
 export default monitor => Widget.Window({
     name: `sound${monitor}`,
     class_name: 'soundmain',
     binds: [
         ['visible', options.sound.visible],
-        ['anchor', options.sound.anchor, 'value', (a1) => ([a1, 'right'])],
-        ['margins', options.sound.mt, 'value', (mt) => updateMargins(mt, options.sound.ml.value)],
+        ['anchor', options.sound.a2, 'value', (a1) => ([a1, options.sound.a1.value])],
+        ['margins', options.sound.mt, 'value', (mt) => ([mt, options.sound.ml.value])],
     ],
     expand: true,
     monitor,

@@ -6,10 +6,6 @@ import { execAsync, interval } from 'resource:///com/github/Aylur/ags/utils.js';
 
 const intval = options.systemFetchInterval;
 
-const updateMargins = (mt, ml) => {
-    return [mt, ml];
-};
-
 const moonva = Variable(0, {
     poll: [intval, 'cat /home/wilwe/.cache/moon', n => {
         return `${n}`;
@@ -29,8 +25,8 @@ export default monitor => Widget.Window({
     //anchor: ['top', 'bottom', 'left', 'right'],
     binds: [
         ['visible', options.moon.visible],
-        ['anchor', options.moon.anchor, 'value', (am) => ([am, 'right'])],
-        ['margins', options.moon.mt, 'value', (mt) => updateMargins(mt, options.moon.ml.value)],
+        ['anchor', options.moon.a2, 'value', (am) => ([am, options.moon.a1.value])],
+        ['margins', options.moon.mt, 'value', (mt) => ([mt, options.moon.ml.value])],
     ],
     monitor,
     child: Widget.Icon({

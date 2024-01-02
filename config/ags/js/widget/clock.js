@@ -13,10 +13,6 @@ const clock = ({interval = 1000,
     ]],
 });
 
-const updateMargins = (mt, ml) => {
-    return [mt, ml];
-};
-
 const visibility = self => {
         if (!options.clock.visible.value)
             return self.visible = false;
@@ -29,8 +25,8 @@ export default monitor => Widget.Window({
     exclusivity: 'ignore',
     binds: [
         ['visible', options.clock.visible],
-        ['anchor', options.clock.a1, 'value', (a1) => ([a1, 'right'])],
-        ['margins', options.clock.mt, 'value', (mt) => updateMargins(mt, options.clock.ml.value)],
+        ['anchor', options.clock.a2, 'value', (a1) => ([a1, options.clock.a1.value])],
+        ['margins', options.clock.mt, 'value', (mt) => ([mt, options.clock.ml.value])],
     ],
     monitor,
     child: Widget.Box({

@@ -41,8 +41,12 @@ export default () => Widget.Window({
     name: 'info',
     layer: 'overlay',
     class_name: 'info',
-    anchor: ['right', 'bottom'],
-    margins: ['20', '20'],
+    //anchor: ['right', 'bottom'],
+    //margins: ['20', '20'],
+    binds: [
+        ['anchor', options.info.a2, 'value', s => ([s, options.info.a1.value])],
+        ['margins', options.info.mt, 'value', s => ([s, options.info.ml.value])],
+    ],
     visible: false,
     child: 
         Widget.Box({
