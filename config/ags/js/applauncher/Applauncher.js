@@ -96,5 +96,9 @@ export default () => PopupWindow({
     name: WINDOW_NAME,
     layer: 'overlay',
     transition: 'slide_down',
+    binds: [
+        ['anchor', options.applauncher.a1, 'value', s => ([s, 'right'])],
+        ['margins', options.applauncher.mt, 'value', s => ([s, options.applauncher.ml.value])],
+    ],
     child: Applauncher(),
 });

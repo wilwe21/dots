@@ -200,6 +200,15 @@ export default {
         label: Option('I use arch btw', {
             'scssFormat': s => `${s}`,
         }),
+        a1: Option('top', {
+            'scssFormat': v => `"${v}"`,
+        }),
+        ml: Option('500', {
+            'scssFormat': v => `"${v}"`,
+        }),
+        mt: Option('300', {
+            'scssFormat': v => `"${v}"`,
+        }),
     },
 
     bar: {
@@ -257,9 +266,6 @@ export default {
         a1: Option('top', {
             'scssFormat': v => `"${v}"`,
         }),
-        a2: Option('right', {
-            'scssFormat': v => `"${v}"`,
-        }),
     },
     moon: {
         path: Option('', {
@@ -268,9 +274,6 @@ export default {
         }),
         visible: Option(false),
         a1: Option('top', {
-            'scssFormat': v => `"${v}"`,
-        }),
-        a2: Option('right', {
             'scssFormat': v => `"${v}"`,
         }),
         ml: Option('0', {
@@ -292,9 +295,6 @@ export default {
         }),
         visible: Option(false),
         a1: Option('top', {
-            'scssFormat': v => `"${v}"`,
-        }),
-        a2: Option('right', {
             'scssFormat': v => `"${v}"`,
         }),
         ml: Option('0', {
@@ -319,9 +319,6 @@ export default {
             'scssFormat': v => `"${v}"`,
         }),
         a1: Option('bottom', {
-            'scssFormat': v => `"${v}"`,
-        }),
-        a2: Option('right', {
             'scssFormat': v => `"${v}"`,
         }),
     },
