@@ -1,9 +1,9 @@
 #!/bin/bash
 sudo pacstrap /mnt base linux linxu-firmware nano hyprland sddm base-devel git flatpak
-sudo arch-chroot /mnt
+sudo arch-chroot /mnt '
 git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin
 makepkg -si
 cd ..
 rm yay-bin
-yay -S aylurs-gtk-shell
+yay -S aylurs-gtk-shell'

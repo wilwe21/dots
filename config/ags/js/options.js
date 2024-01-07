@@ -203,7 +203,7 @@ export default {
         a1: Option('top', {
             'scssFormat': v => `"${v}"`,
         }),
-        ml: Option('500', {
+        ml: Option('600', {
             'scssFormat': v => `"${v}"`,
         }),
         mt: Option('300', {

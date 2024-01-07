@@ -29,8 +29,8 @@ export default monitor => Widget.Window({
         ['margins', options.clock.mt, 'value', (mt) => ([mt, options.clock.ml.value])],
     ],
     monitor,
-    child: Widget.Box({
+    child: Widget.CenterBox({
         class_name: 'wclock',
-        child: clock(),
+        center_widget: clock(),
     }),
 });
