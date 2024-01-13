@@ -25,8 +25,8 @@ export default monitor => Widget.Window({
     //anchor: ['top', 'bottom', 'left', 'right'],
     binds: [
         ['visible', options.moon.visible],
-        ['anchor', options.moon.a1, 'value', (am) => ([am, 'right'])],
-        ['margins', options.moon.mt, 'value', (mt) => ([mt, options.moon.ml.value])],
+        ['anchor', options.moon.anchor],
+        ['margins', options.moon.margins],
     ],
     monitor,
     child: Widget.Icon({

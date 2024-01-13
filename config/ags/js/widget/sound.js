@@ -32,8 +32,8 @@ export default monitor => Widget.Window({
     class_name: 'soundmain',
     binds: [
         ['visible', options.sound.visible],
-        ['anchor', options.sound.a1, 'value', (a1) => ([a1, ,'right'])],
-        ['margins', options.sound.mt, 'value', (mt) => ([mt, options.sound.ml.value])],
+        ['anchor', options.sound.anchor],
+        ['margins', options.sound.margins],
     ],
     expand: true,
     monitor,

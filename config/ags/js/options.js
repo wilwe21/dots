@@ -200,15 +200,8 @@ export default {
         label: Option('I use arch btw', {
             'scssFormat': s => `${s}`,
         }),
-        a1: Option('top', {
-            'scssFormat': v => `"${v}"`,
-        }),
-        ml: Option('600', {
-            'scssFormat': v => `"${v}"`,
-        }),
-        mt: Option('300', {
-            'scssFormat': v => `"${v}"`,
-        }),
+        anchor: Option(['b', 'a'], { 'note': 'anchor'}),
+        margins: Option(['0', '0'], { 'note': 'margins[top/bottom left/right]'}),
     },
 
     bar: {
@@ -257,15 +250,8 @@ export default {
         color: Option('#ffffff', {
             'scss': 'clockcolor',
         }),
-        ml: Option('0', {
-            'scssFormat': v => `"${v}"`,
-        }),
-        mt: Option('0', {
-            'scssFormat': v => `"${v}"`,
-        }),
-        a1: Option('top', {
-            'scssFormat': v => `"${v}"`,
-        }),
+        anchor: Option(['top', 'left'], { 'note': 'anchor'}),
+        margins: Option(['0', '0'], { 'note': 'margins[top/bottom left/right]'}),
     },
     moon: {
         path: Option('', {
@@ -273,54 +259,30 @@ export default {
             'type': 'string',
         }),
         visible: Option(false),
-        a1: Option('top', {
-            'scssFormat': v => `"${v}"`,
-        }),
-        ml: Option('0', {
-            'scssFormat': v => `"${v}"`,
-        }),
-        mt: Option('0', {
-            'scssFormat': v => `"${v}"`,
-        }),
         size: Option('0', {
             'scss': 'moonsize',
         }),
-    },
-    menu: {
-        visible: Option(false),
+        anchor: Option(['top', 'left'], { 'note': 'anchor'}),
+        margins: Option(['0', '0'], { 'note': 'margins[top/bottom left/right]'}),
     },
     sound: {
         sound: Option(' ', {
             'scssFormat': v => `"${v}"`,
         }),
         visible: Option(false),
-        a1: Option('top', {
-            'scssFormat': v => `"${v}"`,
-        }),
-        ml: Option('0', {
-            'scssFormat': v => `"${v}"`,
-        }),
-        mt: Option('0', {
-            'scssFormat': v => `"${v}"`,
-        }),
         size: Option('0', {
             'scss': 'soundsize',
         }),
         icon: Option('', {
             'scssFormat': v => `"${v}"`,
         }),
+        anchor: Option(['top', 'right'], { 'note': 'anchor'}),
+        margins: Option(['0', '0'], { 'note': 'margins[top/bottom left/right]'}),
     },
     
     info: {
-        ml: Option('20', {
-            'scssFormat': v => `"${v}"`,
-        }),
-        mt: Option('20', {
-            'scssFormat': v => `"${v}"`,
-        }),
-        a1: Option('bottom', {
-            'scssFormat': v => `"${v}"`,
-        }),
+        anchor: Option(['bottom', 'right'], { 'note': 'anchor'}),
+        margins: Option(['20', '20'], { 'note': 'margins[top/bottom left/right]'}),
     },
 
     battery: {

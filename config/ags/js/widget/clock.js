@@ -25,8 +25,8 @@ export default monitor => Widget.Window({
     exclusivity: 'ignore',
     binds: [
         ['visible', options.clock.visible],
-        ['anchor', options.clock.a1, 'value', (a1) => ([a1, 'right'])],
-        ['margins', options.clock.mt, 'value', (mt) => ([mt, options.clock.ml.value])],
+        ['anchor', options.clock.anchor],
+        ['margins', options.clock.margins],
     ],
     monitor,
     child: Widget.CenterBox({

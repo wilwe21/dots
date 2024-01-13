@@ -44,8 +44,8 @@ export default () => Widget.Window({
     //anchor: ['right', 'bottom'],
     //margins: ['20', '20'],
     binds: [
-        ['anchor', options.info.a1, 'value', s => ([s, 'right'])],
-        ['margins', options.info.mt, 'value', s => ([s, options.info.ml.value])],
+        ['anchor', options.info.anchor],
+        ['margins', options.info.margins],
     ],
     visible: false,
     child: 
