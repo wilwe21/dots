@@ -262,8 +262,8 @@ export default {
         size: Option('0', {
             'scss': 'moonsize',
         }),
-        anchor: Option(['top', 'left'], { 'note': 'anchor'}),
-        margins: Option(['0', '0'], { 'note': 'margins[top/bottom left/right]'}),
+        anchor: Option(['top', 'left'], {'note': 'anchor'}),
+        margins: Option(['0', '0'], {'note': 'margins[top/bottom left/right]'}),
     },
     sound: {
         sound: Option(' ', {
@@ -276,13 +276,13 @@ export default {
         icon: Option('', {
             'scssFormat': v => `"${v}"`,
         }),
-        anchor: Option(['top', 'right'], { 'note': 'anchor'}),
-        margins: Option(['0', '0'], { 'note': 'margins[top/bottom left/right]'}),
+        anchor: Option(['top', 'right'], {'note': 'anchor'}),
+        margins: Option(['0', '0'], {'note': 'margins[top/bottom left/right]'}),
     },
     
     info: {
-        anchor: Option(['bottom', 'right'], { 'note': 'anchor'}),
-        margins: Option(['20', '20'], { 'note': 'margins[top/bottom left/right]'}),
+        anchor: Option(['bottom', 'right'], {'note': 'anchor'}),
+        margins: Option(['20', '20'], {'note': 'margins[top/bottom left/right]'}),
     },
 
     battery: {

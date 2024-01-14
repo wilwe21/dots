@@ -8,15 +8,8 @@ const clock = ({interval = 1000,
 } = {}) => Widget.Label({
     class_name: 'lclock',
     ...rest,
-    connections: [[interval, label =>
-        label.label = GLib.DateTime.new_now_local().format(options.clock.main.value),
-    ]],
+    label: options.clock.main.bind('value').transform( s => GLib.DateTime.new_now_local().format(`${s}`)),
 });
-
-const visibility = self => {
-        if (!options.clock.visible.value)
-            return self.visible = false;
-};
 
 export default monitor => Widget.Window({
     name: `clock${monitor}`,

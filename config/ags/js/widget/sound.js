@@ -8,9 +8,7 @@ import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
  * @param {string} label
  */
 const SysButton = () => Widget.Button({
-    //onClick: options.sound.sound.bind('value').transform(s => Utils.exec(`play -q ${s}`)),
-    binds: [['on_clicked', options.sound.sound, 'value', s => () => Utils.exec(`play -q ${s}`)]],
-    //on_clicked: () => options.sound.sound.bind('value').transform(s => Utils.exec(`play -q ${s}`)),
+    on_clicked: options.sound.sound.bind('value').transform(s => () => Utils.exec(`play -q ${s}`)),
     class_name: 'soundbutt',
     child: Widget.Box({
         vertical: true,

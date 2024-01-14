@@ -12,11 +12,6 @@ const moonva = Variable(0, {
     }],
 });
 
-const visibility = self => {
-        if (!options.moon.visible.value)
-            return self.visible = false;
-};
-
 export default monitor => Widget.Window({
     name: `moon${monitor}`,
     class_name: 'moonmain',
@@ -28,8 +23,6 @@ export default monitor => Widget.Window({
     monitor,
     child: Widget.Icon({
         class_name: 'wmoon',
-        binds: [
-            ['icon', options.moon.path, 'value', v => `${v}${moonva.value}.png`],
-        ],
+        icon: options.moon.path.bind('value').transform(v => `${v}${moonva.value}.png`),
     }),
 });
