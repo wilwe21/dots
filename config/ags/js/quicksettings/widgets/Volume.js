@@ -54,7 +54,7 @@ export const Volume = () => Widget.Box({
 
 export const Microhone = () => Widget.Box({
     class_name: 'slider horizontal',
-    binds: [['visible', Audio, 'recorders', r => r.length > 0]],
+    visible: Audio.bind('recorders').transform(r => r.length > 0),
     children: [
         VolumeIndicator('microphone'),
         VolumeSlider('microphone'),
@@ -67,7 +67,7 @@ const MixerItem = stream => Widget.Box({
     class_name: 'mixer-item horizontal',
     children: [
         Widget.Icon({
-            binds: [['tooltipText', stream, 'name']],
+            tooltipText: stream.bind('name'),
             connections: [[stream, icon => {
                 icon.icon = Utils.lookUpIcon(stream.name || '')
                     ? (stream.name || '')
@@ -80,12 +80,12 @@ const MixerItem = stream => Widget.Box({
                 Widget.Label({
                     xalign: 0,
                     truncate: 'end',
-                    binds: [['label', stream, 'description']],
+                    label: stream.bind('description'),
                 }),
                 Widget.Slider({
                     hexpand: true,
                     draw_value: false,
-                    binds: [['value', stream, 'volume']],
+                    value: stream.bind('volume'),
                     on_change: ({ value }) => stream.volume = value,
                 }),
             ],
@@ -114,7 +114,7 @@ const SinkItem = stream => Widget.Button({
                 icon: icons.ui.tick,
                 hexpand: true,
                 hpack: 'end',
-                binds: [['visible', Audio, 'speaker', s => s === stream]],
+                visible: Audio.bind('speaker').transform(s => s === stream),
             }),
         ],
     }),
@@ -138,7 +138,7 @@ export const AppMixer = () => Menu({
     content: [
         Widget.Box({
             vertical: true,
-            binds: [['children', Audio, 'apps', a => a.map(MixerItem)]],
+            children: Audio.bind('apps').transform(a => a.map(MixerItem)),
         }),
         Widget.Separator(),
         SettingsButton(),
@@ -152,7 +152,7 @@ export const SinkSelector = () => Menu({
     content: [
         Widget.Box({
             vertical: true,
-            binds: [['children', Audio, 'speakers', s => s.map(SinkItem)]],
+            children: Audio.bind('speakers').transform(s => s.map(SinkItem)),
         }),
         Widget.Separator(),
         SettingsButton(),

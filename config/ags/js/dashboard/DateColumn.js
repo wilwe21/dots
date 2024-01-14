@@ -14,11 +14,11 @@ export default () => Widget.Box({
                 Clock({ format: '%H:%M' }),
                 Widget.Label({
                     class_name: 'temperatura',
-                    binds: [['label', vars.temperatura, 'value', n => `${n}`]],
+                    label: vars.temperatura.bind('value'),
                 }),
                 Widget.Label({
                     class_name: 'chmury',
-                    binds: [['label', vars.chmury, 'value', n => `${n}`]],
+                    label: vars.chmury.bind('value'),
                 }),
                 Widget.CenterBox ({
                     class_name: 'moon-box',
@@ -30,7 +30,7 @@ export default () => Widget.Box({
                             }),
                             Widget.Label({
                                 class_name: 'moon',
-                                binds: [['label', vars.moon, 'value', n => `${n}`]],
+                                label: vars.moon.bind('value'),
                             }),
                         ],
                     }),

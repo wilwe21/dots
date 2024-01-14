@@ -20,7 +20,7 @@ showSearch.connect('changed', ({ value }) => {
 
 /** @param {import('./option.js').Opt<string>} opt */
 const EnumSetter = opt => {
-    const lbl = Widget.Label({ binds: [['label', opt]] });
+    const lbl = Widget.Label({ label: opt.bind('value') });
     const step = (dir = 1) => {
         const i = opt.enums.findIndex(i => i === lbl.label);
         opt.setValue(dir > 0
@@ -154,7 +154,7 @@ const Page = category => Widget.Scrollable({
 });
 
 const sidebar = Widget.Revealer({
-    binds: [['reveal-child', search, 'value', v => !v]],
+    reveal_child: search.bind('value').transform(v => !v),
     transition: 'slide_right',
     child: Widget.Box({
         hexpand: false,
@@ -180,8 +180,8 @@ const sidebar = Widget.Revealer({
                         ...categories.map(name => Widget.Button({
                             label: (icons.dialog[name] || '') + ' ' + name,
                             xalign: 0,
-                            binds: [['class-name', currentPage, 'value',
-                                v => v === name ? 'active' : '']],
+                            class_name: currentPage.bind('value').transform(
+                                v => v === name ? 'active' : ''),
                             on_clicked: () => currentPage.setValue(name),
                         })),
                     ],
@@ -217,10 +217,8 @@ const sidebar = Widget.Revealer({
 
 const searchEntry = Widget.Revealer({
     transition: 'slide_down',
-    binds: [
-        ['reveal-child', showSearch],
-        ['transition-duration', options.transition],
-    ],
+    reveal_child: showSearch.bind('value'),
+    transition_duration: options.transition.bind('value'),
     child: Widget.Entry({
         connections: [[showSearch, self => {
             if (!showSearch.value)
@@ -240,14 +238,12 @@ const searchEntry = Widget.Revealer({
 const categoriesStack = Widget.Stack({
     transition: 'slide_left_right',
     items: categories.map(name => [name, Page(name)]),
-    binds: [
-        ['shown', currentPage],
-        ['visible', search, 'value', v => !v],
-    ],
+    shown: currentPage.bind('value'),
+    visible: search.bind('value').transform(v => !v),
 });
 
 const searchPage = Widget.Box({
-    binds: [['visible', search, 'value', v => !!v]],
+    visible: search.bind('value').transform(v => !!v),
     child: Page(''),
 });
 

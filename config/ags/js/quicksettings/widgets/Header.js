@@ -13,7 +13,7 @@ import { execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
 export const BatteryProgress = () => Widget.Box({
     class_name: 'battery-progress',
     vexpand: true,
-    binds: [['visible', Battery, 'available']],
+    visible: Battery.bind('available'),
     connections: [[Battery, w => {
         w.toggleClassName('charging', Battery.charging || Battery.charged);
         w.toggleClassName('medium', Battery.percent < options.battery.medium.value);

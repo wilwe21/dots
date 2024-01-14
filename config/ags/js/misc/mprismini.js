@@ -12,14 +12,14 @@ const MEDIA_CACHE_PATH = Utils.CACHE_DIR + '/media';
 export const TitleLabel = (player, props) => Widget.Label({
     ...props,
     class_name: 'title',
-    binds: [['label', player, 'track-title', n => {
+    label: player.bind('track-title').transform(n => {
         if (n.length > 50) {
             n = n.substring(0, 50);
             return String(n + '...');
         } else {
             return String(n);
         }
-        }]],
+        }),
 });
 
 /** @param {import('types/service/mpris').MprisPlayer} player */
@@ -42,10 +42,10 @@ export const Slash = player => Widget.Label({
 const PlayerButton = ({ player, items, onClick, prop, canProp, cantValue }) => Widget.Button({
     child: Widget.Stack({
         items,
-        binds: [['shown', player, prop, p => `${p}`]],
+        shown: player.bind(prop).transform(p => `${p}`),
     }),
     on_clicked: player[onClick].bind(player),
-    binds: [['visible', player, canProp, c => c !== cantValue]],
+    visible: player.bind(canProp).transform(c => c !== cantValue),
 });
 
 /** @param {import('types/service/mpris').MprisPlayer} player */

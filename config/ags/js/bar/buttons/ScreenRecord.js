@@ -11,11 +11,11 @@ export default () => PanelButton({
         children: [
             Widget.Icon(icons.recorder.recording),
             Widget.Label({
-                binds: [['label', Recorder, 'timer', time => {
+                label: Recorder.bind('timer').transform(time => {
                     const sec = time % 60;
                     const min = Math.floor(time / 60);
                     return `${min}:${sec < 10 ? '0' + sec : sec}`;
-                }]],
+                }),
             }),
         ],
     }),

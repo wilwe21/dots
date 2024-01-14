@@ -6,8 +6,9 @@ import Gdk from 'gi://Gdk';
 /** @param {import('types/service/systemtray').TrayItem} item */
 const SysTrayItem = item => PanelButton({
     class_name: 'tray-item',
-    content: Widget.Icon({ binds: [['icon', item, 'icon']] }),
-    binds: [['tooltipMarkup', item, 'tooltip-markup']],
+    content: Widget.Icon({ icon: item.bind('icon') }),
+    tooltipMarkup: item.bind('tooltip-markup'),
+    //binds: [['tooltipMarkup', item, 'tooltip-markup']],
     setup: self => {
         const id = item.menu?.connect('popped-up', menu => {
             self.toggleClassName('active');
@@ -31,5 +32,6 @@ const SysTrayItem = item => PanelButton({
 });
 
 export default () => Widget.Box({
-    binds: [['children', SystemTray, 'items', i => i.map(SysTrayItem)]],
+    children: SystemTray.bind('items').transform(i => i.map(SysTrayItem))
+    //binds: [['children', SystemTray, 'items', i => i.map(SysTrayItem)]],
 });

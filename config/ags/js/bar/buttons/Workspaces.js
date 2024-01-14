@@ -37,7 +37,8 @@ export default () => Widget.Box({
             on_scroll_up: () => dispatch('m+1'),
             on_scroll_down: () => dispatch('m-1'),
             class_name: 'eventbox',
-            binds: [['child', options.workspaces, 'value', Workspaces]],
+            child: options.workspaces.bind('value').transform(Workspaces),
+            //binds: [['child', options.workspaces, 'value', Workspaces]],
         }),
     }),
 });

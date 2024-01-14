@@ -5,13 +5,13 @@ import Notification from '../misc/Notification.js';
 
 const ClearButton = () => Widget.Button({
     on_clicked: () => Notifications.clear(),
-    binds: [['sensitive', Notifications, 'notifications', n => n.length > 0]],
+    sensitive: Notifications.bind('notifications').transform(n => n.length > 0),
     child: Widget.Box({
         children: [
             Widget.Label('Clear '),
             Widget.Icon({
-                binds: [['icon', Notifications, 'notifications', n =>
-                    n.length > 0 ? icons.trash.full : icons.trash.empty]],
+                icon: Notifications.bind('notifications').transform(n =>
+                    n.length > 0 ? icons.trash.full : icons.trash.empty),
             }),
         ],
     }),
@@ -47,7 +47,7 @@ const Placeholder = () => Widget.Box({
         Widget.Icon(icons.notifications.silent),
         Widget.Label('Your inbox is empty'),
     ],
-    binds: [['visible', Notifications, 'notifications', n => n.length === 0]],
+    visible: Notifications.bind('notifications').transform(n => n.length === 0),
 });
 
 export default () => Widget.Box({

@@ -22,7 +22,7 @@ let notifId = 0;
 export default () => PanelButton({
     class_name: 'color-picker',
     content: Widget.Icon('color-select-symbolic'),
-    binds: [['tooltip-text', colors, 'value', v => `${v.length} colors`]],
+    tooltip_text: colors.bind('value').transform(v => `${v.length} colors`),
     on_clicked: () => Utils.execAsync('hyprpicker').then(color => {
         if (!color)
             return;

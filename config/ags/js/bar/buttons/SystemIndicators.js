@@ -28,7 +28,7 @@ const MicrophoneIndicator = () => Widget.Icon({
 
 const DNDIndicator = () => Widget.Icon({
     icon: icons.notifications.silent,
-    binds: [['visible', Notifications, 'dnd']],
+    visible: Notifications.bind('dnd')
 });
 
 const BluetoothDevicesIndicator = () => Widget.Box({
@@ -46,7 +46,7 @@ const BluetoothDevicesIndicator = () => Widget.Box({
 const BluetoothIndicator = () => Widget.Icon({
     class_name: 'bluetooth',
     icon: icons.bluetooth.enabled,
-    binds: [['visible', Bluetooth, 'enabled']],
+    visible: Bluetooth.bind('enabled')
 });
 
 const NetworkIndicator = () => Widget.Icon({

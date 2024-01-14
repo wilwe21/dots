@@ -18,13 +18,13 @@ const PercentLabel = () => Widget.Revealer({
     transition: 'slide_right',
     binds: [['reveal-child', options.battery.show_percentage]],
     child: Widget.Label({
-        binds: [['label', Battery, 'percent', p => ` ${p}%`]],
+        label: Battery.bind('percent').transform(p => ` ${p}%`),
     }),
 });
 
 const LevelBar = () => Widget.LevelBar({
     vpack: 'center',
-    binds: [['value', Battery, 'percent', p => p / 100,]],
+    value: Battery.bind('percent').transform(p => p/100),
 });
 
 export default (Service, condition) => {
@@ -36,7 +36,7 @@ export default (Service, condition) => {
             options.battery.show_percentage.value = !v;
         },
         content: Widget.Box({
-            binds: [['visible', Battery, 'available']],
+            visible: Battery.bind('available'),
             connections: [[Battery, w => {
                 w.toggleClassName('charging', Battery.charging || Battery.charged);
                 w.toggleClassName('medium', Battery.percent < options.battery.medium.value);

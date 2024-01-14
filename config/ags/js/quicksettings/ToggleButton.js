@@ -95,7 +95,7 @@ export const ArrowToggleButton = ({
  */
 export const Menu = ({ name, icon, title, content }) => Widget.Revealer({
     transition: 'slide_down',
-    binds: [['reveal-child', opened, 'value', v => v === name]],
+    reveal_child: opened.bind('value').transform(v => v === name),
     child: Widget.Box({
         class_names: ['menu', name],
         vertical: true,

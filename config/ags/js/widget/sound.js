@@ -8,14 +8,15 @@ import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
  * @param {string} label
  */
 const SysButton = () => Widget.Button({
+    //onClick: options.sound.sound.bind('value').transform(s => Utils.exec(`play -q ${s}`)),
     binds: [['on_clicked', options.sound.sound, 'value', s => () => Utils.exec(`play -q ${s}`)]],
-    on_clicked: () => Utils.exec(action),
+    //on_clicked: () => options.sound.sound.bind('value').transform(s => Utils.exec(`play -q ${s}`)),
     class_name: 'soundbutt',
     child: Widget.Box({
         vertical: true,
         children: [
             Widget.Icon({
-                binds: [['icon', options.sound.icon, 'value', i => `${i}`]],
+                icon: options.sound.icon.bind('value'),
                 class_name: 'bsound',
             }),
         ],
@@ -30,11 +31,9 @@ const visibility = self => {
 export default monitor => Widget.Window({
     name: `sound${monitor}`,
     class_name: 'soundmain',
-    binds: [
-        ['visible', options.sound.visible],
-        ['anchor', options.sound.anchor],
-        ['margins', options.sound.margins],
-    ],
+    visible: options.sound.visible.bind('value'),
+    anchor: options.sound.anchor.bind('value'),
+    margins: options.sound.margins.bind('value'),
     expand: true,
     monitor,
     layer: 'background',

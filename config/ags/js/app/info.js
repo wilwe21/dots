@@ -48,10 +48,8 @@ export default () => Widget.Window({
             self.visible = Mpris.players.length > 0;
         }],
     ],
-    binds: [
-        ['anchor', options.info.anchor],
-        ['margins', options.info.margins],
-    ],
+    anchor: options.info.anchor.bind('value'),
+    margins: options.info.margins.bind('value'),
     visible: false,
     child: 
         Widget.Box({
@@ -59,16 +57,13 @@ export default () => Widget.Window({
                 Widget.Box({
                     vertical: true,
                     hexpand: true,
-                    binds: [
-                        ['children', Mpris, 'players', ps =>  
+                    children: Mpris.bind('players').transform(ps =>  
                             ps.filter(p => !options.mpris.black_list.value
-                                .includes(p.identity)).map(PlayerBox)
-                        ]
-                    ],
+                                .includes(p.identity)).map(PlayerBox)),
 	            }),
 	            Widget.Label({
 	                class_name: 'inflabel',
-                    binds: [['label', vars.volume, 'value', s => `${s}%`]],
+	                label: vars.volume.bind('value').transform(s => `${s}%`)
 	            }),
 	        ],
 	    }),

@@ -43,7 +43,7 @@ const SeparatorDot = (service, condition) => {
     const conn = service ? [[service, visibility]] : [];
     return Widget.Separator({
         connections: [['draw', visibility], ...conn],
-        binds: [['visible', options.bar.separators]],
+        visible: options.bar.separators.bind('value'),
         vpack: 'center',
     });
 };
@@ -51,7 +51,7 @@ const SeparatorDot = (service, condition) => {
 const SysProgress = (type, title, unit) => Widget.Box({
     class_name: `progress-box ${type}`,
     hexpand: false,
-    binds: [['tooltipText', vars[type], 'value', v => `${title}: ${v}${unit}`]],
+    tooltipText: vars[type].bind('value').transform(v => `${title}: ${v}${unit}`),
     children: [
         Widget.Icon({
             class_name: 'progress-icon',
@@ -61,7 +61,7 @@ const SysProgress = (type, title, unit) => Widget.Box({
         Widget.Label({
             class_name: 'progress-label',
             hexpand: false,
-            binds: [['label', vars[type], 'value', p => `${p}${unit} `]],
+            label: vars[type].bind('value').transform(p => `${p}${unit}`),
         }),
     ],
 });
@@ -80,12 +80,12 @@ const Center = () => Widget.Box({
     children: [
         Widget.Icon({
             class_name: 'decorator',
-            binds: [['icon', options.bar.decorator1]],
+            icon: options.bar.decorator1.bind('value')
         }),
         DateButton(),
         Widget.Icon({
             class_name: 'decorator',
-            binds: [['icon', options.bar.decorator2]],
+            icon: options.bar.decorator2.bind('value')
         }),
     ],
 });
@@ -128,9 +128,9 @@ export default monitor => Widget.Window({
     class_name: 'transparent',
     exclusivity: 'exclusive',
     monitor,
-    binds: [['anchor', options.bar.position, 'value', pos => ([
+    anchor: options.bar.position.bind('value').transform(pos => ([
         pos, 'left', 'right',
-    ])]],
+    ])),
     child: Widget.CenterBox({
         class_name: 'panel',
         start_widget: Start(),

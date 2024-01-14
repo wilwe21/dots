@@ -8,7 +8,7 @@ export default app => {
     const title = Widget.Label({
         class_name: 'title',
         label: app.name,
-        binds: [['visible', options.applauncher.labvisible]],
+        visible: options.applauncher.labvisible.bind('value'),
         xalign: 0,
         vpack: 'center',
         truncate: 'end',
@@ -17,7 +17,7 @@ export default app => {
     const description = Widget.Label({
         class_name: 'description',
         label: app.description || '',
-        binds: [['visible', options.applauncher.descvisible]],
+        visible: options.applauncher.descvisible.bind('value'),
         wrap: true,
         xalign: 0,
         justification: 'left',
@@ -26,10 +26,8 @@ export default app => {
 
     const icon = Widget.Icon({
         icon: lookUpIcon(app.icon_name || '') ? app.icon_name || '' : '',
-        binds: [
-            ['size', options.applauncher.icon_size],
-            ['visible', options.applauncher.icovisible],
-        ],
+        size: options.applauncher.icon_size.bind('value'),
+        visible: options.applauncher.icovisible.bind('value'),
     });
 
     const textBox = Widget.Box({

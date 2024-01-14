@@ -90,9 +90,7 @@ export default () => Widget.Box({
     connections: [['draw', self => {
         self.visible = Mpris.players.length > 0;
     }]],
-    binds: [
-        ['children', Mpris, 'players', ps =>
+    children: Mpris.bind('players').transform(ps =>
             ps.filter(p => !options.mpris.black_list.value
-                .includes(p.identity)).map(PlayerBox)],
-    ],
+                .includes(p.identity)).map(PlayerBox)),
 });

@@ -23,11 +23,9 @@ export default monitor => Widget.Window({
     class_name: 'clockmain',
     layer: 'background',
     exclusivity: 'ignore',
-    binds: [
-        ['visible', options.clock.visible],
-        ['anchor', options.clock.anchor],
-        ['margins', options.clock.margins],
-    ],
+    visible: options.clock.visible.bind('value'),
+    anchor: options.clock.anchor.bind('value'),
+    margins: options.clock.margins.bind('value'),
     monitor,
     child: Widget.CenterBox({
         class_name: 'wclock',

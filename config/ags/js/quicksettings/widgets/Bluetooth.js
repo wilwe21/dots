@@ -38,18 +38,16 @@ const DeviceItem = device => Widget.Box({
         Widget.Label(device.name),
         Widget.Label({
             label: `${device.battery_percentage}%`,
-            binds: [['visible', device, 'battery-percentage', p => p > 0]],
+            visible: device.bind('battery-percentage').transform(p => p > 0),
         }),
         Widget.Box({ hexpand: true }),
         Widget.Spinner({
-            binds: [
-                ['active', device, 'connecting'],
-                ['visible', device, 'connecting'],
-            ],
+            active: device.bind('connecting'),
+            visible: device.bind('connecting'),
         }),
         Widget.Switch({
             active: device.connected,
-            binds: [['visible', device, 'connecting', c => !c]],
+            visible: device.bind('connecting').transform(c => !c),
             connections: [['notify::active', ({ active }) => {
                 device.setConnection(active);
             }]],
@@ -65,9 +63,9 @@ export const BluetoothDevices = () => Menu({
         Widget.Box({
             hexpand: true,
             vertical: true,
-            binds: [['children', Bluetooth, 'devices', ds => ds
+            children: Bluetooth.bind('devices').transform(ds => ds
                 .filter(d => d.name)
-                .map(DeviceItem)]],
+                .map(DeviceItem)),
         }),
     ],
 });

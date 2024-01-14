@@ -22,12 +22,9 @@ export default monitor => Widget.Window({
     class_name: 'moonmain',
     layer: 'background',
     exclusivity: 'ignore',
-    //anchor: ['top', 'bottom', 'left', 'right'],
-    binds: [
-        ['visible', options.moon.visible],
-        ['anchor', options.moon.anchor],
-        ['margins', options.moon.margins],
-    ],
+    visible: options.moon.visible.bind('value'),
+    anchor: options.moon.anchor.bind('value'),
+    margins: options.moon.margins.bind('value'),
     monitor,
     child: Widget.Icon({
         class_name: 'wmoon',

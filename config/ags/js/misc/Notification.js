@@ -116,7 +116,7 @@ export default notification => {
 
     const actionsbox = Widget.Revealer({
         transition: 'slide_down',
-        binds: [['revealChild', hovered]],
+        revealChild: hovered.bind('value'),
         child: Widget.EventBox({
             on_hover: hover,
             child: Widget.Box({

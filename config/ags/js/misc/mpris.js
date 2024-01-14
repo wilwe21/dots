@@ -12,8 +12,7 @@ const MEDIA_CACHE_PATH = Utils.CACHE_DIR + '/media';
 export const CoverArt = (player, props) => Widget.Box({
     ...props,
     class_name: 'cover',
-    binds: [['css', player, 'cover-path',
-        path => `background-image: url("${path}")`]],
+    css: player.bind('cover-path').transform(path => `background-image: url("${path}")`),
 });
 
 /**
@@ -51,7 +50,7 @@ export const BlurredCoverArt = (player, props) => Widget.Box({
 export const TitleLabel = (player, props) => Widget.Label({
     ...props,
     class_name: 'title',
-    binds: [['label', player, 'track-title']],
+    label: player.bind('track-title'),
 });
 
 /**
@@ -61,7 +60,7 @@ export const TitleLabel = (player, props) => Widget.Label({
 export const ArtistLabel = (player, props) => Widget.Label({
     ...props,
     class_name: 'artist',
-    binds: [['label', player, 'track-artists', a => a.join(', ') || '']],
+    label: player.bind('track-artists').transform(a => a.join(', ') || ''),
 });
 
 /**
@@ -156,10 +155,10 @@ export const Slash = player => Widget.Label({
 const PlayerButton = ({ player, items, onClick, prop, canProp, cantValue }) => Widget.Button({
     child: Widget.Stack({
         items,
-        binds: [['shown', player, prop, p => `${p}`]],
+        shown: player.bind(prop).transform(p => `${p}`),
     }),
     on_clicked: player[onClick].bind(player),
-    binds: [['visible', player, canProp, c => c !== cantValue]],
+    visible: player.bind(canProp).transform(c => c !== cantValue),
 });
 
 /** @param {import('types/service/mpris').MprisPlayer} player */
