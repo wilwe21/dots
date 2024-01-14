@@ -55,7 +55,12 @@ export default () => Widget.Box({
     }]],
     binds: [
         ['children', Mpris, 'players', ps =>
-            ps.filter(p => !options.mpris.black_list.value
-                .includes(p.identity)).map(PlayerBox)],
+            ps
+            .filter(p => 
+                !options.mpris.black_list.value
+                .includes(p.identity)
+                )
+            .map(PlayerBox)
+        ],
     ],
 });
