@@ -54,13 +54,12 @@ export default () => Widget.Box({
         self.visible = Mpris.players.length > 0;
     }]],
     binds: [
-        ['children', Mpris, 'players', ps =>
+        ['children', Mpris, 'players', ps => 
             ps
             .filter(p => 
                 !options.mpris.black_list.value
                 .includes(p.identity)
-                )
-            .map(PlayerBox)
+                ).slice(0, 1).map(PlayerBox)
         ],
     ],
 });
