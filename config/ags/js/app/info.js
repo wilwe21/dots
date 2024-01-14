@@ -43,6 +43,11 @@ export default () => Widget.Window({
     class_name: 'info',
     //anchor: ['right', 'bottom'],
     //margins: ['20', '20'],
+    connections: [
+        ['draw', self => {
+            self.visible = Mpris.players.length > 0;
+        }],
+    ],
     binds: [
         ['anchor', options.info.anchor],
         ['margins', options.info.margins],
@@ -54,11 +59,6 @@ export default () => Widget.Window({
                 Widget.Box({
                     vertical: true,
                     hexpand: true,
-                    connections: [
-                        ['draw', self => {
-                        self.visible = Mpris.players.length > 0;
-                        }],
-                    ],
                     binds: [
                         ['children', Mpris, 'players', ps =>  
                             ps.filter(p => !options.mpris.black_list.value
