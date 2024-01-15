@@ -3,12 +3,16 @@ import GLib from 'gi://GLib';
 import options from '../options.js';
 import * as vars from '../variables.js';
 
-const clock = ({interval = 1000,
+const clock = ({
+    format = '%H:%M',
+    interval = 1000,
     ...rest
 } = {}) => Widget.Label({
     class_name: 'lclock',
     ...rest,
-    label: options.clock.main.bind('value').transform( s => GLib.DateTime.new_now_local().format(`${s}`)),
+    connections: [[interval, label =>
+        label.label = GLib.DateTime.new_now_local().format(options.clock.main.value),
+    ]],
 });
 
 export default monitor => Widget.Window({
@@ -22,6 +26,6 @@ export default monitor => Widget.Window({
     monitor,
     child: Widget.CenterBox({
         class_name: 'wclock',
-        center_widget: clock(),
+        center_widget: clock()
     }),
 });
