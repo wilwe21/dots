@@ -1,6 +1,7 @@
 #!/bin/bash
 if ps -C ags > /dev/null
 then
+    rm -r /home/wilwe/.cache/ags/media/*
     killall ags
 else
    ags

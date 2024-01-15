@@ -19,6 +19,7 @@ const SysButton = (action) => Widget.Button({
 
 export default () => ShadedPopup({
     name: 'powermenu',
+    layer: 'overlay',
     expand: true,
     child: Widget.Box({
         vertical: true,

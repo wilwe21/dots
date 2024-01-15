@@ -6,6 +6,7 @@ import ShadedPopup from './ShadedPopup.js';
 
 export default () => ShadedPopup({
     name: 'verification',
+    layer: 'overlay',
     expand: true,
     child: Widget.Box({
         vertical: true,
