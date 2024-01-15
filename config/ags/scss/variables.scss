@@ -21,4 +21,7 @@ $bar-border: $border-width solid $bar-border-color;
 
 $shader-fg: #fff;
 
-* { font-size: $font-size; }
+* { 
+	font-size: $font-size; 
+	font-family: $mono-font;
+}

@@ -174,12 +174,12 @@ export default {
     }),
 
     font: {
-        font: Option('Ubuntu Nerd Font', {
+        font: Option('Hack Nerd Font Bold', {
             'type': 'font',
             'title': 'Font',
             'scss': 'font',
         }),
-        mono: Option('Mononoki Nerd Font', {
+        mono: Option('Hack Nerd Font Bold', {
             'title': 'Monospaced Font',
             'scss': 'mono-font',
         }),
@@ -239,13 +239,18 @@ export default {
             'type': 'string',
         }),
         visible: Option(false),
-        font: Option('Ubuntu Nerd Font', {
-            'scss': 'clockfont',
+        font: Option('Concert One', {
             'type': 'font',
+            'title': 'Font Name Preview',
+            'scss': 'cfont',
         }),
-        fontsize: Option('10', {
-            'scss': 'clocksize',
-            'type': 'number',
+        monofont: Option('Concert One', {
+            'title': 'Clock Font',
+            'scss': 'clock-font',
+        }),
+        fontsize: Option(10, {
+            'scss': 'clock-size',
+            'unit': 'pt',
         }),
         color: Option('#ffffff', {
             'scss': 'clockcolor',
