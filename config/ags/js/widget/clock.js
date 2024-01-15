@@ -10,9 +10,10 @@ const clock = ({
 } = {}) => Widget.Label({
     class_name: 'lclock',
     ...rest,
-    connections: [[interval, label =>
-        label.label = GLib.DateTime.new_now_local().format(options.clock.main.value),
-    ]],
+    setup: self => {
+        self.poll(1000, label =>
+            label.label = GLib.DateTime.new_now_local().format(options.clock.main.value))
+    },
 });
 
 export default monitor => Widget.Window({
