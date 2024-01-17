@@ -4,16 +4,14 @@ import options from '../options.js';
 import * as vars from '../variables.js';
 
 const clock = ({
-    format = '%H:%M',
-    interval = 1000,
     ...rest
 } = {}) => Widget.Label({
     class_name: 'lclock',
     ...rest,
     setup: self => {
-        self.poll(1000, label =>
-            label.label = GLib.DateTime.new_now_local().format(options.clock.main.value))
-    },
+        self.poll('1000',label => {
+            label.label = GLib.DateTime.new_now_local().format(options.clock.main.value);
+    })},
 });
 
 export default monitor => Widget.Window({

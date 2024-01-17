@@ -116,9 +116,7 @@ const PlayerBox = player => Widget.Box({
 })
 
 export default monitor => WW({
-//export default monitors => WW({
     name: `music${monitor}`,
-    //name: `music`,
     layer: 'background',
     visible: options.music.visible.bind('value'),
     anchor: options.music.anchor.bind('value'),
@@ -128,11 +126,14 @@ export default monitor => WW({
         vertical: true,
         hexpand: true,
         class_name: 'mediaapp',
-        connections: [['draw', self => {
+        setup: self => {
             self.visible = Mpris.players.length > 0;
-        }]],
+        },
+        //connections: [['draw', self => {
+        //    self.visible = Mpris.players.length > 0;
+        //}]],
         children: Mpris.bind('players').transform(ps =>
                 ps.filter(p => !options.mpris.black_list.value
-                    .includes(p.identity)).map(PlayerBox)),
+                    .includes(p.identity)).slice(0,1).map(PlayerBox)),
     }),
 });

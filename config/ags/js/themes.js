@@ -41,6 +41,7 @@ export default [
     "bar.decorator1": "/home/wilwe/.hyprland.conf/screens/icons/null.png",
     "bar.decorator2": "/home/wilwe/.hyprland.conf/screens/icons/null.png",
     "bar.dsize": 120,
+    //widgets
     "clock.main": '%H:%M',
     "clock.monofont": 'Concert One',
     "clock.fontsize": 90,
@@ -49,6 +50,9 @@ export default [
     "clock.margins": ["140", "100"],
     "clock.visible": true,
     "moon.visible": false,
+    "music.visible": true,
+    "music.anchor": ["bottom", "right"],
+    "music.margins": ["350", "20"],
     "border.color.": "#0000FB",
     "border.opacity": 100,
     "border.width": 2,

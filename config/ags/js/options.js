@@ -242,7 +242,7 @@ export default {
     },
     
     clock: {
-        main: Option(' ', {
+        main: Option('%H:%M', {
             'scssFormat': v => `"${v}"`,
             'type': 'string',
         }),
