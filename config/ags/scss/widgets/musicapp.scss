@@ -31,6 +31,12 @@
 			}
 		}
 	}
+	.position-slider {
+		padding: $padding;
+	}
+	.position-label {
+		padding: $padding;
+	}
 	.audioslider {
         	@include spacing($rec: true);
         	@include spacing(0);

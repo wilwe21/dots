@@ -115,6 +115,7 @@ function lengthStr(length) {
 
 /** @param {import('types/service/mpris').MprisPlayer} player */
 export const PositionLabel = player => Widget.Label({
+    class_name: 'position-label',
     properties: [['update', (label, time) => {
         player.length > 0
             ? label.label = lengthStr(time || player.position)
