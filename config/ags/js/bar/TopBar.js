@@ -9,15 +9,13 @@ import SysTray from './buttons/SysTray.js';
 import ColorPicker from './buttons/ColorPicker.js';
 import SystemIndicators from './buttons/SystemIndicators.js';
 import PowerMenu from './buttons/PowerMenu.js';
-import ScreenRecord from './buttons/ScreenRecord.js';
 import BatteryBar from './buttons/BatteryBar.js';
 import SubMenu from './buttons/SubMenu.js';
-import Recorder from '../services/screenrecord.js';
 import options from '../options.js';
 import * as vars from '../variables.js';
 import { execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
 import Media from './buttons/MediaBar.js';
-import icons from '../icons.js'
+import icons from '../icons.js';
 
 const intval = options.systemFetchInterval;
 const submenuItems = Variable(1);
@@ -87,7 +85,7 @@ const Center = () => Widget.Box({
             class_name: 'decorator',
             icon: options.bar.decorator2.bind('value')
         }),
-    ],
+   ],
 });
 
 const End = () => Widget.Box({
@@ -105,15 +103,12 @@ const End = () => Widget.Box({
             ],
         }),
         SubMenu({
-            imtes: submenuItems,
+            items: submenuItems,
             children: [
                 SysTray(),
             ]
         }),
         ColorPicker(),
-        SeparatorDot(),
-        ScreenRecord(),
-        SeparatorDot(Recorder, r => r.recording),
         BatteryBar(Battery, b => b.available),
         SeparatorDot(Battery, b => b.available),
         SystemIndicators(),

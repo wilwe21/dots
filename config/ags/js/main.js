@@ -12,6 +12,7 @@ import options from './options.js';
 import Clock from './widget/clock.js';
 import Moon from './widget/moon.js';
 import sound from './widget/sound.js';
+import music from './widget/music.js';
 import musicapp from './app/musicapp.js';
 import info from './app/info.js';
 import installer from './installer/installer.js';
@@ -24,6 +25,8 @@ const windows = () => [
     forMonitors(Moon),
     forMonitors(sound),
     forMonitors(Clock),
+    forMonitors(music),
+    //music(),
     installer(),
     info(),
     musicapp(),

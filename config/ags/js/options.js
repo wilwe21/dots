@@ -231,6 +231,14 @@ export default {
                 'scss': 'dsize',
                 'unit': '%',
             }),
+        //widgetNames: Option('', {
+        //    'enums': ['OverviewButton()', 'Media()', 'ColorPicker()', 'BatteryBar(Battery, b => b.available)', 'SeparatorDot()', 'SystemIndicators()', 'PowerMenu()', 'SysTray()', 'DateButton()'],
+        //    'type': 'enum',
+        //    'scssFormat': v => `"${v}"`,
+        //}),
+        //startWidget: Option('OverviewButton(),Media(),Widget.Box({ hexpand: false }),', {'scssFormat': v => `"${v}"`,}),
+        //centerWidget: Option("Widget.Icon({class_name: 'decorator',icon: options.bar.decorator1.bind('value')}),DateButton(),Widget.Icon({class_name: 'decorator',icon: options.bar.decorator2.bind('value')}),", {'scssFormat': v => `"${v}"`,}),
+        //endWidget: Option("Widget.Box({hexpand:true}),Widget.Box({class_name:'system-info horizontal',children: [SysProgress('upload','tx',''),SysProgress('download','rx',''),SysProgress('cpu','Cpu',''),SysProgress('temp', 'Temperature','°C'),],}),SubMenu({items:submenuItems,children:[SysTray(),]}),ColorPicker(),BatteryBar(Battery, b => b.available),SeparatorDot(Battery, b => b.available),SystemIndicators(),SeparatorDot(),PowerMenu(),", {'scssFormat': v => `"${v}"`,}),
     },
     
     clock: {
@@ -262,6 +270,7 @@ export default {
         path: Option('', {
             'scssFormat': v => `"${v}"`,
             'type': 'string',
+            'note': 'path to folder with 1-8quart.png',
         }),
         visible: Option(false),
         size: Option('0', {
@@ -286,6 +295,12 @@ export default {
     },
     
     info: {
+        anchor: Option(['bottom', 'right'], {'note': 'anchor'}),
+        margins: Option(['20', '20'], {'note': 'margins[top/bottom left/right]'}),
+    },
+    
+    music: {
+        visible: Option(false),
         anchor: Option(['bottom', 'right'], {'note': 'anchor'}),
         margins: Option(['20', '20'], {'note': 'margins[top/bottom left/right]'}),
     },

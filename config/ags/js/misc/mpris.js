@@ -32,7 +32,7 @@ export const BlurredCoverArt = (player, props) => Widget.Box({
             url.substring(MEDIA_CACHE_PATH.length);
 
         if (GLib.file_test(blurred, GLib.FileTest.EXISTS)) {
-            box.setCss(`background-image: url("${blurred}")`);
+            box.setCss(`background-image: url("${blurred}");`);
             return;
         }
 
