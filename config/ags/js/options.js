@@ -236,7 +236,7 @@ export default {
         //    'type': 'enum',
         //    'scssFormat': v => `"${v}"`,
         //}),
-        //startWidget: Option('OverviewButton(),Media(),Widget.Box({ hexpand: false }),', {'scssFormat': v => `"${v}"`,}),
+        startWidget: Option(['OverviewButton(), Media(), Widget.Box({ hexpand: false })'], {'scssFormat': v => `"${v}"`,}),
         //centerWidget: Option("Widget.Icon({class_name: 'decorator',icon: options.bar.decorator1.bind('value')}),DateButton(),Widget.Icon({class_name: 'decorator',icon: options.bar.decorator2.bind('value')}),", {'scssFormat': v => `"${v}"`,}),
         //endWidget: Option("Widget.Box({hexpand:true}),Widget.Box({class_name:'system-info horizontal',children: [SysProgress('upload','tx',''),SysProgress('download','rx',''),SysProgress('cpu','Cpu',''),SysProgress('temp', 'Temperature','°C'),],}),SubMenu({items:submenuItems,children:[SysTray(),]}),ColorPicker(),BatteryBar(Battery, b => b.available),SeparatorDot(Battery, b => b.available),SystemIndicators(),SeparatorDot(),PowerMenu(),", {'scssFormat': v => `"${v}"`,}),
     },
@@ -250,6 +250,7 @@ export default {
         font: Option('Concert One', {
             'type': 'font',
             'title': 'Font Name Preview',
+            'unit': 'px',
             'scss': 'cfont',
         }),
         monofont: Option('Concert One', {
@@ -303,6 +304,26 @@ export default {
         visible: Option(false),
         anchor: Option(['bottom', 'right'], {'note': 'anchor'}),
         margins: Option(['20', '20'], {'note': 'margins[top/bottom left/right]'}),
+        min_width: Option(500, {
+            'unit': 'px',
+            'type': 'number',
+            'scss': 'musicwidgetwidth'
+        }),
+        min_height: Option(200, {
+            'unit': 'px',
+            'type': 'number',
+            'scss': 'musicwidgetheight'
+        }),
+        cover_width: Option(150, {
+            'unit': 'px',
+            'type': 'number',
+            'scss': 'coverwidth'
+        }),
+        cover_height: Option(150, {
+            'unit': 'px',
+            'type': 'number',
+            'scss': 'coverheight'
+        }),
     },
 
     battery: {

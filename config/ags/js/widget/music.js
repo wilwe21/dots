@@ -93,21 +93,22 @@ const PlayerBox = player => Widget.Box({
             hexpand: true,
             vertical: false,
             children: [
-                Widget.Box({
+                Widget.CenterBox({
                     vertical: true,
-                    children: [
-                        TextBox(player),
-                        mpris.PositionSlider(player),
-                        Footer(player),
-                    ],
+                    start_widget: TextBox(player),
+                    center_widget: mpris.PositionSlider(player),
+                    end_widget: Footer(player),
                 }),
                 Widget.Box({
-                    children: [
-                        VolumeSlider(),
+                    class_name: 'vbox',
+                    vertical: true,
+                    hexpand: true,
+                    children: [ 
                         Widget.Label({
                             class_name: 'volumelabel',
                             label: vars.volume.bind('value').transform(s => `${s}%`),
                         }),
+                        VolumeSlider(),
                     ],
                 }),
             ],
@@ -125,7 +126,7 @@ export default monitor => WW({
     child: Widget.Box({
         vertical: true,
         hexpand: true,
-        class_name: 'mediaapp',
+        class_name: 'mediawidget',
         setup: self => {
             self.visible = Mpris.players.length > 0;
         },

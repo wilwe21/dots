@@ -18,3 +18,99 @@
 .bsound {
 	font-size: $soundsize;
 }
+.mediawidget {
+	button {
+		all: unset;
+		padding: $padding/2;
+		margin: 10px;
+		font-size: 20px;
+		color: $accent;
+	}
+	.volumelabel {
+		//margin-left: -10px;
+		//margin-right: -20px;
+		color: #ffffff;
+		font-size: 1.1em;
+		text-shadow: $text-shadow;
+	}
+	.buttonbox {
+		margin-right: -30px;
+	}
+	background: $bg-color;
+	border: $border-width*1.5 solid $accent;
+	border-radius: $radii*1.5;
+	min-width: $musicwidgetwidth;
+	min-height: $musicwidgetheight;
+	.labels {
+		min-width: $musicwidgetwidth/2;
+		margin-top: $padding;
+		label {
+			font-size: 1.1em;
+			text-shadow: $text-shadow;
+			&.title {
+				font-weight: bold;
+			}
+		}
+	}
+	.position-slider {
+		padding: $padding;
+	}
+	.position-label {
+		padding: $padding;
+	}
+	.vbox {
+		padding: $padding*1.5;
+	}
+	.audioslider {
+        	@include spacing($rec: true);
+        	@include spacing(0);
+        	//padding: $padding/2;
+		color: $accent;
+		margin-top: -15px;
+		min-height: $musicwidgetheight/1.3;
+		//margin-right: -20px;
+		slider {
+       			box-shadow: none;
+        		background-color: transparent;
+        		border: $border-width solid transparent;
+        		transition: $transition;
+        		border-radius: $radii*1.3;
+    		}
+		slider:hover {
+			background-color: $accent;
+		}
+		trough{
+			margin-top: 15px;
+        		transition: $transition;
+        		border-radius: $radii;
+        		border: $border;
+        		background-color: $widget-bg;
+        		highlight, progress{
+            			border-radius: max($radii - $border-width, 0);
+            			background: $accent;
+        		}
+    		}
+	}	
+	.cover {
+		border-radius: $radii;
+        	min-height: $coverheight;
+        	min-width: $coverwidth;
+        	box-shadow: 2px 2px 2px 0 $shadow;
+        	margin: $padding;
+
+           .shader {
+            	background-color: transparent;
+		border-radius: $radii;
+            	box-shadow: inset 0 0 0 999px transparentize($bg-color, 0.8);
+           }
+    	}
+    	.blurred-cover, .cover {
+        	background-size: cover;
+        	background-position: center;
+		border-radius: $radii;
+    	}
+    	.blurred-cover {
+        	min-width: $musicwidgetwidth;
+        	min-height: $musicwidgetheight;
+    	}
+}
