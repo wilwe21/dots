@@ -7,8 +7,8 @@
 		color: $accent;
 	}
 	.volumelabel {
-		margin-left: -65px;
-		margin-top: -175px;
+		//margin-left: -65px;
+		//margin-top: -175px;
 		color: #ffffff;
 		font-size: 1.1em;
 		text-shadow: $text-shadow;
@@ -22,6 +22,7 @@
 	min-width: 500px;
 	min-height: 200px;
 	.labels {
+		min-width: 250px;
 		margin-top: $padding;
 		label {
 			font-size: 1.1em;
@@ -37,13 +38,15 @@
 	.position-label {
 		padding: $padding;
 	}
+	.vbox {
+		padding: $padding*1.5;
+	}
 	.audioslider {
         	@include spacing($rec: true);
         	@include spacing(0);
-        	padding: $padding;
 		color: $accent;
-		padding: $padding*2;
-		margin-right: 20px;
+		margin-top: -15px;
+		min-height: 154px;
 		slider {
        			box-shadow: none;
         		background-color: transparent;

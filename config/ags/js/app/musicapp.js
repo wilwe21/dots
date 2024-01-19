@@ -93,21 +93,22 @@ const PlayerBox = player => Widget.Box({
             hexpand: true,
             vertical: false,
             children: [
-                Widget.Box({
+                Widget.CenterBox({
                     vertical: true,
-                    children: [
-                        TextBox(player),
-                        mpris.PositionSlider(player),
-                        Footer(player),
-                    ],
+                    start_widget: TextBox(player),
+                    center_widget: mpris.PositionSlider(player),
+                    end_widget: Footer(player),
                 }),
                 Widget.Box({
+                    class_name: 'vbox',
+                    vertical: true,
+                    hexpand: true,
                     children: [
-                        VolumeSlider(),
                         Widget.Label({
                             class_name: 'volumelabel',
                             label: vars.volume.bind('value').transform(s => `${s}%`),
                         }),
+                        VolumeSlider(),
                     ],
                 }),
             ],
@@ -123,9 +124,9 @@ export default () => PopupWindow({
         vertical: true,
         hexpand: true,
         class_name: 'mediaapp',
-        connections: [['draw', self => {
+        setup: self => {
             self.visible = Mpris.players.length > 0;
-        }]],
+        },
         children: Mpris.bind('players').transform(ps =>
                 ps.filter(p => !options.mpris.black_list.value
                     .includes(p.identity)).map(PlayerBox)),
