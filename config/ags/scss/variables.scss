@@ -4,6 +4,7 @@
 $hover: transparentize($_widget-bg, ($widget-opacity * 0.9) / 100);
 $widget-bg: transparentize($_widget-bg, $widget-opacity / 100);
 $active-gradient: linear-gradient($accent-gradient);
+$active-bgradient: linear-gradient($accent-bgradient);
 
 $hover-fg: if($color-scheme == 'dark', lighten($fg-color, 10%), darken($fg-color, 8%));
 

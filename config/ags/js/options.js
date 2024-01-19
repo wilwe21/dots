@@ -111,6 +111,11 @@ export default {
                 'title': 'Accent Linear Gradient',
                 'scss': 'accent-gradient',
             }),
+            bgradient: Option('to bottom, $accent, lighten($accent, 6%)', {
+                'category': 'Theme',
+                'title': 'Accent Linear bottom Gradient',
+                'scss': 'accent-bgradient',
+            }),
         },
 
         widget: {
