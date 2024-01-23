@@ -415,6 +415,7 @@ export default {
             ['org.wezfurlong.wezterm', 'Wezterm'],
             ['com.raggesilver.BlackBox', 'BlackBox'],
             ['firefox', 'Firefox'],
+            ['io.gitlab.librewolf-community', 'Firefox'],
             ['org.gnome.Nautilus', 'Files'],
             ['libreoffice-writer', 'Writer'],
             ['', 'Desktop'],
