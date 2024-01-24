@@ -249,7 +249,6 @@ export default {
     clock: {
         main: Option('%H:%M', {
             'scssFormat': v => `"${v}"`,
-            'type': 'string',
         }),
         visible: Option(false),
         font: Option('Concert One', {

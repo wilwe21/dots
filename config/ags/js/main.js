@@ -22,11 +22,10 @@ init();
 const windows = () => [
     forMonitors(Notifications),
     forMonitors(TopBar),
+    forMonitors(Clock),
     forMonitors(Moon),
     forMonitors(sound),
-    forMonitors(Clock),
     forMonitors(music),
-    //music(),
     installer(),
     info(),
     musicapp(),
