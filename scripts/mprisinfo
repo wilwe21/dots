@@ -3,7 +3,7 @@ while [ 0 == 0 ]; do
 m1=$(playerctl metadata title)
 sleep 1
 m2=$(playerctl metadata title)
-if [ "$m1" != "$m2" ]; then
+if [ "$m1" != "$m2" ] && [ "$m2" != "Główna - YouTube" ] && [ "$m2" != "Brave" ] && [ "$m2" != "- YouTube" ]; then
 	ags -t info
 	kdeconnect-cli -d 45b336d5_275a_4799_af06_7c615bd854d5 --ping-msg "$(playerctl metadata title)"
 	sleep 4

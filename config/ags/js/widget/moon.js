@@ -23,6 +23,6 @@ export default monitor => Widget.Window({
     monitor,
     child: Widget.Icon({
         class_name: 'wmoon',
-        icon: options.moon.path.bind('value').transform(v => `${v}${moonva.value}.png`),
+        icon: options.moon.path.bind('value').transform(v => `${v}${moonva.value}`),
     }),
 });
