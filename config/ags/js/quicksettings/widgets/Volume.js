@@ -10,8 +10,7 @@ import { Menu } from '../ToggleButton.js';
 /** @param {'speaker' | 'microphone'=} type */
 const VolumeIndicator = (type = 'speaker') => Widget.Button({
     on_clicked: () => Audio[type].is_muted = !Audio[type].is_muted,
-    child: Widget.Icon({
-        connections: [[Audio, icon => {
+    child: Widget.Icon().hook(Audio, icon => {
             if (!Audio[type])
                 return;
 
@@ -20,8 +19,7 @@ const VolumeIndicator = (type = 'speaker') => Widget.Button({
                 : icons.audio.mic.high;
 
             icon.tooltip_text = `Volume ${Math.floor(Audio[type].volume * 100)}%`;
-        }, `${type}-changed`]],
-    }),
+        }, `${type}-changed`),
 });
 
 /** @param {'speaker' | 'microphone'=} type */
@@ -29,9 +27,9 @@ const VolumeSlider = (type = 'speaker') => Widget.Slider({
     hexpand: true,
     draw_value: false,
     on_change: ({ value }) => Audio[type].volume = value,
-    connections: [[Audio, slider => {
-        slider.value = Audio[type]?.volume;
-    }, `${type}-changed`]],
+    setup: self => self.hook(Audio, () => {
+        self.value = Audio[type]?.volume;
+    }, `${type}-changed`),
 });
 
 export const Volume = () => Widget.Box({
@@ -45,9 +43,7 @@ export const Volume = () => Widget.Box({
         Widget.Box({
             vpack: 'center',
             child: Arrow('app-mixer'),
-            connections: [[Audio, box => {
-                box.visible = Audio.apps.length > 0;
-            }]],
+            visible: Audio.bind('apps').transform(a => a.length > 0),
         }),
     ],
 });
@@ -67,12 +63,12 @@ const MixerItem = stream => Widget.Box({
     class_name: 'mixer-item horizontal',
     children: [
         Widget.Icon({
-            tooltipText: stream.bind('name'),
-            connections: [[stream, icon => {
-                icon.icon = Utils.lookUpIcon(stream.name || '')
-                    ? (stream.name || '')
-                    : icons.mpris.fallback;
-            }]],
+            tooltip_text: stream.bind('name'),
+            icon: stream.bind('name').transform(n =>
+                Utils.lookUpIcon(n || '')
+                    ? (n || '')
+                    : icons.mpris.fallback
+            ),
         }),
         Widget.Box({
             vertical: true,
@@ -92,9 +88,7 @@ const MixerItem = stream => Widget.Box({
         }),
         Widget.Label({
             xalign: 1,
-            connections: [[stream, l => {
-                l.label = `${Math.floor(stream.volume * 100)}%`;
-            }]],
+            label: stream.bind('volume').transform(l => {`${Math.floor(l * 100)}%`;}),
         }),
     ],
 });

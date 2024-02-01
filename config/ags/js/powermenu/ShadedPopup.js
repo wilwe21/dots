@@ -6,7 +6,7 @@ const Padding = windowName => Widget.EventBox({
     class_name: 'padding',
     hexpand: true,
     vexpand: true,
-    connections: [['button-press-event', () => App.toggleWindow(windowName)]],
+    setup: w => w.on('button-press-event', () => App.toggleWindow(windowName)),
 });
 
 /**

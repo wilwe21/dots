@@ -22,7 +22,6 @@ class PowerMenu extends Service {
             'reboot': ['systemctl reboot', 'Reboot'],
             'logout': ['pkill Hyprland', 'Log Out'],
             'shutdown': ['shutdown now', 'Shutdown'],
-            'librewolf': ['flatpak run io.gitlab.librewolf-community --new-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/h9joi49y.default-default', 'LibreWolf'],
         }[action];
 
         this.notify('cmd');

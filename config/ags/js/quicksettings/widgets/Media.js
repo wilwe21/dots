@@ -88,9 +88,7 @@ const PlayerBox = player => Widget.Box({
 export default () => Widget.Box({
     vertical: true,
     class_name: 'media vertical',
-    connections: [['draw', self => {
-        self.visible = Mpris.players.length > 0;
-    }]],
+    visible: Mpris.bind('players').transform(p => p.length > 0),
     children: Mpris.bind('players').transform(ps =>
             ps.filter(p => !options.mpris.black_list.value
                 .includes(p.identity)).map(PlayerBox)),

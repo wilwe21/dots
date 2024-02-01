@@ -1,14 +1,7 @@
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
 import icons from '../icons.js';
-import GLib from 'gi://GLib';
 
-const MEDIA_CACHE_PATH = Utils.CACHE_DIR + '/media';
-
-/**
- * @param {import('types/service/mpris').MprisPlayer} player
- * @param {import('types/widgets/label').Props=} props
- */
 export const TitleLabel = (player, props) => Widget.Label({
     ...props,
     class_name: 'title',
@@ -22,12 +15,11 @@ export const TitleLabel = (player, props) => Widget.Label({
         }),
 });
 
+
 /** @param {import('types/service/mpris').MprisPlayer} player */
 export const Slash = player => Widget.Label({
     label: '/',
-    connections: [[player, label => {
-        label.visible = player.length > 0;
-    }]],
+    visible: player.bind('length').transform(l => l > 0),
 });
 
 /**
@@ -40,11 +32,8 @@ export const Slash = player => Widget.Label({
  * @param {any} o.cantValue
  */
 const PlayerButton = ({ player, items, onClick, prop, canProp, cantValue }) => Widget.Button({
-    child: Widget.Stack({
-        items,
-        shown: player.bind(prop).transform(p => `${p}`),
-    }),
-    on_clicked: player[onClick].bind(player),
+    child: Widget.Stack({ items }).bind('shown', player, prop, p => `${p}`),
+    on_clicked: () => player[onClick](),
     visible: player.bind(canProp).transform(c => c !== cantValue),
 });
 

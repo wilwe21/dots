@@ -9,8 +9,7 @@ import PanelButton from '../PanelButton.js';
 import Indicator from '../../services/onScreenIndicator.js';
 import icons from '../../icons.js';
 
-const MicrophoneIndicator = () => Widget.Icon({
-    connections: [[Audio, icon => {
+const MicrophoneIndicator = () => Widget.Icon().hook(Audio, icon => {
         if (!Audio.microphone)
             return;
 
@@ -23,7 +22,6 @@ const MicrophoneIndicator = () => Widget.Icon({
         icon.icon = cons.find(([n]) => n <= Audio.microphone.volume * 100)?.[1] || '';
 
         icon.visible = Audio.recorders.length > 0 || Audio.microphone.is_muted;
-    }]],
 });
 
 const DNDIndicator = () => Widget.Icon({
@@ -31,8 +29,7 @@ const DNDIndicator = () => Widget.Icon({
     visible: Notifications.bind('dnd')
 });
 
-const BluetoothDevicesIndicator = () => Widget.Box({
-    connections: [[Bluetooth, box => {
+const BluetoothDevicesIndicator = () => Widget.Box().hook(Bluetooth, box => {
         box.children = Bluetooth.connectedDevices
             .map(({ iconName, name }) => HoverRevealer({
                 indicator: Widget.Icon(iconName + '-symbolic'),
@@ -40,8 +37,7 @@ const BluetoothDevicesIndicator = () => Widget.Box({
             }));
 
         box.visible = Bluetooth.connectedDevices.length > 0;
-    }, 'notify::connected-devices']],
-});
+    }, 'notify::connected-devices');
 
 const BluetoothIndicator = () => Widget.Icon({
     class_name: 'bluetooth',
@@ -49,16 +45,13 @@ const BluetoothIndicator = () => Widget.Icon({
     visible: Bluetooth.bind('enabled')
 });
 
-const NetworkIndicator = () => Widget.Icon({
-    connections: [[Network, self => {
+const NetworkIndicator = () => Widget.Icon().hook(Network, self => {
         const icon = Network[Network.primary || 'wifi']?.iconName;
         self.icon = icon || '';
         self.visible = icon;
-    }]],
 });
 
-const AudioIndicator = () => Widget.Icon({
-    connections: [[Audio, icon => {
+const AudioIndicator = () => Widget.Icon().hook(Audio, icon => {
         if (!Audio.speaker)
             return;
 
@@ -70,8 +63,7 @@ const AudioIndicator = () => Widget.Icon({
         /** @type {Array<[number, string]>} */
         const cons = [[101, overamplified], [67, high], [34, medium], [1, low], [0, muted]];
         icon.icon = cons.find(([n]) => n <= Audio.speaker.volume * 100)?.[1] || '';
-    }, 'speaker-changed']],
-});
+    }, 'speaker-changed');
 
 export default () => PanelButton({
     class_name: 'quicksettings panel-button',

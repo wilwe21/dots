@@ -14,27 +14,27 @@ export const BatteryProgress = () => Widget.Box({
     class_name: 'battery-progress',
     vexpand: true,
     visible: Battery.bind('available'),
-    connections: [[Battery, w => {
-        w.toggleClassName('charging', Battery.charging || Battery.charged);
-        w.toggleClassName('medium', Battery.percent < options.battery.medium.value);
-        w.toggleClassName('low', Battery.percent < options.battery.low.value);
-        w.toggleClassName('half', Battery.percent < 48);
-    }]],
+    setup: self => self.hook(Battery, () => {
+        self.toggleClassName('charging', Battery.charging || Battery.charged);
+        self.toggleClassName('medium', Battery.percent < options.battery.medium.value);
+        self.toggleClassName('low', Battery.percent < options.battery.low.value);
+        self.toggleClassName('half', Battery.percent < 48);
+    }),
     child: Widget.Overlay({
         vexpand: true,
         child: Widget.ProgressBar({
             hexpand: true,
             vexpand: true,
-            connections: [[Battery, progress => {
-                progress.fraction = Battery.percent / 100;
-            }]],
+            setup: self => self.hook(Battery, () => {
+                self.fraction = Battery.percent / 100;
+            }),
         }),
         overlays: [Widget.Label({
-            connections: [[Battery, l => {
-                l.label = Battery.charging || Battery.charged
+            setup: self => self.hook(Battery, () => {
+                self.label = Battery.charging || Battery.charged
                     ? icons.battery.charging
                     : `${Battery.percent}%`;
-            }]],
+            }),
         })],
     }),
 });
@@ -59,9 +59,9 @@ export default () => Widget.Box({
                             class_name: 'uptime',
                             hexpand: true,
                             vpack: 'center',
-                            connections: [[uptime, label => {
-                                label.label = `uptime: ${uptime.value}`;
-                            }]],
+                            setup: self => self.hook(uptime, () => {
+                                self.label = `uptime: ${uptime.value}`;
+                            }),
                         }),
                         Widget.Button({
                             vpack: 'center',

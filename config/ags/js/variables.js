@@ -8,6 +8,10 @@ import { execAsync, interval } from 'resource:///com/github/Aylur/ags/utils.js';
 
 const intval = options.systemFetchInterval;
 
+export const clock = Variable(GLib.DateTime.new_now_local(), {
+    poll: [1000, () => GLib.DateTime.new_now_local()],
+});
+
 export const uptime = Variable('', {
     poll: [60_000, 'cat /proc/uptime', line => {
         const uptime = Number.parseInt(line.split('.')[0]) / 60;

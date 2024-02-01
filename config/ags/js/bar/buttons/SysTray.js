@@ -7,8 +7,7 @@ import Gdk from 'gi://Gdk';
 const SysTrayItem = item => PanelButton({
     class_name: 'tray-item',
     content: Widget.Icon({ icon: item.bind('icon') }),
-    tooltipMarkup: item.bind('tooltip-markup'),
-    //binds: [['tooltipMarkup', item, 'tooltip-markup']],
+    tooltip_markup: item.bind('tooltip_markup'),
     setup: self => {
         const id = item.menu?.connect('popped-up', menu => {
             self.toggleClassName('active');
@@ -31,7 +30,5 @@ const SysTrayItem = item => PanelButton({
         btn, Gdk.Gravity.SOUTH, Gdk.Gravity.NORTH, null),
 });
 
-export default () => Widget.Box({
-    children: SystemTray.bind('items').transform(i => i.map(SysTrayItem))
-    //binds: [['children', SystemTray, 'items', i => i.map(SysTrayItem)]],
-});
+export default () => Widget.Box()
+    .bind('children', SystemTray, 'items', i => i.map(SysTrayItem));

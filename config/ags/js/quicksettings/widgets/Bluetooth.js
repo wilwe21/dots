@@ -6,26 +6,22 @@ import { Menu, ArrowToggleButton } from '../ToggleButton.js';
 export const BluetoothToggle = () => ArrowToggleButton({
     name: 'bluetooth',
     icon: Widget.Icon({
-        connections: [[Bluetooth, icon => {
-            icon.icon = Bluetooth.enabled
-                ? icons.bluetooth.enabled
-                : icons.bluetooth.disabled;
-        }]],
+        icon: Bluetooth.bind('enabled').transform(p => icons.bluetooth[p ? 'enabled' : 'disabled']),
     }),
     label: Widget.Label({
         truncate: 'end',
-        connections: [[Bluetooth, label => {
+        setup: self => self.hook(Bluetooth, () => {
             if (!Bluetooth.enabled)
-                return label.label = 'Disabled';
+                return self.label = 'Disabled';
 
             if (Bluetooth.connectedDevices.length === 0)
-                return label.label = 'Not Connected';
+                return self.label = 'Not Connected';
 
             if (Bluetooth.connectedDevices.length === 1)
-                return label.label = Bluetooth.connectedDevices[0].alias;
+                return self.label = Bluetooth.connectedDevices[0].alias;
 
-            label.label = `${Bluetooth.connectedDevices.length} Connected`;
-        }]],
+            self.label = `${Bluetooth.connectedDevices.length} Connected`;
+        }),
     }),
     connection: [Bluetooth, () => Bluetooth.enabled],
     deactivate: () => Bluetooth.enabled = false,
@@ -48,9 +44,9 @@ const DeviceItem = device => Widget.Box({
         Widget.Switch({
             active: device.connected,
             visible: device.bind('connecting').transform(c => !c),
-            connections: [['notify::active', ({ active }) => {
-                device.setConnection(active);
-            }]],
+            setup: self => self.on('notify::active', () => {
+                device.setConnection(self.active);
+            }),
         }),
     ],
 });

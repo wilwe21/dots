@@ -38,7 +38,7 @@ export default app => {
 
     return Widget.Button({
         class_name: 'app-item',
-        setup: self => self.app = app,
+        attribute: app,
         on_clicked: () => {
             App.closeWindow('applauncher');
             app.launch();
