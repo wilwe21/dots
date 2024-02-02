@@ -6,7 +6,7 @@ import options from '../options.js';
 import icons from '../icons.js';
 import { reloadScss, scssWatcher } from './scss.js';
 import { initWallpaper, wallpaper } from './wallpaper.js';
-import { hyprlandInit } from './hyprland.js';
+import { hyprlandInit, setupHyprland } from './hyprland.js';
 import { globals } from './globals.js';
 import Gtk from 'gi://Gtk';
 import { exec, execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
@@ -21,10 +21,12 @@ export function init() {
     gsettigsColorScheme();
     gtkFontSettings();
     scssWatcher();
+    dependandOptions();
 
     App.connect('config-parsed', () => {
         reloadScss();
         hyprlandInit();
+        setupHyprland();
         wallpaper();
         pywal();
         gtkTheme();
@@ -32,7 +34,12 @@ export function init() {
     });
 }
 
-
+function dependandOptions() {
+    options.bar.style.connect('changed', ({ value }) => {
+        if (value !== 'normal')
+            options.desktop.screen_corners.setValue(false, true);
+    });
+}
 
 function tmux() {
     if (!Utils.exec('which tmux'))

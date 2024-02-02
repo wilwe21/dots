@@ -1,33 +1,22 @@
 import options from '../options.js';
 import { exec, execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
-import GLib from 'gi://GLib';
+import { dependencies } from '../utils.js';
 
 export function initWallpaper() {
-    try {
+    if (dependencies(['swww'])) {
         exec('swww init');
-    } catch (error) {
-        print('missing dependancy: swww');
-    }
 
-    options.desktop.wallpaper.img.connect('changed', wallpaper);
+        options.desktop.wallpaper.img.connect('changed', wallpaper);
+    }
 }
+const transition = () => {
+    return options.desktop.wallpaper.transition.value.replace('⍼', "','")
+};
 
 export function wallpaper() {
-    const backgrounds = '/home/wilwe/.config/backgrounds';
-    if (!exec('which swww'))
-        return print('missing dependancy: swww');
+    if (!dependencies(['swww']))
+        return;
 
-    execAsync([
-        'swww', 'img',
-        '--transition-step', '4',
-        '-f',
-        'CatmullRom', '--transition-fps', '120',
-        options.desktop.wallpaper.img.value,
-    ])
-    .catch(err => console.error(err));
-    execAsync([
-        'cp', options.desktop.wallpaper.img.value, `${backgrounds}/last/image.png`
-    ]);
-    exec(`sh -c ~/.config/ags/prepare_background.sh`)
-
+    exec(`swww img ${options.desktop.wallpaper.transition.value} "${options.desktop.wallpaper.img.value}"`
+    ).catch(err => console.error(err));
 }

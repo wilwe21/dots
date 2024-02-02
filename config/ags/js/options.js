@@ -351,6 +351,7 @@ export default {
                 'scssFormat': v => `"${v}"`,
                 'type': 'img',
             }),
+            transition: Option("--transition-type wave --transition-angle 45", { 'scssFormat': v => `"${v}"`, })
         },
         avatar: Option(`/var/lib/AccountsService/icons/${USER}`, {
             'scssFormat': v => `"${v}"`,

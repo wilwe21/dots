@@ -41,13 +41,7 @@ export default () => Widget.Window({
     name: 'info',
     layer: 'overlay',
     class_name: 'info',
-    //anchor: ['right', 'bottom'],
-    //margins: ['20', '20'],
-    connections: [
-        ['draw', self => {
-            self.visible = Mpris.players.length > 0;
-        }],
-    ],
+    visible: Mpris.bind('players').transform(v => v.length > 0),
     anchor: options.info.anchor.bind('value'),
     margins: options.info.margins.bind('value'),
     visible: false,

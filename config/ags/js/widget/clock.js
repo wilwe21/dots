@@ -1,7 +1,6 @@
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import GLib from 'gi://GLib';
 import options from '../options.js';
-import clock from './cl.js';
 
 export default monitor => Widget.Window({
     name: `clock${monitor}`,
@@ -14,6 +13,13 @@ export default monitor => Widget.Window({
     monitor,
     child: Widget.CenterBox({
         class_name: 'wclock',
-        center_widget: clock()
+        center_widget: Widget.Label({
+            class_name: 'lclock',
+            setup: self => {
+                self.poll('1000',() => {
+                    self.label =        GLib.DateTime.new_now_local().format(options.clock.main.value);
+                })
+            },
+        }),
     }),
 });

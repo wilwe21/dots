@@ -2,7 +2,7 @@
  * A Theme is a set of options that will be applied
  * ontop of the default values. see options.js for possible options
  */
-import { Theme, WP, HOME } from './settings/theme.js';
+import { Theme, WP } from './settings/theme.js';
 
 export default [
 
@@ -166,6 +166,7 @@ export default [
     "desktop.wallpaper.fg": "#fff",
     "desktop.wallpaper.img": "/home/wilwe/.hyprland.conf/screens/wallpapers/mainwhite.png",
     "desktop.avatar": "/var/lib/AccountsService/icons/wilwe",
+    "desktop.wallpaper.transition": "--transition-type wave --transition-angle 225",
     "desktop.drop_shadow": false,
     "desktop.shadow": "rgba(0, 0, 0, .6)",
     "notifications.black_list": [
@@ -242,6 +243,7 @@ export default [
     "desktop.wallpaper.fg": "#fff",
     "desktop.wallpaper.img": "/home/wilwe/.hyprland.conf/screens/wallpapers/spaghetti.png",
     "desktop.avatar": "/home/wilwe/.hyprland.conf/screens/icons/spaghetti-monster.png",
+    "desktop.wallpaper.transition": "--transition-type center",
     "desktop.drop_shadow": false,
     "desktop.shadow": "rgba(0, 0, 0, .6)",
     "notifications.black_list": [
@@ -556,6 +558,7 @@ export default [
     "desktop.wallpaper.fg": "#fff",
     "desktop.wallpaper.img": "/home/wilwe/.hyprland.conf/screens/wallpapers/kraina grzybów.png",
     "desktop.avatar": "/var/lib/AccountsService/icons/wilwe",
+    "desktop.wallpaper.transition": "--transition-type grow --invert-y --transition-pos 890,320",
     "desktop.drop_shadow": false,
     "desktop.shadow": "rgba(0, 0, 0, .6)",
     "notifications.black_list": [
@@ -643,6 +646,7 @@ export default [
     "desktop.wallpaper.fg": "#fff",
     "desktop.wallpaper.img": "/home/wilwe/.hyprland.conf/screens/wallpapers/papatapeta.png",
     "desktop.avatar": "/home/wilwe/.hyprland.conf/screens/icons/kremowka.png",
+    "desktop.wallpaper.transition": "--transition-type center --transition-step 2",
     "desktop.drop_shadow": false,
     "desktop.shadow": "rgba(0, 0, 0, .6)",
     "notifications.black_list": [

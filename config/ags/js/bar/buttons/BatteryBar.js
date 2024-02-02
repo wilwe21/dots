@@ -46,7 +46,7 @@ export default (Service, condition) => {
                 self.toggleClassName('charging', Battery.charging || Battery.charged);
                 self.toggleClassName('medium', Battery.percent < options.battery.medium.value);
                 self.toggleClassName('low', Battery.percent < options.battery.low.value);
-                w.toggleClassName('half', Battery.percent < 48);
+                self.toggleClassName('half', Battery.percent < 48);
             }),
             children: [
                 Indicator(),

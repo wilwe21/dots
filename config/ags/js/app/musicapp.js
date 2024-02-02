@@ -16,9 +16,9 @@ const VolumeSlider = (type = 'speaker') => Widget.Slider({
     class_name: 'audioslider',
     draw_value: false,
     on_change: ({ value }) => Audio[type].volume = value,
-    connections: [[Audio, slider => {
-        slider.value = Audio[type]?.volume;
-    }, `${type}-changed`]],
+    setup: self => self.hook(Audio, () => {
+        self.value = Audio[type]?.volume;
+    }, `${type}-changed`),
 });
 
 const Footer = player => Widget.CenterBox({
