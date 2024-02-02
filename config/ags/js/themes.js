@@ -478,6 +478,7 @@ export default [
     "desktop.wallpaper.fg": "#fff",
     "desktop.wallpaper.img": "/home/wilwe/.hyprland.conf/screens/wallpapers/bill.png",
     "desktop.avatar": "/home/wilwe/.hyprland.conf/screens/icons/bill.png",
+    "desktop.wallpaper.transition": "--transition-type grow --invert-y --transition-pos 915,280",
     "desktop.drop_shadow": false,
     "desktop.shadow": "rgba(0, 0, 0, .6)",
     "notifications.black_list": [
