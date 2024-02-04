@@ -381,6 +381,10 @@ export default {
                 'type': 'enum',
             }),
         },
+        footer: {
+            positon: Option(true),
+            controls: Option(true),
+        },
         min_width: Option(500, {
             'unit': 'px',
             'type': 'number',

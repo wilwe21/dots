@@ -103,6 +103,7 @@ const End = () => Widget.Box({
             ],
         }),
         SubMenu({
+            cursor: 'pointer',
             items: submenuItems,
             children: [
                 SysTray(),
