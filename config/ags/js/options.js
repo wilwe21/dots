@@ -375,6 +375,7 @@ export default {
             'type': 'enum',
         }),
         cover: {
+            visible: Option(true),
             hpack: Option('start', {
                 'scssFormat': v => `"${v}"`,
                 'enums': ['start', 'center', 'end'],
@@ -384,7 +385,11 @@ export default {
         footer: {
             positon: Option(true),
             controls: Option(true),
+            box_visible: Option(false, { 'scss': 'music-footer-box' }),
+            box_color: Option('$bg-color', { 'scss': 'mfb-color' }),
         },
+        Title: Option(true),
+        Artist: Option(true),
         min_width: Option(500, {
             'unit': 'px',
             'type': 'number',

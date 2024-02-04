@@ -46,8 +46,13 @@
 		text-shadow: $text-shadow;
 	}
 	.buttonbox {
-		padding: $padding;
-		margin-right: -30px;
+		padding: $padding/2;
+		//margin-right: -30px;
+		@if $music-footer-box == true {
+			background-color: $mfb-color;
+			border: $border-width*1.5 solid $accent;
+			border-radius: $radii*1.5;
+		}
 	}
 	@if $music-border == true {
 		border: $border-width*1.5 solid $accent;

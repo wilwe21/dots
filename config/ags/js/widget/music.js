@@ -27,26 +27,36 @@ const Footer = player => Widget.CenterBox({
     children: [
         Widget.Box({
             class_name: 'position',
-            children: [
-                mpris.PositionLabel(player),
-                mpris.Slash(player),
-                mpris.LengthLabel(player),
-            ],
+            setup: self => self.hook(options.music.footer.position, () => {
+                if (options.music.footer.position.value == true){
+                    self.children = [
+                        mpris.PositionLabel(player),
+                        mpris.Slash(player),
+                        mpris.LengthLabel(player),
+                    ]
+                } else {
+                    self.children = []
+                }
+            })
         }),
         Widget.Box({
             class_name: 'controls',
-            children: [
-                Widget.Box({
-                    class_name: 'buttonbox',
-                    children: [
-                        mpris.ShuffleButton(player),
-                        mpris.PreviousButton(player),
-                        mpris.PlayPauseButton(player),
-                        mpris.NextButton(player),
-                        mpris.LoopButton(player),
-                    ], 
-                }),
-            ],
+            setup: self => self.hook(options.music.footer.controls, () => {
+                if (options.music.footer.controls.value == true){
+                    self.child = Widget.Box({
+                        class_name: 'buttonbox',
+                        children: [
+                            mpris.ShuffleButton(player),
+                            mpris.PreviousButton(player),
+                            mpris.PlayPauseButton(player),
+                            mpris.NextButton(player),
+                            mpris.LoopButton(player),
+                        ], 
+                    })
+                } else {
+                    self.child = []
+                }
+            })
         })
     ],
 });
@@ -55,14 +65,22 @@ const Footer = player => Widget.CenterBox({
 const TextBox = player => Widget.Box({
     vertical: options.music.vertical.bind('value'),
     children: [
-        mpris.CoverArt(player, {
-            class_name: 'cover',
+        Widget.Box({
             hpack: options.music.cover.hpack.bind('value'),
-            hexpand: false,
-            child: Widget.Box({
-                class_name: 'shader',
-                hexpand: true,
-            }),
+            setup: self => self.hook(options.music.cover.visible, () => {
+                if (options.music.cover.visible.value == true){
+                    self.child = mpris.CoverArt(player, {
+                        class_name: 'cover',
+                        hexpand: false,
+                        child: Widget.Box({
+                            class_name: 'shader',
+                            hexpand: true,
+                        }),
+                    })
+                } else {
+                    self.child = []
+                }
+            })
         }),
         Widget.Box({
             hexpand: false,
@@ -71,34 +89,38 @@ const TextBox = player => Widget.Box({
             children: [
                 Widget.Box({
                     hpack: options.music.titlejustification.bind('value').transform(v => {
-                        if (v == 'left'){
-                            return 'start'
-                        } else if (v == 'center'){
-                            return 'center'
+                        if (v == 'left') return 'start';
+                        if (v == 'center') return 'center';
+                        return 'end';
+                    }),
+                    setup: self => self.hook(options.music.Title, () => {
+                        if (options.music.Title.value == true){
+                            self.child = mpris.TitleLabel(player, {
+                                xalign: 0,
+                                justification: options.music.titlejustification.bind('value'),
+                                wrap: true,
+                            })
                         } else {
-                            return 'end'
+                            self.child = []
                         }
-                    }),
-                    child: mpris.TitleLabel(player, {
-                        xalign: 0,
-                        justification: options.music.titlejustification.bind('value'),
-                        wrap: true,
-                    }),
+                    })
                 }),
                 Widget.Box({
                     hpack: options.music.artistjustification.bind('value').transform(v => {
-                        if (v == 'left'){
-                            return 'start'
-                        } else if (v == 'center'){
-                            return 'center'
-                        } else {
-                            return 'end'
-                        }
+                        if (v == 'left') return 'start';
+                        if (v == 'center') return 'center';
+                        return 'end';
                     }),
-                    child: mpris.ArtistLabel(player, {
-                        xalign: 0,
-                        justification: options.music.artistjustification.bind('value'),
-                        wrap: true,
+                    setup: self => self.hook(options.music.Artist, () => {
+                        if (options.music.Artist.value == true){
+                            self.child = mpris.ArtistLabel(player, {
+                                xalign: 0,
+                                justification: options.music.artistjustification.bind('value'),
+                                wrap: true,
+                            })
+                        } else {
+                            self.child = []
+                        };
                     }),
                 })
             ],
