@@ -259,7 +259,7 @@ export default {
         }),
         layer: Option('background',{
             'scssFormat': v => `"${v}"`,
-            'enums': ['overlay', 'top', 'bottom', "background"],
+            'enums': ['background', 'bottom', 'top', 'overlay'],
             'type': 'enum',
         }),
         color: Option('#ffffff', {
@@ -295,7 +295,7 @@ export default {
         }),
         layer: Option('background',{
             'scssFormat': v => `"${v}"`,
-            'enums': ['overlay', 'top', 'bottom', "background"],
+            'enums': ['background', 'bottom', 'top', 'overlay'],
             'type': 'enum',
         }),
         anchor: Option(['top', 'left'], {'note': 'anchor'}),
@@ -308,7 +308,7 @@ export default {
         }),
         layer: Option('bottom',{
             'scssFormat': v => `"${v}"`,
-            'enums': ['overlay', 'top', 'bottom', "background"],
+            'enums': ['background', 'bottom', 'top', 'overlay'],
             'type': 'enum',
         }),
         visible: Option(false),
@@ -324,7 +324,7 @@ export default {
         }),
         layer: Option('background',{
             'scssFormat': v => `"${v}"`,
-            'enums': ['overlay', 'top', 'bottom', "background"],
+            'enums': ['background', 'bottom', 'top', 'overlay'],
             'type': 'enum',
         }),
         visible: Option(false),
@@ -343,7 +343,7 @@ export default {
         margins: Option(['20', '20'], {'note': 'margins[top/bottom left/right]'}),
         layer: Option('overlay',{
             'scssFormat': v => `"${v}"`,
-            'enums': ['overlay', 'top', 'bottom', "background"],
+            'enums': ['background', 'bottom', 'top', 'overlay'],
             'type': 'enum',
         }),
     },
@@ -354,7 +354,7 @@ export default {
         margins: Option(['20', '20'], {'note': 'margins[top/bottom left/right]'}),
         layer: Option('background',{
             'scssFormat': v => `"${v}"`,
-            'enums': ['overlay', 'top', 'bottom', "background"],
+            'enums': ['background', 'bottom', 'top', 'overlay'],
             'type': 'enum',
         }),
         blurrcov: Option(true),
