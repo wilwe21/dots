@@ -35,6 +35,7 @@ const Workspaces = () => {
 
 export default () => Widget.Box({
     class_name: 'workspaces panel-button',
+    cursor: 'pointer',
     child: Widget.Box({
         // its nested like this to keep it consistent with other PanelButton widgets
         child: Widget.EventBox({

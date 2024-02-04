@@ -5,6 +5,7 @@ import Gdk from 'gi://Gdk';
 
 export default () => PanelButton({
     class_name: 'color-picker',
+    cursor: 'pointer',
     content: Widget.Icon('color-select-symbolic'),
     tooltip_text: Colors.bind('colors').transform(v => `${v.length} colors`),
     on_clicked: () => Colors.pick(),

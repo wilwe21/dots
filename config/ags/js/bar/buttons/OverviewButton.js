@@ -7,6 +7,7 @@ import options from '../../options.js';
 
 export default () => PanelButton({
     class_name: 'overview',
+    cursor: 'pointer',
     window: 'overview',
     on_clicked: () => App.toggleWindow('overview'),
     content: Widget.Icon({

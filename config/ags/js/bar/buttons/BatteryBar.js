@@ -35,6 +35,7 @@ const LevelBar = () => Widget.LevelBar({
 export default (Service, condition) => {
     const revaler = PercentLabel();
     return PanelButton({
+        cursor: 'pointer',
         class_name: 'battery-bar',
         on_clicked: () => {
             const v = options.battery.show_percentage.value;

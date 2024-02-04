@@ -32,41 +32,10 @@ export const Slash = player => Widget.Label({
  * @param {any} o.cantValue
  */
 const PlayerButton = ({ player, items, onClick, prop, canProp, cantValue }) => Widget.Button({
+    cursor: 'pointer',
     child: Widget.Stack({ items }).bind('shown', player, prop, p => `${p}`),
     on_clicked: () => player[onClick](),
     visible: player.bind(canProp).transform(c => c !== cantValue),
-});
-
-/** @param {import('types/service/mpris').MprisPlayer} player */
-export const ShuffleButton = player => PlayerButton({
-    player,
-    items: [
-        ['true', Widget.Icon(icons.mpris.shuffle.enabled
-        )],
-        ['false', Widget.Icon(icons.mpris.shuffle.disabled
-        )],
-    ],
-    onClick: 'shuffle',
-    prop: 'shuffle-status',
-    canProp: 'shuffle-status',
-    cantValue: null,
-});
-
-/** @param {import('types/service/mpris').MprisPlayer} player */
-export const LoopButton = player => PlayerButton({
-    player,
-    items: [
-        ['None', Widget.Icon(icons.mpris.loop.none
-        )],
-        ['Track', Widget.Icon(icons.mpris.loop.track
-        )],
-        ['Playlist', Widget.Icon(icons.mpris.loop.playlist
-        )],
-    ],
-    onClick: 'loop',
-    prop: 'loop-status',
-    canProp: 'loop-status',
-    cantValue: null,
 });
 
 /** @param {import('types/service/mpris').MprisPlayer} player */
@@ -80,6 +49,7 @@ export const PlayPauseButton = player => PlayerButton({
         ['Stopped', Widget.Icon(icons.mpris.stopped
         )],
     ],
+    cursor: 'pointer',
     onClick: 'playPause',
     prop: 'play-back-status',
     canProp: 'can-play',
@@ -93,6 +63,7 @@ export const PreviousButton = player => PlayerButton({
         ['true', Widget.Icon(icons.mpris.prev
         )],
     ],
+    cursor: 'pointer',
     onClick: 'previous',
     prop: 'can-go-prev',
     canProp: 'can-go-prev',
@@ -106,6 +77,7 @@ export const NextButton = player => PlayerButton({
         ['true', Widget.Icon(icons.mpris.next
         )],
     ],
+    cursor: 'pointer',
     onClick: 'next',
     prop: 'can-go-next',
     canProp: 'can-go-next',
