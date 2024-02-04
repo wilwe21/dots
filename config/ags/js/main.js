@@ -11,6 +11,7 @@ import { forMonitors } from './utils.js';
 import options from './options.js';
 import Clock from './widget/clock.js';
 import Moon from './widget/moon.js';
+import bgtop from './widget/bgtop.js';
 import sound from './widget/sound.js';
 import music from './widget/music.js';
 import musicapp from './app/musicapp.js';
@@ -22,6 +23,7 @@ init();
 const windows = () => [
     forMonitors(Notifications),
     forMonitors(TopBar),
+    forMonitors(bgtop),
     forMonitors(Clock),
     forMonitors(Moon),
     forMonitors(sound),

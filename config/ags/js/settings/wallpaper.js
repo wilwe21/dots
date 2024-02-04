@@ -9,9 +9,6 @@ export function initWallpaper() {
         options.desktop.wallpaper.img.connect('changed', wallpaper);
     }
 }
-const transition = () => {
-    return options.desktop.wallpaper.transition.value.replace('⍼', "','")
-};
 
 export function wallpaper() {
     if (!dependencies(['swww']))

@@ -28,6 +28,7 @@ const visibility = self => {
 
 export default monitor => Widget.Window({
     name: `sound${monitor}`,
+    layer: options.sound.layer.bind('value'),
     class_name: 'soundmain',
     visible: options.sound.visible.bind('value'),
     anchor: options.sound.anchor.bind('value'),

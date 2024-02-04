@@ -215,7 +215,7 @@ export default {
             'type': 'enum',
         }),
         style: Option('floating', {
-            'enums': ['floating', 'normal', 'separated'],
+            'enums': ['floating', 'normal'],
             'type': 'enum',
         }),
         flat_buttons: Option(true, { 'scss': 'bar-flat-buttons' }),
@@ -236,14 +236,6 @@ export default {
                 'scss': 'dsize',
                 'unit': '%',
             }),
-        //widgetNames: Option('', {
-        //    'enums': ['OverviewButton()', 'Media()', 'ColorPicker()', 'BatteryBar(Battery, b => b.available)', 'SeparatorDot()', 'SystemIndicators()', 'PowerMenu()', 'SysTray()', 'DateButton()'],
-        //    'type': 'enum',
-        //    'scssFormat': v => `"${v}"`,
-        //}),
-        startWidget: Option(['OverviewButton(), Media(), Widget.Box({ hexpand: false })'], {'scssFormat': v => `"${v}"`,}),
-        //centerWidget: Option("Widget.Icon({class_name: 'decorator',icon: options.bar.decorator1.bind('value')}),DateButton(),Widget.Icon({class_name: 'decorator',icon: options.bar.decorator2.bind('value')}),", {'scssFormat': v => `"${v}"`,}),
-        //endWidget: Option("Widget.Box({hexpand:true}),Widget.Box({class_name:'system-info horizontal',children: [SysProgress('upload','tx',''),SysProgress('download','rx',''),SysProgress('cpu','Cpu',''),SysProgress('temp', 'Temperature','°C'),],}),SubMenu({items:submenuItems,children:[SysTray(),]}),ColorPicker(),BatteryBar(Battery, b => b.available),SeparatorDot(Battery, b => b.available),SystemIndicators(),SeparatorDot(),PowerMenu(),", {'scssFormat': v => `"${v}"`,}),
     },
     
     clock: {
@@ -251,13 +243,13 @@ export default {
             'scssFormat': v => `"${v}"`,
         }),
         visible: Option(false),
-        font: Option('Concert One', {
+        font: Option('Concert One Mono', {
             'type': 'font',
             'title': 'Font Name Preview',
             'unit': 'px',
             'scss': 'cfont',
         }),
-        monofont: Option('Concert One', {
+        monofont: Option('Concert One Mono', {
             'title': 'Clock Font',
             'scss': 'clock-font',
         }),
@@ -265,8 +257,28 @@ export default {
             'scss': 'clock-size',
             'unit': 'pt',
         }),
+        layer: Option('background',{
+            'scssFormat': v => `"${v}"`,
+            'enums': ['overlay', 'top', 'bottom', "background"],
+            'type': 'enum',
+        }),
         color: Option('#ffffff', {
             'scss': 'clockcolor',
+        }),
+        background: Option(false, {
+            'scss': 'clock-background',
+        }),
+        bg_color: Option('$bg-color', {
+            'scss': 'clock-bg-color',
+        }),
+        width: Option('$clock-size',{
+            'scss': 'clockwidth'
+        }),
+        height: Option('$clock-size',{
+            'scss': 'clockheight'
+        }),
+        shadow: Option('2px 2px 4px #000000', {
+            'scss': 'clockshadow',
         }),
         anchor: Option(['top', 'left'], { 'note': 'anchor'}),
         margins: Option(['0', '0'], { 'note': 'margins[top/bottom left/right]'}),
@@ -281,12 +293,39 @@ export default {
         size: Option('0', {
             'scss': 'moonsize',
         }),
+        layer: Option('background',{
+            'scssFormat': v => `"${v}"`,
+            'enums': ['overlay', 'top', 'bottom', "background"],
+            'type': 'enum',
+        }),
+        anchor: Option(['top', 'left'], {'note': 'anchor'}),
+        margins: Option(['0', '0'], {'note': 'margins[top/bottom left/right]'}),
+    },
+    bgtop: {
+        image: Option('', {
+            'scssFormat': v => `"${v}"`,
+            'type': 'string',
+        }),
+        layer: Option('bottom',{
+            'scssFormat': v => `"${v}"`,
+            'enums': ['overlay', 'top', 'bottom', "background"],
+            'type': 'enum',
+        }),
+        visible: Option(false),
+        size: Option('0', {
+            'scss': 'bgtopsize',
+        }),
         anchor: Option(['top', 'left'], {'note': 'anchor'}),
         margins: Option(['0', '0'], {'note': 'margins[top/bottom left/right]'}),
     },
     sound: {
         sound: Option(' ', {
             'scssFormat': v => `"${v}"`,
+        }),
+        layer: Option('background',{
+            'scssFormat': v => `"${v}"`,
+            'enums': ['overlay', 'top', 'bottom', "background"],
+            'type': 'enum',
         }),
         visible: Option(false),
         size: Option('0', {
@@ -302,12 +341,23 @@ export default {
     info: {
         anchor: Option(['bottom', 'right'], {'note': 'anchor'}),
         margins: Option(['20', '20'], {'note': 'margins[top/bottom left/right]'}),
+        layer: Option('overlay',{
+            'scssFormat': v => `"${v}"`,
+            'enums': ['overlay', 'top', 'bottom', "background"],
+            'type': 'enum',
+        }),
     },
     
     music: {
         visible: Option(false),
         anchor: Option(['bottom', 'right'], {'note': 'anchor'}),
         margins: Option(['20', '20'], {'note': 'margins[top/bottom left/right]'}),
+        layer: Option('background',{
+            'scssFormat': v => `"${v}"`,
+            'enums': ['overlay', 'top', 'bottom', "background"],
+            'type': 'enum',
+        }),
+        blurrcov: Option(true),
         min_width: Option(500, {
             'unit': 'px',
             'type': 'number',

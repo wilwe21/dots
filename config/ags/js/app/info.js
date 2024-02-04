@@ -39,7 +39,7 @@ const PlayerBox = player => Widget.Box({
 
 export default () => Widget.Window({
     name: 'info',
-    layer: 'overlay',
+    layer: options.info.layer.bind('value'),
     class_name: 'info',
     visible: Mpris.bind('players').transform(v => v.length > 0),
     anchor: options.info.anchor.bind('value'),

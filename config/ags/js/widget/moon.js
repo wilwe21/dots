@@ -15,7 +15,7 @@ const moonva = Variable(0, {
 export default monitor => Widget.Window({
     name: `moon${monitor}`,
     class_name: 'moonmain',
-    layer: 'background',
+    layer: options.moon.layer.bind('value'),
     exclusivity: 'ignore',
     visible: options.moon.visible.bind('value'),
     anchor: options.moon.anchor.bind('value'),

@@ -5,6 +5,7 @@ import App from 'resource:///com/github/Aylur/ags/app.js';
 import Applications from 'resource:///com/github/Aylur/ags/service/applications.js';
 import WW from '../misc/WW.js';
 import * as mpris from '../misc/mpris.js';
+import * as mpriscover from '../misc/mpriscover.js';
 import * as vars from '../variables.js';
 import icons from '../icons.js';
 import { launchApp } from '../utils.js';
@@ -85,40 +86,75 @@ const TextBox = player => Widget.Box({
 /** @param {import('types/service/mpris').MprisPlayer} player */
 const PlayerBox = player => Widget.Box({
     class_name: `player ${player.name}`,
-    child: mpris.BlurredCoverArt(player, {
-        class_name: 'cover-art-bg',
-        hexpand: true,
-        child: Widget.Box({
-            class_name: 'shader',
-            hexpand: true,
-            vertical: false,
-            children: [
-                Widget.CenterBox({
-                    vertical: true,
-                    start_widget: TextBox(player),
-                    center_widget: mpris.PositionSlider(player),
-                    end_widget: Footer(player),
-                }),
-                Widget.Box({
-                    class_name: 'vbox',
-                    vertical: true,
+    setup: self => self.hook(options.music.blurrcov, () => {
+        if (options.music.blurrcov.value == true){
+            self.child = mpris.BlurredCoverArt(player, {
+                class_name: 'cover-art-bg',
+                hexpand: true,
+                child: Widget.Box({
+                    class_name: 'shader',
                     hexpand: true,
-                    children: [ 
-                        Widget.Label({
-                            class_name: 'volumelabel',
-                            label: vars.volume.bind('value').transform(s => `${s}%`),
+                    vertical: false,
+                    children: [
+                        Widget.CenterBox({
+                            vertical: true,
+                            start_widget: TextBox(player),
+                            center_widget: mpris.PositionSlider(player),
+                            end_widget: Footer(player),
                         }),
-                        VolumeSlider(),
+                        Widget.Box({
+                            class_name: 'vbox',
+                            vertical: true,
+                            hexpand: true,
+                            children: [ 
+                                Widget.Label({
+                                    class_name: 'volumelabel',
+                                    label: vars.volume.bind('value').transform(s => `${s}%`),
+                                }),
+                                VolumeSlider(),
+                            ],
+                        }),
                     ],
                 }),
-            ],
-        }),
+            })
+        } else {
+            self.child = mpriscover.BlurredCoverArt(player, {
+                class_name: 'cover-art-bg',
+                hexpand: true,
+                child: Widget.Box({
+                    class_name: 'shader',
+                    hexpand: true,
+                    vertical: false,
+                    children: [
+                        Widget.CenterBox({
+                            vertical: true,
+                            start_widget: TextBox(player),
+                            center_widget: mpris.PositionSlider(player),
+                            end_widget: Footer(player),
+                        }),
+                        Widget.Box({
+                            class_name: 'vbox',
+                            vertical: true,
+                            hexpand: true,
+                            children: [ 
+                                Widget.Label({
+                                    class_name: 'volumelabel',
+                                    label: vars.volume.bind('value').transform(s => `${s}%`),
+                                }),
+                                VolumeSlider(),
+                            ],
+                        }),
+                    ],
+                }),
+            })
+        };
     }),
 })
 
 export default monitor => WW({
     name: `music${monitor}`,
-    layer: 'background',
+    layer: options.music.layer.bind('value'),
+    exclusivity: 'exclusive',
     visible: options.music.visible.bind('value'),
     anchor: options.music.anchor.bind('value'),
     margins: options.music.margins.bind('value'),

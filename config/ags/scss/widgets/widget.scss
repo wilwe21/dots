@@ -2,12 +2,26 @@
 	font-family: $clock-font;
 	font-size: $clock-size;
 	color: $clockcolor;
+	text-shadow: $clockshadow;
+	min-width: $clockwidth;
+	min-height: $clockheight;
+}
+@if $clock-background == true {
+	.wclock{
+		background-color: $clock-bg-color;
+		padding: $padding;
+		border: $border-width*1.5 solid $accent;
+		border-radius: $radii*1.5;
+	}
 }
 .moonmain {
 	font-size: 90px;
 }
 .wmoon {
 	font-size: $moonsize;
+}
+.wbgtop {
+	font-size: $bgtopsize;
 }
 .soundmain {
 	@include unset;
@@ -34,7 +48,7 @@
 	.buttonbox {
 		margin-right: -30px;
 	}
-	background: $bg-color;
+	//background: $bg-color;
 	border: $border-width*1.5 solid $accent;
 	border-radius: $radii*1.5;
 	min-width: $musicwidgetwidth;
@@ -94,20 +108,19 @@
         	min-width: $coverwidth;
         	box-shadow: 2px 2px 2px 0 $shadow;
         	margin: $padding;
-
-           .shader {
-            	background-color: transparent;
-		border-radius: $radii;
-            	box-shadow: inset 0 0 0 999px transparentize($bg-color, 0.8);
-           }
+        	.shader {
+            		background-color: transparent;
+			border-radius: $radii;
+            		box-shadow: inset 0 0 0 0px transparentize($bg-color, 0.8);
+           	}
     	}
     	.blurred-cover, .cover {
-        	background-size: cover;
-        	background-position: center;
+		background-size: cover;
+		background-position: center;
 		border-radius: $radii;
-    	}
-    	.blurred-cover {
-        	min-width: $musicwidgetwidth;
-        	min-height: $musicwidgetheight;
-    	}
+	}
+	.blurred-cover {
+		min-width: $musicwidgetwidth;
+		min-height: $musicwidgetheight;
+	}
 }
