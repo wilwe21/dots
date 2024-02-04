@@ -341,6 +341,9 @@ export default {
     info: {
         anchor: Option(['bottom', 'right'], {'note': 'anchor'}),
         margins: Option(['20', '20'], {'note': 'margins[top/bottom left/right]'}),
+        bgcolor: Option('transparentize($bg-color, 0.3)',{
+            'scss': 'infobg-color'
+        }),
         layer: Option('overlay',{
             'scssFormat': v => `"${v}"`,
             'enums': ['background', 'bottom', 'top', 'overlay'],
@@ -358,6 +361,26 @@ export default {
             'type': 'enum',
         }),
         blurrcov: Option(true),
+        border: Option(true, { 'scss': 'music-border' }),
+        volume: Option(true),
+        vertical: Option(false),
+        titlejustification: Option('left',{
+            'scssFormat': v => `"${v}"`,
+            'enums': ['left', 'center', 'right'],
+            'type': 'enum',
+        }),
+        artistjustification: Option('left',{
+            'scssFormat': v => `"${v}"`,
+            'enums': ['left', 'center', 'right'],
+            'type': 'enum',
+        }),
+        cover: {
+            hpack: Option('start', {
+                'scssFormat': v => `"${v}"`,
+                'enums': ['start', 'center', 'end'],
+                'type': 'enum',
+            }),
+        },
         min_width: Option(500, {
             'unit': 'px',
             'type': 'number',

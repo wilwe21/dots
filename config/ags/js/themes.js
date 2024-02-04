@@ -56,6 +56,7 @@ export default [
     "music.anchor": ["bottom", "right"],
     "music.margins": ["350", "20"],
     "music.blurrcov": false,
+    "music.border": false,
     "border.color.": "#0000FB",
     "border.opacity": 100,
     "border.width": 2,

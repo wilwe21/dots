@@ -38,25 +38,26 @@ const Footer = player => Widget.CenterBox({
             children: [
                 Widget.Box({
                     class_name: 'buttonbox',
-                   children: [
-                    mpris.ShuffleButton(player),
-                    mpris.PreviousButton(player),
-                    mpris.PlayPauseButton(player),
-                    mpris.NextButton(player),
-                    mpris.LoopButton(player),
-                   ], 
+                    children: [
+                        mpris.ShuffleButton(player),
+                        mpris.PreviousButton(player),
+                        mpris.PlayPauseButton(player),
+                        mpris.NextButton(player),
+                        mpris.LoopButton(player),
+                    ], 
                 }),
             ],
-        }),
+        })
     ],
 });
 
 /** @param {import('types/service/mpris').MprisPlayer} player */
 const TextBox = player => Widget.Box({
+    vertical: options.music.vertical.bind('value'),
     children: [
         mpris.CoverArt(player, {
             class_name: 'cover',
-            hpack: 'end',
+            hpack: options.music.cover.hpack.bind('value'),
             hexpand: false,
             child: Widget.Box({
                 class_name: 'shader',
@@ -64,20 +65,42 @@ const TextBox = player => Widget.Box({
             }),
         }),
         Widget.Box({
-            hexpand: true,
+            hexpand: false,
             vertical: true,
             class_name: 'labels',
             children: [
-                mpris.TitleLabel(player, {
-                    xalign: 0,
-                    justification: 'left',
-                    wrap: true,
+                Widget.Box({
+                    hpack: options.music.titlejustification.bind('value').transform(v => {
+                        if (v == 'left'){
+                            return 'start'
+                        } else if (v == 'center'){
+                            return 'center'
+                        } else {
+                            return 'end'
+                        }
+                    }),
+                    child: mpris.TitleLabel(player, {
+                        xalign: 0,
+                        justification: options.music.titlejustification.bind('value'),
+                        wrap: true,
+                    }),
                 }),
-                mpris.ArtistLabel(player, {
-                    xalign: 0,
-                    justification: 'left',
-                    wrap: true,
-                }),
+                Widget.Box({
+                    hpack: options.music.artistjustification.bind('value').transform(v => {
+                        if (v == 'left'){
+                            return 'start'
+                        } else if (v == 'center'){
+                            return 'center'
+                        } else {
+                            return 'end'
+                        }
+                    }),
+                    child: mpris.ArtistLabel(player, {
+                        xalign: 0,
+                        justification: options.music.artistjustification.bind('value'),
+                        wrap: true,
+                    }),
+                })
             ],
         }),
     ],
@@ -95,26 +118,35 @@ const PlayerBox = player => Widget.Box({
                     class_name: 'shader',
                     hexpand: true,
                     vertical: false,
-                    children: [
-                        Widget.CenterBox({
-                            vertical: true,
-                            start_widget: TextBox(player),
-                            center_widget: mpris.PositionSlider(player),
-                            end_widget: Footer(player),
-                        }),
-                        Widget.Box({
-                            class_name: 'vbox',
-                            vertical: true,
-                            hexpand: true,
-                            children: [ 
-                                Widget.Label({
-                                    class_name: 'volumelabel',
-                                    label: vars.volume.bind('value').transform(s => `${s}%`),
-                                }),
-                                VolumeSlider(),
-                            ],
-                        }),
-                    ],
+                    setup: self => self.hook(options.music.volume, () => {
+                        if (options.music.volume.value == true){
+                            self.children = [Widget.CenterBox({
+                                vertical: true,
+                                start_widget: TextBox(player),
+                                center_widget: mpris.PositionSlider(player),
+                                end_widget: Footer(player),
+                            }),
+                            Widget.Box({
+                                class_name: 'vbox',
+                                vertical: true,
+                                hexpand: true,
+                                children: [
+                                    Widget.Label({
+                                        class_name: 'volumelabel',
+                                        label: vars.volume.bind('value').transform(s => `${s}%`),
+                                    }),
+                                    VolumeSlider(),
+                                ],
+                            })]
+                        } else {
+                            self.child = Widget.CenterBox({
+                                vertical: true,
+                                start_widget: TextBox(player),
+                                center_widget: mpris.PositionSlider(player),
+                                end_widget: Footer(player),
+                            })
+                        }
+                    }),
                 }),
             })
         } else {
@@ -125,26 +157,35 @@ const PlayerBox = player => Widget.Box({
                     class_name: 'shader',
                     hexpand: true,
                     vertical: false,
-                    children: [
-                        Widget.CenterBox({
-                            vertical: true,
-                            start_widget: TextBox(player),
-                            center_widget: mpris.PositionSlider(player),
-                            end_widget: Footer(player),
-                        }),
-                        Widget.Box({
-                            class_name: 'vbox',
-                            vertical: true,
-                            hexpand: true,
-                            children: [ 
-                                Widget.Label({
-                                    class_name: 'volumelabel',
-                                    label: vars.volume.bind('value').transform(s => `${s}%`),
-                                }),
-                                VolumeSlider(),
-                            ],
-                        }),
-                    ],
+                    setup: self => self.hook(options.music.volume, () => {
+                        if (options.music.volume.value == true){
+                            self.children = [Widget.CenterBox({
+                                vertical: true,
+                                start_widget: TextBox(player),
+                                center_widget: mpris.PositionSlider(player),
+                                end_widget: Footer(player),
+                            }),
+                            Widget.Box({
+                                class_name: 'vbox',
+                                vertical: true,
+                                hexpand: true,
+                                children: [
+                                    Widget.Label({
+                                        class_name: 'volumelabel',
+                                        label: vars.volume.bind('value').transform(s => `${s}%`),
+                                    }),
+                                    VolumeSlider(),
+                                ],
+                            })]
+                        } else {
+                            self.child = Widget.CenterBox({
+                                vertical: true,
+                                start_widget: TextBox(player),
+                                center_widget: mpris.PositionSlider(player),
+                                end_widget: Footer(player),
+                            })
+                        }
+                    }),
                 }),
             })
         };

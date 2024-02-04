@@ -90,7 +90,7 @@
     	}
 }
 .info {
-	background-color: transparentize($bg-color, 0.3);
+	background-color: $infobg-color;
 	padding: $padding;
 	border: $border-width*1.5 solid $accent;
 	border-radius: $radii*1.5;
