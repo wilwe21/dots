@@ -367,7 +367,7 @@ export default {
         }),
         box_color: Option('$bg-color', { 'scss': 'mb-color' }),
         border: Option(true, { 'scss': 'music-border' }),
-        volume: Option(true),
+        volume: Option(true, { 'scss': 'music-volume-visible' }),
         vertical: Option(false),
         titlejustification: Option('left',{
             'scssFormat': v => `"${v}"`,

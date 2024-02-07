@@ -83,7 +83,7 @@ const TextBox = player => Widget.Box({
             })
         }),
         Widget.Box({
-            hexpand: false,
+            hexpand: true,
             vertical: true,
             class_name: 'labels',
             children: [
@@ -152,7 +152,7 @@ const PlayerBox = player => Widget.Box({
                             Widget.Box({
                                 class_name: 'vbox',
                                 vertical: true,
-                                hexpand: true,
+                                hexpand: false,
                                 children: [
                                     Widget.Label({
                                         class_name: 'volumelabel',
