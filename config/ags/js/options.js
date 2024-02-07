@@ -388,6 +388,8 @@ export default {
             box_visible: Option(false, { 'scss': 'music-footer-box' }),
             box_color: Option('$bg-color', { 'scss': 'mfb-color' }),
         },
+        box_visible: Option(false, { 'scss': 'music-box' }),
+        box_color: Option('$bg-color', { 'scss': 'mb-color' }),
         Title: Option(true),
         Artist: Option(true),
         min_width: Option(500, {

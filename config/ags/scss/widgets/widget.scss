@@ -33,6 +33,9 @@
 	font-size: $soundsize;
 }
 .mediawidget {
+	@if $music-box == true {
+		background-color: $mb-color;
+	}
 	button {
 		all: unset;
 		padding: $padding/2;
