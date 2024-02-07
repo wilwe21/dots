@@ -33,8 +33,12 @@
 	font-size: $soundsize;
 }
 .mediawidget {
-	@if $music-box == true {
+	@if $music-box == 'solid' {
 		background-color: $mb-color;
+		border-radius: $radii*1.5;
+	} @if $music-box == 'gradient' {
+		background-image: linear-gradient($mb-color);
+		border-radius: $radii*1.5;
 	}
 	button {
 		all: unset;

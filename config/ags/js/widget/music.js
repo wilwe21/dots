@@ -131,8 +131,8 @@ const TextBox = player => Widget.Box({
 /** @param {import('types/service/mpris').MprisPlayer} player */
 const PlayerBox = player => Widget.Box({
     class_name: `player ${player.name}`,
-    setup: self => self.hook(options.music.blurrcov, () => {
-        if (options.music.blurrcov.value == true){
+    setup: self => self.hook(options.music.box, () => {
+        if (options.music.box.value == 'blurred'){
             self.child = mpris.BlurredCoverArt(player, {
                 class_name: 'cover-art-bg',
                 hexpand: true,

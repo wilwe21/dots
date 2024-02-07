@@ -360,7 +360,12 @@ export default {
             'enums': ['background', 'bottom', 'top', 'overlay'],
             'type': 'enum',
         }),
-        blurrcov: Option(true),
+        box: Option('blurred', { 
+            'scss': 'music-box',
+            'enums': ['solid', 'gradient', 'transparent', 'blurred'],
+            'type': 'enum',
+        }),
+        box_color: Option('$bg-color', { 'scss': 'mb-color' }),
         border: Option(true, { 'scss': 'music-border' }),
         volume: Option(true),
         vertical: Option(false),
@@ -388,8 +393,6 @@ export default {
             box_visible: Option(false, { 'scss': 'music-footer-box' }),
             box_color: Option('$bg-color', { 'scss': 'mfb-color' }),
         },
-        box_visible: Option(false, { 'scss': 'music-box' }),
-        box_color: Option('$bg-color', { 'scss': 'mb-color' }),
         Title: Option(true),
         Artist: Option(true),
         min_width: Option(500, {

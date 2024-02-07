@@ -56,7 +56,7 @@ export default [
     "music.anchor": ["bottom","right"],
     "music.margins": ["360","20"],
     "music.layer": "background",
-    "music.blurrcov": false,
+    "music.box": 'transparent',
     "music.border": false,
     "music.footer.positon": false,
     "music.min_width": 600,
