@@ -143,6 +143,7 @@ const PlayerBox = player => Widget.Box({
                     setup: self => self.hook(options.music.volume, () => {
                         if (options.music.volume.value == true){
                             self.children = [Widget.CenterBox({
+                                class_name: 'mpris-content',
                                 vertical: true,
                                 start_widget: TextBox(player),
                                 center_widget: mpris.PositionSlider(player),
