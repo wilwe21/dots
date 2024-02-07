@@ -55,8 +55,16 @@
 	.buttonbox {
 		padding: $padding/2;
 		//margin-right: -30px;
-		@if $music-footer-box == true {
+		@if $music-footer-box == 'solid' {
 			background-color: $mfb-color;
+			border: $border-width*1.5 solid $accent;
+			border-radius: $radii*1.5;
+		} @if $music-footer-box == 'gradient' {
+			background-image: linear-gradient($mfb-color);
+			border: $border-width*1.5 solid $accent;
+			border-radius: $radii*1.5;
+		}
+		@if $music-footer-border == true {
 			border: $border-width*1.5 solid $accent;
 			border-radius: $radii*1.5;
 		}
@@ -68,6 +76,18 @@
 	min-width: $musicwidgetwidth;
 	min-height: $musicwidgetheight;
 	.labels {
+		@if $music-text-box == 'solid'{
+			background-color: $mtb-color;
+			border-radius: $radii*1.5;
+		} @if $music-text-box == 'gradient'{
+			background-image: linear-gradient($mtb-color);
+			border-radius: $radii*1.5;
+		}
+		@if $music-text-border == true {
+			border: $border-width*1.5 solid $accent;
+			border-radius: $radii*1.5;
+		}
+		color: $music-text-color;
 		min-width: $musicwidgetwidth/2;
 		margin-top: $padding;
 		label {

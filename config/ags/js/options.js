@@ -362,7 +362,7 @@ export default {
         }),
         box: Option('blurred', { 
             'scss': 'music-box',
-            'enums': ['solid', 'gradient', 'transparent', 'blurred'],
+            'enums': ['solid', 'gradient', 'blurred', 'transparent'],
             'type': 'enum',
         }),
         box_color: Option('$bg-color', { 'scss': 'mb-color' }),
@@ -390,8 +390,23 @@ export default {
         footer: {
             positon: Option(true),
             controls: Option(true),
-            box_visible: Option(false, { 'scss': 'music-footer-box' }),
+            box_visible: Option('transparent', {
+                'scss': 'music-footer-box',
+                'enums': ['solid', 'gradient', 'transparent'],
+                'type': 'enum',
+            }),
             box_color: Option('$bg-color', { 'scss': 'mfb-color' }),
+            border: Option(false, { 'scss': 'music-footer-border' }),
+        },
+        text: {
+            visible: Option('transparent', {
+                'scss': 'music-text-box',
+                'enums': ['solid', 'gradient', 'transparent'],
+                'type': 'enum',
+            }),
+            bg_color: Option('$bg-color', { 'scss': 'mtb-color' }),
+            color: Option('$fg-color', { 'scss': 'music-text-color' }),
+            border: Option(false, { 'scss': 'music-text-border' }),
         },
         Title: Option(true),
         Artist: Option(true),
