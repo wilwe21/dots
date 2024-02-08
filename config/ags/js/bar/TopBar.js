@@ -16,6 +16,7 @@ import * as vars from '../variables.js';
 import { execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
 import Media from './buttons/MediaBar.js';
 import icons from '../icons.js';
+import WW from '../misc/WW.js';
 
 const intval = options.systemFetchInterval;
 const submenuItems = Variable(1);
@@ -48,8 +49,8 @@ const SeparatorDot = (service, condition) => {
 
 const SysProgress = (type, title, unit) => Widget.Box({
     class_name: `progress-box ${type}`,
-    hexpand: false,
     tooltipText: vars[type].bind('value').transform(v => `${title}: ${v}${unit}`),
+    hexpand: false,
     children: [
         Widget.Icon({
             class_name: 'progress-icon',
@@ -66,33 +67,38 @@ const SysProgress = (type, title, unit) => Widget.Box({
 
 const Start = () => Widget.Box({
     class_name: 'start',
+    hpack: 'start',
     children: [
         OverviewButton(),
         Media(),
-        Widget.Box({ hexpand: false }),
     ],
 });
 
 const Center = () => Widget.Box({
     class_name: 'center',
-    children: [
-        Widget.Icon({
-            class_name: 'decorator',
-            icon: options.bar.decorator1.bind('value')
-        }),
-        DateButton(),
-        Widget.Icon({
-            class_name: 'decorator',
-            icon: options.bar.decorator2.bind('value')
-        }),
-   ],
+    setup: self => self.hook(options.bar.decorsw, () => {
+        if (options.bar.decorsw.value == true) {
+            self.children = [
+                Widget.Icon({
+                    class_name: 'decorator',
+                    icon: options.bar.decorator1.bind('value')
+                }),
+                DateButton(),
+                Widget.Icon({
+                    class_name: 'decorator',
+                    icon: options.bar.decorator2.bind('value')
+                }),
+            ]
+        } else {
+            self.child = DateButton()
+        }
+    }),
 });
 
 const End = () => Widget.Box({
     class_name: 'end',
+    hpack: 'end',
     children: [
-        Widget.Box({ hexpand: true }),
-
         Widget.Box({
             class_name: 'system-info horizontal',
             children: [
@@ -119,7 +125,7 @@ const End = () => Widget.Box({
 });
 
 /** @param {number} monitor */
-export default monitor => Widget.Window({
+export default monitor => WW({
     name: `bar${monitor}`,
     class_name: 'transparent',
     exclusivity: 'exclusive',

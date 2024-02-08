@@ -218,24 +218,59 @@ export default {
             'enums': ['floating', 'normal'],
             'type': 'enum',
         }),
+        mode: Option('solid', {
+            'scss': 'bar-color-mode',
+            'enums': ['solid', 'gradient', 'transparent'],
+            'type': 'enum',
+        }),
+        color: Option('$bg-color', {'scss': 'bar-color' }),
+        border: Option(true, { 'scss': 'bar-border-sw' }),
+        start: {
+            border: Option(false, { 'scss': 'bar-start-border-sw' }),
+            colormode: Option('transparent', {
+                'scss': 'bar-start-color-mode',
+                'enums': ['solid', 'gradient', 'transparent'],
+                'type': 'enum',
+            }),
+            color: Option('$bg-color', {'scss': 'bar-start-color' }),
+        },
+        center: {
+            border: Option(false, { 'scss': 'bar-center-border-sw' }),
+            colormode: Option('transparent', {
+                'scss': 'bar-center-color-mode',
+                'enums': ['solid', 'gradient', 'transparent'],
+                'type': 'enum',
+            }),
+            color: Option('$bg-color', {'scss': 'bar-center-color' }),
+        },
+        end: {
+            border: Option(false, { 'scss': 'bar-end-border-sw' }),
+            colormode: Option('transparent', {
+                'scss': 'bar-end-color-mode',
+                'enums': ['solid', 'gradient', 'transparent'],
+                'type': 'enum',
+            }),
+            color: Option('$bg-color', {'scss': 'bar-end-color' }),
+        },
         flat_buttons: Option(true, { 'scss': 'bar-flat-buttons' }),
         separators: Option(true),
         icon: Option(themes[0].options['bar.icon'], {
-                'scssFormat': v => `"${v}"`,
-                'type': 'img',
-            }),
+            'scssFormat': v => `"${v}"`,
+            'type': 'img',
+        }),
+        decorsw: Option(true),
         decorator1: Option(themes[0].options['bar.decorator1'], {
-                'scssFormat': v => `"${v}"`,
-                'type': 'img',
-            }),
+            'scssFormat': v => `"${v}"`,
+            'type': 'img',
+        }),
         decorator2: Option(themes[0].options['bar.decorator2'], {
-                'scssFormat': v => `"${v}"`,
-                'type': 'img',
-            }),
+            'scssFormat': v => `"${v}"`,
+            'type': 'img',
+        }),
         dsize: Option('120%', {
-                'scss': 'dsize',
-                'unit': '%',
-            }),
+            'scss': 'dsize',
+            'unit': '%',
+        }),
     },
     
     clock: {
