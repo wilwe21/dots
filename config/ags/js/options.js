@@ -199,6 +199,12 @@ export default {
         height: Option(500),
         icon_size: Option(52),
         descvisible: Option(false),
+        bg: Option('solid', {
+            'scss': 'applauncher-bg-mode',
+            'enums': ['solid', 'gradient', 'transparent'],
+            'type': 'enum',
+        }),
+        bg_color: Option('$bg-color', { 'scss': 'applauncher-bg-color' }),
         labvisible: Option(true),
         icovisible: Option(true),
         avatarvisible: Option(true),

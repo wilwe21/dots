@@ -29,8 +29,8 @@ $bar-spacing: $spacing / 2;
     }
     .end{
     	padding: 0px $padding 0px $padding;
+        border-radius: $radii;
     	@if $bar-end-border-sw == true {
-        	border-radius: $radii;
         	border: $bar-border;
     	} @if $bar-end-color-mode == 'solid' {
     		background-color: $bar-end-color;
@@ -40,8 +40,8 @@ $bar-spacing: $spacing / 2;
     }
     .center{
     	padding: 0px $padding 0px $padding;
+        border-radius: $radii;
     	@if $bar-center-border-sw == true {
-        	border-radius: $radii;
         	border: $bar-border;
     	} @if $bar-center-color-mode == 'solid' {
     		background-color: $bar-center-color;
@@ -51,8 +51,8 @@ $bar-spacing: $spacing / 2;
     }
     .start{
     	padding: 0px $padding 0px $padding;
+        border-radius: $radii;
     	@if $bar-start-border-sw == true {
-        	border-radius: $radii;
         	border: $bar-border;
     	} @if $bar-start-color-mode == 'solid' {
     		background-color: $bar-start-color;
@@ -211,6 +211,7 @@ $bar-spacing: $spacing / 2;
            margin-top: -2px;
            margin-left: 5px;
 	   font-size: 1em;
+	   color: $fg-color;
          }
     }
 

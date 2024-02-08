@@ -1,5 +1,10 @@
 window#applauncher .window-content {
-    @include floating_widget;
+    //@include floating_widget;
+    @if $applauncher-bg-mode == 'solid' {
+    	background-color: $applauncher-bg-color;
+    } @if $applauncher-bg-mode == 'gradient' {
+    	background-image: linear-gradient($applauncher-bg-color);
+    }
     border-color: $accent;
     border-radius: 20px;
     border: $bar-border;
