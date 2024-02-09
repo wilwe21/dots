@@ -36,6 +36,11 @@
 
 window#dashboard .window-content {
     @include floating-widget;
+    @if $db-bg-mode == 'solid' {
+    	background-color: $db-bg-color;
+    } @if $db-bg-mode == 'gradient' {
+    	background-image: linear-gradient($db-bg-color);
+    }
 
     .notifications {
         min-width: $notifications-width;

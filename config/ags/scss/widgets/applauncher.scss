@@ -1,5 +1,5 @@
 window#applauncher .window-content {
-    //@include floating_widget;
+    @include floating_widget;
     @if $applauncher-bg-mode == 'solid' {
     	background-color: $applauncher-bg-color;
     } @if $applauncher-bg-mode == 'gradient' {

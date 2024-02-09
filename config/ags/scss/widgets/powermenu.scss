@@ -9,6 +9,11 @@ window#verification .window-content {
     min-width: 300px;
     min-height: 100px;
     border: $border-width solid $accent;
+    @if $pm-bg-mode == 'solid' {
+    	background-color: $pm-bg-color;
+    } @if $pm-bg-mode == 'gradient' {
+    	background-image: linear-gradient($pm-bg-color);
+    }
 
     .text-box {
         .title {
@@ -36,6 +41,11 @@ window#verification .window-content {
 window#powermenu .window-content {
     @include floating-widget;
     @include spacing(0);
+    @if $pm-bg-mode == 'solid' {
+    	background-color: $pm-bg-color;
+    } @if $pm-bg-mode == 'gradient' {
+    	background-image: linear-gradient($pm-bg-color);
+    }
     padding: $popover-padding + $spacing * 1.5;
     border: $border-width solid $accent;
     border-radius: if($radii == 0, 0, $popover-radius + ($popover-padding + $spacing * 1.5));

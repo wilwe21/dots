@@ -1,6 +1,11 @@
 window#quicksettings .window-content {
     @include floating-widget;
     @include spacing;
+    @if $qs-bg-mode == 'solid' {
+    	background-color: $qs-bg-color;
+    } @if $qs-bg-mode == 'gradient' {
+    	background-image: linear-gradient($qs-bg-color);
+    }
 
     .avatar {
         @include widget;

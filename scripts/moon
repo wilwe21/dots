@@ -42,6 +42,6 @@ elif [ $x == 🌖 ]; then
   echo "🌒" &> /home/wilwe/.cache/moone
   exit
 else
-  cat /home/wilwe/.cache/moone
+  echo $(cat /home/wilwe/.cache/moone)
   exit
 fi

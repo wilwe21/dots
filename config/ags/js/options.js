@@ -279,6 +279,15 @@ export default {
         }),
     },
     
+    quickSettings: {
+        bg: Option('solid', {
+            'scss': 'qs-bg-mode',
+            'enums': ['solid', 'gradient', 'transparent'],
+            'type': 'enum',
+        }),
+        bg_color: Option('$bg-color', { 'scss': 'qs-bg-color' }),
+    },
+    
     clock: {
         main: Option('%H:%M', {
             'scssFormat': v => `"${v}"`,
@@ -472,6 +481,14 @@ export default {
             'scss': 'coverheight'
         }),
     },
+    PowerMenu: {
+        bg: Option('solid', {
+            'scss': 'pm-bg-mode',
+            'enums': ['solid', 'gradient', 'transparent'],
+            'type': 'enum',
+        }),
+        bg_color: Option('$bg-color', { 'scss': 'pm-bg-color' }),
+    },
 
     battery: {
         show_percentage: Option(true, {
@@ -516,6 +533,12 @@ export default {
             'category': 'Desktop',
             'scss': 'sys-info-size',
         }),
+        bg: Option('solid', {
+            'scss': 'db-bg-mode',
+            'enums': ['solid', 'gradient', 'transparent'],
+            'type': 'enum',
+        }),
+        bg_color: Option('$bg-color', { 'scss': 'db-bg-color' }),
     },
 
     mpris: {
@@ -535,6 +558,14 @@ export default {
         'title': 'No. workspaces on bar and overview',
         'note': 'Set it to 0 to make it dynamic',
     }),
+    OverView: {
+        bg: Option('solid', {
+            'scss': 'ov-bg-mode',
+            'enums': ['solid', 'gradient', 'transparent'],
+            'type': 'enum',
+        }),
+        bg_color: Option('$bg-color', { 'scss': 'ov-bg-color' }),
+    },
 
     temperature: '/sys/class/thermal/thermal_zone0/temp',
     systemFetchInterval: 2500,
