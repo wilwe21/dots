@@ -79,11 +79,9 @@ const Applauncher = () => {
                     } else if (options.applauncher.side.value == 'player'){
                         const PlayerBox = player => Widget.CenterBox({
                             class_name: 'shader',
-                            hexpand: true,
                             vertical: true,
                             start_widget: mpris.CoverArt(player, {
                                 class_name: 'cover',
-                                vexpand: true, 
                                 vpack: 'start',
                             }),
                             center_widget: Widget.Box({
