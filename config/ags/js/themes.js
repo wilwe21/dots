@@ -85,7 +85,7 @@ export default [
     "applauncher.width": 500,
     "applauncher.height": 400,
     "applauncher.icon_size": 32,
-    "applauncher.bg": 'gradient',
+    "applauncher.bg": 'linear-gradient',
     "applauncher.bg_color": '135deg,darken($accent, 50), lighten($bg-color,10), $bg-color',
     "bar.position": "top",
     "bar.style": "floating",

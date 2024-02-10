@@ -208,6 +208,11 @@ export default {
         br_mode: Option(true, { 'scss': 'applauncher-br-mode' }),
         br_radius: Option(20, { 'scss': 'applauncher-br-radius' }),
         br: Option('$border-width solid $accent', { 'scss': 'applauncher-br' }),
+        side: Option('avatar', {
+            'scssFormat': s => `${s}`,
+            'enums': ['avatar', 'none'],
+            'type': 'enum',
+        }),
         labvisible: Option(true),
         icovisible: Option(true),
         avatarvisible: Option(true),

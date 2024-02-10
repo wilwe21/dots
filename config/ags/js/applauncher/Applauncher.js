@@ -61,17 +61,23 @@ const Applauncher = () => {
             Widget.Box({
                 class_name: 'appicla',
                 vertical: true,
-                children: [
-                    Widget.Icon({
-                        class_name: 'appicon',
-                        visible: options.applauncher.avatarvisible.bind('value'),
-                        icon: options.desktop.avatar.bind('value')
-                    }),
-                    Widget.Label({
-                        class_name: 'applabel',
-                        label: options.applauncher.label.bind('value'),
-                    }),
-                ],
+                setup: self => self.hook(options.applauncher.side, () => {
+                    if (options.applauncher.side.value == 'avatar') {
+                        self.children = [
+                            Widget.Icon({
+                                class_name: 'appicon',
+                                visible: options.applauncher.avatarvisible.bind('value'),
+                                icon: options.desktop.avatar.bind('value')
+                            }),
+                            Widget.Label({
+                                class_name: 'applabel',
+                                label: options.applauncher.label.bind('value'),
+                            }),
+                        ]
+                    } else {
+                        self.children = []
+                    }
+                })
             }),
             Widget.Box({
                 vertical: true,
