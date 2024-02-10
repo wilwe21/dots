@@ -87,6 +87,7 @@ export default [
     "applauncher.icon_size": 32,
     "applauncher.bg": 'linear-gradient',
     "applauncher.bg_color": '135deg,darken($accent, 50), lighten($bg-color,10), $bg-color',
+    "applauncher.side": 'player',
     "bar.position": "top",
     "bar.style": "floating",
     "bar.flat_buttons": true,

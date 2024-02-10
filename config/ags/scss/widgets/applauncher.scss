@@ -26,6 +26,37 @@ window#applauncher .window-content {
     }
     .appicla {
     	padding: $padding;
+    	.labels {
+		min-width: 250px;
+		margin-top: $padding;
+		label {
+			font-size: 1.1em;
+			text-shadow: $text-shadow;
+			&.title {
+				font-weight: bold;
+			}
+		}
+	}
+	.cover {
+		border-radius: $radii;
+        	min-height: 150px;
+        	min-width: 150px;
+        	box-shadow: 2px 2px 2px 0 $shadow;
+        	margin: $padding;
+
+           .shader {
+            	background-color: transparent;
+		border-radius: $radii;
+            	box-shadow: inset 0 0 0 999px transparentize($bg-color, 0.8);
+           }
+    	}
+    	button {
+		all: unset;
+		padding: $padding/2;
+		margin: 10px;
+		font-size: 20px;
+		color: $playcolor;
+	}
     }
     .appicon {
     	font-size: 200px;

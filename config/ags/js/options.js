@@ -210,7 +210,7 @@ export default {
         br: Option('$border-width solid $accent', { 'scss': 'applauncher-br' }),
         side: Option('avatar', {
             'scssFormat': s => `${s}`,
-            'enums': ['avatar', 'none'],
+            'enums': ['avatar', 'player','none'],
             'type': 'enum',
         }),
         labvisible: Option(true),
