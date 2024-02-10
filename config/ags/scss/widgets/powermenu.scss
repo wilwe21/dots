@@ -13,6 +13,9 @@ window#verification .window-content {
     	background-color: $pm-bg-color;
     } @if $pm-bg-mode == 'gradient' {
     	background-image: linear-gradient($pm-bg-color);
+    } @if $pm-br-mode == true {
+    	border-radius: $pm-br-radius;
+    	border: $pm-br;
     }
 
     .text-box {
@@ -45,6 +48,9 @@ window#powermenu .window-content {
     	background-color: $pm-bg-color;
     } @if $pm-bg-mode == 'gradient' {
     	background-image: linear-gradient($pm-bg-color);
+    } @if $pm-br-mode == true {
+    	border-radius: $pm-br-radius;
+    	border: $pm-br;
     }
     padding: $popover-padding + $spacing * 1.5;
     border: $border-width solid $accent;

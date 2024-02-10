@@ -1,17 +1,16 @@
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
+import options from '../options.js';
 import icons from '../icons.js';
 
 export const TitleLabel = (player, props) => Widget.Label({
     ...props,
     class_name: 'title',
     label: player.bind('track-title').transform(n => {
-        if (n.length > 50) {
-            n = n.substring(0, 50);
-            return String(n + '...');
-        } else {
-            return String(n);
-        }
+        if (n.length > options.bar.player_length.value) {
+            var add = '...'
+        } else { var add = '' }
+            return(n).substring(0, options.bar.player_length.value)+String(`${add}`);
         }),
 });
 

@@ -40,6 +40,9 @@ window#dashboard .window-content {
     	background-color: $db-bg-color;
     } @if $db-bg-mode == 'gradient' {
     	background-image: linear-gradient($db-bg-color);
+    } @if $db-br-mode == true {
+    	border-radius: $db-br-radius;
+    	border: $db-br;
     }
 
     .notifications {

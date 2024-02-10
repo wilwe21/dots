@@ -5,6 +5,9 @@ window#quicksettings .window-content {
     	background-color: $qs-bg-color;
     } @if $qs-bg-mode == 'gradient' {
     	background-image: linear-gradient($qs-bg-color);
+    } @if $qs-br-mode == true {
+    	border-radius: $qs-br-radius;
+    	border: $qs-br;
     }
 
     .avatar {

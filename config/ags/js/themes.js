@@ -499,7 +499,7 @@ export default [
     "clock.color": '#6C4933',
     "clock.shadow": '0px 0px 0px #FFFFFF',
     "clock.anchor": ['top', 'right'],
-    "clock.margins": ['255', '955'],
+    "clock.margins": ['255', '948'],
     "clock.visible": true,
     "moon.visible": false,
     "border.color.": "#ECEA79",

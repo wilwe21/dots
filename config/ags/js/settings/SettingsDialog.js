@@ -165,11 +165,6 @@ const sidebar = Widget.Revealer({
                         label: icons.dialog.Search + ' Search',
                         on_clicked: () => showSearch.value = !showSearch.value,
                     }),
-                    Widget.Button({
-                        hpack: 'end',
-                        child: Widget.Icon(icons.ui.info),
-                        on_clicked: () => App.toggleWindow('about'),
-                    }),
                 ],
             }),
             Widget.Scrollable({

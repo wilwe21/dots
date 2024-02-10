@@ -5,6 +5,9 @@ window#overview .window-content {
     	background-color: $ov-bg-color;
     } @if $ov-bg-mode == 'gradient' {
     	background-image: linear-gradient($ov-bg-color);
+    } @if $ov-br-mode == true {
+    	border-radius: $ov-br-radius;
+    	border: $ov-br;
     }
     
     

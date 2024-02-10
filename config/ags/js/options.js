@@ -205,6 +205,9 @@ export default {
             'type': 'enum',
         }),
         bg_color: Option('$bg-color', { 'scss': 'applauncher-bg-color' }),
+        br_mode: Option(true, { 'scss': 'applauncher-br-mode' }),
+        br_radius: Option(20, { 'scss': 'applauncher-br-radius' }),
+        br: Option('$border-width solid $accent', { 'scss': 'applauncher-br' }),
         labvisible: Option(true),
         icovisible: Option(true),
         avatarvisible: Option(true),
@@ -258,6 +261,9 @@ export default {
             }),
             color: Option('$bg-color', {'scss': 'bar-end-color' }),
         },
+        player_length: Option(50, {
+            'scssFormat': s => `${s}`,
+        }),
         flat_buttons: Option(true, { 'scss': 'bar-flat-buttons' }),
         separators: Option(true),
         icon: Option(themes[0].options['bar.icon'], {
@@ -286,6 +292,9 @@ export default {
             'type': 'enum',
         }),
         bg_color: Option('$bg-color', { 'scss': 'qs-bg-color' }),
+        br_mode: Option(true, { 'scss': 'qs-br-mode' }),
+        br_radius: Option(20, { 'scss': 'qs-br-radius' }),
+        br: Option('$border-width solid $accent', { 'scss': 'qs-br' }),
     },
     
     clock: {
@@ -488,6 +497,9 @@ export default {
             'type': 'enum',
         }),
         bg_color: Option('$bg-color', { 'scss': 'pm-bg-color' }),
+        br_mode: Option(true, { 'scss': 'pm-br-mode' }),
+        br_radius: Option(20, { 'scss': 'pm-br-radius' }),
+        br: Option('$border-width solid $accent', { 'scss': 'pm-br' }),
     },
 
     battery: {
@@ -539,6 +551,9 @@ export default {
             'type': 'enum',
         }),
         bg_color: Option('$bg-color', { 'scss': 'db-bg-color' }),
+        br_mode: Option(true, { 'scss': 'db-br-mode' }),
+        br_radius: Option(20, { 'scss': 'db-br-radius' }),
+        br: Option('$border-width solid $accent', { 'scss': 'db-br' }),
     },
 
     mpris: {
@@ -565,6 +580,9 @@ export default {
             'type': 'enum',
         }),
         bg_color: Option('$bg-color', { 'scss': 'ov-bg-color' }),
+        br_mode: Option(true, { 'scss': 'ov-br-mode' }),
+        br_radius: Option(20, { 'scss': 'ov-br-radius' }),
+        br: Option('$border-width solid $accent', { 'scss': 'ov-br' }),
     },
 
     temperature: '/sys/class/thermal/thermal_zone0/temp',
