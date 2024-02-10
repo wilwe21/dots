@@ -18,7 +18,6 @@ export default ({
     ...rest
 }) => Widget.Button({
     class_name: `panel-button ${class_name}`,
-    cursor: 'pointer',
     child: Widget.Box({ children: [content] }),
     setup: self => {
         let open = false;

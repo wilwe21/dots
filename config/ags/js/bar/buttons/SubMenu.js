@@ -48,7 +48,6 @@ export default ({ children, direction = 'left', items = Variable(0) }) => {
     const posStart = direction === 'up' || direction === 'left';
     const posEnd = direction === 'down' || direction === 'right';
     const revealer = Widget.Revealer({
-        cursor: 'pointer',
         transition: `slide_${direction}`,
         child: Widget.Box({
             children,
@@ -56,7 +55,6 @@ export default ({ children, direction = 'left', items = Variable(0) }) => {
     });
 
     return Widget.Box({
-        cursor: 'pointer',
         vertical: direction === 'up' || direction === 'down',
         children: [
             posStart && revealer,
