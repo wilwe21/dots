@@ -329,12 +329,15 @@ export default {
         color: Option('#ffffff', {
             'scss': 'clockcolor',
         }),
-        background: Option(false, {
+        background: Option('transparent', {
             'scss': 'clock-background',
+            'enums': ['solid', 'linear-gradient', 'repeating-linear-gradient', 'radial-gradient', 'repeating-radial-gradient', 'transparent'],
+            'type': 'enum',
         }),
         bg_color: Option('$bg-color', {
             'scss': 'clock-bg-color',
         }),
+        border: Option(false, { 'scss': 'clock-border' }),
         width: Option('$clock-size',{
             'scss': 'clockwidth'
         }),
