@@ -33,12 +33,17 @@
 	font-size: $soundsize;
 }
 .mediawidget {
+	border-radius: $radii*1.5;
 	@if $music-box == 'solid' {
 		background-color: $mb-color;
-		border-radius: $radii*1.5;
-	} @if $music-box == 'gradient' {
+	} @if $music-box == 'linear-gradient' {
 		background-image: linear-gradient($mb-color);
-		border-radius: $radii*1.5;
+	} @if $music-box == 'repeating-linear-gradient' {
+		background-image: repeating-linear-gradient($mb-color);
+	} @if $music-box == 'radial-gradient' {
+		background-image: radial-gradient($mb-color);
+	} @if $music-box == 'repeating-radial-gradient' {
+		background-image: repeating-radial-gradient($mb-color);
 	}
 	button {
 		all: unset;

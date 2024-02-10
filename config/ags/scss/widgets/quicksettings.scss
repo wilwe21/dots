@@ -1,14 +1,20 @@
 window#quicksettings .window-content {
     @include floating-widget;
     @include spacing;
-    @if $qs-bg-mode == 'solid' {
-    	background-color: $qs-bg-color;
-    } @if $qs-bg-mode == 'gradient' {
-    	background-image: linear-gradient($qs-bg-color);
-    } @if $qs-br-mode == true {
-    	border-radius: $qs-br-radius;
-    	border: $qs-br;
-    }
+    	@if $qs-bg-mode == 'solid' {
+    		background-color: $qs-bg-color;
+    	} @if $qs-bg-mode == 'linear-gradient' {
+    		background-image: linear-gradient($qs-bg-color);
+    	} @if $qs-bg-mode == 'repeating-linear-gradient' {
+		background-image: repeating-linear-gradient($qs-bg-color);
+	} @if $qs-bg-mode == 'radial-gradient' {
+		background-image: radial-gradient($qs-bg-color);
+	} @if $qs-bg-mode == 'repeating-radial-gradient' {
+		background-image: repeating-radial-gradient($qs-bg-color);
+	} @if $qs-br-mode == true {
+    		border-radius: $qs-br-radius;
+    		border: $qs-br;
+    	}
 
     .avatar {
         @include widget;

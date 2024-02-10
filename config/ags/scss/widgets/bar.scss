@@ -21,8 +21,14 @@ $bar-spacing: $spacing / 2;
 .panel {
     @if $bar-color-mode == 'solid' {
     	background-color: $bar-color;
-    } @if $bar-color-mode == 'gradient' {
+    } @if $bar-color-mode == 'linear-gradient' {
     	background-image: linear-gradient($bar-color);
+    } @if $bar-color-mode == 'repeating-linear-gradient' {
+	background-image: repeating-linear-gradient($bar-color);
+    } @if $bar-color-mode == 'radial-gradient' {
+	background-image: radial-gradient($bar-color);
+    } @if $bar-color-mode == 'repeating-radial-gradient' {
+	background-image: repeating-radial-gradient($bar-color);
     } @if $bar-border-sw == true {
         border-radius: $radii;
         border: $bar-border;
@@ -34,8 +40,14 @@ $bar-spacing: $spacing / 2;
         	border: $bar-border;
     	} @if $bar-end-color-mode == 'solid' {
     		background-color: $bar-end-color;
-    	} @if $bar-end-color-mode == 'gradient' {
+    	} @if $bar-end-color-mode == 'linear-gradient' {
     		background-image: linear-gradient($bar-end-color);
+    	} @if $bar-end-color-mode == 'repeating-linear-gradient' {
+		background-image: repeating-linear-gradient($bar-end-color);
+    	} @if $bar-end-color-mode == 'radial-gradient' {
+		background-image: radial-gradient($bar-end-color);
+    	} @if $bar-end-color-mode == 'repeating-radial-gradient' {
+		background-image: repeating-radial-gradient($bar-end-color);
     	}
     }
     .center{
@@ -45,8 +57,14 @@ $bar-spacing: $spacing / 2;
         	border: $bar-border;
     	} @if $bar-center-color-mode == 'solid' {
     		background-color: $bar-center-color;
-    	} @if $bar-center-color-mode == 'gradient' {
+    	} @if $bar-center-color-mode == 'linear-gradient' {
     		background-image: linear-gradient($bar-center-color);
+    	} @if $bar-center-color-mode == 'repeating-linear-gradient' {
+		background-image: repeating-linear-gradient($bar-center-color);
+    	} @if $bar-center-color-mode == 'radial-gradient' {
+		background-image: radial-gradient($bar-center-color);
+    	} @if $bar-center-color-mode == 'repeating-radial-gradient' {
+		background-image: repeating-radial-gradient($bar-center-color);
     	}
     }
     .start{
@@ -56,8 +74,14 @@ $bar-spacing: $spacing / 2;
         	border: $bar-border;
     	} @if $bar-start-color-mode == 'solid' {
     		background-color: $bar-start-color;
-    	} @if $bar-start-color-mode == 'gradient' {
+    	} @if $bar-start-color-mode == 'linear-gradient' {
     		background-image: linear-gradient($bar-start-color);
+    	} @if $bar-start-color-mode == 'repeating-linear-gradient' {
+		background-image: repeating-linear-gradient($bar-start-color);
+    	} @if $bar-start-color-mode == 'radial-gradient' {
+		background-image: radial-gradient($bar-start-color);
+    	} @if $bar-start-color-mode == 'repeating-radial-gradient' {
+		background-image: repeating-radial-gradient($bar-start-color);
     	}
     }
     .cpu {

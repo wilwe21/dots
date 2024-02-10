@@ -3,8 +3,14 @@ window#overview .window-content {
     @include spacing;
     @if $ov-bg-mode == 'solid' {
     	background-color: $ov-bg-color;
-    } @if $ov-bg-mode == 'gradient' {
+    } @if $ov-bg-mode == 'linear-gradient' {
     	background-image: linear-gradient($ov-bg-color);
+    } @if $ov-bg-mode == 'repeating-linear-gradient' {
+	background-image: repeating-linear-gradient($ov-bg-color);
+    } @if $ov-bg-mode == 'radial-gradient' {
+	background-image: radial-gradient($ov-bg-color);
+    } @if $ov-bg-mode == 'repeating-radial-gradient' {
+	background-image: repeating-radial-gradient($ov-bg-color);
     } @if $ov-br-mode == true {
     	border-radius: $ov-br-radius;
     	border: $ov-br;

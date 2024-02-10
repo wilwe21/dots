@@ -2,8 +2,14 @@ window#applauncher .window-content {
     @include floating_widget;
     @if $applauncher-bg-mode == 'solid' {
     	background-color: $applauncher-bg-color;
-    } @if $applauncher-bg-mode == 'gradient' {
+    } @if $applauncher-bg-mode == 'linear-gradient' {
     	background-image: linear-gradient($applauncher-bg-color);
+    } @if $applauncher-bg-mode == 'repeating-linear-gradient' {
+	background-image: repeating-linear-gradient($applauncher-bg-color);
+    } @if $applauncher-bg-mode == 'radial-gradient' {
+	background-image: radial-gradient($applauncher-bg-color);
+    } @if $applauncher-bg-mode == 'repeating-radial-gradient' {
+	background-image: repeating-radial-gradient($applauncher-bg-color);
     } @if $applauncher-br-mode == true {
     	border-radius: $applauncher-br-radius;
     	border: $applauncher-br;

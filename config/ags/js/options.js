@@ -201,7 +201,7 @@ export default {
         descvisible: Option(false),
         bg: Option('solid', {
             'scss': 'applauncher-bg-mode',
-            'enums': ['solid', 'gradient', 'transparent'],
+            'enums': ['solid', 'linear-gradient', 'repeating-linear-gradient', 'radial-gradient', 'repeating-radial-gradient', 'transparent'],
             'type': 'enum',
         }),
         bg_color: Option('$bg-color', { 'scss': 'applauncher-bg-color' }),
@@ -229,7 +229,7 @@ export default {
         }),
         mode: Option('solid', {
             'scss': 'bar-color-mode',
-            'enums': ['solid', 'gradient', 'transparent'],
+            'enums': ['solid', 'linear-gradient', 'repeating-linear-gradient', 'radial-gradient', 'repeating-radial-gradient', 'transparent'],
             'type': 'enum',
         }),
         color: Option('$bg-color', {'scss': 'bar-color' }),
@@ -238,7 +238,7 @@ export default {
             border: Option(false, { 'scss': 'bar-start-border-sw' }),
             colormode: Option('transparent', {
                 'scss': 'bar-start-color-mode',
-                'enums': ['solid', 'gradient', 'transparent'],
+                'enums': ['solid', 'linear-gradient', 'repeating-linear-gradient', 'radial-gradient', 'repeating-radial-gradient', 'transparent'],
                 'type': 'enum',
             }),
             color: Option('$bg-color', {'scss': 'bar-start-color' }),
@@ -247,7 +247,7 @@ export default {
             border: Option(false, { 'scss': 'bar-center-border-sw' }),
             colormode: Option('transparent', {
                 'scss': 'bar-center-color-mode',
-                'enums': ['solid', 'gradient', 'transparent'],
+                'enums': ['solid', 'linear-gradient', 'repeating-linear-gradient', 'radial-gradient', 'repeating-radial-gradient', 'transparent'],
                 'type': 'enum',
             }),
             color: Option('$bg-color', {'scss': 'bar-center-color' }),
@@ -256,7 +256,7 @@ export default {
             border: Option(false, { 'scss': 'bar-end-border-sw' }),
             colormode: Option('transparent', {
                 'scss': 'bar-end-color-mode',
-                'enums': ['solid', 'gradient', 'transparent'],
+                'enums': ['solid', 'linear-gradient', 'repeating-linear-gradient', 'radial-gradient', 'repeating-radial-gradient', 'transparent'],
                 'type': 'enum',
             }),
             color: Option('$bg-color', {'scss': 'bar-end-color' }),
@@ -288,7 +288,7 @@ export default {
     quickSettings: {
         bg: Option('solid', {
             'scss': 'qs-bg-mode',
-            'enums': ['solid', 'gradient', 'transparent'],
+            'enums': ['solid', 'linear-gradient', 'repeating-linear-gradient', 'radial-gradient', 'repeating-radial-gradient', 'transparent'],
             'type': 'enum',
         }),
         bg_color: Option('$bg-color', { 'scss': 'qs-bg-color' }),
@@ -421,7 +421,7 @@ export default {
         }),
         box: Option('blurred', { 
             'scss': 'music-box',
-            'enums': ['solid', 'gradient', 'blurred', 'transparent'],
+            'enums': ['solid', 'linear-gradient', 'repeating-linear-gradient', 'radial-gradient', 'repeating-radial-gradient', 'blurred', 'transparent'],
             'type': 'enum',
         }),
         box_color: Option('$bg-color', { 'scss': 'mb-color' }),
@@ -493,7 +493,7 @@ export default {
     PowerMenu: {
         bg: Option('solid', {
             'scss': 'pm-bg-mode',
-            'enums': ['solid', 'gradient', 'transparent'],
+            'enums': ['solid', 'linear-gradient', 'repeating-linear-gradient', 'radial-gradient', 'repeating-radial-gradient', 'transparent'],
             'type': 'enum',
         }),
         bg_color: Option('$bg-color', { 'scss': 'pm-bg-color' }),
@@ -547,7 +547,7 @@ export default {
         }),
         bg: Option('solid', {
             'scss': 'db-bg-mode',
-            'enums': ['solid', 'gradient', 'transparent'],
+            'enums': ['solid', 'linear-gradient', 'repeating-linear-gradient', 'radial-gradient', 'repeating-radial-gradient', 'transparent'],
             'type': 'enum',
         }),
         bg_color: Option('$bg-color', { 'scss': 'db-bg-color' }),
@@ -576,7 +576,7 @@ export default {
     OverView: {
         bg: Option('solid', {
             'scss': 'ov-bg-mode',
-            'enums': ['solid', 'gradient', 'transparent'],
+            'enums': ['solid', 'linear-gradient', 'repeating-linear-gradient', 'radial-gradient', 'repeating-radial-gradient', 'transparent'],
             'type': 'enum',
         }),
         bg_color: Option('$bg-color', { 'scss': 'ov-bg-color' }),

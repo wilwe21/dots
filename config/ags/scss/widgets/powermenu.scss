@@ -11,8 +11,14 @@ window#verification .window-content {
     border: $border-width solid $accent;
     @if $pm-bg-mode == 'solid' {
     	background-color: $pm-bg-color;
-    } @if $pm-bg-mode == 'gradient' {
+    } @if $pm-bg-mode == 'linear-gradient' {
     	background-image: linear-gradient($pm-bg-color);
+    } @if $pm-bg-mode == 'repeating-linear-gradient' {
+	background-image: repeating-linear-gradient($pm-bg-color);
+    } @if $pm-bg-mode == 'radial-gradient' {
+	background-image: radial-gradient($pm-bg-color);
+    } @if $pm-bg-mode == 'repeating-radial-gradient' {
+	background-image: repeating-radial-gradient($pm-bg-color);
     } @if $pm-br-mode == true {
     	border-radius: $pm-br-radius;
     	border: $pm-br;
@@ -46,12 +52,18 @@ window#powermenu .window-content {
     @include spacing(0);
     @if $pm-bg-mode == 'solid' {
     	background-color: $pm-bg-color;
-    } @if $pm-bg-mode == 'gradient' {
+    } @if $pm-bg-mode == 'linear-gradient' {
     	background-image: linear-gradient($pm-bg-color);
+    } @if $pm-bg-mode == 'repeating-linear-gradient' {
+	background-image: repeating-linear-gradient($pm-bg-color);
+    } @if $pm-bg-mode == 'radial-gradient' {
+	background-image: radial-gradient($pm-bg-color);
+    } @if $pm-bg-mode == 'repeating-radial-gradient' {
+	background-image: repeating-radial-gradient($pm-bg-color);
     } @if $pm-br-mode == true {
     	border-radius: $pm-br-radius;
     	border: $pm-br;
-    }
+    } 
     padding: $popover-padding + $spacing * 1.5;
     border: $border-width solid $accent;
     border-radius: if($radii == 0, 0, $popover-radius + ($popover-padding + $spacing * 1.5));

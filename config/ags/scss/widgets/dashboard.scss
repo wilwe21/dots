@@ -38,8 +38,14 @@ window#dashboard .window-content {
     @include floating-widget;
     @if $db-bg-mode == 'solid' {
     	background-color: $db-bg-color;
-    } @if $db-bg-mode == 'gradient' {
+    } @if $db-bg-mode == 'linear-gradient' {
     	background-image: linear-gradient($db-bg-color);
+    } @if $db-bg-mode == 'repeating-linear-gradient' {
+	background-image: repeating-linear-gradient($db-bg-color);
+    } @if $db-bg-mode == 'radial-gradient' {
+	background-image: radial-gradient($db-bg-color);
+    } @if $db-bg-mode == 'repeating-radial-gradient' {
+	background-image: repeating-radial-gradient($db-bg-color);
     } @if $db-br-mode == true {
     	border-radius: $db-br-radius;
     	border: $db-br;
