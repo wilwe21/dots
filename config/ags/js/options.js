@@ -527,7 +527,7 @@ export default {
     desktop: {
         wallpaper: {
             fg: Option('#fff', { 'scss': 'wallpaper-fg' }),
-            img: Option('/home/wilwe/.hyprland.conf/screens/wallpapers/black.png', {
+            img: Option('/home/wilwe/.hyprland.conf/wallpapers/black.png', {
                 'scssFormat': v => `"${v}"`,
                 'type': 'img',
             }),
