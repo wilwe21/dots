@@ -8,15 +8,15 @@
 }
 .wclock{
 	@if $clock-background == 'solid' {
-		background-color: $clock-bg-color;
+		background: $clock-bg-color;
 	} @if $clock-background == 'linear-gradient' {
-		background-image: linear-gradient($clock-bg-color);
+		background: linear-gradient($clock-bg-color);
 	} @if $clock-background == 'repeating-linear-gradient' {
-		background-image: repeating-linear-gradient($clock-bg-color);
+		background: repeating-linear-gradient($clock-bg-color);
 	} @if $clock-background == 'radial-gradient' {
-		background-image: radial-gradient($clock-bg-color);
+		background: radial-gradient($clock-bg-color);
 	} @if $clock-background == 'repeating-radial-gradient' {
-		background-image: repeating-radial-gradient($clock-bg-color);
+		background: repeating-radial-gradient($clock-bg-color);
 	} @if $clock-border == true {
 		border: $border-width*1.5 solid $accent;
 	}
