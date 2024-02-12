@@ -546,6 +546,15 @@ export default {
         black_list: Option(['Spotify'], { 'note': 'app-name | entry' }),
         position: Option(['top'], { 'note': 'anchor' }),
         width: Option(450),
+        bg: Option('solid', {
+            'scss': 'nf-bg-mode',
+            'enums': ['solid', 'linear-gradient', 'repeating-linear-gradient', 'radial-gradient', 'repeating-radial-gradient', 'transparent'],
+            'type': 'enum',
+        }),
+        bg_color: Option('$bg-color', { 'scss': 'nf-bg-color' }),
+        br_mode: Option(true, { 'scss': 'nf-br-mode' }),
+        br_radius: Option(20, { 'scss': 'nf-br-radius' }),
+        br: Option('$border-width solid $accent', { 'scss': 'nf-br' }),
     },
 
     dashboard: {

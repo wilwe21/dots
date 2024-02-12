@@ -47,9 +47,8 @@ const SeparatorDot = (service, condition) => {
     });
 };
 
-const SysProgress = (type, title, unit) => Widget.Box({
+const SysProgress = (type, unit) => Widget.Box({
     class_name: `progress-box ${type}`,
-    tooltipText: vars[type].bind('value').transform(v => `${title}: ${v}${unit}`),
     hexpand: false,
     children: [
         Widget.Icon({
@@ -102,10 +101,10 @@ const End = () => Widget.Box({
         Widget.Box({
             class_name: 'system-info horizontal',
             children: [
-                SysProgress('upload', 'tx', ''),
-                SysProgress('download', 'rx', ''),
-                SysProgress('cpu', 'Cpu', ''),
-                SysProgress('temp', 'Temperature', '°C'),
+                SysProgress('upload', ''),
+                SysProgress('download', ''),
+                SysProgress('cpu', ''),
+                SysProgress('temp', '°C'),
             ],
         }),
         SubMenu({

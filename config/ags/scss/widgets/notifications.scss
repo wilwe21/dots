@@ -71,6 +71,20 @@ window.notifications {
 
         > box {
             @include floating-widget;
+    		@if $nf-bg-mode == 'solid' {
+    			background: $nf-bg-color;
+    		} @if $nf-bg-mode == 'linear-gradient' {
+    			background: linear-gradient($nf-bg-color);
+    		} @if $nf-bg-mode == 'repeating-linear-gradient' {
+			background: repeating-linear-gradient($nf-bg-color);
+    		} @if $nf-bg-mode == 'radial-gradient' {
+			background: radial-gradient($nf-bg-color);
+    		} @if $nf-bg-mode == 'repeating-radial-gradient' {
+			background: repeating-radial-gradient($nf-bg-color);
+    		} @if $nf-br-mode == true {
+    			border-radius: $nf-br-radius;
+    			border: $nf-br;
+    		}
             border-radius: $radii;
         }
 
