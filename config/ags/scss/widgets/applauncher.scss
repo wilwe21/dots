@@ -43,6 +43,9 @@ window#applauncher .window-content {
         	min-width: 150px;
         	box-shadow: 2px 2px 2px 0 $shadow;
         	margin: $padding;
+        	background-size: cover;
+		background-position: center;
+		border-radius: $radii;
 
            .shader {
             	background-color: transparent;

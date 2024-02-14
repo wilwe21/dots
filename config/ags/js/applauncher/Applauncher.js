@@ -82,7 +82,7 @@ const Applauncher = () => {
                             vertical: true,
                             start_widget: mpris.CoverArt(player, {
                                 class_name: 'cover',
-                                vpack: 'start',
+                                vexpand: false,
                             }),
                             center_widget: Widget.Box({
                                 vexpand: true, 

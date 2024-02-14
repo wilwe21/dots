@@ -100,7 +100,6 @@
 	}
 	.buttonbox {
 		padding: $padding/2;
-		//margin-right: -30px;
 		border-radius: $radii*1.5;
 		@if $music-footer-box == 'solid' {
 			background-color: $mfb-color;
