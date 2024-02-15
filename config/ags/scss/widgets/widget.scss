@@ -17,6 +17,11 @@
 		background: radial-gradient($clock-bg-color);
 	} @if $clock-background == 'repeating-radial-gradient' {
 		background: repeating-radial-gradient($clock-bg-color);
+	} @if $clock-background == 'image' {
+		background: url($clock-bg-color);
+    		background-size: $clock-bg-size;
+		background-position: $clock-bg-pos;
+    		background-repeat: $clock-bg-repe;
 	} @if $clock-border == true {
 		border: $border-width*1.5 solid $accent;
 	}
@@ -44,15 +49,20 @@
 .mediawidget {
 	border-radius: $radii*1.5;
 	@if $music-box == 'solid' {
-		background-color: $mb-color;
+		background: $mb-color;
 	} @if $music-box == 'linear-gradient' {
-		background-image: linear-gradient($mb-color);
+		background: linear-gradient($mb-color);
 	} @if $music-box == 'repeating-linear-gradient' {
-		background-image: repeating-linear-gradient($mb-color);
+		background: repeating-linear-gradient($mb-color);
 	} @if $music-box == 'radial-gradient' {
-		background-image: radial-gradient($mb-color);
+		background: radial-gradient($mb-color);
 	} @if $music-box == 'repeating-radial-gradient' {
-		background-image: repeating-radial-gradient($mb-color);
+		background: repeating-radial-gradient($mb-color);
+	} @if $music-box == 'image' {
+		background: url($mb-color);
+		background-size: $music-bg-size;
+    		background-position: $music-bg-pos;
+    		background-repeat: $music-bg-repe;
 	}
 	button {
 		all: unset;

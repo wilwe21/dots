@@ -11,6 +11,11 @@ window#overview .window-content {
 	background: radial-gradient($ov-bg-color);
     } @if $ov-bg-mode == 'repeating-radial-gradient' {
 	background: repeating-radial-gradient($ov-bg-color);
+    } @if $ov-bg-mode == 'image' {
+	background: url($ov-bg-color);
+    	background-size: $ov-bg-size;
+	background-position: $ov-bg-pos;
+    	background-repeat: $ov-bg-repe;
     } @if $ov-br-mode == true {
     	border-radius: $ov-br-radius;
     	border: $ov-br;

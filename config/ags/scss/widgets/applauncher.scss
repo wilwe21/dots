@@ -10,6 +10,11 @@ window#applauncher .window-content {
 	background: radial-gradient($applauncher-bg-color);
     } @if $applauncher-bg-mode == 'repeating-radial-gradient' {
 	background: repeating-radial-gradient($applauncher-bg-color);
+    } @if $applauncher-bg-mode == 'image' {
+	background: url($applauncher-bg-color);
+    	background-size: $applauncher-bg-size;
+    	background-position: $applauncher-bg-pos;
+    	background-repeat: $applauncher-bg-repe;
     } @if $applauncher-br-mode == true {
     	border-radius: $applauncher-br-radius;
     	border: $applauncher-br;

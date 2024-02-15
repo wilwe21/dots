@@ -11,6 +11,11 @@ window#quicksettings .window-content {
 		background: radial-gradient($qs-bg-color);
 	} @if $qs-bg-mode == 'repeating-radial-gradient' {
 		background: repeating-radial-gradient($qs-bg-color);
+	} @if $qs-bg-mode == 'image' {
+		background: url($qs-bg-color);
+    		background-size: $qs-bg-size;
+		background-position: $qs-bg-pos;
+    		background-repeat: $qs-bg-repe;
 	} @if $qs-br-mode == true {
     		border-radius: $qs-br-radius;
     		border: $qs-br;

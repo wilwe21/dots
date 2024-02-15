@@ -232,6 +232,6 @@ export default monitor => WW({
         },
         children: Mpris.bind('players').transform(ps =>
                 ps.filter(p => !options.mpris.black_list.value
-                    .includes(p.identity)).slice(0,1).map(PlayerBox)),
+                .includes(p.identity)).slice(0,1).map(PlayerBox)),
     }),
 });

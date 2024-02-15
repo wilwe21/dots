@@ -19,6 +19,11 @@ window#verification .window-content {
 	background: radial-gradient($pm-bg-color);
     } @if $pm-bg-mode == 'repeating-radial-gradient' {
 	background: repeating-radial-gradient($pm-bg-color);
+    } @if $pm-bg-mode == 'image' {
+	background: url($pm-bg-color);
+    	background-size: $pm-bg-size;
+	background-position: $pm-bg-pos;
+    	background-repeat: $pm-bg-repe;
     } @if $pm-br-mode == true {
     	border-radius: $pm-br-radius;
     	border: $pm-br;
@@ -60,6 +65,11 @@ window#powermenu .window-content {
 	background: radial-gradient($pm-bg-color);
     } @if $pm-bg-mode == 'repeating-radial-gradient' {
 	background: repeating-radial-gradient($pm-bg-color);
+    } @if $pm-bg-mode == 'image' {
+	background: url($pm-bg-color);
+    	background-size: $pm-bg-size;
+	background-position: $pm-bg-pos;
+    	background-repeat: $pm-bg-repe;
     } @if $pm-br-mode == true {
     	border-radius: $pm-br-radius;
     	border: $pm-br;

@@ -29,6 +29,11 @@ $bar-spacing: $spacing / 2;
 	background: radial-gradient($bar-color);
     } @if $bar-color-mode == 'repeating-radial-gradient' {
 	background: repeating-radial-gradient($bar-color);
+    } @if $bar-color-mode == 'image' {
+	background: url($bar-color);
+    	background-size: $bar-size;
+    	background-position: $bar-pos;
+    	background-repeat: $bar-repe;
     } @if $bar-border-sw == true {
         border-radius: $radii;
         border: $bar-border;
@@ -48,6 +53,11 @@ $bar-spacing: $spacing / 2;
 		background: radial-gradient($bar-end-color);
     	} @if $bar-end-color-mode == 'repeating-radial-gradient' {
 		background: repeating-radial-gradient($bar-end-color);
+    	} @if $bar-end-color-mode == 'image' {
+		background: url($bar-end-color);
+    		background-size: $bar-end-size;
+    		background-position: $bar-end-pos;
+    		background-repeat: $bar-end-repe;
     	}
     }
     .center{
@@ -65,6 +75,11 @@ $bar-spacing: $spacing / 2;
 		background: radial-gradient($bar-center-color);
     	} @if $bar-center-color-mode == 'repeating-radial-gradient' {
 		background: repeating-radial-gradient($bar-center-color);
+    	} @if $bar-center-color-mode == 'image' {
+		background: url($bar-center-color);
+    		background-size: $bar-center-size;
+    		background-position: $bar-center-pos;
+    		background-repeat: $bar-center-repe;
     	}
     }
     .start{
@@ -82,6 +97,11 @@ $bar-spacing: $spacing / 2;
 		background: radial-gradient($bar-start-color);
     	} @if $bar-start-color-mode == 'repeating-radial-gradient' {
 		background: repeating-radial-gradient($bar-start-color);
+    	} @if $bar-start-color-mode == 'image' {
+		background: url($bar-start-color);
+    		background-size: $bar-start-size;
+    		background-position: $bar-start-pos;
+    		background-repeat: $bar-start-repe;
     	}
     }
     .cpu {

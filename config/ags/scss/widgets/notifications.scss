@@ -81,6 +81,11 @@ window.notifications {
 			background: radial-gradient($nf-bg-color);
     		} @if $nf-bg-mode == 'repeating-radial-gradient' {
 			background: repeating-radial-gradient($nf-bg-color);
+    		} @if $nf-bg-mode == 'image' {
+			background: url($nf-bg-color);
+    			background-size: $nf-bg-size;
+    			background-position: $nf-bg-pos;
+    			background-repeat: $nf-bg-repe;
     		} @if $nf-br-mode == true {
     			border-radius: $nf-br-radius;
     			border: $nf-br;

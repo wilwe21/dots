@@ -46,6 +46,11 @@ window#dashboard .window-content {
 	background: radial-gradient($db-bg-color);
     } @if $db-bg-mode == 'repeating-radial-gradient' {
 	background: repeating-radial-gradient($db-bg-color);
+    } @if $db-bg-mode == 'image' {
+	background: url($db-bg-color);
+    	background-size: $db-bg-size;
+    	background-position: $db-bg-pos;
+    	background-repeat: $db-bg-repe;
     } @if $db-br-mode == true {
     	border-radius: $db-br-radius;
     	border: $db-br;
