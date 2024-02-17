@@ -315,12 +315,12 @@ export default {
             'scssFormat': v => `"${v}"`,
             'type': 'img',
         }),
-        decorsw: Option(true),
-        decorator1: Option(themes[0].options['bar.decorator1'], {
+        decorsw: Option(false),
+        decorator1: Option('/home/wilwe/.hyprland.conf/icons/null', {
             'scssFormat': v => `"${v}"`,
             'type': 'img',
         }),
-        decorator2: Option(themes[0].options['bar.decorator2'], {
+        decorator2: Option('/home/wilwe/.hyprland.conf/icons/null', {
             'scssFormat': v => `"${v}"`,
             'type': 'img',
         }),
