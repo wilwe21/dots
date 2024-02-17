@@ -11,6 +11,7 @@ const keyGrabber = Widget.Window({
     css: 'background-color: transparent;',
     visible: false,
     exclusivity: 'ignore',
+    keymode: 'exclusive',
     layer: 'top',
     attribute: { list: [] },
     setup: self => self.on('notify::visible', ({ visible }) => {
@@ -35,6 +36,7 @@ export class PopupWindow extends AgsWindow {
             name,
             popup: true,
             layer: 'overlay',
+            keymode: 'exclusive',
             class_names: ['popup-window', name],
         });
 
