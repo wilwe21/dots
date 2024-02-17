@@ -6,7 +6,7 @@ import icons from '../icons.js';
 export const TitleLabel = (player, props) => Widget.Label({
     ...props,
     class_name: 'title',
-    label: player.bind('track-title').transform(n => {
+    label: player.bind('track_title').transform(n => {
         if (n.length > options.bar.player_length.value) {
             var add = '...'
         } else { var add = '' }
@@ -14,25 +14,8 @@ export const TitleLabel = (player, props) => Widget.Label({
         }),
 });
 
-
-/** @param {import('types/service/mpris').MprisPlayer} player */
-export const Slash = player => Widget.Label({
-    label: '/',
-    visible: player.bind('length').transform(l => l > 0),
-});
-
-/**
- * @param {Object} o
- * @param {import('types/service/mpris').MprisPlayer} o.player
- * @param {import('types/widgets/stack').StackProps['items']} o.items
- * @param {'shuffle' | 'loop' | 'playPause' | 'previous' | 'next'} o.onClick
- * @param {string} o.prop
- * @param {string} o.canProp
- * @param {any} o.cantValue
- */
-const PlayerButton = ({ player, items, onClick, prop, canProp, cantValue }) => Widget.Button({
-    cursor: 'pointer',
-    child: Widget.Stack({ items }).bind('shown', player, prop, p => `${p}`),
+const PlayerButton = ({ player, children, onClick, prop, canProp, cantValue }) => Widget.Button({
+    child: Widget.Stack({ children }).bind('shown', player, prop, p => `${p}`),
     on_clicked: () => player[onClick](),
     visible: player.bind(canProp).transform(c => c !== cantValue),
 });
@@ -40,15 +23,11 @@ const PlayerButton = ({ player, items, onClick, prop, canProp, cantValue }) => W
 /** @param {import('types/service/mpris').MprisPlayer} player */
 export const PlayPauseButton = player => PlayerButton({
     player,
-    items: [
-        ['Playing', Widget.Icon(icons.mpris.playing
-        )],
-        ['Paused', Widget.Icon(icons.mpris.paused
-        )],
-        ['Stopped', Widget.Icon(icons.mpris.stopped
-        )],
-    ],
-    cursor: 'pointer',
+    children: {
+        'Playing': Widget.Icon(icons.mpris.playing),
+        'Paused': Widget.Icon(icons.mpris.paused),
+        'Stopped': Widget.Icon(icons.mpris.stopped),
+    },
     onClick: 'playPause',
     prop: 'play-back-status',
     canProp: 'can-play',
@@ -58,11 +37,9 @@ export const PlayPauseButton = player => PlayerButton({
 /** @param {import('types/service/mpris').MprisPlayer} player */
 export const PreviousButton = player => PlayerButton({
     player,
-    items: [
-        ['true', Widget.Icon(icons.mpris.prev
-        )],
-    ],
-    cursor: 'pointer',
+    children: {
+        'true': Widget.Icon(icons.mpris.prev),
+    },
     onClick: 'previous',
     prop: 'can-go-prev',
     canProp: 'can-go-prev',
@@ -72,11 +49,9 @@ export const PreviousButton = player => PlayerButton({
 /** @param {import('types/service/mpris').MprisPlayer} player */
 export const NextButton = player => PlayerButton({
     player,
-    items: [
-        ['true', Widget.Icon(icons.mpris.next
-        )],
-    ],
-    cursor: 'pointer',
+    children: {
+        'true': Widget.Icon(icons.mpris.next),
+    },
     onClick: 'next',
     prop: 'can-go-next',
     canProp: 'can-go-next',

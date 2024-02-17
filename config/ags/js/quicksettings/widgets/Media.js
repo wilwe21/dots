@@ -7,8 +7,7 @@ import options from '../../options.js';
 /** @param {import('types/service/mpris').MprisPlayer} player */
 const Footer = player => Widget.CenterBox({
     class_name: 'footer-box',
-    children: [
-        Widget.Box({
+        start_widget: Widget.Box({
             class_name: 'position',
             children: [
                 mpris.PositionLabel(player),
@@ -16,7 +15,7 @@ const Footer = player => Widget.CenterBox({
                 mpris.LengthLabel(player),
             ],
         }),
-        Widget.Box({
+        center_widget: Widget.Box({
             class_name: 'controls',
             children: [
                 mpris.ShuffleButton(player),
@@ -26,12 +25,11 @@ const Footer = player => Widget.CenterBox({
                 mpris.LoopButton(player),
             ],
         }),
-        mpris.PlayerIcon(player, {
+        end_widget: mpris.PlayerIcon(player, {
             symbolic: false,
             hexpand: true,
             hpack: 'end',
         }),
-    ],
 });
 
 /** @param {import('types/service/mpris').MprisPlayer} player */

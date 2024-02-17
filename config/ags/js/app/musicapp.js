@@ -23,8 +23,7 @@ const VolumeSlider = (type = 'speaker') => Widget.Slider({
 
 const Footer = player => Widget.CenterBox({
     class_name: 'footer-box',
-    children: [
-        Widget.Box({
+    start_widget: Widget.Box({
             class_name: 'position',
             children: [
                 mpris.PositionLabel(player),
@@ -32,7 +31,7 @@ const Footer = player => Widget.CenterBox({
                 mpris.LengthLabel(player),
             ],
         }),
-        Widget.Box({
+    center_widget: Widget.Box({
             class_name: 'controls',
             children: [
                 Widget.Box({
@@ -47,7 +46,6 @@ const Footer = player => Widget.CenterBox({
                 }),
             ],
         }),
-    ],
 });
 
 /** @param {import('types/service/mpris').MprisPlayer} player */
@@ -119,14 +117,12 @@ const PlayerBox = player => Widget.Box({
 export default () => PopupWindow({
     name: 'musicapp',
     layer: "overlay",
+    visible: Mpris.bind('players').transform(p => p.length > 0),
     transition: 'slide_down',
     child: Widget.Box({
         vertical: true,
         hexpand: true,
         class_name: 'mediaapp',
-        setup: self => {
-            self.visible = Mpris.players.length > 0;
-        },
         children: Mpris.bind('players').transform(ps =>
                 ps.filter(p => !options.mpris.black_list.value
                     .includes(p.identity)).map(PlayerBox)),

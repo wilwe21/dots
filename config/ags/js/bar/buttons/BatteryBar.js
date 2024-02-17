@@ -5,14 +5,13 @@ import FontIcon from '../../misc/FontIcon.js';
 import options from '../../options.js';
 import PanelButton from '../PanelButton.js';
 
-const Indicator = () => Widget.Stack({
-    items: [
-        ['true', FontIcon(icons.battery.charging)],
-    ],
+const Indicator = () => Widget.Icon({
     setup: self => self.hook(Battery, () => {
-        self.shown = `${Battery.charging || Battery.charged}`;
+        self.icon = Battery.charging || Battery.charged
+            ? FontIcon(icons.battery.charging)
+            : /*FontIcon(Battery.icon_name)*/ self.visible = false
     }),
-});
+})
 
 const PercentLabel = () => Widget.Revealer({
     transition: 'slide_right',

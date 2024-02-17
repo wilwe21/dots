@@ -4,7 +4,7 @@ import * as mpris from '../../misc/mprismini.js';
 import options from '../../options.js';
 
 /** @param {import('types/service/mpris').MprisPlayer} player */
-const Footer = player => Widget.CenterBox({
+const Footer = player => Widget.Box({
     class_name: 'footer-box',
     children: [
         Widget.Box({

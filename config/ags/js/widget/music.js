@@ -24,8 +24,7 @@ const VolumeSlider = (type = 'speaker') => Widget.Slider({
 
 const Footer = player => Widget.CenterBox({
     class_name: 'footer-box',
-    children: [
-        Widget.Box({
+    start_widget: Widget.Box({
             class_name: 'position',
             setup: self => self.hook(options.music.footer.position, () => {
                 if (options.music.footer.position.value == true){
@@ -39,7 +38,7 @@ const Footer = player => Widget.CenterBox({
                 }
             })
         }),
-        Widget.Box({
+    center_widget: Widget.Box({
             class_name: 'controls',
             setup: self => self.hook(options.music.footer.controls, () => {
                 if (options.music.footer.controls.value == true){
@@ -58,7 +57,6 @@ const Footer = player => Widget.CenterBox({
                 }
             })
         })
-    ],
 });
 
 /** @param {import('types/service/mpris').MprisPlayer} player */
@@ -142,25 +140,27 @@ const PlayerBox = player => Widget.Box({
                     vertical: false,
                     setup: self => self.hook(options.music.volume, () => {
                         if (options.music.volume.value == true){
-                            self.children = [Widget.CenterBox({
-                                class_name: 'mpris-content',
-                                vertical: true,
-                                start_widget: TextBox(player),
-                                center_widget: mpris.PositionSlider(player),
-                                end_widget: Footer(player),
-                            }),
-                            Widget.Box({
-                                class_name: 'vbox',
-                                vertical: true,
-                                hexpand: false,
-                                children: [
-                                    Widget.Label({
-                                        class_name: 'volumelabel',
-                                        label: vars.volume.bind('value').transform(s => `${s}%`),
-                                    }),
-                                    VolumeSlider(),
-                                ],
-                            })]
+                            self.children = [
+                                Widget.CenterBox({
+                                    class_name: 'mpris-content',
+                                    vertical: true,
+                                    start_widget: TextBox(player),
+                                    center_widget: mpris.PositionSlider(player),
+                                    end_widget: Footer(player),
+                                }),
+                                Widget.Box({
+                                    class_name: 'vbox',
+                                    vertical: true,
+                                    hexpand: false,
+                                    children: [
+                                        Widget.Label({
+                                            class_name: 'volumelabel',
+                                            label: vars.volume.bind('value').transform(s => `${s}%`),
+                                        }),
+                                        VolumeSlider(),
+                                    ],
+                                })
+                            ]
                         } else {
                             self.child = Widget.CenterBox({
                                 vertical: true,
@@ -182,24 +182,26 @@ const PlayerBox = player => Widget.Box({
                     vertical: false,
                     setup: self => self.hook(options.music.volume, () => {
                         if (options.music.volume.value == true){
-                            self.children = [Widget.CenterBox({
-                                vertical: true,
-                                start_widget: TextBox(player),
-                                center_widget: mpris.PositionSlider(player),
-                                end_widget: Footer(player),
-                            }),
-                            Widget.Box({
-                                class_name: 'vbox',
-                                vertical: true,
-                                hexpand: true,
-                                children: [
-                                    Widget.Label({
-                                        class_name: 'volumelabel',
-                                        label: vars.volume.bind('value').transform(s => `${s}%`),
-                                    }),
-                                    VolumeSlider(),
-                                ],
-                            })]
+                            self.children = [
+                                Widget.CenterBox({
+                                    vertical: true,
+                                    start_widget: TextBox(player),
+                                    center_widget: mpris.PositionSlider(player),
+                                    end_widget: Footer(player),
+                                }),
+                                Widget.Box({
+                                    class_name: 'vbox',
+                                    vertical: true,
+                                    hexpand: true,
+                                    children: [
+                                        Widget.Label({
+                                            class_name: 'volumelabel',
+                                            label: vars.volume.bind('value').transform(s => `${s}%`),
+                                        }),
+                                        VolumeSlider(),
+                                    ],
+                                })
+                            ]
                         } else {
                             self.child = Widget.CenterBox({
                                 vertical: true,
@@ -227,9 +229,7 @@ export default monitor => WW({
         vertical: true,
         hexpand: true,
         class_name: 'mediawidget',
-        setup: self => {
-            self.visible = Mpris.players.length > 0;
-        },
+        visible: Mpris.bind('players').transform(p => p.length > 0),
         children: Mpris.bind('players').transform(ps =>
                 ps.filter(p => !options.mpris.black_list.value
                 .includes(p.identity)).slice(0,1).map(PlayerBox)),

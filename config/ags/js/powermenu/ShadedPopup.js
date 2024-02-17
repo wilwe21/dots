@@ -28,17 +28,21 @@ export default ({ name, child, ...rest }) => Widget.Window({
     child: Widget.CenterBox({
         class_name: 'shader',
         css: 'min-width: 5000px; min-height: 3000px;',
-        children: [
-            Padding(name),
-            Widget.CenterBox({
-                vertical: true,
-                children: [
-                    Padding(name),
-                    child,
-                    Padding(name),
-                ],
-            }),
-            Padding(name),
-        ],
+        center_widget: Widget.Box({
+            children: [
+                Padding(name),
+                Widget.CenterBox({
+                    vertical: true,
+                    center_widget: Widget.Box({
+                        children: [
+                            Padding(name),
+                            child,
+                            Padding(name),
+                        ],
+                    })
+                }),
+                Padding(name),
+            ],
+        })
     }),
 });

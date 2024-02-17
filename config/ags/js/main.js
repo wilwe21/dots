@@ -28,7 +28,7 @@ const windows = () => [
     forMonitors(Moon),
     forMonitors(sound),
     forMonitors(music),
-    installer(),
+    //installer(),
     info(),
     musicapp(),
     Applauncher(),
