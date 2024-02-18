@@ -5,11 +5,12 @@ import FontIcon from '../../misc/FontIcon.js';
 import options from '../../options.js';
 import PanelButton from '../PanelButton.js';
 
-const Indicator = () => Widget.Icon({
+const Indicator = () => Widget.Label({
+    class_name: 'batteryBarInd',
     setup: self => self.hook(Battery, () => {
-        self.icon = Battery.charging || Battery.charged
-            ? FontIcon(icons.battery.charging)
-            : /*FontIcon(Battery.icon_name)*/ self.visible = false
+        self.label = Battery.charging || Battery.charged
+            ? icons.battery.charging
+            : self.visible = false
     }),
 })
 
@@ -51,7 +52,6 @@ export default (Service, condition) => {
                 Indicator(),
                 LevelBar(),
                 Widget.Box({ child: revaler }),
-
             ],
         }),
     });

@@ -266,13 +266,9 @@ $bar-spacing: $spacing / 2;
     }
 
     .battery-bar {
-        .font-icon {
-            font-size: 1.15em;
-        }
 
-        image,
-        .font-icon {
-            margin-right: $bar-spacing * .5;
+        .batteryBarInd {
+            margin-right: $bar-spacing * 4;
         }
 
         levelbar trough {
@@ -308,11 +304,11 @@ $bar-spacing: $spacing / 2;
         }
 
         .charging {
-            @include color($green)
+            @include color($green);
         }
 
         &:active {
-            @include color($accent-fg)
+            @include color($accent-fg);
         }
     }
 
