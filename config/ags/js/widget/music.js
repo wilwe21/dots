@@ -1,7 +1,7 @@
 import WW from '../misc/WW.js';
 import Mpris from 'resource:///com/github/Aylur/ags/service/mpris.js';
 import options from '../options.js';
-import media from './player.js'dbus
+import media from './player.js'
 
 export default monitor => WW({
     name: `music${monitor}`,
