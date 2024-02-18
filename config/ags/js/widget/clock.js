@@ -8,7 +8,12 @@ export default monitor => Widget.Window({
     class_name: 'clockmain',
     layer: options.clock.layer.bind('value'),
     exclusivity: 'ignore',
-    visible: options.clock.visible.bind('value'),
+    setup: self => {
+        self.bind('null', options.clock.visible, 'value', p =>{
+            self.visible = false;
+            self.visible = p;
+        })
+    },
     anchor: options.clock.anchor.bind('value'),
     margins: options.clock.margins.bind('value'),
     monitor,
@@ -16,9 +21,10 @@ export default monitor => Widget.Window({
         class_name: 'wclock',
         center_widget: Widget.Label({
             class_name: 'lclock',
-            label: clock.bind('value').transform(time => {
-                return time.format(options.clock.main.value) || 'wrong format';
-            }),
+            setup: self => {
+            self.bind('null', clock, 'value', time => {
+                self.label = time.format(options.clock.main.value) || 'wrong format';
+            })},
         }),
     }),
 });
