@@ -5,13 +5,19 @@ import media from './player.js'
 
 export default monitor => WW({
     name: `music${monitor}`,
-    layer: 'background',
     monitor,
-    layer: 'background',
     layer: options.music.layer.bind('value'),
     exclusivity: 'exclusive',
-    visible: Mpris.bind('players').transform(p => p.length > 0),
+    visible: options.music.visible.bind('value'),
+    setup: self => {
+    self.bind('null', Mpris, 'players', p => {
+        self.visible = false;
+        self.visible = true;
+        if (p.length > 0){
+            self.child = media();
+        } else { self.children= [] }
+    })},
     anchor: options.music.anchor.bind('value'),
     margins: options.music.margins.bind('value'),
-    child: media(),
+    //child: media(),
 });
