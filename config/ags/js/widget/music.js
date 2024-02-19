@@ -19,5 +19,4 @@ export default monitor => WW({
     })},
     anchor: options.music.anchor.bind('value'),
     margins: options.music.margins.bind('value'),
-    //child: media(),
 });
