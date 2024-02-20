@@ -25,7 +25,6 @@ export function init() {
 
     App.connect('config-parsed', () => {
         reloadScss();
-        hyprlandInit();
         setupHyprland();
         wallpaper();
         pywal();
