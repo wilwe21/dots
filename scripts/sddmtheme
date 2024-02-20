@@ -1,0 +1,13 @@
+#!/bin/bash
+theme=$1
+cursor=$2
+if [ -z $1 ]; then
+	theme='catppuccin'
+fi
+if [ -z $2 ]; then
+	cursor='Future-dark-cursors'
+fi
+sudo echo "#made by wilwe
+[Theme]
+Current=$theme
+CursorTheme=$cursor" &> /etc/sddm.conf

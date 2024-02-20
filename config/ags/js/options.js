@@ -593,7 +593,7 @@ export default {
         low: Option(30, { 'category': 'Bar' }),
         medium: Option(50, { 'category': 'Bar' }),
     },
-
+    
     desktop: {
         wallpaper: {
             fg: Option('#fff', { 'scss': 'wallpaper-fg' }),
