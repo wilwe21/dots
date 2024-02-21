@@ -12,8 +12,8 @@ function sendBatch(batch) {
         .map(x => `keyword ${x}`)
         .join('; ');
 
-    Hyprland.sendMessage(`[[BATCH]]/${cmd}`).then(print)
-        .catch(err => console.error(`Hyprland.sendMessage: ${err.message}`));
+    hyprland.message(`[[BATCH]]/${cmd}`).then(print)
+        .catch(err => console.error(`hyprland.message: ${err.message}`));
 }
 
 /** @param {string} scss */
@@ -54,7 +54,7 @@ export async function setupHyprland() {
 
     const batch = [];
 
-    JSON.parse(await Hyprland.sendMessage('j/monitors')).forEach(({ name }) => {
+    JSON.parse(await hyprland.message('j/monitors')).forEach(({ name }) => {
         const v = bar_pos === 'top' ? `-${wm_gaps},0,0,0` : `0,-${wm_gaps},0,0`;
         if (bar_style !== 'normal')
             batch.push(`monitor ${name},addreserved,${v}`);

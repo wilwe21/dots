@@ -42,7 +42,8 @@ const windows = () => [
 export default {
     windows: windows().flat(1),
     maxStreamVolume: 1.05,
-    cacheNotificationActions: true,
+    //Is this working or fucking no cus it need to be Notifications.cacheActions but it can't accept it
+    NotificationscacheActions: true,
     closeWindowDelay: {
         'quicksettings': options.transition.value,
         'dashboard': options.transition.value,

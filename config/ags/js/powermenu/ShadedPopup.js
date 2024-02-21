@@ -21,7 +21,6 @@ export default ({ name, child, ...rest }) => Widget.Window({
     name,
     visible: false,
     popup: true,
-    focusable: true,
     keymode: 'exclusive',
     setup() {
         child.toggleClassName('window-content');
