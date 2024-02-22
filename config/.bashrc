@@ -533,4 +533,5 @@ export PATH=$PATH:"$HOME/Dokumenty/localbin:$HOME/.local/bin:$HOME/.cargo/bin:/v
 
 # Install Starship - curl -sS https://starship.rs/install.sh | sh
 
+eval "$(zoxide init bash)"
 eval "$(starship init bash)"
