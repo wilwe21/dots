@@ -43,7 +43,8 @@ export default {
     windows: windows().flat(1),
     maxStreamVolume: 1.05,
     //Is this working or fucking no cus it need to be Notifications.cacheActions but it can't accept it
-    NotificationscacheActions: true,
+    cacheNotificationActions: true,
+    //NotificationscacheActions: true,
     closeWindowDelay: {
         'quicksettings': options.transition.value,
         'dashboard': options.transition.value,

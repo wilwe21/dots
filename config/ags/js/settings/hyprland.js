@@ -12,8 +12,8 @@ function sendBatch(batch) {
         .map(x => `keyword ${x}`)
         .join('; ');
 
-    hyprland.message(`[[BATCH]]/${cmd}`).then(print)
-        .catch(err => console.error(`hyprland.message: ${err.message}`));
+    Hyprland.sendMessage(`[[BATCH]]/${cmd}`).then(print)
+        .catch(err => console.error(`Hyprland.sendMessage: ${err.message}`));
 }
 
 /** @param {string} scss */
@@ -23,7 +23,7 @@ function getColor(scss) {
 
     if (scss.includes('$')) {
         const opt = options.list().find(opt => opt.scss === scss.replace('$', ''));
-        return opt?.value.replace('#', '') || 'ff0000';
+        return opt?.value.replace('#', '');
     }
 }
 
@@ -49,12 +49,13 @@ export async function setupHyprland() {
     const bar_style = options.bar.style.value;
     const bar_pos = options.bar.position.value;
     const inactive_border = options.hypr.inactive_border.value;
+    const active_border = options.hypr.active_border.value;
 
     const accent = getColor(options.theme.accent.accent.value);
 
     const batch = [];
 
-    JSON.parse(await hyprland.message('j/monitors')).forEach(({ name }) => {
+    JSON.parse(await Hyprland.sendMessage('j/monitors')).forEach(({ name }) => {
         const v = bar_pos === 'top' ? `-${wm_gaps},0,0,0` : `0,-${wm_gaps},0,0`;
         if (bar_style !== 'normal')
             batch.push(`monitor ${name},addreserved,${v}`);
@@ -66,7 +67,7 @@ export async function setupHyprland() {
         `general:border_size ${border_width}`,
         `general:gaps_out ${wm_gaps}`,
         `general:gaps_in ${wm_gaps}`,
-        `general:col.active_border rgba(${accent}ff)`,
+        `general:col.active_border ${active_border}`,
         `general:col.inactive_border ${inactive_border}`,
         `decoration:rounding ${radii}`,
         `decoration:drop_shadow ${drop_shadow ? 'yes' : 'no'}`,

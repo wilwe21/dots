@@ -157,6 +157,12 @@ export default {
     },
 
     hypr: {
+        active_border: Option('rgba(333333ff)', {
+            'category': 'Border',
+            'note': 'use a hyprland border options w/o scss variables',
+            'title': 'Border on active Windows',
+            'scss': 'exclude',
+        }),
         inactive_border: Option('rgba(333333ff)', {
             'category': 'Border',
             'title': 'Border on Inactive Windows',

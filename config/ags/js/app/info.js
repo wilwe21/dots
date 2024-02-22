@@ -36,7 +36,6 @@ const PlayerBox = player => Widget.Box({
     class_name: `player ${player.name}`,
     child: TextBox(player),
 });
-
 export default () => Widget.Window({
     name: 'info',
     layer: options.info.layer.bind('value'),
