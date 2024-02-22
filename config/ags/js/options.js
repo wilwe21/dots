@@ -155,6 +155,10 @@ export default {
             'scss': 'bar-border-color',
         }),
     },
+    sddm: {
+        theme: Option('catppuccin'),
+        cursor: Option('Future-dark-cursors'),
+    },
 
     hypr: {
         active_border: Option('rgba(333333ff)', {

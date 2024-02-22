@@ -2,6 +2,7 @@ import App from 'resource:///com/github/Aylur/ags/app.js';
 import options from '../options.js';
 import themes from '../themes.js';
 import { reloadScss } from './scss.js';
+import { reloadSddm } from './sddm.js';
 import { setupHyprland } from './hyprland.js';
 import { wallpaper } from './wallpaper.js';
 
@@ -15,6 +16,7 @@ export function setTheme(name) {
     options.apply(theme.options);
     reloadScss();
     setupHyprland();
+    reloadSddm();
     wallpaper();
 }
 
