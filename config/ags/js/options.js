@@ -159,6 +159,9 @@ export default {
         theme: Option('catppuccin'),
         cursor: Option('Future-dark-cursors'),
     },
+    grub: {
+        theme: Option('mr-robot-theme'),
+    },
 
     hypr: {
         active_border: Option('rgba(333333ff)', {

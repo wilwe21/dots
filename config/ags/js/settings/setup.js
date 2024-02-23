@@ -6,6 +6,7 @@ import options from '../options.js';
 import icons from '../icons.js';
 import { reloadScss, scssWatcher } from './scss.js';
 import { reloadSddm } from './sddm.js';
+import { reloadGrub } from './grub.js';
 import { initWallpaper, wallpaper } from './wallpaper.js';
 import { hyprlandInit, setupHyprland } from './hyprland.js';
 import { globals } from './globals.js';
@@ -28,6 +29,7 @@ export function init() {
         reloadScss();
         setupHyprland();
         reloadSddm();
+        reloadGrub();
         wallpaper();
         pywal();
         gtkTheme();

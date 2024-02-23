@@ -1,0 +1,8 @@
+#!/bin/bash
+tmp=$(cat '/tmp/ags/grub.conf')
+def=$(sudo cat '/etc/default/grub')
+conf=$(sudo sed -e "/GRUB_THEME/c\GRUB_THEME='/boot/grub/themes/${tmp}/theme.txt'" "/etc/default/grub")
+sudo chmod +777 /etc/default/grub
+sudo echo "${conf}" &> /etc/default/grub
+sudo chmod +711 /etc/default/grub
+sudo grub-mkconfig &> /boot/grub/grub.cfg
