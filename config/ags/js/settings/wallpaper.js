@@ -5,8 +5,9 @@ import { dependencies } from '../utils.js';
 export function initWallpaper() {
     if (dependencies(['swww'])) {
         exec('swww init');
-
-        exec(`swww img ${options.desktop.wallpaper.transition.value} "${options.desktop.wallpaper.img.value}"`)
+        
+        options.desktop.wallpaper.img.connect('changed', wallpaper);
+        //exec(`swww img ${options.desktop.wallpaper.transition.value} "${options.desktop.wallpaper.img.value}"`)
     }
 }
 
