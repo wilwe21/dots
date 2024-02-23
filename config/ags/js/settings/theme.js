@@ -18,6 +18,7 @@ export function setTheme(name) {
     reloadScss();
     setupHyprland();
     reloadSddm();
+    reloadGrub();
     wallpaper();
 }
 
