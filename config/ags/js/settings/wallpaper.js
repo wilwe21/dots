@@ -7,7 +7,6 @@ export function initWallpaper() {
         exec('swww init');
         
         options.desktop.wallpaper.img.connect('changed', wallpaper);
-        //exec(`swww img ${options.desktop.wallpaper.transition.value} "${options.desktop.wallpaper.img.value}"`)
     }
 }
 
