@@ -53,6 +53,7 @@ export default [
  	"bar.end.color": "to right top, $bg-color, darken($accent, 40)",
  	"bar.icon": "/home/wilwe/.hyprland.conf/icons/cat.png",
  	"bar.decorsw": false,
+ 	"grub.theme": 'Arcade',
     //widgets
     "clock.main": '%H:%M',
     "clock.monofont": 'Concert One Mono',

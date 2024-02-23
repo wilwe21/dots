@@ -160,7 +160,8 @@ export default {
         cursor: Option('Future-dark-cursors'),
     },
     grub: {
-        theme: Option('mr-robot-theme'),
+        theme: Option('CyberXero'),
+        timeout: Option(5),
     },
 
     hypr: {
