@@ -3,7 +3,6 @@ import options from '../options.js';
 import themes from '../themes.js';
 import { reloadScss } from './scss.js';
 import { reloadSddm } from './sddm.js';
-import { reloadGrub } from './grub.js';
 import { setupHyprland } from './hyprland.js';
 import { wallpaper } from './wallpaper.js';
 
@@ -18,7 +17,6 @@ export function setTheme(name) {
     reloadScss();
     setupHyprland();
     reloadSddm();
-    reloadGrub();
     wallpaper();
 }
 
