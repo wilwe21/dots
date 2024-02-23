@@ -612,7 +612,6 @@ export default {
             fg: Option('#fff', { 'scss': 'wallpaper-fg' }),
             img: Option('/home/wilwe/.hyprland.conf/wallpapers/black.png', {
                 'scssFormat': v => `"${v}"`,
-                'type': 'img',
             }),
             transition: Option("--transition-type wave --transition-angle 45", { 'scssFormat': v => `"${v}"`, })
         },
