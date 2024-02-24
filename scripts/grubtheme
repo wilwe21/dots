@@ -3,7 +3,9 @@ theme=$(cat '/tmp/ags/grub/grub')
 time=$(cat '/tmp/ags/grub/time')
 conf=$(cat << EOF
 GRUB_THEME="/boot/grub/themes/${theme}/theme.txt"
-GRUB_TIMEOUT="${time}" 
+GRUB_TIMEOUT="${time}"
+GRUB_DEFAULT="0"
+GRUB_SAVEDEFAULT="false"
 EOF
 )
 sudo chmod +777 /etc/default/grub

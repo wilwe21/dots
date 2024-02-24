@@ -3,6 +3,7 @@ import App from 'resource:///com/github/Aylur/ags/app.js';
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
 import PowerMenu from '../services/powermenu.js';
 import ShadedPopup from './ShadedPopup.js';
+import { reloadGrub } from '../settings/grub.js';
 
 export default () => ShadedPopup({
     name: 'verification',
@@ -37,7 +38,10 @@ export default () => ShadedPopup({
                     }),
                     Widget.Button({
                         child: Widget.Label('Yes'),
-                        on_clicked: () => Utils.exec(PowerMenu.cmd),
+                        on_clicked: () => {
+                            reloadGrub()
+                            Utils.exec(PowerMenu.cmd)
+                        },
                     }),
                 ],
             }),

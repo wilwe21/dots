@@ -1,6 +1,5 @@
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import Service from 'resource:///com/github/Aylur/ags/service.js';
-import { reloadGrub } from '../settings/grub.js';
 
 class PowerMenu extends Service {
     static {
@@ -30,7 +29,6 @@ class PowerMenu extends Service {
         this.emit('changed');
         App.closeWindow('powermenu');
         App.openWindow('verification');
-        reloadGrub();
     }
 }
 
