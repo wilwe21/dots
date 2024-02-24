@@ -23,6 +23,8 @@ window#overview .window-content {
     
     
     .workspace {
+    	background-color: lighten($bg-color, 5);
+        border-radius: if($radii == 0, 0, $radii + $padding);
         &.active > widget {
             border-color: $accent
         }
