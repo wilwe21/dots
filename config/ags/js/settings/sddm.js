@@ -3,6 +3,10 @@ import options from '../options.js';
 import { readFile, writeFileSync, exec } from 'resource:///com/github/Aylur/ags/utils.js';
 
 export async function reloadSddm() {
+    options.sddm.theme.connect('changed', SDDM);
+    options.sddm.cursor.connect('changed', SDDM);
+}
+export function SDDM() {
     const theme = options.sddm.theme.value;
     const cursor = options.sddm.cursor.value
     const conf = `#made by wilwe

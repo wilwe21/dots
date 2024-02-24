@@ -4,6 +4,7 @@ import options from '../options.js';
 import Service from 'resource:///com/github/Aylur/ags/service.js';
 import { reloadScss } from './scss.js';
 import { reloadSddm } from './sddm.js';
+import { reloadGrub } from './grub.js';
 import { wallpaper } from './wallpaper.js';
 import { setupHyprland } from './hyprland.js';
 const CACHE_FILE = CACHE_DIR + '/options.json';
@@ -126,6 +127,7 @@ export class Opt extends Service {
                 reloadScss();
                 reloadSddm();
                 wallpaper();
+                reloadGrub();
                 setupHyprland();
             }
         }
