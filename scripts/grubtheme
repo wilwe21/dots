@@ -1,14 +1,3 @@
 #!/bin/bash
-theme=$(cat '/tmp/ags/grub/grub')
-time=$(cat '/tmp/ags/grub/time')
-conf=$(cat << EOF
-GRUB_THEME="/boot/grub/themes/${theme}/theme.txt"
-GRUB_TIMEOUT="${time}"
-GRUB_DEFAULT="0"
-GRUB_SAVEDEFAULT="false"
-EOF
-)
-sudo chmod +777 /etc/default/grub
-sudo echo "${conf}" &> /etc/default/grub
-sudo chmod +711 /etc/default/grub
-sudo grub-mkconfig &> /boot/grub/grub.cfg
+sudo cp /tmp/ags/grub.conf /etc/default/grub
+sudo grub-mkconfig &> /boot/grub/grub.cfg &

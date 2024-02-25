@@ -126,8 +126,8 @@ export class Opt extends Service {
             if (reload && !this.noReload) {
                 reloadScss();
                 reloadSddm();
-                wallpaper();
                 reloadGrub();
+                wallpaper();
                 setupHyprland();
             }
         }

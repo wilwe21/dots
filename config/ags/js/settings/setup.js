@@ -29,8 +29,8 @@ export function init() {
         reloadScss();
         setupHyprland();
         reloadSddm();
-        wallpaper();
         reloadGrub();
+        wallpaper();
         pywal();
         gtkTheme();
         gtkIcons();

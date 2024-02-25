@@ -18,8 +18,8 @@ export function setTheme(name) {
     reloadScss();
     setupHyprland();
     reloadSddm();
-    wallpaper();
     reloadGrub();
+    wallpaper();
 }
 
 export const WP = App.configDir + '/assets/';

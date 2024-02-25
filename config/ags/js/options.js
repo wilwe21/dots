@@ -611,7 +611,7 @@ export default {
     desktop: {
         wallpaper: {
             fg: Option('#fff', { 'scss': 'wallpaper-fg' }),
-            img: Option('/home/wilwe/.hyprland.conf/wallpapers/black.png', {
+            img: Option(/*'/home/wilwe/.hyprland.conf/wallpapers/black.png'*/'', {
                 'scssFormat': v => `"${v}"`,
             }),
             transition: Option("--transition-type wave --transition-angle 45", { 'scssFormat': v => `"${v}"`, })
