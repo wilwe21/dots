@@ -23,8 +23,8 @@
 		padding: $padding;
 	}
 	background: $infobg-color;
-	min-width: 500px;
-	min-height: 154px;
+	min-width: 200px;
+	min-height: 100px;
 	border: $border_width solid $accent;
 	border-radius: $radii;
 	.labels {
@@ -53,7 +53,7 @@
         	@include spacing(0);
 		color: $accent;
 		margin-top: -15px;
-		min-height: 154px;
+		min-height: 100px;
 		slider {
        			box-shadow: none;
         		background-color: transparent;
