@@ -4,7 +4,7 @@ import Mpris from 'resource:///com/github/Aylur/ags/service/mpris.js';
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import Applications from 'resource:///com/github/Aylur/ags/service/applications.js';
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
-import PopupWindow from '../misc/PopupWindow.js';
+import WW from '../misc/WW.js';
 import * as mpris from '../misc/mpriscover.js';
 import * as vars from '../variables.js';
 import icons from '../icons.js';
@@ -92,7 +92,7 @@ const PlayerBox = player => Widget.Box({
     }),
 })
 
-export default () => PopupWindow({
+export default () => WW({
     name: 'OSD',
     layer: "overlay",
     visible: false,
@@ -111,7 +111,6 @@ export default () => PopupWindow({
     },
     anchor: options.osd.anchor.bind('value'),
     margins: options.osd.margins.bind('value'),
-    transition: 'slide_down',
     child: Widget.Box({
         class_name: 'OSD',
         children: [
