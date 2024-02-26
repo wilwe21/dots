@@ -1,4 +1,7 @@
-.musicapp .mediaapp {
+.OSD {
+	.media{	
+		min-height: 154px;
+	}
 	button {
 		all: unset;
 		padding: $padding/2;
@@ -16,14 +19,17 @@
 	.buttonbox {
 		margin-right: -30px;
 	}
-	background: $bg-color;
-	border: $border-width*1.5 solid $accent;
-	border-radius: $radii*1.5;
+	.vslidebox{
+		padding: $padding;
+	}
+	background: $infobg-color;
 	min-width: 500px;
-	min-height: 200px;
+	min-height: 154px;
+	border: $border_width solid $accent;
+	border-radius: $radii;
 	.labels {
 		min-width: 250px;
-		margin-top: $padding;
+		padding: $padding*1.5;
 		label {
 			font-size: 1.1em;
 			text-shadow: $text-shadow;
@@ -88,28 +94,4 @@
         	background-position: center;
 		border-radius: $radii;
     	}
-}
-.info {
-	background-color: $infobg-color;
-	padding: $padding;
-	border: $border-width*1.5 solid $accent;
-	border-radius: $radii*1.5;
-	min-width: 500px;
-	min-height: 10px;
-	.inflabel {
-		padding: $padding*1.3;
-	}
-	label {
-		font-size: 1.1em;
-		color: $fg-color;
-		text-shadow: $text-shadow;
-		&.title {
-			font-weight: bold;
-		}
-	}
-	.player {
-		min-width: 500px;
-		min-height: 10px;
-		padding: $padding;
-	}
 }

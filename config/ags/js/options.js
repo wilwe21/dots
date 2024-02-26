@@ -574,6 +574,13 @@ export default {
             'scss': 'coverheight'
         }),
     },
+    osd: {
+        time: Option(1000),
+        anchor: Option(['top','left'],{
+            'scssFormat': v => `"${v}"`,
+        }),
+        margins: Option([10, 10], {'note': 'margins[top/bottom left/right]'}),
+    },
     PowerMenu: {
         bg: Option('solid', {
             'scss': 'pm-bg-mode',
@@ -611,7 +618,7 @@ export default {
     desktop: {
         wallpaper: {
             fg: Option('#fff', { 'scss': 'wallpaper-fg' }),
-            img: Option(/*'/home/wilwe/.hyprland.conf/wallpapers/black.png'*/'', {
+            img: Option('', {
                 'scssFormat': v => `"${v}"`,
             }),
             transition: Option("--transition-type wave --transition-angle 45", { 'scssFormat': v => `"${v}"`, })
