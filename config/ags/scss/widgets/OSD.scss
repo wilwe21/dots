@@ -23,7 +23,7 @@
 		padding: $padding;
 	}
 	background: transparentize($bg-color,0.35);
-	min-width: 200px;
+	//min-width: 200px;
 	min-height: 100px;
 	border: $border_width solid $accent;
 	border-radius: $radii;
