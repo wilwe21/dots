@@ -1,6 +1,7 @@
 import Variable from 'resource:///com/github/Aylur/ags/variable.js';
 import Mpris from 'resource:///com/github/Aylur/ags/service/mpris.js';
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js'
+import Audio from 'resource:///com/github/Aylur/ags/service/audio.js';
 import * as mpris from './misc/mpris.js';
 import GLib from 'gi://GLib';
 import options from './options.js';
@@ -67,10 +68,15 @@ export const temperatura = Variable('Teperatura: error', {
     }],
 });
 
-export const volume = Variable('', {
-    poll: [50, 'pamixer --get-volume', n => {
-        return String(n);
-    }],
+export const volume = (type = 'speaker') => Widget.Label({
+    class_name: 'volumelabel',
+}).hook(Audio.speaker, self => {
+    if ( Audio.speaker.stream.isMuted ){
+        self.label = String('  X   ')
+    } else {
+        const vol = parseInt(Audio.speaker.volume * 100);
+        self.label = String(vol+'%')
+    }
 });
 
 export const chmury = Variable('error', {

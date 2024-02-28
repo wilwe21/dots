@@ -3,6 +3,8 @@ if ps -C ags > /dev/null
 then
     rm -r /home/wilwe/.cache/ags/media/*
     killall ags
+    killall mprisinfo
 else
-   ags
+   ags &
+   /home/wilwe/.hyprland.conf/scripts/mprisinfo &
 fi

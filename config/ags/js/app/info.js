@@ -54,10 +54,7 @@ export default () => Widget.Window({
                             ps.filter(p => !options.mpris.black_list.value
                                 .includes(p.identity)).map(PlayerBox)),
 	            }),
-	            Widget.Label({
-	                class_name: 'inflabel',
-	                label: vars.volume.bind('value').transform(s => `${s}%`)
-	            }),
+	            vars.volume(),
 	        ],
 	    }),
 });

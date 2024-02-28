@@ -102,10 +102,7 @@ const PlayerBox = player => Widget.Box({
                     vertical: true,
                     hexpand: true,
                     children: [
-                        Widget.Label({
-                            class_name: 'volumelabel',
-                            label: vars.volume.bind('value').transform(s => `${s}%`),
-                        }),
+                        vars.volume(),
                         VolumeSlider(),
                     ],
                 }),

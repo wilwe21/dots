@@ -126,10 +126,7 @@ export default () => WW({
                 vertical: true,
                 class_name: 'vslidebox',
                 children: [
-                    Widget.Label({
-                        class_name: 'volumelabel',
-                        label: vars.volume.bind('value').transform(s => `${s}%`),
-                    }),
+                    vars.volume(),
                     VolumeSlider(),
                 ]
             })
