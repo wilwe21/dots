@@ -54,7 +54,10 @@ export default () => Widget.Window({
                             ps.filter(p => !options.mpris.black_list.value
                                 .includes(p.identity)).map(PlayerBox)),
 	            }),
-	            vars.volume(),
+	            Widget.Box({
+	                class_name: 'vlab',
+	                child: vars.volume(),
+	            }),
 	        ],
 	    }),
 });
