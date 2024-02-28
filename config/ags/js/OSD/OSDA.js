@@ -93,7 +93,7 @@ const PlayerBox = player => Widget.Box({
 })
 
 export default () => WW({
-    name: 'OSD',
+    name: 'OSDA',
     layer: "overlay",
     visible: false,
     setup: self => {

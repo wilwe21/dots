@@ -2,12 +2,23 @@ import Variable from 'resource:///com/github/Aylur/ags/variable.js';
 import Mpris from 'resource:///com/github/Aylur/ags/service/mpris.js';
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js'
 import Audio from 'resource:///com/github/Aylur/ags/service/audio.js';
+import Brightness from './services/brightness.js';
 import * as mpris from './misc/mpris.js';
 import GLib from 'gi://GLib';
 import options from './options.js';
 import { exec, execAsync, interval } from 'resource:///com/github/Aylur/ags/utils.js';
 
 const intval = options.systemFetchInterval;
+const brightup = () => {
+    const act = Brightness.screen;
+    Brightness.screen = Number(act) + 0.05;
+};
+globalThis['brightup'] = brightup;
+const brightdw = () => {
+    const act = Brightness.screen;
+    Brightness.screen = Number(act) - 0.05;
+};
+globalThis['brightdw'] = brightdw;
 
 export const clock = Variable(GLib.DateTime.new_now_local(), {
     poll: [1000, () => GLib.DateTime.new_now_local()],

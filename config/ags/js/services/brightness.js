@@ -1,5 +1,6 @@
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
 import Service from 'resource:///com/github/Aylur/ags/service.js';
+import * as vars from '../variables.js';
 import options from '../options.js';
 import { dependencies } from '../utils.js';
 
@@ -44,7 +45,6 @@ class Brightness extends Service {
 
         if (percent > 1)
             percent = 1;
-
         Utils.execAsync(`brightnessctl s ${percent * 100}% -q`)
             .then(() => {
                 this.#screen = percent;
@@ -63,6 +63,5 @@ class Brightness extends Service {
         }
     }
 }
-
 
 export default new Brightness();
