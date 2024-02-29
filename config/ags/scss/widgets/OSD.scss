@@ -51,7 +51,7 @@
         	@include spacing(0);
 		color: $accent;
 		margin-top: -15px;
-		min-height: 100px;
+		min-height: 115px;
 		slider {
        			box-shadow: none;
         		background-color: transparent;
@@ -102,6 +102,7 @@
     		}
 	}
 	.vslidebox label {
+		padding-bottom: $padding;
 		padding-left: $padding;
 		padding-right: $padding;
 	}
