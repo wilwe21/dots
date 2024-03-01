@@ -6,7 +6,6 @@ import GObject from 'gi://GObject';
 
 const keyGrabber = Widget.Window({
     name: 'key-grabber',
-    popup: true,
     anchor: ['top', 'left', 'right', 'bottom'],
     css: 'background-color: transparent;',
     visible: false,
@@ -14,10 +13,13 @@ const keyGrabber = Widget.Window({
     keymode: 'exclusive',
     layer: 'top',
     attribute: { list: [] },
-    setup: self => self.on('notify::visible', ({ visible }) => {
+    setup: self => {
+    self.keybind("Escape", () => App.closeWindow(name));
+    self.on('notify::visible', ({ visible }) => {
         if (!visible)
             self.attribute?.list.forEach(name => App.closeWindow(name));
-    }),
+    })
+    },
     child: Widget.EventBox({ vexpand: true }).on('button-press-event', () => {
         App.closeWindow('key-grabber');
         keyGrabber.attribute?.list.forEach(name => App.closeWindow(name));
@@ -34,9 +36,9 @@ export class PopupWindow extends AgsWindow {
         super({
             ...rest,
             name,
-            popup: true,
             layer: 'overlay',
             keymode: 'exclusive',
+            setup: self => self.keybind("Escape", () => App.closeWindow(name)),
             class_names: ['popup-window', name],
         });
 

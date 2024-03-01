@@ -6,8 +6,8 @@ import options from '../options.js';
 
 export default () => PopupWindow({
     name: 'dashboard',
+    anchor: options.bar.position.bind('value').transform(s => [s]),
     setup: self => self.hook(options.bar.position, () => {
-        self.anchor = [options.bar.position.value];
         if (options.bar.position.value === 'top')
             self.transition = 'slide_down';
 

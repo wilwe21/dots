@@ -153,6 +153,7 @@ export default () => PopupWindow({
     name: WINDOW_NAME,
     layer: 'overlay',
     transition: 'slide_down',
+    keymode: 'exclusive',
     anchor: options.applauncher.anchor.bind('value'),
     margins: options.applauncher.margins.bind('value'),
     child: Applauncher(),

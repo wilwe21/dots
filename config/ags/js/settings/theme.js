@@ -4,6 +4,7 @@ import themes from '../themes.js';
 import { reloadScss } from './scss.js';
 import { reloadSddm } from './sddm.js';
 import { reloadGrub } from './grub.js';
+import { reloadGtk } from './gtk.js';
 import { setupHyprland } from './hyprland.js';
 import { wallpaper } from './wallpaper.js';
 
@@ -19,6 +20,7 @@ export function setTheme(name) {
     setupHyprland();
     reloadSddm();
     reloadGrub();
+    reloadGtk();
     wallpaper();
 }
 

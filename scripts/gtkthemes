@@ -1,9 +1,32 @@
 #!/bin/bash
+help() {
+	echo "Script that change Gtk theme icons and cursor"
+	echo "-h print help"
+	echo "-n no default config"
+	echo "-T set gtk theme"
+	echo "-I set gtk icon theme"
+	echo "-C set cursor theme"
+}
 THEME="Catppuccin-Macchiato-Standard-Mauve-Dark"
 ICONS="Catppuccin-Macchiato"
 CURSOR="Future-dark-cursors"
 
 SCHEMA='gsettings set org.gnome.desktop.interface'
+while getopts hn falg
+do
+	case "${falg}" in
+		h) help && exit;;
+		n) THEME='' && ICONS='' && CURSOR='';;
+	esac
+done
+while getopts T:I:C: flag
+do
+	case "${flag}" in
+		T) THEME=${OPTARG};;
+		I) ICONS=${OPTARG};;
+		C) CURSOR=${OPTARG};;
+	esac
+done
 
 apply_themes() {
 	${SCHEMA} gtk-theme "$THEME"

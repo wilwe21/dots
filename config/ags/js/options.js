@@ -36,18 +36,15 @@ export default {
 
             })
         },
-        gtk: {
-            theme: Option('', {
-                'scss': 'exclude',
-
-            })
-        },
-        gtkIcons: {
-            theme: Option('', {
-                'scss': 'exclude',
-
-            })
-        },
+        gtk: Option('', {
+            'scss': 'exclude',
+        }),
+        gtkIcons: Option('', {
+            'scss': 'exclude',
+        }),
+        cursor: Option('', {
+            'scss': 'exclude',
+        })
     },
 
     color: {

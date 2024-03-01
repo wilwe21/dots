@@ -29,8 +29,9 @@ const Homogeneous = toggles => Widget.Box({
 
 export default () => PopupWindow({
     name: 'quicksettings',
+    anchor: options.bar.position.bind('value').transform(s => ['right', s]),
     setup: self => self.hook(options.bar.position, () => {
-        self.anchor = ['right', options.bar.position.value];
+        //self.anchor = ['right', 'top'/*options.bar.position.value*/];
         if (options.bar.position.value === 'top')
             self.transition = 'slide_down';
 

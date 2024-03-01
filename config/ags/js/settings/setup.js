@@ -7,6 +7,7 @@ import icons from '../icons.js';
 import { reloadScss, scssWatcher } from './scss.js';
 import { reloadSddm } from './sddm.js';
 import { reloadGrub } from './grub.js';
+import { reloadGtk } from './gtk.js';
 import { initWallpaper, wallpaper } from './wallpaper.js';
 import { hyprlandInit, setupHyprland } from './hyprland.js';
 import { globals } from './globals.js';
@@ -20,7 +21,7 @@ export function init() {
     warnOnLowBattery();
     globals();
     tmux();
-    gsettigsColorScheme();
+    reloadGtk();
     gtkFontSettings();
     scssWatcher();
     dependandOptions();
@@ -62,17 +63,6 @@ function tmux() {
     options.theme.accent.accent.connect('changed', ({ value }) => Utils
         .execAsync(`tmux set @main_accent ${getColor(value)}`)
         .catch(err => console.error(err.message)));
-}
-
-function gsettigsColorScheme() {
-    if (!Utils.exec('which gsettings'))
-        return;
-
-    options.theme.scheme.connect('changed', ({ value }) => {
-        const gsettings = 'gsettings set org.gnome.desktop.interface color-scheme';
-        Utils.execAsync(`${gsettings} "prefer-${value}"`)
-            .catch(err => console.error(err.message));
-    });
 }
 
 function gtkFontSettings() {
@@ -124,24 +114,5 @@ export function pywal() {
 
     execAsync([
         'wal', '--theme', options.misc.pywal.theme.value,
-    ]).catch(err => console.error(err));
-}
-
-export function gtkTheme() {
-    if (!exec('which gsettings'))
-        return print('missing dependancy: Gnome-Settings');
-
-    execAsync([
-        'gsettings', 'set', 'org.gnome.desktop.interface', 'gtk-theme', options.misc.gtk.theme.value,
-    ]).catch(err => console.error(err));
-}
-
-
-export function gtkIcons() {
-    if (!exec('which gsettings'))
-        return print('missing dependancy: Gnome-Settings');
-
-    execAsync([
-        'gsettings', 'set', 'org.gnome.desktop.interface', 'icon-theme', options.misc.gtkIcons.theme.value,
     ]).catch(err => console.error(err));
 }
