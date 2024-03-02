@@ -3,6 +3,8 @@ help() {
 	echo "Script that change Gtk theme icons and cursor"
 	echo "-h print help"
 	echo "-n no default config"
+	echo "-l prefer light mode"
+	echo "-d prefer dark mode"
 	echo "-T set gtk theme"
 	echo "-I set gtk icon theme"
 	echo "-C set cursor theme"
@@ -10,18 +12,16 @@ help() {
 THEME="Catppuccin-Macchiato-Standard-Mauve-Dark"
 ICONS="Catppuccin-Macchiato"
 CURSOR="Future-dark-cursors"
+ld="dark"
 
 SCHEMA='gsettings set org.gnome.desktop.interface'
-while getopts hn falg
-do
-	case "${falg}" in
-		h) help && exit;;
-		n) THEME='' && ICONS='' && CURSOR='';;
-	esac
-done
-while getopts T:I:C: flag
+while getopts hnldT:I:C: flag
 do
 	case "${flag}" in
+		h) help && exit;;
+		n) THEME='' && ICONS='' && CURSOR='';;
+		l) ld='light';;
+		d) ld='dark';;
 		T) THEME=${OPTARG};;
 		I) ICONS=${OPTARG};;
 		C) CURSOR=${OPTARG};;
@@ -32,6 +32,9 @@ apply_themes() {
 	${SCHEMA} gtk-theme "$THEME"
 	${SCHEMA} icon-theme "$ICONS"
 	${SCHEMA} cursor-theme "$CURSOR"
+	${SCHEMA} color-scheme "prefer-${ld}"
+	flatpak override --env=GTK_THEME="$THEME"
+	flatpak override --env=ICON_THEME="$ICONS"
 	flatpak override --env=XCURSOR_THEME="$CURSOR"
 }
 
