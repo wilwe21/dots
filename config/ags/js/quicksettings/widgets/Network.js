@@ -50,7 +50,7 @@ export const WifiSelection = () => Menu({
         }),
         Widget.Separator(),
         Widget.Button({
-            on_clicked: () => Applications.query('gnome-control-center')?.[0].launch(),
+            on_clicked: () => Applications.query('nm-connection-editor')?.[0].launch(),
             child: Widget.Box({
                 children: [
                     Widget.Icon(icons.ui.settings),
