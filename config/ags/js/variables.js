@@ -9,16 +9,11 @@ import options from './options.js';
 import { exec, execAsync, interval } from 'resource:///com/github/Aylur/ags/utils.js';
 
 const intval = options.systemFetchInterval;
-const brightup = () => {
+const brightup = sas => {
     const act = Brightness.screen;
-    Brightness.screen = Number(act) + 0.05;
+    Brightness.screen = Number(act) + sas;
 };
 globalThis['brightup'] = brightup;
-const brightdw = () => {
-    const act = Brightness.screen;
-    Brightness.screen = Number(act) - 0.05;
-};
-globalThis['brightdw'] = brightdw;
 
 export const clock = Variable(GLib.DateTime.new_now_local(), {
     poll: [1000, () => GLib.DateTime.new_now_local()],

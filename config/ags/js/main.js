@@ -17,7 +17,6 @@ import music from './widget/music.js';
 import OSDA from './OSD/OSDA.js';
 import OSDB from './OSD/OSDB.js';
 import musicapp from './app/musicapp.js';
-import translate from './app/translate.js';
 import info from './app/info.js';
 import installer from './installer/installer.js';
 
@@ -32,7 +31,6 @@ const windows = () => [
     forMonitors(sound),
     forMonitors(music),
     //installer(),
-    translate(),
     info(),
     OSDA(),
     OSDB(),

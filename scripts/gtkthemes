@@ -14,7 +14,7 @@ ICONS="Catppuccin-Macchiato"
 CURSOR="Future-dark-cursors"
 ld="dark"
 
-SCHEMA='gsettings set org.gnome.desktop.interface'
+SCHEMA='gsettings set org.gnome.desktop.interface' 
 while getopts hnldT:I:C: flag
 do
 	case "${flag}" in
@@ -25,6 +25,7 @@ do
 		T) THEME=${OPTARG};;
 		I) ICONS=${OPTARG};;
 		C) CURSOR=${OPTARG};;
+		?) help && exit;;
 	esac
 done
 
