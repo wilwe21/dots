@@ -575,7 +575,7 @@ export default {
         Title: Option('Web Launcher'),
         Top: {
             uno: {
-                Icon: Option('󰖟',{
+                Icon: Option('',{
                     'scssFormat': v => `"${v}"`,
                 }),
                 exec: Option('flatpak run io.gitlab.librewolf-community --new-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/h9joi49y.default-default',{
@@ -591,7 +591,7 @@ export default {
                 }),
             },
             tres: {
-                Icon: Option('󰗹',{
+                Icon: Option('',{
                     'scssFormat': v => `"${v}"`,
                 }),
                 exec: Option('flatpak run io.gitlab.librewolf-community --private-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/h9joi49y.default-default',{
@@ -601,7 +601,7 @@ export default {
         },
         Bot: {
             uno: {
-                Icon: Option('󰒃',{
+                Icon: Option('',{
                     'scssFormat': v => `"${v}"`,
                 }),
                 exec: Option('flatpak run com.brave.Browser --tor',{
@@ -609,7 +609,7 @@ export default {
                 }),
             },
             dos: {
-                Icon: Option('🐈',{
+                Icon: Option('',{
                     'scssFormat': v => `"${v}"`,
                 }),
                 exec: Option('flatpak run com.brave.Browser',{
@@ -617,7 +617,7 @@ export default {
                 }),
             },
             tres: {
-                Icon: Option('󰈎',{
+                Icon: Option('',{
                     'scssFormat': v => `"${v}"`,
                 }),
                 exec: Option('flatpak run io.gitlab.librewolf-community --new-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/h9joi49y.default-default messenger.com',{
