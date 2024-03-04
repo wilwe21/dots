@@ -68,6 +68,9 @@ export function launchApp(app) {
     Utils.execAsync(['hyprctl', 'dispatch', 'exec', `sh -c ${app.executable}`]);
     app.frequency += 1;
 }
+export function launchSh(Sh) {
+    Utils.execAsync(['hyprctl', 'dispatch', 'exec', `sh -c ${Sh}`]);
+}
 
 /** @param {Array<string>} bins */
 export function dependencies(bins) {

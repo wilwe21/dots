@@ -571,6 +571,61 @@ export default {
             'scss': 'coverheight'
         }),
     },
+    bl: {
+        Title: Option('Web Launcher'),
+        Top: {
+            uno: {
+                Icon: Option('󰖟',{
+                    'scssFormat': v => `"${v}"`,
+                }),
+                exec: Option('flatpak run io.gitlab.librewolf-community --new-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/h9joi49y.default-default',{
+                    'scssFormat': v => `"${v}"`,
+                }),
+            },
+            dos: {
+                Icon: Option('',{
+                    'scssFormat': v => `"${v}"`,
+                }),
+                exec: Option('flatpak run io.gitlab.librewolf-community --new-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/dwa',{
+                    'scssFormat': v => `"${v}"`,
+                }),
+            },
+            tres: {
+                Icon: Option('󰗹',{
+                    'scssFormat': v => `"${v}"`,
+                }),
+                exec: Option('flatpak run io.gitlab.librewolf-community --private-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/h9joi49y.default-default',{
+                    'scssFormat': v => `"${v}"`,
+                }),
+            },
+        },
+        Bot: {
+            uno: {
+                Icon: Option('󰒃',{
+                    'scssFormat': v => `"${v}"`,
+                }),
+                exec: Option('flatpak run com.brave.Browser --tor',{
+                    'scssFormat': v => `"${v}"`,
+                }),
+            },
+            dos: {
+                Icon: Option('🐈',{
+                    'scssFormat': v => `"${v}"`,
+                }),
+                exec: Option('flatpak run com.brave.Browser',{
+                    'scssFormat': v => `"${v}"`,
+                }),
+            },
+            tres: {
+                Icon: Option('󰈎',{
+                    'scssFormat': v => `"${v}"`,
+                }),
+                exec: Option('flatpak run io.gitlab.librewolf-community --new-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/h9joi49y.default-default messenger.com',{
+                    'scssFormat': v => `"${v}"`,
+                }),
+            },
+        },
+    },
     osd: {
         time: Option(1000),
         anchor: Option(['top','left'],{
