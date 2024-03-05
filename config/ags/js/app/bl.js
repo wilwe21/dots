@@ -20,6 +20,7 @@ export default () => PopupWindow({
     name: 'Webapp',
     layer: "overlay",
     transition: 'slide_down',
+    keymode: 'exclusive',
     child: Widget.Box({
         vertical: true,
         class_name: 'WebLauncher',
