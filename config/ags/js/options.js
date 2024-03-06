@@ -625,6 +625,23 @@ export default {
                 }),
             },
         },
+        bg: Option('solid', {
+            'scss': 'wl-bg-mode',
+            'enums': ['solid', 'linear-gradient', 'repeating-linear-gradient', 'radial-gradient', 'repeating-radial-gradient', 'transparent', 'image'],
+            'type': 'enum',
+        }),
+        bg_color: Option('$bg-color', { 'scss': 'wl-bg-color' }),
+        bg_size: Option('cover', { 'scss': 'wl-bg-size', 'note': 'only if bg is image' }),
+        bg_pos: Option('center', { 'scss': 'wl-bg-pos', 'note': 'only if bg is image' }),
+        bg_rape: Option('no-repeat', { 
+            'scss': 'wl-bg-repe',
+            'note': 'only if bg is image',
+            'enums': ['repeat', 'repeat-x', 'repeat-y', 'no-repeat', 'space', 'round'],
+            'type': 'enum',
+        }),
+        br_mode: Option(true, { 'scss': 'wl-br-mode' }),
+        br_radius: Option(20, { 'scss': 'wl-br-radius' }),
+        br: Option('$border-width solid $accent', { 'scss': 'wl-br' }),
     },
     osd: {
         time: Option(1000),

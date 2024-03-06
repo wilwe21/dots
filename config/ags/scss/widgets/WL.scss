@@ -1,8 +1,24 @@
 .WebLauncher{
-	background: $bg-color;
 	padding: $padding*1.3;
-	border: $border-width solid $accent;
-	border-radius: $radii;
+	@if $wl-bg-mode == 'solid' {
+    		background: $wl-bg-color;
+    	} @if $wl-bg-mode == 'linear-gradient' {
+    		background: linear-gradient($wl-bg-color);
+    	} @if $wl-bg-mode == 'repeating-linear-gradient' {
+		background: repeating-linear-gradient($wl-bg-color);
+	} @if $wl-bg-mode == 'radial-gradient' {
+		background: radial-gradient($wl-bg-color);
+	} @if $wl-bg-mode == 'repeating-radial-gradient' {
+		background: repeating-radial-gradient($wl-bg-color);
+	} @if $wl-bg-mode == 'image' {
+		background: url($wl-bg-color);
+    		background-size: $wl-bg-size;
+		background-position: $wl-bg-pos;
+    		background-repeat: $wl-bg-repe;
+	} @if $wl-br-mode == true {
+    		border-radius: $wl-br-radius;
+    		border: $wl-br;
+    	}
 	.WBLabel{
 		font-size: 30px;
 		color: $fg-color;
