@@ -68,3 +68,4 @@ class Colors extends Service {
 }
 
 export default new Colors;
+globalThis['colorpicker'] = new Colors;
