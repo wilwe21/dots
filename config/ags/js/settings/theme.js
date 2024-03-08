@@ -23,6 +23,7 @@ export function setTheme(name) {
     reloadGtk();
     wallpaper();
 }
+globalThis['setTheme'] = setTheme;
 
 export const WP = App.configDir + '/assets/';
 
