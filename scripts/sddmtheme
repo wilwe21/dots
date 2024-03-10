@@ -1,2 +1,9 @@
 #!/bin/bash
-sudo cp /tmp/ags/sddm.conf /etc/sddm.conf
+while getopts sgp flag
+do
+	case "${flag}" in
+		s) sudo cp /tmp/ags/sddm.conf /etc/sddm.conf;;
+		g) sudo cp /tmp/ags/grub.conf /etc/default/grub && sudo grub-mkconfig &> /boot/grub/grub.cfg;;
+		p) cp /tmp/ags/starship.conf $HOME/.hyprland.conf/config/starship.toml;;
+	esac
+done

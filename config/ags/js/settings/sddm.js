@@ -14,5 +14,5 @@ export function SDDM() {
 Current=${theme}
 CursorTheme=${cursor}`
     writeFileSync(String(conf), '/tmp/ags/sddm.conf')
-    exec('sudo /home/wilwe/.hyprland.conf/scripts/sddmtheme')
+    exec('sudo /home/wilwe/.hyprland.conf/scripts/sddmtheme -s')
 }

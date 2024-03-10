@@ -204,6 +204,35 @@ export default {
             'unit': 'pt',
         }),
     },
+    starship: {
+        format: Option('[🭃](#181825)$username[🭟](#181825)[ ]()[🭃](#181825)$directory[🭟](#181825)[ ]()[🭃](#CBA6F7)$time[🭟](#CBA6F7)[ ]()',{
+            'scssFormat': v => `"${v}"`,
+        }),
+        username: {
+            bg: Option('#181825',{
+                'scssFormat': v => `"${v}"`,
+            }),
+            fg: Option('#CDD6F4',{
+                'scssFormat': v => `"${v}"`,
+            }),
+        },
+        directory: {
+            bg: Option('#181825',{
+                'scssFormat': v => `"${v}"`,
+            }),
+            fg: Option('#CDD6F4',{
+                'scssFormat': v => `"${v}"`,
+            }),
+        },
+        time: {
+            bg: Option('#CBA6F7',{
+                'scssFormat': v => `"${v}"`,
+            }),
+            fg: Option('#181825',{
+                'scssFormat': v => `"${v}"`,
+            }),
+        },
+    },
 
     applauncher: {
         width: Option(500),
