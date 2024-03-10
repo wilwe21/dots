@@ -237,7 +237,7 @@ export default {
     applauncher: {
         width: Option(500),
         height: Option(500),
-        icon_size: Option(52),
+        icon_size: Option(32),
         descvisible: Option(false),
         bg: Option('solid', {
             'scss': 'applauncher-bg-mode',
@@ -350,7 +350,7 @@ export default {
             'scssFormat': s => `${s}`,
         }),
         flat_buttons: Option(true, { 'scss': 'bar-flat-buttons' }),
-        separators: Option(true),
+        separators: Option(false),
         icon: Option(themes[0].options['bar.icon'], {
             'scssFormat': v => `"${v}"`,
             'type': 'img',

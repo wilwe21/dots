@@ -10,10 +10,8 @@ export default [
     name: 'Catppuccin Macchiato',
     icon: "/home/wilwe/.hyprland.conf/icons/cat.png",
 
-    "spacing": 2,
     "padding": 7,
     "radii": 7,
-    "popover_padding_multiplier": 1.4,
     "misc.pywal.theme": "base16-seti",
     "misc.gtk": "Catppuccin-Macchiato-Standard-Mauve-Dark",
     "misc.gtkIcons": "Catppuccin-Macchiato",
@@ -32,7 +30,6 @@ export default [
     "color.teal": "#94E2D5",
     "color.orange": "#FAB387",
     "color.playcolor": "#FAB387",
-    "theme.scheme": "dark",
     "theme.bg": "#181825",
     "theme.fg": "#CDD6F4",
     "theme.accent.accent": "#CBA6F7",
@@ -40,8 +37,6 @@ export default [
     "theme.accent.fg": "$bg-color",
     "theme.accent.gradient": "to right, $accent, darken($accent, 20)",
     "theme.accent.bgradient": "to bottom, $accent, darken($accent, 20)",
-    "theme.widget.bg": "$fg-color",
-    "theme.widget.opacity": 94,
     "bar.mode": "transparent",
  	"bar.border": false,
  	"bar.start.border": true,
@@ -56,13 +51,6 @@ export default [
  	"bar.icon": "/home/wilwe/.hyprland.conf/icons/cat.png",
  	"bar.decorsw": false,
  	"grub.theme": 'Arcade',
-    "starship.format": "[🭃](#181825)$username[🭟](#181825)[ ]()[🭃](#181825)$directory[🭟](#181825)[ ]()[🭃](#CBA6F7)$time[🭟](#CBA6F7)[ ]()",
-    "starship.username.bg": "#181825",
-    "starship.username.fg": "#CDD6F4",
-    "starship.directory.bg": "#181825",
-    "starship.directory.fg": "#CDD6F4",
-    "starship.time.bg": "#CBA6F7",
-    "starship.time.fg": "#181825",
     //widgets
     "clock.main": '%H:%M',
     "clock.monofont": 'Concert One Mono',
@@ -88,14 +76,10 @@ export default [
     "border.opacity": 100,
     "border.width": 2,
     "border.barcolor": "$accent",
-    "hypr.inactive_border": "rgba(333333ff)",
-    "hypr.wm_gaps": 3,
     "font.font": "Ubuntu Nerd Font",
     "font.mono": "Mononoki Nerd Font",
     "font.size": 13,
-    "applauncher.width": 500,
     "applauncher.height": 400,
-    "applauncher.icon_size": 32,
     "applauncher.bg": 'linear-gradient',
     "applauncher.bg_color": '135deg,darken($accent, 50), lighten($bg-color,10), $bg-color',
     "applauncher.side": 'player',
@@ -103,30 +87,12 @@ export default [
     "dashboard.bg_color": 'darken($accent, 50), lighten($bg-color,10), $bg-color',
     "quickSettings.bg": 'linear-gradient',
     "quickSettings.bg_color": 'darken($accent, 50), lighten($bg-color,10), $bg-color',
-    "bar.position": "top",
-    "bar.style": "floating",
-    "bar.flat_buttons": true,
-    "bar.separators": false,
     "bar.icon": "/home/wilwe/.hyprland.conf/icons/cat.png",
     "battery.bar.width": 50,
     "battery.bar.height": 14,
     "battery.low": 15,
     "battery.medium": 35,
-    "desktop.wallpaper.fg": "#fff",
     "desktop.wallpaper.img": "/home/wilwe/.hyprland.conf/wallpapers/main.png",
-    "desktop.avatar": "/var/lib/AccountsService/icons/wilwe",
-    "desktop.drop_shadow": false,
-    "desktop.shadow": "rgba(0, 0, 0, .6)",
-    "notifications.black_list": [
-      "Spotify"
-    ],
-    "notifications.position": [
-      "top"
-    ],
-    "notifications.width": 450,
-    "dashboard.sys_info_size": 70,
-    "mpris.preferred": "spotify",
-    "workspaces": 5,
   }),
 
  Theme({
@@ -232,18 +198,6 @@ export default [
 	"quickSettings.bg_color": "darken($accent, 10) 0%,$bg-color 20%",
     "PowerMenu.bg": "linear-gradient",
 	"PowerMenu.bg_color": "darken($accent, 10) 0%,$bg-color 20%",
-    "notifications.black_list": [
-      "Spotify"
-    ],
-    "notifications.position": [
-      "top"
-    ],
-    "notifications.width": 450,
-    "dashboard.sys_info_size": 70,
-    "dashboard.bg": "linear-gradient",
-	"dashboard.bg_color": "darken($accent, 10) 0%,$bg-color 20%",
-    "mpris.preferred": "spotify",
-    "workspaces": 5,
   }),
 
   Theme({
@@ -350,18 +304,6 @@ export default [
     "desktop.wallpaper.img": "/home/wilwe/.hyprland.conf/wallpapers/spaghetti.png",
     "desktop.avatar": "/home/wilwe/.hyprland.conf/icons/spaghetti-monster.png",
     "desktop.wallpaper.transition": "--transition-type center",
-    "desktop.drop_shadow": false,
-    "desktop.shadow": "rgba(0, 0, 0, .6)",
-    "notifications.black_list": [
-      "Spotify"
-    ],
-    "notifications.position": [
-      "top"
-    ],
-    "notifications.width": 450,
-    "dashboard.sys_info_size": 70,
-    "mpris.preferred": "spotify",
-    "workspaces": 5,
   }),
   
   Theme({
@@ -436,18 +378,6 @@ export default [
     "desktop.wallpaper.fg": "#fff",
     "desktop.wallpaper.img": "/home/wilwe/.hyprland.conf/wallpapers/pony.png",
     "desktop.avatar": "/home/wilwe/.hyprland.conf/icons/fluttershy.png",
-    "desktop.drop_shadow": false,
-    "desktop.shadow": "rgba(0, 0, 0, .6)",
-    "notifications.black_list": [
-      "Spotify"
-    ],
-    "notifications.position": [
-      "top"
-    ],
-    "notifications.width": 450,
-    "dashboard.sys_info_size": 70,
-    "mpris.preferred": "spotify",
-    "workspaces": 5,
   }),
   
   Theme({
@@ -522,18 +452,6 @@ export default [
     "desktop.wallpaper.fg": "#fff",
     "desktop.wallpaper.img": "/home/wilwe/.hyprland.conf/wallpapers/pacman.png",
     "desktop.avatar": "/home/wilwe/.hyprland.conf/icons/ghost.png",
-    "desktop.drop_shadow": false,
-    "desktop.shadow": "rgba(0, 0, 0, .6)",
-    "notifications.black_list": [
-      "Spotify"
-    ],
-    "notifications.position": [
-      "top"
-    ],
-    "notifications.width": 450,
-    "dashboard.sys_info_size": 70,
-    "mpris.preferred": "spotify",
-    "workspaces": 5,
   }),
   
   Theme({
@@ -616,18 +534,6 @@ export default [
     "desktop.wallpaper.img": "/home/wilwe/.hyprland.conf/wallpapers/bill.png",
     "desktop.avatar": "/home/wilwe/.hyprland.conf/icons/bill.png",
     "desktop.wallpaper.transition": "--transition-type grow --invert-y --transition-pos 915,280",
-    "desktop.drop_shadow": false,
-    "desktop.shadow": "rgba(0, 0, 0, .6)",
-    "notifications.black_list": [
-      "Spotify"
-    ],
-    "notifications.position": [
-      "top"
-    ],
-    "notifications.width": 450,
-    "dashboard.sys_info_size": 70,
-    "mpris.preferred": "spotify",
-    "workspaces": 5,
   }),
   
   Theme({
@@ -705,18 +611,6 @@ export default [
     "desktop.wallpaper.img": "/home/wilwe/.hyprland.conf/wallpapers/kraina grzybów.png",
     "desktop.avatar": "/var/lib/AccountsService/icons/wilwe",
     "desktop.wallpaper.transition": "--transition-type grow --invert-y --transition-pos 890,320",
-    "desktop.drop_shadow": false,
-    "desktop.shadow": "rgba(0, 0, 0, .6)",
-    "notifications.black_list": [
-      "Spotify"
-    ],
-    "notifications.position": [
-      "top"
-    ],
-    "notifications.width": 450,
-    "dashboard.sys_info_size": 70,
-    "mpris.preferred": "spotify",
-    "workspaces": 5,
   }),
   
   Theme({
@@ -803,18 +697,6 @@ export default [
     "desktop.wallpaper.img": "/home/wilwe/.hyprland.conf/wallpapers/papatapeta.png",
     "desktop.avatar": "/home/wilwe/.hyprland.conf/icons/kremowka.png",
     "desktop.wallpaper.transition": "--transition-type center --transition-step 2",
-    "desktop.drop_shadow": false,
-    "desktop.shadow": "rgba(0, 0, 0, .6)",
-    "notifications.black_list": [
-      "Spotify"
-    ],
-    "notifications.position": [
-      "top"
-    ],
-    "notifications.width": 450,
-    "dashboard.sys_info_size": 70,
-    "mpris.preferred": "spotify",
-    "workspaces": 5,
   }),
   
   Theme({
@@ -902,252 +784,6 @@ export default [
     "desktop.wallpaper.img": "/home/wilwe/.hyprland.conf/wallpapers/freddyfnaf.png",
     "desktop.avatar": "/home/wilwe/.hyprland.conf/icons/freddy.png",
     "desktop.wallpaper.transition": "--transition-type grow --invert-y --transition-pos 865,515",
-    "desktop.drop_shadow": false,
-    "desktop.shadow": "rgba(0, 0, 0, .6)",
-    "notifications.black_list": [
-      "Spotify"
-    ],
-    "notifications.position": [
-      "top"
-    ],
-    "notifications.width": 450,
-    "dashboard.sys_info_size": 70,
-    "mpris.preferred": "spotify",
-    "workspaces": 5,
-  }),
-  Theme({
-    name: 'Fucked',
-    icon: '/home/wilwe/.hyprland.conf/icons/meatball.png',
-  "spacing": 2,
-  "padding": 8,
-  "radii": 5,
-  "popover_padding_multiplier": 1.4,
-  "misc.pywal.theme": "",
-  "misc.gtk": "",
-  "misc.gtkIcons": "",
-  "color.red": "#000000",
-  "color.green": "#ffffff",
-  "color.yellow": "#f0f0f0",
-  "color.moon": "#0f0f0f",
-  "color.blue": "#ff00ff",
-  "color.temp": "#00ff00",
-  "color.download": "#000fff",
-  "color.cpucolor": "#fff000",
-  "color.upload": "#ff0f0f",
-  "color.magenta": "#00f0f0",
-  "color.teal": "#000f0f",
-  "color.orange": "#fff0f0",
-  "color.playcolor": "#fffff0",
-  "theme.scheme": "light",
-  "theme.bg": "#eeee0e",
-  "theme.fg": "#000700",
-  "theme.accent.accent": "#666420",
-  "hypr.active_border": "rgba(666420FF)",
-  "theme.accent.fg": "#666420",
-  "theme.accent.gradient": "red,blue",
-  "theme.accent.bgradient": "black,red",
-  "theme.widget.bg": "#ff2137",
-  "theme.widget.opacity": 69,
-  "border.color": "magenta",
-  "border.opacity": 45,
-  "border.width": 14,
-  "border.barcolor": "red",
-  "hypr.inactive_border": "white",
-  "hypr.wm_gaps": 3,
-  "font.font": "Hack Nerd Font Bold",
-  "font.mono": "D050000L",
-  "font.size": 24,
-  "applauncher.width": 200,
-  "applauncher.height": 100,
-  "applauncher.icon_size": 77,
-  "applauncher.descvisible": true,
-  "applauncher.bg": "repeating-linear-gradient",
-  "applauncher.bg_color": "to right,red,red 5px,green 5px,green 10px,blue 10px, blue 11px",
-  "applauncher.br_mode": true,
-  "applauncher.br_radius": 34,
-  "applauncher.br": "$border-width solid #ffffff",
-  "applauncher.side": "none",
-  "applauncher.labvisible": true,
-  "applauncher.icovisible": true,
-  "applauncher.avatarvisible": true,
-  "applauncher.label": "I use arch btw",
-  "applauncher.anchor": [
-    "top",
-    "left",
-    "bottom",
-    "right"
-  ],
-  "applauncher.margins": [
-    "420",
-    "69"
-  ],
-  "bar.position": "top",
-  "bar.style": "floating",
-  "bar.mode": "repeating-linear-gradient",
-  "bar.color": "135deg,black, black 5px, white 5px, white 10px, red 10px, red 15px",
-  "bar.border": false,
-  "bar.start.border": false,
-  "bar.start.colormode": "repeating-linear-gradient",
-  "bar.start.color": "45deg,blue, blue 5px, red 5px, red 20px",
-  "bar.center.border": false,
-  "bar.center.colormode": "repeating-radial-gradient",
-  "bar.center.color": "red, yellow,blue,green,white,black",
-  "bar.end.border": false,
-  "bar.end.colormode": "repeating-linear-gradient",
-  "bar.end.color": "90deg,red,red 2px,green 2px,green 3px,blue 3px, blue 5px",
-  "bar.player_length": 50,
-  "bar.flat_buttons": false,
-  "bar.separators": true,
-  "bar.icon": "/home/wilwe/.hyprland.conf/icons/waddles.png",
-  "bar.decorsw": true,
-  "bar.dsize": "200%",
-  "quickSettings.bg": "repeating-linear-gradient",
-  "quickSettings.bg_color": "$bg-color, $bg-color 5px, yellow 5px, yellow 10px, transparent 10px, transparent 30px",
-  "quickSettings.br_mode": true,
-  "quickSettings.br_radius": 43,
-  "quickSettings.br": "$border-width*2 solid $accent",
-  "clock.main": "%H:%M",
-  "clock.visible": true,
-  "clock.font": "D050000L 10",
-  "clock.monofont": "D050000L",
-  "clock.fontsize": 256,
-  "clock.layer": "background",
-  "clock.color": "blue",
-  "clock.background": "repeating-linear-gradient",
-  "clock.bg_color": "red,blue, green,blue",
-  "clock.border": true,
-  "clock.width": "$clock-size",
-  "clock.height": "$clock-size*2",
-  "clock.shadow": "20px 69px 0px #fff000",
-  "clock.anchor": [
-    "top",
-    "left"
-  ],
-  "clock.margins": [
-    "210",
-    "0"
-  ],
-  "moon.path": "",
-  "moon.visible": false,
-  "moon.size": "0",
-  "moon.layer": "background",
-  "moon.anchor": [
-    "top",
-    "left"
-  ],
-  "moon.margins": [
-    "0",
-    "0"
-  ],
-  "bgtop.image": "",
-  "bgtop.layer": "bottom",
-  "bgtop.visible": false,
-  "bgtop.size": "0",
-  "bgtop.anchor": [
-    "top",
-    "left"
-  ],
-  "bgtop.margins": [
-    "0",
-    "0"
-  ],
-  "sound.sound": " ",
-  "sound.layer": "background",
-  "sound.visible": false,
-  "sound.size": "0",
-  "sound.icon": "",
-  "sound.anchor": [
-    "top",
-    "right"
-  ],
-  "sound.margins": [
-    "0",
-    "0"
-  ],
-  "info.anchor": [
-    "bottom",
-    "right",
-    "left",
-    "top"
-  ],
-  "info.margins": [
-    "20",
-    "20"
-  ],
-  "info.bgcolor": "transparentize($bg-color, 0.3)",
-  "info.layer": "overlay",
-  "music.visible": false,
-  "music.anchor": [
-    "bottom",
-    "right"
-  ],
-  "music.margins": [
-    "20",
-    "20"
-  ],
-  "music.layer": "background",
-  "music.box": "blurred",
-  "music.box_color": "$bg-color",
-  "music.border": true,
-  "music.volume": true,
-  "music.vertical": false,
-  "music.titlejustification": "left",
-  "music.artistjustification": "left",
-  "music.cover.visible": true,
-  "music.cover.hpack": "start",
-  "music.footer.positon": true,
-  "music.footer.controls": true,
-  "music.footer.box_visible": "transparent",
-  "music.footer.box_color": "$bg-color",
-  "music.footer.border": false,
-  "music.text.visible": "transparent",
-  "music.text.bg_color": "$bg-color",
-  "music.text.color": "$fg-color",
-  "music.text.border": false,
-  "music.Title": true,
-  "music.Artist": true,
-  "music.min_width": 500,
-  "music.min_height": 200,
-  "music.cover_width": 150,
-  "music.cover_height": 150,
-  "PowerMenu.bg": "repeating-linear-gradient",
-  "PowerMenu.bg_color": "69deg,yellow,yellow 25px, blue 25px, blue 30px, red 30px, red 69px",
-  "PowerMenu.br_mode": true,
-  "PowerMenu.br_radius": 100,
-  "PowerMenu.br": "$border-width*5 solid $accent",
-  "battery.bar.width": 145,
-  "battery.bar.height": 14,
-  "battery.low": 93,
-  "battery.medium": 103,
-  "desktop.wallpaper.fg": "#fff",
-  "desktop.wallpaper.img": "/home/wilwe/.hyprland.conf/wallpapers/mess.png",
-  "desktop.wallpaper.transition": "--transition-type wave --transition-angle 45",
-  "desktop.avatar": "/var/lib/AccountsService/icons/wilwe",
-  "desktop.drop_shadow": false,
-  "desktop.shadow": "rgba(0, 0, 0, .6)",
-  "notifications.black_list": [
-    "Spotify"
-  ],
-  "notifications.position": [
-    "top"
-  ],
-  "notifications.width": 450,
-  "dashboard.sys_info_size": 70,
-  "dashboard.bg": "radial-gradient",
-  "dashboard.bg_color": "red,green,black,white,red,red,blue,magenta,red,blue,black",
-  "dashboard.br_mode": true,
-  "dashboard.br_radius": 50,
-  "dashboard.br": "$border-width*2 solid $accent",
-  "mpris.black_list": [
-    "VLC media player"
-  ],
-  "mpris.preferred": "librewolf",
-  "workspaces": 27,
-  "OverView.bg": "repeating-linear-gradient",
-  "OverView.bg_color": "red,green,red,green",
-  "OverView.br_mode": true,
-  "OverView.br_radius": 20,
-  "OverView.br": "$border-width solid $accent"
   }),
 ];
 
