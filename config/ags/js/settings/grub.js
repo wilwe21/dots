@@ -14,5 +14,5 @@ GRUB_TIMEOUT="${timeout}"
 GRUB_DEFAULT="0"
 GRUB_SAVEDEFAULT="false"`
     writeFileSync(String(conf), '/tmp/ags/grub.conf')
-    exec('sudo /home/wilwe/.hyprland.conf/scripts/sddmtheme -g')
+    exec('sudo /home/wilwe/.hyprland.conf/scripts/theme -g')
 }

@@ -1,3 +1,0 @@
-#!/bin/bash
-sudo cp /tmp/ags/grub.conf /etc/default/grub
-sudo grub-mkconfig &> /boot/grub/grub.cfg &

@@ -45,5 +45,5 @@ time_format = "%R" # Hour:Minute Format
 style = "bg:${tbg} fg:${tfg}"
 format = '[ $time ]($style)'`
     writeFileSync(String(conf), '/tmp/ags/starship.conf')
-    exec('/home/wilwe/.hyprland.conf/scripts/sddmtheme -p')
+    exec('/home/wilwe/.hyprland.conf/scripts/theme -p')
 }
