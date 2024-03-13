@@ -1,9 +1,10 @@
 #!/bin/bash
-while getopts sgp flag
+while getopts sgpk flag
 do
 	case "${flag}" in
 		s) sudo cp /tmp/ags/sddm.conf /etc/sddm.conf;;
 		g) sudo cp /tmp/ags/grub.conf /etc/default/grub && sudo grub-mkconfig &> /boot/grub/grub.cfg;;
 		p) cp /tmp/ags/starship.conf $HOME/.config/starship.toml;;
+		k) cp /tmp/ags/kitty.conf $HOME/.config/kitty/kitty.conf;;
 	esac
 done

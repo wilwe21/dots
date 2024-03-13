@@ -6,6 +6,7 @@ import { reloadSddm } from './sddm.js';
 import { reloadGrub } from './grub.js';
 import { reloadGtk } from './gtk.js';
 import { reloadStarship } from './starship.js';
+import { reloadKitty } from './kitty.js';
 import { setupHyprland } from './hyprland.js';
 import { wallpaper } from './wallpaper.js';
 
@@ -23,6 +24,7 @@ export function setTheme(name) {
     reloadGrub();
     reloadGtk();
     reloadStarship();
+    reloadKitty();
     wallpaper();
 }
 globalThis['setTheme'] = setTheme;

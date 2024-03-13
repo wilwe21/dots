@@ -1,6 +1,6 @@
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import options from '../options.js';
-import { readFile, writeFileSync, exec } from 'resource:///com/github/Aylur/ags/utils.js';
+import { readFile, writeFileSync, execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
 
 export async function reloadSddm() {
     options.sddm.theme.connect('changed', SDDM);
@@ -14,5 +14,5 @@ export function SDDM() {
 Current=${theme}
 CursorTheme=${cursor}`
     writeFileSync(String(conf), '/tmp/ags/sddm.conf')
-    exec('sudo /home/wilwe/.hyprland.conf/scripts/theme -s')
+    Utils.execAsync(['hyprctl', 'dispatch', 'exec', 'sudo /home/wilwe/.hyprland.conf/scripts/theme -s'])
 }

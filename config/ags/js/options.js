@@ -233,6 +233,106 @@ export default {
             }),
         },
     },
+    kitty:{
+        font: {
+            family: Option('monoki',{    
+                'scssFormat': v => `"${v}"`,
+            }),
+            size: Option('11',{
+                'scssFormat': v => `"${v}"`,
+            }),
+        },
+        cursor: {
+            color: Option("#ffffff",{
+                'scssFormat': v => `"${v}"`,
+            }),
+            text_color: Option("#111111",{
+                'scssFormat': v => `"${v}"`,
+            }),
+            shape: Option("block",{
+                'scssFormat': v => `"${v}"`,
+                'enums': ['block','beam','underline'],
+                'type': 'enum',
+            }),
+            beam_thickness: Option("1.5", {
+                'scssFormat': v => `"${v}"`,
+            }),
+            underline_thickness: Option("2.0",{
+                'scssFormat': v => `"${v}"`,
+            }),
+            blink_interval: Option("-1",{
+                'scssFormat': v => `"${v}"`,
+            }),
+            stop_blinking_after: Option("15",{
+                'scssFormat': v => `"${v}"`,
+            }),
+        },
+        scrollback: {
+            lines: Option('2000',{
+                'scssFormat': v => `"${v}"`,
+            }),
+            pager: Option('less --chop-long-lines --RAW-CONTROL-CHARS +INPUT_LINE_NUMBER',{
+                'scssFormat': v => `"${v}"`,
+            }),
+            pager_history: Option('0',{
+                'scssFormat': v => `"${v}"`,
+            }),
+            fill_enlarged_window: Option('no',{
+                'scssFormat': v => `"${v}"`,
+                'enums': ['no','yes'],
+                'type': 'enum',
+            }),
+        },
+        wheel_scroll:{
+            multiplier: Option("5.0",{
+                'scssFormat': v => `"${v}"`,
+            }),
+            min_lines: Option("1",{
+                'scssFormat': v => `"${v}"`,
+            })
+        },
+        touch_scroll_multiplier: Option('1',{
+            'scssFormat': v => `"${v}"`,
+        }),
+        mouse_hide_wait: Option("3",{
+            'scssFormat': v => `"${v}"`,
+        }),
+        url: {
+            color: Option('#0087bd',{
+                'scssFormat': v => `"${v}"`,
+            }),
+            style: Option('curly',{
+                'scssFormat': v => `"${v}"`,
+                'emus': ['none','straight','double','curly','dotted','dashed'],
+                'type': 'enum'
+            }),
+            underline: Option('hover',{
+                'scssFormat': v => `"${v}"`,
+                'emus': ['always','hover','never'],
+                'type': "enum"
+            }),
+        },
+        color_scheme: {
+            fg: Option('#dddddd',{
+                'scssFormat': v => `"${v}"`,
+            }),
+            bg: Option('#000000',{
+                'scssFormat': v => `"${v}"`,
+            }),
+            bg_opacity: Option('1.0',{
+                'scssFormat': v => `"${v}"`,
+            }),
+            bg_blur: Option('0',{
+                'scssFormat': v => `"${v}"`,
+            }),
+            selection_fg: Option('#000000',{
+                'scssFormat': v => `"${v}"`,
+            }),
+            selection_bg: Option('#fffacd',{
+                'scssFormat': v => `"${v}"`,
+            }),
+        },
+    },
 
     applauncher: {
         width: Option(500),

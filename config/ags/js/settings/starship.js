@@ -1,6 +1,6 @@
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import options from '../options.js';
-import { readFile, writeFileSync, exec } from 'resource:///com/github/Aylur/ags/utils.js';
+import { readFile, writeFileSync, execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
 
 export async function reloadStarship() {
     options.starship.format.connect('changed', starship);
@@ -45,5 +45,5 @@ time_format = "%R" # Hour:Minute Format
 style = "bg:${tbg} fg:${tfg}"
 format = '[ $time ]($style)'`
     writeFileSync(String(conf), '/tmp/ags/starship.conf')
-    exec('/home/wilwe/.hyprland.conf/scripts/theme -p')
+    Utils.execAsync(['hyprctl', 'dispatch', 'exec', '/home/wilwe/.hyprland.conf/scripts/theme -p'])
 }
