@@ -5,8 +5,8 @@ import { reloadScss } from './scss.js';
 import { reloadSddm } from './sddm.js';
 import { reloadGrub } from './grub.js';
 import { reloadGtk } from './gtk.js';
-import { reloadStarship } from './starship.js';
-import { reloadKitty } from './kitty.js';
+import { starship } from './starship.js';
+import { kitty } from './kitty.js';
 import { setupHyprland } from './hyprland.js';
 import { wallpaper } from './wallpaper.js';
 
@@ -23,8 +23,8 @@ export function setTheme(name) {
     reloadSddm();
     reloadGrub();
     reloadGtk();
-    reloadStarship();
-    reloadKitty();
+    starship();
+    kitty();
     wallpaper();
 }
 globalThis['setTheme'] = setTheme;

@@ -205,11 +205,11 @@ export default {
         }),
     },
     starship: {
-        format: Option('[🭃](#181825)$username[🭟](#181825)[ ]()[🭃](#181825)$directory[🭟](#181825)[ ]()[🭃](#CBA6F7)$time[🭟](#CBA6F7)[ ]()',{
+        format: Option('[🭃](#000000)$username[🭟](#000000)[ ]()[🭃](#000000)$directory[🭟](#000000)[ ]()[🭃](#CBA6F7)$time[🭟](#CBA6F7)[ ]()',{
             'scssFormat': v => `"${v}"`,
         }),
         username: {
-            bg: Option('#181825',{
+            bg: Option('#000000',{
                 'scssFormat': v => `"${v}"`,
             }),
             fg: Option('#CDD6F4',{
@@ -217,7 +217,7 @@ export default {
             }),
         },
         directory: {
-            bg: Option('#181825',{
+            bg: Option('#000000',{
                 'scssFormat': v => `"${v}"`,
             }),
             fg: Option('#CDD6F4',{
@@ -243,10 +243,10 @@ export default {
             }),
         },
         cursor: {
-            color: Option("#ffffff",{
+            color: Option("$accent",{
                 'scssFormat': v => `"${v}"`,
             }),
-            text_color: Option("#111111",{
+            text_color: Option("$accent-fg",{
                 'scssFormat': v => `"${v}"`,
             }),
             shape: Option("block",{
@@ -313,10 +313,10 @@ export default {
             }),
         },
         color_scheme: {
-            fg: Option('#dddddd',{
+            fg: Option('$fg-color',{
                 'scssFormat': v => `"${v}"`,
             }),
-            bg: Option('#000000',{
+            bg: Option('$bg-color',{
                 'scssFormat': v => `"${v}"`,
             }),
             bg_opacity: Option('1.0',{
@@ -325,10 +325,10 @@ export default {
             bg_blur: Option('0',{
                 'scssFormat': v => `"${v}"`,
             }),
-            selection_fg: Option('#000000',{
+            selection_fg: Option('$accent-fg',{
                 'scssFormat': v => `"${v}"`,
             }),
-            selection_bg: Option('#fffacd',{
+            selection_bg: Option('$accent',{
                 'scssFormat': v => `"${v}"`,
             }),
         },
