@@ -3,21 +3,18 @@ import options from '../options.js';
 import { execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
 
 export function reloadGtk() {
-    const gsettings = 'gsettings set org.gnome.desktop.interface';
-    options.misc.gtk.connect('changed', ({ value }) => {
-    execAsync(`${gsettings} gtk-theme "${value}"`)
-        .catch(err => console.error(err.message));
-    });
-    options.misc.gtkIcons.connect('changed', ({ value }) => {
-    execAsync(`${gsettings} icon-theme "${value}"`)
-        .catch(err => console.error(err.message));
-    });
-    options.misc.cursor.connect('changed', ({ value }) => {
-    execAsync(`${gsettings} cursor-theme "${value}"`)
-        .catch(err => console.error(err.message));
-    });
-    options.theme.scheme.connect('changed', ({ value }) => {
-    execAsync(`${gsettings} color-scheme "prefer-${value}"`)
-        .catch(err => console.error(err.message));
-    });
+    options.misc.gtk.connect('changed', gtkupdate);
+    options.misc.gtkIcons.connect('changed', gtkupdate);
+    options.misc.cursor.connect('changed', gtkupdate);
+    options.theme.scheme.connect('changed', gtkupdate);
+}
+function gtkupdate() {
+    const g = options.misc.gtk.value
+    const gi = options.misc.gtkIcons.value
+    const c = options.misc.cursor.value
+    if ( options.theme.scheme.value == 'dark' ) {
+        execAsync(`gtkthemes -d -T "${g}" -I "${gi}" -C "${c}"`)
+    } else {
+        execAsync(`gtkthemes -l -T "${g}" -I "${gi}" -C "${c}"`)
+    }
 }

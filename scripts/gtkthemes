@@ -28,12 +28,29 @@ do
 		?) help && exit;;
 	esac
 done
-
+if [ ${ld} == 'dark' ]; then
+	da='1'
+fi
+if [ ${ld} == 'light' ]; then
+	da='0'
+fi
+settingsini="[Settings]
+gtk-application-prefer-dark-theme = ${da}
+gtk-theme-name = ${THEME}
+gtk-icon-theme-name = ${ICONS}
+gtk-cursor-theme-name = ${CURSOR}
+gtk-button-images = 0
+gtk-menu-images = 0
+gtk-cursor-blink = 0"
 apply_themes() {
 	${SCHEMA} gtk-theme "$THEME"
 	${SCHEMA} icon-theme "$ICONS"
 	${SCHEMA} cursor-theme "$CURSOR"
 	${SCHEMA} color-scheme "prefer-${ld}"
+	cp -r /usr/share/themes/${THEME}/gtk-4.0/* $HOME/.config/gtk-4.0
+	cp -r /usr/share/themes/${THEME}/gtk-3.0/* $HOME/.config/gtk-3.0
+	echo "${settingsini}" &> $HOME/.config/gtk-4.0/settings.ini
+	echo "${settingsini}" &> $HOME/.config/gtk-3.0/settings.ini
 	flatpak override --env=GTK_THEME="$THEME"
 	flatpak override --env=ICON_THEME="$ICONS"
 	flatpak override --env=XCURSOR_THEME="$CURSOR"
