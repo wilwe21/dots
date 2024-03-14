@@ -16,15 +16,47 @@ function sendBatch(batch) {
         .catch(err => console.error(`Hyprland.sendMessage: ${err.message}`));
 }
 
-/** @param {string} scss */
 function getColor(scss) {
-    if (scss.includes('#'))
-        return scss.replace('#', '');
+  // Base case: Handle hex colors directly
+  if (scss.includes('#')) {
+    return scss;
+  }
 
-    if (scss.includes('$')) {
-        const opt = options.list().find(opt => opt.scss === scss.replace('$', ''));
-        return opt?.value.replace('#', '');
+  // Recursive case: Handle variables and nested variables
+  if (scss.includes('$')) {
+    const variableName = scss.replace('$', '');
+    const resolvedOption = options.list().find(opt => opt.scss === variableName);
+
+    if (resolvedOption) {
+      // Check for circular dependencies before recursion
+      if (isCircularDependency(scss, resolvedOption.value)) {
+        throw new Error(`Circular dependency detected in color variables: ${scss}`);
+      }
+
+      // Resolve nested variables recursively
+      const resolvedValue = getColor(resolvedOption.value);
+      return resolvedValue;
     }
+  }
+
+  // Fallback for undefined variables
+  return null; // Or throw an error if undefined variables are not allowed
+}
+
+// Helper function to detect circular dependencies (optional)
+function isCircularDependency(currentVar, potentialVar) {
+  if (!potentialVar.includes('$')) {
+    return false;
+  }
+
+  const nextVarName = potentialVar.replace('$', '');
+  const nextOption = options.list().find(opt => opt.scss === nextVarName);
+
+  if (!nextOption) {
+    return false;
+  }
+
+  return (nextOption.value === currentVar) || isCircularDependency(currentVar, nextOption.value, options);
 }
 
 export function hyprlandInit() {

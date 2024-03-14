@@ -10,15 +10,63 @@ export async function reloadStarship() {
     options.starship.directory.fg.connect('changed', starship);
     options.starship.time.bg.connect('changed', starship);
     options.starship.time.fg.connect('changed', starship);
+    options.starship.ldec.connect('changed', starship);
+    options.starship.rdec.connect('changed', starship);
 }
+
+function getColor(scss) {
+  // Base case: Handle hex colors directly
+  if (scss.includes('#')) {
+    return scss;
+  }
+
+  // Recursive case: Handle variables and nested variables
+  if (scss.includes('$')) {
+    const variableName = scss.replace('$', '');
+    const resolvedOption = options.list().find(opt => opt.scss === variableName);
+
+    if (resolvedOption) {
+      // Check for circular dependencies before recursion
+      if (isCircularDependency(scss, resolvedOption.value)) {
+        throw new Error(`Circular dependency detected in color variables: ${scss}`);
+      }
+
+      // Resolve nested variables recursively
+      const resolvedValue = getColor(resolvedOption.value);
+      return resolvedValue;
+    }
+  }
+
+  // Fallback for undefined variables
+  return null; // Or throw an error if undefined variables are not allowed
+}
+
+// Helper function to detect circular dependencies (optional)
+function isCircularDependency(currentVar, potentialVar) {
+  if (!potentialVar.includes('$')) {
+    return false;
+  }
+
+  const nextVarName = potentialVar.replace('$', '');
+  const nextOption = options.list().find(opt => opt.scss === nextVarName);
+
+  if (!nextOption) {
+    return false;
+  }
+
+  return (nextOption.value === currentVar) || isCircularDependency(currentVar, nextOption.value, options);
+}
+
 export function starship() {
     const theme = options.starship.format.value;
-    const ubg = options.starship.username.bg.value;
-    const ufg = options.starship.username.fg.value;
-    const dbg = options.starship.directory.bg.value;
-    const dfg = options.starship.directory.fg.value;
-    const tbg = options.starship.time.bg.value;
-    const tfg = options.starship.time.fg.value;
+    const ldec = options.starship.ldec.value;
+    const rdec = options.starship.rdec.value;
+    const ubg = getColor(options.starship.username.bg.value);
+    const ufg = getColor(options.starship.username.fg.value);
+    const dbg = getColor(options.starship.directory.bg.value);
+    const dfg = getColor(options.starship.directory.fg.value);
+    const tbg = getColor(options.starship.time.bg.value);
+    const tfg = getColor(options.starship.time.fg.value);
     const conf = `#made by wilwe
 format = """
 ${theme}
@@ -31,11 +79,11 @@ add_newline = true
 [username]
 show_always = true
 style_user = "bg:${ubg} fg:${ufg}"
-format = '[$user ]($style)'
+format = '[${ldec}](${ubg})[$user ]($style)[${rdec}](${ubg})'
 
 [directory]
 style = "bg:${dbg} fg:${dfg}"
-format = "[ $path ]($style)"
+format = "[${ldec}](${dbg})[ $path ]($style)[${rdec}](${dbg})"
 truncation_length = 3
 truncation_symbol = "…/"
 
@@ -43,7 +91,7 @@ truncation_symbol = "…/"
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:${tbg} fg:${tfg}"
-format = '[ $time ]($style)'`
+format = '[${ldec}](${tbg})[ $time ]($style)[${rdec}](${tbg})'`
     writeFileSync(String(conf), '/tmp/ags/starship.conf')
     Utils.execAsync(['hyprctl', 'dispatch', 'exec', '/home/wilwe/.hyprland.conf/scripts/theme -p'])
 }

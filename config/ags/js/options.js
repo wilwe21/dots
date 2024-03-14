@@ -205,7 +205,13 @@ export default {
         }),
     },
     starship: {
-        format: Option('[🭃](#000000)$username[🭟](#000000)[ ]()[🭃](#000000)$directory[🭟](#000000)[ ]()[🭃](#CBA6F7)$time[🭟](#CBA6F7)[ ]()',{
+        format: Option('$username[ ]()$directory[ ]()$time[ ]()',{
+            'scssFormat': v => `"${v}"`,
+        }),
+        ldec: Option('🭃',{
+            'scssFormat': v => `"${v}"`,
+        }),
+        rdec: Option('🭟',{
             'scssFormat': v => `"${v}"`,
         }),
         username: {

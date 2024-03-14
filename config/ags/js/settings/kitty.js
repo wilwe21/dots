@@ -44,12 +44,12 @@ function getColor(scss) {
 
     if (resolvedOption) {
       // Check for circular dependencies before recursion
-      if (isCircularDependency(scss, resolvedOption.value, options)) {
+      if (isCircularDependency(scss, resolvedOption.value)) {
         throw new Error(`Circular dependency detected in color variables: ${scss}`);
       }
 
       // Resolve nested variables recursively
-      const resolvedValue = getColor(resolvedOption.value, options);
+      const resolvedValue = getColor(resolvedOption.value);
       return resolvedValue;
     }
   }
@@ -59,7 +59,7 @@ function getColor(scss) {
 }
 
 // Helper function to detect circular dependencies (optional)
-function isCircularDependency(currentVar, potentialVar, options) {
+function isCircularDependency(currentVar, potentialVar) {
   if (!potentialVar.includes('$')) {
     return false;
   }
