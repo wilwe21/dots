@@ -206,84 +206,106 @@ export default {
     },
     starship: {
         format: Option('$username[ ]()$directory[ ]()$time[ ]()',{
+            'category': 'Terminal',
             'scssFormat': v => `"${v}"`,
         }),
         ldec: Option('🭃',{
+            'category': 'Terminal',
             'scssFormat': v => `"${v}"`,
         }),
         rdec: Option('🭟',{
+            'category': 'Terminal',
             'scssFormat': v => `"${v}"`,
         }),
         username: {
             bg: Option('#000000',{
+                'category': 'Terminal',
                 'scssFormat': v => `"${v}"`,
             }),
             fg: Option('#CDD6F4',{
+                'category': 'Terminal',
                 'scssFormat': v => `"${v}"`,
             }),
         },
         directory: {
             bg: Option('#000000',{
+                'category': 'Terminal',
                 'scssFormat': v => `"${v}"`,
             }),
             fg: Option('#CDD6F4',{
+                'category': 'Terminal',
                 'scssFormat': v => `"${v}"`,
             }),
         },
         time: {
             bg: Option('#CBA6F7',{
+                'category': 'Terminal',
                 'scssFormat': v => `"${v}"`,
             }),
             fg: Option('#181825',{
+                'category': 'Terminal',
                 'scssFormat': v => `"${v}"`,
             }),
         },
     },
     kitty:{
         font: {
-            family: Option('monoki',{    
+            family: Option('monoki',{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
             }),
             size: Option('11',{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
             }),
         },
         cursor: {
             color: Option("$accent",{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
             }),
             text_color: Option("$accent-fg",{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
             }),
             shape: Option("block",{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
                 'enums': ['block','beam','underline'],
                 'type': 'enum',
             }),
             beam_thickness: Option("1.5", {
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
             }),
             underline_thickness: Option("2.0",{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
             }),
             blink_interval: Option("-1",{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
             }),
             stop_blinking_after: Option("15",{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
             }),
         },
         scrollback: {
             lines: Option('2000',{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
             }),
             pager: Option('less --chop-long-lines --RAW-CONTROL-CHARS +INPUT_LINE_NUMBER',{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
             }),
             pager_history: Option('0',{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
             }),
             fill_enlarged_window: Option('no',{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
                 'enums': ['no','yes'],
                 'type': 'enum',
@@ -291,28 +313,35 @@ export default {
         },
         wheel_scroll:{
             multiplier: Option("5.0",{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
             }),
             min_lines: Option("1",{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
             })
         },
         touch_scroll_multiplier: Option('1',{
+            'category': 'Terminal',  
             'scssFormat': v => `"${v}"`,
         }),
         mouse_hide_wait: Option("3",{
+            'category': 'Terminal',  
             'scssFormat': v => `"${v}"`,
         }),
         url: {
             color: Option('#0087bd',{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
             }),
             style: Option('curly',{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
                 'emus': ['none','straight','double','curly','dotted','dashed'],
                 'type': 'enum'
             }),
             underline: Option('hover',{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
                 'emus': ['always','hover','never'],
                 'type': "enum"
@@ -320,21 +349,27 @@ export default {
         },
         color_scheme: {
             fg: Option('$fg-color',{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
             }),
             bg: Option('$bg-color',{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
             }),
             bg_opacity: Option('1.0',{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
             }),
             bg_blur: Option('0',{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
             }),
             selection_fg: Option('$accent-fg',{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
             }),
             selection_bg: Option('$accent',{
+                'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
             }),
         },
