@@ -7,6 +7,7 @@ import { reloadGrub } from './grub.js';
 import { reloadGtk } from './gtk.js';
 import { starship } from './starship.js';
 import { kitty } from './kitty.js';
+import { vim } from './vim.js';
 import { setupHyprland } from './hyprland.js';
 import { wallpaper } from './wallpaper.js';
 
@@ -25,6 +26,7 @@ export function setTheme(name) {
     reloadGtk();
     starship();
     kitty();
+    vim();
     wallpaper();
 }
 globalThis['setTheme'] = setTheme;

@@ -10,6 +10,7 @@ import { reloadGrub } from './grub.js';
 import { reloadGtk } from './gtk.js';
 import { reloadStarship } from './starship.js';
 import { kitty } from './kitty.js';
+import { vim } from './vim.js';
 import { initWallpaper, wallpaper } from './wallpaper.js';
 import { hyprlandInit, setupHyprland } from './hyprland.js';
 import { globals } from './globals.js';
@@ -35,6 +36,7 @@ export function init() {
         reloadGrub();
         reloadStarship();
         kitty();
+	vim();
         wallpaper();
         pywal();
         gtkTheme();

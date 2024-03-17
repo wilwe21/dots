@@ -8,6 +8,7 @@ import { reloadGrub } from './grub.js';
 import { reloadGtk } from './gtk.js';
 import { reloadStarship } from './starship.js';
 import { reloadKitty } from './kitty.js';
+import { reloadVim } from './vim.js';
 import { wallpaper } from './wallpaper.js';
 import { setupHyprland } from './hyprland.js';
 const CACHE_FILE = CACHE_DIR + '/options.json';
@@ -133,6 +134,7 @@ export class Opt extends Service {
                 reloadGtk();
                 reloadStarship();
                 reloadKitty();
+		reloadVim();
                 wallpaper();
                 setupHyprland();
             }
