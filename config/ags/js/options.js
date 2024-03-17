@@ -209,40 +209,40 @@ export default {
             'category': 'Terminal',
             'scssFormat': v => `"${v}"`,
         }),
-        ldec: Option('🭃',{
+        ldec: Option('',{
             'category': 'Terminal',
             'scssFormat': v => `"${v}"`,
         }),
-        rdec: Option('🭟',{
+        rdec: Option('',{
             'category': 'Terminal',
             'scssFormat': v => `"${v}"`,
         }),
         username: {
-            bg: Option('#000000',{
+            bg: Option('$bg-color',{
                 'category': 'Terminal',
                 'scssFormat': v => `"${v}"`,
             }),
-            fg: Option('#CDD6F4',{
+            fg: Option('$fg-color',{
                 'category': 'Terminal',
                 'scssFormat': v => `"${v}"`,
             }),
         },
         directory: {
-            bg: Option('#000000',{
+            bg: Option('$bg-color',{
                 'category': 'Terminal',
                 'scssFormat': v => `"${v}"`,
             }),
-            fg: Option('#CDD6F4',{
+            fg: Option('$fg-color',{
                 'category': 'Terminal',
                 'scssFormat': v => `"${v}"`,
             }),
         },
         time: {
-            bg: Option('#CBA6F7',{
+            bg: Option('$accent',{
                 'category': 'Terminal',
                 'scssFormat': v => `"${v}"`,
             }),
-            fg: Option('#181825',{
+            fg: Option('$accent-fg',{
                 'category': 'Terminal',
                 'scssFormat': v => `"${v}"`,
             }),

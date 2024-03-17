@@ -13,34 +13,38 @@ export async function reloadStarship() {
     options.starship.ldec.connect('changed', starship);
     options.starship.rdec.connect('changed', starship);
 }
-
 function getColor(scss) {
-  // Base case: Handle hex colors directly
-  if (scss.includes('#')) {
-    return scss;
-  }
+  // Split the string into segments (with slight modification)
+  const segments = scss.split(/([^\s\(\)\[\]:]+|[^\s\(\)\[\]]+:)/).filter(Boolean);
 
-  // Recursive case: Handle variables and nested variables
-  if (scss.includes('$')) {
-    const variableName = scss.replace('$', '');
-    const resolvedOption = options.list().find(opt => opt.scss === variableName);
+  let colorString = "";
+  for (const segment of segments) {
+    if (segment.includes('$') && !segment.endsWith(':')) {
+      // Handle SCSS variable, but not ending with colon
+      const variableName = segment.replace('$', '');
+      const resolvedOption = options.list().find(opt => opt.scss === variableName);
 
-    if (resolvedOption) {
-      // Check for circular dependencies before recursion
-      if (isCircularDependency(scss, resolvedOption.value)) {
-        throw new Error(`Circular dependency detected in color variables: ${scss}`);
+      if (resolvedOption) {
+        // Check for circular dependencies before recursion (optional)
+        if (isCircularDependency(scss, resolvedOption.value)) {
+          throw new Error(`Circular dependency detected in color variables: ${scss}`);
+        }
+
+        // Resolve nested variables recursively (modified)
+        const resolvedValue = getColor(resolvedOption.value);
+        colorString += resolvedValue;
+      } else {
+        // Variable not found, treat as plain text
+        colorString += segment;
       }
-
-      // Resolve nested variables recursively
-      const resolvedValue = getColor(resolvedOption.value);
-      return resolvedValue;
+    } else {
+      // Plain text, colon, or nested structure, add directly
+      colorString += segment;
     }
   }
 
-  // Fallback for undefined variables
-  return null; // Or throw an error if undefined variables are not allowed
+  return colorString || null; // Return null if no color is found
 }
-
 // Helper function to detect circular dependencies (optional)
 function isCircularDependency(currentVar, potentialVar) {
   if (!potentialVar.includes('$')) {
@@ -58,7 +62,7 @@ function isCircularDependency(currentVar, potentialVar) {
 }
 
 export function starship() {
-    const theme = options.starship.format.value;
+    const theme = getColor(options.starship.format.value);
     const ldec = options.starship.ldec.value;
     const rdec = options.starship.rdec.value;
     const ubg = getColor(options.starship.username.bg.value);
