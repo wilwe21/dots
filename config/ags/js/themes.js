@@ -51,7 +51,7 @@ export default [
  	"bar.icon": "/home/wilwe/.hyprland.conf/icons/cat.png",
  	"bar.decorsw": false,
  	"grub.theme": 'Arcade',
- 	"starship.format": "[](#000000)[ ](bg:#000000)$username[](bg:$blue fg:#000000)$directory[](bg:$accent fg:$blue)$time[]($accent)",
+ 	"starship.format": "[](#000000)[ ](bg:#000000)$username[](bg:$blue fg:#000000)$directory[](bg:$accent fg:$blue)$time[ ]($accent)",
  	"starship.ldec": "",
     "starship.rdec": "",
     "starship.username.bg": "#000000",
