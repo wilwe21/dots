@@ -84,7 +84,7 @@ set t_Co=256
 let s:rosewater = "#F4DBD6"
 let s:flamingo = "#F0C6C6"
 let s:pink = "#F5BDE6"
-let s:mauve = "${accent}"
+let s:mauve = "${magenta}"
 let s:red = "${red}"
 let s:maroon = "#EE99A0"
 let s:peach = "#F5A97F"
@@ -95,6 +95,8 @@ let s:sky = "#91D7E3"
 let s:sapphire = "#7DC4E4"
 let s:blue = "${blue}"
 let s:lavender = "#B7BDF8"
+let s:accent = "${accent}"
+let s:accentfg = "${accentfg}"
 let s:text = "${fg}"
 let s:subtext1 = "#B8C0E0"
 let s:subtext0 = "#A5ADCB"
@@ -149,8 +151,8 @@ call s:hi("Folded", "NONE", s:blue, s:surface1, "NONE", "NONE")
 call s:hi("FoldColumn", "NONE", s:overlay0, s:base, "NONE", "NONE")
 call s:hi("SignColumn", "NONE", s:surface1, s:base, "NONE", "NONE")
 call s:hi("IncSearch", "NONE", s:surface1, s:pink, "NONE", "NONE")
-call s:hi("CursorLineNr", "NONE", s:mauve, s:mauve, "NONE", "NONE")
-call s:hi("LineNr", "NONE", s:mauve, "NONE", "NONE", "NONE")
+call s:hi("CursorLineNr", "NONE", s:accent, s:mauve, "NONE", "NONE")
+call s:hi("LineNr", "NONE", s:accent, "NONE", "NONE", "NONE")
 call s:hi("MatchParen", "NONE", s:peach, "NONE", "bold", "bold")
 call s:hi("ModeMsg", "NONE", s:text, "NONE", "bold", "bold")
 call s:hi("MoreMsg", "NONE", s:blue, "NONE", "NONE", "NONE")
@@ -179,7 +181,7 @@ call s:hi("WildMenu", "NONE", "NONE", s:overlay0, "NONE", "NONE")
 call s:hi("Comment", "NONE", s:surface2, "NONE", "NONE", "NONE")
 call s:hi("Constant", "NONE", s:peach, "NONE", "NONE", "NONE")
 call s:hi("Identifier", "NONE", s:flamingo, "NONE", "NONE", "NONE")
-call s:hi("Statement", "NONE", s:mauve, "NONE", "NONE", "NONE")
+call s:hi("Statement", "NONE", s:accent, "NONE", "NONE", "NONE")
 call s:hi("PreProc", "NONE", s:pink, "NONE", "NONE", "NONE")
 call s:hi("Type", "NONE", s:blue, "NONE", "NONE", "NONE")
 call s:hi("Special", "NONE", s:pink, "NONE", "NONE", "NONE")
@@ -187,17 +189,17 @@ call s:hi("Underlined", "NONE", s:text, s:base, "underline", "underline")
 call s:hi("Error", "NONE", s:red, "NONE", "NONE", "NONE")
 call s:hi("Todo", "NONE", s:base, s:yellow, "bold", "bold")
 call s:hi("String", "NONE", s:green, "NONE", "NONE", "NONE")
-call s:hi("Character", "NONE", s:teal, "NONE", "NONE", "NONE")
-call s:hi("Number", "NONE", s:peach, "NONE", "NONE", "NONE")
-call s:hi("Boolean", "NONE", s:peach, "NONE", "NONE", "NONE")
-call s:hi("Float", "NONE", s:peach, "NONE", "NONE", "NONE")
-call s:hi("Function", "NONE", s:blue, "NONE", "NONE", "NONE")
-call s:hi("Conditional", "NONE", s:red, "NONE", "NONE", "NONE")
-call s:hi("Repeat", "NONE", s:red, "NONE", "NONE", "NONE")
-call s:hi("Label", "NONE", s:peach, "NONE", "NONE", "NONE")
-call s:hi("Operator", "NONE", s:sky, "NONE", "NONE", "NONE")
-call s:hi("Keyword", "NONE", s:pink, "NONE", "NONE", "NONE")
-call s:hi("Include", "NONE", s:pink, "NONE", "NONE", "NONE")
+call s:hi("Character", "NONE", s:blue, "NONE", "NONE", "NONE")
+call s:hi("Number", "NONE", s:teal, "NONE", "NONE", "NONE")
+call s:hi("Boolean", "NONE", s:blue, "NONE", "NONE", "NONE")
+call s:hi("Float", "NONE", s:teal, "NONE", "NONE", "NONE")
+call s:hi("Function", "NONE", s:accent, "NONE", "NONE", "NONE")
+call s:hi("Conditional", "NONE", s:yellow, "NONE", "NONE", "NONE")
+call s:hi("Repeat", "NONE", s:yellow, "NONE", "NONE", "NONE")
+call s:hi("Label", "NONE", s:accent, "NONE", "NONE", "NONE")
+call s:hi("Operator", "NONE", s:blue, "NONE", "NONE", "NONE")
+call s:hi("Keyword", "NONE", s:red, "NONE", "NONE", "NONE")
+call s:hi("Include", "NONE", s:red, "NONE", "NONE", "NONE")
 call s:hi("StorageClass", "NONE", s:yellow, "NONE", "NONE", "NONE")
 call s:hi("Structure", "NONE", s:mauve, "NONE", "NONE", "NONE")
 call s:hi("Typedef", "NONE", s:yellow, "NONE", "NONE", "NONE")

@@ -12,7 +12,8 @@ filetype plugin on
 filetype indent on
 syntax on
 set relativenumber
-colo catppuccin_macchiato
+set number
+colo ags
 let g:airline_theme = 'catppuccin_macchiato'
 set showmode
 set showmatch
