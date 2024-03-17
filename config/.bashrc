@@ -532,7 +532,7 @@ alias hug="hugo server -F --bind=10.0.0.210 --baseURL=http://10.0.0.210"
 export PATH=$PATH:"$HOME/Dokumenty/localbin:$HOME/.local/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bin:/.local/share/flatpak/exports/bin:$HOME/.hyprland.conf/scripts:$HOME/Dokumenty/nongitbin"
 alias cd="z"
 alias google-chrome="google-chrome-stable"
-
+alias :q="exit"
 # Install Starship - curl -sS https://starship.rs/install.sh | sh
 
 eval "$(zoxide init bash)"
