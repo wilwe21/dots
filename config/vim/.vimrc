@@ -4,7 +4,6 @@ call plug#begin('~/.vim/plugins')
  Plug 'vim-airline/vim-airline'
  Plug 'catppuccin/vim', { 'as': 'catppuccin' } 
  Plug 'cakebaker/scss-syntax.vim'
- Plug 'skammer/vim-css-color'
  Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 " }}}
@@ -17,7 +16,14 @@ syntax on
 set relativenumber
 set number
 let g:airline_theme = 'ags'
-let g:cssColorVimDoNotMessMyUpdatetime = 1
 set showmode
 set showmatch
 set hlsearch
+" Functions {{{
+" }}}
+" Binds {{{
+ vmap <C-c> y
+ "vmap <C-c> '<,'>!wl-copy
+ nmap <F1> :silent exec '!tts -s "'.getline(".").printf('" &')<CR>:redr!<CR>
+ nmap <F2> :silent exec '!tts -m -s "'.getline(".").printf('" &')<CR>:redr!<CR>
+" }}}
