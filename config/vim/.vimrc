@@ -25,7 +25,7 @@ set hlsearch
  vmap <C-c> y
  "vmap <C-c> '<,'>!wl-copy
  nmap <F1> :silent exec '!tts -s "'.getline(".").printf('" &')<CR>:redr!<CR>
- nmap <C-b> :exec 'r !braill -s '.getline('.')<CR>:redr!<CR>
- nmap <C-a> :silent exec '!tpl -p -v -s "'.getline(".").printf('" &')<CR>:redr!<CR>
+ nmap <C-F1> :silent exec '!tpl -p -v -s "'.getline(".").printf('" &')<CR>:redr!<CR>
+ nmap <C-F2> :silent exec '!tpl -p -m -v -s "'.getline(".").printf('" &')<CR>:redr!<CR>
  nmap <F2> :silent exec '!tts -m -s "'.getline(".").printf('" &')<CR>:redr!<CR>
 " }}}
