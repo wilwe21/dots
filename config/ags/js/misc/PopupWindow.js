@@ -13,13 +13,10 @@ const keyGrabber = Widget.Window({
     keymode: 'exclusive',
     layer: 'top',
     attribute: { list: [] },
-    setup: self => {
-    self.keybind("Escape", () => App.closeWindow(name));
-    self.on('notify::visible', ({ visible }) => {
+    setup: self => self.on('notify::visible', ({ visible }) => {
         if (!visible)
             self.attribute?.list.forEach(name => App.closeWindow(name));
-    })
-    },
+    }),
     child: Widget.EventBox({ vexpand: true }).on('button-press-event', () => {
         App.closeWindow('key-grabber');
         keyGrabber.attribute?.list.forEach(name => App.closeWindow(name));
