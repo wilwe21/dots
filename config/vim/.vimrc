@@ -1,4 +1,3 @@
-colo ags
 " PLUGINS {{{
 call plug#begin('~/.vim/plugins')
  Plug 'vim-airline/vim-airline'
@@ -19,6 +18,7 @@ let g:airline_theme = 'ags'
 set showmode
 set showmatch
 set hlsearch
+colo ags
 " Functions {{{
 " }}}
 " Binds {{{

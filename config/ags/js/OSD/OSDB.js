@@ -46,7 +46,10 @@ export default () => WW({
                 children: [
                     Widget.Box({
                         children: [
-                            Widget.Icon(icons.brightness.indicator),
+                            Widget.Icon({
+				icon: icons.brightness.indicator,
+				class_name: "brighticon",
+			    }),
                             Widget.Label().hook(Brightness, self => {
                                 const lab = String(parseInt(Brightness.screen * 100))
                                 self.label = lab + '%'

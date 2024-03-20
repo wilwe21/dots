@@ -12,7 +12,7 @@
 	.volumelabel {
 		//margin-left: -65px;
 		//margin-top: -175px;
-		color: #ffffff;
+		color: $fg-color;
 		font-size: 1.1em;
 		text-shadow: $text-shadow;
 	}
@@ -79,7 +79,7 @@
         	@include spacing(0);
 		color: $accent;
 		min-width: 150px;
-		slider {
+      		slider {
        			box-shadow: none;
         		background-color: transparent;
         		border: $border-width solid transparent;
@@ -101,7 +101,11 @@
         		}
     		}
 	}
+        .brighticon {
+                color: $fg-color;
+        }
 	.vslidebox label {
+                color: $fg-color;
 		padding-bottom: $padding;
 		padding-left: $padding;
 		padding-right: $padding;
