@@ -14,11 +14,11 @@ filetype indent on
 syntax on
 set relativenumber
 set number
-let g:airline_theme = 'ags'
 set showmode
 set showmatch
 set hlsearch
 colo ags
+let g:airline_theme='ags'
 " Functions {{{
 " }}}
 " Binds {{{

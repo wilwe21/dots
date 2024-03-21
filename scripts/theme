@@ -6,6 +6,6 @@ do
 		g) sudo cp /tmp/ags/grub.conf /etc/default/grub && sudo grub-mkconfig &> /boot/grub/grub.cfg;;
 		p) cp /tmp/ags/starship.conf $HOME/.config/starship.toml;;
 		k) cp /tmp/ags/kitty.conf $HOME/.config/kitty/kitty.conf;;
-		v) cp /tmp/ags/vim.conf $HOME/.vim/colors/ags.vim;;
+		v) cp /tmp/ags/vim.conf $HOME/.vim/colors/ags.vim && cp /tmp/ags/airline.conf $HOME/.vim/plugins/vim-airline-themes/autoload/airline/themes/ags.vim;;
 	esac
 done
