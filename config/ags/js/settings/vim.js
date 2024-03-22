@@ -223,8 +223,7 @@ let g:terminal_ansi_colors = [
   \\ s:surface1, s:red, s:green, s:yellow, s:blue, s:pink, s:teal, s:subtext1,
   \\ s:surface2, s:red, s:green, s:yellow, s:blue, s:pink, s:teal, s:subtext0
 \\ ]`
-    const airline = `" Original theme colors
-let s:rosewater = "#F4DBD6"
+    const airline = `let s:rosewater = "#F4DBD6"
 let s:flamingo = "#F0C6C6"
 let s:pink = "#F5BDE6"
 let s:mauve = "${magenta}"
@@ -255,26 +254,20 @@ let s:base = "${bg}"
 let s:mantle = "${bg}"
 let s:crust = "#181926"
 
-" Normal mode
-" (Dark)
 let s:N1 = [ s:accentfg , s:accent , 59  , 149 ] " guifg guibg ctermfg ctermbg
 let s:N2 = [ s:accent , s:mantle , 149 , 59  ] " guifg guibg ctermfg ctermbg
 let s:N3 = [ s:text , s:base , 145 , 16  ] " guifg guibg ctermfg ctermbg
 
-" Insert mode
 let s:I1 = [ s:mantle , s:green , 59  , 74  ] " guifg guibg ctermfg ctermbg
 let s:I2 = [ s:teal , s:mantle , 74  , 59  ] " guifg guibg ctermfg ctermbg
 let s:I3 = [ s:text , s:base , 145 , 16  ] " guifg guibg ctermfg ctermbg
 
-" Visual mode
 let s:V1 = [ s:mantle , s:blue , 59  , 209 ] " guifg guibg ctermfg ctermbg
 let s:V2 = [ s:blue , s:mantle , 209 , 59  ] " guifg guibg ctermfg ctermbg
 let s:V3 = [ s:text , s:base , 145 , 16  ] " guifg guibg ctermfg ctermbg
 
-" Replace mode
 let s:RE = [ s:accnet , s:red , 59  , 203 ] " guifg guibg ctermfg ctermbg
 
-" Warning section
 let s:WR = [s:mantle ,s:accent , 232, 166 ]
 
 

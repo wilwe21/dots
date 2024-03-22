@@ -1,9 +1,9 @@
 " PLUGINS {{{
 call plug#begin('~/.vim/plugins')
  Plug 'vim-airline/vim-airline'
+ Plug 'vim-airline/vim-airline-themes'
  Plug 'catppuccin/vim', { 'as': 'catppuccin' } 
  Plug 'cakebaker/scss-syntax.vim'
- Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 " }}}
 set nocompatible
