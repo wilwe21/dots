@@ -22,7 +22,8 @@ let g:airline_theme='catppuccin_macchiato'
 " Functions {{{
 " }}}
 " Binds {{{
- vmap <C-c> !wl-copy -n <CR>
+ vmap <C-c> "+y
+ nmap <C-x> "+p
  nmap <F1> :silent exec '!tts -s "'.getline(".").printf('" &')<CR>:redr!<CR>
  nmap <C-F1> :silent exec '!tpl -p -v -s "'.getline(".").printf('" &')<CR>:redr!<CR>
  nmap <C-F2> :silent exec '!tpl -p -m -v -s "'.getline(".").printf('" &')<CR>:redr!<CR>
