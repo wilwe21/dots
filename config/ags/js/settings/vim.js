@@ -12,6 +12,8 @@ export async function reloadVim() {
     options.color.orange.connect('changed', vim);
     options.theme.accent.accent.connect('changed', vim);
     options.theme.accent.fg.connect('changed', vim);
+    options.vim.airline.left.connect('changed', vim);
+    options.vim.airline.right.connect('changed', vim);
 }
 
 function getColor(scss) {
@@ -74,6 +76,8 @@ export function vim() {
     const accentfg = getColor(options.theme.accent.fg.value);
     const fg = getColor(options.theme.fg.value);
     const bg = getColor(options.theme.bg.value);
+    const lsep = options.vim.airline.left.value;
+    const rsep = options.vim.airline.right.value;
     const conf = `" Name: catppuccin_macchiato.vim
 hi clear
 if exists('syntax on')
@@ -254,7 +258,10 @@ let g:airline#themes#ags#palette.replace = copy(g:airline#themes#ags#palette.ins
 let s:V1 = [ s:bg, s:blue, 59, 209 ]
 let s:V2 = [ s:blue, s:bg, 209, 59 ]
 let s:V3 = [ s:fg, s:bg, 145, 16 ]
-let g:airline#themes#ags#palette.visual = airline#themes#generate_color_map( s:V1, s:V2, s:V3 )`
+let g:airline#themes#ags#palette.visual = airline#themes#generate_color_map( s:V1, s:V2, s:V3 )
+
+let g:airline_left_sep = "${lsep}"
+let g:airline_right_sep = "${rsep}"`
     writeFileSync(String(conf), '/tmp/ags/vim.vim')
     writeFileSync(String(airline), '/tmp/ags/airline.vim')
     Utils.execAsync(['hyprctl', 'dispatch', 'exec', '/home/wilwe/.hyprland.conf/scripts/theme -v'])

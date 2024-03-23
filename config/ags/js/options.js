@@ -204,6 +204,18 @@ export default {
             'unit': 'pt',
         }),
     },
+    vim: {
+	airline: {
+	     left: Option('',{
+		'category': 'Terminal',
+		'scssFormat': v=> `"${v}"`,
+	     }),
+	     right: Option('',{
+		'category': 'Terminal',
+		'scssFormat': v=> `"${v}"`,
+	     }),
+	},
+    },
     starship: {
         format: Option('$username[ ]()$directory[ ]()$time[ ]()',{
             'category': 'Terminal',
