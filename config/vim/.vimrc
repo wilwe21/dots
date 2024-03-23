@@ -17,8 +17,8 @@ set number
 set showmode
 set showmatch
 set hlsearch
+let g:airline_theme = 'ags'
 colo ags
-let g:airline_theme='ags'
 " Functions {{{
 " }}}
 " Binds {{{

@@ -227,16 +227,17 @@ let g:terminal_ansi_colors = [
 
 let g:airline#themes#ags#palette = {}
 
-let s:magenta = "#cba6f7"
-let s:red = "#f38ba8"
-let s:orange = "#fab387"
-let s:yellow = "#f9e2af"
-let s:teal = "#94e2d5"
-let s:blue = "#89b4fa"
-let s:fg = "#cdd6f4"
-let s:accent = "#cva6f7"
-let s:accentfg = "#181825"
-let s:bg = "#181825"
+let s:magenta = "${magenta}"
+let s:red = "${red}"
+let s:orange = "${orange}"
+let s:yellow = "${yellow}"
+let s:teal = "${teal}"
+let s:blue = "${blue}"
+let s:green = "${green}"
+let s:fg = "${fg}"
+let s:accent = "${accent}"
+let s:accentfg = "${accentfg}"
+let s:bg = "${bg}"
 
 let s:N1 = [ s:accentfg, s:accent, 59, 149 ]
 let s:N2 = [ s:accent, s:bg, 149, 59 ]
