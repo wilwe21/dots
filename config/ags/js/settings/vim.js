@@ -223,73 +223,38 @@ let g:terminal_ansi_colors = [
   \\ s:surface1, s:red, s:green, s:yellow, s:blue, s:pink, s:teal, s:subtext1,
   \\ s:surface2, s:red, s:green, s:yellow, s:blue, s:pink, s:teal, s:subtext0
 \\ ]`
-    const airline = `let s:rosewater = "#F4DBD6"
-let s:flamingo = "#F0C6C6"
-let s:pink = "#F5BDE6"
-let s:mauve = "${magenta}"
-let s:red = "${red}"
-let s:maroon = "#EE99A0"
-let s:peach = "${orange}"
-let s:yellow = "${yellow}"
-let s:green = "${green}"
-let s:teal = "${teal}"
-let s:sky = "#91D7E3"
-let s:sapphire = "#7DC4E4"
-let s:blue = "${blue}"
-let s:lavender = "#B7BDF8"
-"
-let s:text = "${fg}"
-let s:subtext1 = "${fg}"
-let s:subtext0 = "${fg}"
-let s:overlay2 = "#939AB7"
-let s:overlay1 = "#8087A2"
-let s:overlay0 = "#6E738D"
-let s:surface2 = "#5B6078"
-let s:surface1 = "#494D64"
-let s:surface0 = "#363A4F"
-let s:accent = "${accent}"
-"
-let s:accentfg = "${accentfg}"
-let s:base = "${bg}"
-let s:mantle = "${bg}"
-let s:crust = "#181926"
-
-let s:N1 = [ s:accentfg , s:accent , 59  , 149 ] " guifg guibg ctermfg ctermbg
-let s:N2 = [ s:accent , s:mantle , 149 , 59  ] " guifg guibg ctermfg ctermbg
-let s:N3 = [ s:text , s:base , 145 , 16  ] " guifg guibg ctermfg ctermbg
-
-let s:I1 = [ s:mantle , s:green , 59  , 74  ] " guifg guibg ctermfg ctermbg
-let s:I2 = [ s:teal , s:mantle , 74  , 59  ] " guifg guibg ctermfg ctermbg
-let s:I3 = [ s:text , s:base , 145 , 16  ] " guifg guibg ctermfg ctermbg
-
-let s:V1 = [ s:mantle , s:blue , 59  , 209 ] " guifg guibg ctermfg ctermbg
-let s:V2 = [ s:blue , s:mantle , 209 , 59  ] " guifg guibg ctermfg ctermbg
-let s:V3 = [ s:text , s:base , 145 , 16  ] " guifg guibg ctermfg ctermbg
-
-let s:RE = [ s:accnet , s:red , 59  , 203 ] " guifg guibg ctermfg ctermbg
-
-let s:WR = [s:mantle ,s:accent , 232, 166 ]
-
+    const airline = `scriptencoding utf-8
 
 let g:airline#themes#ags#palette = {}
 
-let g:airline#themes#ags#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
+let s:magenta = "#cba6f7"
+let s:red = "#f38ba8"
+let s:orange = "#fab387"
+let s:yellow = "#f9e2af"
+let s:teal = "#94e2d5"
+let s:blue = "#89b4fa"
+let s:fg = "#cdd6f4"
+let s:accent = "#cva6f7"
+let s:accentfg = "#181825"
+let s:bg = "#181825"
 
-let g:airline#themes#ags#palette.insert = airline#themes#generate_color_map(s:I1, s:I2, s:I3)
-let g:airline#themes#ags#palette.insert_replace = {'airline_a': [ s:RE[0]   , s:I1[1]   , s:RE[1]   , s:I1[3]   , ''     ] }
+let s:N1 = [ s:accentfg, s:accent, 59, 149 ]
+let s:N2 = [ s:accent, s:bg, 149, 59 ]
+let s:N3 = [ s:fg, s:bg, 145, 16 ]
+let g:airline#themes#ags#palette.normal = airline#themes#generate_color_map( s:N1, s:N2, s:N3 )
 
-let g:airline#themes#ags#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
+let s:I1 = [ s:bg, s:green, 59, 74 ]
+let s:I2 = [ s:teal, s:bg, 74, 59 ]
+let s:I3 = [ s:fg, s:bg, 145, 16 ]
+let g:airline#themes#ags#palette.insert = airline#themes#generate_color_map( s:I1, s:I2, s:I3 )
+let g:airline#themes#ags#palette.terminal = copy(g:airline#themes#ags#palette.insert)
+let g:airline#themes#ags#palette.replace = copy(g:airline#themes#ags#palette.insert)
 
-let g:airline#themes#ags#palette.replace = copy(g:airline#themes#ags#palette.normal)
-let g:airline#themes#ags#palette.replace.airline_a = [ s:RE[0] , s:RE[1] , s:RE[2] , s:RE[3] , '' ]
-
-let s:IA = [ s:N1[1] , s:N3[1] , s:N1[3] , s:N3[3] , '' ]
-let g:airline#themes#ags#palette.inactive = airline#themes#generate_color_map(s:IA, s:IA, s:IA)
-
-let g:airline#themes#ags#palette.normal.airline_warning = s:WR
-let g:airline#themes#ags#palette.insert.airline_warning = s:WR
-let g:airline#themes#ags#palette.visual.airline_warning = s:WR`
-    writeFileSync(String(conf), '/tmp/ags/vim.conf')
-    writeFileSync(String(airline), '/tmp/ags/airline.conf')
+let s:V1 = [ s:bg, s:blue, 59, 209 ]
+let s:V2 = [ s:blue, s:bg, 209, 59 ]
+let s:V3 = [ s:fg, s:bg, 145, 16 ]
+let g:airline#themes#ags#palette.visual = airline#themes#generate_color_map( s:V1, s:V2, s:V3 )`
+    writeFileSync(String(conf), '/tmp/ags/vim.vim')
+    writeFileSync(String(airline), '/tmp/ags/airline.vim')
     Utils.execAsync(['hyprctl', 'dispatch', 'exec', '/home/wilwe/.hyprland.conf/scripts/theme -v'])
 }
