@@ -2,6 +2,7 @@
 call plug#begin('~/.vim/plugins')
  Plug 'vim-airline/vim-airline'
  Plug 'vim-airline/vim-airline-themes'
+ Plug 'mg979/vim-visual-multi', { 'bramch': 'master' }
  Plug 'catppuccin/vim', { 'as': 'catppuccin' } 
  Plug 'cakebaker/scss-syntax.vim'
 call plug#end()
