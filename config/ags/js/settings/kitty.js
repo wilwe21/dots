@@ -129,5 +129,5 @@ background_blur ${kcsbb}
 selection_foreground ${kcssf}
 selection_background ${kcssb}`
     writeFileSync(String(conf), '/tmp/ags/kitty.conf')
-    Utils.execAsync(['hyprctl', 'dispatch', 'exec', '/home/wilwe/.hyprland.conf/scripts/theme -k'])
+    Utils.execAsync(['hyprctl', 'dispatch', 'exec', '/home/wilwe/.hyprland.conf/scripts/theme -u k'])
 }

@@ -264,5 +264,5 @@ let g:airline_left_sep = "${lsep}"
 let g:airline_right_sep = "${rsep}"`
     writeFileSync(String(conf), '/tmp/ags/vim.vim')
     writeFileSync(String(airline), '/tmp/ags/airline.vim')
-    Utils.execAsync(['hyprctl', 'dispatch', 'exec', '/home/wilwe/.hyprland.conf/scripts/theme -v'])
+    Utils.execAsync(['hyprctl', 'dispatch', 'exec', '/home/wilwe/.hyprland.conf/scripts/theme -u v'])
 }

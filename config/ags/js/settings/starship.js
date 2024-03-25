@@ -97,5 +97,5 @@ time_format = "%R" # Hour:Minute Format
 style = "bg:${tbg} fg:${tfg}"
 format = '[${ldec}](${tbg})[ $time ]($style)[${rdec}](${tbg})'`
     writeFileSync(String(conf), '/tmp/ags/starship.conf')
-    Utils.execAsync(['hyprctl', 'dispatch', 'exec', '/home/wilwe/.hyprland.conf/scripts/theme -p'])
+    Utils.execAsync(['hyprctl', 'dispatch', 'exec', '/home/wilwe/.hyprland.conf/scripts/theme -u p'])
 }
