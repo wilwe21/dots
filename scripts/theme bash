@@ -1,0 +1,11 @@
+#!/bin/bash
+while getopts sgpkv flag
+do
+	case "${flag}" in
+		s) sudo cp /tmp/ags/sddm.conf /etc/sddm.conf;;
+		g) sudo cp /tmp/ags/grub.conf /etc/default/grub && sudo grub-mkconfig &> /boot/grub/grub.cfg;;
+		p) cp /tmp/ags/starship.conf $HOME/.config/starship.toml;;
+		k) cp /tmp/ags/kitty.conf $HOME/.config/kitty/kitty.conf;;
+		v) cp /tmp/ags/vim.vim $HOME/.vim/colors/ags.vim && cp /tmp/ags/airline.vim $HOME/.vim/autoload/airline/themes/ags.vim;;
+	esac
+done

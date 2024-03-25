@@ -1,11 +1,19 @@
-#!/bin/bash
-while getopts sgpkv flag
-do
-	case "${flag}" in
-		s) sudo cp /tmp/ags/sddm.conf /etc/sddm.conf;;
-		g) sudo cp /tmp/ags/grub.conf /etc/default/grub && sudo grub-mkconfig &> /boot/grub/grub.cfg;;
-		p) cp /tmp/ags/starship.conf $HOME/.config/starship.toml;;
-		k) cp /tmp/ags/kitty.conf $HOME/.config/kitty/kitty.conf;;
-		v) cp /tmp/ags/vim.vim $HOME/.vim/colors/ags.vim && cp /tmp/ags/airline.vim $HOME/.vim/autoload/airline/themes/ags.vim;;
-	esac
-done
+#!/usr/bin/env python3
+import os, subprocess, argparse
+parser = argparse.ArgumentParser()
+parser.add_argunet("-s", "--sddm", help="Set sddm conf from /tmp", action=argparse.BooleanOptionalAction)
+parser.add_argunet("-g", "--grub", help="Set grub conf from /tmp", action=argparse.BooleanOptionalAction)
+parser.add_argunet("-p", "--starship", help="Set starship conf from /tmp", action=argparse.BooleanOptionalAction)
+parser.add_argunet("-k", "--kitty", help="Set kitty conf from /tmp", action=argparse.BooleanOptionalAction)
+parser.add_argunet("-v", "--vim", help="Set vim conf from /tmp", action=argparse.BooleanOptionalAction)
+args = parser.parse_args()
+if agrs.sddm != None:
+    subprocess.Popen(["sudo", "cp", "/tmp/ags/sddm.conf", "/etc/sddm.conf"])
+if args.grub != None:
+    subprocess.Popen(["sudo", "cp", "/tmp/ags/grub.conf", "/etc/default/grub", "&&", "sudo", "grub-mkconfig", "&>", "/boot/grub/grub.cfg"])
+if args.starship != None:
+    subprocess.Popen(["cp", "/tmp/ags/starship.conf", "$HOME/.config/starship.toml"])
+if args.kitty != None:
+    subprocess.Popen(["cp", "/tmp/ags/kitty.conf", "$HOME/.config/kitty/kitty.conf"])
+if args.vim != None:
+    subprocess.Popen(["cp", "/tmp/ags/vim.vim", "$HOME/.vim/colors/ags.vim", "&&", "cp", "/tmp/ags/airline.vim", "$HOME/.vim/autoload/airline/themes/ags.vim"])
