@@ -7,6 +7,7 @@ export async function reloadThemes() {
     const flags = readFile('/tmp/ags/themeup', 'utf-8'); // Read file content as string
 
     let endFlags = '';
+    let endFlagsdos = '';
     if (flags.indexOf("s") >= 0){
 	endFlags = `${endFlags}-s `
     }
@@ -14,13 +15,13 @@ export async function reloadThemes() {
 	endFlags = `${endFlags}-g `
     }
     if (flags.indexOf("p") >= 0){
-	endFlags = `${endFlags}-p `
+	endFlagsdos = `${endFlagsdos}-p `
     }
     if (flags.indexOf("k") >= 0){
-	endFlags = `${endFlags}-k `
+	endFlagsdos = `${endFlagsdos}-k `
     }
     if (flags.indexOf("v") >= 0){
-	endFlags = `${endFlags}-v `
+	endFlagsdos = `${endFlagsdos}-v `
     }
 
     if (!endFlags) {
@@ -29,7 +30,9 @@ export async function reloadThemes() {
     }
 
     await execAsync(['hyprctl', 'dispatch', 'exec', `sudo /home/wilwe/.hyprland.conf/scripts/theme ${endFlags}`]);
-    console.log(`Executing theme script with flags: ${endFlags}`);
+    await execAsync(['hyprctl', 'dispatch', 'exec', `/home/wilwe/.hyprland.conf/scripts/theme ${endFlagsdos}`]);
+    console.log(`Executing sudo theme script with flags: ${endFlags}`);
+    console.log(`Executing theme script with flags: ${endFlagsdos}`);
   } catch (error) {
     if (error.code === 'ENOENT') {
       console.error('File /tmp/ags/themeup not found');

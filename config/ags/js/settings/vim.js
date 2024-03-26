@@ -12,6 +12,8 @@ export async function reloadVim() {
     options.color.orange.connect('changed', vim);
     options.theme.accent.accent.connect('changed', vim);
     options.theme.accent.fg.connect('changed', vim);
+    options.theme.fg.connect('changed', vim);
+    options.theme.bg.connect('changed', vim);
     options.vim.airline.left.connect('changed', vim);
     options.vim.airline.right.connect('changed', vim);
 }

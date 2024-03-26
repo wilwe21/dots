@@ -87,6 +87,11 @@ export default {
             'title': 'Background Color',
             'scss': 'bg-color',
         }),
+        darken_bg: Option('#000000', {
+            'title': 'Dark Background Color',
+	    'note': 'For starship Mainly',
+            'scss': 'dark-bg-color',
+        }),
         fg: Option('#deddda', {
             'title': 'Foreground Color',
             'scss': 'fg-color',
@@ -230,7 +235,7 @@ export default {
             'scssFormat': v => `"${v}"`,
         }),
         username: {
-            bg: Option('$bg-color',{
+            bg: Option('$dark-bg-color',{
                 'category': 'Terminal',
                 'scssFormat': v => `"${v}"`,
             }),
@@ -240,7 +245,7 @@ export default {
             }),
         },
         directory: {
-            bg: Option('$bg-color',{
+            bg: Option('$dark-bg-color',{
                 'category': 'Terminal',
                 'scssFormat': v => `"${v}"`,
             }),
