@@ -1,7 +1,7 @@
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import Hyprland from 'resource:///com/github/Aylur/ags/service/hyprland.js';
 import options from '../options.js';
-import { readFile, writeFile } from 'resource:///com/github/Aylur/ags/utils.js';
+import { readFile, writeFile, writeFileSync, exec } from 'resource:///com/github/Aylur/ags/utils.js';
 
 const noIgnorealpha = ['verification', 'powermenu', 'lockscreen'];
 
@@ -59,6 +59,10 @@ function isCircularDependency(currentVar, potentialVar) {
   return (nextOption.value === currentVar) || isCircularDependency(currentVar, nextOption.value, options);
 }
 
+function sleep (time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
+
 export function hyprlandInit() {
     if (readFile('/tmp/ags/hyprland-init'))
         return;
@@ -82,6 +86,7 @@ export async function setupHyprland() {
     const bar_pos = options.bar.position.value;
     const inactive_border = options.hypr.inactive_border.value;
     const active_border = options.hypr.active_border.value;
+    const kitt_opacity = options.kitty.opacity.value;
 
     const accent = getColor(options.theme.accent.accent.value);
 
@@ -104,6 +109,8 @@ export async function setupHyprland() {
         `decoration:rounding ${radii}`,
         `decoration:drop_shadow ${drop_shadow ? 'yes' : 'no'}`,
     );
-
-    sendBatch(batch);
+    sendBatch(batch)
+    sleep(250).then(() => sendBatch(batch));
+    sleep(500).then(() => sendBatch(batch));
+    sleep(1000).then(() => sendBatch(batch));
 }

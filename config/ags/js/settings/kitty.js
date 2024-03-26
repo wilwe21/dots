@@ -25,6 +25,8 @@ export async function reloadKitty() {
     options.kitty.url.underline.connect('changed', kitty);
     options.kitty.color_scheme.fg.connect('changed', kitty);
     options.kitty.color_scheme.bg.connect('changed', kitty);
+    options.kitty.color_scheme.bg_img.connect('changed', kitty);
+    options.kitty.color_scheme.bg_img_lay.connect('changed', kitty);
     options.kitty.color_scheme.bg_opacity.connect('changed', kitty);
     options.kitty.color_scheme.bg_blur.connect('changed', kitty);
     options.kitty.color_scheme.selection_fg.connect('changed', kitty);
@@ -97,6 +99,8 @@ export function kitty() {
     const kuu = options.kitty.url.underline.value
     const kcsf = getColor(options.kitty.color_scheme.fg.value)
     const kcsb = getColor(options.kitty.color_scheme.bg.value)
+    const kcsbi = options.kitty.color_scheme.bg_img.value
+    const kcsbil = options.kitty.color_scheme.bg_img_lay.value
     const kcsbo = options.kitty.color_scheme.bg_opacity.value
     const kcsbb = options.kitty.color_scheme.bg_blur.value
     const kcssf = getColor(options.kitty.color_scheme.selection_fg.value)
@@ -124,6 +128,8 @@ url_style ${kus}
 underline_hyperlinks ${kuu}
 foreground ${kcsf}
 background ${kcsb}
+background_image ${kcsbi}
+background_image_layout ${kcsbil}
 background_opacity ${kcsbo}
 background_blur ${kcsbb}
 selection_foreground ${kcssf}

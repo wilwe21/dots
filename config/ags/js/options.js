@@ -364,6 +364,10 @@ export default {
                 'type': "enum"
             }),
         },
+	opacity: Option('0.7',{
+		'category': 'Terminal',
+		'sccsFormat': v => `"${v}"`,
+	}),
         color_scheme: {
             fg: Option('$fg-color',{
                 'category': 'Terminal',  
@@ -373,6 +377,16 @@ export default {
                 'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
             }),
+	    bg_img: Option('none', {
+		'category': 'Terminal',
+		'scssFormat': v => `"${v}"`,
+	    }),
+	    bg_img_lay: Option('cscaled', {
+		'category': 'Terminal',
+		'scssFormat': v => `"${v}"`,
+		'emus': ['tiled','mirror-tiled','scaled','clamped','centered','cscaled'],
+		'type': 'enum',
+	    }),
             bg_opacity: Option('1.0',{
                 'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,

@@ -8,6 +8,7 @@ import { reloadGtk } from './gtk.js';
 import { starship } from './starship.js';
 import { reloadThemes } from './themes.js';
 import { kitty } from './kitty.js';
+import { WINRUL } from './winrul.js';
 import { vim } from './vim.js';
 import { setupHyprland } from './hyprland.js';
 import { wallpaper } from './wallpaper.js';
@@ -20,8 +21,9 @@ export function setTheme(name) {
         return print('No theme named ' + name);
 
     options.apply(theme.options);
-    reloadScss();
+    WINRUL();
     setupHyprland();
+    reloadScss();
     reloadSddm();
     reloadGrub();
     reloadGtk();

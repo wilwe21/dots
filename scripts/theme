@@ -9,9 +9,9 @@ parser.add_argument("-v", "--vim", help="Set vim conf from /tmp", action=argpars
 parser.add_argument("-u", "--update", help="update setup file")
 args = parser.parse_args()
 if args.sddm != None:
-    subprocess.Popen(["sudo", "cp", "/tmp/ags/sddm.conf", "/etc/sddm.conf"])
+    subprocess.Popen(["sudo", "cp", "-f", "-T", "/tmp/ags/sddm.conf", "/etc/sddm.conf"])
 if args.grub != None:
-    subprocess.Popen(["sudo", "cp", "/tmp/ags/grub.conf", "/etc/default/grub", "&&", "sudo", "grub-mkconfig", "&>", "/boot/grub/grub.cfg"])
+    subprocess.Popen(["sudo", "cp", "-f", "-T", "/tmp/ags/grub.conf", "/etc/default/grub", "&&", "sudo", "grub-mkconfig", "&>", "/boot/grub/grub.cfg"])
 if args.starship != None:
     subprocess.Popen(["cp", "-f", "/tmp/ags/starship.conf", "/home/wilwe/.config/starship.toml"])
 if args.kitty != None:
@@ -26,3 +26,6 @@ if args.update != None:
     else:
         with open("/tmp/ags/themeup","w") as f:
             f.write(args.update)
+else:
+    with open("/tmp/ags/themeup", "a") as f:
+        f.write('')
