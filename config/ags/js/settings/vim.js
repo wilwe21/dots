@@ -264,7 +264,6 @@ let g:airline#themes#ags#palette.visual = airline#themes#generate_color_map( s:V
 
 let g:airline_left_sep = "${lsep}"
 let g:airline_right_sep = "${rsep}"`
-    writeFileSync(String(conf), '/tmp/ags/vim.vim')
-    writeFileSync(String(airline), '/tmp/ags/airline.vim')
-    Utils.execAsync(['hyprctl', 'dispatch', 'exec', '/home/wilwe/.hyprland.conf/scripts/theme -u v'])
+    writeFileSync(String(conf), '/home/wilwe/.vim/colors/ags.vim')
+    writeFileSync(String(airline), '/home/wilwe/.vim/autoload/airline/themes/ags.vim')
 }

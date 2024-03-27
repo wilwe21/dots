@@ -6,7 +6,6 @@ import { reloadSddm } from './sddm.js';
 import { reloadGrub } from './grub.js';
 import { reloadGtk } from './gtk.js';
 import { starship } from './starship.js';
-import { reloadThemes } from './themes.js';
 import { kitty } from './kitty.js';
 import { WINRUL } from './winrul.js';
 import { vim } from './vim.js';
@@ -30,7 +29,6 @@ export function setTheme(name) {
     starship();
     kitty();
     vim();
-    reloadThemes();
     wallpaper();
 }
 globalThis['setTheme'] = setTheme;

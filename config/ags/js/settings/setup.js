@@ -11,7 +11,6 @@ import { reloadGtk } from './gtk.js';
 import { reloadStarship } from './starship.js';
 import { kitty } from './kitty.js';
 import { WINRUL } from './winrul.js';
-import { reloadThemes } from './themes.js';
 import { vim } from './vim.js';
 import { initWallpaper, wallpaper } from './wallpaper.js';
 import { hyprlandInit, setupHyprland } from './hyprland.js';
@@ -40,7 +39,6 @@ export function init() {
         reloadStarship();
         kitty();
 	vim();
-	reloadThemes();
         wallpaper();
         pywal();
         gtkTheme();

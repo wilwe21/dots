@@ -9,7 +9,6 @@ import { reloadGtk } from './gtk.js';
 import { reloadStarship } from './starship.js';
 import { reloadKitty } from './kitty.js';
 import { reloadWinruls } from './winrul.js';
-import { reloadThemes } from './themes.js';
 import { reloadVim } from './vim.js';
 import { wallpaper } from './wallpaper.js';
 import { setupHyprland } from './hyprland.js';
@@ -138,7 +137,6 @@ export class Opt extends Service {
                 reloadKitty();
 		reloadWinruls();
 		reloadVim();
-		reloadThemes();
                 wallpaper();
                 setupHyprland();
             }
