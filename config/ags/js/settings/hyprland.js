@@ -110,7 +110,6 @@ export async function setupHyprland() {
         `decoration:drop_shadow ${drop_shadow ? 'yes' : 'no'}`,
     );
     sendBatch(batch)
-    sleep(250).then(() => sendBatch(batch));
     sleep(500).then(() => sendBatch(batch));
     sleep(1000).then(() => sendBatch(batch));
 }
