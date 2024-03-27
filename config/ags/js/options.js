@@ -308,6 +308,9 @@ export default {
                 'scssFormat': v => `"${v}"`,
             }),
         },
+	winpad: Option(0,{
+		'category': 'Terminal',
+	}),
         scrollback: {
             lines: Option('2000',{
                 'category': 'Terminal',  

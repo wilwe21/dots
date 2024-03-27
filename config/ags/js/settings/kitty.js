@@ -12,6 +12,7 @@ export async function reloadKitty() {
     options.kitty.cursor.underline_thickness.connect('changed', kitty);
     options.kitty.cursor.blink_interval.connect('changed', kitty);
     options.kitty.cursor.stop_blinking_after.connect('changed', kitty);
+    options.kitty.winpad.connect('changed', kitty);
     options.kitty.scrollback.lines.connect('changed', kitty);
     options.kitty.scrollback.pager.connect('changed', kitty);
     options.kitty.scrollback.pager_history.connect('changed', kitty);
@@ -86,6 +87,7 @@ export function kitty() {
     const kcut = options.kitty.cursor.underline_thickness.value
     const kcbi = options.kitty.cursor.blink_interval.value
     const kcsba = options.kitty.cursor.stop_blinking_after.value
+    const kpw = options.kitty.winpad.value
     const ksl = options.kitty.scrollback.lines.value
     const ksp = options.kitty.scrollback.pager.value
     const ksph = options.kitty.scrollback.pager_history.value
@@ -115,6 +117,7 @@ cursor_beam_thickness ${kcbt}
 cursor_underline_thickness ${kcut}
 cursor_blink_interval ${kcbi}
 cursor_stop_blinking_after ${kcsba}
+window_padding_width ${kpw}
 scrollback_lines ${ksl}
 scrollback_pager ${ksp}
 scrollback_pager_history_size ${ksph}
