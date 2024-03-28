@@ -48,17 +48,17 @@ export default () => WW({
     setup: self => {
 	let count = 0
 	self.hook(Mpris, () => {
-		Utils.timeout(500, () => {
+		Utils.timeout(550, () => {
 			self.visible = true
 			count++
 		})
-	})
+	},"changed")
 	self.hook(Mpris, () => {
-		Utils.timeout(options.osd.time.value+1000, () => {
+		Utils.timeout(options.osd.time.value+1100, () => {
 			count--
 			if (count===0) self.visible = false
 		})
-	})
+	},"changed")
     },
     child: 
         Widget.Box({
