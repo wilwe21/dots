@@ -2,6 +2,8 @@ import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import Mpris from 'resource:///com/github/Aylur/ags/service/mpris.js';
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import Applications from 'resource:///com/github/Aylur/ags/service/applications.js';
+import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
+import WW from '../misc/WW.js';
 import * as mpris from '../misc/mpris.js';
 import * as vars from '../variables.js';
 import icons from '../icons.js';
@@ -36,16 +38,31 @@ const PlayerBox = player => Widget.Box({
     class_name: `player ${player.name}`,
     child: TextBox(player),
 });
-export default () => Widget.Window({
-    name: 'info',
+export default () => WW({
+    name: 'OSDM',
     layer: options.info.layer.bind('value'),
-    class_name: 'info',
-    visible: Mpris.bind('players').transform(v => v.length > 0),
+    class_name: 'OSDM',
     anchor: options.info.anchor.bind('value'),
     margins: options.info.margins.bind('value'),
     visible: false,
+    setup: self => {
+	let count = 0
+	self.hook(Mpris, () => {
+		Utils.timeout(500, () => {
+			self.visible = true
+			count++
+		})
+	})
+	self.hook(Mpris, () => {
+		Utils.timeout(options.osd.time.value+1000, () => {
+			count--
+			if (count===0) self.visible = false
+		})
+	})
+    },
     child: 
         Widget.Box({
+	    visible: Mpris.bind('players').transform(v => v.length > 0),
             children: [
                 Widget.Box({
                     vertical: true,

@@ -16,8 +16,8 @@ import sound from './widget/sound.js';
 import music from './widget/music.js';
 import OSDA from './OSD/OSDA.js';
 import OSDB from './OSD/OSDB.js';
+import OSDM from './OSD/OSDM.js';
 import bl from './app/bl.js';
-import info from './app/info.js';
 import installer from './installer/installer.js';
 
 init();
@@ -32,7 +32,7 @@ const windows = () => [
     forMonitors(music),
     //installer(),
     bl(),
-    info(),
+    OSDM(),
     OSDA(),
     OSDB(),
     Applauncher(),
