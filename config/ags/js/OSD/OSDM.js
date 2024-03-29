@@ -49,17 +49,13 @@ const PlayerBox = player => Widget.Box({
     setup: self => {
 	let count = 0
 	self.hook(player, () => {
-		//Utils.timeout(550, () => {
-			//self.visible = true
-			mprisvisible.setValue(true)
-			count++
-		//})
+		mprisvisible.setValue(true)
+		count++
 	})
 	self.hook(player, () => {
 		Utils.timeout(options.osd.time.value+1100, () => {
 			count--
 			if (count===0) {
-				//self.visible = false
 				mprisvisible.setValue(false)
 			}
 		})
