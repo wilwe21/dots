@@ -3,12 +3,15 @@ import Mpris from 'resource:///com/github/Aylur/ags/service/mpris.js';
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import Applications from 'resource:///com/github/Aylur/ags/service/applications.js';
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
+import { Variable as Var } from 'resource:///com/github/Aylur/ags/variable.js'
 import WW from '../misc/WW.js';
 import * as mpris from '../misc/mpris.js';
 import * as vars from '../variables.js';
 import icons from '../icons.js';
 import { launchApp } from '../utils.js';
 import options from '../options.js';
+
+const mprisvisible = new Var(false,{ key: false })
 
 /** @param {import('types/service/mpris').MprisPlayer} player */
 const TextBox = player => Widget.Box({
@@ -30,13 +33,38 @@ const TextBox = player => Widget.Box({
                 }),
             ],
         }),
+	Widget.Box({
+		class_name: 'vlab',
+		child: vars.volume(),
+        }),
     ],
 });
 
 /** @param {import('types/service/mpris').MprisPlayer} player */
 const PlayerBox = player => Widget.Box({
     class_name: `player ${player.name}`,
+    vertical: true,
+    hexpand: true,
     child: TextBox(player),
+    setup: self => {
+	let count = 0
+	self.hook(player, () => {
+		//Utils.timeout(550, () => {
+			//self.visible = true
+			mprisvisible.setValue(true)
+			count++
+		//})
+	})
+	self.hook(player, () => {
+		Utils.timeout(options.osd.time.value+1100, () => {
+			count--
+			if (count===0) {
+				//self.visible = false
+				mprisvisible.setValue(false)
+			}
+		})
+	})
+    },
 });
 export default () => WW({
     name: 'OSDM',
@@ -46,35 +74,16 @@ export default () => WW({
     margins: options.info.margins.bind('value'),
     visible: false,
     setup: self => {
-	let count = 0
-	self.hook(Mpris, () => {
-		Utils.timeout(550, () => {
-			self.visible = true
-			count++
-		})
-	},"changed")
-	self.hook(Mpris, () => {
-		Utils.timeout(options.osd.time.value+1100, () => {
-			count--
-			if (count===0) self.visible = false
-		})
-	},"changed")
+	    self.visible = false,
+	    self.hook(mprisvisible, () => {
+		self.visible = mprisvisible.value
+	    })
     },
     child: 
         Widget.Box({
 	    visible: Mpris.bind('players').transform(v => v.length > 0),
-            children: [
-                Widget.Box({
-                    vertical: true,
-                    hexpand: true,
-                    children: Mpris.bind('players').transform(ps =>  
-                            ps.filter(p => !options.mpris.black_list.value
-                                .includes(p.identity)).map(PlayerBox)),
-	            }),
-	            Widget.Box({
-	                class_name: 'vlab',
-	                child: vars.volume(),
-	            }),
-	        ],
-	    }),
+            children: Mpris.bind('players').transform(ps =>  
+		      ps.filter(p => !options.mpris.black_list.value
+			.includes(p.identity)).map(PlayerBox)),
+        }),
 });
