@@ -51,7 +51,7 @@ const PlayerBox = player => Widget.Box({
 	self.hook(player, () => {
 		mprisvisible.setValue(true)
 		count++
-	})
+	},"changed")
 	self.hook(player, () => {
 		Utils.timeout(options.osd.time.value+1100, () => {
 			count--
@@ -59,7 +59,7 @@ const PlayerBox = player => Widget.Box({
 				mprisvisible.setValue(false)
 			}
 		})
-	})
+	},"changed")
     },
 });
 export default () => WW({
