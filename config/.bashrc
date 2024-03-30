@@ -533,6 +533,8 @@ export PATH=$PATH:"$HOME/Dokumenty/localbin:$HOME/.local/bin:$HOME/.cargo/bin:/v
 alias cd="z"
 alias google-chrome="google-chrome-stable"
 alias :q="exit"
+# how to exit vim
+alias :q!="poweroff"
 # Install Starship - curl -sS https://starship.rs/install.sh | sh
 
 eval "$(zoxide init bash)"
