@@ -784,6 +784,7 @@ export default [
 	  "starship.directory.fg": "$fg-color",
 	  "starship.time.bg": "$accent",
 	  "starship.time.fg": "$accent-fg",
+	  "applauncher.height": 400,
 	  "applauncher.bg": "linear-gradient",
 	  "applauncher.bg_color": "135deg,lighten($accent, 10), lighten($bg-color,10), $bg-color",
 	  "applauncher.br_mode": true,
@@ -830,7 +831,7 @@ export default [
 	  ],
 	  "moon.path": "/home/wilwe/.hyprland.conf/wallpapers/winmoon/",
 	  "moon.visible": true,
-	  "moon.size": "311",
+	  "moon.size": "312",
 	  "moon.layer": "background",
 	  "moon.anchor": [
 	    "top",
@@ -838,7 +839,7 @@ export default [
 	  ],
 	  "moon.margins": [
 	    "92",
-	    "838"
+	    "839"
 	  ],
 	  "music.visible": true,
 	  "music.anchor": [
@@ -857,15 +858,13 @@ export default [
 	  "music.footer.positon": false,
 	  "music.footer.controls": false,
 	  "music.text.color": "$bg-color",
-	  "music.min_width": 250,
+	  "music.min_width": 300,
 	  "music.min_height": 112,
 	  "music.cover_width": 208,
 	  "music.cover_height": 117,
 	  "desktop.wallpaper.img": "/home/wilwe/.hyprland.conf/wallpapers/winter.jpg",
-	  "desktop.wallpaper.transition": "--transition-type wave --transition-angle 45",
+	  "desktop.wallpaper.transition": "--transition-type grow --invert-y --transition-pos 1000,215",
 	  "dashboard.bg": "linear-gradient",
 	  "dashboard.bg_color": "lighten($accent, 10), lighten($bg-color,10), $bg-color",
   })
 ];
-
-

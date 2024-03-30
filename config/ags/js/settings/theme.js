@@ -1,4 +1,5 @@
 import App from 'resource:///com/github/Aylur/ags/app.js';
+import { writeFileSync } from 'resource:///com/github/Aylur/ags/utils.js';
 import options from '../options.js';
 import themes from '../themes.js';
 import { reloadScss } from './scss.js';
@@ -15,6 +16,7 @@ import { wallpaper } from './wallpaper.js';
 /** @param {string} name */
 export function setTheme(name) {
     options.reset();
+    writeFileSync(String(`"${String(name)}"`), '/tmp/ags/curtheme');
     const theme = themes.find(t => t.name === name);
     if (!theme)
         return print('No theme named ' + name);
