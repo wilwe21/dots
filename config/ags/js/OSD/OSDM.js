@@ -50,8 +50,11 @@ const PlayerBox = player => Widget.Box({
 	let count = 0
 	const title = new Var(player.bind().emitter.metadata["xesam:title"])
 	self.hook(player, () => {
-		title.setValue(player.bind().emitter.metadata["xesam:title"])
-		console.log(title.value)
+		if (title.value === player.bind().emitter.metadata["xesam:title"] ){
+		} else {
+			title.setValue(player.bind().emitter.metadata["xesam:title"])
+			console.log(title.value)
+		}
 	})
 	self.hook(title, () => {
 		mprisvisible.setValue(true)
