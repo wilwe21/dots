@@ -48,18 +48,22 @@ const PlayerBox = player => Widget.Box({
     child: TextBox(player),
     setup: self => {
 	let count = 0
+	const title = new Var(player.bind("track_title"))
 	self.hook(player, () => {
+		title.setValue(player.bind("track_title"))
+	})
+	self.hook(title, () => {
 		mprisvisible.setValue(true)
 		count++
-	},"changed")
-	self.hook(player, () => {
+	})
+	self.hook(title, () => {
 		Utils.timeout(options.osd.time.value+1100, () => {
 			count--
 			if (count===0) {
 				mprisvisible.setValue(false)
 			}
 		})
-	},"changed")
+	})
     },
 });
 export default () => WW({
