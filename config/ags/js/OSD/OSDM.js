@@ -50,10 +50,9 @@ const PlayerBox = player => Widget.Box({
 	let count = 0
 	const title = new Var(player.bind().emitter.metadata["xesam:title"])
 	self.hook(player, () => {
-		if (title.value === player.bind().emitter.metadata["xesam:title"] ){
+		if (title.value === player.bind().emitter.metadata["xesam:title"] || player.bind().emitter.metadata["xesam:title"].includes("- YouTube")){
 		} else {
 			title.setValue(player.bind().emitter.metadata["xesam:title"])
-			console.log(title.value)
 		}
 	})
 	self.hook(title, () => {

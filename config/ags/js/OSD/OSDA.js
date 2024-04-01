@@ -4,6 +4,7 @@ import Mpris from 'resource:///com/github/Aylur/ags/service/mpris.js';
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import Applications from 'resource:///com/github/Aylur/ags/service/applications.js';
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
+import { Variable as Var } from 'resource:///com/github/Aylur/ags/variable.js';
 import WW from '../misc/WW.js';
 import * as mpris from '../misc/mpriscover.js';
 import * as vars from '../variables.js';
@@ -97,17 +98,24 @@ export default () => WW({
     layer: "overlay",
     visible: false,
     setup: self => {
-    let count = 0
-    self.hook(Audio.speaker, () => {
-        self.visible = true
-        count++
-    })
-    self.hook(Audio.speaker, () =>{
-        Utils.timeout(options.osd.time.value, () => {
-            count--
-            if(count===0) self.visible = false
-        })
-    })
+	    let count = 0
+	    const vol = new Var(Audio.speaker.volume)
+	    self.hook(Audio.speaker, () => {
+		if (vol.value === Audio.speaker.volume){
+		} else {
+			vol.setValue(Audio.speaker.volume)
+		}
+	    })
+	    self.hook(vol, () => {
+		self.visible = true
+		count++
+	    })
+	    self.hook(vol, () =>{
+		Utils.timeout(options.osd.time.value, () => {
+		    count--
+		    if(count===0) self.visible = false
+		})
+	    })
     },
     anchor: options.osd.anchor.bind('value'),
     margins: options.osd.margins.bind('value'),
