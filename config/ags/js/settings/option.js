@@ -131,7 +131,7 @@ export class Opt extends Service {
             if (reload && !this.noReload) {
                 reloadScss();
                 reloadSddm();
-                reloadGrub();
+		reloadGrub();
                 reloadGtk();
                 reloadStarship();
                 reloadKitty();

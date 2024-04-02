@@ -18,6 +18,7 @@ import OSDA from './OSD/OSDA.js';
 import OSDB from './OSD/OSDB.js';
 import OSDM from './OSD/OSDM.js';
 import bl from './app/bl.js';
+import sensors from './app/sensors.js';
 import installer from './installer/installer.js';
 
 init();
@@ -30,6 +31,7 @@ const windows = () => [
     forMonitors(Moon),
     forMonitors(sound),
     forMonitors(music),
+    sensors(),
     //installer(),
     bl(),
     OSDM(),
