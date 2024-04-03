@@ -533,7 +533,7 @@ export PATH=$PATH:"$HOME/Dokumenty/localbin:$HOME/.local/bin:$HOME/.cargo/bin:/v
 alias cd="z"
 alias google-chrome="google-chrome-stable"
 alias :q="exit"
-# how to exit vim
+# how to exit vim (myślisz czasami przeciesz może to być jebany missclick ~ja 03.04.2024)
 alias :q!="poweroff"
 # Install Starship - curl -sS https://starship.rs/install.sh | sh
 
