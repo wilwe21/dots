@@ -14,6 +14,6 @@ export function wallpaper() {
     if (!dependencies(['swww']))
         return;
 
-    exec(`swww img "${options.desktop.wallpaper.img.value}" -t simple`
+    exec(`swww img "${options.desktop.wallpaper.img.value}" -t none`
     ).catch(err => console.error(err));
 }
