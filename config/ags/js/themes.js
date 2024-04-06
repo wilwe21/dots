@@ -70,6 +70,7 @@ export default [
 	    "music.visible": true,
 	    "music.anchor": ["bottom","right"],
 	    "music.margins": ["360","20"],
+	    "music.text.color": "$yellow",
 	    "music.layer": "background",
 	    "music.box": 'transparent',
 	    "music.border": false,
