@@ -19,13 +19,3 @@ if args.kitty != None:
 if args.vim != None:
     subprocess.Popen(["cp", "-f", "-T", "/tmp/ags/vim.vim", "/home/wilwe/.vim/colors/ags.vim"]) 
     subprocess.Popen(["cp", "-f", "-T", "/tmp/ags/airline.vim", "/home/wilwe/.vim/autoload/airline/themes/ags.vim"])
-if args.update != None:
-    if os.path.isfile("/tmp/ags/themeup"):
-        with open("/tmp/ags/themeup", "a") as f:
-            f.write(args.update)
-    else:
-        with open("/tmp/ags/themeup","w") as f:
-            f.write(args.update)
-else:
-    with open("/tmp/ags/themeup", "a") as f:
-        f.write('')
