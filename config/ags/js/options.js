@@ -48,19 +48,20 @@ export default {
     },
 
     color: {
-        red: Option('#c01c28', { 'scss': 'red' }),
-        green: Option('#2ec27e', { 'scss': 'green' }),
-        yellow: Option('#f5c211', { 'scss': 'yellow' }),
-        moon: Option('#F9E2AF', { 'scss': 'moon' }),
-        blue: Option('#3584e4', { 'scss': 'blue' }),
-        temp: Option('#c01c28', { 'scss': 'temp' }),
-        download: Option('#2ec27e', { 'scss': 'download' }),
-        cpucolor: Option('#f5c211', { 'scss': 'cpucolor' }),
-        upload: Option('#3584e4', { 'scss': 'upload' }),
-        magenta: Option('#813d9c', { 'scss': 'magenta' }),
-        teal: Option('#99c1f1', { 'scss': 'teal' }),
-        orange: Option('#e66100', { 'scss': 'orange' }),
-        playcolor: Option('#e66100', { 'scss': 'playcolor' }),
+        red: Option('#c01c28', { 'scss': 'red', 'category': 'Base Colors' }),
+        green: Option('#2ec27e', { 'scss': 'green', 'category': 'Base Colors' }),
+        yellow: Option('#f5c211', { 'scss': 'yellow', 'category': 'Base Colors' }),
+        moon: Option('#F9E2AF', { 'scss': 'moon', 'category': 'Base Colors' }),
+        blue: Option('#3584e4', { 'scss': 'blue', 'category': 'Base Colors' }),
+        magenta: Option('#813d9c', { 'scss': 'magenta', 'category': 'Base Colors' }),
+        teal: Option('#99c1f1', { 'scss': 'teal', 'category': 'Base Colors' }),
+        orange: Option('#e66100', { 'scss': 'orange', 'category': 'Base Colors' }),
+	// Other Colors
+        temp: Option('#c01c28', { 'scss': 'temp', 'category': 'Other Colors' }),
+        upload: Option('#3584e4', { 'scss': 'upload', 'category': 'Other Colors' }),
+        download: Option('#2ec27e', { 'scss': 'download', 'category': 'Other Colors' }),
+        cpucolor: Option('#f5c211', { 'scss': 'cpucolor', 'category': 'Other Colors' }),
+        playcolor: Option('#e66100', { 'scss': 'playcolor', 'category': 'Other Colors' }),
     },
 
     theme: {
