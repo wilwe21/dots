@@ -60,10 +60,28 @@ function! ExecuteLineAsTPL(mute = "false", sel = 'false')
   execute '!'.cmd
   redraw!
 endfunction
+function! BackgroundSentence(sel='false')
+  if a:sel == 'false'
+	  let line = getline('.')
+  else
+	  let line = visual#get_current_selection()
+  endif
+  let line = substitute(line, '"', '', 'g')
+  let line = substitute(line, "'", '', 'g')
+  let line = substitute(line, "/", ' ', 'g')
+  let line = substitute(line, '\n', ' ', 'g')
+  let line = substitute(line, '!', '\\!', 'g')
+  let line = substitute(line, '#', '\\#', 'g')
+  let cmd = 'backsen -t "' . line . '" &'
+  execute '!'.cmd
+  redraw!
+endfunction
 " }}}
 " Binds {{{
  vmap <C-c> "+y
  nmap <C-x> "+p
+ nmap <F4> :silent :call BackgroundSentence()<CR>
+ vmap <F4> :silent :call BackgroundSentence('true')<CR>
  nmap <F1> :silent :call ExecuteLineAsTTS()<CR>
  nmap <C-F1> :silent :call ExecuteLineAsTPL()<CR> 
  nmap <C-F2> :silent :call ExecuteLineAsTPL("true")<CR>
