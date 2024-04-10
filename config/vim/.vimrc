@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugins')
  Plug 'mg979/vim-visual-multi', { 'bramch': 'master' }
  Plug 'catppuccin/vim', { 'as': 'catppuccin' } 
  Plug 'cakebaker/scss-syntax.vim'
+ Plug 'roymanigley/get-visual-selection-vim-plugin'
 call plug#end()
 " }}}
 set nocompatible
@@ -21,10 +22,15 @@ set hlsearch
 let g:airline_theme = 'ags'
 colo ags
 " Functions {{{
-function! ExecuteLineAsTTS(mute = "false")
-  let line = getline('.')
+function! ExecuteLineAsTTS(mute = "false", sel = 'false')
+  if a:sel == 'false'
+	  let line = getline('.')
+  else 
+	  let line = visual#get_current_selection()
+  endif
   let line = substitute(line, '"', '', 'g')
   let line = substitute(line, '!', '\\!', 'g')
+  let line = substitute(line, '#', '\\#', 'g')
   if a:mute == "false"
 	  let cmd = 'tts -s "' . line . '" &'
   else
@@ -33,10 +39,15 @@ function! ExecuteLineAsTTS(mute = "false")
   execute '!'.cmd
   redraw!
 endfunction
-function! ExecuteLineAsTPL(mute = "false")
-  let line = getline('.')
+function! ExecuteLineAsTPL(mute = "false", sel = 'false')
+  if a:sel == 'false'
+	  let line = getline('.')
+  else
+	  let line = visual#get_current_selection()
+  endif
   let line = substitute(line, '"', '', 'g')
   let line = substitute(line, '!', '\\!', 'g')
+  let line = substitute(line, '#', '\\#', 'g')
   if a:mute == "false"
 	  let cmd = 'tpl -p -v -s "' . line . '" &'
   else
@@ -53,4 +64,8 @@ endfunction
  nmap <C-F1> :silent :call ExecuteLineAsTPL()<CR> 
  nmap <C-F2> :silent :call ExecuteLineAsTPL("true")<CR>
  nmap <F2> :silent :call ExecuteLineAsTTS("true")<CR>
+ vmap <F1> :silent :call ExecuteLineAsTTS("false",'true')<CR>
+ vmap <C-F1> :silent :call ExecuteLineAsTPL("false",'true')<CR> 
+ vmap <C-F2> :silent :call ExecuteLineAsTPL("true",'true')<CR>
+ vmap <F2> :silent :call ExecuteLineAsTTS("true",'true')<CR>
 " }}}
