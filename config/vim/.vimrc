@@ -29,6 +29,8 @@ function! ExecuteLineAsTTS(mute = "false", sel = 'false')
 	  let line = visual#get_current_selection()
   endif
   let line = substitute(line, '"', '', 'g')
+  let line = substitute(line, "'", '', 'g')
+  let line = substitute(line, '\n', ' ', 'g')
   let line = substitute(line, '!', '\\!', 'g')
   let line = substitute(line, '#', '\\#', 'g')
   if a:mute == "false"
@@ -46,6 +48,8 @@ function! ExecuteLineAsTPL(mute = "false", sel = 'false')
 	  let line = visual#get_current_selection()
   endif
   let line = substitute(line, '"', '', 'g')
+  let line = substitute(line, "'", '', 'g')
+  let line = substitute(line, '\n', ' ', 'g')
   let line = substitute(line, '!', '\\!', 'g')
   let line = substitute(line, '#', '\\#', 'g')
   if a:mute == "false"
