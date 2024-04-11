@@ -30,7 +30,7 @@ const Footer = player => Widget.CenterBox({
                         mpris.LengthLabel(player),
                     ]
                 } else {
-                    self.children = []
+                    self.children = Null
                 }
             })
         }),
@@ -53,6 +53,17 @@ const Footer = player => Widget.CenterBox({
                 }
             })
         })
+});
+
+const Poser = player => Widget.Box({
+	class_name: 'position-slider',
+	setup: self => self.hook(options.music.footer.position, () => {
+		if (options.music.footer.position.value == true){
+			self.children = mpris.PositionSlider(player)
+		} else {
+			self.children = []
+		}
+	})
 });
 
 /** @param {import('types/service/mpris').MprisPlayer} player */
@@ -141,7 +152,7 @@ const PlayerBox = player => Widget.Box({
                                     class_name: 'mpris-content',
                                     vertical: true,
                                     start_widget: TextBox(player),
-                                    center_widget: mpris.PositionSlider(player),
+                                    center_widget: Poser(player),
                                     end_widget: Footer(player),
                                 }),
                                 Widget.Box({
@@ -158,7 +169,7 @@ const PlayerBox = player => Widget.Box({
                             self.child = Widget.CenterBox({
                                 vertical: true,
                                 start_widget: TextBox(player),
-                                center_widget: mpris.PositionSlider(player),
+                                center_widget: Poser(player),
                                 end_widget: Footer(player),
                             })
                         }
@@ -179,7 +190,7 @@ const PlayerBox = player => Widget.Box({
                                 Widget.CenterBox({
                                     vertical: true,
                                     start_widget: TextBox(player),
-                                    center_widget: mpris.PositionSlider(player),
+                                    center_widget: Poser(player),
                                     end_widget: Footer(player),
                                 }),
                                 Widget.Box({
@@ -196,7 +207,7 @@ const PlayerBox = player => Widget.Box({
                             self.child = Widget.CenterBox({
                                 vertical: true,
                                 start_widget: TextBox(player),
-                                center_widget: mpris.PositionSlider(player),
+                                center_widget: Poser(player),
                                 end_widget: Footer(player),
                             })
                         }
