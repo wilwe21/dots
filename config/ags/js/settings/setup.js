@@ -24,7 +24,6 @@ export function init() {
     notificationBlacklist();
     warnOnLowBattery();
     globals();
-    tmux();
     reloadGtk();
     gtkFontSettings();
     scssWatcher();
