@@ -7,8 +7,10 @@ import options from '../../options.js';
 
 export default () => PanelButton({
     class_name: 'overview',
-    window: 'overview',
-    on_clicked: () => App.toggleWindow('overview'),
+    window: options.bar.button.bind("value"),
+    setup: self => self.connect("clicked", () => {
+	App.openWindow(options.bar.button.value)
+    }),
     content: Widget.Icon({
         class_name: 'overviewicon',
         icon: options.bar.icon.bind('value').transform(v => {return v === 'distro-icon' ? distroIcon : v;})

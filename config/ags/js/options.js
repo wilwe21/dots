@@ -461,6 +461,11 @@ export default {
             'enums': ['solid', 'linear-gradient', 'repeating-linear-gradient', 'radial-gradient', 'repeating-radial-gradient', 'transparent', 'image'],
             'type': 'enum',
         }),
+	button: Option('overview', {
+		'scssFormat': s => `${s}`,
+		'enums': ['overview','applauncher','powermenu','dashboard','quicksettings'],
+		'type': 'enum',
+	}),
         color: Option('$bg-color', {'scss': 'bar-color' }),
         bg_size: Option('cover', { 'scss': 'bar-size', 'note': 'only if bg is image' }),
         bg_pos: Option('center', { 'scss': 'bar-pos', 'note': 'only if bg is image' }),
