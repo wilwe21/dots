@@ -16,7 +16,7 @@ upags() {
 	cp /tmp/ags/gtktheme /usr/share/themes/ags/gtk-4.0/gtk.css
 	cp /tmp/ags/gtktheme /usr/share/themes/ags/gtk-4.0/gtk-dark.css
 }
-THEME="Catppuccin-Macchiato-Standard-Mauve-Dark"
+THEME="ags"
 ICONS="Catppuccin-Macchiato"
 CURSOR="Future-dark-cursors"
 ld="dark"

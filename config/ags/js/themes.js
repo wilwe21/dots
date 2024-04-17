@@ -228,7 +228,7 @@ export default [
 	    "theme.scheme": "dark",
 	    "theme.bg": "#D3C5AA",
 	    "theme.fg": "#70554A",
-	    "theme.accent.accent": "#D3C5AA",
+	    "theme.accent.accent": "#A68775",
 	    "hypr.active_border": "rgba(D3C5AAFF)",
 	    "theme.accent.fg": "$bg-color",
 	    "theme.accent.gradient": "to right, #A58873, lighten(#70554A, 20%)",
