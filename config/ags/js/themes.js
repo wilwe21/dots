@@ -751,7 +751,7 @@ export default [
 	  name: "Winter",
 	  icon: "/home/wilwe/.hyprland.conf/icons/deer.svg",
 	  
-	  "misc.gtk": "Catppuccin-Latte-Standard-Pink-Light",
+	  "misc.gtk": "ags",
 	  "misc.gtkIcons": "Catppuccin-Latte",
 	  "misc.cursor": "Future-dark-cursors",
 	  "border.width": 2,
