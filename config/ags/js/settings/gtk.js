@@ -212,7 +212,7 @@ label:disabled {
 }
 
 headerbar label:disabled, tab label:disabled, button label:disabled {
-  color: inherit;
+  color: ${fg};
   opacity: 1;
 }
 
@@ -364,7 +364,7 @@ entry {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), outline 300ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 0 0 2px transparent;
   background-color: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.7);
+  color: ${fg};
   outline: 0 solid transparent;
   outline-offset: 2px;
 }
@@ -977,15 +977,13 @@ placessidebar row button.sidebar-button:active, calendar > header > button:activ
 splitbutton.flat > menubutton > button:active {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
   animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
-  background-image: radial-gradient(circle, alpha(currentColor, 0.08) 10%, transparent 0%);
-  background-size: 0% 0%;
-  background-color: alpha(currentColor, 0.08);
-  color: ${fg};
+  background-color: ${accent};
+  color: ${accentfg};
 }
 
 placessidebar row button.sidebar-button:disabled, calendar > header > button:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, popover modelbutton:disabled, spinbutton > button:disabled, splitbutton.flat > button:disabled,
 splitbutton.flat > menubutton > button:disabled {
-  color: rgba(255, 255, 255, 0.32);
+  color: ${fg};
   background-color: transparent;
 }
 
@@ -999,7 +997,7 @@ combobox > .linked:not(.vertical) > button:not(:only-child), splitbutton.suggest
   background-color: transparent;
   outline: 0 solid transparent;
   outline-offset: 2px;
-  color: rgba(255, 255, 255, 0.7);
+  color: ${fg};
 }
 
 filechooser #pathbarbox > stack > box > button:focus:not(:hover):not(:active), window.messagedialog .response-area button:focus:not(:hover):not(:active), window.dialog.message .dialog-action-area > button:focus:not(:hover):not(:active), .app-notification button:focus:not(:hover):not(:active), headerbar button:focus:not(:hover):not(:active):not(.suggested-action):not(.destructive-action), .toolbar button:focus:not(:hover):not(:active), dropdown > .linked:not(.vertical) > button:focus:not(:hover):not(:active):not(:only-child),
@@ -2836,29 +2834,27 @@ notebook > header > tabs > tab:hover:not(:checked):not(:selected) {
 }
 
 notebook > header > tabs > tab:disabled {
-  color: rgba(255, 255, 255, 0.32);
+  color: ${bg};
   background-color: transparent;
 }
 
 notebook > header > tabs > tab:active {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
   animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
-  background-image: radial-gradient(circle, alpha(currentColor, 0.08) 10%, transparent 0%);
-  background-size: 0% 0%;
-  background-color: alpha(currentColor, 0.08);
-  color: ${fg};
+  background-color: ${accent};
+  color: ${accentfg};
   box-shadow: none;
 }
 
 notebook > header > tabs > tab:checked {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms, background-color 0ms;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: ${bg};
   color: ${fg};
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 notebook > header > tabs > tab:checked:disabled {
-  color: rgba(255, 255, 255, 0.5);
+  color: ${fg};
 }
 
 frame > paned > notebook > header, notebook.frame > header {
@@ -2949,8 +2945,8 @@ notebook > header > tabs > tab > box {
 }
 
 notebook > header > tabs > tab > box:drop(active) {
-  background-color: rgba(255, 255, 255, 0.12);
-  color: ${fg};
+  background-color: ${accent};
+  color: ${accentfg};
 }
 
 notebook > header > tabs > tab button.flat:last-child {
@@ -3058,12 +3054,9 @@ tabbar tab:disabled {
 tabbar tab:active {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
   animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
-  background-image: radial-gradient(circle, alpha(currentColor, 0.08) 10%, transparent 0%);
-  background-size: 0% 0%;
-  background-color: alpha(currentColor, 0.08);
-  color: ${fg};
+  background-color: ${accent};
+  color: ${accentfg};
   box-shadow: none;
-  color: ${fg};
 }
 
 tabbar tab:selected:not(:active) {
@@ -5263,7 +5256,7 @@ separator.sidebar.selection-mode, .selection-mode separator.sidebar {
 
 .navigation-sidebar.background, .navigation-sidebar.background:disabled {
   background-color: ${bg};
-  color: rgba(255, 255, 255, 0.7);
+  color: ${fg};
 }
 
 .navigation-sidebar > separator {
@@ -5282,11 +5275,11 @@ separator.sidebar.selection-mode, .selection-mode separator.sidebar {
  ****************/
 row image.sidebar-icon {
   transition: color 75ms cubic-bezier(0, 0, 0.2, 1);
-  color: rgba(255, 255, 255, 0.7);
+  color: ${fg};
 }
 
 row image.sidebar-icon:disabled {
-  color: rgba(255, 255, 255, 0.32);
+  color: ${fg};
 }
 
 placessidebar > viewport.frame {
@@ -5973,7 +5966,7 @@ popover.entry-completion > contents {
   border-style: none;
   border-radius: 6px;
   background-color: ${accent};
-  color: rgba(0, 0, 0, 0.87);
+  color: ${accentfg};
   box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.05), 0 2px 3px -1px rgba(0, 0, 0, 0.06), 0 1px 4px 0 rgba(0, 0, 0, 0.05);
 }
 
@@ -7875,7 +7868,7 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
 }
 
 .sidebar-pane:backdrop {
-  color: rgba(255, 255, 255, 0.5);
+  color: ${fg};
   background-color: ${bg};
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1);
 }
@@ -7895,12 +7888,13 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
 }
 
 .sidebar-pane banner > revealer > widget {
-  background-color: gtkmix(${accent}, ${bg}, 30%);
-  color: ${fg};
+  background-color: ${accent};
+  color: ${accentfg};
 }
 
 .sidebar-pane banner > revealer > widget:backdrop {
-  background-color: gtkmix(${accent}, ${bg}, 30%);
+  background-color: ${accent};
+  color: ${accentfg};
 }
 
 /* Middle pane in three-pane setups */
@@ -7918,13 +7912,14 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
 
 .content-pane .sidebar-pane banner > revealer > widget,
 .sidebar-pane .content-pane banner > revealer > widget {
-  background-color: gtkmix(${accent}, ${bg}, 30%);
-  color: ${fg};
+  background-color: ${accent};
+  color: ${accentfg};
 }
 
 .content-pane .sidebar-pane banner > revealer > widget:backdrop,
 .sidebar-pane .content-pane banner > revealer > widget:backdrop {
-  background-color: gtkmix(${accent}, ${bg}, 30%);
+  background-color: ${accent};
+  color: ${accentfg};
 }
 
 .sidebar-pane:dir(ltr), .sidebar-pane:dir(ltr) banner > revealer > widget, .sidebar-pane.end:dir(rtl), .sidebar-pane.end:dir(rtl) banner > revealer > widget,
@@ -8180,8 +8175,8 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
 
 .sidebar-pane tabbar tab:selected:not(:active),
 .content-pane tabbar tab:selected:not(:active) {
-  background-color: alpha(currentColor, 0.06);
-  color: ${fg};
+  background-color: ${accent};
+  color: ${accentfg};
   box-shadow: none;
 }
 
@@ -8367,13 +8362,13 @@ base background color of selections */
 @define-color theme_selected_bg_color ${accent};
 /*
 text/foreground color of selections */
-@define-color theme_selected_fg_color rgba(0, 0, 0, 0.87);
+@define-color theme_selected_fg_color ${accentfg};
 /*
 base background color of insensitive widgets */
 @define-color insensitive_bg_color ${bg};
 /*
 text foreground color of insensitive widgets */
-@define-color insensitive_fg_color rgba(255, 255, 255, 0.5);
+@define-color insensitive_fg_color ${fg};
 /*
 insensitive text widgets and the like base background color */
 @define-color insensitive_base_color ${bg};
@@ -8394,16 +8389,16 @@ base background color of selections on backdrop windows */
 @define-color theme_unfocused_selected_bg_color ${accent};
 /*
 text/foreground color of selections on backdrop windows */
-@define-color theme_unfocused_selected_fg_color rgba(0, 0, 0, 0.87);
+@define-color theme_unfocused_selected_fg_color ${accentfg};
 /*
 insensitive color on backdrop windows */
-@define-color unfocused_insensitive_color rgba(255, 255, 255, 0.5);
+@define-color unfocused_insensitive_color ${bg};
 /*
 widgets main borders color */
-@define-color borders rgba(255, 255, 255, 0.12);
+@define-color borders ${bg};
 /*
 widgets main borders color on backdrop windows */
-@define-color unfocused_borders rgba(255, 255, 255, 0.12);
+@define-color unfocused_borders ${bg};
 /*
 these are pretty self explicative */
 @define-color warning_color ${orange};
@@ -8413,8 +8408,8 @@ these are pretty self explicative */
 these colors are exported for the window manager and shouldn't be used in applications,
 read if you used those and something break with a version upgrade you're on your own... */
 @define-color wm_title ${fg};
-@define-color wm_unfocused_title rgba(255, 255, 255, 0.7);
-@define-color wm_highlight rgba(255, 255, 255, 0.1);
+@define-color wm_unfocused_title ${bg};
+@define-color wm_highlight ${bg};
 @define-color wm_border #07080c;
 @define-color wm_bg ${bg};
 @define-color wm_unfocused_bg ${bg};
@@ -8439,7 +8434,7 @@ FIXME this is really an API */
    ----------------
    use responsibly! */
 @define-color accent_bg_color ${accent};
-@define-color accent_fg_color rgba(0, 0, 0, 0.87);
+@define-color accent_fg_color ${accentfg};
 @define-color accent_color ${accent};
 @define-color destructive_bg_color ${red};
 @define-color destructive_fg_color ${fg};
@@ -8448,7 +8443,7 @@ FIXME this is really an API */
 @define-color success_fg_color ${fg};
 @define-color success_color ${green};
 @define-color warning_bg_color ${orange};
-@define-color warning_fg_color rgba(0, 0, 0, 0.87);
+@define-color warning_fg_color ${fg};
 @define-color warning_color ${orange};
 @define-color error_bg_color ${red};
 @define-color error_fg_color ${fg};
@@ -8459,18 +8454,18 @@ FIXME this is really an API */
 @define-color view_fg_color ${fg};
 @define-color headerbar_bg_color ${bg};
 @define-color headerbar_fg_color ${fg};
-@define-color headerbar_border_color rgba(255, 255, 255, 0.12);
+@define-color headerbar_border_color ${bg};
 @define-color headerbar_backdrop_color ${bg};
-@define-color headerbar_shade_color rgba(255, 255, 255, 0.12);
+@define-color headerbar_shade_color alpha(${bg}, 0.12);
 @define-color card_bg_color ${bg};
 @define-color card_fg_color ${fg};
-@define-color card_shade_color rgba(255, 255, 255, 0.12);
+@define-color card_shade_color alpha(${bg}, 0.12);
 @define-color dialog_bg_color ${bg};
 @define-color dialog_fg_color ${fg};
 @define-color popover_bg_color ${bg};
 @define-color popover_fg_color ${fg};
-@define-color shade_color rgba(255, 255, 255, 0.12);
-@define-color scrollbar_outline_color rgba(255, 255, 255, 0.12);`
+@define-color shade_color alpha(${bg}, 0.12);
+@define-color scrollbar_outline_color alpha(${bg}, 0.12);`
 	writeFileSync(String(agstheme), '/tmp/ags/gtktheme')
 	if ( options.theme.scheme.value == 'dark' ) {
 		if (g == 'ags'){
