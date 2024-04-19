@@ -926,7 +926,7 @@ row.spin spinbutton > button.image-button.down:checked:not(.flat):not(.raised):n
 row.spin spinbutton > button.image-button.down:checked:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):dir(ltr):last-child,
 row.spin spinbutton > button.image-button.down:checked:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):dir(rtl):first-child, headerbar popover.background button:checked:not(.suggested-action):not(.destructive-action):not(.flat), button:checked {
   background-color: ${accent};
-  color: apha(${fg}, 0.87);
+  color: apha(${accentfg}, 0.87);
 }
 
 row.spin spinbutton > button.image-button.up:checked:hover:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):last-child,
@@ -935,7 +935,7 @@ row.spin spinbutton > button.image-button.down:checked:hover:not(.flat):not(.rai
 row.spin spinbutton > button.image-button.down:checked:hover:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):dir(rtl):first-child, headerbar popover.background button:checked:hover:not(.suggested-action):not(.destructive-action):not(.flat), button:checked:hover {
   outline-color: transparent;
   background-color: ${accent};
-  color: apha(${fg}, 0.87);
+  color: apha(${accentfg}, 0.87);
 }
 
 row.spin spinbutton > button.image-button.up:checked:disabled:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):last-child,
@@ -944,7 +944,7 @@ row.spin spinbutton > button.image-button.down:checked:disabled:not(.flat):not(.
 row.spin spinbutton > button.image-button.down:checked:disabled:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):dir(rtl):first-child, headerbar popover.background button:checked:disabled:not(.suggested-action):not(.destructive-action):not(.flat), button:checked:disabled {
   outline-color: transparent;
   background-color: apha(${accent}, 0.35);
-  color: apha(${fg}, 0.38);
+  color: apha(${accentfg}, 0.38);
 }
 
 placessidebar row button.sidebar-button, calendar > header > button, scrollbar button, notebook > header > tabs > arrow, popover modelbutton, spinbutton > button, splitbutton.flat > button,
@@ -1291,7 +1291,7 @@ button.osd:disabled {
 
 button.suggested-action {
   background-color: ${accent};
-  color: apha(${fg}, 0.87);
+  color: apha(${accentfg}, 0.87);
   box-shadow: none;
 }
 
@@ -1418,7 +1418,7 @@ menubutton.osd {
 
 menubutton.suggested-action {
   background-color: ${accent};
-  color: white;
+  color: ${accentfg};
 }
 
 menubutton.destructive-action {
@@ -1546,7 +1546,7 @@ splitbutton.flat > menubutton > button {
 
 splitbutton.suggested-action {
   background-color: ${accent};
-  color: white;
+  color: ${accentfg};
 }
 
 splitbutton.destructive-action {
@@ -1684,7 +1684,7 @@ list > row button.image-button:not(.flat):checked {
 
 list > row button.image-button:not(.flat).suggested-action {
   background-color: ${accent};
-  color: apha(${fg}, 0.87);
+  color: apha(${accentfg}, 0.87);
 }
 
 
@@ -2291,7 +2291,7 @@ headerbar switch {
 headerbar.selection-mode {
   transition: background-color 0.1ms 225ms, color 75ms cubic-bezier(0, 0, 0.2, 1);
   background-color: ${accent};
-  color: apha(${fg}, 0.87);
+  color: apha(${accentfg}, 0.87);
 }
 
 headerbar.selection-mode:backdrop {
@@ -3595,7 +3595,7 @@ radio:disabled {
 check:checked, check:indeterminate,
 radio:checked,
 radio:indeterminate {
-  color: apha(${fg}, 0.87);
+  color: apha(${accentfg}, 0.87);
   background-color: ${accent};
 }
 
@@ -3603,7 +3603,7 @@ check:checked:hover, check:indeterminate:hover,
 radio:checked:hover,
 radio:indeterminate:hover {
   box-shadow: 0 0 0 6px apha(${accent}, 0.15);
-  background-color: #e2cffa;
+  background-color: ${magenta};
 }
 
 check:checked:active, check:indeterminate:active,
@@ -3616,7 +3616,7 @@ radio:indeterminate:active {
 check:checked:disabled, check:indeterminate:disabled,
 radio:checked:disabled,
 radio:indeterminate:disabled {
-  color: apha(${fg}, 0.6);
+  color: apha(${accentfg}, 0.6);
   background-color: apha(${accent}, 0.35);
 }
 
@@ -3763,7 +3763,7 @@ columnview.view:selected check:checked,
 columnview.view:selected radio:checked,
 columnview.view:focus check:checked,
 columnview.view:focus radio:checked {
-  color: apha(${fg}, 0.87);
+  color: apha(${accentfg}, 0.87);
   background-color: ${accent};
 }
 
@@ -3818,7 +3818,7 @@ scale > trough > slider {
   margin: -8px;
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
   border-radius: 9999px;
-  color: ${accent};
+  color: ${accentfg};
   background-color: ${bg};
   box-shadow: inset 0 0 0 2px ${accent};
 }
@@ -4928,7 +4928,7 @@ columnview row:not(:selected) cell editablelabel.editing:focus-within {
 }
 
 columnview row:not(:selected) cell editablelabel.editing text selection {
-  color: apha(${fg}, 0.87);
+  color: apha(${accentfg}, 0.87);
   background-color: ${accent};
 }
 
@@ -5339,7 +5339,8 @@ placessidebar row.sidebar-new-bookmark-row image.sidebar-icon {
 }
 
 placessidebar row:drop(active) {
-  background-color: alpha(currentColor, 0.08);
+  /*background-color: alpha(currentColor, 0.08);*/
+  background-color: ${accent};
 }
 
 placesview .server-list-button > image {
@@ -5452,7 +5453,7 @@ infobar.info > revealer > box button.text-button:not(:disabled):not(.suggested-a
 
 infobar.action > revealer > box, infobar.action:backdrop > revealer > box, infobar.question > revealer > box, infobar.question:backdrop > revealer > box {
   background-color: ${accent};
-  color: apha(${fg}, 0.87);
+  color: apha(${accentfg}, 0.87);
 }
 
 infobar.action > revealer > box button, infobar.action > revealer > box button:hover, infobar.action > revealer > box button:focus, infobar.action > revealer > box button:active, infobar.action > revealer > box button:checked, infobar.action > revealer > box button.text-button:not(:disabled), infobar.action:backdrop > revealer > box button, infobar.action:backdrop > revealer > box button:hover, infobar.action:backdrop > revealer > box button:focus, infobar.action:backdrop > revealer > box button:active, infobar.action:backdrop > revealer > box button:checked, infobar.action:backdrop > revealer > box button.text-button:not(:disabled), infobar.question > revealer > box button, infobar.question > revealer > box button:hover, infobar.question > revealer > box button:focus, infobar.question > revealer > box button:active, infobar.question > revealer > box button:checked, infobar.question > revealer > box button.text-button:not(:disabled), infobar.question:backdrop > revealer > box button, infobar.question:backdrop > revealer > box button:hover, infobar.question:backdrop > revealer > box button:focus, infobar.question:backdrop > revealer > box button:active, infobar.question:backdrop > revealer > box button:checked, infobar.question:backdrop > revealer > box button.text-button:not(:disabled) {
@@ -5767,7 +5768,7 @@ treeview.view:selected, calendar:selected, calendar > grid > label.day-number:se
 }
 
 flowbox > flowboxchild:selected, calendar > grid > label.today {
-  color: ${accent};
+  color: ${accentfg};
   background-color: apha(${accent}, 0.2);
 }
 
@@ -5775,7 +5776,7 @@ textview text selection:focus, textview text selection, label > selection,
 entry > text > selection, spinbutton > text > selection,
 entry headerbar popover.background entry > text > selection,
 headerbar popover.background entry entry > text > selection, calendar > grid > label.today:selected {
-  color: apha(${fg}, 0.87);
+  color: apha(${accentfg}, 0.87);
   background-color: ${accent};
 }
 
@@ -5973,13 +5974,13 @@ popover.entry-completion > contents {
   border-style: none;
   border-radius: 6px;
   background-color: ${accent};
-  color: apha(${fg}, 0.87);
-  box-shadow: 0 3px 3px -2px apha(${fg}, 0.05), 0 2px 3px -1px apha(${fg}, 0.06), 0 1px 4px 0 apha(${fg}, 0.05);
+  color: apha(${accentfg}, 0.87);
+  box-shadow: 0 3px 3px -2px apha(${accentfg}, 0.05), 0 2px 3px -1px apha(${accentfg}, 0.06), 0 1px 4px 0 apha(${accentfg}, 0.05);
 }
 
 .nautilus-window .floating-bar button {
   margin: 4px;
-  color: apha(${fg}, 0.87);
+  color: apha(${accentfg}, 0.87);
 }
 
 #NautilusQueryEditor > menubutton > button.image-button {
@@ -6260,12 +6261,12 @@ datechooser button.day dot {
 
 datechooser button.day:selected, datechooser button.day.today:selected {
   background-color: ${accent};
-  color: apha(${fg}, 0.87);
+  color: apha(${accentfg}, 0.87);
   font-weight: bold;
 }
 
 datechooser button.day:selected dot, datechooser button.day.today:selected dot {
-  background-color: apha(${fg}, 0.87);
+  background-color: apha(${accentfg}, 0.87);
 }
 
 datechooser button.day.today {
@@ -6373,7 +6374,7 @@ monthcell.today {
 
 monthcell.today:hover {
   background-color: alpha(${accent}, 0.3);
-  color: ${accent};
+  color: ${accentfg};
 }
 
 monthcell.today:selected {
@@ -6506,8 +6507,8 @@ menubutton stack > box {
   font-size: smaller;
   background-color: ${accent};
   border-radius: 0;
-  color: apha(${fg}, 0.87);
-  text-shadow: 0 1px 0 apha(${fg}, 0.2);
+  color: apha(${accentfg}, 0.87);
+  text-shadow: 0 1px 0 apha(${accentfg}, 0.2);
 }
 
 screenshot-carousel box.frame {
@@ -7418,7 +7419,7 @@ playlistview queuerow image.card {
   padding: 6px;
   border-top: 2px solid ${accent};
   background: apha(${accent}, 0.9);
-  color: apha(${fg}, 0.87);
+  color: apha(${accentfg}, 0.87);
 }
 
 .error .exit-info {
@@ -7688,7 +7689,7 @@ indicatorbin.needs-attention > indicator {
 }
 
 indicatorbin.needs-attention > indicator > label {
-  color: apha(${fg}, 0.87);
+  color: apha(${accentfg}, 0.87);
 }
 
 preferencespage > scrolledwindow > viewport > clamp > box {
@@ -7896,7 +7897,7 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
 
 .sidebar-pane banner > revealer > widget {
   background-color: gtkmix(${accent}, ${bg}, 30%);
-  color: ${fg};
+  color: ${accentfg};
 }
 
 .sidebar-pane banner > revealer > widget:backdrop {
@@ -7919,7 +7920,7 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
 .content-pane .sidebar-pane banner > revealer > widget,
 .sidebar-pane .content-pane banner > revealer > widget {
   background-color: gtkmix(${accent}, ${bg}, 30%);
-  color: ${fg};
+  color: ${accentfg};
 }
 
 .content-pane .sidebar-pane banner > revealer > widget:backdrop,
@@ -8279,7 +8280,7 @@ themeselector checkbutton.theme-selector radio:checked,
 panelthemeselector checkbutton.theme-selector radio:checked {
   -gtk-icon-size: 20px;
   -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/checkbox-checked-symbolic.svg")), -gtk-recolor(url("assets/scalable/checkbox-checked-symbolic@2.svg")));
-  color: apha(${fg}, 0.87);
+  color: apha(${accentfg}, 0.87);
   background-color: ${accent};
 }
 
@@ -8301,7 +8302,7 @@ themeswitcher .check {
   padding: 0;
   margin: 0;
   border-radius: 9999px;
-  color: apha(${fg}, 0.87);
+  color: apha(${accentfg}, 0.87);
   background-color: ${accent};
 }
 

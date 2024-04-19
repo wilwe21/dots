@@ -736,6 +736,11 @@ export default {
                 'enums': ['start', 'center', 'end'],
                 'type': 'enum',
             }),
+   	    raduis: Option(5, {
+		'unit': "px",
+		'scss': "coverradii",
+		'type': "number"
+	    }),
         },
         footer: {
             positon: Option(true),

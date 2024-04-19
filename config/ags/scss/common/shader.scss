@@ -1,5 +1,5 @@
 @mixin shader($width: 3em){
-    border-radius: max($radii - $border-width, 0);
+    /*border-radius: max($radii - $border-width, 0);*/
 
     label {
         color: $shader-fg;

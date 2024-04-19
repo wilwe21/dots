@@ -161,18 +161,20 @@
 		padding: $padding;
 	}	
 	.cover {
-		border-radius: $radii;
+		background-size: cover;
+		background-position: center;
+		border-radius: $coverradii;
         	min-height: $coverheight;
         	min-width: $coverwidth;
         	box-shadow: 2px 2px 2px 0 $shadow;
         	margin: $padding;
         	.shader {
             		background-color: transparent;
-			border-radius: $radii;
+			border-radius: $coverradii;
             		box-shadow: inset 0 0 0 0px transparentize($bg-color, 0.8);
            	}
     	}
-    	.blurred-cover, .cover {
+    	.blurred-cover {
 		background-size: cover;
 		background-position: center;
 		border-radius: $radii;
