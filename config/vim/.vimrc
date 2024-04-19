@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugins')
  Plug 'mg979/vim-visual-multi', { 'bramch': 'master' }
  Plug 'catppuccin/vim', { 'as': 'catppuccin' } 
  Plug 'cakebaker/scss-syntax.vim'
+ Plug 'gko/vim-coloresque'
  Plug 'roymanigley/get-visual-selection-vim-plugin'
 call plug#end()
 " }}}

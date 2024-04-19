@@ -11,10 +11,10 @@ help() {
 	echo "-C set cursor theme"
 }
 upags() {
-	cp /tmp/ags/gtktheme /usr/share/themes/ags/gtk-3.0/gtk.css
-	cp /tmp/ags/gtktheme /usr/share/themes/ags/gtk-3.0/gtk-dark.css
-	cp /tmp/ags/gtktheme /usr/share/themes/ags/gtk-4.0/gtk.css
-	cp /tmp/ags/gtktheme /usr/share/themes/ags/gtk-4.0/gtk-dark.css
+	cp /tmp/ags/gtk3 /usr/share/themes/ags/gtk-3.0/gtk.css
+	cp /tmp/ags/gtk3 /usr/share/themes/ags/gtk-3.0/gtk-dark.css
+	cp /tmp/ags/gtk4 /usr/share/themes/ags/gtk-4.0/gtk.css
+	cp /tmp/ags/gtk4 /usr/share/themes/ags/gtk-4.0/gtk-dark.css
 }
 THEME="ags"
 ICONS="Catppuccin-Macchiato"
