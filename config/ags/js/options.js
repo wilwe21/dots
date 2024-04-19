@@ -736,7 +736,7 @@ export default {
                 'enums': ['start', 'center', 'end'],
                 'type': 'enum',
             }),
-   	    raduis: Option(5, {
+   	    raduis: Option(7, {
 		'unit': "px",
 		'scss': "coverradii",
 		'type': "number"
