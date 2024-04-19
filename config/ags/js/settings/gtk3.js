@@ -45,7 +45,7 @@ export default (red, green, yellow, blue, magenta, teal, orange, accent, accentf
 
 .thunar .standard-view.frame widget.view:selected, XfdesktopIconView.view:active, calendar.raven-calendar:selected, box.vertical > widget > widget:selected, calendar:selected, .csd treeview.view:selected, modelbutton.flat:selected,
 .menuitem.button.flat:selected, .background.csd .view:selected {
-  color: ${bg};
+  color: ${fg};
   background-color: alpha(currentColor, 0.1);
 }
 
@@ -56,7 +56,7 @@ export default (red, green, yellow, blue, magenta, teal, orange, accent, accentf
 
 .nemo-window .nemo-window-pane widget.entry:selected, window.background.csd evview.view.content-view:selected, window.background.csd evview.view.content-view:selected:backdrop, .nautilus-window.background.csd notebook widget.view:selected, spinbutton.vertical selection, spinbutton:not(.vertical) selection,
 entry selection, textview text selection:focus, textview text selection, widget.view:selected, .view:selected {
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
   background-color: ${accent};
 }
 
@@ -101,7 +101,7 @@ entry selection, textview text selection:focus, textview text selection, widget.
  ***************/
 .background {
   background-color: ${bg};
-  color: ${bg};
+  color: ${fg};
 }
 
 .background.csd {
@@ -118,32 +118,32 @@ entry selection, textview text selection:focus, textview text selection, widget.
 
 .gtkstyle-fallback {
   background-color: ${bg};
-  color: ${bg};
+  color: ${fg};
 }
 
 .gtkstyle-fallback:hover {
   background-color: ${bg};
-  color: ${bg};
+  color: ${fg};
 }
 
 .gtkstyle-fallback:active {
   background-color: ${bg};
-  color: ${bg};
+  color: ${fg};
 }
 
 .gtkstyle-fallback:disabled {
   background-color: ${bg};
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 .gtkstyle-fallback:selected {
   background-color: ${accent};
-  color: alpha(${bg}, 0.87);
+  color: alpha(${accentfg}, 0.87);
 }
 
 .view {
   background-color: ${bg};
-  color: ${bg};
+  color: ${fg};
 }
 
 .view:hover {
@@ -151,7 +151,7 @@ entry selection, textview text selection:focus, textview text selection, widget.
 }
 
 .view:disabled {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 .view:selected:hover {
@@ -168,7 +168,7 @@ textview text {
 
 textview border {
   background-color: ${bg};
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 iconview:hover, iconview:selected {
@@ -356,7 +356,7 @@ XfdesktopIconView.view flowbox treeview.view flowbox .content-view .rubberband {
 flowbox flowboxchild {
   padding: 3px;
   border-radius: 6px;
-  color: ${bg};
+  color: ${fg};
 }
 
 flowbox flowboxchild button.osd.remove-button {
@@ -375,11 +375,11 @@ label {
 }
 
 label.separator {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 label:disabled {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 headerbar label:disabled, tab label:disabled, button label:disabled {
@@ -389,11 +389,11 @@ headerbar label:disabled, tab label:disabled, button label:disabled {
 label.osd {
   border-radius: 6px;
   background-color: alpha(${bg}, 0.9);
-  color: ${bg};
+  color: ${fg};
 }
 
 .dim-label {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 assistant .sidebar {
@@ -403,12 +403,12 @@ assistant .sidebar {
 assistant .sidebar label {
   min-height: 36px;
   padding: 0 12px;
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
   font-weight: 500;
 }
 
 assistant .sidebar label.highlight {
-  color: ${bg};
+  color: ${fg};
 }
 
 /*********************
@@ -447,7 +447,7 @@ entry {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 0 0 2px transparent;
   background-color: alpha(${bg}, 0.08);
-  color: ${bg};
+  color: ${fg};
 }
 
 spinbutton.vertical:focus, spinbutton:focus:not(.vertical),
@@ -466,7 +466,7 @@ spinbutton.vertical:disabled, spinbutton:disabled:not(.vertical),
 entry:disabled {
   box-shadow: inset 0 0 0 2px transparent;
   background-color: alpha(${bg}, 0.08);
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 spinbutton.flat.vertical, spinbutton.flat:not(.vertical),
@@ -479,18 +479,18 @@ entry.flat {
 
 spinbutton.vertical image, spinbutton:not(.vertical) image,
 entry image {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 spinbutton.vertical image:hover, spinbutton:not(.vertical) image:hover, spinbutton.vertical image:active, spinbutton:not(.vertical) image:active,
 entry image:hover,
 entry image:active {
-  color: ${bg};
+  color: ${fg};
 }
 
 spinbutton.vertical image:disabled, spinbutton:not(.vertical) image:disabled,
 entry image:disabled {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 spinbutton.vertical image.left, spinbutton:not(.vertical) image.left,
@@ -536,7 +536,7 @@ entry.error {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 0 0 2px transparent;
   background-color: alpha(${bg}, 0.08);
-  color: ${bg};
+  color: ${fg};
 }
 
 spinbutton.error.vertical:focus, spinbutton.error:focus:not(.vertical),
@@ -549,7 +549,7 @@ spinbutton.error.vertical:disabled, spinbutton.error:disabled:not(.vertical),
 entry.error:disabled {
   box-shadow: inset 0 0 0 2px transparent;
   background-color: alpha(${bg}, 0.08);
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 spinbutton.warning.vertical, spinbutton.warning:not(.vertical),
@@ -557,7 +557,7 @@ entry.warning {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 0 0 2px transparent;
   background-color: alpha(${bg}, 0.08);
-  color: ${bg};
+  color: ${fg};
 }
 
 spinbutton.warning.vertical:focus, spinbutton.warning:focus:not(.vertical),
@@ -570,7 +570,7 @@ spinbutton.warning.vertical:disabled, spinbutton.warning:disabled:not(.vertical)
 entry.warning:disabled {
   box-shadow: inset 0 0 0 2px transparent;
   background-color: alpha(${bg}, 0.08);
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 spinbutton.vertical progress, spinbutton:not(.vertical) progress,
@@ -594,7 +594,7 @@ treeview entry.flat, treeview entry.flat:focus, treeview entry, treeview entry:f
   border-radius: 9999px;
   box-shadow: none;
   background-color: alpha(${bg}, 0.12);
-  color: ${bg};
+  color: ${fg};
 }
 
 .entry-tag:hover, .photos-entry-tag:hover, .documents-entry-tag:hover {
@@ -621,7 +621,7 @@ treeview entry.flat, treeview entry.flat:focus, treeview entry, treeview entry:f
 }
 
 .entry-tag.button:not(:hover):not(:active), .button.photos-entry-tag:not(:hover):not(:active), .button.documents-entry-tag:not(:hover):not(:active) {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 /***********
@@ -637,19 +637,19 @@ treeview entry.flat, treeview entry.flat:focus, treeview entry, treeview entry:f
 }
 
 .raven-mpris button.image-button, .mate-panel-menu-bar button, infobar.warning > revealer > box button, infobar.warning:backdrop > revealer > box button {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .raven-mpris button.image-button:focus, .mate-panel-menu-bar button:focus, infobar.warning > revealer > box button:focus, .raven-mpris button.image-button:hover, .mate-panel-menu-bar button:hover, infobar.warning > revealer > box button:hover, .raven-mpris button.image-button:active, .mate-panel-menu-bar button:active, infobar.warning > revealer > box button:active, .raven-mpris button.image-button:checked, .mate-panel-menu-bar button:checked, infobar.warning > revealer > box button:checked {
-  color: ${bg};
+  color: ${fg};
 }
 
 .raven-mpris button.image-button:disabled, .mate-panel-menu-bar button:disabled, infobar.warning > revealer > box button:disabled {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 .raven-mpris button.image-button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, infobar.warning > revealer > box button:checked:disabled {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 actionbar > revealer > box .linked > button:not(.suggested-action):not(.destructive-action), button {
@@ -661,7 +661,7 @@ actionbar > revealer > box .linked > button:not(.suggested-action):not(.destruct
   background-repeat: no-repeat;
   background-position: center;
   background-size: 1000% 1000%;
-  color: ${bg};
+  color: ${fg};
 }
 
 actionbar > revealer > box .linked > button:focus:not(.suggested-action):not(.destructive-action), button:focus {
@@ -683,12 +683,12 @@ actionbar > revealer > box .linked > button:active:not(.suggested-action):not(.d
 actionbar > revealer > box .linked > button:disabled:not(.suggested-action):not(.destructive-action), button:disabled {
   box-shadow: none;
   background-color: alpha(${bg}, 0.04);
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 actionbar > revealer > box .linked > button:checked:not(.suggested-action):not(.destructive-action), button:checked {
   background-color: ${accent};
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
 }
 
 actionbar > revealer > box .linked > button:checked:hover:not(.suggested-action):not(.destructive-action), button:checked:hover {
@@ -698,7 +698,7 @@ actionbar > revealer > box .linked > button:checked:hover:not(.suggested-action)
 actionbar > revealer > box .linked > button:checked:disabled:not(.suggested-action):not(.destructive-action), button:checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: alpha(${bg}, 0.04);
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 .raven-notifications-group list > row button.flat, .raven .expander-button, .budgie-popover button.flat.switcher, window.background > box.vertical > toolbar.primary-toolbar > toolitem > box.horizontal:not(.linked) > button.toggle,
@@ -750,7 +750,7 @@ popover.background button.model, .nemo-window .primary-toolbar button:not(.text-
   background-repeat: no-repeat;
   background-position: center;
   background-size: 1000% 1000%;
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .budgie-session-dialog buttonbox.linked > button:focus,
@@ -760,7 +760,7 @@ popover.background button.model, .nemo-window .primary-toolbar button:not(.text-
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:focus, layouttabbar button:focus, filechooser #pathbarbox > stack > box > button:focus, messagedialog .dialog-action-box button:focus, messagedialog .dialog-action-box .linked:not(.vertical) > button:focus, .app-notification button:focus, actionbar > revealer > box button:focus:not(.suggested-action):not(.destructive-action), popover.background.menu button:focus,
 popover.background button.model:focus, .nemo-window .primary-toolbar button:focus:not(.text-button), headerbar button:focus:not(.suggested-action):not(.destructive-action), toolbar button:focus, combobox > .linked:not(.vertical) > button:focus:not(:only-child), button.flat:focus {
   box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
-  color: ${bg};
+  color: ${fg};
 }
 
 .budgie-session-dialog buttonbox.linked > button:hover,
@@ -770,7 +770,7 @@ popover.background button.model:focus, .nemo-window .primary-toolbar button:focu
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:hover, layouttabbar button:hover, filechooser #pathbarbox > stack > box > button:hover, messagedialog .dialog-action-box button:hover, messagedialog .dialog-action-box .linked:not(.vertical) > button:hover, .app-notification button:hover, actionbar > revealer > box button:hover:not(.suggested-action):not(.destructive-action), popover.background.menu button:hover,
 popover.background button.model:hover, .nemo-window .primary-toolbar button:hover:not(.text-button), headerbar button:hover:not(.suggested-action):not(.destructive-action), toolbar button:hover, combobox > .linked:not(.vertical) > button:hover:not(:only-child), button.flat:hover {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
-  color: ${bg};
+  color: ${fg};
 }
 
 .budgie-session-dialog buttonbox.linked > button:active,
@@ -784,7 +784,7 @@ popover.background button.model:active, .nemo-window .primary-toolbar button:act
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
   background-image: radial-gradient(circle, alpha(currentColor, 0.12) 10%, transparent 0%);
   background-size: 0% 0%;
-  color: ${bg};
+  color: ${fg};
 }
 
 .budgie-session-dialog buttonbox.linked > button:disabled,
@@ -795,21 +795,21 @@ window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded 
 popover.background button.model:disabled, .nemo-window .primary-toolbar button:disabled:not(.text-button), headerbar button:disabled:not(.suggested-action):not(.destructive-action), toolbar button:disabled, combobox > .linked:not(.vertical) > button:disabled:not(:only-child), button.flat:disabled {
   box-shadow: none;
   background-color: transparent;
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 .nemo-window .toolbar button:checked, #buttonbox_frame button:checked, .xfce4-panel.background button:checked, .raven stackswitcher.linked > button:checked, .budgie-popover.budgie-menu scrolledwindow.sidebar.categories button.flat.radio.category-button:checked, .lock-dialog button:checked, .mate-panel-menu-bar button:checked, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:checked,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:checked, layouttabbar button:checked, filechooser #pathbarbox > stack > box > button:checked, messagedialog .dialog-action-box button:checked, messagedialog .dialog-action-box .linked:not(.vertical) > button:checked, .app-notification button:checked, actionbar > revealer > box button:checked:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked,
 popover.background button.model:checked, .nemo-window .primary-toolbar button:checked:not(.text-button), headerbar button:checked:not(.suggested-action):not(.destructive-action), toolbar button:checked, combobox > .linked:not(.vertical) > button:checked:not(:only-child), button.flat:checked, button.flat:checked:hover {
   background-color: alpha(currentColor, 0.1);
-  color: ${bg};
+  color: ${fg};
 }
 
 .nemo-window .toolbar button:checked:disabled, #buttonbox_frame button:checked:disabled, .xfce4-panel.background button:checked:disabled, .raven stackswitcher.linked > button:checked:disabled, .budgie-popover.budgie-menu scrolledwindow.sidebar.categories button.flat.radio.category-button:checked:disabled, .lock-dialog button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:checked:disabled,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:checked:disabled, layouttabbar button:checked:disabled, filechooser #pathbarbox > stack > box > button:checked:disabled, messagedialog .dialog-action-box button:checked:disabled, .app-notification button:checked:disabled, actionbar > revealer > box button:checked:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked:disabled,
 popover.background button.model:checked:disabled, .nemo-window .primary-toolbar button:checked:disabled:not(.text-button), headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), toolbar button:checked:disabled, combobox > .linked:not(.vertical) > button:checked:disabled:not(:only-child), button.flat:checked:disabled {
   background-color: alpha(currentColor, 0.1);
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 button.text-button {
@@ -858,7 +858,7 @@ button.osd {
   min-width: 24px;
   padding: 6px;
   background-color: ${bg};
-  color: ${bg};
+  color: ${fg};
 }
 
 button.osd:focus {
@@ -867,12 +867,12 @@ button.osd:focus {
 
 button.osd:hover {
   background-color: ${bg};
-  color: ${bg};
+  color: ${fg};
 }
 
 button.osd:active {
   background-color: ${bg};
-  color: ${bg};
+  color: ${fg};
 }
 
 button.osd:disabled {
@@ -889,14 +889,14 @@ button.osd.image-button > image, button.osd.circular > image {
 
 button.suggested-action {
   background-color: ${accent};
-  color: alpha(${bg}, 0.87);
+  color: alpha(${accentfg}, 0.87);
   box-shadow: none;
 }
 
 button.suggested-action:disabled {
   box-shadow: none;
   background-color: alpha(${bg}, 0.04);
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 button.suggested-action:hover {
@@ -923,7 +923,7 @@ button.suggested-action.flat {
 button.suggested-action.flat:disabled {
   box-shadow: none;
   background-color: transparent;
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 button.suggested-action.flat:checked {
@@ -932,14 +932,14 @@ button.suggested-action.flat:checked {
 
 button.destructive-action {
   background-color: ${red};
-  color: ${bg};
+  color: ${fg};
   box-shadow: none;
 }
 
 button.destructive-action:disabled {
   box-shadow: none;
   background-color: alpha(${bg}, 0.04);
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 button.destructive-action:hover {
@@ -966,7 +966,7 @@ button.destructive-action.flat {
 button.destructive-action.flat:disabled {
   box-shadow: none;
   background-color: transparent;
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 button.destructive-action.flat:checked {
@@ -1016,7 +1016,7 @@ modelbutton.flat,
   min-height: 28px;
   padding: 0 8px;
   border-radius: 6px;
-  color: ${bg};
+  color: ${fg};
 }
 
 modelbutton.flat arrow.left {
@@ -1078,7 +1078,7 @@ spinbutton:not(.vertical) button {
 
 spinbutton:not(.vertical) button:focus:not(:hover):not(:active):not(:disabled) {
   box-shadow: inset 0 0 0 9999px transparent;
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 spinbutton:not(.vertical) button.up:dir(ltr), spinbutton:not(.vertical) button.down:dir(rtl) {
@@ -1094,7 +1094,7 @@ spinbutton.vertical {
 }
 
 spinbutton.vertical:disabled {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 spinbutton.vertical entry {
@@ -1115,7 +1115,7 @@ spinbutton.vertical button {
 
 spinbutton.vertical button:focus:not(:hover):not(:active) {
   box-shadow: inset 0 0 0 9999px transparent;
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 spinbutton.vertical button.up {
@@ -1220,7 +1220,7 @@ button.combo:only-child {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 0 0 2px transparent;
   background-color: alpha(${bg}, 0.08);
-  color: ${bg};
+  color: ${fg};
 }
 
 button.combo:only-child:focus {
@@ -1241,7 +1241,7 @@ button.combo:only-child:checked {
 button.combo:only-child:disabled {
   box-shadow: inset 0 0 0 2px transparent;
   background-color: alpha(${bg}, 0.08);
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 /************
@@ -1354,7 +1354,7 @@ searchbar > revealer > box {
  * Header bars *
  ***************/
 .nemo-window .primary-toolbar button:not(.text-button), headerbar button:not(.suggested-action):not(.destructive-action) {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .nemo-window .primary-toolbar .linked:not(.vertical) > button:not(.text-button), headerbar .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
@@ -1362,78 +1362,78 @@ searchbar > revealer > box {
 }
 
 .nemo-window .primary-toolbar button:focus:not(.text-button), headerbar button:focus:not(.suggested-action):not(.destructive-action), .nemo-window .primary-toolbar button:hover:not(.text-button), headerbar button:hover:not(.suggested-action):not(.destructive-action), .nemo-window .primary-toolbar button:active:not(.text-button), headerbar button:active:not(.suggested-action):not(.destructive-action), .nemo-window .primary-toolbar button:checked:not(.text-button), headerbar button:checked:not(.suggested-action):not(.destructive-action) {
-  color: ${bg};
+  color: ${fg};
 }
 
 .nemo-window .primary-toolbar button:disabled:not(.text-button), headerbar button:disabled:not(.suggested-action):not(.destructive-action) {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 .nemo-window .primary-toolbar button:checked:disabled:not(.text-button), headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action) {
   background-color: transparent;
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 .nemo-window .primary-toolbar button:backdrop:not(.text-button), headerbar button:backdrop:not(.suggested-action):not(.destructive-action) {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 .nemo-window .primary-toolbar button:backdrop:focus:not(.text-button), headerbar button:backdrop:focus:not(.suggested-action):not(.destructive-action), .nemo-window .primary-toolbar button:backdrop:hover:not(.text-button), headerbar button:backdrop:hover:not(.suggested-action):not(.destructive-action), .nemo-window .primary-toolbar button:backdrop:active:not(.text-button), headerbar button:backdrop:active:not(.suggested-action):not(.destructive-action) {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .nemo-window .primary-toolbar button:backdrop:disabled:not(.text-button), headerbar button:backdrop:disabled:not(.suggested-action):not(.destructive-action) {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 .nemo-window .primary-toolbar button:backdrop:checked:not(.text-button), headerbar button:backdrop:checked:not(.suggested-action):not(.destructive-action) {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .nemo-window .primary-toolbar button:backdrop:checked:disabled:not(.text-button), headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action) {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 .nemo-window .primary-toolbar entry, .titlebar entry {
   background-color: alpha(${bg}, 0.04);
-  color: ${bg};
+  color: ${fg};
 }
 
 .nemo-window .primary-toolbar entry:disabled, .titlebar entry:disabled {
   background-color: alpha(${bg}, 0.04);
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 .nemo-window .primary-toolbar entry image, .titlebar entry image {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .nemo-window .primary-toolbar entry image:hover, .titlebar entry image:hover, .nemo-window .primary-toolbar entry image:active, .titlebar entry image:active {
-  color: ${bg};
+  color: ${fg};
 }
 
 .nemo-window .primary-toolbar entry image:disabled, .titlebar entry image:disabled {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 .titlebar {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
   background-color: ${bg};
-  color: ${bg};
+  color: ${fg};
   border-radius: 12px 12px 0 0;
   box-shadow: inset 0 -1px alpha(${bg}, 0.12);
 }
 
 .titlebar:disabled {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 .titlebar:backdrop {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .titlebar:backdrop:disabled {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 .csd .titlebar:backdrop {
@@ -1453,12 +1453,12 @@ searchbar > revealer > box {
 .titlebar .subtitle,
 .titlebar .dim-label {
   transition: color 75ms cubic-bezier(0, 0, 0.2, 1);
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .titlebar .subtitle:backdrop,
 .titlebar .dim-label:backdrop {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 .titlebar .titlebar {
@@ -1497,7 +1497,7 @@ searchbar > revealer > box {
 
 .titlebar button.suggested-action:disabled, .titlebar button.destructive-action:disabled {
   background-color: alpha(${bg}, 0.04);
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 .titlebar .path-bar button:not(.suggested-action):not(.destructive-action).text-button {
@@ -1510,49 +1510,49 @@ searchbar > revealer > box {
   transition: background-color 0.1ms 225ms, color 75ms cubic-bezier(0, 0, 0.2, 1);
   animation: ripple-on-headerbar 225ms cubic-bezier(0, 0, 0.2, 1);
   background-color: ${accent};
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
   box-shadow: inset 0 -1px alpha(${bg}, 0.12);
 }
 
 .titlebar.selection-mode:backdrop {
-  color: alpha(${bg}, 0.6);
+  color: alpha(${fg}, 0.6);
   background-color: ${accent};
 }
 
 .titlebar.selection-mode .subtitle:link {
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
 }
 
 .titlebar.selection-mode button:not(.suggested-action):not(.destructive-action) {
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
 }
 
 .titlebar.selection-mode button:not(.suggested-action):not(.destructive-action):disabled {
-  color: alpha(${bg}, 0.38);
+  color: alpha(${fg}, 0.38);
 }
 
 .titlebar.selection-mode button:not(.suggested-action):not(.destructive-action):checked {
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
 }
 
 .titlebar.selection-mode button:not(.suggested-action):not(.destructive-action):checked:disabled {
-  color: alpha(${bg}, 0.38);
+  color: alpha(${fg}, 0.38);
 }
 
 .titlebar.selection-mode button:not(.suggested-action):not(.destructive-action):backdrop:not(.titlebutton) {
-  color: alpha(${bg}, 0.6);
+  color: alpha(${fg}, 0.6);
 }
 
 .titlebar.selection-mode button:not(.suggested-action):not(.destructive-action):backdrop:disabled {
-  color: alpha(${bg}, 0.3);
+  color: alpha(${fg}, 0.3);
 }
 
 .titlebar.selection-mode button:not(.suggested-action):not(.destructive-action):backdrop:checked {
-  color: alpha(${bg}, 0.6);
+  color: alpha(${fg}, 0.6);
 }
 
 .titlebar.selection-mode button:not(.suggested-action):not(.destructive-action):backdrop:checked:disabled {
-  color: alpha(${bg}, 0.3);
+  color: alpha(${fg}, 0.3);
 }
 
 .titlebar.selection-mode .selection-menu {
@@ -1728,7 +1728,7 @@ headerbar.windowhandle viewswitchertitle > squeezer > viewswitcher > box.horizon
 .caja-pathbar button:checked,
 .path-bar.linked:not(.vertical) > button:checked {
   background-color: alpha(currentColor, 0.16);
-  color: ${bg};
+  color: ${fg};
 }
 
 .caja-pathbar button label, .caja-pathbar button image,
@@ -1767,12 +1767,12 @@ treeview.view {
 
 treeview.view:selected {
   background-color: ${bg};
-  color: ${bg};
+  color: ${fg};
 }
 
 treeview.view.separator {
   min-height: 6px;
-  color: alpha(${bg}, 0.12);
+  color: alpha(${fg}, 0.12);
 }
 
 treeview.view:drop(active) {
@@ -1792,7 +1792,7 @@ treeview.view:drop(active).before {
 treeview.view.expander {
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
   -gtk-icon-transform: rotate(-90deg);
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 treeview.view.expander:dir(rtl) {
@@ -1804,11 +1804,11 @@ treeview.view.expander:checked {
 }
 
 treeview.view.expander:hover, treeview.view.expander:active {
-  color: ${bg};
+  color: ${fg};
 }
 
 treeview.view.expander:disabled {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 treeview.view.progressbar {
@@ -1817,21 +1817,21 @@ treeview.view.progressbar {
   background-color: ${accent};
   background-image: none;
   border-radius: 9999px;
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
 }
 
 treeview.view.progressbar:selected, treeview.view.progressbar:selected:hover, treeview.view.progressbar:selected:focus {
   box-shadow: none;
   background-color: ${accent};
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
 }
 
 treeview.view.progressbar:selected:backdrop, treeview.view.progressbar:selected:hover:backdrop, treeview.view.progressbar:selected:focus:backdrop {
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
 }
 
 treeview.view.progressbar:backdrop, treeview.view.progressbar:selected:backdrop {
-  background-color: alpha(${bg}, 0.3);
+  background-color: alpha(${fg}, 0.3);
 }
 
 treeview.view.trough {
@@ -1863,7 +1863,7 @@ treeview.view header button {
 }
 
 treeview.view header button:not(:focus):not(:hover):not(:active) {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 treeview.view header button, treeview.view header button:disabled {
@@ -1899,13 +1899,13 @@ menubar,
   -GtkWidget-window-dragging: true;
   padding: 0;
   background-color: ${bg};
-  color: ${bg};
+  color: ${fg};
   box-shadow: inset 0 -1px alpha(${bg}, 0.12);
 }
 
 menubar:backdrop,
 .menubar:backdrop {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
   background-color: ${bg};
 }
 
@@ -1918,7 +1918,7 @@ menubar > menuitem,
   transition: none;
   min-height: 20px;
   padding: 4px 8px;
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
   border-radius: 6px;
 }
 
@@ -1926,17 +1926,17 @@ menubar > menuitem:hover,
 .menubar > menuitem:hover {
   transition: none;
   background-color: alpha(currentColor, 0.1);
-  color: ${bg};
+  color: ${fg};
 }
 
 menubar > menuitem:backdrop,
 .menubar > menuitem:backdrop {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 menubar > menuitem:disabled,
 .menubar > menuitem:disabled {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 menubar > menuitem label:disabled,
@@ -1972,7 +1972,7 @@ menu menuitem {
   min-height: 20px;
   min-width: 40px;
   padding: 4px 8px;
-  color: ${bg};
+  color: ${fg};
   font: initial;
   text-shadow: none;
   border-radius: 6px;
@@ -1987,15 +1987,15 @@ menu menuitem:active {
 }
 
 menu menuitem:disabled {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 menu menuitem accelerator {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 menu menuitem:disabled accelerator {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 menu menuitem arrow {
@@ -2026,7 +2026,7 @@ menu > arrow {
   min-width: 16px;
   padding: 4px;
   background-color: ${bg};
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 menu > arrow.top {
@@ -2044,7 +2044,7 @@ menu > arrow.bottom {
 
 menu > arrow:hover {
   background-image: image(alpha(currentColor, 0.08));
-  color: ${bg};
+  color: ${fg};
 }
 
 menu > arrow:disabled {
@@ -2150,29 +2150,29 @@ tabbox > tab, notebook > header tab {
   border: none;
   outline: none;
   background-clip: padding-box;
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
   font-weight: 500;
   border-radius: 6px;
 }
 
 tabbox > tab:hover, notebook > header tab:hover {
   background-color: alpha(${bg}, 0.04);
-  color: ${bg};
+  color: ${fg};
 }
 
 tabbox > tab:disabled, notebook > header tab:disabled {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 tabbox > tab:checked, notebook > header tab:checked {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
   background-color: alpha(${bg}, 0.15);
-  color: ${bg};
+  color: ${fg};
   box-shadow: 0 1px 3px alpha(${bg}, 0.1);
 }
 
 tabbox > tab:checked:disabled, notebook > header tab:checked:disabled {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 notebook {
@@ -2268,7 +2268,7 @@ notebook > header tab > box {
 
 notebook > header tab > box:drop(active) {
   background-color: alpha(${bg}, 0.12);
-  color: ${bg};
+  color: ${fg};
 }
 
 notebook > header tab button.flat:last-child {
@@ -2590,7 +2590,7 @@ radio:disabled {
 check:checked, check:indeterminate,
 radio:checked,
 radio:indeterminate {
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
   background-color: ${accent};
 }
 
@@ -2611,7 +2611,7 @@ radio:indeterminate:active {
 check:checked:disabled, check:indeterminate:disabled,
 radio:checked:disabled,
 radio:indeterminate:disabled {
-  color: alpha(${bg}, 0.38);
+  color: alpha(${fg}, 0.38);
   background-color: alpha(${accent}, 0.35);
 }
 
@@ -2727,7 +2727,7 @@ treeview.view radio, treeview.view radio:hover, treeview.view radio:disabled, tr
 
 treeview.view radio:checked, treeview.view radio:indeterminate, treeview.view check:checked, treeview.view check:indeterminate, treeview.view:hover radio:checked, treeview.view:hover radio:indeterminate, treeview.view:hover check:checked, treeview.view:hover check:indeterminate, treeview.view:selected radio:checked, treeview.view:selected radio:indeterminate, treeview.view:selected check:checked, treeview.view:selected check:indeterminate {
   background-color: ${accent};
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
   background-image: none;
 }
 
@@ -2820,7 +2820,7 @@ scale slider:disabled {
 
 scale marks,
 scale value {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 scale indicator {
@@ -3102,7 +3102,7 @@ scale.color.vertical:dir(rtl) slider {
  * Progress bars *
  *****************/
 progressbar {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
   font-size: smaller;
 }
 
@@ -3198,7 +3198,7 @@ printdialog paper {
   padding: 0;
   border: 1px solid alpha(${bg}, 0.12);
   background-color: ${bg};
-  color: ${bg};
+  color: ${fg};
 }
 
 printdialog .dialog-action-box {
@@ -3424,7 +3424,7 @@ row:selected {
 
 row:selected image,
 row:selected label {
-  color: ${bg};
+  color: ${fg};
 }
 
 row:selected button image,
@@ -3434,7 +3434,7 @@ row:selected button label {
 
 row:selected:disabled image,
 row:selected:disabled label {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 /*********************
@@ -3467,7 +3467,7 @@ expander title > arrow {
   min-height: 16px;
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
   -gtk-icon-transform: rotate(-90deg);
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 expander title > arrow:dir(rtl) {
@@ -3479,11 +3479,11 @@ expander title > arrow:checked {
 }
 
 expander title > arrow:hover, expander title > arrow:active {
-  color: ${bg};
+  color: ${fg};
 }
 
 expander title > arrow:disabled {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 /************
@@ -3492,11 +3492,11 @@ expander title > arrow:disabled {
 calendar {
   padding: 1px;
   border: 1px solid alpha(${bg}, 0.12);
-  color: ${bg};
+  color: ${fg};
 }
 
 calendar:disabled {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 calendar:selected {
@@ -3510,12 +3510,12 @@ calendar.header {
 }
 
 calendar.highlight {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
   font-weight: 500;
 }
 
 calendar:indeterminate {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 /***********
@@ -3651,12 +3651,12 @@ stacksidebar.sidebar row {
 
 stacksidebar.sidebar row:selected {
   background-color: ${accent};
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
   font-weight: 500;
 }
 
 stacksidebar.sidebar row:selected label, stacksidebar.sidebar row:selected image {
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
 }
 
 stacksidebar.sidebar row + row {
@@ -3674,11 +3674,11 @@ stacksidebar.sidebar row > label {
  ****************/
 row image.sidebar-icon {
   transition: color 75ms cubic-bezier(0, 0, 0.2, 1);
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 row image.sidebar-icon:disabled {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 placessidebar.sidebar > viewport.frame {
@@ -3706,7 +3706,7 @@ placessidebar.sidebar row:selected {
 }
 
 placessidebar.sidebar row:disabled {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 placessidebar.sidebar row image.sidebar-icon:dir(ltr) {
@@ -3843,11 +3843,11 @@ infobar.action > revealer > box, infobar.action:backdrop > revealer > box, infob
 }
 
 infobar.action > revealer > box, infobar.action > revealer > box link:link, infobar.action > revealer > box flowboxchild, infobar.action:backdrop > revealer > box, infobar.action:backdrop > revealer > box link:link, infobar.action:backdrop > revealer > box flowboxchild, infobar.question > revealer > box, infobar.question > revealer > box link:link, infobar.question > revealer > box flowboxchild, infobar.question:backdrop > revealer > box, infobar.question:backdrop > revealer > box link:link, infobar.question:backdrop > revealer > box flowboxchild {
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
 }
 
 infobar.action > revealer > box button, infobar.action > revealer > box button:hover, infobar.action > revealer > box button:focus, infobar.action > revealer > box button:active, infobar.action > revealer > box button:checked, infobar.action > revealer > box button.text-button:not(:disabled), infobar.action:backdrop > revealer > box button, infobar.action:backdrop > revealer > box button:hover, infobar.action:backdrop > revealer > box button:focus, infobar.action:backdrop > revealer > box button:active, infobar.action:backdrop > revealer > box button:checked, infobar.action:backdrop > revealer > box button.text-button:not(:disabled), infobar.question > revealer > box button, infobar.question > revealer > box button:hover, infobar.question > revealer > box button:focus, infobar.question > revealer > box button:active, infobar.question > revealer > box button:checked, infobar.question > revealer > box button.text-button:not(:disabled), infobar.question:backdrop > revealer > box button, infobar.question:backdrop > revealer > box button:hover, infobar.question:backdrop > revealer > box button:focus, infobar.question:backdrop > revealer > box button:active, infobar.question:backdrop > revealer > box button:checked, infobar.question:backdrop > revealer > box button.text-button:not(:disabled) {
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
 }
 
 infobar.action:hover > revealer > box, infobar.question:hover > revealer > box {
@@ -3859,11 +3859,11 @@ infobar.warning > revealer > box, infobar.warning:backdrop > revealer > box {
 }
 
 infobar.warning > revealer > box, infobar.warning > revealer > box link:link, infobar.warning > revealer > box flowboxchild, infobar.warning:backdrop > revealer > box, infobar.warning:backdrop > revealer > box link:link, infobar.warning:backdrop > revealer > box flowboxchild {
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
 }
 
 infobar.warning > revealer > box button, infobar.warning > revealer > box button:hover, infobar.warning > revealer > box button:focus, infobar.warning > revealer > box button:active, infobar.warning > revealer > box button:checked, infobar.warning > revealer > box button.text-button:not(:disabled), infobar.warning:backdrop > revealer > box button, infobar.warning:backdrop > revealer > box button:hover, infobar.warning:backdrop > revealer > box button:focus, infobar.warning:backdrop > revealer > box button:active, infobar.warning:backdrop > revealer > box button:checked, infobar.warning:backdrop > revealer > box button.text-button:not(:disabled) {
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
 }
 
 infobar.warning:hover > revealer > box {
@@ -3872,15 +3872,15 @@ infobar.warning:hover > revealer > box {
 
 infobar.error > revealer > box, infobar.error:backdrop > revealer > box {
   background-color: ${red};
-  color: ${bg};
+  color: ${fg};
 }
 
 infobar.error > revealer > box, infobar.error > revealer > box link:link, infobar.error > revealer > box flowboxchild, infobar.error:backdrop > revealer > box, infobar.error:backdrop > revealer > box link:link, infobar.error:backdrop > revealer > box flowboxchild {
-  color: ${bg};
+  color: ${fg};
 }
 
 infobar.error > revealer > box button, infobar.error > revealer > box button:hover, infobar.error > revealer > box button:focus, infobar.error > revealer > box button:active, infobar.error > revealer > box button:checked, infobar.error > revealer > box button.text-button:not(:disabled), infobar.error:backdrop > revealer > box button, infobar.error:backdrop > revealer > box button:hover, infobar.error:backdrop > revealer > box button:focus, infobar.error:backdrop > revealer > box button:active, infobar.error:backdrop > revealer > box button:checked, infobar.error:backdrop > revealer > box button.text-button:not(:disabled) {
-  color: ${bg};
+  color: ${fg};
 }
 
 infobar.error:hover > revealer > box {
@@ -3896,7 +3896,7 @@ tooltip {
 
 tooltip.background {
   background-color: alpha(${bg}, 0.9);
-  color: ${bg};
+  color: ${fg};
   border-radius: 6px;
 }
 
@@ -3959,11 +3959,11 @@ colorswatch.right overlay, colorswatch:last-child:not(.bottom) overlay {
 }
 
 colorswatch.dark {
-  color: ${bg};
+  color: ${fg};
 }
 
 colorswatch.light {
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
 }
 
 colorswatch overlay {
@@ -4133,7 +4133,7 @@ button.minimize.titlebutton:active:not(.suggested-action):not(.destructive-actio
 }
 
 button.minimize.titlebutton:hover:not(.suggested-action):not(.destructive-action), button.minimize.titlebutton:active:not(.suggested-action):not(.destructive-action), button.maximize.titlebutton:hover:not(.suggested-action):not(.destructive-action), button.maximize.titlebutton:active:not(.suggested-action):not(.destructive-action), button.close.titlebutton:hover:not(.suggested-action):not(.destructive-action), button.close.titlebutton:active:not(.suggested-action):not(.destructive-action) {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 button.minimize.titlebutton:backdrop:not(.suggested-action):not(.destructive-action), button.maximize.titlebutton:backdrop:not(.suggested-action):not(.destructive-action), button.close.titlebutton:backdrop:not(.suggested-action):not(.destructive-action) {
@@ -4141,7 +4141,7 @@ button.minimize.titlebutton:backdrop:not(.suggested-action):not(.destructive-act
 }
 
 button.minimize.titlebutton:backdrop:hover:not(.suggested-action):not(.destructive-action), button.minimize.titlebutton:backdrop:active:not(.suggested-action):not(.destructive-action), button.maximize.titlebutton:backdrop:hover:not(.suggested-action):not(.destructive-action), button.maximize.titlebutton:backdrop:active:not(.suggested-action):not(.destructive-action), button.close.titlebutton:backdrop:hover:not(.suggested-action):not(.destructive-action), button.close.titlebutton:backdrop:active:not(.suggested-action):not(.destructive-action) {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 button.minimize.titlebutton:not(.suggested-action):not(.destructive-action) {
@@ -4237,7 +4237,7 @@ cursor-handle.insertion-cursor:dir(ltr), cursor-handle.insertion-cursor:dir(rtl)
   border-radius: 7px;
   box-shadow: inset 0 -2px alpha(${bg}, 0.12);
   background-color: ${bg};
-  color: ${bg};
+  color: ${fg};
   font-size: smaller;
 }
 
@@ -4271,7 +4271,7 @@ stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destruc
 stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):checked {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
   background-color: alpha(${bg}, 0.15);
-  color: ${bg};
+  color: ${fg};
   box-shadow: 0 1px 3px alpha(${bg}, 0.06);
 }
 
@@ -4424,23 +4424,23 @@ popover.emoji-completion .emoji:hover {
   border: none;
   border-radius: 6px;
   background-color: ${accent};
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
   box-shadow: 0 3px 3px -2px alpha(${bg}, 0.05), 0 2px 3px -1px alpha(${bg}, 0.06), 0 1px 4px 0 alpha(${bg}, 0.05);
 }
 
 .nautilus-window .floating-bar button {
   margin: 4px;
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
 }
 
 .nautilus-canvas-item.dim-label,
 .nautilus-list-dim-label {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .nemo-desktop.nemo-canvas-item, .caja-desktop.caja-canvas-item,
 .nautilus-desktop.nautilus-canvas-item {
-  color: ${bg};
+  color: ${fg};
 }
 
 @keyframes nautilus-operations-button-needs-attention {
@@ -4513,7 +4513,7 @@ popover.emoji-completion .emoji:hover {
 
 .path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr):disabled, .path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl):disabled {
   background-color: transparent;
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 .windowhandle .linked.nautilus-path-bar {
@@ -4528,7 +4528,7 @@ popover.emoji-completion .emoji:hover {
 }
 
 .windowhandle .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action).current-dir {
-  color: ${bg};
+  color: ${fg};
 }
 
 .windowhandle .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action).current-dir:hover, .windowhandle .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action).current-dir:active {
@@ -4538,7 +4538,7 @@ popover.emoji-completion .emoji:hover {
 
 .disk-space-display.unknown {
   background-color: alpha(${bg}, 0.3);
-  color: alpha(${bg}, 0.3);
+  color: alpha(${fg}, 0.3);
 }
 
 .disk-space-display.used {
@@ -4548,14 +4548,14 @@ popover.emoji-completion .emoji:hover {
 
 .disk-space-display.free {
   background-color: alpha(${bg}, 0.12);
-  color: alpha(${bg}, 0.12);
+  color: alpha(${fg}, 0.12);
 }
 
 .search-information {
   padding: 2px;
   border-bottom: 1px solid alpha(${bg}, 0.12);
   background-color: ${bg};
-  color: ${bg};
+  color: ${fg};
 }
 
 .conflict-row:not(:selected) {
@@ -4618,7 +4618,7 @@ dialog.background > box.dialog-vbox.vertical > grid.horizontal > box.horizontal:
 }
 
 .nautilus-menu-sort-heading:disabled {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .nautilus-window paned > separator {
@@ -4645,13 +4645,13 @@ window.org-gnome-gedit > overlay > box.vertical > paned.gedit-side-panel-paned s
 }
 
 .open-document-selector-path-label {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
   font-size: smaller;
 }
 
 .open-document-selector-match {
   background-color: ${orange};
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
 }
 
 .gedit-document-panel {
@@ -4682,7 +4682,7 @@ window.org-gnome-gedit > overlay > box.vertical > paned.gedit-side-panel-paned s
 
 .gedit-search-slider .linked:not(.vertical) > entry .gedit-search-entry-occurrences-tag {
   all: unset;
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .gedit-search-slider .linked:not(.vertical) > entry:dir(ltr) .gedit-search-entry-occurrences-tag {
@@ -4706,15 +4706,15 @@ window.org-gnome-gedit > overlay > box.vertical > paned.gedit-side-panel-paned s
 }
 
 .gedit-search-slider .linked:not(.vertical) > entry.error ~ button {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .gedit-search-slider .linked:not(.vertical) > entry.error ~ button:hover, .gedit-search-slider .linked:not(.vertical) > entry.error ~ button:active {
-  color: ${bg};
+  color: ${fg};
 }
 
 .gedit-search-slider .linked:not(.vertical) > entry.error ~ button:disabled {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 frame.gedit-map-frame > border:dir(ltr) {
@@ -5079,7 +5079,7 @@ window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked 
   background-repeat: no-repeat;
   background-position: center;
   background-size: 1000% 1000%;
-  color: ${bg};
+  color: ${fg};
 }
 
 window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button.image-button.raised:hover {
@@ -5097,12 +5097,12 @@ window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked 
 window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button.image-button.raised:disabled {
   box-shadow: none;
   background-color: alpha(${bg}, 0.04);
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button.image-button.raised:checked {
   background-color: ${accent};
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
 }
 
 window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button.image-button.raised > widget > box > image {
@@ -5160,7 +5160,7 @@ window.background > box > .sidebar-paned > paned > box > notebook > stack > box 
 
 .polari-room-list .sidebar > row.activatable:selected {
   background-color: ${accent};
-  color: alpha(${bg}, 0.87);
+  color: alpha(${accentfg}, 0.87);
 }
 
 stack.view.polari-entry-area {
@@ -5211,11 +5211,11 @@ layout {
 
 entry.search-missing {
   background-color: ${red};
-  color: ${bg};
+  color: ${fg};
 }
 
 window.workbench treeview.image {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 popover.popover-selector list {
@@ -5247,7 +5247,7 @@ omnibar.linked:not(.vertical) entry {
 }
 
 omnibar:not(:hover):not(:active) entry {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 popover.omnibar list row:not(:last-child) {
@@ -5344,13 +5344,13 @@ docktab {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 0% 0%;
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
   font-weight: 500;
 }
 
 docktab:hover {
   background-color: alpha(currentColor, 0.08);
-  color: ${bg};
+  color: ${fg};
 }
 
 docktab:checked {
@@ -5359,7 +5359,7 @@ docktab:checked {
   background-color: transparent;
   background-image: radial-gradient(circle, transparent 10%, transparent 0%);
   background-size: 1000% 1000%;
-  color: ${bg};
+  color: ${fg};
 }
 
 dockoverlayedge {
@@ -5424,12 +5424,12 @@ button.dzlmenubutton image.arrow {
 }
 
 button.dzlmenubuttonitem {
-  color: ${bg};
+  color: ${fg};
   font-weight: normal;
 }
 
 button.dzlmenubuttonitem:disabled {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 idelayoutstackheader {
@@ -5437,7 +5437,7 @@ idelayoutstackheader {
 }
 
 idelayoutstackheader button:checked {
-  color: ${bg};
+  color: ${fg};
 }
 
 ideeditorutilities > dzldockpaned > box > stackswitcher {
@@ -5465,7 +5465,7 @@ ideeditorutilities > dzldockpaned > box > stackswitcher button:active {
 
 ideeditorutilities > dzldockpaned > box > stackswitcher button:checked {
   background-color: transparent;
-  color: ${bg};
+  color: ${fg};
 }
 
 ideeditorutilities > dzldockpaned > box > stackswitcher button:dir(ltr) {
@@ -5508,7 +5508,7 @@ GdMainIconView.content-view {
   border-radius: 9999px;
   box-shadow: 0 1px 2px 0 alpha(${bg}, 0.15), 0 3px 3px 0 alpha(${bg}, 0.18), 0 3px 6px 0 alpha(${bg}, 0.12);
   background-color: ${accent};
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
   font-weight: bold;
 }
 
@@ -5531,17 +5531,17 @@ GdMainIconView.content-view {
 }
 
 button.photos-filter-preview {
-  color: ${bg};
+  color: ${fg};
   font-weight: normal;
 }
 
 button.photos-filter-preview:checked {
   background-color: alpha(currentColor, 0.06);
-  color: ${bg};
+  color: ${fg};
 }
 
 button.photos-filter-preview:checked image {
-  color: ${bg};
+  color: ${fg};
 }
 
 overlay grid.horizontal > revealer > scrolledwindow.frame:dir(ltr) {
@@ -5803,7 +5803,7 @@ list.categories {
   padding: 0 4px;
   border-radius: 6px;
   background-color: ${bg};
-  color: ${bg};
+  color: ${fg};
 }
 
 /**************
@@ -5850,7 +5850,7 @@ window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded 
 
 window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar {
-  color: ${bg};
+  color: ${fg};
   background-color: ${bg};
   box-shadow: none;
   border-bottom: 1px solid alpha(${bg}, 0.25);
@@ -5905,7 +5905,7 @@ window#GearyMainWindow.background.csd stack#conversation_viewer .geary-composer-
 .geary-main-window.unified frame.geary-conversation-frame scrolledwindow treeview.view:selected, .geary-main-window.unified frame.geary-conversation-frame scrolledwindow treeview.view:active {
   border-radius: 6px;
   background-color: ${accent};
-  color: alpha(${bg}, 0.87);
+  color: alpha(${accentfg}, 0.87);
 }
 
 .geary-main-window.unified separator.geary-sidebar-pane-separator {
@@ -6159,12 +6159,12 @@ window.background.chromium > button {
 }
 
 window.background.chromium > button:disabled {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 window.background.chromium menubar,
 window.background.chromium headerbar {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 window.background.chromium headerbar.titlebar {
@@ -6185,7 +6185,7 @@ window.background.chromium textview.view {
 
 window.background.chromium treeview.view.cell:selected:focus {
   background-color: ${accent};
-  color: alpha(${bg}, 0.87);
+  color: alpha(${accentfg}, 0.87);
 }
 
 window.background.chromium treeview.view button {
@@ -6218,11 +6218,11 @@ tooltip.background.chromium {
 
 #MozillaGtkWidget > widget text:selected {
   background-color: ${accent};
-  color: alpha(${bg}, 0.87);
+  color: alpha(${fg}, 0.87);
 }
 
 #MozillaGtkWidget > widget > separator {
-  color: ${bg};
+  color: ${fg};
 }
 
 #MozillaGtkWidget > widget > scrollbar {
@@ -6280,18 +6280,18 @@ tooltip.background.chromium {
 
 #MozillaGtkWidget > widget > checkbutton > check:not(:checked):not(:indeterminate),
 #MozillaGtkWidget > widget > radiobutton > radio:not(:checked):not(:indeterminate) {
-  color: ${bg};
+  color: ${fg};
 }
 
 #MozillaGtkWidget > widget > checkbutton > check:not(:checked):not(:indeterminate):hover, #MozillaGtkWidget > widget > checkbutton > check:not(:checked):not(:indeterminate):active,
 #MozillaGtkWidget > widget > radiobutton > radio:not(:checked):not(:indeterminate):hover,
 #MozillaGtkWidget > widget > radiobutton > radio:not(:checked):not(:indeterminate):active {
-  color: ${bg};
+  color: ${fg};
 }
 
 #MozillaGtkWidget > widget > checkbutton > check:not(:checked):not(:indeterminate):disabled,
 #MozillaGtkWidget > widget > radiobutton > radio:not(:checked):not(:indeterminate):disabled {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 #MozillaGtkWidget menu {
@@ -6299,23 +6299,23 @@ tooltip.background.chromium {
 }
 
 #MozillaGtkWidget > widget > menubar {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 #MozillaGtkWidget > widget > menubar:hover {
-  color: ${bg};
+  color: ${fg};
 }
 
 #MozillaGtkWidget > widget > menubar:disabled {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 #MozillaGtkWidget > widget > frame {
-  color: ${bg};
+  color: ${fg};
 }
 
 #MozillaGtkWidget menu > separator {
-  color: ${bg};
+  color: ${fg};
 }
 
 window.background:not(.csd) > window > menu menuitem {
@@ -6451,22 +6451,22 @@ UnityDecoration .top {
   border-radius: 12px 12px 0 0;
   box-shadow: inset 0 1px alpha(${bg}, 0.1);
   background-color: ${bg};
-  color: ${bg};
+  color: ${fg};
 }
 
 UnityDecoration .top:backdrop {
   background-color: ${bg};
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 UnityDecoration .menuitem {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 UnityDecoration .menuitem:hover {
   box-shadow: inset 0 -2px currentColor;
   background-color: transparent;
-  color: ${bg};
+  color: ${fg};
 }
 
 .background:not(.csd) headerbar:not(.titlebar) {
@@ -6481,24 +6481,24 @@ UnityDecoration .menuitem:hover {
 UnityPanelWidget,
 .unity-panel {
   background-color: ${bg};
-  color: ${bg};
+  color: ${fg};
 }
 
 UnityPanelWidget:backdrop,
 .unity-panel:backdrop {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .unity-panel.menuitem,
 .unity-panel .menuitem {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .unity-panel.menubar.menuitem:hover,
 .unity-panel.menubar .menuitem *:hover {
   box-shadow: inset 0 -2px currentColor;
   background-color: transparent;
-  color: ${bg};
+  color: ${fg};
 }
 
 .menu IdoPlaybackMenuItem.menuitem:active {
@@ -6523,7 +6523,7 @@ UnityPanelWidget:backdrop,
 }
 
 .lightdm.menubar {
-  color: alpha(${bg}, 0.8);
+  color: alpha(${fg}, 0.8);
   background-image: none;
   background-color: alpha(${bg}, 0.5);
 }
@@ -6536,7 +6536,7 @@ UnityPanelWidget:backdrop,
   background-color: ${bg};
   border-radius: 0;
   padding: 0;
-  color: ${bg};
+  color: ${fg};
 }
 
 /**************
@@ -6549,7 +6549,7 @@ UnityPanelWidget:backdrop,
 
 .mate-panel-menu-bar {
   background-color: ${bg};
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
   font-weight: 500;
 }
 
@@ -6569,7 +6569,7 @@ PanelToplevel.vertical > grid > button {
 }
 
 PanelSeparator {
-  color: alpha(${bg}, 0.12);
+  color: alpha(${fg}, 0.12);
 }
 
 MatePanelAppletFrameDBus {
@@ -6586,15 +6586,15 @@ MatePanelAppletFrameDBus {
 }
 
 .mate-panel-menu-bar menubar > menuitem {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .mate-panel-menu-bar menubar > menuitem:hover {
-  color: ${bg};
+  color: ${fg};
 }
 
 .mate-panel-menu-bar menubar > menuitem:disabled {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 .mate-panel-menu-bar.horizontal menubar > menuitem {
@@ -6703,7 +6703,7 @@ PanelApplet.wnck-applet .wnck-pager:selected {
 }
 
 #MatePanelPopupWindow > frame > box > box > box > widget {
-  color: alpha(${bg}, 0.12);
+  color: alpha(${fg}, 0.12);
 }
 
 na-tray-applet {
@@ -6732,7 +6732,7 @@ na-tray-applet {
 
 #PanelApplet:selected > box {
   background-color: alpha(currentColor, 0.1);
-  color: ${bg};
+  color: ${fg};
 }
 
 #mate-menu {
@@ -6744,7 +6744,7 @@ na-tray-applet {
   min-height: 24px;
   min-width: 24px;
   padding: 4px 0;
-  color: ${bg};
+  color: ${fg};
   font-weight: normal;
 }
 
@@ -6754,7 +6754,7 @@ na-tray-applet {
 
 #mate-menu button image,
 #mate-menu button label + label {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 #mate-menu entry {
@@ -6828,7 +6828,7 @@ na-tray-applet {
 
 .brisk-menu .apps-list button {
   border-radius: 0;
-  color: ${bg};
+  color: ${fg};
   font-weight: normal;
 }
 
@@ -6877,7 +6877,7 @@ na-tray-applet {
   border-radius: 6px;
   background-color: alpha(${bg}, 0.04);
   background-image: none;
-  color: ${bg};
+  color: ${fg};
 }
 
 .caja-desktop.view .entry:selected,
@@ -6887,7 +6887,7 @@ na-tray-applet {
 
 .caja-desktop.view .entry {
   background-color: ${bg};
-  color: ${bg};
+  color: ${fg};
   caret-color: currentColor;
 }
 
@@ -6989,7 +6989,7 @@ na-tray-applet {
 MsdOsdWindow.background.osd {
   border-radius: 6px;
   background-color: alpha(${bg}, 0.9);
-  color: ${bg};
+  color: ${fg};
 }
 
 MsdOsdWindow.background.osd .trough {
@@ -7301,7 +7301,7 @@ dialog.background > .dialog-vbox > scrolledwindow > viewport.frame > list {
 .budgie-panel {
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1);
   background-color: ${bg};
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
   font-weight: 500;
 }
 
@@ -7310,7 +7310,7 @@ dialog.background > .dialog-vbox > scrolledwindow > viewport.frame > list {
 }
 
 .budgie-panel .icon-tasklist button.launcher:checked, .budgie-panel .icon-tasklist button.launcher:active {
-  color: ${bg};
+  color: ${fg};
 }
 
 .top .budgie-panel.dock-mode {
@@ -7354,7 +7354,7 @@ dialog.background > .dialog-vbox > scrolledwindow > viewport.frame > list {
 }
 
 .budgie-panel button {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
   min-height: 24px;
   min-width: 24px;
   padding: 0;
@@ -7362,25 +7362,25 @@ dialog.background > .dialog-vbox > scrolledwindow > viewport.frame > list {
 }
 
 .budgie-panel button:hover {
-  color: ${bg};
+  color: ${fg};
 }
 
 .budgie-panel button:active {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .budgie-panel button.budgie-menu-launcher {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .budgie-panel button.budgie-menu-launcher:focus {
   box-shadow: none;
   border: none;
-  color: ${bg};
+  color: ${fg};
 }
 
 .budgie-panel button.raven-trigger {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .budgie-panel.horizontal button {
@@ -7434,33 +7434,33 @@ dialog.background > .dialog-vbox > scrolledwindow > viewport.frame > list {
   padding: 0;
   box-shadow: none;
   background-color: transparent;
-  color: ${bg};
+  color: ${fg};
 }
 
 .budgie-panel .titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action) {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .budgie-panel .titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action):hover, .budgie-panel .titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action):active {
-  color: ${bg};
+  color: ${fg};
 }
 
 .budgie-panel menubar,
 .budgie-panel .menubar {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
   box-shadow: none;
   border: none;
 }
 
 .budgie-panel menubar > menuitem,
 .budgie-panel .menubar > menuitem {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .budgie-panel menubar > menuitem:hover, .budgie-panel menubar > menuitem:active,
 .budgie-panel .menubar > menuitem:hover,
 .budgie-panel .menubar > menuitem:active {
-  color: ${bg};
+  color: ${fg};
 }
 
 .budgie-panel menubar menu separator,
@@ -7481,15 +7481,15 @@ dialog.background > .dialog-vbox > scrolledwindow > viewport.frame > list {
 }
 
 .budgie-panel button.flat.launcher:not(:checked) {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 .budgie-panel button.flat.launcher:not(:checked):hover, .budgie-panel button.flat.launcher:not(:checked):active {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .budgie-panel button.flat.launcher:not(:checked):disabled {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 .top .budgie-panel .unpinned button.flat.launcher:checked, .top .budgie-panel .pinned button.flat.launcher.running:checked {
@@ -7613,7 +7613,7 @@ frame.raven-frame > border {
 }
 
 .raven .raven-background > overlay > widget > image {
-  color: alpha(${bg}, 0.12);
+  color: alpha(${fg}, 0.12);
 }
 
 .raven scrolledwindow.raven-background {
@@ -7648,11 +7648,11 @@ frame.raven-frame > border {
 
 .raven .audio-widget list.devices-list.sound-devices > row.activatable:selected, .raven .audio-widget list.devices-list.sound-devices > row.activatable:checked {
   background-color: alpha(${bg}, 0.06);
-  color: ${bg};
+  color: ${fg};
 }
 
 .raven .audio-widget list.devices-list.sound-devices > row.activatable:selected label, .raven .audio-widget list.devices-list.sound-devices > row.activatable:checked label {
-  color: ${bg};
+  color: ${fg};
 }
 
 .raven .audio-widget list.devices-list.sound-devices > row.activatable label {
@@ -7674,7 +7674,7 @@ calendar.raven-calendar:selected {
 
 .raven-mpris {
   background-color: ${bg};
-  color: ${bg};
+  color: ${fg};
 }
 
 .raven-mpris label {
@@ -7687,7 +7687,7 @@ calendar.raven-calendar:selected {
 
 image.raven-mpris {
   background-color: alpha(${bg}, 0.12);
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
   border-radius: 6px;
 }
 
@@ -7749,7 +7749,7 @@ image.raven-mpris {
 }
 
 .budgie-notification .notification-body {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .budgie-osd .budgie-osd-text {
@@ -7757,7 +7757,7 @@ image.raven-mpris {
 }
 
 .budgie-panel .lock-keys image:disabled {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 .drop-shadow {
@@ -7865,7 +7865,7 @@ image.raven-mpris {
 }
 
 .budgie-polkit-dialog .message {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .budgie-polkit-dialog .failure {
@@ -7885,7 +7885,7 @@ image.raven-mpris {
 }
 
 .budgie-run-dialog list .dim-label {
-  color: ${bg};
+  color: ${fg};
 }
 
 .budgie-run-dialog scrolledwindow {
@@ -7905,7 +7905,7 @@ image.raven-mpris {
 .xfce4-panel.background {
   border: none;
   background-color: ${bg};
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
   font-weight: 500;
 }
 
@@ -7914,15 +7914,15 @@ image.raven-mpris {
   min-width: 16px;
   padding: 0 6px;
   border-radius: 0;
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .xfce4-panel.background button:hover, .xfce4-panel.background button:active, .xfce4-panel.background button:checked {
-  color: ${bg};
+  color: ${fg};
 }
 
 .xfce4-panel.background button:disabled {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 .xfce4-panel.background button.flat.toggle {
@@ -7956,7 +7956,7 @@ wnck-pager:selected {
 XfdesktopIconView.view {
   border-radius: 6px;
   background-color: transparent;
-  color: ${bg};
+  color: ${fg};
 }
 
 XfdesktopIconView.view:active {
@@ -7997,7 +7997,7 @@ window#whiskermenu-window box.categories > button.radio:hover {
 
 window#whiskermenu-window box.categories > button.radio:checked, window#whiskermenu-window box.categories > button.radio:active {
   background-color: alpha(${bg}, 0.3);
-  color: ${bg};
+  color: ${fg};
 }
 
 window#whiskermenu-window box.categories > button.radio:checked:hover, window#whiskermenu-window box.categories > button.radio:active:hover {
@@ -8020,12 +8020,12 @@ window#whiskermenu-window scrolledwindow.frame treeview.view:not(:hover):not(:se
 
 window#whiskermenu-window scrolledwindow.frame treeview.view:selected:hover {
   background-color: alpha(${bg}, 0.12);
-  color: ${bg};
+  color: ${fg};
 }
 
 window#whiskermenu-window .title-area > .commands-area > button.flat.command-button:checked, window#whiskermenu-window .title-area > .commands-area > button.flat.command-button:active {
   background-color: alpha(${bg}, 0.3);
-  color: ${bg};
+  color: ${fg};
 }
 
 #XfceNotifyWindow {
@@ -8101,19 +8101,19 @@ menubar.-vala-panel-background {
 
 menubar.-vala-panel-appmenu-private > menuitem,
 menubar.-vala-panel-background > menuitem {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
   font-weight: normal;
 }
 
 menubar.-vala-panel-appmenu-private > menuitem:hover,
 menubar.-vala-panel-background > menuitem:hover {
-  color: ${bg};
+  color: ${fg};
   border-radius: 0;
 }
 
 menubar.-vala-panel-appmenu-private > menuitem:disabled,
 menubar.-vala-panel-background > menuitem:disabled {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 /************************
@@ -8121,7 +8121,7 @@ menubar.-vala-panel-background > menuitem:disabled {
  ************************/
 #panel_window {
   background-color: ${bg};
-  color: ${bg};
+  color: ${fg};
 }
 
 #panel_window menubar,
@@ -8138,15 +8138,15 @@ menubar.-vala-panel-background > menuitem:disabled {
 }
 
 #panel_window menubar > menuitem {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 #panel_window menubar > menuitem:hover {
-  color: ${bg};
+  color: ${fg};
 }
 
 #panel_window menubar > menuitem:disabled label {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 #login_window,
@@ -8155,7 +8155,7 @@ menubar.-vala-panel-background > menuitem:disabled {
   border-radius: 6px;
   box-shadow: 0 1px 2px 0 alpha(${bg}, 0.15), 0 3px 3px 0 alpha(${bg}, 0.18), 0 3px 6px 0 alpha(${bg}, 0.12), inset 0 1px alpha(${bg}, 0.1);
   background-color: ${bg};
-  color: ${bg};
+  color: ${fg};
 }
 
 #content_frame {
@@ -8222,19 +8222,19 @@ menubar.-vala-panel-background > menuitem:disabled {
 .nemo-window .primary-toolbar button.text-button {
   padding-left: 8px;
   padding-right: 8px;
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 .nemo-window .primary-toolbar button.text-button:hover, .nemo-window .primary-toolbar button.text-button:active, .nemo-window .primary-toolbar button.text-button:checked {
-  color: ${bg};
+  color: ${fg};
 }
 
 .nemo-window .primary-toolbar button.text-button:disabled {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 .nemo-window .primary-toolbar button.text-button:backdrop {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 .nemo-window .primary-toolbar .path-bar.linked:not(.vertical) > button {
@@ -8302,7 +8302,7 @@ menubar.-vala-panel-background > menuitem:disabled {
 
 .places-treeview {
   -NemoPlacesTreeView-disk-full-bg-color: ${bg};
-  -NemoPlacesTreeView-disk-full-fg-color: ${accent};
+  -NemoPlacesTreeView-disk-full-fg-color: ${fg};
   -NemoPlacesTreeView-disk-full-bar-width: 2px;
   -NemoPlacesTreeView-disk-full-bar-radius: 0;
   -NemoPlacesTreeView-disk-full-bottom-padding: 1px;
@@ -8316,10 +8316,10 @@ menubar.-vala-panel-background > menuitem:disabled {
    use responsibly! */
 /*
 widget text/foreground color */
-@define-color theme_fg_color ${bg};
+@define-color theme_fg_color ${fg};
 /*
 text color for entries, views and content in general */
-@define-color theme_text_color ${bg};
+@define-color theme_text_color ${fg};
 /*
 widget base background color */
 @define-color theme_bg_color ${bg};
@@ -8331,22 +8331,22 @@ base background color of selections */
 @define-color theme_selected_bg_color ${accent};
 /*
 text/foreground color of selections */
-@define-color theme_selected_fg_color alpha(${bg}, 0.87);
+@define-color theme_selected_fg_color alpha(${accentfg}, 0.87);
 /*
 base background color of insensitive widgets */
 @define-color insensitive_bg_color ${bg};
 /*
 text foreground color of insensitive widgets */
-@define-color insensitive_fg_color alpha(${bg}, 0.5);
+@define-color insensitive_fg_color alpha(${fg}, 0.5);
 /*
 insensitive text widgets and the like base background color */
 @define-color insensitive_base_color ${bg};
 /*
 widget text/foreground color on backdrop windows */
-@define-color theme_unfocused_fg_color ${bg};
+@define-color theme_unfocused_fg_color ${fg};
 /*
 text color for entries, views and content in general on backdrop windows */
-@define-color theme_unfocused_text_color ${bg};
+@define-color theme_unfocused_text_color ${fg};
 /*
 widget base background color on backdrop windows */
 @define-color theme_unfocused_bg_color ${bg};
@@ -8358,7 +8358,7 @@ base background color of selections on backdrop windows */
 @define-color theme_unfocused_selected_bg_color ${accent};
 /*
 text/foreground color of selections on backdrop windows */
-@define-color theme_unfocused_selected_fg_color alpha(${bg}, 0.87);
+@define-color theme_unfocused_selected_fg_color alpha(${accentfg}, 0.87);
 /*
 insensitive color on backdrop windows */
 @define-color unfocused_insensitive_color alpha(${bg}, 0.5);
