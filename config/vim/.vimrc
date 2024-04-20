@@ -84,16 +84,16 @@ endfunction
 " Binds {{{
  vmap <C-c> "+y
  nmap <C-x> "+p
- nmap <F4> :silent :call BackgroundSentence()<CR>
- vmap <F4> :silent :call BackgroundSentence('true')<CR>
+ nmap <C-F4> :silent :call BackgroundSentence()<CR>
+ vmap <C-F4> :silent :call BackgroundSentence('true')<CR>
  nmap <F1> :silent :call ExecuteLineAsTTS()<CR>
  nmap <C-1> :silent :call ExecuteLineAsTTS('false','false','pl')<CR>
- nmap <C-2> :silent :call ExecuteLineAsTTS('false','true','pl')<CR>
- nmap <C-F1> :silent :call ExecuteLineAsTPL()<CR> 
+ nmap <C-`> :silent :call ExecuteLineAsTTS('false','true','pl')<CR>
+ nmap <C-F1> :silent :call ExecuteLineAsTPL()<CR>
  nmap <C-F2> :silent :call ExecuteLineAsTPL("true")<CR>
  nmap <F2> :silent :call ExecuteLineAsTTS("true")<CR>
  vmap <F1> :silent :call ExecuteLineAsTTS("false",'true')<CR>
- vmap <C-F1> :silent :call ExecuteLineAsTPL("false",'true')<CR> 
+ vmap <C-F1> :silent :call ExecuteLineAsTPL("false",'true')<CR>
  vmap <C-F2> :silent :call ExecuteLineAsTPL("true",'true')<CR>
  vmap <F2> :silent :call ExecuteLineAsTTS("true",'true')<CR>
 " }}}

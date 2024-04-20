@@ -328,15 +328,15 @@ entry:disabled {
 entry headerbar popover.background entry > text > placeholder,
 headerbar popover.background entry entry > text > placeholder,
 entry > text > placeholder {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 
 entry headerbar popover.background entry > text > block-cursor,
 headerbar popover.background entry entry > text > block-cursor,
 entry > text > block-cursor {
-  color: alpha(${bg}, 0.04);
-  background-color: ${fg};
+  color: alpha(${fg}, 0.04);
+  background-color: ${bg};
 }
 
 
@@ -1193,18 +1193,18 @@ button.osd:focus {
 }
 
 button.osd:hover {
-  background-color: alpha(${fg}, 0.45);
-  color: ${bg};
+  background-color: alpha(${bg}, 0.45);
+  color: ${fg};
 }
 
 button.osd:active {
-  background-color: alpha(${fg}, 0.65);
-  color: ${bg};
+  background-color: alpha(${bg}, 0.65);
+  color: ${fg};
 }
 
 button.osd:disabled {
-  background-color: alpha(${fg}, 0.15);
-  color: alpha(${bg}, 0.35);
+  background-color: alpha(${bg}, 0.15);
+  color: alpha(${gg}, 0.35);
 }
 
 button.suggested-action {
@@ -1214,8 +1214,8 @@ button.suggested-action {
 }
 
 button.suggested-action:disabled {
-  background-color: alpha(${fg}, 0.04);
-  color: alpha(${bg}, 0.5);
+  background-color: alpha(${bg}, 0.04);
+  color: alpha(${fg}, 0.5);
   outline-color: transparent;
 }
 
@@ -1283,7 +1283,7 @@ button.destructive-action.flat {
 }
 
 button.destructive-action.flat:disabled {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
   background-color: transparent;
 }
 
@@ -1974,7 +1974,7 @@ searchbar > revealer > box {
   border-style: solid;
   border-width: 0 0 1px;
   border-color: alpha(${bg}, 0.12);
-  background-color: ${fg};
+  background-color: ${bg};
   background-clip: border-box;
   box-shadow: none;
 }
@@ -2044,7 +2044,7 @@ headerbar entry > text > placeholder {
 
 headerbar entry > text > block-cursor {
   color: alpha(${bg}, 0.04);
-  background-color: ${fg};
+  background-color: ${bg};
 }
 
 headerbar entry > image {
