@@ -64,7 +64,7 @@ iconview, .view {
 }
 
 iconview:disabled, .view:disabled {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 iconview:selected, .view:selected {
@@ -77,7 +77,7 @@ textview text {
 
 textview border {
   background-color: ${bg};
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 iconview:hover, iconview:selected {
@@ -121,12 +121,12 @@ coverflow cover {
 }
 
 label.separator {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 label:disabled {
   opacity: 1;
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 headerbar label:disabled, tab label:disabled, button label:disabled {
@@ -141,7 +141,7 @@ label.osd {
 }
 
 .dim-label, row.expander image.expander-row-arrow, row.property > box.header > box.title > .title, row label.subtitle {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
   opacity: 1;
 }
 
@@ -213,7 +213,7 @@ window.assistant .sidebar {
 window.assistant .sidebar label {
   min-height: 36px;
   padding: 0 12px;
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
   font-weight: 500;
 }
 
@@ -364,7 +364,7 @@ entry.flat {
 entry headerbar popover.background entry > image,
 headerbar popover.background entry entry > image,
 entry > image {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 
@@ -381,7 +381,7 @@ entry > image:active {
 entry headerbar popover.background entry > image:disabled,
 headerbar popover.background entry entry > image:disabled,
 entry > image:disabled {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 
@@ -741,7 +741,7 @@ treeview entry.flat, treeview entry.flat:focus-within, treeview entry, treeview 
 }
 
 .entry-tag.button:not(:hover):not(:active) {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 editablelabel > stack > text {
@@ -766,7 +766,7 @@ editablelabel > stack > text {
 }
 
 infobar.warning > revealer > box button, infobar.warning:backdrop > revealer > box button, popover.touch-selection button, popover.magnifier button, headerbar.selection-mode button:not(.suggested-action):not(.destructive-action) {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 infobar.warning > revealer > box button:focus, popover.touch-selection button:focus, popover.magnifier button:focus, headerbar.selection-mode button:focus:not(.suggested-action):not(.destructive-action), infobar.warning > revealer > box button:hover, popover.touch-selection button:hover, popover.magnifier button:hover, headerbar.selection-mode button:hover:not(.suggested-action):not(.destructive-action), infobar.warning > revealer > box button:active, popover.touch-selection button:active, popover.magnifier button:active, headerbar.selection-mode button:active:not(.suggested-action):not(.destructive-action), infobar.warning > revealer > box button:checked, popover.touch-selection button:checked, popover.magnifier button:checked, headerbar.selection-mode button:checked:not(.suggested-action):not(.destructive-action) {
@@ -774,11 +774,11 @@ infobar.warning > revealer > box button:focus, popover.touch-selection button:fo
 }
 
 infobar.warning > revealer > box button:disabled, popover.touch-selection button:disabled, popover.magnifier button:disabled, headerbar.selection-mode button:disabled:not(.suggested-action):not(.destructive-action) {
-  color: alpha(${bg}, 0.32);
+  color: alpha(${fg}, 0.32);
 }
 
 infobar.warning > revealer > box button:checked:disabled, popover.touch-selection button:checked:disabled, popover.magnifier button:checked:disabled, headerbar.selection-mode button:checked:disabled:not(.suggested-action):not(.destructive-action) {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 row.spin spinbutton > button.image-button.up:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):last-child, row.spin spinbutton > button.image-button.up:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):last-child:dir(ltr):last-child, row.spin spinbutton > button.image-button.up:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):last-child:dir(rtl):first-child,
@@ -835,7 +835,7 @@ row.spin spinbutton > button.image-button.down:disabled:not(.flat):not(.raised):
 row.spin spinbutton > button.image-button.down:disabled:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):dir(ltr):last-child,
 row.spin spinbutton > button.image-button.down:disabled:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):dir(rtl):first-child, headerbar popover.background button:disabled:not(.suggested-action):not(.destructive-action):not(.flat), button:disabled {
   background-color: alpha(${bg}, 0.04);
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
   outline-color: transparent;
 }
 
@@ -917,7 +917,7 @@ combobox > .linked:not(.vertical) > button:not(:only-child), splitbutton.suggest
   background-color: transparent;
   outline: 0 solid transparent;
   outline-offset: 2px;
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 filechooser #pathbarbox > stack > box > button:focus:not(:hover):not(:active), window.messagedialog .response-area button:focus:not(:hover):not(:active), window.dialog.message .dialog-action-area > button:focus:not(:hover):not(:active), .app-notification button:focus:not(:hover):not(:active), headerbar button:focus:not(:hover):not(:active):not(.suggested-action):not(.destructive-action), .toolbar button:focus:not(:hover):not(:active), dropdown > .linked:not(.vertical) > button:focus:not(:hover):not(:active):not(:only-child),
@@ -1204,7 +1204,7 @@ button.osd:active {
 
 button.osd:disabled {
   background-color: alpha(${bg}, 0.15);
-  color: alpha(${gg}, 0.35);
+  color: alpha(${fg}, 0.35);
 }
 
 button.suggested-action {
@@ -2039,16 +2039,16 @@ headerbar entry:disabled {
 }
 
 headerbar entry > text > placeholder {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 headerbar entry > text > block-cursor {
-  color: alpha(${bg}, 0.04);
+  color: alpha(${fg}, 0.04);
   background-color: ${bg};
 }
 
 headerbar entry > image {
-  color: alpha(${bg}, 0.7);
+  color: alpha(${fg}, 0.7);
 }
 
 headerbar entry > image:hover, headerbar entry > image:active {
@@ -2056,7 +2056,7 @@ headerbar entry > image:hover, headerbar entry > image:active {
 }
 
 headerbar entry > image:disabled {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 headerbar {
@@ -2070,7 +2070,7 @@ headerbar {
 }
 
 headerbar:disabled {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 headerbar:backdrop {
@@ -2117,7 +2117,7 @@ row.expander headerbar image.expander-row-arrow:backdrop,
 headerbar row.property > box.header > box.title > .title:backdrop,
 headerbar row label.subtitle:backdrop,
 row headerbar label.subtitle:backdrop {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 headerbar .titlebar {
@@ -3299,7 +3299,7 @@ scrollbar > range > trough > slider:hover {
 }
 
 scrollbar > range > trough > slider:active {
-  background-color: ${fg};
+  background-color: ${bg};
 }
 
 scrollbar > range > trough > slider:disabled {
@@ -3436,7 +3436,7 @@ switch > slider {
   border-radius: 9999px;
   outline: none;
   box-shadow: 0 3px 3px -2px alpha(${fg}, 0.05), 0 2px 3px -1px apha(${fg}, 0.06), 0 1px 4px 0 apha(${fg}, 0.05);
-  background-color: ${fg};
+  background-color: ${bg};
   border: none;
 }
 
@@ -6171,7 +6171,7 @@ datechooser button.day {
 }
 
 datechooser button.day dot {
-  background-color: ${fg};
+  background-color: ${bg};
   border-radius: 50%;
   min-height: 3px;
   min-width: 3px;
@@ -6184,7 +6184,7 @@ datechooser button.day:selected, datechooser button.day.today:selected {
 }
 
 datechooser button.day:selected dot, datechooser button.day.today:selected dot {
-  background-color: alpha(${accentfg}, 0.87);
+  background-color: alpha(${accent}, 0.87);
 }
 
 datechooser button.day.today {
@@ -6681,7 +6681,7 @@ review-bar {
 }
 
 .review-histogram star-image {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
 }
 
 .version-arrow-label {
@@ -6780,7 +6780,7 @@ clamp.status-page .iconbox {
 }
 
 clamp.status-page .icon {
-  color: alpha(${bg}, 0.5);
+  color: alpha(${fg}, 0.5);
   min-height: 32px;
   min-width: 32px;
 }
@@ -8084,7 +8084,7 @@ panelthemeselector checkbutton.follow {
 
 themeselector checkbutton.light,
 panelthemeselector checkbutton.light {
-  background-color: ${fg};
+  background-color: ${bg};
 }
 
 themeselector checkbutton.dark,

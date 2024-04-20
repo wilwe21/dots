@@ -50,13 +50,13 @@ export default (red, green, yellow, blue, magenta, teal, orange, accent, accentf
 }
 
 .nemo-window .view selection, .nemo-window .view:selected, .nautilus-window notebook .view:not(treeview) selection, .nautilus-window notebook .view:not(treeview):selected, .nautilus-window flowboxchild:selected .icon-item-background, label selection, flowbox flowboxchild:selected {
-  color: ${accent};
+  color: ${accentfg};
   background-color: alpha(${accent}, 0.2);
 }
 
 .nemo-window .nemo-window-pane widget.entry:selected, window.background.csd evview.view.content-view:selected, window.background.csd evview.view.content-view:selected:backdrop, .nautilus-window.background.csd notebook widget.view:selected, spinbutton.vertical selection, spinbutton:not(.vertical) selection,
 entry selection, textview text selection:focus, textview text selection, widget.view:selected, .view:selected {
-  color: alpha(${fg}, 0.87);
+  color: alpha(${accentfg}, 0.87);
   background-color: ${accent};
 }
 
@@ -688,7 +688,7 @@ actionbar > revealer > box .linked > button:disabled:not(.suggested-action):not(
 
 actionbar > revealer > box .linked > button:checked:not(.suggested-action):not(.destructive-action), button:checked {
   background-color: ${accent};
-  color: alpha(${fg}, 0.87);
+  color: alpha(${accentfg}, 0.87);
 }
 
 actionbar > revealer > box .linked > button:checked:hover:not(.suggested-action):not(.destructive-action), button:checked:hover {
@@ -1510,12 +1510,12 @@ searchbar > revealer > box {
   transition: background-color 0.1ms 225ms, color 75ms cubic-bezier(0, 0, 0.2, 1);
   animation: ripple-on-headerbar 225ms cubic-bezier(0, 0, 0.2, 1);
   background-color: ${accent};
-  color: alpha(${fg}, 0.87);
+  color: alpha(${accentfg}, 0.87);
   box-shadow: inset 0 -1px alpha(${bg}, 0.12);
 }
 
 .titlebar.selection-mode:backdrop {
-  color: alpha(${fg}, 0.6);
+  color: alpha(${accentfg}, 0.6);
   background-color: ${accent};
 }
 
@@ -1817,13 +1817,13 @@ treeview.view.progressbar {
   background-color: ${accent};
   background-image: none;
   border-radius: 9999px;
-  color: alpha(${fg}, 0.87);
+  color: alpha(${accentfg}, 0.87);
 }
 
 treeview.view.progressbar:selected, treeview.view.progressbar:selected:hover, treeview.view.progressbar:selected:focus {
   box-shadow: none;
   background-color: ${accent};
-  color: alpha(${fg}, 0.87);
+  color: alpha(${accentfg}, 0.87);
 }
 
 treeview.view.progressbar:selected:backdrop, treeview.view.progressbar:selected:hover:backdrop, treeview.view.progressbar:selected:focus:backdrop {
@@ -1831,7 +1831,7 @@ treeview.view.progressbar:selected:backdrop, treeview.view.progressbar:selected:
 }
 
 treeview.view.progressbar:backdrop, treeview.view.progressbar:selected:backdrop {
-  background-color: alpha(${fg}, 0.3);
+  background-color: alpha(${bg}, 0.3);
 }
 
 treeview.view.trough {
@@ -2505,7 +2505,7 @@ switch slider {
   border-radius: 9999px;
   outline: none;
   box-shadow: 0 3px 3px -2px alpha(${bg}, 0.05), 0 2px 3px -1px alpha(${bg}, 0.06), 0 1px 4px 0 alpha(${bg}, 0.05);
-  background-color: ${fg};
+  background-color: ${bg};
   border: none;
   color: transparent;
 }
@@ -2590,7 +2590,7 @@ radio:disabled {
 check:checked, check:indeterminate,
 radio:checked,
 radio:indeterminate {
-  color: alpha(${fg}, 0.87);
+  color: alpha(${accentfg}, 0.87);
   background-color: ${accent};
 }
 
@@ -2727,7 +2727,7 @@ treeview.view radio, treeview.view radio:hover, treeview.view radio:disabled, tr
 
 treeview.view radio:checked, treeview.view radio:indeterminate, treeview.view check:checked, treeview.view check:indeterminate, treeview.view:hover radio:checked, treeview.view:hover radio:indeterminate, treeview.view:hover check:checked, treeview.view:hover check:indeterminate, treeview.view:selected radio:checked, treeview.view:selected radio:indeterminate, treeview.view:selected check:checked, treeview.view:selected check:indeterminate {
   background-color: ${accent};
-  color: alpha(${fg}, 0.87);
+  color: alpha(${accentfg}, 0.87);
   background-image: none;
 }
 
@@ -3651,7 +3651,7 @@ stacksidebar.sidebar row {
 
 stacksidebar.sidebar row:selected {
   background-color: ${accent};
-  color: alpha(${fg}, 0.87);
+  color: alpha(${accentfg}, 0.87);
   font-weight: 500;
 }
 
@@ -4424,7 +4424,7 @@ popover.emoji-completion .emoji:hover {
   border: none;
   border-radius: 6px;
   background-color: ${accent};
-  color: alpha(${fg}, 0.87);
+  color: alpha(${accentfg}, 0.87);
   box-shadow: 0 3px 3px -2px alpha(${bg}, 0.05), 0 2px 3px -1px alpha(${bg}, 0.06), 0 1px 4px 0 alpha(${bg}, 0.05);
 }
 
@@ -4543,7 +4543,7 @@ popover.emoji-completion .emoji:hover {
 
 .disk-space-display.used {
   background-color: ${accent};
-  color: ${accent};
+  color: ${accentfg};
 }
 
 .disk-space-display.free {
@@ -5102,7 +5102,7 @@ window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked 
 
 window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button.image-button.raised:checked {
   background-color: ${accent};
-  color: alpha(${fg}, 0.87);
+  color: alpha(${accentfg}, 0.87);
 }
 
 window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button.image-button.raised > widget > box > image {
@@ -5508,7 +5508,7 @@ GdMainIconView.content-view {
   border-radius: 9999px;
   box-shadow: 0 1px 2px 0 alpha(${bg}, 0.15), 0 3px 3px 0 alpha(${bg}, 0.18), 0 3px 6px 0 alpha(${bg}, 0.12);
   background-color: ${accent};
-  color: alpha(${fg}, 0.87);
+  color: alpha(${accentfg}, 0.87);
   font-weight: bold;
 }
 
@@ -6218,7 +6218,7 @@ tooltip.background.chromium {
 
 #MozillaGtkWidget > widget text:selected {
   background-color: ${accent};
-  color: alpha(${fg}, 0.87);
+  color: alpha(${accentfg}, 0.87);
 }
 
 #MozillaGtkWidget > widget > separator {
