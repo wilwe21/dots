@@ -437,6 +437,10 @@ export default {
             'enums': ['avatar', 'player','none'],
             'type': 'enum',
         }),
+	side_rad: Option(7, {
+		'scss': "app-side-rad",
+		'type': "number"
+	}),
         labvisible: Option(true),
         icovisible: Option(true),
         avatarvisible: Option(true),

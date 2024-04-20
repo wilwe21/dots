@@ -43,18 +43,16 @@ window#applauncher .window-content {
 		}
 	}
 	.cover {
-		border-radius: $radii;
+		border-radius: $app-side-rad;
         	min-height: 150px;
         	min-width: 150px;
         	box-shadow: 2px 2px 2px 0 $shadow;
         	margin: $padding;
         	background-size: cover;
 		background-position: center;
-		border-radius: $radii;
-
            .shader {
             	background-color: transparent;
-		border-radius: $radii;
+		border-radius: $app-side-rad;
             	box-shadow: inset 0 0 0 999px transparentize($bg-color, 0.8);
            }
     	}
@@ -65,9 +63,15 @@ window#applauncher .window-content {
 		font-size: 20px;
 		color: $playcolor;
 	}
-    }
-    .appicon {
-    	font-size: 200px;
+        .appavbox {
+            .appicon{
+                border-radius: $app-side-rad;
+                box-shadow: 2px 2px 2px 0 $shadow;
+        	background-size: cover;
+		background-position: center;
+            }
+            font-size: 200px;
+        }
     }
     .applabel {
     	min-width: 200px;

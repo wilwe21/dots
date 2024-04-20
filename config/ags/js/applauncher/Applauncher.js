@@ -66,15 +66,21 @@ const Applauncher = () => {
                 setup: self => self.hook(options.applauncher.side, () => {
                     if (options.applauncher.side.value == 'avatar') {
                         self.children = [
-                            Widget.Icon({
-                                class_name: 'appicon',
-                                visible: options.applauncher.avatarvisible.bind('value'),
-                                icon: options.desktop.avatar.bind('value')
-                            }),
-                            Widget.Label({
-                                class_name: 'applabel',
-                                label: options.applauncher.label.bind('value'),
-                            }),
+			    Widget.CenterBox({
+				    class_name: 'appavbox',
+				    vertical: true,
+				    vexpand: true,
+				    start_widget: Widget.Box({
+					class_name: 'appicon',
+					visible: options.applauncher.avatarvisible.bind('value'),
+					css: options.desktop.avatar.bind('value').transform(p => 
+						`background-image: url("${p}")`)
+				    }),
+				    center_widget: Widget.Label({
+					class_name: 'applabel',
+					label: options.applauncher.label.bind('value'),
+				    })
+			    })
                         ]
                     } else if (options.applauncher.side.value == 'player'){
                         const PlayerBox = player => Widget.CenterBox({
