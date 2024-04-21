@@ -68,7 +68,8 @@ iconview:disabled, .view:disabled {
 }
 
 iconview:selected, .view:selected {
-  color: ${fg};
+  background-color: ${accent};
+  color: ${accentfg};
 }
 
 textview text {
@@ -89,7 +90,7 @@ rubberband, .content-view rubberband, .content-view columnview.view > rubberband
 treeview.view > rubberband,
 .content-view treeview.view > .rubberband, gridview > rubberband, flowbox > rubberband {
   border: 1px solid ${accent};
-  background-color: alpha(${accent}, 0.3);
+  background-color: alpha(${accent}, 0.85);
 }
 
 flowbox > flowboxchild {
@@ -106,7 +107,7 @@ gridview > child {
 }
 
 gridview > child:selected {
-  outline-color: alpha(currentColor, 0.06);
+  outline-color: alpha(${accent}, 0.1);
 }
 
 gridview > child box {
@@ -307,9 +308,9 @@ headerbar popover.background entry entry:hover:not(:focus-within),
 entry:drop(active),
 entry:hover:not(:focus-within) {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
-  background-color: alpha(currentColor, 0.08);
+  background-color: alpha(${accent}, 0.85);
   box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
-  color: ${fg};
+  color: ${accentfg};
   outline: 0 solid transparent;
   outline-offset: 2px;
 }
@@ -895,10 +896,10 @@ placessidebar row button.sidebar-button:active, calendar > header > button:activ
 splitbutton.flat > menubutton > button:active {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
   animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
-  background-image: radial-gradient(circle, alpha(currentColor, 0.08) 10%, transparent 0%);
+  background-image: radial-gradient(circle, alpha(${accent}, 0.85) 10%, transparent 0%);
   background-size: 0% 0%;
-  background-color: alpha(currentColor, 0.08);
-  color: ${fg};
+  background-color: ${accent};
+  color: ${accentfg};
 }
 
 placessidebar row button.sidebar-button:disabled, calendar > header > button:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, popover modelbutton:disabled, spinbutton > button:disabled, splitbutton.flat > button:disabled,
@@ -2264,12 +2265,14 @@ headerbar.default-decoration windowcontrols menubutton button {
 }
 
 window.devel headerbar {
-  background: ${bg} cross-fade(10% -gtk-icontheme("system-run-symbolic"), image(transparent)) 90% 0/256px 256px no-repeat, linear-gradient(to right, transparent 65%, alpha(${accent}, 0.1)), linear-gradient(to top, ${bg} 3px, ${bg});
+  /*background: ${bg} cross-fade(10% -gtk-icontheme("system-run-symbolic"), image(transparent)) 90% 0/256px 256px no-repeat, linear-gradient(to right, transparent 65%, alpha(${accent}, 0.1)), linear-gradient(to top, ${bg} 3px, ${bg});*/
+  background: image(${bg});
 }
 
 window.devel headerbar:backdrop {
-  background: ${bg} cross-fade(10% -gtk-icontheme("system-run-symbolic"), image(transparent)) 90% 0/256px 256px no-repeat, image(${bg});
-  /* background-color would flash */
+  /*background: ${bg} cross-fade(10% -gtk-icontheme("system-run-symbolic"), image(transparent)) 90% 0/256px 256px no-repeat, image(${bg});
+  background-color would flash */
+  background: image(${bg});
 }
 
 /************
@@ -2423,12 +2426,14 @@ treeview.view.expander:hover {
 
 columnview.view.expander:selected,
 treeview.view.expander:selected {
-  color: ${fg};
+  background-color: ${accent};
+  color: ${accentfg};
 }
 
 columnview.view.expander:selected:hover,
 treeview.view.expander:selected:hover {
-  color: ${fg};
+  background-color: ${accent};
+  color: ${accentfg};
 }
 
 columnview.view.expander:checked,
@@ -2544,8 +2549,8 @@ menubar > item {
 
 menubar > item:selected {
   transition: none;
-  background-color: alpha(currentColor, 0.1);
-  color: ${fg};
+  background-color: ${accent};
+  color: ${accentfg};
 }
 
 menubar > item:disabled {
@@ -2583,7 +2588,7 @@ popover.menu box.inline-buttons button.image-button.model {
 }
 
 popover.menu box.inline-buttons button.image-button.model:selected {
-  background: image(alpha(currentColor, 0.06));
+  background: image(${accent});
 }
 
 popover.menu box.circular-buttons {
@@ -2978,21 +2983,21 @@ tabbar tab:active {
   animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   background-image: radial-gradient(circle, alpha(currentColor, 0.08) 10%, transparent 0%);
   background-size: 0% 0%;
-  background-color: alpha(currentColor, 0.08);
-  color: ${fg};
+  background-color: alpha(${accent}, 0.85);
+  color: ${accentfg};
   box-shadow: none;
-  color: ${fg};
+  color: ${accentfg};
 }
 
 tabbar tab:selected:not(:active) {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms, background-color 0ms;
-  background-color: alpha(${bg}, 0.15);
-  color: ${fg};
+  background-color: ${accent};
+  color: ${accentfg};
   box-shadow: 0 1px 3px alpha(${fg}, 0.1);
 }
 
 tabbar tab:selected:not(:active):disabled {
-  color: alpha(${fg}, 0.5);
+  color: alpha(${accentfg}, 0.5);
 }
 
 tabbar > revealer > box {
@@ -4425,14 +4430,26 @@ treeview.view > header > button:active, row.activatable:active {
   box-shadow: none;
 }
 
-.nautilus-window .nautilus-grid-view child.activatable:selected, columnview.view > header > button:selected,
-treeview.view > header > button:selected, row.activatable:selected {
-  background-color: alpha(currentColor, 0.06);
+.nautilus-window .nautilus-grid-view child.activatable:selected {
+  background-color: alpha(${accent}, 0.1);
 }
 
-.nautilus-window .nautilus-grid-view child.activatable:selected:hover, columnview.view > header > button:selected:hover,
-treeview.view > header > button:selected:hover, row.activatable:selected:hover {
-  background-color: alpha(currentColor, 0.08);
+columnview.view > header > button:selected, treeview.view:selected:not(:hover) {
+  background-color: ${accent};
+  color: ${accentfg};
+}
+
+.nautilus-window .nautilus-grid-view child.activatable:selected:hover {
+  background-color: alpha(${accent}, 0.18);
+} 
+
+columnview.view > header > button:selected:hover, treeview.view:selected:hover {
+  background-color: ${accent};
+  color: ${accentfg};
+}
+
+treeview.view.progressbar:selected {
+  border-bottom: 6px solid ${bg}
 }
 
 button row.activatable:focus, button row.activatable:hover, button row.activatable:active {
@@ -4445,13 +4462,22 @@ button:checked row.activatable {
 }
 
 row:selected {
-  background-color: alpha(currentColor, 0.06);
-  color: ${fg};
+  background-color: ${accent};
+  color: ${accentfg};
   box-shadow: none;
 }
 
+row.activatable:selected {
+  background-color: ${accent};
+}
+
+row.activatable:selected:hover {
+  background-color: alpha(${accent}, 0.85);
+  color: ${accentfg}
+}
+
 row:selected:hover {
-  background-color: alpha(currentColor, 0.08);
+  background-color: alpha(currentColor, 0.5);
 }
 
 row:selected:focus, row:selected:focus-visible:focus-within {
@@ -4469,7 +4495,7 @@ row:selected button label {
 }
 
 row:selected:disabled {
-  color: alpha(${fg}, 0.5);
+  color: alpha(${accentfg}, 0.5);
 }
 
 .rich-list {
@@ -5022,7 +5048,7 @@ window.dialog.message .titlebar {
 
 window.dialog.message .titlebar:backdrop {
   background-color: ${bg};
-  color: alpha(${fg}, 0.7);
+  color: ${fg};
 }
 
 window.dialog.message .dialog-action-area {
@@ -5682,7 +5708,7 @@ windowcontrols > button:not(.suggested-action):not(.destructive-action) > image 
 
 .view:selected, iconview:selected, gridview > child:selected, columnview.view:selected,
 treeview.view:selected, calendar:selected, calendar > grid > label.day-number:selected {
-  background-color: alpha(currentColor, 0.06);
+  background-color: alpha(${accent}, 0.06);
 }
 
 flowbox > flowboxchild:selected, calendar > grid > label.today {
@@ -7109,7 +7135,7 @@ scrolledwindow.inline undershoot.top {
 }
 
 .search-view menubutton button:focus:focus-visible {
-  outline-color: alpha(${bg}, 0.3);
+  outline-color: alpha(${accent}, 0.3);
 }
 
 image.circular {
@@ -8015,8 +8041,8 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
 
 .sidebar-pane tabbar tab:selected:not(:active),
 .content-pane tabbar tab:selected:not(:active) {
-  background-color: alpha(currentColor, 0.06);
-  color: ${fg};
+  background-color: ${accent};
+  color: ${accentfg};
   box-shadow: none;
 }
 
@@ -8202,7 +8228,7 @@ base background color of selections */
 @define-color theme_selected_bg_color ${accent};
 /*
 text/foreground color of selections */
-@define-color theme_selected_fg_color alpha(${fg}, 0.87);
+@define-color theme_selected_fg_color alpha(${accentfg}, 0.87);
 /*
 base background color of insensitive widgets */
 @define-color insensitive_bg_color ${bg};
@@ -8229,7 +8255,7 @@ base background color of selections on backdrop windows */
 @define-color theme_unfocused_selected_bg_color ${accent};
 /*
 text/foreground color of selections on backdrop windows */
-@define-color theme_unfocused_selected_fg_color alpha(${fg}, 0.87);
+@define-color theme_unfocused_selected_fg_color alpha(${accentfg}, 0.87);
 /*
 insensitive color on backdrop windows */
 @define-color unfocused_insensitive_color alpha(${bg}, 0.5);
@@ -8295,7 +8321,7 @@ FIXME this is really an API */
 @define-color view_fg_color ${fg};
 @define-color headerbar_bg_color ${bg};
 @define-color headerbar_fg_color ${fg};
-@define-color headerbar_border_color alpha(${bg}, 0.12);
+@define-color headerbar_border_color alpha(${accent}, 0.12);
 @define-color headerbar_backdrop_color ${bg};
 @define-color headerbar_shade_color alpha(${bg}, 0.12);
 @define-color card_bg_color ${bg};
