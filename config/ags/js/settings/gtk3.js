@@ -50,7 +50,7 @@ export default (red, green, yellow, blue, magenta, teal, orange, accent, accentf
 }
 
 .nemo-window .view selection, .nemo-window .view:selected, .nautilus-window notebook .view:not(treeview) selection, .nautilus-window notebook .view:not(treeview):selected, .nautilus-window flowboxchild:selected .icon-item-background, label selection, flowbox flowboxchild:selected {
-  color: ${accentfg};
+  color: ${accent};
   background-color: alpha(${accent}, 0.2);
 }
 
@@ -446,13 +446,13 @@ entry {
   caret-color: currentColor;
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 0 0 2px transparent;
-  background-color: alpha(${bg}, 0.08);
+  background-color: alpha(${fg}, 0.08);
   color: ${fg};
 }
 
 spinbutton.vertical:focus, spinbutton:focus:not(.vertical),
 entry:focus {
-  background-color: alpha(${bg}, 0.08);
+  background-color: alpha(${fg}, 0.08);
   box-shadow: inset 0 0 0 2px ${accent};
 }
 
@@ -465,7 +465,7 @@ entry:drop(active) {
 spinbutton.vertical:disabled, spinbutton:disabled:not(.vertical),
 entry:disabled {
   box-shadow: inset 0 0 0 2px transparent;
-  background-color: alpha(${bg}, 0.08);
+  background-color: alpha(${fg}, 0.08);
   color: alpha(${fg}, 0.5);
 }
 
@@ -508,7 +508,7 @@ entry image.right {
 spinbutton.vertical undershoot.left, spinbutton:not(.vertical) undershoot.left,
 entry undershoot.left {
   background-color: transparent;
-  background-image: linear-gradient(to top, transparent 50%, alpha(${bg}, 0.3) 50%);
+  background-image: linear-gradient(to top, transparent 50%, alpha(${fg}, 0.3) 50%);
   padding-left: 1px;
   background-size: 1px 12px;
   background-repeat: repeat-y;
@@ -521,7 +521,7 @@ entry undershoot.left {
 spinbutton.vertical undershoot.right, spinbutton:not(.vertical) undershoot.right,
 entry undershoot.right {
   background-color: transparent;
-  background-image: linear-gradient(to top, transparent 50%, alpha(${bg}, 0.3) 50%);
+  background-image: linear-gradient(to top, transparent 50%, alpha(${fg}, 0.3) 50%);
   padding-right: 1px;
   background-size: 1px 12px;
   background-repeat: repeat-y;
@@ -535,20 +535,20 @@ spinbutton.error.vertical, spinbutton.error:not(.vertical),
 entry.error {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 0 0 2px transparent;
-  background-color: alpha(${bg}, 0.08);
+  background-color: alpha(${fg}, 0.08);
   color: ${fg};
 }
 
 spinbutton.error.vertical:focus, spinbutton.error:focus:not(.vertical),
 entry.error:focus {
-  background-color: alpha(${bg}, 0.08);
+  background-color: alpha(${fg}, 0.08);
   box-shadow: inset 0 0 0 2px ${red};
 }
 
 spinbutton.error.vertical:disabled, spinbutton.error:disabled:not(.vertical),
 entry.error:disabled {
   box-shadow: inset 0 0 0 2px transparent;
-  background-color: alpha(${bg}, 0.08);
+  background-color: alpha(${fg}, 0.08);
   color: alpha(${fg}, 0.5);
 }
 
@@ -556,20 +556,20 @@ spinbutton.warning.vertical, spinbutton.warning:not(.vertical),
 entry.warning {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 0 0 2px transparent;
-  background-color: alpha(${bg}, 0.08);
+  background-color: alpha(${fg}, 0.08);
   color: ${fg};
 }
 
 spinbutton.warning.vertical:focus, spinbutton.warning:focus:not(.vertical),
 entry.warning:focus {
-  background-color: alpha(${bg}, 0.08);
+  background-color: alpha(${fg}, 0.08);
   box-shadow: inset 0 0 0 2px ${orange};
 }
 
 spinbutton.warning.vertical:disabled, spinbutton.warning:disabled:not(.vertical),
 entry.warning:disabled {
   box-shadow: inset 0 0 0 2px transparent;
-  background-color: alpha(${bg}, 0.08);
+  background-color: alpha(${fg}, 0.08);
   color: alpha(${fg}, 0.5);
 }
 
@@ -593,7 +593,7 @@ treeview entry.flat, treeview entry.flat:focus, treeview entry, treeview entry:f
   margin: 2px;
   border-radius: 9999px;
   box-shadow: none;
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
   color: ${fg};
 }
 
@@ -656,7 +656,7 @@ actionbar > revealer > box .linked > button:not(.suggested-action):not(.destruct
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
   outline: none;
   box-shadow: inset 0 0 0 9999px transparent;
-  background-color: alpha(${bg}, 0.08);
+  background-color: alpha(${fg}, 0.08);
   background-image: radial-gradient(circle, transparent 10%, transparent 0%);
   background-repeat: no-repeat;
   background-position: center;
@@ -682,7 +682,7 @@ actionbar > revealer > box .linked > button:active:not(.suggested-action):not(.d
 
 actionbar > revealer > box .linked > button:disabled:not(.suggested-action):not(.destructive-action), button:disabled {
   box-shadow: none;
-  background-color: alpha(${bg}, 0.04);
+  background-color: alpha(${fg}, 0.04);
   color: alpha(${fg}, 0.5);
 }
 
@@ -697,7 +697,7 @@ actionbar > revealer > box .linked > button:checked:hover:not(.suggested-action)
 
 actionbar > revealer > box .linked > button:checked:disabled:not(.suggested-action):not(.destructive-action), button:checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
-  background-color: alpha(${bg}, 0.04);
+  background-color: alpha(${fg}, 0.04);
   color: alpha(${fg}, 0.5);
 }
 
@@ -895,7 +895,7 @@ button.suggested-action {
 
 button.suggested-action:disabled {
   box-shadow: none;
-  background-color: alpha(${bg}, 0.04);
+  background-color: alpha(${fg}, 0.04);
   color: alpha(${fg}, 0.5);
 }
 
@@ -938,7 +938,7 @@ button.destructive-action {
 
 button.destructive-action:disabled {
   box-shadow: none;
-  background-color: alpha(${bg}, 0.04);
+  background-color: alpha(${fg}, 0.04);
   color: alpha(${fg}, 0.5);
 }
 
@@ -1219,13 +1219,13 @@ button.combo:only-child {
   font-weight: normal;
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 0 0 2px transparent;
-  background-color: alpha(${bg}, 0.08);
+  background-color: alpha(${fg}, 0.08);
   color: ${fg};
 }
 
 button.combo:only-child:focus {
   background-color: alpha(currentColor, 0.08);
-  box-shadow: inset 0 0 0 2px alpha(${bg}, 0.3);
+  box-shadow: inset 0 0 0 2px alpha(${fg}, 0.3);
 }
 
 button.combo:only-child:hover {
@@ -1234,13 +1234,13 @@ button.combo:only-child:hover {
 }
 
 button.combo:only-child:checked {
-  background-color: alpha(${bg}, 0.08);
+  background-color: alpha(${fg}, 0.08);
   box-shadow: inset 0 0 0 2px ${accent};
 }
 
 button.combo:only-child:disabled {
   box-shadow: inset 0 0 0 2px transparent;
-  background-color: alpha(${bg}, 0.08);
+  background-color: alpha(${fg}, 0.08);
   color: alpha(${fg}, 0.5);
 }
 
@@ -1261,12 +1261,12 @@ frame.documents-dropdown, .app-notification, toolbar.osd {
   transition: box-shadow 200ms ease-out;
   padding: 6px;
   border-radius: 12px;
-  box-shadow: 0 1px 2px 0 alpha(${bg}, 0.15), 0 3px 3px 0 alpha(${bg}, 0.18), 0 3px 6px 0 alpha(${bg}, 0.12), inset 0 1px alpha(${bg}, 0.1);
+  box-shadow: 0 1px 2px 0 alpha(${bg}, 0.15), 0 3px 3px 0 alpha(${bg}, 0.18), 0 3px 6px 0 alpha(${bg}, 0.12), inset 0 1px alpha(${fg}, 0.1);
   background-color: ${bg};
 }
 
 frame.documents-dropdown:backdrop, .app-notification:backdrop, toolbar.osd:backdrop {
-  box-shadow: 0 4px 3px -3px alpha(${bg}, 0.2), 0 2px 2px -1px alpha(${bg}, 0.24), 0 1px 3px 0 alpha(${bg}, 0.12), inset 0 1px alpha(${bg}, 0.1);
+  box-shadow: 0 4px 3px -3px alpha(${bg}, 0.2), 0 2px 2px -1px alpha(${bg}, 0.24), 0 1px 3px 0 alpha(${bg}, 0.12), inset 0 1px alpha(${fg}, 0.1);
 }
 
 frame.left.documents-dropdown, .left.app-notification, frame.right.documents-dropdown, .right.app-notification, frame.top.documents-dropdown, .top.app-notification, frame.bottom.documents-dropdown, .bottom.app-notification, toolbar.osd.left, toolbar.osd.right, toolbar.osd.top, toolbar.osd.bottom {
@@ -1320,14 +1320,14 @@ toolbar:not(.inline-toolbar):not(.osd) switch {
 }
 
 frame .toolbar {
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
 }
 
 .inline-toolbar {
   padding: 6px;
   border-style: solid;
   border-width: 0 1px 1px;
-  border-color: alpha(${bg}, 0.12);
+  border-color: alpha(${fg}, 0.12);
   background-color: ${bg};
 }
 
@@ -1341,7 +1341,7 @@ searchbar > revealer > box,
   padding: 6px;
   border-style: solid;
   border-width: 0 0 1px;
-  border-color: alpha(${bg}, 0.12);
+  border-color: alpha(${fg}, 0.12);
   background-color: ${bg};
   background-clip: border-box;
 }
@@ -1400,7 +1400,7 @@ searchbar > revealer > box {
 }
 
 .nemo-window .primary-toolbar entry:disabled, .titlebar entry:disabled {
-  background-color: alpha(${bg}, 0.04);
+  background-color: alpha(${fg}, 0.04);
   color: alpha(${fg}, 0.5);
 }
 
@@ -1421,7 +1421,7 @@ searchbar > revealer > box {
   background-color: ${bg};
   color: ${fg};
   border-radius: 12px 12px 0 0;
-  box-shadow: inset 0 -1px alpha(${bg}, 0.12);
+  box-shadow: inset 0 -1px alpha(${fg}, 0.12);
 }
 
 .titlebar:disabled {
@@ -1470,7 +1470,7 @@ searchbar > revealer > box {
   background-color: ${bg};
   background-image: none;
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: inset 0 -1px alpha(${bg}, 0.12);
+  box-shadow: inset 0 -1px alpha(${fg}, 0.12);
 }
 
 .titlebar + separator:backdrop, .titlebar + separator.sidebar:backdrop {
@@ -1486,7 +1486,7 @@ searchbar > revealer > box {
 }
 
 .background.csd.unified .titlebar + separator, .background.csd.unified .titlebar + separator.sidebar {
-  box-shadow: inset 0 -1px alpha(${bg}, 0.12);
+  box-shadow: inset 0 -1px alpha(${fg}, 0.12);
 }
 
 .titlebar .linked:not(.vertical) > entry {
@@ -1496,7 +1496,7 @@ searchbar > revealer > box {
 }
 
 .titlebar button.suggested-action:disabled, .titlebar button.destructive-action:disabled {
-  background-color: alpha(${bg}, 0.04);
+  background-color: alpha(${fg}, 0.04);
   color: alpha(${fg}, 0.5);
 }
 
@@ -1511,7 +1511,7 @@ searchbar > revealer > box {
   animation: ripple-on-headerbar 225ms cubic-bezier(0, 0, 0.2, 1);
   background-color: ${accent};
   color: alpha(${accentfg}, 0.87);
-  box-shadow: inset 0 -1px alpha(${bg}, 0.12);
+  box-shadow: inset 0 -1px alpha(${fg}, 0.12);
 }
 
 .titlebar.selection-mode:backdrop {
@@ -1520,39 +1520,39 @@ searchbar > revealer > box {
 }
 
 .titlebar.selection-mode .subtitle:link {
-  color: alpha(${fg}, 0.87);
+  color: alpha(${bg}, 0.87);
 }
 
 .titlebar.selection-mode button:not(.suggested-action):not(.destructive-action) {
-  color: alpha(${fg}, 0.87);
+  color: alpha(${bg}, 0.87);
 }
 
 .titlebar.selection-mode button:not(.suggested-action):not(.destructive-action):disabled {
-  color: alpha(${fg}, 0.38);
+  color: alpha(${bg}, 0.38);
 }
 
 .titlebar.selection-mode button:not(.suggested-action):not(.destructive-action):checked {
-  color: alpha(${fg}, 0.87);
+  color: alpha(${bg}, 0.87);
 }
 
 .titlebar.selection-mode button:not(.suggested-action):not(.destructive-action):checked:disabled {
-  color: alpha(${fg}, 0.38);
+  color: alpha(${bg}, 0.38);
 }
 
 .titlebar.selection-mode button:not(.suggested-action):not(.destructive-action):backdrop:not(.titlebutton) {
-  color: alpha(${fg}, 0.6);
+  color: alpha(${bg}, 0.6);
 }
 
 .titlebar.selection-mode button:not(.suggested-action):not(.destructive-action):backdrop:disabled {
-  color: alpha(${fg}, 0.3);
+  color: alpha(${bg}, 0.3);
 }
 
 .titlebar.selection-mode button:not(.suggested-action):not(.destructive-action):backdrop:checked {
-  color: alpha(${fg}, 0.6);
+  color: alpha(${bg}, 0.6);
 }
 
 .titlebar.selection-mode button:not(.suggested-action):not(.destructive-action):backdrop:checked:disabled {
-  color: alpha(${fg}, 0.3);
+  color: alpha(${bg}, 0.3);
 }
 
 .titlebar.selection-mode .selection-menu {
@@ -1579,7 +1579,7 @@ searchbar > revealer > box {
   border: none;
   background-color: ${bg};
   background-image: none;
-  box-shadow: inset 0 1px alpha(${bg}, 0.1);
+  box-shadow: inset 0 1px alpha(${fg}, 0.1);
 }
 
 .titlebar.default-decoration:backdrop {
@@ -1748,8 +1748,8 @@ headerbar.windowhandle viewswitchertitle > squeezer > viewswitcher > box.horizon
  * Tree Views *
  **************/
 treeview.view {
-  border-left-color: alpha(${bg}, 0.3);
-  border-top-color: alpha(${bg}, 0.12);
+  border-left-color: alpha(${fg}, 0.3);
+  border-top-color: alpha(${fg}, 0.12);
 }
 
 * {
@@ -1766,7 +1766,7 @@ treeview.view {
 }
 
 treeview.view:selected {
-  background-color: ${bg};
+  background-color: ${fg};
   color: ${fg};
 }
 
@@ -1827,7 +1827,7 @@ treeview.view.progressbar:selected, treeview.view.progressbar:selected:hover, tr
 }
 
 treeview.view.progressbar:selected:backdrop, treeview.view.progressbar:selected:hover:backdrop, treeview.view.progressbar:selected:focus:backdrop {
-  color: alpha(${fg}, 0.87);
+  color: alpha(${bg}, 0.87);
 }
 
 treeview.view.progressbar:backdrop, treeview.view.progressbar:selected:backdrop {
@@ -1837,7 +1837,7 @@ treeview.view.progressbar:backdrop, treeview.view.progressbar:selected:backdrop 
 treeview.view.trough {
   border: none;
   box-shadow: none;
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
   background-image: none;
   border-radius: 9999px;
   padding: 0;
@@ -1846,18 +1846,18 @@ treeview.view.trough {
 
 treeview.view.trough:selected, treeview.view.trough:selected:hover, treeview.view.trough:selected:focus {
   box-shadow: none;
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
 }
 
 treeview.view.trough:backdrop, treeview.view.trough:selected:backdrop {
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
 }
 
 treeview.view header button {
   padding: 2px 6px;
   border-style: none solid solid none;
   border-width: 1px;
-  border-color: alpha(${bg}, 0.12);
+  border-color: alpha(${fg}, 0.12);
   border-radius: 0;
   background-clip: border-box;
 }
@@ -1879,7 +1879,7 @@ treeview.view header.button.dnd {
   padding: 2px 6px;
   border-style: none solid solid;
   border-width: 1px;
-  border-color: alpha(${bg}, 0.12);
+  border-color: alpha(${fg}, 0.12);
   border-radius: 0;
   box-shadow: none;
   background-color: ${bg};
@@ -1900,13 +1900,13 @@ menubar,
   padding: 0;
   background-color: ${bg};
   color: ${fg};
-  box-shadow: inset 0 -1px alpha(${bg}, 0.12);
+  box-shadow: inset 0 -1px alpha(${fg}, 0.12);
 }
 
 menubar:backdrop,
 .menubar:backdrop {
   color: alpha(${fg}, 0.7);
-  background-color: ${bg};
+  background-color: ${fg};
 }
 
 .csd menubar, .csd .menubar {
@@ -1964,7 +1964,7 @@ menu {
 
 .csd menu {
   border: none;
-  box-shadow: inset 0 0 0 1px alpha(${bg}, 0.1);
+  box-shadow: inset 0 0 0 1px alpha(${fg}, 0.1);
 }
 
 menu menuitem {
@@ -2068,7 +2068,7 @@ popover.background {
 }
 
 popover.background, .csd popover.background {
-  border: 1px solid alpha(${bg}, 0.1);
+  border: 1px solid alpha(${fg}, 0.1);
   box-shadow: 0 2px 3px -1px alpha(${bg}, 0.05), 0 4px 6px 0 alpha(${bg}, 0.06), 0 1px 10px 0 alpha(${bg}, 0.05), 0 0 0 1px alpha(${bg}, 0.75);
   background-clip: border-box;
 }
@@ -2156,7 +2156,7 @@ tabbox > tab, notebook > header tab {
 }
 
 tabbox > tab:hover, notebook > header tab:hover {
-  background-color: alpha(${bg}, 0.04);
+  background-color: alpha(${fg}, 0.04);
   color: ${fg};
 }
 
@@ -2166,7 +2166,7 @@ tabbox > tab:disabled, notebook > header tab:disabled {
 
 tabbox > tab:checked, notebook > header tab:checked {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
-  background-color: alpha(${bg}, 0.15);
+  background-color: alpha(${fg}, 0.15);
   color: ${fg};
   box-shadow: 0 1px 3px alpha(${bg}, 0.1);
 }
@@ -2180,7 +2180,7 @@ notebook {
 }
 
 frame > paned > notebook > header, notebook.frame > header {
-  background-color: alpha(${bg}, 0.04);
+  background-color: alpha(${fg}, 0.04);
 }
 
 notebook.frame {
@@ -2202,7 +2202,7 @@ notebook.frame frame > list row.activatable {
 
 notebook > header {
   border: none;
-  background-color: alpha(${bg}, 0.04);
+  background-color: alpha(${fg}, 0.04);
   padding: 3px;
   margin: 3px;
   border-radius: 9px;
@@ -2267,7 +2267,7 @@ notebook > header tab > box {
 }
 
 notebook > header tab > box:drop(active) {
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
   color: ${fg};
 }
 
@@ -2343,19 +2343,19 @@ scrollbar {
 }
 
 scrollbar.top {
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
 }
 
 scrollbar.bottom {
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
 }
 
 scrollbar.left {
-  border-right: 1px solid alpha(${bg}, 0.12);
+  border-right: 1px solid alpha(${fg}, 0.12);
 }
 
 scrollbar.right {
-  border-left: 1px solid alpha(${bg}, 0.12);
+  border-left: 1px solid alpha(${fg}, 0.12);
 }
 
 scrollbar slider {
@@ -2365,19 +2365,19 @@ scrollbar slider {
   border: 4px solid transparent;
   border-radius: 9999px;
   background-clip: padding-box;
-  background-color: alpha(${bg}, 0.5);
+  background-color: alpha(${fg}, 0.5);
 }
 
 scrollbar slider:hover {
-  background-color: alpha(${bg}, 0.7);
+  background-color: alpha(${fg}, 0.7);
 }
 
 scrollbar slider:active {
-  background-color: ${bg};
+  background-color: ${fg};
 }
 
 scrollbar slider:disabled {
-  background-color: alpha(${bg}, 0.32);
+  background-color: alpha(${fg}, 0.32);
 }
 
 scrollbar.fine-tune slider {
@@ -2415,13 +2415,13 @@ scrollbar.overlay-indicator:not(.dragging):not(.hovering) button {
   margin: 3px;
   border: 1px solid alpha(${bg}, 0.3);
   border-radius: 9999px;
-  background-color: alpha(${bg}, 0.5);
+  background-color: alpha(${fg}, 0.5);
   background-clip: padding-box;
   -gtk-icon-source: none;
 }
 
 scrollbar.overlay-indicator:not(.dragging):not(.hovering) button:disabled {
-  background-color: alpha(${bg}, 0.32);
+  background-color: alpha(${fg}, 0.32);
 }
 
 scrollbar.overlay-indicator:not(.dragging):not(.hovering).horizontal slider {
@@ -2483,7 +2483,7 @@ switch {
   margin: 6px 0;
   border: none;
   border-radius: 9999px;
-  background-color: alpha(${bg}, 0.5);
+  background-color: alpha(${fg}, 0.5);
   background-clip: padding-box;
   font-size: 0;
   color: transparent;
@@ -2505,13 +2505,13 @@ switch slider {
   border-radius: 9999px;
   outline: none;
   box-shadow: 0 3px 3px -2px alpha(${bg}, 0.05), 0 2px 3px -1px alpha(${bg}, 0.06), 0 1px 4px 0 alpha(${bg}, 0.05);
-  background-color: ${bg};
+  background-color: ${fg};
   border: none;
   color: transparent;
 }
 
 switch:focus slider, switch:hover slider, switch:focus:hover slider {
-  box-shadow: 0 0 0 6px alpha(${bg}, 0.12);
+  box-shadow: 0 0 0 6px alpha(${fg}, 0.12);
 }
 
 /*************************
@@ -2561,20 +2561,20 @@ radio {
   padding: 0;
   border-radius: 9999px;
   color: transparent;
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 150ms cubic-bezier(0, 0, 0.2, 1);
 }
 
 check:hover,
 radio:hover {
-  box-shadow: 0 0 0 6px alpha(${bg}, 0.04);
-  background-color: alpha(${bg}, 0.15);
+  box-shadow: 0 0 0 6px alpha(${fg}, 0.04);
+  background-color: alpha(${fg}, 0.15);
 }
 
 check:active,
 radio:active {
-  box-shadow: 0 0 0 6px alpha(${bg}, 0.12);
-  background-color: alpha(${bg}, 0.2);
+  box-shadow: 0 0 0 6px alpha(${fg}, 0.12);
+  background-color: alpha(${fg}, 0.2);
 }
 
 check:focus,
@@ -2584,7 +2584,7 @@ radio:focus {
 
 check:disabled,
 radio:disabled {
-  background-color: alpha(${bg}, 0.04);
+  background-color: alpha(${fg}, 0.04);
 }
 
 check:checked, check:indeterminate,
@@ -2598,7 +2598,7 @@ check:checked:hover, check:indeterminate:hover,
 radio:checked:hover,
 radio:indeterminate:hover {
   box-shadow: 0 0 0 6px alpha(${accent}, 0.15);
-  background-color: ${magenta};
+  background-color: ${accent};
 }
 
 check:checked:active, check:indeterminate:active,
@@ -2611,7 +2611,7 @@ radio:indeterminate:active {
 check:checked:disabled, check:indeterminate:disabled,
 radio:checked:disabled,
 radio:indeterminate:disabled {
-  color: alpha(${fg}, 0.38);
+  color: alpha(${bg}, 0.38);
   background-color: alpha(${accent}, 0.35);
 }
 
@@ -2718,7 +2718,7 @@ treeview.view radio, treeview.view check {
 }
 
 treeview.view radio:not(:disabled):not(:checked):not(:indeterminate), treeview.view check:not(:disabled):not(:checked):not(:indeterminate) {
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
 }
 
 treeview.view radio, treeview.view radio:hover, treeview.view radio:disabled, treeview.view radio:checked:hover, treeview.view radio:indeterminate:hover, treeview.view check, treeview.view check:hover, treeview.view check:disabled, treeview.view check:checked:hover, treeview.view check:indeterminate:hover {
@@ -2772,11 +2772,11 @@ scale.fine-tune slider {
 scale trough {
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1);
   outline: none;
-  background-color: alpha(${bg}, 0.3);
+  background-color: alpha(${fg}, 0.3);
 }
 
 scale trough:disabled {
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
 }
 
 scale highlight {
@@ -2786,12 +2786,12 @@ scale highlight {
 
 scale highlight:disabled {
   background-color: ${bg};
-  background-image: image(alpha(${bg}, 0.32));
+  background-image: image(alpha(${fg}, 0.32));
 }
 
 scale fill {
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1);
-  background-color: alpha(${bg}, 0.3);
+  background-color: alpha(${fg}, 0.3);
 }
 
 scale fill:disabled {
@@ -2807,15 +2807,15 @@ scale slider {
 }
 
 scale slider:hover {
-  box-shadow: inset 0 0 0 2px ${accent}, 0 0 0 8px alpha(${bg}, 0.12);
+  box-shadow: inset 0 0 0 2px ${accent}, 0 0 0 8px alpha(${fg}, 0.12);
 }
 
 scale slider:active {
-  box-shadow: inset 0 0 0 4px ${accent}, 0 0 0 8px alpha(${bg}, 0.12);
+  box-shadow: inset 0 0 0 4px ${accent}, 0 0 0 8px alpha(${fg}, 0.12);
 }
 
 scale slider:disabled {
-  box-shadow: inset 0 0 0 2px alpha(${bg}, 0.32);
+  box-shadow: inset 0 0 0 2px alpha(${fg}, 0.32);
 }
 
 scale marks,
@@ -2824,7 +2824,7 @@ scale value {
 }
 
 scale indicator {
-  background-color: alpha(${bg}, 0.3);
+  background-color: alpha(${fg}, 0.3);
   color: transparent;
 }
 
@@ -3118,7 +3118,7 @@ progressbar.vertical progress {
 
 progressbar trough {
   border-radius: 6px;
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
 }
 
 progressbar progress {
@@ -3188,7 +3188,7 @@ levelbar block.full {
 }
 
 levelbar block.empty {
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
 }
 
 /****************
@@ -3196,7 +3196,7 @@ levelbar block.empty {
 *****************/
 printdialog paper {
   padding: 0;
-  border: 1px solid alpha(${bg}, 0.12);
+  border: 1px solid alpha(${fg}, 0.12);
   background-color: ${bg};
   color: ${fg};
 }
@@ -3211,7 +3211,7 @@ printdialog .dialog-action-box {
 frame > border, .frame {
   margin: 0;
   padding: 0;
-  border: 1px solid alpha(${bg}, 0.12);
+  border: 1px solid alpha(${fg}, 0.12);
   border-radius: 0;
   box-shadow: none;
 }
@@ -3230,7 +3230,7 @@ frame.flat > border, frame > border.flat, statusbar frame > border {
 
 actionbar > revealer > box {
   padding: 6px;
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
   background-color: ${bg};
   background-clip: border-box;
 }
@@ -3248,7 +3248,7 @@ stack scrolledwindow.frame viewport.frame list {
 }
 
 overshoot.top {
-  background-image: -gtk-gradient(radial, center top, 0, center top, 0.5, to(alpha(${bg}, 0.12)), to(alpha(${fg}, 0))), -gtk-gradient(radial, center top, 0, center top, 0.6, from(alpha(${fg}, 0.07)), to(alpha(${fg}, 0)));
+  background-image: -gtk-gradient(radial, center top, 0, center top, 0.5, to(alpha(${fg}, 0.12)), to(alpha(${fg}, 0))), -gtk-gradient(radial, center top, 0, center top, 0.6, from(alpha(${fg}, 0.07)), to(alpha(${fg}, 0)));
   background-size: 100% 5%, 100% 100%;
   background-repeat: no-repeat;
   background-position: center top;
@@ -3258,7 +3258,7 @@ overshoot.top {
 }
 
 overshoot.bottom {
-  background-image: -gtk-gradient(radial, center bottom, 0, center bottom, 0.5, to(alpha(${bg}, 0.12)), to(alpha(${fg}, 0))), -gtk-gradient(radial, center bottom, 0, center bottom, 0.6, from(alpha(${fg}, 0.07)), to(alpha(${fg}, 0)));
+  background-image: -gtk-gradient(radial, center bottom, 0, center bottom, 0.5, to(alpha(${fg}, 0.12)), to(alpha(${fg}, 0))), -gtk-gradient(radial, center bottom, 0, center bottom, 0.6, from(alpha(${fg}, 0.07)), to(alpha(${fg}, 0)));
   background-size: 100% 5%, 100% 100%;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -3268,7 +3268,7 @@ overshoot.bottom {
 }
 
 overshoot.left {
-  background-image: -gtk-gradient(radial, left center, 0, left center, 0.5, to(alpha(${bg}, 0.12)), to(alpha(${fg}, 0))), -gtk-gradient(radial, left center, 0, left center, 0.6, from(alpha(${fg}, 0.07)), to(alpha(${fg}, 0)));
+  background-image: -gtk-gradient(radial, left center, 0, left center, 0.5, to(alpha(${fg}, 0.12)), to(alpha(${fg}, 0))), -gtk-gradient(radial, left center, 0, left center, 0.6, from(alpha(${fg}, 0.07)), to(alpha(${fg}, 0)));
   background-size: 5% 100%, 100% 100%;
   background-repeat: no-repeat;
   background-position: left center;
@@ -3278,7 +3278,7 @@ overshoot.left {
 }
 
 overshoot.right {
-  background-image: -gtk-gradient(radial, right center, 0, right center, 0.5, to(alpha(${bg}, 0.12)), to(alpha(${fg}, 0))), -gtk-gradient(radial, right center, 0, right center, 0.6, from(alpha(${fg}, 0.07)), to(alpha(${fg}, 0)));
+  background-image: -gtk-gradient(radial, right center, 0, right center, 0.5, to(alpha(${fg}, 0.12)), to(alpha(${fg}, 0))), -gtk-gradient(radial, right center, 0, right center, 0.6, from(alpha(${fg}, 0.07)), to(alpha(${fg}, 0)));
   background-size: 5% 100%, 100% 100%;
   background-repeat: no-repeat;
   background-position: right center;
@@ -3290,7 +3290,7 @@ overshoot.right {
 junction {
   border-style: solid none none solid;
   border-width: 1px;
-  border-color: alpha(${bg}, 0.12);
+  border-color: alpha(${fg}, 0.12);
   background-color: ${bg};
 }
 
@@ -3301,7 +3301,7 @@ junction:dir(rtl) {
 separator {
   min-width: 1px;
   min-height: 1px;
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
 }
 
 preferences stacksidebar.sidebar list separator, hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group):not(.tweak-group-startup) separator, leaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group):not(.tweak-group-startup) separator, box.horizontal > stack.background > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group):not(.tweak-group-startup) separator, window.background.csd > leaflet > box.vertical > scrolledwindow.view > viewport.frame > stack list separator,
@@ -3327,7 +3327,7 @@ window.background.csd > stack > scrolledwindow > viewport > box > list,
 window.background.csd > box > stack > scrolledwindow > viewport > box > list, preferencesgroup list, .geary-accounts-editor-pane list, window.background.csd.unified > deck > deck > deck list, hdyleaflet list.view, hdyleaflet list.frame, leaflet list.view, leaflet list.frame, box.horizontal > stack.background list.view, box.horizontal > stack.background list.frame, hdyleaflet stack.background scrolledwindow > viewport list, hdyleaflet overlay scrolledwindow > viewport list, leaflet stack.background scrolledwindow > viewport list, leaflet overlay scrolledwindow > viewport list, box.horizontal > stack.background stack.background scrolledwindow > viewport list, box.horizontal > stack.background overlay scrolledwindow > viewport list, hdyleaflet frame:not(.view) list:not(.contacts-contact-list), leaflet frame:not(.view) list:not(.contacts-contact-list), box.horizontal > stack.background frame:not(.view) list:not(.contacts-contact-list), list.tweak-group list, list#ListBoxTweakGroup list, .tweak-group-startup, list.content:not(.conversation-listbox) {
   border-radius: 7px;
   box-shadow: none;
-  border: 1px solid alpha(${bg}, 0.12);
+  border: 1px solid alpha(${fg}, 0.12);
 }
 
 window.background.csd stack stack stack frame > list > separator,
@@ -3348,7 +3348,7 @@ window.background.csd > stack > scrolledwindow > viewport > box > list row, pref
 }
 
 window.background.csd stack stack stack frame > list row:not(:first-child), window.background.csd > stack > list row:not(:first-child), preferencesgroup list row:not(:first-child), .geary-accounts-editor-pane list row:not(:first-child), window.background.csd.unified > deck > deck > deck list row:not(:first-child), hdyleaflet list.view row:not(:first-child), hdyleaflet list.frame row:not(:first-child), leaflet list.view row:not(:first-child), leaflet list.frame row:not(:first-child), box.horizontal > stack.background list.view row:not(:first-child), box.horizontal > stack.background list.frame row:not(:first-child), hdyleaflet stack.background scrolledwindow > viewport list row:not(:first-child), hdyleaflet overlay scrolledwindow > viewport list row:not(:first-child), leaflet stack.background scrolledwindow > viewport list row:not(:first-child), leaflet overlay scrolledwindow > viewport list row:not(:first-child), box.horizontal > stack.background stack.background scrolledwindow > viewport list row:not(:first-child), box.horizontal > stack.background overlay scrolledwindow > viewport list row:not(:first-child), hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row:not(:first-child), leaflet frame:not(.view) list:not(.contacts-contact-list) row:not(:first-child), box.horizontal > stack.background frame:not(.view) list:not(.contacts-contact-list) row:not(:first-child), list.tweak-group list row:not(:first-child), list#ListBoxTweakGroup list row:not(:first-child), .tweak-group-startup > row:not(:first-child), list.content:not(.conversation-listbox) > row:not(:first-child) {
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
 }
 
 window.background.csd stack stack stack frame > list row:first-child, window.background.csd > stack > list row:first-child, preferencesgroup list row:first-child, .geary-accounts-editor-pane list row:first-child, window.background.csd.unified > deck > deck > deck list row:first-child, hdyleaflet list.view row:first-child, hdyleaflet list.frame row:first-child, leaflet list.view row:first-child, leaflet list.frame row:first-child, box.horizontal > stack.background list.view row:first-child, box.horizontal > stack.background list.frame row:first-child, hdyleaflet stack.background scrolledwindow > viewport list row:first-child, hdyleaflet overlay scrolledwindow > viewport list row:first-child, leaflet stack.background scrolledwindow > viewport list row:first-child, leaflet overlay scrolledwindow > viewport list row:first-child, box.horizontal > stack.background stack.background scrolledwindow > viewport list row:first-child, box.horizontal > stack.background overlay scrolledwindow > viewport list row:first-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row:first-child, leaflet frame:not(.view) list:not(.contacts-contact-list) row:first-child, box.horizontal > stack.background frame:not(.view) list:not(.contacts-contact-list) row:first-child, list.tweak-group list row:first-child, list#ListBoxTweakGroup list row:first-child, .tweak-group-startup > row:first-child, list.content:not(.conversation-listbox) > row:first-child {
@@ -3370,7 +3370,7 @@ window.background.csd stack stack stack frame > list row:focus, window.backgroun
 }
 
 list {
-  border-color: alpha(${bg}, 0.12);
+  border-color: alpha(${fg}, 0.12);
   background-color: ${bg};
 }
 
@@ -3491,7 +3491,7 @@ expander title > arrow:disabled {
  ************/
 calendar {
   padding: 1px;
-  border: 1px solid alpha(${bg}, 0.12);
+  border: 1px solid alpha(${fg}, 0.12);
   color: ${fg};
 }
 
@@ -3505,7 +3505,7 @@ calendar:selected {
 
 calendar.header {
   border-style: none none solid;
-  border-color: alpha(${bg}, 0.12);
+  border-color: alpha(${fg}, 0.12);
   border-radius: 0;
 }
 
@@ -3570,11 +3570,11 @@ messagedialog .dialog-action-box button.destructive-action:not(:disabled), messa
 }
 
 filechooser .dialog-action-box {
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
 }
 
 filechooser #pathbarbox {
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
   background-color: ${bg};
 }
 
@@ -3621,12 +3621,12 @@ filechooser actionbar, filechooser actionbar > revealer > box {
 }
 
 stacksidebar.sidebar:dir(ltr) list, stacksidebar.sidebar.left list, stacksidebar.sidebar.left:dir(rtl) list, .sidebar:not(separator):dir(ltr), .sidebar:not(separator).left {
-  border-right: 1px solid alpha(${bg}, 0.12);
+  border-right: 1px solid alpha(${fg}, 0.12);
   border-left-style: none;
 }
 
 stacksidebar.sidebar:dir(rtl) list, stacksidebar.sidebar.right list, .sidebar:not(separator):dir(rtl), .sidebar:not(separator).right {
-  border-left: 1px solid alpha(${bg}, 0.12);
+  border-left: 1px solid alpha(${fg}, 0.12);
   border-right-style: none;
 }
 
@@ -3656,7 +3656,7 @@ stacksidebar.sidebar row:selected {
 }
 
 stacksidebar.sidebar row:selected label, stacksidebar.sidebar row:selected image {
-  color: alpha(${fg}, 0.87);
+  color: alpha(${bg}, 0.87);
 }
 
 stacksidebar.sidebar row + row {
@@ -3701,7 +3701,7 @@ placessidebar.sidebar row > revealer {
 }
 
 placessidebar.sidebar row:selected {
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
   font-weight: 500;
 }
 
@@ -3768,7 +3768,7 @@ paned > separator {
   -gtk-icon-source: none;
   border-style: none;
   background-color: transparent;
-  background-image: image(alpha(${bg}, 0.12));
+  background-image: image(alpha(${fg}, 0.12));
   background-size: 1px 1px;
   background-clip: content-box;
 }
@@ -3777,7 +3777,7 @@ paned > separator.wide {
   min-width: 6px;
   min-height: 6px;
   background-color: ${bg};
-  background-image: image(alpha(${bg}, 0.12)), image(alpha(${fg}, 0.12));
+  background-image: image(alpha(${fg}, 0.12)), image(alpha(${fg}, 0.12));
   background-size: 1px 1px, 1px 1px;
 }
 
@@ -3843,11 +3843,11 @@ infobar.action > revealer > box, infobar.action:backdrop > revealer > box, infob
 }
 
 infobar.action > revealer > box, infobar.action > revealer > box link:link, infobar.action > revealer > box flowboxchild, infobar.action:backdrop > revealer > box, infobar.action:backdrop > revealer > box link:link, infobar.action:backdrop > revealer > box flowboxchild, infobar.question > revealer > box, infobar.question > revealer > box link:link, infobar.question > revealer > box flowboxchild, infobar.question:backdrop > revealer > box, infobar.question:backdrop > revealer > box link:link, infobar.question:backdrop > revealer > box flowboxchild {
-  color: alpha(${fg}, 0.87);
+  color: alpha(${bg}, 0.87);
 }
 
 infobar.action > revealer > box button, infobar.action > revealer > box button:hover, infobar.action > revealer > box button:focus, infobar.action > revealer > box button:active, infobar.action > revealer > box button:checked, infobar.action > revealer > box button.text-button:not(:disabled), infobar.action:backdrop > revealer > box button, infobar.action:backdrop > revealer > box button:hover, infobar.action:backdrop > revealer > box button:focus, infobar.action:backdrop > revealer > box button:active, infobar.action:backdrop > revealer > box button:checked, infobar.action:backdrop > revealer > box button.text-button:not(:disabled), infobar.question > revealer > box button, infobar.question > revealer > box button:hover, infobar.question > revealer > box button:focus, infobar.question > revealer > box button:active, infobar.question > revealer > box button:checked, infobar.question > revealer > box button.text-button:not(:disabled), infobar.question:backdrop > revealer > box button, infobar.question:backdrop > revealer > box button:hover, infobar.question:backdrop > revealer > box button:focus, infobar.question:backdrop > revealer > box button:active, infobar.question:backdrop > revealer > box button:checked, infobar.question:backdrop > revealer > box button.text-button:not(:disabled) {
-  color: alpha(${fg}, 0.87);
+  color: alpha(${vg}, 0.87);
 }
 
 infobar.action:hover > revealer > box, infobar.question:hover > revealer > box {
@@ -3859,11 +3859,11 @@ infobar.warning > revealer > box, infobar.warning:backdrop > revealer > box {
 }
 
 infobar.warning > revealer > box, infobar.warning > revealer > box link:link, infobar.warning > revealer > box flowboxchild, infobar.warning:backdrop > revealer > box, infobar.warning:backdrop > revealer > box link:link, infobar.warning:backdrop > revealer > box flowboxchild {
-  color: alpha(${fg}, 0.87);
+  color: alpha(${bg}, 0.87);
 }
 
 infobar.warning > revealer > box button, infobar.warning > revealer > box button:hover, infobar.warning > revealer > box button:focus, infobar.warning > revealer > box button:active, infobar.warning > revealer > box button:checked, infobar.warning > revealer > box button.text-button:not(:disabled), infobar.warning:backdrop > revealer > box button, infobar.warning:backdrop > revealer > box button:hover, infobar.warning:backdrop > revealer > box button:focus, infobar.warning:backdrop > revealer > box button:active, infobar.warning:backdrop > revealer > box button:checked, infobar.warning:backdrop > revealer > box button.text-button:not(:disabled) {
-  color: alpha(${fg}, 0.87);
+  color: alpha(${bg}, 0.87);
 }
 
 infobar.warning:hover > revealer > box {
@@ -3963,7 +3963,7 @@ colorswatch.dark {
 }
 
 colorswatch.light {
-  color: alpha(${fg}, 0.87);
+  color: alpha(${bg}, 0.87);
 }
 
 colorswatch overlay {
@@ -3983,16 +3983,16 @@ colorswatch#add-color-button:only-child {
 }
 
 colorswatch#add-color-button overlay {
-  background-color: alpha(${bg}, 0.04);
+  background-color: alpha(${fg}, 0.04);
 }
 
 colorswatch#add-color-button overlay:hover {
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
   box-shadow: none;
 }
 
 colorswatch#add-color-button overlay:active {
-  background-color: alpha(${bg}, 0.3);
+  background-color: alpha(${fg}, 0.3);
 }
 
 colorswatch:disabled {
@@ -4018,12 +4018,12 @@ colorswatch#editor-color-sample overlay:hover {
 colorchooser .popover.osd {
   transition: box-shadow 200ms ease-out;
   border-radius: 6px;
-  box-shadow: 0 1px 2px 0 alpha(${bg}, 0.15), 0 3px 3px 0 alpha(${bg}, 0.18), 0 3px 6px 0 alpha(${bg}, 0.12), inset 0 1px alpha(${bg}, 0.1);
+  box-shadow: 0 1px 2px 0 alpha(${bg}, 0.15), 0 3px 3px 0 alpha(${bg}, 0.18), 0 3px 6px 0 alpha(${bg}, 0.12), inset 0 1px alpha(${fg}, 0.1);
   background-color: ${bg};
 }
 
 colorchooser .popover.osd:backdrop {
-  box-shadow: 0 4px 3px -3px alpha(${bg}, 0.2), 0 2px 2px -1px alpha(${bg}, 0.24), 0 1px 3px 0 alpha(${bg}, 0.12), inset 0 1px alpha(${bg}, 0.1);
+  box-shadow: 0 4px 3px -3px alpha(${bg}, 0.2), 0 2px 2px -1px alpha(${bg}, 0.24), 0 1px 3px 0 alpha(${bg}, 0.12), inset 0 1px alpha(${fg}, 0.1);
 }
 
 /********
@@ -4044,7 +4044,7 @@ decoration {
 }
 
 .background.csd decoration {
-  border: 1px solid alpha(${bg}, 0.1);
+  border: 1px solid alpha(${fg}, 0.1);
   background-clip: border-box;
   background-color: ${bg};
 }
@@ -4094,7 +4094,7 @@ tooltip.csd decoration {
 
 messagedialog.background.csd decoration {
   border-radius: 12px;
-  border: 1px solid alpha(${bg}, 0.1);
+  border: 1px solid alpha(${fg}, 0.1);
   background-color: ${bg};
   background-clip: border-box;
 }
@@ -4133,11 +4133,11 @@ button.minimize.titlebutton:active:not(.suggested-action):not(.destructive-actio
 }
 
 button.minimize.titlebutton:hover:not(.suggested-action):not(.destructive-action), button.minimize.titlebutton:active:not(.suggested-action):not(.destructive-action), button.maximize.titlebutton:hover:not(.suggested-action):not(.destructive-action), button.maximize.titlebutton:active:not(.suggested-action):not(.destructive-action), button.close.titlebutton:hover:not(.suggested-action):not(.destructive-action), button.close.titlebutton:active:not(.suggested-action):not(.destructive-action) {
-  color: alpha(${fg}, 0.5);
+  color: alpha(${bg}, 0.5);
 }
 
 button.minimize.titlebutton:backdrop:not(.suggested-action):not(.destructive-action), button.maximize.titlebutton:backdrop:not(.suggested-action):not(.destructive-action), button.close.titlebutton:backdrop:not(.suggested-action):not(.destructive-action) {
-  background-color: alpha(${bg}, 0.3);
+  background-color: alpha(${fg}, 0.3);
 }
 
 button.minimize.titlebutton:backdrop:hover:not(.suggested-action):not(.destructive-action), button.minimize.titlebutton:backdrop:active:not(.suggested-action):not(.destructive-action), button.maximize.titlebutton:backdrop:hover:not(.suggested-action):not(.destructive-action), button.maximize.titlebutton:backdrop:active:not(.suggested-action):not(.destructive-action), button.close.titlebutton:backdrop:hover:not(.suggested-action):not(.destructive-action), button.close.titlebutton:backdrop:active:not(.suggested-action):not(.destructive-action) {
@@ -4161,11 +4161,11 @@ button.maximize.titlebutton:active:not(.suggested-action):not(.destructive-actio
 }
 
 button.close.titlebutton:not(.suggested-action):not(.destructive-action) {
-  background-color: ${orange};
+  background-color: ${red};
 }
 
 button.close.titlebutton:active:not(.suggested-action):not(.destructive-action) {
-  background-color: ${orange};
+  background-color: ${red};
 }
 
 #MozillaGtkWidget.background headerbar.titlebar.default-decoration button.minimize.titlebutton, .background.csd headerbar.titlebar.default-decoration button.minimize.titlebutton:not(.suggested-action):not(.destructive-action), #MozillaGtkWidget.background headerbar.titlebar.default-decoration button.maximize.titlebutton, .background.csd headerbar.titlebar.default-decoration button.maximize.titlebutton:not(.suggested-action):not(.destructive-action), #MozillaGtkWidget.background headerbar.titlebar.default-decoration button.close.titlebutton, .background.csd headerbar.titlebar.default-decoration button.close.titlebutton:not(.suggested-action):not(.destructive-action) {
@@ -4233,9 +4233,9 @@ cursor-handle.insertion-cursor:dir(ltr), cursor-handle.insertion-cursor:dir(rtl)
   padding-bottom: 2px;
   padding-left: 8px;
   padding-right: 8px;
-  border: solid 1px alpha(${bg}, 0.12);
+  border: solid 1px alpha(${fg}, 0.12);
   border-radius: 7px;
-  box-shadow: inset 0 -2px alpha(${bg}, 0.12);
+  box-shadow: inset 0 -2px alpha(${bf}, 0.12);
   background-color: ${bg};
   color: ${fg};
   font-size: smaller;
@@ -4249,7 +4249,7 @@ stackswitcher {
   min-height: 0;
   padding: 3px;
   border-radius: 9px;
-  background-color: alpha(${bg}, 0.04);
+  background-color: alpha(${fg}, 0.04);
   border: none;
 }
 
@@ -4270,7 +4270,7 @@ stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destruc
 
 stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):checked {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
-  background-color: alpha(${bg}, 0.15);
+  background-color: alpha(${fg}, 0.15);
   color: ${fg};
   box-shadow: 0 1px 3px alpha(${bg}, 0.06);
 }
@@ -4294,7 +4294,7 @@ popover.emoji-picker {
 }
 
 popover.emoji-picker entry {
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
   border-image: none;
   border-radius: 0;
   box-shadow: none;
@@ -4302,7 +4302,7 @@ popover.emoji-picker entry {
 }
 
 popover.emoji-picker scrolledwindow {
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
 }
 
 button.emoji-section {
@@ -4430,7 +4430,7 @@ popover.emoji-completion .emoji:hover {
 
 .nautilus-window .floating-bar button {
   margin: 4px;
-  color: alpha(${fg}, 0.87);
+  color: alpha(${bg}, 0.87);
 }
 
 .nautilus-canvas-item.dim-label,
@@ -4468,12 +4468,12 @@ popover.emoji-completion .emoji:hover {
 }
 
 .path-bar-box.width-maximized {
-  background-color: alpha(${bg}, 0.04);
+  background-color: alpha(${fg}, 0.04);
 }
 
 .path-bar-box.background.frame {
   border-style: none;
-  background-color: alpha(${bg}, 0.04);
+  background-color: alpha(${fg}, 0.04);
 }
 
 .path-bar-box .path-bar button label:not(:only-child):first-child {
@@ -4508,7 +4508,7 @@ popover.emoji-completion .emoji:hover {
 }
 
 .path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl) {
-  background-color: alpha(${bg}, 0.08);
+  background-color: alpha(${fg}, 0.08);
 }
 
 .path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr):disabled, .path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl):disabled {
@@ -4517,7 +4517,7 @@ popover.emoji-completion .emoji:hover {
 }
 
 .windowhandle .linked.nautilus-path-bar {
-  background-color: alpha(${bg}, 0.04);
+  background-color: alpha(${fg}, 0.04);
   border-radius: 6px;
   margin: 6px 0;
 }
@@ -4537,23 +4537,23 @@ popover.emoji-completion .emoji:hover {
 }
 
 .disk-space-display.unknown {
-  background-color: alpha(${bg}, 0.3);
+  background-color: alpha(${fg}, 0.3);
   color: alpha(${fg}, 0.3);
 }
 
 .disk-space-display.used {
   background-color: ${accent};
-  color: ${accentfg};
+  color: ${accent};
 }
 
 .disk-space-display.free {
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
   color: alpha(${fg}, 0.12);
 }
 
 .search-information {
   padding: 2px;
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
   background-color: ${bg};
   color: ${fg};
 }
@@ -4581,7 +4581,7 @@ dialog.background > box.dialog-vbox.vertical > grid.horizontal > scrolledwindow.
 
 dialog.background > box.dialog-vbox.vertical > grid.horizontal > box.horizontal:last-child {
   margin: -6px 0 0 -6px;
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
 }
 
 dialog.background > box.dialog-vbox.vertical > grid.horizontal > box.horizontal:last-child > label {
@@ -4651,7 +4651,7 @@ window.org-gnome-gedit > overlay > box.vertical > paned.gedit-side-panel-paned s
 
 .open-document-selector-match {
   background-color: ${orange};
-  color: alpha(${fg}, 0.87);
+  color: alpha(${bg}, 0.87);
 }
 
 .gedit-document-panel {
@@ -4664,11 +4664,11 @@ window.org-gnome-gedit > overlay > box.vertical > paned.gedit-side-panel-paned s
 }
 
 .gedit-document-panel-group-row:not(:first-child) {
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
 }
 
 .gedit-side-panel-paned statusbar {
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
   border-radius: 0 0 12px 12px;
 }
 
@@ -4740,9 +4740,9 @@ window.background.csd:not(.maximized) leaflet list.navigation-sidebar {
   border-bottom-left-radius: 12px;
 }
 
-.tweak-group-${fg},
-.tweak-${fg},
-.tweak-${fg}:hover {
+.tweak-group-white,
+.tweak-white,
+.tweak-white:hover {
   background-image: image(${bg});
 }
 
@@ -4889,7 +4889,7 @@ window.background.csd stack.background clamp.medium frame > box.vertical > box.v
 }
 
 window.background.csd hdycolumn stack frame.view > stack > stack list > separator {
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
 }
 
 dialog.background.csd > box.vertical.dialog-vbox > stack > notebook,
@@ -4957,7 +4957,7 @@ window.background.csd scrolledwindow.contacts-contact-form {
  ************************/
 tabbox {
   border: none;
-  background-color: alpha(${bg}, 0.04);
+  background-color: alpha(${fg}, 0.04);
   padding: 3px;
   margin: 3px;
   border-radius: 9px;
@@ -5010,7 +5010,7 @@ window.solid-csd > box.vertical > box.vertical > toolbar.horizontal > toolitem >
 }
 
 .sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar {
-  box-shadow: inset 0 1px alpha(${bg}, 0.12);
+  box-shadow: inset 0 1px alpha(${fg}, 0.12);
 }
 
 .sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar button.image-button {
@@ -5043,7 +5043,7 @@ window.solid-csd > box.vertical > box.vertical > toolbar.horizontal {
   padding: 6px;
   margin: -1px 0;
   border-bottom: none;
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
   box-shadow: none;
   background-color: transparent;
 }
@@ -5074,7 +5074,7 @@ window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked 
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
   outline: none;
   box-shadow: inset 0 0 0 9999px transparent;
-  background-color: alpha(${bg}, 0.08);
+  background-color: alpha(${fg}, 0.08);
   background-image: radial-gradient(circle, transparent 10%, transparent 0%);
   background-repeat: no-repeat;
   background-position: center;
@@ -5112,7 +5112,7 @@ window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked 
 window.background > box > .sidebar-paned > paned > box > notebook > stack > box > grid > grid > grid,
 window.background > box > .sidebar-paned > paned > box > notebook > stack > box > box > grid > grid > grid,
 window.background > box > .sidebar-paned > paned > box > notebook > stack > box > notebook > stack > grid > grid > grid {
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
   padding: 6px;
   margin: -6px;
 }
@@ -5120,21 +5120,21 @@ window.background > box > .sidebar-paned > paned > box > notebook > stack > box 
 window.background > box > .sidebar-paned > paned > box > notebook > stack > box > grid > grid > box,
 window.background > box > .sidebar-paned > paned > box > notebook > stack > box > box > grid > grid > box,
 window.background > box > .sidebar-paned > paned > box > notebook > stack > box > notebook > stack > grid > grid > box {
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
   padding: 0 6px 6px;
   margin: 0 -6px -6px 0;
 }
 
 window.background > box > .sidebar-paned > paned > box > notebook > stack > box > grid > paned > box > scrolledwindow:not(:last-child),
 window.background > box > .sidebar-paned > paned > box > notebook > stack > box > notebook > stack > grid > paned > box > scrolledwindow:not(:last-child) {
-  border-right: 1px solid alpha(${bg}, 0.12);
+  border-right: 1px solid alpha(${fg}, 0.12);
   margin-right: -1px;
 }
 
 window.background > box > .sidebar-paned > paned > box > notebook > stack > box > box > grid > grid > grid,
 window.background > box > .sidebar-paned > paned > box > notebook > stack > box > box > box > grid > grid > grid,
 window.background > box > .sidebar-paned > paned > box > notebook > stack > box > box > notebook > stack > grid > grid > grid {
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
   padding: 3px;
   margin: -1px -6px -6px;
 }
@@ -5142,13 +5142,13 @@ window.background > box > .sidebar-paned > paned > box > notebook > stack > box 
 window.background > box > .sidebar-paned > paned > box > notebook > stack > box > box > grid > paned > box > scrolledwindow:not(:last-child),
 window.background > box > .sidebar-paned > paned > box > notebook > stack > box > box > box > grid > paned > box > scrolledwindow:not(:last-child),
 window.background > box > .sidebar-paned > paned > box > notebook > stack > box > box > notebook > stack > grid > paned > box > scrolledwindow:not(:last-child) {
-  border-right: 1px solid alpha(${bg}, 0.12);
+  border-right: 1px solid alpha(${fg}, 0.12);
   margin-right: -1px;
 }
 
 window.background > box > .sidebar-paned > paned > box > notebook > stack > box > box > paned > box:first-child > box {
   padding: 0 6px 6px;
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
 }
 
 /**********
@@ -5165,7 +5165,7 @@ window.background > box > .sidebar-paned > paned > box > notebook > stack > box 
 
 stack.view.polari-entry-area {
   background-color: ${bg};
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
   border-bottom-right-radius: 12px;
 }
 
@@ -5177,7 +5177,7 @@ stack:disabled.view.polari-entry-area {
  * Builder *
  ***********/
 layouttabbar {
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
   background-color: ${bg};
 }
 
@@ -5251,11 +5251,11 @@ omnibar:not(:hover):not(:active) entry {
 }
 
 popover.omnibar list row:not(:last-child) {
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
 }
 
 entry.preferences-search {
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
   box-shadow: none;
   background-color: ${bg};
 }
@@ -5269,11 +5269,11 @@ preferences stacksidebar.sidebar:dir(ltr) list, preferences stacksidebar.sidebar
 }
 
 preferences > box > box:dir(ltr) {
-  border-right: 1px solid alpha(${bg}, 0.12);
+  border-right: 1px solid alpha(${fg}, 0.12);
 }
 
 preferences > box > box:dir(rtl) {
-  border-left: 1px solid alpha(${bg}, 0.12);
+  border-left: 1px solid alpha(${fg}, 0.12);
 }
 
 popover.messagepopover.background {
@@ -5303,7 +5303,7 @@ popover.transfers list {
 }
 
 popover.transfers list row:not(:first-child) {
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
 }
 
 popover.transfers list row > box {
@@ -5321,13 +5321,13 @@ dockpaned {
 
 eggsearchbar box.search-bar {
   padding: 0 8px;
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
   background-color: ${bg};
 }
 
 docktabstrip {
   padding: 0 8px;
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
   background-color: ${bg};
 }
 
@@ -5385,7 +5385,7 @@ pillbox {
 }
 
 layoutpane entry.search {
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
   box-shadow: none;
   background-color: ${bg};
 }
@@ -5433,7 +5433,7 @@ button.dzlmenubuttonitem:disabled {
 }
 
 idelayoutstackheader {
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
 }
 
 idelayoutstackheader button:checked {
@@ -5446,11 +5446,11 @@ ideeditorutilities > dzldockpaned > box > stackswitcher {
 }
 
 ideeditorutilities > dzldockpaned > box > stackswitcher:dir(ltr) {
-  border-right: 1px solid alpha(${bg}, 0.12);
+  border-right: 1px solid alpha(${fg}, 0.12);
 }
 
 ideeditorutilities > dzldockpaned > box > stackswitcher:dir(rtl) {
-  border-left: 1px solid alpha(${bg}, 0.12);
+  border-left: 1px solid alpha(${fg}, 0.12);
 }
 
 ideeditorutilities > dzldockpaned > box > stackswitcher button {
@@ -5489,11 +5489,11 @@ ideeditorsidebar notebook header {
 }
 
 popover.messagepopover list {
-  border: 1px solid alpha(${bg}, 0.12);
+  border: 1px solid alpha(${fg}, 0.12);
 }
 
 popover.messagepopover list row:not(:last-child) {
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
 }
 
 /**********
@@ -5557,12 +5557,12 @@ overlay grid.horizontal > revealer > scrolledwindow.frame:dir(rtl) {
  *********/
 .side-panel:dir(ltr) {
   border-style: solid;
-  border-color: alpha(${bg}, 0.12);
+  border-color: alpha(${fg}, 0.12);
 }
 
 .side-panel:dir(rtl) {
   border-style: solid;
-  border-color: alpha(${bg}, 0.12);
+  border-color: alpha(${fg}, 0.12);
 }
 
 .side-panel .view {
@@ -5594,7 +5594,7 @@ frame.documents-dropdown > border {
 }
 
 box.vertical > revealer > toolbar.search-bar {
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
   background-clip: border-box;
 }
 
@@ -5700,7 +5700,7 @@ window.background > box.vertical > box.horizontal > stack > widget > notebook.fr
   background-color: ${bg};
   margin: 0;
   border-radius: 0;
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
   background-clip: border-box;
 }
 
@@ -5872,13 +5872,13 @@ window#GearyMainWindow.background.csd stack#conversation_viewer .geary-composer-
 
 .geary-main-window.unified > deck > overlay > .geary-main-layout > leaflet > headerbar,
 .geary-main-window.unified > deck > overlay > .geary-main-layout > leaflet > leaflet > headerbar {
-  box-shadow: inset 0 -1px alpha(${bg}, 0.12);
+  box-shadow: inset 0 -1px alpha(${fg}, 0.12);
 }
 
 .geary-main-window.unified > deck > overlay > .geary-main-layout > leaflet > separator.sidebar,
 .geary-main-window.unified > deck > overlay > .geary-main-layout > leaflet > leaflet > separator.sidebar {
   background-color: ${bg};
-  box-shadow: inset 0 -1px alpha(${bg}, 0.12);
+  box-shadow: inset 0 -1px alpha(${fg}, 0.12);
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1), color 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
 }
 
@@ -5889,7 +5889,7 @@ window#GearyMainWindow.background.csd stack#conversation_viewer .geary-composer-
 
 .geary-main-window.unified > deck > overlay > .geary-main-layout > leaflet > leaflet > box.vertical + separator.sidebar {
   min-width: 1px;
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
 }
 
 .geary-main-window.unified frame.geary-conversation-frame scrolledwindow {
@@ -5910,11 +5910,11 @@ window#GearyMainWindow.background.csd stack#conversation_viewer .geary-composer-
 
 .geary-main-window.unified separator.geary-sidebar-pane-separator {
   min-width: 1px;
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
 }
 
 .geary-main-window.unified geary-conversation-viewer#conversation_viewer list.background.conversation-listbox.content > row.activatable {
-  border: 1px solid alpha(${bg}, 0.12);
+  border: 1px solid alpha(${fg}, 0.12);
   border-bottom-width: 0;
   background-color: ${bg};
 }
@@ -6017,11 +6017,11 @@ window.background.csd.unified {
 }
 
 window.background.csd.unified headerbar {
-  box-shadow: inset 0 -1px alpha(${bg}, 0.12);
+  box-shadow: inset 0 -1px alpha(${fg}, 0.12);
 }
 
 window.background.csd.unified > decoration-overlay {
-  box-shadow: inset 0 0 0 1px alpha(${bg}, 0.1);
+  box-shadow: inset 0 0 0 1px alpha(${fg}, 0.1);
 }
 
 window.background.csd.unified,
@@ -6106,7 +6106,7 @@ button.flat.tilix-small-button {
  *************/
 #live_installer .menubar progressbar trough {
   border-radius: 4px;
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
 }
 
 /*********
@@ -6189,7 +6189,7 @@ window.background.chromium treeview.view.cell:selected:focus {
 }
 
 window.background.chromium treeview.view button {
-  border: 1px solid alpha(${bg}, 0.3);
+  border: 1px solid alpha(${fg}, 0.3);
   background-color: ${bg};
 }
 
@@ -6202,7 +6202,7 @@ window.background.chromium menu menuitem {
 }
 
 tooltip.background.chromium {
-  background-color: #12131d;
+  background-color: ${bg};
 }
 
 /***********
@@ -6222,7 +6222,7 @@ tooltip.background.chromium {
 }
 
 #MozillaGtkWidget > widget > separator {
-  color: ${fg};
+  color: ${bg};
 }
 
 #MozillaGtkWidget > widget > scrollbar {
@@ -6242,7 +6242,7 @@ tooltip.background.chromium {
 
 #MozillaGtkWidget > widget > entry:disabled,
 #MozillaGtkWidget > widget > button > button:disabled {
-  border-color: alpha(${bg}, 0.12);
+  border-color: alpha(${fg}, 0.12);
 }
 
 #MozillaGtkWidget > widget > entry {
@@ -6280,7 +6280,7 @@ tooltip.background.chromium {
 
 #MozillaGtkWidget > widget > checkbutton > check:not(:checked):not(:indeterminate),
 #MozillaGtkWidget > widget > radiobutton > radio:not(:checked):not(:indeterminate) {
-  color: ${fg};
+  color: ${bg};
 }
 
 #MozillaGtkWidget > widget > checkbutton > check:not(:checked):not(:indeterminate):hover, #MozillaGtkWidget > widget > checkbutton > check:not(:checked):not(:indeterminate):active,
@@ -6291,7 +6291,7 @@ tooltip.background.chromium {
 
 #MozillaGtkWidget > widget > checkbutton > check:not(:checked):not(:indeterminate):disabled,
 #MozillaGtkWidget > widget > radiobutton > radio:not(:checked):not(:indeterminate):disabled {
-  color: alpha(${fg}, 0.5);
+  color: alpha(${bg}, 0.5);
 }
 
 #MozillaGtkWidget menu {
@@ -6311,11 +6311,11 @@ tooltip.background.chromium {
 }
 
 #MozillaGtkWidget > widget > frame {
-  color: ${fg};
+  color: ${bg};
 }
 
 #MozillaGtkWidget menu > separator {
-  color: ${fg};
+  color: ${bg};
 }
 
 window.background:not(.csd) > window > menu menuitem {
@@ -6365,15 +6365,15 @@ window.background:not(.csd) > window > menu menuitem {
 }
 
 #CanvasTable #HorizontalScrollbar {
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
 }
 
 #CanvasTable #VerticalScrollbar:dir(ltr) {
-  border-left: 1px solid alpha(${bg}, 0.12);
+  border-left: 1px solid alpha(${fg}, 0.12);
 }
 
 #CanvasTable #VerticalScrollbar:dir(rtl) {
-  border-right: 1px solid alpha(${bg}, 0.12);
+  border-right: 1px solid alpha(${fg}, 0.12);
 }
 
 #Canvas_and_Dock frame > border {
@@ -6449,7 +6449,7 @@ UnityDecoration .top {
   padding: 0 2px;
   border-style: none;
   border-radius: 12px 12px 0 0;
-  box-shadow: inset 0 1px alpha(${bg}, 0.1);
+  box-shadow: inset 0 1px alpha(${fg}, 0.1);
   background-color: ${bg};
   color: ${fg};
 }
@@ -6574,7 +6574,7 @@ PanelSeparator {
 
 MatePanelAppletFrameDBus {
   border-style: solid;
-  border-color: alpha(${bg}, 0.12);
+  border-color: alpha(${fg}, 0.12);
 }
 
 .mate-panel-menu-bar.horizontal MatePanelAppletFrameDBus {
@@ -6672,7 +6672,7 @@ PanelApplet.wnck-applet .wnck-pager:selected {
 #MatePanelPopupWindow {
   border: 1px solid alpha(${bg}, 0.25);
   border-radius: 7px;
-  box-shadow: inset 0 1px alpha(${bg}, 0.1);
+  box-shadow: inset 0 1px alpha(${fg}, 0.1);
   background-color: ${bg};
 }
 
@@ -6691,7 +6691,7 @@ PanelApplet.wnck-applet .wnck-pager:selected {
 #MatePanelPopupWindow calendar + box {
   margin-top: -5px;
   padding-top: 5px;
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
 }
 
 #MatePanelPopupWindow expander > title {
@@ -6718,7 +6718,7 @@ na-tray-applet {
 .mate-panel-applet-slider {
   border: 1px solid alpha(${bg}, 0.25);
   border-radius: 7px;
-  box-shadow: inset 0 1px alpha(${bg}, 0.1);
+  box-shadow: inset 0 1px alpha(${fg}, 0.1);
   background-color: ${bg};
 }
 
@@ -6771,13 +6771,13 @@ na-tray-applet {
 }
 
 .brisk-menu {
-  box-shadow: inset 0 1px alpha(${bg}, 0.1);
+  box-shadow: inset 0 1px alpha(${fg}, 0.1);
   background-color: ${bg};
 }
 
 .brisk-menu entry {
   margin-bottom: -2px;
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
   border-image: none;
   box-shadow: none;
   background-color: transparent;
@@ -6785,12 +6785,12 @@ na-tray-applet {
 
 .brisk-menu entry + box > box:dir(ltr) {
   margin-right: -2px;
-  border-right: 1px solid alpha(${bg}, 0.12);
+  border-right: 1px solid alpha(${fg}, 0.12);
 }
 
 .brisk-menu entry + box > box:dir(rtl) {
   margin-left: -2px;
-  border-left: 1px solid alpha(${bg}, 0.12);
+  border-left: 1px solid alpha(${fg}, 0.12);
 }
 
 .brisk-menu .categories-list {
@@ -6859,7 +6859,7 @@ na-tray-applet {
 
 .caja-side-pane notebook,
 .caja-notebook {
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
 }
 
 .caja-side-pane notebook .frame,
@@ -6875,7 +6875,7 @@ na-tray-applet {
 .caja-navigation-window .view .entry {
   border: none;
   border-radius: 6px;
-  background-color: alpha(${bg}, 0.04);
+  background-color: alpha(${fg}, 0.04);
   background-image: none;
   color: ${fg};
 }
@@ -6898,7 +6898,7 @@ na-tray-applet {
 .caja-navigation-window statusbar {
   margin: 0 -10px;
   padding: 0 4px;
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
 }
 
 .caja-notebook frame > border {
@@ -6906,7 +6906,7 @@ na-tray-applet {
 }
 
 #caja-extra-view-widget {
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
   background-color: ${bg};
 }
 
@@ -6920,7 +6920,7 @@ na-tray-applet {
 .pluma-window statusbar {
   margin: 0 -10px;
   padding: 0 4px;
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
 }
 
 .pluma-window statusbar frame > border {
@@ -6938,7 +6938,7 @@ na-tray-applet {
 }
 
 .pluma-print-preview toolbar {
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
 }
 
 .pluma-window paned.horizontal box.vertical box.horizontal button.flat {
@@ -6951,11 +6951,11 @@ na-tray-applet {
 
 .pluma-window paned.horizontal box.vertical notebook.frame {
   margin-top: -1px;
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
 }
 
 .pluma-window paned.horizontal box.vertical notebook.frame box.vertical toolbar.horizontal {
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
 }
 
 /*********
@@ -6966,14 +6966,14 @@ na-tray-applet {
 }
 
 .atril-window paned.horizontal box.vertical notebook .frame {
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
 }
 
 /* mate-screensaver lock dialog */
 .lock-dialog {
   border: 1px solid alpha(${bg}, 0.25);
   border-radius: 7px;
-  box-shadow: 0 1px 2px 0 alpha(${bg}, 0.15), 0 3px 3px 0 alpha(${bg}, 0.18), 0 3px 6px 0 alpha(${bg}, 0.12), inset 0 1px alpha(${bg}, 0.1);
+  box-shadow: 0 1px 2px 0 alpha(${bg}, 0.15), 0 3px 3px 0 alpha(${bg}, 0.18), 0 3px 6px 0 alpha(${bg}, 0.12), inset 0 1px alpha(${fg}, 0.1);
   background-color: ${bg};
 }
 
@@ -6994,7 +6994,7 @@ MsdOsdWindow.background.osd {
 
 MsdOsdWindow.background.osd .trough {
   border-radius: 0;
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
 }
 
 MsdOsdWindow.background.osd .progressbar {
@@ -7016,7 +7016,7 @@ MsdOsdWindow.background.osd .progressbar {
 
 .budgie-settings-window buttonbox.inline-toolbar {
   border: none;
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
 }
 
 .budgie-settings-window buttonbox.inline-toolbar button {
@@ -7028,7 +7028,7 @@ dialog.background > .dialog-vbox > scrolledwindow > viewport.frame > list {
 }
 
 .budgie-popover {
-  border: 1px solid alpha(${bg}, 0.1);
+  border: 1px solid alpha(${fg}, 0.1);
   box-shadow: 0 1px 2px 0 alpha(${bg}, 0.15), 0 3px 3px 0 alpha(${bg}, 0.18), 0 3px 6px 0 alpha(${bg}, 0.12), 0 0 0 1px alpha(${bg}, 0.75);
   background-clip: border-box;
   background-color: ${bg};
@@ -7070,7 +7070,7 @@ dialog.background > .dialog-vbox > scrolledwindow > viewport.frame > list {
 }
 
 .budgie-popover scrolledwindow.sidebar:not(.categories) list {
-  background-color: alpha(${bg}, 0.04);
+  background-color: alpha(${fg}, 0.04);
   border-radius: 3px;
   padding: 3px 0;
 }
@@ -7118,7 +7118,7 @@ dialog.background > .dialog-vbox > scrolledwindow > viewport.frame > list {
 }
 
 .budgie-popover.budgie-menu entry.search {
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
   border-image: none;
   border-radius: 0;
   box-shadow: none;
@@ -7126,7 +7126,7 @@ dialog.background > .dialog-vbox > scrolledwindow > viewport.frame > list {
 }
 
 .budgie-popover.budgie-menu scrolledwindow.sidebar.categories {
-  background-color: alpha(${bg}, 0.04);
+  background-color: alpha(${fg}, 0.04);
   padding-bottom: 12px;
 }
 
@@ -7143,7 +7143,7 @@ dialog.background > .dialog-vbox > scrolledwindow > viewport.frame > list {
   background-color: ${bg};
   padding: 6px;
   margin: 6px;
-  border: 1px solid alpha(${bg}, 0.1);
+  border: 1px solid alpha(${fg}, 0.1);
   box-shadow: 0 1px 2px 0 alpha(${bg}, 0.15), 0 3px 3px 0 alpha(${bg}, 0.18), 0 3px 6px 0 alpha(${bg}, 0.12), 0 0 0 1px alpha(${bg}, 0.75);
   background-clip: border-box;
 }
@@ -7161,7 +7161,7 @@ dialog.background > .dialog-vbox > scrolledwindow > viewport.frame > list {
 }
 
 .budgie-popover.budgie-menu .budgie-menu-footer {
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
   padding: 6px;
 }
 
@@ -7229,7 +7229,7 @@ dialog.background > .dialog-vbox > scrolledwindow > viewport.frame > list {
 .budgie-popover.places-menu .places-list:not(.always-expand) {
   margin-top: 3px;
   padding-top: 3px;
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
 }
 
 .budgie-popover.places-menu .alternative-label {
@@ -7242,7 +7242,7 @@ dialog.background > .dialog-vbox > scrolledwindow > viewport.frame > list {
 }
 
 .workspace-switcher .workspace-layout {
-  border: 0 solid alpha(${bg}, 0.12);
+  border: 0 solid alpha(${fg}, 0.12);
 }
 
 .top .workspace-switcher .workspace-layout:dir(ltr), .bottom .workspace-switcher .workspace-layout:dir(ltr) {
@@ -7258,7 +7258,7 @@ dialog.background > .dialog-vbox > scrolledwindow > viewport.frame > list {
 }
 
 .workspace-switcher .workspace-item {
-  border: 0 solid alpha(${bg}, 0.12);
+  border: 0 solid alpha(${fg}, 0.12);
 }
 
 .top .workspace-switcher .workspace-item:dir(ltr), .bottom .workspace-switcher .workspace-item:dir(ltr) {
@@ -7392,7 +7392,7 @@ dialog.background > .dialog-vbox > scrolledwindow > viewport.frame > list {
 }
 
 .budgie-panel separator {
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
 }
 
 .budgie-panel .alert {
@@ -7465,7 +7465,7 @@ dialog.background > .dialog-vbox > scrolledwindow > viewport.frame > list {
 
 .budgie-panel menubar menu separator,
 .budgie-panel .menubar menu separator {
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
 }
 
 .budgie-panel #tasklist-button {
@@ -7584,7 +7584,7 @@ frame.raven-frame > border {
 
 .raven .raven-header.top {
   padding: 0;
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
 }
 
 .raven .raven-header.top stackswitcher button {
@@ -7594,7 +7594,7 @@ frame.raven-frame > border {
 }
 
 .raven .raven-header.bottom {
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
 }
 
 .raven stack .raven-header {
@@ -7608,7 +7608,7 @@ frame.raven-frame > border {
 .raven .raven-background {
   border-style: solid none;
   border-width: 1px;
-  border-color: alpha(${bg}, 0.12);
+  border-color: alpha(${fg}, 0.12);
   background-color: ${bg};
 }
 
@@ -7647,7 +7647,7 @@ frame.raven-frame > border {
 }
 
 .raven .audio-widget list.devices-list.sound-devices > row.activatable:selected, .raven .audio-widget list.devices-list.sound-devices > row.activatable:checked {
-  background-color: alpha(${bg}, 0.06);
+  background-color: alpha(${fg}, 0.06);
   color: ${fg};
 }
 
@@ -7686,7 +7686,7 @@ calendar.raven-calendar:selected {
 }
 
 image.raven-mpris {
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
   color: alpha(${fg}, 0.7);
   border-radius: 6px;
 }
@@ -7715,11 +7715,11 @@ image.raven-mpris {
   padding-left: 12px;
   margin: 3px;
   border-radius: 6px;
-  background-color: alpha(${bg}, 0.04);
+  background-color: alpha(${fg}, 0.04);
 }
 
 .raven-notifications-view > .raven-background > viewport.frame > list > row.activatable list > row.activatable:hover, .raven-notifications-view > .raven-background > viewport.frame > list > row.activatable list > row.activatable:selected {
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
 }
 
 .raven-notifications-view > .raven-background > viewport.frame > list > row.activatable:selected, .raven-notifications-view > .raven-background > viewport.frame > list > row.activatable:selected:hover, .raven-notifications-view > .raven-background > viewport.frame > list > row.activatable:hover, .raven-notifications-view > .raven-background > viewport.frame > list > row.activatable:active, .raven-notifications-view > .raven-background > viewport.frame > list > row.activatable:focus {
@@ -7765,7 +7765,7 @@ image.raven-mpris {
   padding: 6px;
   border-radius: 12px;
   background-color: ${bg};
-  box-shadow: 0 1px 3px 0 alpha(${bg}, 0.2), 0 15px 16px 2px alpha(${bg}, 0.14), 0 6px 18px 5px alpha(${bg}, 0.12), inset 0 0 0 1px alpha(${bg}, 0.1), 0 0 0 1px alpha(${bg}, 0.75);
+  box-shadow: 0 1px 3px 0 alpha(${bg}, 0.2), 0 15px 16px 2px alpha(${bg}, 0.14), 0 6px 18px 5px alpha(${bg}, 0.12), inset 0 0 0 1px alpha(${fg}, 0.1), 0 0 0 1px alpha(${bg}, 0.75);
 }
 
 .budgie-session-dialog,
@@ -7794,7 +7794,7 @@ image.raven-mpris {
 .budgie-session-dialog.background,
 .budgie-polkit-dialog.background,
 .budgie-run-dialog.background {
-  box-shadow: inset 0 0 0 1px alpha(${bg}, 0.1);
+  box-shadow: inset 0 0 0 1px alpha(${fg}, 0.1);
 }
 
 .budgie-session-dialog.background.csd > decoration,
@@ -7817,7 +7817,7 @@ image.raven-mpris {
 .budgie-polkit-dialog buttonbox.linked > button,
 .budgie-run-dialog buttonbox.linked > button {
   padding: 8px 16px;
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
   border-radius: 0;
 }
 
@@ -7855,7 +7855,7 @@ image.raven-mpris {
 
 .budgie-power-dialog.background {
   border-radius: 18px;
-  box-shadow: inset 0 0 0 1px alpha(${bg}, 0.1);
+  box-shadow: inset 0 0 0 1px alpha(${fg}, 0.1);
 }
 
 .budgie-power-dialog.background.csd > decoration {
@@ -7889,7 +7889,7 @@ image.raven-mpris {
 }
 
 .budgie-run-dialog scrolledwindow {
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
 }
 
 /**************
@@ -7983,7 +7983,7 @@ window#whiskermenu-window > frame > border {
   margin: 6px;
   border: none;
   background-color: ${bg};
-  box-shadow: 0 1px 2px 0 alpha(${bg}, 0.15), 0 3px 3px 0 alpha(${bg}, 0.18), 0 3px 6px 0 alpha(${bg}, 0.12), 0 0 0 1px alpha(${bg}, 0.75), inset 0 0 0 1px alpha(${bg}, 0.1);
+  box-shadow: 0 1px 2px 0 alpha(${bg}, 0.15), 0 3px 3px 0 alpha(${bg}, 0.18), 0 3px 6px 0 alpha(${bg}, 0.12), 0 0 0 1px alpha(${bg}, 0.75), inset 0 0 0 1px alpha(${fg}, 0.1);
 }
 
 window#whiskermenu-window box.categories > button.radio {
@@ -7992,11 +7992,11 @@ window#whiskermenu-window box.categories > button.radio {
 }
 
 window#whiskermenu-window box.categories > button.radio:hover {
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
 }
 
 window#whiskermenu-window box.categories > button.radio:checked, window#whiskermenu-window box.categories > button.radio:active {
-  background-color: alpha(${bg}, 0.3);
+  background-color: alpha(${fg}, 0.3);
   color: ${fg};
 }
 
@@ -8019,12 +8019,12 @@ window#whiskermenu-window scrolledwindow.frame treeview.view:not(:hover):not(:se
 }
 
 window#whiskermenu-window scrolledwindow.frame treeview.view:selected:hover {
-  background-color: alpha(${bg}, 0.12);
+  background-color: alpha(${fg}, 0.12);
   color: ${fg};
 }
 
 window#whiskermenu-window .title-area > .commands-area > button.flat.command-button:checked, window#whiskermenu-window .title-area > .commands-area > button.flat.command-button:active {
-  background-color: alpha(${bg}, 0.3);
+  background-color: alpha(${fg}, 0.3);
   color: ${fg};
 }
 
@@ -8032,7 +8032,7 @@ window#whiskermenu-window .title-area > .commands-area > button.flat.command-but
   background-color: ${bg};
   border-radius: 12px;
   border: 1px solid alpha(${bg}, 0.75);
-  box-shadow: inset 0 0 0 1px alpha(${bg}, 0.1);
+  box-shadow: inset 0 0 0 1px alpha(${fg}, 0.1);
 }
 
 #XfceNotifyWindow buttonbox {
@@ -8047,7 +8047,7 @@ dialog.xfsm-logout-dialog {
   border-radius: 12px;
   background-color: alpha(${bg}, 0.97);
   border: 1px solid alpha(${bg}, 0.75);
-  box-shadow: inset 0 0 0 1px alpha(${bg}, 0.1);
+  box-shadow: inset 0 0 0 1px alpha(${fg}, 0.1);
 }
 
 #xfwm-tabwin {
@@ -8061,7 +8061,7 @@ dialog.xfsm-logout-dialog {
  * Thunar *
  **********/
 .thunar toolbar {
-  box-shadow: inset 0 -1px alpha(${bg}, 0.12);
+  box-shadow: inset 0 -1px alpha(${fg}, 0.12);
 }
 
 .thunar .standard-view.frame {
@@ -8080,7 +8080,7 @@ dialog.xfsm-logout-dialog {
 .thunar statusbar {
   margin: 0 -10px;
   padding: 0 4px;
-  border-top: 1px solid alpha(${bg}, 0.12);
+  border-top: 1px solid alpha(${fg}, 0.12);
 }
 
 .thunar > grid.horizontal > paned.horizontal > scrolledwindow.frame.sidebar.shortcuts-pane {
@@ -8153,7 +8153,7 @@ menubar.-vala-panel-background > menuitem:disabled {
 #shutdown_dialog,
 #restart_dialog {
   border-radius: 6px;
-  box-shadow: 0 1px 2px 0 alpha(${bg}, 0.15), 0 3px 3px 0 alpha(${bg}, 0.18), 0 3px 6px 0 alpha(${bg}, 0.12), inset 0 1px alpha(${bg}, 0.1);
+  box-shadow: 0 1px 2px 0 alpha(${bg}, 0.15), 0 3px 3px 0 alpha(${bg}, 0.18), 0 3px 6px 0 alpha(${bg}, 0.12), inset 0 1px alpha(${fg}, 0.1);
   background-color: ${bg};
   color: ${fg};
 }
@@ -8204,7 +8204,7 @@ menubar.-vala-panel-background > menuitem:disabled {
  ********/
 .nemo-window .primary-toolbar {
   background-color: ${bg};
-  border-bottom: 1px solid alpha(${bg}, 0.12);
+  border-bottom: 1px solid alpha(${fg}, 0.12);
   padding: 2px 3px;
 }
 
@@ -8275,7 +8275,7 @@ menubar.-vala-panel-background > menuitem:disabled {
 
 .nemo-window .nemo-window-pane widget.entry {
   border-radius: 6px;
-  background-color: alpha(${bg}, 0.04);
+  background-color: alpha(${fg}, 0.04);
 }
 
 .nemo-window .toolbar {
@@ -8302,7 +8302,7 @@ menubar.-vala-panel-background > menuitem:disabled {
 
 .places-treeview {
   -NemoPlacesTreeView-disk-full-bg-color: ${bg};
-  -NemoPlacesTreeView-disk-full-fg-color: ${fg};
+  -NemoPlacesTreeView-disk-full-fg-color: ${accent};
   -NemoPlacesTreeView-disk-full-bar-width: 2px;
   -NemoPlacesTreeView-disk-full-bar-radius: 0;
   -NemoPlacesTreeView-disk-full-bottom-padding: 1px;
@@ -8361,13 +8361,13 @@ text/foreground color of selections on backdrop windows */
 @define-color theme_unfocused_selected_fg_color alpha(${accentfg}, 0.87);
 /*
 insensitive color on backdrop windows */
-@define-color unfocused_insensitive_color alpha(${bg}, 0.5);
+@define-color unfocused_insensitive_color alpha(${fg}, 0.5);
 /*
 widgets main borders color */
-@define-color borders alpha(${bg}, 0.12);
+@define-color borders alpha(${fg}, 0.12);
 /*
 widgets main borders color on backdrop windows */
-@define-color unfocused_borders alpha(${bg}, 0.12);
+@define-color unfocused_borders alpha(${fg}, 0.12);
 /*
 these are pretty self explicative */
 @define-color warning_color ${orange};
@@ -8376,9 +8376,9 @@ these are pretty self explicative */
 /*
 these colors are exported for the window manager and shouldn't be used in applications,
 read if you used those and something break with a version upgrade you're on your own... */
-@define-color wm_title ${bg};
-@define-color wm_unfocused_title alpha(${bg}, 0.7);
-@define-color wm_highlight alpha(${bg}, 0.1);
+@define-color wm_title ${fg};
+@define-color wm_unfocused_title alpha(${fg}, 0.7);
+@define-color wm_highlight alpha(${fg}, 0.1);
 @define-color wm_border ${bg};
 @define-color wm_bg ${bg};
 @define-color wm_unfocused_bg ${bg};
@@ -8395,7 +8395,7 @@ FIXME this is really an API */
 @define-color placeholder_text_color ${fg};
 /* Very contrasty background for text views (@theme_text_color foreground) */
 @define-color text_view_bg ${bg};
-@define-color budgie_tasklist_indicator_color alpha(${bg}, 0.3);
+@define-color budgie_tasklist_indicator_color alpha(${fg}, 0.3);
 @define-color budgie_tasklist_indicator_color_active ${accent};
 @define-color budgie_tasklist_indicator_color_active_window ${accent};
 @define-color budgie_tasklist_indicator_color_attention ${orange};`
