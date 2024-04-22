@@ -936,12 +936,12 @@ combobox > .linked:not(.vertical) > button:hover:not(:only-child), splitbutton.s
 
 filechooser #pathbarbox > stack > box > button:active, window.messagedialog .response-area button:active, window.dialog.message .dialog-action-area > button:active, .app-notification button:active, headerbar button:active:not(.suggested-action):not(.destructive-action), .toolbar button:active, dropdown > .linked:not(.vertical) > button:active:not(:only-child),
 combobox > .linked:not(.vertical) > button:active:not(:only-child), splitbutton.suggested-action > button:active, splitbutton.suggested-action > menubutton > button:active, splitbutton.destructive-action > button:active, splitbutton.destructive-action > menubutton > button:active, splitbutton.opaque > button:active, splitbutton.opaque > menubutton > button:active, menubutton.suggested-action > button:active, menubutton.destructive-action > button:active, menubutton.opaque > button:active, menubutton.flat > button:active, button.flat:active {
+  color: ${accentfg};
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
   animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   background-image: radial-gradient(circle, alpha(currentColor, 0.08) 10%, transparent 0%);
   background-size: 0% 0%;
-  background-color: alpha(currentColor, 0.08);
-  color: ${fg};
+  background-color: alpha(${accent}, 0.85);
 }
 
 filechooser #pathbarbox > stack > box > button:disabled, window.messagedialog .response-area button:disabled, window.dialog.message .dialog-action-area > button:disabled, .app-notification button:disabled, headerbar button:disabled:not(.suggested-action):not(.destructive-action), .toolbar button:disabled, dropdown > .linked:not(.vertical) > button:disabled:not(:only-child),
@@ -952,12 +952,11 @@ combobox > .linked:not(.vertical) > button:disabled:not(:only-child), splitbutto
 
 filechooser #pathbarbox > stack > box > button:checked, window.messagedialog .response-area button:checked, window.dialog.message .dialog-action-area > button:checked, .app-notification button:checked, headerbar button:checked:not(.suggested-action):not(.destructive-action), .toolbar button:checked, dropdown > .linked:not(.vertical) > button:checked:not(:only-child),
 combobox > .linked:not(.vertical) > button:checked:not(:only-child), splitbutton.suggested-action > button:checked, splitbutton.suggested-action > menubutton > button:checked, splitbutton.destructive-action > button:checked, splitbutton.destructive-action > menubutton > button:checked, splitbutton.opaque > button:checked, splitbutton.opaque > menubutton > button:checked, menubutton.suggested-action > button:checked, menubutton.destructive-action > button:checked, menubutton.opaque > button:checked, menubutton.flat > button:checked, button.flat:checked {
-  background-color: alpha(currentColor, 0.1);
-  color: ${fg};
+  color: ${accentfg};
+  background-color: alpha(${accent}, 0.85);
 }
 
-filechooser #pathbarbox > stack > box > button:checked:disabled, window.messagedialog .response-area button:checked:disabled, window.dialog.message .dialog-action-area > button:checked:disabled, .app-notification button:checked:disabled, headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), .toolbar button:checked:disabled, dropdown > .linked:not(.vertical) > button:checked:disabled:not(:only-child),
-combobox > .linked:not(.vertical) > button:checked:disabled:not(:only-child), splitbutton.suggested-action > button:checked:disabled, splitbutton.suggested-action > menubutton > button:checked:disabled, splitbutton.destructive-action > button:checked:disabled, splitbutton.destructive-action > menubutton > button:checked:disabled, splitbutton.opaque > button:checked:disabled, splitbutton.opaque > menubutton > button:checked:disabled, menubutton.suggested-action > button:checked:disabled, menubutton.destructive-action > button:checked:disabled, menubutton.opaque > button:checked:disabled, menubutton.flat > button:checked:disabled, button.flat:checked:disabled {
+filechooser #pathbarbox > stack > box > button:checked:disabled, window.messagedialog .response-area button:checked:disabled, window.dialog.message .dialog-action-area > button:checked:disabled, .app-notification button:checked:disabled, headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), .toolbar button:checked:disabled, dropdown > .linked:not(.vertical) > button:checked:disabled:not(:only-child), combobox > .linked:not(.vertical) > button:checked:disabled:not(:only-child), splitbutton.suggested-action > button:checked:disabled, splitbutton.suggested-action > menubutton > button:checked:disabled, splitbutton.destructive-action > button:checked:disabled, splitbutton.destructive-action > menubutton > button:checked:disabled, splitbutton.opaque > button:checked:disabled, splitbutton.opaque > menubutton > button:checked:disabled, menubutton.suggested-action > button:checked:disabled, menubutton.destructive-action > button:checked:disabled, menubutton.opaque > button:checked:disabled, menubutton.flat > button:checked:disabled, button.flat:checked:disabled {
   background-color: alpha(currentColor, 0.1);
   color: alpha(${fg}, 0.5);
 }
