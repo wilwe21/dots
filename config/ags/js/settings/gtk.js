@@ -87,16 +87,8 @@ function gtkupdate() {
     writeFileSync(gtk4(red, green, yellow, blue, magenta, teal, orange, accent, accentfg, fg, bg), '/tmp/ags/gtk4')
     writeFileSync(gtk3(red, green, yellow, blue, magenta, teal, orange, accent, accentfg, fg, bg), '/tmp/ags/gtk3')
     if ( options.theme.scheme.value == 'dark' ) {
-    	if (g == 'ags'){
-		execAsync(`gtkthemes -d -U -T "${g}" -I "${gi}" -C "${c}" &`)
-	} else {
-			execAsync(`gtkthemes -d -T "${g}" -I "${gi}" -C "${c}" &`)
-	}
+	execAsync(`gtkthemes -d -U -T "${g}" -I "${gi}" -C "${c}" &`)
     } else {
-	if (g == 'ags'){
-		execAsync(`gtkthemes -l -U -T "${g}" -I "${gi}" -C "${c}" &`)
-	} else {
-		execAsync(`gtkthemes -l -T "${g}" -I "${gi}" -C "${c}" &`)
-	}
+	execAsync(`gtkthemes -l -U -T "${g}" -I "${gi}" -C "${c}" &`)
     }
 }

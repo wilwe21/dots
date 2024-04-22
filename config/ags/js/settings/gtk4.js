@@ -90,7 +90,7 @@ rubberband, .content-view rubberband, .content-view columnview.view > rubberband
 treeview.view > rubberband,
 .content-view treeview.view > .rubberband, gridview > rubberband, flowbox > rubberband {
   border: 1px solid ${accent};
-  background-color: alpha(${accent}, 0.85);
+  background-color: alpha(${accent}, 0.40);
 }
 
 flowbox > flowboxchild {
