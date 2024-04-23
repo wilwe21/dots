@@ -2521,6 +2521,12 @@ stack.view treeview.view {
   min-height: 36px;
 }
 
+listview > row:selected, listview > row:selected :nth-child(1), listview > row:selected :nth-child(2), listview > row:selected :nth-child(2), listview > row:selected :nth-child(3), listview > row:selected :nth-child(4) {
+	border-radius: 5px;
+	background-color: ${accent};
+	color: ${accentfg};
+}
+
 /*********
  * Menus *
  *********/
