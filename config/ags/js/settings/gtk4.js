@@ -1592,10 +1592,10 @@ list > row button.image-button:not(.flat):active,
 list > row button.image-button:not(.flat):checked {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms, border 0ms;
   animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
-  background-image: radial-gradient(circle, alpha(currentColor, 0.08) 10%, transparent 0%);
+  background-image: radial-gradient(circle, alpha(${accent}, 0.08) 10%, transparent 0%);
   background-size: 0% 0%;
-  background-color: alpha(currentColor, 0.08);
-  color: ${fg};
+  background-color: alpha(${accent}, 0.08);
+  color: ${accentfg};
   outline: 0 solid transparent;
 }
 
@@ -5707,7 +5707,7 @@ windowcontrols > button:not(.suggested-action):not(.destructive-action) > image 
 
 .view:selected, iconview:selected, gridview > child:selected, columnview.view:selected,
 treeview.view:selected, calendar:selected, calendar > grid > label.day-number:selected {
-  background-color: alpha(${accent}, 0.06);
+  background-color: alpha(${accent}, 0.75);
 }
 
 flowbox > flowboxchild:selected, calendar > grid > label.today {
