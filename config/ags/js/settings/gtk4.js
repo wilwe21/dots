@@ -2521,7 +2521,8 @@ stack.view treeview.view {
   min-height: 36px;
 }
 
-listview > row:selected, listview > row:selected :nth-child(1), listview > row:selected :nth-child(2), listview > row:selected :nth-child(2), listview > row:selected :nth-child(3), listview > row:selected :nth-child(4) {
+listview > row:selected:focus:hover:active, listview > row:selected:not(:focus):hover:active, listview > row:selected:focus:not(hover):active, listview > row:selected:focus:hover:not(:active), listview > row:selected:not(:focus):hover:not(:active), listview > row:selected:focus:not(hover):not(:active),
+listview > row:selected:not(:focus):not(:hover), listview > row:selected :nth-child(1), listview > row:selected :nth-child(2), listview > row:selected :nth-child(3), listview > row:selected :nth-child(4) {
 	border-radius: 5px;
 	background-color: ${accent};
 	color: ${accentfg};
