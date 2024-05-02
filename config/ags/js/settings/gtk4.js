@@ -308,10 +308,10 @@ headerbar popover.background entry entry:hover:not(:focus-within),
 entry:drop(active),
 entry:hover:not(:focus-within) {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
-  background-color: alpha(${accent}, 0.85);
-  box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
-  color: ${accentfg};
-  outline: 0 solid transparent;
+  background-color: alpha(${bg}, 0.85);
+  box-shadow: inset 0 0 0 2px ${accent};
+  color: ${fg};
+  outline: 0 solid ${accent};
   outline-offset: 2px;
 }
 
@@ -925,7 +925,7 @@ combobox > .linked:not(.vertical) > button:not(:only-child), splitbutton.suggest
 filechooser #pathbarbox > stack > box > button:focus:not(:hover):not(:active), window.messagedialog .response-area button:focus:not(:hover):not(:active), window.dialog.message .dialog-action-area > button:focus:not(:hover):not(:active), .app-notification button:focus:not(:hover):not(:active), headerbar button:focus:not(:hover):not(:active):not(.suggested-action):not(.destructive-action), .toolbar button:focus:not(:hover):not(:active), dropdown > .linked:not(.vertical) > button:focus:not(:hover):not(:active):not(:only-child),
 combobox > .linked:not(.vertical) > button:focus:not(:hover):not(:active):not(:only-child), splitbutton.suggested-action > button:focus:not(:hover):not(:active), splitbutton.suggested-action > menubutton > button:focus:not(:hover):not(:active), splitbutton.destructive-action > button:focus:not(:hover):not(:active), splitbutton.destructive-action > menubutton > button:focus:not(:hover):not(:active), splitbutton.opaque > button:focus:not(:hover):not(:active), splitbutton.opaque > menubutton > button:focus:not(:hover):not(:active), menubutton.suggested-action > button:focus:not(:hover):not(:active), menubutton.destructive-action > button:focus:not(:hover):not(:active), menubutton.opaque > button:focus:not(:hover):not(:active), menubutton.flat > button:focus:not(:hover):not(:active), button.flat:focus:not(:hover):not(:active) {
   color: ${fg};
-  outline: 2px solid alpha(${bg}, 0.04);
+  outline: 2px solid alpha(${accent}, 0.5);
   outline-offset: -2px;
 }
 
@@ -983,7 +983,7 @@ button.opaque:checked {
 }
 
 button.opaque:checked:hover {
-  background-image: image(alpha(${fg}, 0.05));
+  background-image: image(alpha(${fg}, 1));
 }
 
 button.opaque:checked.keyboard-activating, button.opaque:checked:active {
@@ -2305,7 +2305,7 @@ pathbar > button:checked {
 
 
 pathbar > button:checked:hover {
-  background-color: alpha(currentColor, 0.16);
+  background-color: alpha(currentColor, 0.85);
   color: ${fg};
 }
 
@@ -2653,7 +2653,7 @@ popover > contents {
   color: ${fg};
   border: 1px solid alpha(${bg}, 0.1);
   background-clip: border-box;
-  box-shadow: 0 0 0 1px alpha(${fg}, 0.75), 0 2px 3px -1px apha(${fg}, 0.05), 0 4px 6px 0 apha(${fg}, 0.06), 0 1px 10px 0 apha(${fg}, 0.05);
+  box-shadow: 0 0 0 1px alpha(${accent}, 0.75), 0 2px 3px -1px apha(${accent}, 0.05), 0 4px 6px 0 apha(${accent}, 0.06), 0 1px 10px 0 apha(${accent}, 0.05);
 }
 
 popover > contents > list,
@@ -2786,9 +2786,8 @@ notebook > header > tabs > tab:active {
 
 notebook > header > tabs > tab:checked {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms, background-color 0ms;
-  background-color: alpha(${bg}, 0.15);
-  color: ${fg};
-  box-shadow: 0 1px 3px alpha(${fg}, 0.1);
+  background-color: alpha(${accent}, 0.85);
+  color: ${accentfg};
 }
 
 notebook > header > tabs > tab:checked:disabled {
@@ -3004,7 +3003,6 @@ tabbar tab:selected:not(:active) {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms, background-color 0ms;
   background-color: ${accent};
   color: ${accentfg};
-  box-shadow: 0 1px 3px alpha(${fg}, 0.1);
 }
 
 tabbar tab:selected:not(:active):disabled {
@@ -3424,20 +3422,12 @@ switch {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
   margin: 6px 0;
   padding: 0;
-  border: none;
+	border: 2px solid ${accent};
   border-radius: 9999px;
   background-color: alpha(${bg}, 0.5);
   background-clip: border-box;
   font-size: 0;
   color: transparent;
-}
-
-switch:checked {
-  background-color: ${accent};
-}
-
-switch:disabled {
-  opacity: 0.5;
 }
 
 switch image {
@@ -3451,13 +3441,31 @@ switch > slider {
   margin: 3px;
   border-radius: 9999px;
   outline: none;
-  box-shadow: 0 3px 3px -2px alpha(${fg}, 0.05), 0 2px 3px -1px apha(${fg}, 0.06), 0 1px 4px 0 apha(${fg}, 0.05);
   background-color: ${bg};
   border: none;
 }
 
+switch:checked > slider {
+	background-color: alpha(${accent}, 0.85)
+}
+
+switch:not(:checked) > slider {
+	background-color: alpha(${accent}, 0.5)
+}
+
 switch:focus slider, switch:hover slider, switch:focus:hover slider {
+  background-color: alpha(${accent}, 1);
   box-shadow: 0 0 0 6px alpha(${bg}, 0.12);
+}
+
+switch:disabled {
+  background-color: ${accent};
+  opacity: 0.5;
+}
+
+switch:disabled > slider {
+  background-color: ${bg};
+  opacity: 1.0;
 }
 
 /*************************
@@ -3531,12 +3539,22 @@ radio:checked,
 radio:indeterminate {
   color: alpha(${accentfg}, 0.87);
   background-color: ${accent};
+	border: 2px solid ${accent};
+}
+
+check:not(:checked), check:indeterminate,
+radio:not(:checked),
+radio:indeterminate {
+  color: alpha(${fg}, 0.25);
+  background-color: ${bg};
+	border: 2px solid ${accent};
 }
 
 check:checked:hover, check:indeterminate:hover,
 radio:checked:hover,
 radio:indeterminate:hover {
   box-shadow: 0 0 0 6px alpha(${accent}, 0.15);
+	color: ${accentfg};
   background-color: ${accent};
 }
 
@@ -4460,12 +4478,12 @@ columnview.view > header > button:selected:hover, treeview.view:selected:hover {
 }
 
 treeview.view.progressbar:selected {
-  border-bottom: 6px solid ${bg}
+  border-bottom: 6px solid ${bg};
 }
 
 button row.activatable:focus, button row.activatable:hover, button row.activatable:active {
   box-shadow: none;
-  background: none;
+  background: none/
 }
 
 button:checked row.activatable {
@@ -4478,26 +4496,10 @@ row:selected {
   box-shadow: none;
 }
 
-row.activatable:selected {
-  background-color: ${accent};
-}
-
-row.activatable:selected:hover {
-  background-color: alpha(${accent}, 0.85);
-  color: ${accentfg}
-}
-
-row:selected:hover {
-  background-color: alpha(currentColor, 0.5);
-}
-
-row:selected:focus, row:selected:focus-visible:focus-within {
-  outline: none;
-  background-color: alpha(currentColor, 0.08);
-}
-
+row.activatable:selected, row:selected:hover, row:focus:selected:hover, row:focus:active:selected:hover, row.activatable:selected:hover,row:selected:focus, row:selected:focus-visible:focus-within,
 row:selected:focus:hover, row:selected:focus-visible:focus-within:hover {
-  background-color: alpha(currentColor, 0.16);
+  background-color: alpha(${accent}, 0.85);
+	color: ${accentfg};
 }
 
 row:selected button image,
@@ -5820,9 +5822,8 @@ stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destruc
 
 stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):checked {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms, background-color 0ms;
-  background-color: alpha(${bg}, 0.15);
-  color: ${fg};
-  box-shadow: 0 1px 3px alpha(${fg}, 0.1);
+  background-color: alpha(${accent}, 0.85);
+  color: ${accentfg};
 }
 
 stackswitcher button.text-button {
