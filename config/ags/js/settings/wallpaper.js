@@ -13,7 +13,15 @@ export function initWallpaper() {
 export function wallpaper() {
     if (!dependencies(['swww']))
         return;
-
-    exec(`swww img "${options.desktop.wallpaper.img.value}" -t none`
-    ).catch(err => console.error(err));
+    if (options.desktop.wallpaper.transition != '') {
+		const transit = options.desktop.wallpaper.transition.value.split(' ');
+		const cons = ['swww', 'img', options.desktop.wallpaper.img.value]
+		const end = [...cons, ...transit]
+		console.log(end)
+		execAsync(end
+    	).catch(err => console.error(err));
+	} else {
+		execAsync(['swww', 'img', options.desktop.wallpaper.img.value, "-t", "none"
+    	]).catch(err => console.error(err));
+	}
 }

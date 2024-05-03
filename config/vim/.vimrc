@@ -21,6 +21,7 @@ set showmode
 set showmatch
 set hlsearch
 autocmd Filetype css setlocal tabstop=2
+autocmd Filetype javascript setlocal tabstop=4
 let g:airline_theme = 'ags'
 colo ags
 " Functions {{{

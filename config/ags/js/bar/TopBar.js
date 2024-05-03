@@ -41,7 +41,6 @@ const SeparatorDot = (service, condition) => {
 
     const conn = service ? [[service, visibility]] : [];
     return Widget.Separator({
-        connections: [['draw', visibility], ...conn],
         visible: options.bar.separators.bind('value'),
         vpack: 'center',
     });
