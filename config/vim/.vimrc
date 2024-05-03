@@ -20,6 +20,7 @@ set number
 set showmode
 set showmatch
 set hlsearch
+set tabstop=2
 autocmd Filetype css setlocal tabstop=2
 autocmd Filetype javascript setlocal tabstop=4
 let g:airline_theme = 'ags'
