@@ -5,5 +5,5 @@ then
 	pid=$(echo $pid | sed 's/ .*//')
 	pkill -P $pid
 else
-  kitty -c "$HOME/.config/hypr/scripts/cavabg.conf" --class=cava $HOME/.config/hypr/scripts/cavabg 
+  kitty -c "$HOME/.config/hypr/scripts/cavabg.conf" --class=background $HOME/.config/hypr/scripts/cavabg 
 fi

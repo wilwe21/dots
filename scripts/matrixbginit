@@ -1,0 +1,9 @@
+#!/bin/bash
+if ps -C matrixbg > /dev/null
+then
+	pid=$(pgrep matrixbg)
+	pid=$(echo $pid | sed 's/ .*//')
+	pkill -P $pid
+else
+  kitty -c "$HOME/.config/hypr/scripts/cavabg.conf" --class=background $HOME/.config/hypr/scripts/matrixbg	
+fi
