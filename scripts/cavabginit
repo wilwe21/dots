@@ -1,0 +1,9 @@
+#!/bin/bash
+if ps -C cavabg > /dev/null
+then
+	pid=$(pgrep cavabg)
+	pid=$(echo $pid | sed 's/ .*//')
+	pkill -P $pid
+else
+  kitty -c "$HOME/.config/hypr/scripts/cavabg.conf" --class=cava $HOME/.config/hypr/scripts/cavabg 
+fi
