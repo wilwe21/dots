@@ -5,6 +5,7 @@ import { Volume, Microhone, SinkSelector, AppMixer } from './widgets/Volume.js';
 import { NetworkToggle, WifiSelection } from './widgets/Network.js';
 import { BluetoothToggle, BluetoothDevices } from './widgets/Bluetooth.js';
 import { ThemeToggle, ThemeSelector } from './widgets/Theme.js';
+import { ShaderToggle, ShaderSelector } from './widgets/Shader.js';
 import Media from './widgets/Media.js';
 import Brightness from './widgets/Brightness.js';
 import DND from './widgets/DND.js';
@@ -59,8 +60,8 @@ export default () => PopupWindow({
                 [WifiSelection(), BluetoothDevices()],
             ),
             Row(
-                [Homogeneous([ThemeToggle()]), MicMute()],
-                [ThemeSelector()],
+                [Homogeneous([ThemeToggle(), ShaderToggle()]), MicMute()],
+                [ThemeSelector(), ShaderSelector()],
             ),
             Media(),
         ],

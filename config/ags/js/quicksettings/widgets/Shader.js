@@ -1,27 +1,26 @@
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import { ArrowToggleButton, Menu, opened } from '../ToggleButton.js';
-import themes from '../../themes.js';
+import shaders from '../../shaders.js';
 import icons from '../../icons.js';
 import options from '../../options.js';
-import { setTheme, openSettings } from '../../settings/theme.js';
+import { setShader } from '../../settings/shader.js';
 
-export const ThemeToggle = () => ArrowToggleButton({
-    name: 'theme',
-    icon: Widget.Icon().bind('icon', options.theme.icon),
-    label: Widget.Label({ truncate: 'end' }).bind('label', options.theme.name),
-    connection: [opened, () => opened.value === 'theme'],
-    activate: () => opened.setValue('theme'),
+export const ShaderToggle = () => ArrowToggleButton({
+    name: 'shader',
+	icon: Widget.Icon("/home/wilwe/.hyprland.conf/icons/fluttershy.png"),
+	label: Widget.Label("Shaders"),
+    connection: [opened, () => opened.value === 'shader'],
+    activate: () => opened.setValue('shader'),
     activateOnArrow: false,
     deactivate: () => { },
 });
 
-export const ThemeSelector = () => Menu({
-    name: 'theme',
-    icon: Widget.Icon().bind('icon', options.theme.icon),
-    title: Widget.Label('Theme Selector'),
+export const ShaderSelector = () => Menu({
+    name: 'shader',
+    title: Widget.Label('Shader Selector'),
     content: [
-        ...themes.map(({ name, icon }) => Widget.Button({
-            on_clicked: () => setTheme(name),
+        ...shaders.map(({ name, icon }) => Widget.Button({
+			on_clicked: () => setShader(name),
             child: Widget.Box({
                 children: [
                     Widget.Icon(icon),
@@ -37,11 +36,10 @@ export const ThemeSelector = () => Menu({
         })),
         Widget.Separator(),
         Widget.Button({
-            on_clicked: openSettings,
             child: Widget.Box({
                 children: [
                     Widget.Icon(icons.ui.settings),
-                    Widget.Label('Theme Settings'),
+                    Widget.Label('Shader Settings'),
                 ],
             }),
         }),
