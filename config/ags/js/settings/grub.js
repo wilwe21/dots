@@ -14,5 +14,5 @@ GRUB_TIMEOUT="${timeout}"
 GRUB_DEFAULT="0"
 GRUB_SAVEDEFAULT="false"`
     writeFileSync(String(conf), '/tmp/ags/grub.conf')
-    Utils.execAsync(['hyprctl', 'dispatch', 'exec', '/home/wilwe/.hyprland.conf/scripts/theme -g'])
+    Utils.execAsync(['hyprctl', 'dispatch', 'exec', 'sudo /home/wilwe/.hyprland.conf/scripts/theme -g'])
 }
