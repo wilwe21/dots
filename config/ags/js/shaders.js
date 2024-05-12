@@ -14,4 +14,28 @@ export default [
 		icon: '/home/wilwe/.hyprland.conf/icons/ghost2.png',
 		path: '/home/wilwe/.hyprland.conf/shaders/dark.glsl'
 	}),
+	Shader({
+		name: 'Blue Light Filter',
+		path: '/home/wilwe/.hyprland.conf/shaders/blue-light-filter.glsl'
+	}),
+	Shader({
+		name: 'Gray Scale',
+		path: '/home/wilwe/.hyprland.conf/shaders/grayscale.glsl'
+	}),
+	Shader({
+		name: 'Sprawdzian w polskiej szkole',
+		path: '/home/wilwe/.hyprland.conf/shaders/sprawdzian.glsl'
+	}),
+	Shader({
+		name: '90Deg',
+		path: '/home/wilwe/.hyprland.conf/shaders/90.glsl'
+	}),
+	Shader({
+		name: '180Deg',
+		path: '/home/wilwe/.hyprland.conf/shaders/180.glsl'
+	}),
+	Shader({
+		name: '270Deg',
+		path: '/home/wilwe/.hyprland.conf/shaders/270.glsl'
+	}),
 ]
