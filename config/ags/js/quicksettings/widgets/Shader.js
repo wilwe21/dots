@@ -34,14 +34,5 @@ export const ShaderSelector = () => Menu({
                 ],
             }),
         })),
-        Widget.Separator(),
-        Widget.Button({
-            child: Widget.Box({
-                children: [
-                    Widget.Icon(icons.ui.settings),
-                    Widget.Label('Shader Settings'),
-                ],
-            }),
-        }),
     ],
 });

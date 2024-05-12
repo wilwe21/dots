@@ -38,4 +38,8 @@ export default [
 		name: '270Deg',
 		path: '/home/wilwe/.hyprland.conf/shaders/270.glsl'
 	}),
+	Shader({
+		name: 'Arabic',
+		path: '/home/wilwe/.hyprland.conf/shaders/arabic.glsl'
+	}),
 ]
