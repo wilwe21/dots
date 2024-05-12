@@ -42,4 +42,8 @@ export default [
 		name: 'Arabic',
 		path: '/home/wilwe/.hyprland.conf/shaders/arabic.glsl'
 	}),
+	Shader({
+		name: 'Test',
+		path: '/home/wilwe/.hyprland.conf/shaders/test.glsl'
+	}),
 ]
