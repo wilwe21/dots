@@ -15,5 +15,5 @@ void main() {
 	vec3 noise = vec3(fract(sin(v_texcoord.x * 100.0) * 1000.0));
 
 	vec4 pixColor = texture2D(tex, distortedTexCoord);
-	gl_FragColor = (pixColor * fadeFactor * (1.0 - scanlineIntensity)) + noise;
+	gl_FragColor = (pixColor * fadeFactor * (1.0 - scanlineIntensity));
 }
