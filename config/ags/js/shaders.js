@@ -43,6 +43,10 @@ export default [
 		path: '/home/wilwe/.hyprland.conf/shaders/arabic.glsl'
 	}),
 	Shader({
+		name: 'CRT',
+		path: '/home/wilwe/.hyprland.conf/shaders/crt.glsl'
+	}),
+	Shader({
 		name: 'Test',
 		path: '/home/wilwe/.hyprland.conf/shaders/test.glsl'
 	}),
