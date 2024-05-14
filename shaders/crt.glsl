@@ -8,12 +8,15 @@ void main() {
 
 	vec2 distortedTexCoord = v_texcoord + curvature * (v_texcoord - vec2(0.5, 0.5));
 	float vignetteFactor = smoothstep(1.0, 0.2, clamp(distanceToCenter, 0.2, 0.7));
+
 	if (distortedTexCoord.x < 0.0 || distortedTexCoord.x > 1.0 || distortedTexCoord.y < 0.0 || distortedTexCoord.y > 1.0){
 		gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
 	} else {
 		float pixels = 8192.0;
-		float dx = 15.0 * (1.0 / pixels);
-		float dy = 10.0 * (1.0 / pixels);
+		//float pixels = 4096.0;
+		//float pixels = 2048.0;
+		float dx = 13.0 * (1.0 / pixels);
+		float dy = 12.0 * (1.0 / pixels);
 		vec2 Coord = vec2(dx * floor(distortedTexCoord.x /dx),
 											dy * floor(distortedTexCoord.y /dy));
 		float scanlineIntensity = sin(Coord.y * 20.0) * 0.2;
