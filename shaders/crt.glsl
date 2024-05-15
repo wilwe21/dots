@@ -1,7 +1,6 @@
 precision highp float;
 varying vec2 v_texcoord;
 uniform sampler2D tex;
-uniform sampler2D pixelGridTex;
 
 void main() {
 	//float pixels = 8192.0;
@@ -23,7 +22,18 @@ void main() {
 		float dy = 16.0 * (1.0 / pixels);
 		vec2 Coord = vec2(dx * floor(distortedTexCoord.x /dx),
 											dy * floor(distortedTexCoord.y /dy));
-		vec4 pixelGridColor = texture2D(pixelGridTex, Coord);
+		vec4 pixelGridColor = texture2D(tex, Coord);
+		//vec4 pixelGridColor;
+		int row = int(floor(Coord.y / (1.0 / pixels * 16.0)));
+		int col = int(floor(Coord.x / (1.0 / pixels * 9.0)));
+		int colIndex = int(floor(mod(float(row), 3.0)));
+		if (col == 1) {
+			vec4 pixelGridColor = vec4(1.0, 0.0, 0.0, 1.0);
+		} else if (col == 2) {
+			vec4 pixelGridColor = vec4(0.0, 1.0, 0.0, 1.0);
+		} else {
+			vec4 pixelGridColor = vec4(0.0, 0.0, 1.0, 1.0);
+		}
 		float scanlineOffset = fract(Coord.y) * 2.0 - 1.0;
 		float scanline = abs(scanlineOffset) * scanlineIntensity;
 
