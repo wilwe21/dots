@@ -3,8 +3,9 @@ varying vec2 v_texcoord;
 uniform sampler2D tex;
 
 void main() {
-	//float pixels = 8192.0;
-	float pixels = 4096.0;
+	//float pixels = 16384.0;
+	float pixels = 8192.0;
+	//float pixels = 4096.0;
 	//float pixels = 2048.0;
 	float curvatureStrength = 12.0;
 	float scanlineIntensity = 0.2;
@@ -24,15 +25,24 @@ void main() {
 											dy * floor(distortedTexCoord.y /dy));
 		vec4 pixelGridColor = texture2D(tex, Coord);
 		//vec4 pixelGridColor;
-		int row = int(floor(Coord.y / (1.0 / pixels * 16.0)));
-		int col = int(floor(Coord.x / (1.0 / pixels * 9.0)));
-		int colIndex = int(floor(mod(float(row), 3.0)));
-		if (col == 1) {
-			vec4 pixelGridColor = vec4(1.0, 0.0, 0.0, 1.0);
-		} else if (col == 2) {
-			vec4 pixelGridColor = vec4(0.0, 1.0, 0.0, 1.0);
+		vec4 red = vec4(pixelGridColor.r, 0.0, 0.0, 1.0);
+		vec4 green = vec4(0.0, pixelGridColor.g, 0.0, 1.0);
+		vec4 blue = vec4(0.0, 0.0, pixelGridColor.b, 1.0);
+		int row = int(floor(Coord.y / (1.0 / pixels * 3.0)));
+		int col = int(floor(Coord.x / (1.0 / pixels * 3.0)));
+		int colIndex = int(floor(mod(float(col), 4.0)));
+		if (colIndex == 1) {
+			pixelGridColor = red;
+		} else if (colIndex == 2) {
+			pixelGridColor = green;
+		} else if (colIndex == 3){
+			pixelGridColor = blue;
 		} else {
-			vec4 pixelGridColor = vec4(0.0, 0.0, 1.0, 1.0);
+			pixelGridColor = vec4(0.0, 0.0, 0.0, 1.0);
+		}
+		int rowIndex = int(floor(mod(float(row), 2.0)));
+		if (rowIndex == 1) {
+			pixelGridColor = vec4(0.0, 0.0, 0.0, 1.0);
 		}
 		float scanlineOffset = fract(Coord.y) * 2.0 - 1.0;
 		float scanline = abs(scanlineOffset) * scanlineIntensity;
