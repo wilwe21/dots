@@ -47,6 +47,10 @@ export default [
 		path: '/home/wilwe/.hyprland.conf/shaders/crt.glsl'
 	}),
 	Shader({
+		name: 'Game Boy',
+		path: '/home/wilwe/.hyprland.conf/shaders/gameboy.glsl'
+	}),
+	Shader({
 		name: 'Test',
 		path: '/home/wilwe/.hyprland.conf/shaders/test.glsl'
 	}),
