@@ -4,8 +4,8 @@ uniform sampler2D tex;
 
 void main() {
 	//float pixels = 16384.0;
-	float pixels = 8192.0;
-	//float pixels = 4096.0;
+	//float pixels = 8192.0;
+	float pixels = 4096.0;
 	//float pixels = 2048.0;
 	float curvatureStrength = 12.0;
 	float scanlineIntensity = 0.2;
@@ -19,8 +19,8 @@ void main() {
 	if (distortedTexCoord.x < 0.0 || distortedTexCoord.x > 1.0 || distortedTexCoord.y < 0.0 || distortedTexCoord.y > 1.0){
 		gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
 	} else {
-		float dx = 9.0 * (1.0 / pixels);
-		float dy = 16.0 * (1.0 / pixels);
+		float dx = 4.5 * (1.0 / pixels);
+		float dy = 8.0 * (1.0 / pixels);
 		vec2 Coord = vec2(dx * floor(distortedTexCoord.x /dx),
 											dy * floor(distortedTexCoord.y /dy));
 		vec4 pixelGridColor = texture2D(tex, Coord);
@@ -34,11 +34,11 @@ void main() {
 		int col = int(floor(Coord.x / (1.0 / pixels * 3.0)));
 		int colIndex = int(floor(mod(float(col), 4.0)));
 		if (colIndex == 1) {
-			pixelGridColor = red;
+			pixelGridColor = blue;
 		} else if (colIndex == 2) {
 			pixelGridColor = green;
 		} else if (colIndex == 3){
-			pixelGridColor = blue;
+			pixelGridColor = red;
 		} else {
 			pixelGridColor = black;
 		}
