@@ -3,7 +3,6 @@ call plug#begin('~/.vim/plugins')
  Plug 'vim-airline/vim-airline'
  Plug 'vim-airline/vim-airline-themes'
  Plug 'mg979/vim-visual-multi', { 'bramch': 'master' }
- Plug 'catppuccin/vim', { 'as': 'catppuccin' } 
  Plug 'cakebaker/scss-syntax.vim'
  Plug 'gko/vim-coloresque'
  Plug 'roymanigley/get-visual-selection-vim-plugin'
@@ -86,8 +85,8 @@ function! BackgroundSentence(sel='false')
 endfunction
 " }}}
 " Binds {{{
- vmap <C-c> "+y
- nmap <C-x> "+p
+ noremap <C-c> "+y
+ noremap <C-x> "+p
  nmap <C-F4> :silent :call BackgroundSentence()<CR>
  vmap <C-F4> :silent :call BackgroundSentence('true')<CR>
  nmap <F1> :silent :call ExecuteLineAsTTS()<CR>
@@ -99,5 +98,7 @@ endfunction
  vmap <F1> :silent :call ExecuteLineAsTTS("false",'true')<CR>
  vmap <C-F1> :silent :call ExecuteLineAsTPL("false",'true')<CR>
  vmap <C-F2> :silent :call ExecuteLineAsTPL("true",'true')<CR>
+ vmap <C-1> :silent :call ExecuteLineAsTPL("false",'true','pl')<CR>
+ vmap <C-2> :silent :call ExecuteLineAsTPL("true",'true','pl')<CR>
  vmap <F2> :silent :call ExecuteLineAsTTS("true",'true')<CR>
 " }}}
