@@ -7,7 +7,7 @@ import { setShader } from '../../settings/shader.js';
 
 export const ShaderToggle = () => ArrowToggleButton({
     name: 'shader',
-	icon: Widget.Icon("/home/wilwe/.hyprland.conf/icons/fluttershy.png"),
+	icon: Widget.Icon("tor"),
 	label: Widget.Label("Shaders"),
     connection: [opened, () => opened.value === 'shader'],
     activate: () => opened.setValue('shader'),
