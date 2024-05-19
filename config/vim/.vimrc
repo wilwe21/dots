@@ -20,6 +20,7 @@ set showmode
 set showmatch
 set hlsearch
 set mouse=a
+set backspace=indent,eol,start
 set tabstop=2
 autocmd Filetype css setlocal tabstop=2
 autocmd Filetype javascript setlocal tabstop=4
