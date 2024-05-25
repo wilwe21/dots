@@ -19,7 +19,7 @@ export function wallpaper() {
 		const end = [...cons, ...transit]
 		console.log(end)
 		execAsync(end
-    	).catch(err => console.error(err));
+    	).catch(err => console.error("no transition set", err));
 	} else {
 		execAsync(['swww', 'img', options.desktop.wallpaper.img.value, "-t", "none"
     	]).catch(err => console.error(err));
