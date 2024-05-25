@@ -29,11 +29,18 @@ void main() {
 		vec4 green = vec4(0.0, pixelGridColor.g, 0.0, 1.0);
 		vec4 blue = vec4(0.0, 0.0, pixelGridColor.b, 1.0);
 		vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
+		vec4 white = vec4(1.0, 1.0, 1.0, 1.0);
 		vec4 all = pixelGridColor;
 		int row = int(floor(Coord.y / (1.0 / pixels * 3.0)));
 		int col = int(floor(Coord.x / (1.0 / pixels * 3.0)));
 		int colIndex = int(floor(mod(float(col), 4.0)));
-		if (colIndex == 1) {
+		int rowIndex = int(floor(mod(float(row), 4.0)));
+		if (rowIndex == 1) {
+			pixelGridColor = mix(pixelGridColor, black, 0.5);
+		} else if (rowIndex == 3) {
+			pixelGridColor = mix(pixelGridColor, white, 0.5);
+		}
+		/*if (colIndex == 1) {
 			pixelGridColor = blue;
 		} else if (colIndex == 2) {
 			pixelGridColor = green;
@@ -41,11 +48,7 @@ void main() {
 			pixelGridColor = red;
 		} else {
 			pixelGridColor = black;
-		}
-		int rowIndex = int(floor(mod(float(row), 2.0)));
-		if (rowIndex == 1) {
-			pixelGridColor = black;
-		}
+		}*/
 		float scanlineOffset = fract(Coord.y) * 2.0 - 1.0;
 		float scanline = abs(scanlineOffset) * scanlineIntensity;
 
