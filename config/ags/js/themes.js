@@ -29,7 +29,7 @@ export default [
 	    "color.magenta": "#CBA6F7",
 	    "color.teal": "#94E2D5",
 	    "color.orange": "#FAB387",
-	    "color.playcolor": "#FAB387",
+	    "color.playcolor": "$green",
 	    "theme.bg": "#181825",
 	    "theme.fg": "#CDD6F4",
 	    "theme.accent.accent": "#CBA6F7",
