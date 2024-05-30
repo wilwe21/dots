@@ -3,6 +3,7 @@ if ps -C ags > /dev/null
 then
     rm -r /home/wilwe/.cache/ags/media/*
 		ags -q
+		kill $(pidof swww-daemon)
 else
    ags &
 fi
