@@ -196,12 +196,12 @@ export default {
     }),
 
     font: {
-        font: Option('Hack Nerd Font Bold', {
+        font: Option('NotoSans Nerd Font Regular', {
             'type': 'font',
             'title': 'Font',
             'scss': 'font',
         }),
-        mono: Option('Hack Nerd Font Bold', {
+        mono: Option('NotoSans Nerd Font', {
             'title': 'Monospaced Font',
             'scss': 'mono-font',
         }),
@@ -794,7 +794,7 @@ export default {
         Title: Option('Web Launcher'),
         Top: {
             uno: {
-                Icon: Option('',{
+                Icon: Option('',{
                     'scssFormat': v => `"${v}"`,
                 }),
                 exec: Option('flatpak run io.gitlab.librewolf-community --new-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/h9joi49y.default-default',{
@@ -802,7 +802,7 @@ export default {
                 }),
             },
             dos: {
-                Icon: Option('',{
+                Icon: Option('',{
                     'scssFormat': v => `"${v}"`,
                 }),
                 exec: Option('flatpak run io.gitlab.librewolf-community --new-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/dwa',{
@@ -810,7 +810,7 @@ export default {
                 }),
             },
             tres: {
-                Icon: Option('',{
+                Icon: Option('',{
                     'scssFormat': v => `"${v}"`,
                 }),
                 exec: Option('flatpak run io.gitlab.librewolf-community --private-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/h9joi49y.default-default',{
@@ -820,7 +820,7 @@ export default {
         },
         Bot: {
             uno: {
-                Icon: Option('',{
+                Icon: Option('',{
                     'scssFormat': v => `"${v}"`,
                 }),
                 exec: Option('flatpak run com.brave.Browser --tor',{
