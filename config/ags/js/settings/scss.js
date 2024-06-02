@@ -12,7 +12,7 @@ export function scssWatcher() {
             '-m', App.configDir + '/scss',
         ],
         reloadScss,
-        () => print('missing dependancy for css hotreload: inotify-tools'),
+        (err) => print('missing dependancy for css hotreload: inotify-tools', App.configDir, err),
     );
 }
 
