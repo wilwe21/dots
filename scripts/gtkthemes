@@ -62,6 +62,7 @@ apply_themes() {
 	flatpak override --env=GTK_THEME="$THEME"
 	flatpak override --env=ICON_THEME="$ICONS"
 	flatpak override --env=XCURSOR_THEME="$CURSOR"
+	gsettings set org.gnome.desktop.interface cursor-theme $CUROSR
 }
 
 apply_themes
