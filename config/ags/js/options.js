@@ -948,6 +948,9 @@ export default {
             'category': 'Desktop',
             'scss': 'sys-info-size',
         }),
+		weather: Option(true, {
+            'scssFormat': v => `"${v}"`,
+		}),
         bg: Option('solid', {
             'scss': 'db-bg-mode',
             'enums': ['solid', 'linear-gradient', 'repeating-linear-gradient', 'radial-gradient', 'repeating-radial-gradient', 'transparent', 'image'],

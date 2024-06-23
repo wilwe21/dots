@@ -68,11 +68,6 @@ export const temp = Variable(0, {
     }],
 });
 
-export const temperatura = Variable('Teperatura: error', {
-    poll: [5000, 'curl wttr.in/?format=Temperatura:%20%t', n => {
-        return String(n);
-    }],
-});
 
 export const volume = (type = 'speaker') => Widget.Label({
     class_name: 'volumelabel',
@@ -83,6 +78,12 @@ export const volume = (type = 'speaker') => Widget.Label({
         const vol = parseInt(Audio.speaker.volume * 100);
         self.label = String(vol+'%')
     }
+});
+
+export const temperatura = Variable('Teperatura: error', {
+    poll: [5000, 'curl wttr.in/?format=Temperatura:%20%t', n => {
+        return String(n);
+    }],
 });
 
 export const chmury = Variable('error', {
