@@ -130,13 +130,13 @@ export class Opt extends Service {
 
             if (reload && !this.noReload) {
                 reloadScss();
-                reloadSddm();
-		reloadGrub();
+                //reloadSddm();
+				//reloadGrub();
                 reloadGtk();
                 reloadStarship();
                 reloadKitty();
-		reloadWinruls();
-		reloadVim();
+				reloadWinruls();
+				reloadVim();
                 wallpaper();
                 setupHyprland();
             }

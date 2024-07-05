@@ -33,8 +33,8 @@ export function init() {
         reloadScss();
         WINRUL();
         setupHyprland();
-        reloadSddm();
-        reloadGrub();
+        //reloadSddm();
+        //reloadGrub();
         reloadStarship();
         kitty();
 	vim();
