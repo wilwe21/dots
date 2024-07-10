@@ -41,6 +41,7 @@ imagemagick
 python-yaml
 python-pillow
 python-requests
+python-bs4
 
 #fonts
 
