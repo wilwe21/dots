@@ -1,4 +1,4 @@
-# ![dependency](/dep.md)  
+# ![Dependency](/dep.md)  
 # Themes
 Normal (Custom Catppuccin Macciato)
 ![alt text](https://github.com/wilwe21/dots/blob/main/screens/1699906210.png?raw=true)
