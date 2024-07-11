@@ -1,5 +1,4 @@
 # system  
-***
 ## require  
 aylur-gtk-theme-git  
 brightnessctl  
@@ -17,14 +16,12 @@ pavcontrol
 pulseaudio  
 network-manager-applet  
 wl-clipboard  
-***
 ## Important  
 Gtk theme from AGS  
 Copy random theme and copy to  
 /usr/shade/themes as ags directory  
 chmod + 666 to this folder  
 for shell to modification   
-***
 
 ## optional  
   
@@ -42,13 +39,12 @@ hyprshade
 clipse  
 eog  
 
-***
 # scripts  
 ffmpeg  
 imagemagick  
 yt-dlp  
 zenity  
-***  
+
 ## python  
 python-yaml  
 python-pillow  
@@ -57,7 +53,7 @@ python-bs4
 python-pathvalidate  
 python-music-tag  
 python-mutagen  
-***  
+
 ## fonts  
 mononoki  
 noto-sans  
