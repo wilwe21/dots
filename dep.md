@@ -1,11 +1,11 @@
-#Gtk theme from AGS</br>
-#Copy random theme and copy to</br>
-#/usr/shade/themes as ags directory</br>
-#chmod + 666 to this folder</br>
-#for shell to modification</br> 
-***
-#system {
-
+#Gtk theme from AGS  
+#Copy random theme and copy to  
+#/usr/shade/themes as ags directory  
+#chmod + 666 to this folder  
+#for shell to modification   
+***  
+#system {  
+***  
 aylur-gtk-theme-git  
 brightnessctl  
 gnome-bluetooth-3.0
