@@ -6,8 +6,8 @@
 ***
 #system {
 
-aylur-gtk-theme-git
-brightnessctl
+aylur-gtk-theme-git  
+brightnessctl  
 gnome-bluetooth-3.0
 xdg-desktop-portal-hyprland
 xdg-desktop-portal-wlr
