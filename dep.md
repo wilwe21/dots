@@ -53,6 +53,8 @@ python-bs4
 python-pathvalidate  
 python-music-tag  
 python-mutagen  
+python-pylast  
+python-lyricsgenius  
 
 ## fonts  
 mononoki  
