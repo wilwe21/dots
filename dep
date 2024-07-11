@@ -24,6 +24,8 @@ wl-clipboard
 
 #optional
 
+android-sdk-platform-tools
+zoxide
 tlp
 cava
 kdeconnect
@@ -41,6 +43,8 @@ eog
 
 ffmpeg
 imagemagick
+yt-dlp
+zenity
 
 #python
 
@@ -48,6 +52,7 @@ python-yaml
 python-pillow
 python-requests
 python-bs4
+python-pathvalidate
 
 #fonts
 
