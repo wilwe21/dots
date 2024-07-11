@@ -3,6 +3,7 @@
 #/usr/shade/themes as ags directory
 #chmod + 666 to this folder
 #for shell to modification
+***
 #system {
 
 aylur-gtk-theme-git
