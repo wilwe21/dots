@@ -1,10 +1,7 @@
-#Gtk theme from AGS  
-#Copy random theme and copy to  
-#/usr/shade/themes as ags directory  
-#chmod + 666 to this folder  
-#for shell to modification   
 ***  
-#system  
+# system  
+***
+## require  
 aylur-gtk-theme-git  
 brightnessctl  
 gnome-bluetooth-3.0  
@@ -22,8 +19,15 @@ pulseaudio
 network-manager-applet  
 wl-clipboard  
 ***
+## Important  
+Gtk theme from AGS  
+Copy random theme and copy to  
+/usr/shade/themes as ags directory  
+chmod + 666 to this folder  
+for shell to modification   
+***
 
-#optional  
+## optional  
   
 android-sdk-platform-tools  
 zoxide  
@@ -40,13 +44,13 @@ clipse
 eog  
 
 ***
-#scripts  
+# scripts  
 ffmpeg  
 imagemagick  
 yt-dlp  
 zenity  
 ***  
-#python  
+## python  
 python-yaml  
 python-pillow  
 python-requests  
@@ -55,6 +59,6 @@ python-pathvalidate
 python-music-tag  
 python-mutagen  
 ***  
-#fonts  
+## fonts  
 mononoki  
 noto-sans  
