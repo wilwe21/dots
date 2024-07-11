@@ -1,8 +1,8 @@
 #Gtk theme from AGS</br>
 #Copy random theme and copy to</br>
-#/usr/shade/themes as ags directory</br>  
-#chmod + 666 to this folder</br>  
-#for shell to modification</br>  
+#/usr/shade/themes as ags directory</br>
+#chmod + 666 to this folder</br>
+#for shell to modification</br> 
 ***
 #system {
 
