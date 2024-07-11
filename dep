@@ -53,6 +53,8 @@ python-pillow
 python-requests
 python-bs4
 python-pathvalidate
+python-music-tag
+python-mutagen
 
 #fonts
 
