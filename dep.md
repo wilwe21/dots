@@ -38,6 +38,10 @@ nautilus
 hyprshade  
 clipse  
 eog  
+gvfs  
+gvfs-mtp  
+gvfs-fuse  
+gvfs-deamons  
 
 # scripts  
 ffmpeg  
@@ -55,6 +59,7 @@ python-music-tag
 python-mutagen  
 python-pylast  
 python-lyricsgenius  
+python-playwright
 
 ## fonts  
 mononoki  
