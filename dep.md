@@ -62,5 +62,5 @@ python-lyricsgenius
 python-playwright
 
 ## fonts  
-mononoki  
-noto-sans  
+Mononoki Nerd Font  
+NotoSans Nerd Font  
