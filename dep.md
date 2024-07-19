@@ -35,6 +35,7 @@ playerctl
 gnome-system-monitor  
 gnome-disk-utility  
 nautilus  
+python-nautilus
 hyprshade  
 clipse  
 eog  
