@@ -971,11 +971,6 @@ export default {
     },
 
     mpris: {
-        black_list: Option(['VLC media player'], {
-            'category': 'Bar',
-            'title': 'List of blacklisted mpris players',
-            'note': 'filters for bus-name, name, identity, entry',
-        }),
         preferred: Option('librewolf', {
             'category': 'Bar',
             'title': 'Preferred player',

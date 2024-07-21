@@ -51,8 +51,5 @@ export default () => Widget.Box({
     vertical: false,
     class_name: 'media vertical',
     visible: Mpris.bind("players").transform(v => v.length > 0),
-    children: Mpris.bind('players').transform(ps => ps.filter(p => 
-            !options.mpris.black_list.value
-            .includes(p.identity)
-            ).slice(0, 1).map(PlayerBox)),
+    children: Mpris.bind('players').transform(ps => ps.slice(0, 1).map(PlayerBox)),
 });
