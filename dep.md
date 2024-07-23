@@ -19,8 +19,8 @@ wl-clipboard
 ## Important  
 Gtk theme from AGS  
 Copy random theme and copy to  
-/usr/shade/themes as ags directory  
-chmod + 666 to this folder  
+/usr/share/themes as ags directory  
+chmod -R +666 to this folder  
 for shell to modification   
 
 ## optional  
