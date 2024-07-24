@@ -268,7 +268,7 @@ export default {
     },
     kitty:{
         font: {
-            family: Option('monoki',{
+            family: Option('SourceCodeVF',{
                 'category': 'Terminal',  
                 'scssFormat': v => `"${v}"`,
             }),
