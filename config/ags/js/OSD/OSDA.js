@@ -126,9 +126,7 @@ export default () => WW({
                 vertical: true,
                 hexpand: true,
                 class_name: 'media',
-                children: Mpris.bind('players').transform(ps =>
-                        ps.filter(p => !options.mpris.black_list.value
-                            .includes(p.identity)).map(PlayerBox)),
+                children: Mpris.bind('players').transform(ps => ps.slice(0,1).map(PlayerBox)),
             }),
             Widget.Box({
                 vertical: true,
