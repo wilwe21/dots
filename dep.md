@@ -1,6 +1,6 @@
 # system  
 ## require  
-aylur-gtk-theme-git  
+aylurs-gtk-shell-git  
 brightnessctl  
 gnome-bluetooth-3.0  
 xdg-desktop-portal-hyprland  
@@ -25,6 +25,8 @@ for shell to modification
 
 ## optional  
   
+vim-runtime  
+gvim  
 android-sdk-platform-tools  
 zoxide  
 tlp  
