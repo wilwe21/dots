@@ -45,6 +45,8 @@ gvfs
 gvfs-mtp  
 gvfs-fuse  
 gvfs-deamons  
+git  
+GitHub-cli  
 
 # scripts  
 ffmpeg  
