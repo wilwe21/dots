@@ -3,6 +3,8 @@ import App from 'resource:///com/github/Aylur/ags/app.js';
 import Applications from 'resource:///com/github/Aylur/ags/service/applications.js';
 import FontIcon from '../misc/FontIcon.js';
 import PopupWindow from '../misc/PopupWindow.js';
+import { launchApp } from '../utils.js';
+
 import icons from '../icons.js';
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
 import options from '../options.js';
@@ -11,8 +13,9 @@ const WB = ( ico, ex ) => Widget.Button({
     class_name: 'WButton',
     child: FontIcon(ico),
     onClicked: () => {
-        Utils.subprocess(`${ex}`);
         App.closeWindow('Webapp');
+		const app = {'executable': ex}
+        launchApp(app);
     }
 });
 

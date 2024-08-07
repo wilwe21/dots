@@ -1,4 +1,4 @@
-/**
+/*
  * A Theme is a set of options that will be applied
  * ontop of the default values. see options.js for possible options
  */

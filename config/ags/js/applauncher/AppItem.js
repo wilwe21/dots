@@ -2,6 +2,7 @@ import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import options from '../options.js';
 import { lookUpIcon } from 'resource:///com/github/Aylur/ags/utils.js';
+import { launchApp } from '../utils.js';
 
 /** @param {import('resource:///com/github/Aylur/ags/service/applications.js').Application} app */
 export default app => {
@@ -41,7 +42,7 @@ export default app => {
         attribute: app,
         on_clicked: () => {
             App.closeWindow('applauncher');
-            app.launch();
+			launchApp(app)
         },
         child: Widget.Box({
             children: [icon, textBox],

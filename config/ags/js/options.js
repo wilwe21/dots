@@ -797,7 +797,7 @@ export default {
                 Icon: Option('',{
                     'scssFormat': v => `"${v}"`,
                 }),
-                exec: Option('flatpak run io.gitlab.librewolf-community --new-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/h9joi49y.default-default',{
+                exec: Option('/usr/bin/flatpak run io.gitlab.librewolf-community --new-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/h9joi49y.default-default',{
                     'scssFormat': v => `"${v}"`,
                 }),
             },
@@ -805,7 +805,7 @@ export default {
                 Icon: Option('',{
                     'scssFormat': v => `"${v}"`,
                 }),
-                exec: Option('flatpak run io.gitlab.librewolf-community --new-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/dwa',{
+                exec: Option('/usr/bin/flatpak run io.gitlab.librewolf-community --new-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/dwa',{
                     'scssFormat': v => `"${v}"`,
                 }),
             },
@@ -813,7 +813,7 @@ export default {
                 Icon: Option('',{
                     'scssFormat': v => `"${v}"`,
                 }),
-                exec: Option('flatpak run io.gitlab.librewolf-community --private-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/h9joi49y.default-default',{
+                exec: Option('/usr/bin/flatpak run io.gitlab.librewolf-community --private-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/h9joi49y.default-default',{
                     'scssFormat': v => `"${v}"`,
                 }),
             },
@@ -823,7 +823,7 @@ export default {
                 Icon: Option('',{
                     'scssFormat': v => `"${v}"`,
                 }),
-                exec: Option('flatpak run com.brave.Browser --tor',{
+                exec: Option('/usr/bin/flatpak run com.brave.Browser --tor',{
                     'scssFormat': v => `"${v}"`,
                 }),
             },
@@ -831,7 +831,7 @@ export default {
                 Icon: Option('',{
                     'scssFormat': v => `"${v}"`,
                 }),
-                exec: Option('flatpak run com.brave.Browser',{
+                exec: Option('/usr/bin/flatpak run com.brave.Browser',{
                     'scssFormat': v => `"${v}"`,
                 }),
             },
@@ -839,7 +839,7 @@ export default {
                 Icon: Option('',{
                     'scssFormat': v => `"${v}"`,
                 }),
-                exec: Option('flatpak run io.gitlab.librewolf-community --new-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/h9joi49y.default-default messenger.com',{
+                exec: Option('/usr/bin/flatpak run io.gitlab.librewolf-community --new-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/h9joi49y.default-default messenger.com',{
                     'scssFormat': v => `"${v}"`,
                 }),
             },
