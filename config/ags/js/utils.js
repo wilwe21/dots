@@ -65,7 +65,7 @@ export function getAudioTypeIcon(icon) {
 
 /** @param {import('types/service/applications').Application} app */
 export function launchApp(app) {
-    Utils.execAsync(['hyprctl', 'dispatch', 'exec', `dbus-launch ${app.executable}`]);
+    Utils.execAsync(['hyprctl', 'dispatch', 'exec', `${app.executable}`]);
 	//app.frequency += 1;
 }
 export function launchSh(Sh) {
