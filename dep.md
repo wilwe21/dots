@@ -33,6 +33,7 @@ tlp
 cava  
 kdeconnect  
 flameshot  
+grim
 playerctl  
 gnome-system-monitor  
 gnome-disk-utility  
