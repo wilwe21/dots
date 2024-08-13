@@ -2,9 +2,9 @@ import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
 import PowerMenu from '../services/powermenu.js';
-import ShadedPopup from './ShadedPopup.js';
+import PopupWindow from '../misc/PopupWindow.js';
 
-export default () => ShadedPopup({
+export default () => PopupWindow({
     name: 'verification',
     layer: 'overlay',
     expand: true,
