@@ -7,7 +7,7 @@ import media from './player.js'
 export default monitor => WW({
     name: `music${monitor}`,
     monitor,
-    layer: options.music.layer.bind('value')',
+    layer: options.music.layer.bind('value'),
     exclusivity: 'exclusive',
     setup: self => {
     const plays = new Var(0)
