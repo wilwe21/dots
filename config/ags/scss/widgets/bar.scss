@@ -37,10 +37,22 @@ $bar-spacing: $spacing / 2;
     } @if $bar-border-sw == true {
         border-radius: $radii;
         border: $bar-border;
-    }
+    } @if $bar-border-left-sw == true {
+        border-radius: $radii;
+        border-left: $bar-border;
+    } @if $bar-border-right-sw == true {
+        border-radius: $radii;
+        border-right: $bar-border;
+    } @if $bar-border-top-sw == true {
+        border-radius: $radii;
+        border-top: $bar-border;
+    } @if $bar-border-bottom-sw == true {
+        border-radius: $radii;
+        border-bottom: $bar-border;
+    } 
     .end{
     	padding: 0px $padding 0px $padding;
-        border-radius: $radii;
+      border-radius: $radii;
     	@if $bar-end-border-sw == true {
         	border: $bar-border;
     	} @if $bar-end-color-mode == 'solid' {
@@ -58,7 +70,19 @@ $bar-spacing: $spacing / 2;
     		background-size: $bar-end-size;
     		background-position: $bar-end-pos;
     		background-repeat: $bar-end-repe;
-    	}
+    	} @if $bar-end-border-left-sw == true {
+          border-radius: $radii;
+          border-left: $bar-border;
+      } @if $bar-end-border-right-sw == true {
+          border-radius: $radii;
+          border-right: $bar-border;
+      } @if $bar-end-border-top-sw == true {
+          border-radius: $radii;
+          border-top: $bar-border;
+      } @if $bar-end-border-bottom-sw == true {
+          border-radius: $radii;
+          border-bottom: $bar-border;
+      } 
     }
     .center{
     	padding: 0px $padding 0px $padding;
@@ -80,7 +104,19 @@ $bar-spacing: $spacing / 2;
     		background-size: $bar-center-size;
     		background-position: $bar-center-pos;
     		background-repeat: $bar-center-repe;
-    	}
+    	} @if $bar-center-border-left-sw == true {
+          border-radius: $radii;
+          border-left: $bar-border;
+      } @if $bar-center-border-right-sw == true {
+          border-radius: $radii;
+          border-right: $bar-border;
+      } @if $bar-center-border-top-sw == true {
+          border-radius: $radii;
+          border-top: $bar-border;
+      } @if $bar-center-border-bottom-sw == true {
+          border-radius: $radii;
+          border-bottom: $bar-border;
+      } 
     }
     .start{
     	padding: 0px $padding 0px $padding;
@@ -102,7 +138,19 @@ $bar-spacing: $spacing / 2;
     		background-size: $bar-start-size;
     		background-position: $bar-start-pos;
     		background-repeat: $bar-start-repe;
-    	}
+    	} @if $bar-start-border-left-sw == true {
+          border-radius: $radii;
+          border-left: $bar-border;
+      } @if $bar-start-border-right-sw == true {
+          border-radius: $radii;
+          border-right: $bar-border;
+      } @if $bar-start-border-top-sw == true {
+          border-radius: $radii;
+          border-top: $bar-border;
+      } @if $bar-start-border-bottom-sw == true {
+          border-radius: $radii;
+          border-bottom: $bar-border;
+      } 
     }
     .cpu {
         padding-left: $spacing/2;

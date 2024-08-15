@@ -16,10 +16,14 @@ import { initWallpaper, wallpaper } from './wallpaper.js';
 import { hyprlandInit, setupHyprland } from './hyprland.js';
 import { globals } from './globals.js';
 import Gtk from 'gi://Gtk';
-import { exec, execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
-
+import { exec, execAsync, readFile } from 'resource:///com/github/Aylur/ags/utils.js';
+import themes from '../themes.js'
 
 export function init() {
+	const name = readFile('/tmp/ags/curtheme')
+	const theme = themes.find(t => t.name === name)
+	console.log(theme)
+	options.apply(theme.options)
     initWallpaper();
     notificationBlacklist();
     warnOnLowBattery();
@@ -30,16 +34,15 @@ export function init() {
     dependandOptions();
 
     App.connect('config-parsed', () => {
-        reloadScss();
         WINRUL();
         setupHyprland();
+        reloadScss();
         //reloadSddm();
         //reloadGrub();
         reloadStarship();
         kitty();
-	vim();
+		vim();
         wallpaper();
-        pywal();
         gtkTheme();
         gtkIcons();
     });
@@ -50,26 +53,6 @@ function dependandOptions() {
         if (value !== 'normal')
             options.desktop.screen_corners.setValue(false, true);
     });
-}
-
-function tmux() {
-    if (!Utils.exec('which tmux'))
-        return;
-
-    /** @param {string} scss */
-    function getColor(scss) {
-        if (scss.includes('#'))
-            return scss;
-
-        if (scss.includes('$')) {
-            const opt = options.list().find(opt => opt.scss === scss.replace('$', ''));
-            return opt?.value;
-        }
-    }
-
-    options.theme.accent.accent.connect('changed', ({ value }) => Utils
-        .execAsync(`tmux set @main_accent ${getColor(value)}`)
-        .catch(err => console.error(err.message)));
 }
 
 function gtkFontSettings() {
@@ -115,11 +98,3 @@ function warnOnLowBattery() {
     });
 }
 
-export function pywal() {
-    if (!exec('which wal'))
-        return print('missing dependancy: pywal');
-
-    execAsync([
-        'wal', '--theme', options.misc.pywal.theme.value,
-    ]).catch(err => console.error(err));
-}

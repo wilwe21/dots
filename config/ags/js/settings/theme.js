@@ -16,15 +16,15 @@ import { wallpaper } from './wallpaper.js';
 /** @param {string} name */
 export function setTheme(name) {
     options.reset();
-    writeFileSync(String(`"${String(name)}"`), '/tmp/ags/curtheme');
+    writeFileSync(String(`${String(name)}`), '/tmp/ags/curtheme');
     const theme = themes.find(t => t.name === name);
     if (!theme)
         return print('No theme named ' + name);
 
     options.apply(theme.options);
     WINRUL();
-    setupHyprland();
     reloadScss();
+    setupHyprland();
     //reloadSddm();
     //reloadGrub();
     reloadGtk();

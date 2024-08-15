@@ -479,9 +479,17 @@ export default {
             'enums': ['repeat', 'repeat-x', 'repeat-y', 'no-repeat', 'space', 'round'],
             'type': 'enum',
         }),
-        border: Option(true, { 'scss': 'bar-border-sw' }),
+		border: Option(true, { 'scss': 'bar-border-sw' }),
+        border_left: Option(false, { 'scss': 'bar-border-left-sw' }),
+        border_right: Option(false, { 'scss': 'bar-border-right-sw' }),
+        border_top: Option(false, { 'scss': 'bar-border-top-sw' }),
+        border_bottom: Option(false, { 'scss': 'bar-border-bottom-sw' }),
         start: {
             border: Option(false, { 'scss': 'bar-start-border-sw' }),
+			border_left: Option(false, { 'scss': 'bar-start-border-left-sw' }),
+			border_right: Option(false, { 'scss': 'bar-start-border-right-sw' }),
+			border_top: Option(false, { 'scss': 'bar-start-border-top-sw' }),
+			border_bottom: Option(false, { 'scss': 'bar-start-border-bottom-sw' }),
             colormode: Option('transparent', {
                 'scss': 'bar-start-color-mode',
                 'enums': ['solid', 'linear-gradient', 'repeating-linear-gradient', 'radial-gradient', 'repeating-radial-gradient', 'transparent', 'image'],
@@ -499,6 +507,10 @@ export default {
         },
         center: {
             border: Option(false, { 'scss': 'bar-center-border-sw' }),
+        	border_left: Option(false, { 'scss': 'bar-center-border-left-sw' }),
+        	border_right: Option(false, { 'scss': 'bar-center-border-right-sw' }),
+        	border_top: Option(false, { 'scss': 'bar-center-border-top-sw' }),
+        	border_bottom: Option(false, { 'scss': 'bar-center-border-bottom-sw' }),
             colormode: Option('transparent', {
                 'scss': 'bar-center-color-mode',
                 'enums': ['solid', 'linear-gradient', 'repeating-linear-gradient', 'radial-gradient', 'repeating-radial-gradient', 'transparent', 'image'],
@@ -516,6 +528,10 @@ export default {
         },
         end: {
             border: Option(false, { 'scss': 'bar-end-border-sw' }),
+        	border_left: Option(false, { 'scss': 'bar-end-border-left-sw' }),
+        	border_right: Option(false, { 'scss': 'bar-end-border-right-sw' }),
+        	border_top: Option(false, { 'scss': 'bar-end-border-top-sw' }),
+        	border_bottom: Option(false, { 'scss': 'bar-end-border-bottom-sw' }),
             colormode: Option('transparent', {
                 'scss': 'bar-end-color-mode',
                 'enums': ['solid', 'linear-gradient', 'repeating-linear-gradient', 'radial-gradient', 'repeating-radial-gradient', 'transparent', 'image'],
