@@ -16,6 +16,36 @@ export async function reloadVim() {
     options.theme.bg.connect('changed', vim);
     options.vim.airline.left.connect('changed', vim);
     options.vim.airline.right.connect('changed', vim);
+	options.vim.colors.normal.fg.connect('changed', vim);
+	options.vim.colors.normal.bg.connect('changed', vim);
+	options.vim.colors.visual.fg.connect('changed', vim);
+	options.vim.colors.visual.bg.connect('changed', vim);
+	options.vim.colors.linenr.fg.connect('changed', vim);
+	options.vim.colors.linenr.bg.connect('changed', vim);
+	options.vim.colors.error.fg.connect('changed', vim);
+	options.vim.colors.error.bg.connect('changed', vim);
+	options.vim.colors.string.fg.connect('changed', vim);
+	options.vim.colors.string.bg.connect('changed', vim);
+	options.vim.colors.character.fg.connect('changed', vim);
+	options.vim.colors.character.bg.connect('changed', vim);
+	options.vim.colors.number.fg.connect('changed', vim);
+	options.vim.colors.number.bg.connect('changed', vim);
+	options.vim.colors.boolean.fg.connect('changed', vim);
+	options.vim.colors.boolean.bg.connect('changed', vim);
+	options.vim.colors.float.fg.connect('changed', vim);
+	options.vim.colors.float.bg.connect('changed', vim);
+	options.vim.colors.function.fg.connect('changed', vim);
+	options.vim.colors.function.bg.connect('changed', vim);
+	options.vim.colors.conditional.fg.connect('changed', vim);
+	options.vim.colors.conditional.bg.connect('changed', vim);
+	options.vim.colors.repeat.fg.connect('changed', vim);
+	options.vim.colors.repeat.bg.connect('changed', vim);
+	options.vim.colors.label.fg.connect('changed', vim);
+	options.vim.colors.label.bg.connect('changed', vim);
+	options.vim.colors.operator.fg.connect('changed', vim);
+	options.vim.colors.operator.bg.connect('changed', vim);
+	options.vim.colors.keyword.fg.connect('changed', vim);
+	options.vim.colors.keyword.bg.connect('changed', vim);
 }
 
 function getColor(scss) {
@@ -80,6 +110,36 @@ export function vim() {
     const bg = getColor(options.theme.bg.value);
     const lsep = options.vim.airline.left.value;
     const rsep = options.vim.airline.right.value;
+	const nfg = options.vim.colors.normal.fg.value;
+	const nbg = options.vim.colors.normal.bg.value;
+	const vfg = options.vim.colors.visual.fg.value;
+	const vbg = options.vim.colors.visual.bg.value;
+	const lnrfg = options.vim.colors.linenr.fg.value;
+	const lnrbg = options.vim.colors.linenr.bg.value;
+	const efg = options.vim.colors.error.fg.value;
+	const ebg = options.vim.colors.error.bg.value;
+	const stfg = options.vim.colors.string.fg.value;
+	const stbg = options.vim.colors.string.bg.value;
+	const chfg = options.vim.colors.character.fg.value;
+	const chbg = options.vim.colors.character.bg.value;
+	const numfg = options.vim.colors.number.fg.value;
+	const numbg = options.vim.colors.number.bg.value;
+	const boolfg = options.vim.colors.boolean.fg.value;
+	const boolbg = options.vim.colors.boolean.bg.value;
+	const flofg = options.vim.colors.float.fg.value;
+	const flobg = options.vim.colors.float.bg.value;
+	const funfg = options.vim.colors.function.fg.value;
+	const funbg = options.vim.colors.function.bg.value;
+	const condfg = options.vim.colors.conditional.fg.value;
+	const condbg = options.vim.colors.conditional.bg.value;
+	const repfg = options.vim.colors.repeat.fg.value;
+	const repbg = options.vim.colors.repeat.bg.value;
+	const labfg = options.vim.colors.label.fg.value;
+	const labbg = options.vim.colors.label.bg.value;
+	const opfg = options.vim.colors.operator.fg.value;
+	const opbg = options.vim.colors.operator.bg.value;
+	const keyfg = options.vim.colors.keyword.fg.value;
+	const keybg = options.vim.colors.keyword.bg.value;
     const conf = `" Name: catppuccin_macchiato.vim
 hi clear
 if exists('syntax on')
@@ -136,8 +196,8 @@ function! s:hi(group, guisp, guifg, guibg, gui, cterm)
     exec "hi " . a:group . cmd
   endif
 endfunction
-call s:hi("Normal", "NONE", s:text, "NONE", "NONE", "NONE")
-call s:hi("Visual", "NONE", "NONE", s:surface1,"bold", "bold")
+call s:hi("Normal", "NONE", ${nfg}, ${nbg}, "NONE", "NONE")
+call s:hi("Visual", "NONE", ${vfg}, ${vbg},"bold", "bold")
 call s:hi("Conceal", "NONE", s:overlay1, "NONE", "NONE", "NONE")
 call s:hi("ColorColumn", "NONE", "NONE", s:surface0, "NONE", "NONE")
 call s:hi("Cursor", "NONE", s:base, s:text, "NONE", "NONE")
@@ -158,7 +218,7 @@ call s:hi("FoldColumn", "NONE", s:overlay0, s:base, "NONE", "NONE")
 call s:hi("SignColumn", "NONE", s:surface1, s:base, "NONE", "NONE")
 call s:hi("IncSearch", "NONE", s:surface1, s:pink, "NONE", "NONE")
 call s:hi("CursorLineNr", "NONE", s:accent, s:mauve, "NONE", "NONE")
-call s:hi("LineNr", "NONE", s:accent, "NONE", "NONE", "NONE")
+call s:hi("LineNr", "NONE", ${lnrfb}, ${lnrbg}, "NONE", "NONE")
 call s:hi("MatchParen", "NONE", s:peach, "NONE", "bold", "bold")
 call s:hi("ModeMsg", "NONE", s:text, "NONE", "bold", "bold")
 call s:hi("MoreMsg", "NONE", s:blue, "NONE", "NONE", "NONE")
@@ -192,19 +252,19 @@ call s:hi("PreProc", "NONE", s:pink, "NONE", "NONE", "NONE")
 call s:hi("Type", "NONE", s:blue, "NONE", "NONE", "NONE")
 call s:hi("Special", "NONE", s:pink, "NONE", "NONE", "NONE")
 call s:hi("Underlined", "NONE", s:text, s:base, "underline", "underline")
-call s:hi("Error", "NONE", s:red, "NONE", "NONE", "NONE")
+call s:hi("Error", "NONE", ${efg}, ${ebg}, "NONE", "NONE")
 call s:hi("Todo", "NONE", s:base, s:yellow, "bold", "bold")
-call s:hi("String", "NONE", s:green, "NONE", "NONE", "NONE")
-call s:hi("Character", "NONE", s:blue, "NONE", "NONE", "NONE")
-call s:hi("Number", "NONE", s:teal, "NONE", "NONE", "NONE")
-call s:hi("Boolean", "NONE", s:blue, "NONE", "NONE", "NONE")
-call s:hi("Float", "NONE", s:teal, "NONE", "NONE", "NONE")
-call s:hi("Function", "NONE", s:accent, "NONE", "NONE", "NONE")
-call s:hi("Conditional", "NONE", s:yellow, "NONE", "NONE", "NONE")
-call s:hi("Repeat", "NONE", s:yellow, "NONE", "NONE", "NONE")
-call s:hi("Label", "NONE", s:accent, "NONE", "NONE", "NONE")
-call s:hi("Operator", "NONE", s:blue, "NONE", "NONE", "NONE")
-call s:hi("Keyword", "NONE", s:red, "NONE", "NONE", "NONE")
+call s:hi("String", "NONE", ${stfg}, ${stbg}, "NONE", "NONE")
+call s:hi("Character", "NONE", ${chfg}, ${chbg}, "NONE", "NONE")
+call s:hi("Number", "NONE", ${numfg}, ${numbg}, "NONE", "NONE")
+call s:hi("Boolean", "NONE", ${boolfg}, ${boolbg}, "NONE", "NONE")
+call s:hi("Float", "NONE", ${flofg}, ${flobg}, "NONE", "NONE")
+call s:hi("Function", "NONE", ${funfg}, ${funbg}, "NONE", "NONE")
+call s:hi("Conditional", "NONE", ${condfg}, ${condbg}, "NONE", "NONE")
+call s:hi("Repeat", "NONE", ${repfg}, ${repbg}, "NONE", "NONE")
+call s:hi("Label", "NONE", ${labfg}, ${labbg}, "NONE", "NONE")
+call s:hi("Operator", "NONE", ${opfg}, ${opbg}, "NONE", "NONE")
+call s:hi("Keyword", "NONE", ${keyfg}, ${keybg}, "NONE", "NONE")
 call s:hi("Include", "NONE", s:red, "NONE", "NONE", "NONE")
 call s:hi("StorageClass", "NONE", s:yellow, "NONE", "NONE", "NONE")
 call s:hi("Structure", "NONE", s:mauve, "NONE", "NONE", "NONE")

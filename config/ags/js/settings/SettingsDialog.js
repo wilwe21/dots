@@ -7,6 +7,18 @@ import icons from '../icons.js';
 import { getOptions, getValues } from './option.js';
 import options from '../options.js';
 
+// apply only
+import { reloadScss } from './scss.js';
+import { reloadSddm } from './sddm.js';
+import { reloadGrub } from './grub.js';
+import { reloadGtk } from './gtk.js';
+import { starship } from './starship.js';
+import { kitty } from './kitty.js';
+import { WINRUL } from './winrul.js';
+import { vim } from './vim.js';
+import { setupHyprland } from './hyprland.js';
+import { wallpaper } from './wallpaper.js';
+
 const optionsList = getOptions();
 const categories = Array.from(new Set(optionsList.map(opt => opt.category)))
     .filter(category => category !== 'exclude');
@@ -185,26 +197,48 @@ const sidebar = Widget.Revealer({
             }),
             Widget.Box({
                 class_name: 'sidebar-footer',
-                child: Widget.Button({
-                    class_name: 'copy',
-                    child: Widget.Label({
-                        label: ' Save',
-                        xalign: 0,
-                    }),
-                    hexpand: true,
-                    on_clicked: () => {
-                        Utils.execAsync([
-                            'wl-copy',
-                            getValues(),
-                        ]);
-                        Utils.execAsync([
-                            'notify-send',
-                            '-i', 'preferences-desktop-theme-symbolic',
-                            'Theme copied to clipboard',
-                            'To save it permanently, make a new theme in <span weight="bold">themes.js</span>',
-                        ]);
-                    },
-                }),
+                children: [
+					Widget.Button({
+						class_name: 'copy',
+						child: Widget.Label({
+							label: ' Save',
+							xalign: 0,
+						}),
+						hexpand: true,
+						on_clicked: () => {
+							Utils.execAsync([
+								'wl-copy',
+								getValues(),
+							]);
+							Utils.execAsync([
+								'notify-send',
+								'-i', 'preferences-desktop-theme-symbolic',
+								'Theme copied to clipboard',
+								'To save it permanently, make a new theme in <span weight="bold">themes.js</span>',
+							]);
+						},
+					}),
+					Widget.Button({
+						class_name: 'apply',
+						child: Widget.Label({
+							label: '✓ Apply',
+							xalign: 0,
+						}),
+						hexpand: true,
+						on_clicked: () => {
+							WINRUL();
+							reloadScss();
+							setupHyprland();
+							//reloadSddm();
+							//reloadGrub();
+							reloadGtk();
+							starship();
+							kitty();
+							vim();
+							wallpaper();
+						},
+					}),
+				]
             }),
         ],
     }),

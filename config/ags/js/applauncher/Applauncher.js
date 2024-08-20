@@ -3,6 +3,7 @@ import App from 'resource:///com/github/Aylur/ags/app.js';
 import Applications from 'resource:///com/github/Aylur/ags/service/applications.js';
 import PopupWindow from '../misc/PopupWindow.js';
 import Mpris from 'resource:///com/github/Aylur/ags/service/mpris.js';
+import { execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
 import * as mpris from '../misc/mpris.js';
 import AppItem from './AppItem.js';
 import icons from '../icons.js';
@@ -47,7 +48,10 @@ const Applauncher = () => {
             if (list[0]) {
                 App.toggleWindow(WINDOW_NAME);
                 launchApp(list[0]);
-            }
+            } else if (list[0] == null) {
+				App.toggleWindow(WINDOW_NAME);
+				execAsync(['kitty', '--hold', text])
+			}
         },
         on_change: ({ text }) => items.map(item => {
             if (item.attribute) {

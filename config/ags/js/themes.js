@@ -315,6 +315,7 @@ export default [
 	    "starship.username.bg": "$dark-bg-color",
 	    "starship.directory.bg": "$green",
 	    "starship.directory.fg": "$accent-fg",
+		"vim.colors.linenr.fg": "s:yellow",
 	    //widgets
 	    "clock.main": '%H:%M',
 	    "clock.monofont": 'Concert One Mono',
