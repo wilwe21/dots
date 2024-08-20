@@ -5,4 +5,4 @@ Normal (Custom Catppuccin Macciato)
 Masochist Mode (Catppuccin Latte (need to install theme and icons))
 ![alt text](https://raw.githubusercontent.com/wilwe21/dots/main/screens/light.png)
 Antonymph
-![alt text](https://raw.githubusercontent.com/wilwe21/dots/main/screens/antonymph.png)
+![alt text](https://raw.githubusercontent.com/wilwe21/dots/main/screens/antonymph.jpg)
