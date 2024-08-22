@@ -215,180 +215,180 @@ export default {
 				normal: {
 					fg: Option('s:text', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`
 					}),
-					bg: Option('NONE', {
+					bg: Option('"NONE"', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`
 					})
 				},
 				visual: {
-					fg: Option('NONE', {
+					fg: Option('"NONE"', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`
 					}),
 					bg: Option('s:surface1', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`
 					})
 				},
 				linenr: {
 					fg: Option('s:accent', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`
 					}),
-					bg: Option('NONE', {
+					bg: Option('"NONE"', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					})
 				},
 				error: {
 					fg: Option('s:red', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					}),
-					bg: Option('NONE', {
+					bg: Option('"NONE"', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					})
 				},
 				string: {
 					fg: Option('s:green', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					}),
-					bg: Option('NONE', {
+					bg: Option('"NONE"', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					})
 				},
 				character: {
 					fg: Option('s:blue', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					}),
-					bg: Option('NONE', {
+					bg: Option('"NONE"', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					})
 				},
 				number: {
 					fg: Option('s:teal', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					}),
-					bg: Option('NONE', {
+					bg: Option('"NONE"', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					})
 				},
 				boolean: {
 					fg: Option('s:blue', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					}),
-					bg: Option('NONE', {
+					bg: Option('"NONE"', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					})
 				},
 				float: {
 					fg: Option('s:teal', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					}),
-					bg: Option('NONE', {
+					bg: Option('"NONE"', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					})
 				},
 				function: {
 					fg: Option('s:accent', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					}),
-					bg: Option('NONE', {
+					bg: Option('"NONE"', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					})
 				},
 				conditional: {
-					fg: Option('s:yeallow', {
+					fg: Option('s:yellow', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					}),
-					bg: Option('NONE', {
+					bg: Option('"NONE"', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					})
 				},
 				repeat: {
 					fg: Option('s:yellow', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					}),
-					bg: Option('NONE', {
+					bg: Option('"NONE"', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					})
 				},
 				label: {
 					fg: Option('s:accent', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					}),
-					bg: Option('NONE', {
+					bg: Option('"NONE"', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					})
 				},
 				operator: {
 					fg: Option('s:blue', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					}),
-					bg: Option('NONE', {
+					bg: Option('"NONE"', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					})
 				},
 				keyword: {
 					fg: Option('s:red', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					}),
-					bg: Option('NONE', {
+					bg: Option('"NONE"', {
 						'type': "enum",
-						'enums': ['NONE', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
+						'enums': ['"NONE"', 's:rosewater', 's:flamingo', 's:pink', 's:mauve', 's:red', 's:maroon', 's:peach', 's:yellow', 's:green', 's:teal', 's:sky', 's:sapphire', 's:blue', 's:lavender', 's:accent', 's:accentfg', 's:text', 's:subtext1', 's:subtext0', 's:overlay2', 's:overlay1', 's:overlay0', 's:surface2', 's:surface1', 's:surface0', 's:base', 's:mantle', 's:crust'],
 						'scssFormat': v=> `"${v}"`,
 					})
 				}
