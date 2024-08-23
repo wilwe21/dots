@@ -792,11 +792,11 @@ export default {
             'scss': 'clock-size',
             'unit': 'pt',
         }),
-        layer: Option('background',{
+		/*layer: Option('bottom',{
             'scssFormat': v => `"${v}"`,
             'enums': ['background', 'bottom', 'top', 'overlay'],
             'type': 'enum',
-        }),
+        }),*/
         color: Option('#ffffff', {
             'scss': 'clockcolor',
         }),

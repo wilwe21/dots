@@ -6,17 +6,17 @@ import { clock } from '../variables.js';
 export default monitor => Widget.Window({
     name: `clock${monitor}`,
     class_name: 'clockmain',
-	layer: options.clock.layer.bind('value'),
     exclusivity: 'ignore',
-	//visible: options.clock.visible.bind('value'),
     anchor: options.clock.anchor.bind('value'),
     margins: options.clock.margins.bind('value'),
 	setup: self => {
 		self.bind('null', options.clock.visible, 'value', v => {
 			self.visible = false;
-			self.visible = v
+			self.visible = true;	
+			self.visible = v;
 		})
 	},
+	layer: "bottom",
     monitor,
     child: Widget.CenterBox({
         class_name: 'wclock',
