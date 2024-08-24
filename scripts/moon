@@ -87,5 +87,6 @@ elif [ $x == 🌖 ]; then
   exit
 else
   echo $(cat /home/wilwe/.cache/moone)
+	killall curl
   exit
 fi
