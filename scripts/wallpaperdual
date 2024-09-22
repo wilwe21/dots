@@ -1,0 +1,8 @@
+#!/bin/bash
+rm /tmp/output-0.png /tmp/output-1.png
+
+# split image
+convert -crop 50%x100% $1 /tmp/output.png
+
+swww img -o "HDMI-A-1" -t none /tmp/output-0.png
+swww img -o "eDP-1" -t none /tmp/output-1.png

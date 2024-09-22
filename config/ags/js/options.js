@@ -1103,6 +1103,7 @@ export default {
     
     desktop: {
         wallpaper: {
+			one: Option(false),
             fg: Option('#fff', { 'scss': 'wallpaper-fg' }),
             img: Option('', {
                 'scssFormat': v => `"${v}"`,

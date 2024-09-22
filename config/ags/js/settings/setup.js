@@ -20,10 +20,6 @@ import { exec, execAsync, readFile } from 'resource:///com/github/Aylur/ags/util
 import themes from '../themes.js'
 
 export function init() {
-	const name = readFile('/tmp/ags/curtheme')
-	const theme = themes.find(t => t.name === name)
-	console.log(theme)
-	options.apply(theme.options)
     initWallpaper();
     notificationBlacklist();
     warnOnLowBattery();

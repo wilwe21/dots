@@ -15,13 +15,21 @@ export function wallpaper() {
         return;
     if (options.desktop.wallpaper.transition != '') {
 		const transit = options.desktop.wallpaper.transition.value.split(' ');
-		const cons = ['swww', 'img', options.desktop.wallpaper.img.value]
-		const end = [...cons, ...transit]
-		console.log(end)
-		execAsync(end
-    	).catch(err => console.error("no transition set", err));
+		if (options.desktop.wallpaper.one.value) {
+				execAsync(["/home/wilwe/.hyprland.conf/scripts/wallpaperdual", options.desktop.wallpaper.img.value]).catch(err => console.error("Jakiś błąd i chuj", err));
+		} else {
+				const cons = ['swww', 'img', options.desktop.wallpaper.img.value]
+				const end = [...cons, ...transit]
+				console.log(end)
+				execAsync(end
+				).catch(err => console.error("no transition set", err));
+		}
 	} else {
-		execAsync(['swww', 'img', options.desktop.wallpaper.img.value, "-t", "none"
-    	]).catch(err => console.error(err));
+		if (options.desktop.wallpaper.one.value) {
+				execAsync(["/home/wilwe/.hyprland.conf/scripts/wallpaperdual", options.desktop.wallpaper.img.value]).catch(err => console.error("Jakiś błąd i chuj", err));
+		} else {
+				execAsync(['swww', 'img', options.desktop.wallpaper.img.value, "-t", "none"
+				]).catch(err => console.error(err));
+		}
 	}
 }
