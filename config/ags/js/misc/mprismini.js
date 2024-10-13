@@ -21,7 +21,7 @@ export const TitleLabel = (player, props) => Widget.Label({
 			} else if (sub1 > -1 || sub2 > -1) {
 				if (sub1 >= 1) {
 					var j = split[1].substring(0, sub1)
-					if (j.length != 0) {
+					if (j.length >= 5) {
 						var n = j
 					}
 				} else {
