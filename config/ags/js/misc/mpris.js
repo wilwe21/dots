@@ -33,7 +33,28 @@ export const BlurredCoverArt = (player, props) => Widget.Box({
 export const TitleLabel = (player, props) => Widget.Label({
     ...props,
     class_name: 'title',
-    label: player.bind('track_title'),
+    label: player.bind('track_title').transform(n => {
+		var a = player.track_artists[0]
+		console.log(a)
+		var split = n.split(" - ")
+		console.log(split)
+		if (split.length > 1) {
+			var sub0 = split[0].toLowerCase().search(a.toLowerCase())
+			var sub1 = split[1].toLowerCase().search(a.toLowerCase())
+			var sub2 = split[1].toLowerCase().search("fan song")
+			console.log(sub0, sub1, sub2)
+			if (sub0 > -1) {
+				var n = split[1]
+			} 
+			if (sub1 > -1) {
+				var n = split[0]
+			}
+			if (sub2 > -1) {
+				var n = split[0]
+			}
+		}
+		return n
+	}),
 });
 
 /**
