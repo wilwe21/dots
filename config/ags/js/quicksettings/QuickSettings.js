@@ -6,7 +6,6 @@ import { NetworkToggle, WifiSelection } from './widgets/Network.js';
 import { BluetoothToggle, BluetoothDevices } from './widgets/Bluetooth.js';
 import { ThemeToggle, ThemeSelector } from './widgets/Theme.js';
 import { ShaderToggle, ShaderSelector } from './widgets/Shader.js';
-import Media from './widgets/Media.js';
 import Brightness from './widgets/Brightness.js';
 import DND from './widgets/DND.js';
 import MicMute from './widgets/MicMute.js';
@@ -63,7 +62,6 @@ export default () => PopupWindow({
                 [Homogeneous([ThemeToggle(), ShaderToggle()]), MicMute()],
                 [ThemeSelector(), ShaderSelector()],
             ),
-            Media(),
         ],
     }),
 });
