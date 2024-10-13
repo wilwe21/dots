@@ -8,7 +8,9 @@ export const TitleLabel = (player, props) => Widget.Label({
     class_name: 'title',
     label: player.bind('track_title').transform(n => {
 		if (n.toLowerCase().search("】") > -1) {
-			var n = n.substring(n.toLowerCase().search("】")+1, n.length)
+			if (n.toLowerCase().search("【") == 0) {
+				var n = n.substring(n.toLowerCase().search("】")+1, n.length)
+			}
 		}
 		var a = player.track_artists[0]
 		var split = n.split(" - ")
