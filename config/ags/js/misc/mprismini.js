@@ -57,6 +57,7 @@ export const TitleLabel = (player, props) => Widget.Label({
 export const ArtistLabel = (player, props) => Widget.Label({
     ...props,
     class_name: 'artist',
+	label: 'test',
 	setup: self => {
 		const che = () => {
 			var t = player.track_title

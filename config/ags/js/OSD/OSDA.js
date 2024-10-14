@@ -109,6 +109,7 @@ export default () => WW({
                 vertical: true,
                 hexpand: true,
                 class_name: 'media',
+				visible: Mpris.bind("players").transform(v => v.length > 0),
                 children: Mpris.bind('players').transform(ps => ps.slice(0,1).map(PlayerBox)),
             }),
             Widget.Box({
