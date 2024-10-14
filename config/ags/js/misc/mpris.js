@@ -3,6 +3,19 @@ import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
 import icons from '../icons.js';
 import { blurImg } from '../utils.js';
 
+function rep(n, s, e) {
+	if (n.toLowerCase().search(`${s}`) > -1 && n.toLowerCase().search(`${e}`) > -1) {
+		var naw = n.substring(n.toLowerCase().search(`${s}`)+1, n.toLowerCase().search(`${e}`)).toLowerCase()
+		console.log(naw)
+		if (naw.search("cover") > -1 || naw.search("animatic") > -1 || naw.search("lyrics") > -1 || naw.search("remix") > -1 || naw.search("video") > -1 || naw.search("remastered") > -1 || naw.search("video") > -1 || naw.search("music") > -1 || naw.search("read") > -1 || naw.search("description") > -1) {
+			var reg = new RegExp(`${s}`+naw+`${e}`, "gi");
+			console.log(reg)
+			var n = n.replace(reg, "")
+		}
+	}
+	return n
+}
+
 /**
  * @param {import('types/service/mpris').MprisPlayer} player
  * @param {import('types/widgets/box').BoxProps=} props
@@ -34,12 +47,10 @@ export const TitleLabel = (player, props) => Widget.Label({
     ...props,
     class_name: 'title',
     label: player.bind('track_title').transform(n => {
-		if (n.toLowerCase().search("】") > -1) {
-			if (n.toLowerCase().search("【") == 0) {
-				var n = n.substring(n.toLowerCase().search("】")+1, n.length)
-			}
-		}
 		var a = player.track_artists[0]
+		var n = rep(n, "\\(", "\\)")
+		var n = rep(n, "【", "】")
+		var n = rep(n, "\\[", "\\]")
 		var split = n.split(" - ")
 		if (split.length > 1) {
 			var sub0 = split[0].toLowerCase().search(a.toLowerCase())
