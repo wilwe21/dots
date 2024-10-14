@@ -6,7 +6,7 @@ import Applications from 'resource:///com/github/Aylur/ags/service/applications.
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
 import { Variable as Var } from 'resource:///com/github/Aylur/ags/variable.js';
 import WW from '../misc/WW.js';
-import * as mpris from '../misc/mpriscover.js';
+import * as mpris from '../misc/mprismini.js';
 import * as vars from '../variables.js';
 import icons from '../icons.js';
 import { launchApp } from '../utils.js';
@@ -25,25 +25,15 @@ const VolumeSlider = (type = 'speaker') => Widget.Slider({
 
 const Footer = player => Widget.CenterBox({
     class_name: 'footer-box',
-    start_widget: Widget.Box({
-            class_name: 'position',
-            children: [
-                mpris.PositionLabel(player),
-                mpris.Slash(player),
-                mpris.LengthLabel(player),
-            ],
-        }),
     center_widget: Widget.Box({
             class_name: 'controls',
             children: [
                 Widget.Box({
                     class_name: 'buttonbox',
                    children: [
-                    mpris.ShuffleButton(player),
                     mpris.PreviousButton(player),
                     mpris.PlayPauseButton(player),
                     mpris.NextButton(player),
-                    mpris.LoopButton(player),
                    ], 
                 }),
             ],
@@ -73,25 +63,18 @@ const TextBox = player => Widget.Box({
 });
 
 const PlayerBox = player => Widget.Box({
-    class_name: `player ${player.name}`,
-    child: mpris.BlurredCoverArt(player, {
-        class_name: 'cover-art-bg',
-        hexpand: true,
-        child: Widget.Box({
-            class_name: 'shader',
-            hexpand: true,
-            vexpand: true,
-            vertical: false,
-            children: [
-                Widget.CenterBox({
-                    vertical: true,
-                    start_widget: TextBox(player),
-                    end_widget: Footer(player),
-                }),
-            ],
+    class_name: 'shader',
+    hexpand: true,
+    vexpand: true,
+    vertical: false,
+    children: [
+        Widget.CenterBox({
+            vertical: true,
+            start_widget: TextBox(player),
+            end_widget: Footer(player),
         }),
-    }),
-})
+    ],
+});
 
 export default () => WW({
     name: 'OSDA',

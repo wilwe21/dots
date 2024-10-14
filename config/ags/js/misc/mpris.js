@@ -32,9 +32,6 @@ export const CoverArt = (player, props) => Widget.Box({
 export const BlurredCoverArt = (player, props) => Widget.Box({
     ...props,
     class_name: 'blurred-cover',
-    setup: self => self.hook(player, box => blurImg(player.cover_path).then(img => {
-        img && box.setCss(`background-image: url("${img}")`);
-    }), 'notify::cover-path'),
 });
 
 /**

@@ -2,7 +2,6 @@ import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import Audio from 'resource:///com/github/Aylur/ags/service/audio.js';
 import Mpris from 'resource:///com/github/Aylur/ags/service/mpris.js';
 import * as mpris from '../misc/mpris.js';
-import * as mpriscover from '../misc/mpriscover.js';
 import * as vars from '../variables.js';
 import icons from '../icons.js';
 import options from '../options.js';
@@ -177,7 +176,7 @@ const PlayerBox = player => Widget.Box({
                 }),
             })
         } else {
-            self.child = mpriscover.BlurredCoverArt(player, {
+            self.child = mpris.BlurredCoverArt(player, {
                 class_name: 'cover-art-bg',
                 hexpand: true,
                 child: Widget.Box({

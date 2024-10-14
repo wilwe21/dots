@@ -1,3 +1,0 @@
-#!/bin/bash
-echo dupa &> /chuj
-#kill $(hyprctl activewindow | grep pid) | ags -t installerp2

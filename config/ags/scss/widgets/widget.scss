@@ -34,18 +34,6 @@
 .wmoon {
 	font-size: $moonsize;
 }
-.wbgtop {
-	font-size: $bgtopsize;
-}
-.soundmain {
-	@include unset;
-	.soundbutt {
-		all: unset;
-	}
-}
-.bsound {
-	font-size: $soundsize;
-}
 .mediawidget {
 	border-radius: $radii*1.5;
 	@if $music-box == 'solid' {

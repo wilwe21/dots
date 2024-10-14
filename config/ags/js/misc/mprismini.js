@@ -49,6 +49,22 @@ export const TitleLabel = (player, props) => Widget.Label({
         }),
 });
 
+/**
+ * @param {import('types/service/mpris').MprisPlayer} player
+ * @param {import('types/widgets/label').Props=} props
+ */
+export const ArtistLabel = (player, props) => Widget.Label({
+    ...props,
+    class_name: 'artist',
+    label: player.bind('track_artists').transform(a => {
+		if (a == "Ponies At Dawn" || a == "Cider Party") {
+			var t = player.track_title.split(" - ")
+			return t[0]
+		}
+		return a.join(', ') || ''
+	}),
+});
+
 const PlayerButton = ({ player, children, onClick, prop, canProp, cantValue }) => Widget.Button({
     child: Widget.Stack({ children }).bind('shown', player, prop, p => `${p}`),
     on_clicked: () => player[onClick](),

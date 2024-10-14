@@ -845,55 +845,6 @@ export default {
         anchor: Option(['top', 'left'], {'note': 'anchor'}),
         margins: Option(['0', '0'], {'note': 'margins[top/bottom left/right]'}),
     },
-    bgtop: {
-        image: Option('', {
-            'scssFormat': v => `"${v}"`,
-            'type': 'string',
-        }),
-        layer: Option('bottom',{
-            'scssFormat': v => `"${v}"`,
-            'enums': ['background', 'bottom', 'top', 'overlay'],
-            'type': 'enum',
-        }),
-        visible: Option(false),
-        size: Option('0', {
-            'scss': 'bgtopsize',
-        }),
-        anchor: Option(['top', 'left'], {'note': 'anchor'}),
-        margins: Option(['0', '0'], {'note': 'margins[top/bottom left/right]'}),
-    },
-    sound: {
-        sound: Option(' ', {
-            'scssFormat': v => `"${v}"`,
-        }),
-        layer: Option('background',{
-            'scssFormat': v => `"${v}"`,
-            'enums': ['background', 'bottom', 'top', 'overlay'],
-            'type': 'enum',
-        }),
-        visible: Option(false),
-        size: Option('0', {
-            'scss': 'soundsize',
-        }),
-        icon: Option('', {
-            'scssFormat': v => `"${v}"`,
-        }),
-        anchor: Option(['top', 'right'], {'note': 'anchor'}),
-        margins: Option(['0', '0'], {'note': 'margins[top/bottom left/right]'}),
-    },
-    
-    info: {
-        anchor: Option(['bottom', 'right'], {'note': 'anchor'}),
-        margins: Option(['20', '20'], {'note': 'margins[top/bottom left/right]'}),
-        bgcolor: Option('transparentize($bg-color, 0.3)',{
-            'scss': 'infobg-color'
-        }),
-        layer: Option('overlay',{
-            'scssFormat': v => `"${v}"`,
-            'enums': ['background', 'bottom', 'top', 'overlay'],
-            'type': 'enum',
-        }),
-    },
     
     music: {
         visible: Option(false),
