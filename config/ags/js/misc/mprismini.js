@@ -56,13 +56,18 @@ export const TitleLabel = (player, props) => Widget.Label({
 export const ArtistLabel = (player, props) => Widget.Label({
     ...props,
     class_name: 'artist',
-    label: player.bind('track_artists').transform(a => {
-		if (a == "Ponies At Dawn" || a == "Cider Party") {
-			var t = player.track_title.split(" - ")
-			return t[0]
+	setup: self => {
+		const che = () => {
+			var t = player.track_title
+			var a = player.track_artists.join(", ") || ""
+			if (a == "Ponies At Dawn" || a == "Cider Party") {
+				self.label = t.split(' - ')[0]
+			} else {
+				self.label = a
+			}
 		}
-		return a.join(', ') || ''
-	}),
+		self.hook(mpris, () => che(), 'changed')
+	}
 });
 
 const PlayerButton = ({ player, children, onClick, prop, canProp, cantValue }) => Widget.Button({
