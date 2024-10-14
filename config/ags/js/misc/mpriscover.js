@@ -6,10 +6,8 @@ import { blurImg } from '../utils.js';
 function rep(n, s, e) {
 	if (n.toLowerCase().search(`${s}`) > -1 && n.toLowerCase().search(`${e}`) > -1) {
 		var naw = n.substring(n.toLowerCase().search(`${s}`)+1, n.toLowerCase().search(`${e}`)).toLowerCase()
-		console.log(naw)
 		if (naw.search("cover") > -1 || naw.search("animatic") > -1 || naw.search("lyrics") > -1 || naw.search("remix") > -1 || naw.search("video") > -1 || naw.search("remastered") > -1 || naw.search("video") > -1 || naw.search("music") > -1 || naw.search("read") > -1 || naw.search("description") > -1) {
 			var reg = new RegExp(`${s}`+naw+`${e}`, "gi");
-			console.log(reg)
 			var n = n.replace(reg, "")
 		}
 	}
@@ -79,7 +77,13 @@ export const TitleLabel = (player, props) => Widget.Label({
 export const ArtistLabel = (player, props) => Widget.Label({
     ...props,
     class_name: 'artist',
-    label: player.bind('track_artists').transform(a => a.join(', ') || ''),
+    label: player.bind('track_artists').transform(a => {
+		if (a == "Ponies At Dawn") {
+			var t = player.track_title.split(" - ")
+			return t[0]
+		}
+		return a.join(', ') || ''
+	}),
 });
 
 /**
