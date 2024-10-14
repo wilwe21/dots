@@ -21,6 +21,7 @@ export const TitleLabel = (player, props) => Widget.Label({
 		var a = player.track_artists[0]
 		var n = rep(n, "\\(", "\\)")
 		var n = rep(n, "【", "】")
+		var n = rep(n, "「", "」")
 		var n = rep(n, "\\[", "\\]")
 		var split = n.split(" - ")
 		if (split.length > 1) {
