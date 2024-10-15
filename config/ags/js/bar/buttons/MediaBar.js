@@ -1,6 +1,6 @@
 import Mpris from 'resource:///com/github/Aylur/ags/service/mpris.js';
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
-import * as mpris from '../../misc/mprismini.js';
+import * as mpris from '../../misc/mpris.js';
 import options from '../../options.js';
 
 /** @param {import('types/service/mpris').MprisPlayer} player */
@@ -26,7 +26,7 @@ const TextBox = player => Widget.Box({
             vertical: false,
             class_name: 'labels',
             children: [
-                mpris.TitleLabel(player, {
+                mpris.TitleLabel(player, 'short', {
                     xalign: 0,
                     justification: 'left',
                     wrap: false,

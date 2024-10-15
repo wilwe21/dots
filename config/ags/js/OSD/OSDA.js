@@ -6,7 +6,7 @@ import Applications from 'resource:///com/github/Aylur/ags/service/applications.
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
 import { Variable as Var } from 'resource:///com/github/Aylur/ags/variable.js';
 import WW from '../misc/WW.js';
-import * as mpris from '../misc/mprismini.js';
+import * as mpris from '../misc/mpris.js';
 import * as vars from '../variables.js';
 import icons from '../icons.js';
 import { launchApp } from '../utils.js';
@@ -48,7 +48,7 @@ const TextBox = player => Widget.Box({
             vertical: true,
             class_name: 'labels',
             children: [
-                mpris.TitleLabel(player, {
+                mpris.TitleLabel(player, 'full', {
                     xalign: 0,
                     justification: 'left',
                     wrap: true,

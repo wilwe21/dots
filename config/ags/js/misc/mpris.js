@@ -38,7 +38,7 @@ export const BlurredCoverArt = (player, props) => Widget.Box({
  * @param {import('types/service/mpris').MprisPlayer} player
  * @param {import('types/widgets/label').Props=} props
  */
-export const TitleLabel = (player, props) => Widget.Label({
+export const TitleLabel = (player, form, props) => Widget.Label({
     ...props,
     class_name: 'title',
     label: player.bind('track_title').transform(n => {
@@ -67,6 +67,12 @@ export const TitleLabel = (player, props) => Widget.Label({
 				var n = split[1]
 			}
 		}
+		if (form == 'short') {
+        	if (n.length > options.bar.player_length.value) {
+            	var add = '...'
+        	} else { var add = '' }
+			return(n).substring(0, options.bar.player_length.value)+String(`${add}`);
+		}
 		return n
 	}),
 });
@@ -82,7 +88,8 @@ export const ArtistLabel = (player, props) => Widget.Label({
     class_name: 'artist',
 	label: player.bind('track_title').transform(n => {
 		var a = player.track_artists.join(", ") || ""
-		if (a == "Ponies At Dawn" || a == "Cider Party") {
+		var a = a.split(' - Topic')[0]
+		if (a == "Ponies At Dawn" || a == "Cider Party" || a == "Mumble Etc.") {
 			return n.split(' - ')[0]
 		}
 		return a
