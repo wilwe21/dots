@@ -6,7 +6,6 @@ import Audio from 'resource:///com/github/Aylur/ags/service/audio.js';
 import Network from 'resource:///com/github/Aylur/ags/service/network.js';
 import HoverRevealer from '../../misc/HoverRevealer.js';
 import PanelButton from '../PanelButton.js';
-import Indicator from '../../services/onScreenIndicator.js';
 import icons from '../../icons.js';
 
 const MicrophoneIndicator = () => Widget.Icon().hook(Audio, icon => {
@@ -70,11 +69,9 @@ export default () => PanelButton({
     onClicked: () => App.toggleWindow('quicksettings'),
     onScrollUp: () => {
         Audio.speaker.volume += 0.01;
-        Indicator.speaker();
     },
     onScrollDown: () => {
         Audio.speaker.volume -= 0.01;
-        Indicator.speaker();
     },
     connections: [[App, (btn, win, visible) => {
         btn.toggleClassName('active', win === 'quicksettings' && visible);
