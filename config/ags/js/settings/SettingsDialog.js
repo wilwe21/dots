@@ -229,8 +229,8 @@ const sidebar = Widget.Revealer({
 							WINRUL();
 							reloadScss();
 							setupHyprland();
-							//reloadSddm();
-							//reloadGrub();
+							reloadSddm();
+							reloadGrub();
 							reloadGtk();
 							starship();
 							kitty();

@@ -12,7 +12,7 @@ if args.sddm != None:
     subprocess.Popen(["sudo", "cp", "-f", "-T", "/tmp/ags/sddm.conf", "/etc/sddm.conf"])
 if args.grub != None:
     subprocess.Popen(["sudo", "cp", "-f", "-T", "/tmp/ags/grub.conf", "/etc/default/grub"])
-    os.system("sudo grub-mkconfig &> /boot/grub/grub.cfg")
+    os.system("sudo grub-mkconfig > /boot/grub/grub.cfg")
 if args.starship != None:
     subprocess.Popen(["cp", "-f", "/tmp/ags/starship.conf", "/home/wilwe/.config/starship.toml"])
 if args.kitty != None:

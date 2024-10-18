@@ -5,13 +5,7 @@ import Notifications from 'resource:///com/github/Aylur/ags/service/notification
 import options from '../options.js';
 import icons from '../icons.js';
 import { reloadScss, scssWatcher } from './scss.js';
-import { reloadSddm } from './sddm.js';
-import { reloadGrub } from './grub.js';
 import { reloadGtk } from './gtk.js';
-import { reloadStarship } from './starship.js';
-import { kitty } from './kitty.js';
-import { WINRUL } from './winrul.js';
-import { vim } from './vim.js';
 import { initWallpaper, wallpaper } from './wallpaper.js';
 import { hyprlandInit, setupHyprland } from './hyprland.js';
 import { globals } from './globals.js';
@@ -30,14 +24,8 @@ export function init() {
     dependandOptions();
 
     App.connect('config-parsed', () => {
-        WINRUL();
         setupHyprland();
         reloadScss();
-        //reloadSddm();
-        //reloadGrub();
-        reloadStarship();
-        kitty();
-		vim();
         wallpaper();
         gtkTheme();
         gtkIcons();

@@ -25,8 +25,8 @@ export function setTheme(name) {
     WINRUL();
     reloadScss();
     setupHyprland();
-    //reloadSddm();
-    //reloadGrub();
+    reloadSddm();
+	reloadGrub();
     reloadGtk();
     starship();
     kitty();
