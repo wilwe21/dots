@@ -82,13 +82,21 @@ export const volume = (type = 'speaker') => Widget.Label({
 
 export const temperatura = Variable('Teperatura: error', {
     poll: [5000, 'curl wttr.in/?format=Temperatura:%20%t', n => {
-        return String(n);
+		if (!String(n).search("Unknown Location")) {
+			return String(n);
+		} else {
+			return String("?")
+		}
     }],
 });
 
 export const chmury = Variable('error', {
     poll: [5000, 'curl -H Accept-Language:pl wttr.in/?format=%C%20%c', n => {
-        return String(n);
+		if (!String(n).search("Unknown Location")) {
+			return String(n);
+		} else {
+			return String("?")
+		}
     }],
 });
 
