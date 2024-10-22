@@ -82,27 +82,27 @@ export const volume = (type = 'speaker') => Widget.Label({
 
 export const temperatura = Variable('Teperatura: error', {
     poll: [5000, 'curl wttr.in/?format=Temperatura:%20%t', n => {
-		if (!String(n).search("Unknown Location")) {
-			return String(n);
-		} else {
+		if (String(n).search("Unknown Location") != -1 || String(n).search("igor") != -1) {
 			return String("?")
+		} else {
+			return String(n);
 		}
     }],
 });
 
 export const chmury = Variable('error', {
     poll: [5000, 'curl -H Accept-Language:pl wttr.in/?format=%C%20%c', n => {
-		if (!String(n).search("Unknown Location")) {
-			return String(n);
-		} else {
+		if (String(n).search("Unknown Location") != -1 || String(n).search("igor") != -1) {
 			return String("?")
+		} else {
+			return String(n);
 		}
     }],
 });
 
 export const moon = Variable(0, {
     poll: [250000, "/home/wilwe/.hyprland.conf/scripts/moon", n => {
-        return String(n);
+        return n != "" ? String(n) : "?";
     }],
 });
 
