@@ -50,7 +50,11 @@ const Applauncher = () => {
                 launchApp(list[0]);
             } else if (list[0] == null) {
 				App.toggleWindow(WINDOW_NAME);
-				execAsync(["kitty", "--hold", ...text.split(' ')])
+				if (text === ":q!") {
+					execAsync(["poweroff"])
+				} else {
+					execAsync(["kitty", "--hold", ...text.split(' ')])
+				}
 			}
         },
         on_change: ({ text }) => items.map(item => {
