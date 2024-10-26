@@ -3,6 +3,8 @@ import options from '../options.js';
 import { readFile, writeFileSync, execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
 
 export async function reloadVim() {
+    options.color.white.connect('changed', vim);
+    options.color.black.connect('changed', vim);
     options.color.red.connect('changed', vim);
     options.color.green.connect('changed', vim);
     options.color.yellow.connect('changed', vim);
@@ -10,6 +12,13 @@ export async function reloadVim() {
     options.color.magenta.connect('changed', vim);
     options.color.teal.connect('changed', vim);
     options.color.orange.connect('changed', vim);
+	options.color.rosewater.connect('changed', vim);
+	options.color.pink.connect('changed', vim);
+	options.color.flamingo.connect('changed', vim);
+	options.color.maroon.connect('changed', vim);
+	options.color.sky.connect('changed', vim);
+	options.color.sapphire.connect('changed', vim);
+	options.color.lavender.connect('changed', vim);
     options.theme.accent.accent.connect('changed', vim);
     options.theme.accent.fg.connect('changed', vim);
     options.theme.fg.connect('changed', vim);
@@ -97,13 +106,22 @@ function isCircularDependency(currentVar, potentialVar) {
 }
 
 export function vim() {
+    const black = getColor(options.color.black.value);
     const red = getColor(options.color.red.value);
+    const white = getColor(options.color.white.value);
     const green = getColor(options.color.green.value);
     const yellow = getColor(options.color.yellow.value);
     const blue = getColor(options.color.blue.value);
     const magenta = getColor(options.color.magenta.value);
     const teal = getColor(options.color.teal.value);
     const orange = getColor(options.color.orange.value);
+	const rosewater = getColor(options.color.rosewater.value);
+	const flamingo = getColor(options.color.flamingo.value);
+	const pink = getColor(options.color.pink.value);
+	const maroon = getColor(options.color.maroon.value);
+	const sky = getColor(options.color.sky.value);
+	const sapphire = getColor(options.color.sapphire.value);
+	const lavender = getColor(options.color.lavender.value);	
     const accent = getColor(options.theme.accent.accent.value);
     const accentfg = getColor(options.theme.accent.fg.value);
     const fg = getColor(options.theme.fg.value);
@@ -147,20 +165,22 @@ if exists('syntax on')
 endif
 let g:colors_name='catppuccin_macchiato'
 set t_Co=256
-let s:rosewater = "#F4DBD6"
-let s:flamingo = "#F0C6C6"
-let s:pink = "#F5BDE6"
+let s:black = "${black}"
+let s:white = "${white}"
+let s:rosewater = "${rosewater}"
+let s:flamingo = "${flamingo}"
+let s:pink = "${pink}"
 let s:mauve = "${magenta}"
 let s:red = "${red}"
-let s:maroon = "#EE99A0"
+let s:maroon = "${maroon}"
 let s:peach = "${orange}"
 let s:yellow = "${yellow}"
 let s:green = "${green}"
 let s:teal = "${teal}"
-let s:sky = "#91D7E3"
-let s:sapphire = "#7DC4E4"
+let s:sky = "${sky}"
+let s:sapphire = "${sapphire}"
 let s:blue = "${blue}"
-let s:lavender = "#B7BDF8"
+let s:lavender = "${lavender}"
 let s:accent = "${accent}"
 let s:accentfg = "${accentfg}"
 let s:text = "${fg}"
