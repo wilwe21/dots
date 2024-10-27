@@ -433,6 +433,7 @@ export default [
 		  "color.download": "#371222",
 		  "color.cpucolor": "#371222",
 		  "color.playcolor": "#371222",
+	      "grub.theme": 'Arcade',
 		  "theme.scheme": "dark",
 		  "theme.bg": "#684A82",
 		  "theme.darken_bg": "#000000",
