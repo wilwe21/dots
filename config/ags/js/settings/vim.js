@@ -31,6 +31,12 @@ export async function reloadVim() {
 	options.vim.colors.visual.bg.connect('changed', vim);
 	options.vim.colors.linenr.fg.connect('changed', vim);
 	options.vim.colors.linenr.bg.connect('changed', vim);
+	options.vim.colors.statement.fg.connect('changed', vim);
+	options.vim.colors.statement.bg.connect('changed', vim);
+	options.vim.colors.type.fg.connect('changed', vim);
+	options.vim.colors.type.bg.connect('changed', vim);
+	options.vim.colors.special.fg.connect('changed', vim);
+	options.vim.colors.special.bg.connect('changed', vim);
 	options.vim.colors.error.fg.connect('changed', vim);
 	options.vim.colors.error.bg.connect('changed', vim);
 	options.vim.colors.string.fg.connect('changed', vim);
@@ -55,6 +61,10 @@ export async function reloadVim() {
 	options.vim.colors.operator.bg.connect('changed', vim);
 	options.vim.colors.keyword.fg.connect('changed', vim);
 	options.vim.colors.keyword.bg.connect('changed', vim);
+	options.vim.colors.include.fg.connect('changed', vim);
+	options.vim.colors.include.bg.connect('changed', vim);
+	options.vim.colors.structure.fg.connect('changed', vim);
+	options.vim.colors.structure.bg.connect('changed', vim);
 }
 
 function getColor(scss) {
@@ -134,6 +144,12 @@ export function vim() {
 	const vbg = options.vim.colors.visual.bg.value;
 	const lnrfg = options.vim.colors.linenr.fg.value;
 	const lnrbg = options.vim.colors.linenr.bg.value;
+	const statfg = options.vim.colors.statement.fg.value;
+	const statbg = options.vim.colors.statement.bg.value;
+	const typfg = options.vim.colors.type.fg.value;
+	const typbg = options.vim.colors.type.bg.value;
+	const spcfg = options.vim.colors.special.fg.value;
+	const spcbg = options.vim.colors.special.bg.value;
 	const efg = options.vim.colors.error.fg.value;
 	const ebg = options.vim.colors.error.bg.value;
 	const stfg = options.vim.colors.string.fg.value;
@@ -158,6 +174,10 @@ export function vim() {
 	const opbg = options.vim.colors.operator.bg.value;
 	const keyfg = options.vim.colors.keyword.fg.value;
 	const keybg = options.vim.colors.keyword.bg.value;
+	const incfg = options.vim.colors.include.fg.value;
+	const incbg = options.vim.colors.include.bg.value;
+	const strucfg = options.vim.colors.structure.fg.value;
+	const strucbg = options.vim.colors.structure.bg.value;
     const conf = `" Name: catppuccin_macchiato.vim
 hi clear
 if exists('syntax on')
@@ -267,10 +287,10 @@ call s:hi("WildMenu", "NONE", "NONE", s:overlay0, "NONE", "NONE")
 call s:hi("Comment", "NONE", s:surface2, "NONE", "NONE", "NONE")
 call s:hi("Constant", "NONE", s:peach, "NONE", "NONE", "NONE")
 call s:hi("Identifier", "NONE", s:flamingo, "NONE", "NONE", "NONE")
-call s:hi("Statement", "NONE", s:accent, "NONE", "NONE", "NONE")
+call s:hi("Statement", "NONE", ${statfg}, ${statbg}, "NONE", "NONE")
 call s:hi("PreProc", "NONE", s:pink, "NONE", "NONE", "NONE")
-call s:hi("Type", "NONE", s:blue, "NONE", "NONE", "NONE")
-call s:hi("Special", "NONE", s:pink, "NONE", "NONE", "NONE")
+call s:hi("Type", "NONE", ${typfg}, ${typbg}, "NONE", "NONE")
+call s:hi("Special", "NONE", ${spcfg}, ${spcbg}, "NONE", "NONE")
 call s:hi("Underlined", "NONE", s:text, s:base, "underline", "underline")
 call s:hi("Error", "NONE", ${efg}, ${ebg}, "NONE", "NONE")
 call s:hi("Todo", "NONE", s:base, s:yellow, "bold", "bold")
@@ -285,9 +305,9 @@ call s:hi("Repeat", "NONE", ${repfg}, ${repbg}, "NONE", "NONE")
 call s:hi("Label", "NONE", ${labfg}, ${labbg}, "NONE", "NONE")
 call s:hi("Operator", "NONE", ${opfg}, ${opbg}, "NONE", "NONE")
 call s:hi("Keyword", "NONE", ${keyfg}, ${keybg}, "NONE", "NONE")
-call s:hi("Include", "NONE", s:red, "NONE", "NONE", "NONE")
+call s:hi("Include", "NONE", ${incfg}, ${incbg}, "NONE", "NONE")
 call s:hi("StorageClass", "NONE", s:yellow, "NONE", "NONE", "NONE")
-call s:hi("Structure", "NONE", s:mauve, "NONE", "NONE", "NONE")
+call s:hi("Structure", "NONE", ${strucfg}, ${strucbg}, "NONE", "NONE")
 call s:hi("Typedef", "NONE", s:yellow, "NONE", "NONE", "NONE")
 call s:hi("debugPC", "NONE", "NONE", s:crust, "NONE", "NONE")
 call s:hi("debugBreakpoint", "NONE", s:overlay0, s:base, "NONE", "NONE")
