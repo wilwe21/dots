@@ -24,6 +24,7 @@ export default monitor => WW({
 					self.visible = false
 					self.visible = true
 				} else {
+					playsold.setValue(plays.value)
 					self.visible = false
 					self.visible = true
 					self.visible = false
