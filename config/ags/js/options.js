@@ -9,7 +9,7 @@
  */
 
 import { Option, resetOptions, getValues, apply, getOptions } from './settings/option.js';
-import { USER } from 'resource:///com/github/Aylur/ags/utils.js';
+import { USER, HOME } from 'resource:///com/github/Aylur/ags/utils.js';
 import themes from './themes.js';
 
 export default {
@@ -874,11 +874,11 @@ export default {
             'type': 'img',
         }),
         decorsw: Option(false),
-        decorator1: Option('/home/wilwe/.hyprland.conf/icons/null', {
+        decorator1: Option(`${HOME}/.hyprland.conf/icons/null`, {
             'scssFormat': v => `"${v}"`,
             'type': 'img',
         }),
-        decorator2: Option('/home/wilwe/.hyprland.conf/icons/null', {
+        decorator2: Option(`${HOME}/.hyprland.conf/icons/null`, {
             'scssFormat': v => `"${v}"`,
             'type': 'img',
         }),
@@ -1081,7 +1081,7 @@ export default {
                 Icon: Option('',{
                     'scssFormat': v => `"${v}"`,
                 }),
-                exec: Option('/usr/bin/flatpak run io.gitlab.librewolf-community --new-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/h9joi49y.default-default',{
+                exec: Option(`/usr/bin/flatpak run io.gitlab.librewolf-community --new-window --profile ${HOME}/.var/app/io.gitlab.librewolf-community/.librewolf/h9joi49y.default-default`, {
                     'scssFormat': v => `"${v}"`,
                 }),
             },
@@ -1089,7 +1089,7 @@ export default {
                 Icon: Option('',{
                     'scssFormat': v => `"${v}"`,
                 }),
-                exec: Option('/usr/bin/flatpak run io.gitlab.librewolf-community --new-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/dwa',{
+                exec: Option(`/usr/bin/flatpak run io.gitlab.librewolf-community --new-window --profile ${HOME}/.var/app/io.gitlab.librewolf-community/.librewolf/dwa`, {
                     'scssFormat': v => `"${v}"`,
                 }),
             },
@@ -1097,7 +1097,7 @@ export default {
                 Icon: Option('',{
                     'scssFormat': v => `"${v}"`,
                 }),
-                exec: Option('/usr/bin/flatpak run io.gitlab.librewolf-community --private-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/h9joi49y.default-default',{
+                exec: Option(`/usr/bin/flatpak run io.gitlab.librewolf-community --private-window --profile ${HOME}/.var/app/io.gitlab.librewolf-community/.librewolf/h9joi49y.default-default`, {
                     'scssFormat': v => `"${v}"`,
                 }),
             },
@@ -1123,7 +1123,7 @@ export default {
                 Icon: Option('',{
                     'scssFormat': v => `"${v}"`,
                 }),
-                exec: Option('/usr/bin/flatpak run io.gitlab.librewolf-community --new-window --profile /home/wilwe/.var/app/io.gitlab.librewolf-community/.librewolf/h9joi49y.default-default messenger.com',{
+                exec: Option(`/usr/bin/flatpak run io.gitlab.librewolf-community --new-window --profile ${HOME}/.var/app/io.gitlab.librewolf-community/.librewolf/h9joi49y.default-default messenger.com`, {
                     'scssFormat': v => `"${v}"`,
                 }),
             },
