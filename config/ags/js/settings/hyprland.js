@@ -2,6 +2,7 @@ import App from 'resource:///com/github/Aylur/ags/app.js';
 import Hyprland from 'resource:///com/github/Aylur/ags/service/hyprland.js';
 import options from '../options.js';
 import { readFile, writeFile, writeFileSync, exec } from 'resource:///com/github/Aylur/ags/utils.js';
+import { getColor } from '../utils.js';
 
 const noIgnorealpha = ['verification', 'powermenu', 'lockscreen'];
 
@@ -14,49 +15,6 @@ function sendBatch(batch) {
 
     Hyprland.sendMessage(`[[BATCH]]/${cmd}`).then(print)
         .catch(err => console.error(`Hyprland.sendMessage: ${err.message}`));
-}
-
-function getColor(scss) {
-  // Base case: Handle hex colors directly
-  if (scss.includes('#')) {
-    return scss;
-  }
-
-  // Recursive case: Handle variables and nested variables
-  if (scss.includes('$')) {
-    const variableName = scss.replace('$', '');
-    const resolvedOption = options.list().find(opt => opt.scss === variableName);
-
-    if (resolvedOption) {
-      // Check for circular dependencies before recursion
-      if (isCircularDependency(scss, resolvedOption.value)) {
-        throw new Error(`Circular dependency detected in color variables: ${scss}`);
-      }
-
-      // Resolve nested variables recursively
-      const resolvedValue = getColor(resolvedOption.value);
-      return resolvedValue;
-    }
-  }
-
-  // Fallback for undefined variables
-  return null; // Or throw an error if undefined variables are not allowed
-}
-
-// Helper function to detect circular dependencies (optional)
-function isCircularDependency(currentVar, potentialVar) {
-  if (!potentialVar.includes('$')) {
-    return false;
-  }
-
-  const nextVarName = potentialVar.replace('$', '');
-  const nextOption = options.list().find(opt => opt.scss === nextVarName);
-
-  if (!nextOption) {
-    return false;
-  }
-
-  return (nextOption.value === currentVar) || isCircularDependency(currentVar, nextOption.value, options);
 }
 
 function sleep (time) {
@@ -86,8 +44,8 @@ export async function setupHyprland() {
     const bar_pos = options.bar.position.value;
     const inactive_border = options.hypr.inactive_border.value;
     const active_border = options.hypr.active_border.value;
+    const trail_color = getColor(options.hypr.trail_color.value);
     const kitt_opacity = options.kitty.opacity.value;
-
     const accent = getColor(options.theme.accent.accent.value);
 
     const batch = [];
@@ -108,6 +66,7 @@ export async function setupHyprland() {
         `general:col.inactive_border ${inactive_border}`,
         `decoration:rounding ${radii}`,
         `decoration:drop_shadow ${drop_shadow ? 'yes' : 'no'}`,
+		`plugin:hyprtrails:color rgba(${trail_color.replace("#", '')}ff)`,
     );
     sendBatch(batch)
     sleep(500).then(() => sendBatch(batch));

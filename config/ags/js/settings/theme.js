@@ -6,6 +6,7 @@ import { reloadScss } from './scss.js';
 import { reloadSddm } from './sddm.js';
 import { reloadGrub } from './grub.js';
 import { reloadGtk } from './gtk.js';
+import { Cava } from './cava.js';
 import { starship } from './starship.js';
 import { kitty } from './kitty.js';
 import { WINRUL } from './winrul.js';
@@ -28,6 +29,7 @@ export function setTheme(name) {
     reloadSddm();
 	reloadGrub();
     reloadGtk();
+    Cava();
     starship();
     kitty();
     vim();

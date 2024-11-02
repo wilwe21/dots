@@ -1,6 +1,7 @@
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import options from '../options.js';
 import { readFile, writeFileSync, execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
+import { getColor } from '../utils.js';
 
 export async function reloadVim() {
     options.color.white.connect('changed', vim);
@@ -65,54 +66,6 @@ export async function reloadVim() {
 	options.vim.colors.include.bg.connect('changed', vim);
 	options.vim.colors.structure.fg.connect('changed', vim);
 	options.vim.colors.structure.bg.connect('changed', vim);
-}
-
-function getColor(scss) {
-  // Split the string into segments (with slight modification)
-  const segments = scss.split(/([^\s\(\)\[\]:]+|[^\s\(\)\[\]]+:)/).filter(Boolean);
-
-  let colorString = "";
-  for (const segment of segments) {
-    if (segment.includes('$') && !segment.endsWith(':')) {
-      // Handle SCSS variable, but not ending with colon
-      const variableName = segment.replace('$', '');
-      const resolvedOption = options.list().find(opt => opt.scss === variableName);
-
-      if (resolvedOption) {
-        // Check for circular dependencies before recursion (optional)
-        if (isCircularDependency(scss, resolvedOption.value)) {
-          throw new Error(`Circular dependency detected in color variables: ${scss}`);
-        }
-
-        // Resolve nested variables recursively (modified)
-        const resolvedValue = getColor(resolvedOption.value);
-        colorString += resolvedValue;
-      } else {
-        // Variable not found, treat as plain text
-        colorString += segment;
-      }
-    } else {
-      // Plain text, colon, or nested structure, add directly
-      colorString += segment;
-    }
-  }
-
-  return colorString || null; // Return null if no color is found
-}
-// Helper function to detect circular dependencies (optional)
-function isCircularDependency(currentVar, potentialVar) {
-  if (!potentialVar.includes('$')) {
-    return false;
-  }
-
-  const nextVarName = potentialVar.replace('$', '');
-  const nextOption = options.list().find(opt => opt.scss === nextVarName);
-
-  if (!nextOption) {
-    return false;
-  }
-
-  return (nextOption.value === currentVar) || isCircularDependency(currentVar, nextOption.value, options);
 }
 
 export function vim() {

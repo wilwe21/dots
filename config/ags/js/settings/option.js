@@ -6,6 +6,7 @@ import { reloadScss } from './scss.js';
 import { reloadSddm } from './sddm.js';
 import { reloadGrub } from './grub.js';
 import { reloadGtk } from './gtk.js';
+import { reloadCava } from './cava.js';
 import { reloadStarship } from './starship.js';
 import { reloadKitty } from './kitty.js';
 import { reloadWinruls } from './winrul.js';
@@ -133,6 +134,7 @@ export class Opt extends Service {
                 //reloadSddm();
 				//reloadGrub();
                 reloadGtk();
+				reloadCava();
                 reloadStarship();
                 reloadKitty();
 				reloadWinruls();

@@ -200,6 +200,12 @@ export default {
             'scss': 'exclude',
         }),
 
+        trail_color: Option('$accent', {
+            'category': 'Misc',
+            'title': 'Trail color',
+            'scss': 'exclude',
+        }),
+
         wm_gaps: Option(3, {
             'category': 'General',
             'scss': 'wm-gaps',
@@ -706,6 +712,20 @@ export default {
             }),
         },
     },
+	cava: {
+		method: Option('pulse', {
+			'category': 'Terminal',
+			'scssFormat': v=> `"${v}"`,
+		}),
+		source: Option('auto', {
+			'category': 'Terminal',
+			'scssFormat': v=> `"${v}"`,
+		}),
+		foreground: Option('$accent', {
+			'category': 'Terminal',
+			'scssFormat': v=> `"${v}"`,
+		})
+	},
 
     applauncher: {
         width: Option(500),
