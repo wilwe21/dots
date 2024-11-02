@@ -1,6 +1,6 @@
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import options from '../options.js';
-import { readFile, writeFileSync, execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
+import { readFile, writeFileSync, execAsync, HOME } from 'resource:///com/github/Aylur/ags/utils.js';
 import { getColor } from '../utils.js';
 
 export async function reloadStarship() {
@@ -50,5 +50,5 @@ disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:${tbg} fg:${tfg}"
 format = '[${ldec}](${tbg})[ $time ]($style)[${rdec}](${tbg})'`
-    writeFileSync(String(conf), '/home/wilwe/.config/starship.toml')
+    writeFileSync(String(conf), `${HOME}/.config/starship.toml`)
 }

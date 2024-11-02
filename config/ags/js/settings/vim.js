@@ -1,6 +1,6 @@
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import options from '../options.js';
-import { readFile, writeFileSync, execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
+import { readFile, writeFileSync, execAsync, HOME } from 'resource:///com/github/Aylur/ags/utils.js';
 import { getColor } from '../utils.js';
 
 export async function reloadVim() {
@@ -317,6 +317,6 @@ let g:airline#themes#ags#palette.visual = airline#themes#generate_color_map( s:V
 
 let g:airline_left_sep = "${lsep}"
 let g:airline_right_sep = "${rsep}"`
-    writeFileSync(String(conf), '/home/wilwe/.vim/colors/ags.vim')
-    writeFileSync(String(airline), '/home/wilwe/.vim/autoload/airline/themes/ags.vim')
+    writeFileSync(String(conf), `${HOME}/.vim/colors/ags.vim`)
+    writeFileSync(String(airline), `${HOME}/.vim/autoload/airline/themes/ags.vim`)
 }

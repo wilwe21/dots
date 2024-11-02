@@ -1,6 +1,6 @@
 import options from '../options.js';
 import { getColor } from '../utils.js';
-import { writeFileSync } from 'resource:///com/github/Aylur/ags/utils.js';
+import { writeFileSync, HOME } from 'resource:///com/github/Aylur/ags/utils.js';
 
 export async function reloadCava() {
 	options.cava.method.connect('changed', Cava)
@@ -17,5 +17,5 @@ method = ${meth}
 source = ${src}
 [color]
 foreground = '${fg}'`
-	writeFileSync(String(conf), '/home/wilwe/.config/cava/config')
+	writeFileSync(String(conf), `${HOME}/.config/cava/config`)
 }
