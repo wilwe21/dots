@@ -99,7 +99,7 @@ const TextBox = player => Widget.Box({
                     }),
                     setup: self => self.hook(options.music.Title, () => {
                         if (options.music.Title.value == true){
-                            self.child = mpris.TitleLabel(player, 'full', {
+                            self.child = mpris.TitleLabel(player, -1, {
                                 xalign: 0,
                                 justification: options.music.titlejustification.bind('value'),
                                 wrap: true,

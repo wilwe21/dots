@@ -48,7 +48,7 @@ const TextBox = player => Widget.Box({
             vertical: true,
             class_name: 'labels',
             children: [
-                mpris.TitleLabel(player, 'full', {
+                mpris.TitleLabel(player, -1, {
                     xalign: 0,
                     justification: 'left',
                     wrap: true,

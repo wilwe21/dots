@@ -25,13 +25,17 @@ const TextBox = player => Widget.Box({
             hexpand: false,
             vertical: false,
             class_name: 'labels',
-            children: [
-                mpris.TitleLabel(player, 'short', {
-                    xalign: 0,
-                    justification: 'left',
-                    wrap: false,
-                }),
-            ],
+			setup: self => {
+				const SetChild = () => {
+					self.child = mpris.TitleLabel(player, options.bar.player_length.value, {
+						xalign: 0,
+						justification: 'left',
+						wrap: false,
+					})
+				}
+				SetChild()
+				options.bar.player_length.connect('changed', SetChild)
+			}
         }),
     ],
 });

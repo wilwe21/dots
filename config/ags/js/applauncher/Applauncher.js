@@ -104,7 +104,7 @@ const Applauncher = () => {
                                 vertical: true,
                                 class_name: 'labels',
                                 children: [
-                                    mpris.TitleLabel(player, 'full', {wrap: true, justification: 'center'}),
+                                    mpris.TitleLabel(player, -1, {wrap: true, justification: 'center'}),
                                     mpris.ArtistLabel(player, {wrap: true, justification: 'center'}),
                                 ],
                             }),

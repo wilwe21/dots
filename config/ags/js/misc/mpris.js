@@ -70,11 +70,11 @@ export const TitleLabel = (player, form, props) => Widget.Label({
 				var n = split[1]
 			}
 		}
-		if (form == 'short') {
-        	if (n.length > options.bar.player_length.value) {
+		if (form !== -1) {
+        	if (n.length > form) {
             	var add = '...'
         	} else { var add = '' }
-			return(n).substring(0, options.bar.player_length.value)+String(`${add}`);
+			return (n).substring(0, form)+String(`${add}`)
 		}
 		return n
 	}),
