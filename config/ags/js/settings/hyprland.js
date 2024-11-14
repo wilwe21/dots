@@ -65,7 +65,7 @@ export async function setupHyprland() {
         `general:col.active_border ${active_border}`,
         `general:col.inactive_border ${inactive_border}`,
         `decoration:rounding ${radii}`,
-        `decoration:drop_shadow ${drop_shadow ? 'yes' : 'no'}`,
+        `decoration:shadow:enabled ${drop_shadow ? 'yes' : 'no'}`,
 		`plugin:hyprtrails:color rgba(${trail_color.replace("#", '')}ff)`,
     );
     sendBatch(batch)
