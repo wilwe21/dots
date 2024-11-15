@@ -1,4 +1,4 @@
-import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
+import { exec, execAsync } from 'astal/process';
 import cairo from 'cairo';
 import icons from './icons.js';
 import Gdk from 'gi://Gdk';
@@ -87,7 +87,7 @@ export function dependencies(bins) {
 
 /** @param {string} img - path to an img file */
 export function blurImg(img) {
-    const cache = Utils.CACHE_DIR + '/media';
+    const cache = '/home/wilwe/.cache/ags/media';
     return new Promise(resolve => {
         if (!img)
             resolve('');
@@ -98,7 +98,6 @@ export function blurImg(img) {
         if (GLib.file_test(blurred, GLib.FileTest.EXISTS))
             return resolve(blurred);
 
-        Utils.ensureDirectory(dir);
         Utils.execAsync(['convert', img, '-blur', '0x22', blurred])
             .then(() => resolve(blurred))
             .catch(() => resolve(''));
