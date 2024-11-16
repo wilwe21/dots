@@ -5,6 +5,6 @@ export default function Poffbutt() {
 		return <button
 					onClicked={() => exec("poweroff")}
 					halign={Gtk.Align.center}>
-					<label label="exit" />
+					<label label="⏻" />
 			</button>
 }

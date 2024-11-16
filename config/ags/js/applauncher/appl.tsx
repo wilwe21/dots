@@ -1,8 +1,7 @@
 import Apps from "gi://AstalApps"
 import { App, Astal, Gdk, Gtk } from "astal/gtk3"
+import { execAsync } from "astal/process"
 import { Variable } from "astal"
-
-const MAX_ITEMS = 8
 
 function hide() {
     App.get_window("launcher")!.hide()
@@ -37,9 +36,17 @@ export default function Applauncher() {
     const apps = new Apps.Apps()
 
     const text = Variable("")
-    const list = text(text => apps.fuzzy_query(text).slice(0, MAX_ITEMS))
+    const list = text(text => apps.fuzzy_query(text))
     const onEnter = () => {
-        apps.fuzzy_query(text.get())?.[0].launch()
+        if (apps.fuzzy_query(text.get())?.[0]) {
+					apps.fuzzy_query(text.get())?.[0].launch()
+				} else if (apps.fuzzy_query(text.get())?.[0] == null) {
+						if (text.get() === ":q!") {
+								execAsync(["poweroff"])
+						} else {
+								execAsync(["kitty", "--hold", ...text.get().split(" ")])
+						}
+				}
         hide()
     }
 
@@ -48,8 +55,9 @@ export default function Applauncher() {
         anchor={Astal.WindowAnchor.TOP | Astal.WindowAnchor.BOTTOM}
         exclusivity={Astal.Exclusivity.IGNORE}
         keymode={Astal.Keymode.ON_DEMAND}
-        application={App}
         onShow={() => text.set("")}
+				setup={self => App.add_window(self) }
+				visible={false}
         onKeyPressEvent={function (self, event: Gdk.Event) {
             if (event.get_keyval()[1] === Gdk.KEY_Escape)
                 self.hide()
@@ -65,19 +73,13 @@ export default function Applauncher() {
                         onChanged={self => text.set(self.text)}
                         onActivate={onEnter}
                     />
-                    <box spacing={6} vertical>
-                        {list.as(list => list.map(app => (
-                            <AppButton app={app} />
-                        )))}
-                    </box>
-                    <box
-                        halign={CENTER}
-                        className="not-found"
-                        vertical
-                        visible={list.as(l => l.length === 0)}>
-                        <icon icon="system-search-symbolic" />
-                        <label label="No match found" />
-                    </box>
+                    <scrollable vexpand>
+												<box spacing={6}  vertical>
+													{list.as(list => list.map(app => (
+															<AppButton app={app} />
+													)))}
+												</box>
+                    </scrollable>
                 </box>
                 <eventbox expand onClick={hide} />
             </box>

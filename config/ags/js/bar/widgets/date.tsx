@@ -1,11 +1,13 @@
-import { Gtk } from "astal/gtk3"
-import { Variable } from "astal"
+import { Variable, GLib} from "astal"
 
-const time = Variable("").poll(1000, "date")
+export default function Time({ format = "%H:%M %d.%m" }) {
+    const time = Variable<string>("").poll(1000, () =>
+        GLib.DateTime.new_now_local().format(format)!)
 
-export default function DateButton() {
-		return	<button
-				halign={Gtk.Align.CENTER}> 
-				<label label={time()} />
-		</button>
+    return <button
+        className="Time"
+        onDestroy={() => time.drop()}
+        label={time()}
+    />
 }
+
