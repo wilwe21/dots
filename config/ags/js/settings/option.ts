@@ -1,3 +1,4 @@
+import GObject, { register, property } from "astal/gobject"
 import { exec } from 'astal/process';
 import { readFile, writeFile } from 'astal/file';
 //import { reloadScss } from './scss.ts';
@@ -11,9 +12,10 @@ const CACHE_FILE = vars.cacheDir + '/options.json';
 let cacheObj = JSON.parse(readFile(CACHE_FILE) || '{}');
 
 /** @template T */
-export class Opt {
+@register({ GTypeName: "Options" })
+export class Opt extends GObject.Object {
     #value;
-    #scss = '';
+    //#scss = '';
     unit = 'px';
     noReload = false;
     persist = false;
@@ -30,7 +32,7 @@ export class Opt {
     format = v => v;
 
     /** @type {(v: T) => any} */
-    scssFormat = v => v;
+    //scssFormat = v => v;
 
 
     /**
@@ -38,6 +40,7 @@ export class Opt {
      * @param {OptionConfig<T> =} config
      */
     constructor(value, config) {
+				super();
         this.#value = value;
         this.defaultValue = value;
         this.type = typeof value;
@@ -48,14 +51,14 @@ export class Opt {
         import('../options.js').then(this.#init.bind(this));
     }
 
-    set scss(scss) { this.#scss = scss; }
+    /*set scss(scss) { this.#scss = scss; }
     get scss() {
         return this.#scss || this.id
             .split('.')
             .join('-')
             .split('_')
             .join('-');
-    }
+    }*/
 
     #init() {
         getOptions(); // sets the ids as a side effect
