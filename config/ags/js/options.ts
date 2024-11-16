@@ -11,5 +11,6 @@ export default {
     padding: Option(8),
     radii: Option(5),
 
-		barposition: Option("TOP")
+		barposition: Option("TOP"),
+		wallpaper: Option("/home/wilwe/.hyprland.conf/wallpapers/dead.png")
 };

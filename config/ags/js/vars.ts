@@ -1,4 +1,7 @@
+import GLib from "gi://GLib"
+const HOME = GLib.getenv("HOME")
+
 export default {
-		cahceDir: "/home/wilwe/.cache",
-		confDir: "/home/wilwe/.hyprland.conf/config/ags"
+		cacheDir: `${HOME}/.cache/ags`,
+		confDir: `${SRC}`
 }

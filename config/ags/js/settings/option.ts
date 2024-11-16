@@ -1,5 +1,8 @@
+import { exec } from 'astal/process';
 import { readFile, writeFile } from 'astal/file';
-import { reloadScss } from './scss.ts';
+//import { reloadScss } from './scss.ts';
+import options from "../options.ts";
+import { wallpaper } from './wallpaper.ts';
 import vars from '../vars.ts'
 
 const CACHE_FILE = vars.cacheDir + '/options.json';
@@ -93,11 +96,11 @@ export class Opt {
 
         if (this.value !== value) {
             this.#value = this.format(value);
-            this.changed('value');
+            //this.changed('value');
 
             if (reload && !this.noReload) {
-                reloadScss();
-                //wallpaper();
+                //reloadScss();
+                wallpaper();
                 //setupHyprland();
             }
         }
