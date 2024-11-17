@@ -6,7 +6,7 @@ window#launcher {
         border-radius: 11px;
         margin: 1rem;
         padding: .8rem;
-        box-shadow: 2px 3px 8px 0 gtkalpha(black, .4);
+        box-shadow: 2px 3px 8px 0 transparentize(black, .4);
 
         entry {
             margin-bottom: .8rem;
@@ -28,7 +28,7 @@ window#launcher {
             }
 
             label.description {
-                color: gtkalpha($fg-color, .8);
+                color: transparentize($fg-color, .8);
             }
         }
 
@@ -37,11 +37,11 @@ window#launcher {
 
             icon {
                 font-size: 6em;
-                color: gtkalpha($fg-color, .7);
+                color: transparentize($fg-color, .7);
             }
 
             label {
-                color: gtkalpha($fg-color, .9);
+                color: transparentize($fg-color, .9);
                 font-size: 1.2em;
             }
         }

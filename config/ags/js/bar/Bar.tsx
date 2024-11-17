@@ -8,29 +8,40 @@ import Time from "./widgets/date.tsx"
 import BatteryBox from "./widgets/battery.tsx"
 import options from "../options.ts"
 
-export default function Bar(monitor: Gdk.Monitor) {
-    let anchortop = Astal.WindowAnchor.TOP
-        | Astal.WindowAnchor.LEFT
-        | Astal.WindowAnchor.RIGHT
-    let anchorbot = Astal.WindowAnchor.BOTTOM
-    		| Astal.WindowAnchor.LEFT
-    		| Astal.WindowAnchor.RIGHT
+const anchortop = Astal.WindowAnchor.TOP
+    | Astal.WindowAnchor.LEFT
+    | Astal.WindowAnchor.RIGHT
+const anchorbot = Astal.WindowAnchor.BOTTOM
+		| Astal.WindowAnchor.LEFT
+		| Astal.WindowAnchor.RIGHT
 
+function init(s) {
+		App.add_window(s);
+		options.bar.position.connect("changed", () => {
+				print(options.bar.position.value)
+				if (options.bar.position.value == "top") {
+						s.anchor = anchortop
+				} else {
+						s.anchor = anchorbot
+				}
+		})
+}
+
+export default function Bar(monitor: Gdk.Monitor) {
     return <window
 				name="bar"
         className="Bar"
         gdkmonitor={monitor}
         exclusivity={Astal.Exclusivity.EXCLUSIVE}
-				setup={self => App.add_window(self)}
-				application={App}
-        anchor={bind(options.bar.position, "value").as(v => {
-						print(v)
-						if (v == "TOP") {
-							return anchortop
+				anchor={bind(options.bar.position, "value").as(v=>{
+						if (v == "top") {
+								return anchortop
 						} else {
-							return anchorbot
+								return anchorbot
 						}
-				})}>
+				})}
+				setup={self => init(self)}
+				application={App}>
         <centerbox>
             <box hexpand halign={Gtk.Align.START}>
 								<TitleLabel />

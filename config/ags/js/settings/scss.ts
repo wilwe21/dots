@@ -1,8 +1,8 @@
 import { App } from 'astal/gtk3';
 import { subprocess, execAsync } from 'astal/process';
 import { writeFile } from 'astal/file';
-import { getOptions } from './option.ts';
-import vars from '../vars.ts'
+import { dependencies } from "../utils.ts";
+import options from '../options.ts';
 
 export function scssWatcher() {
     return subprocess(
@@ -10,10 +10,10 @@ export function scssWatcher() {
             'inotifywait',
             '--recursive',
             '--event', 'create,modify',
-            '-m', vars.confDir + '/scss',
+            '-m', `${SRC}/scss`,
         ],
         reloadScss,
-        (err) => print('missing dependancy for css hotreload: inotify-tools', vars.confDir, err),
+        (err) => console.error('Scss Error: ', err),
     );
 }
 
@@ -25,31 +25,27 @@ export function scssWatcher() {
  * options.bar.style.value => $bar-style
  */
 export async function reloadScss() {
+		if (!dependencies(['sassc'])) {
+        return '';
+		}
 
-    const opts = getOptions();
+    const opts = options.list();
     const varo = opts.map(opt => {
-        if (opt.scss === 'exclude')
+    		if (opt.scss === 'exclude') {
             return '';
+				}
 
         const unit = typeof opt.value === 'number' ? opt.unit : '';
         const value = opt.scssFormat ? opt.scssFormat(opt.value) : opt.value;
         return `$${opt.scss}: ${value}${unit};`;
     });
 
-    const bar_style = opts.find(opt => opt.id === 'bar.style')?.value || '';
-    const additional = bar_style === 'normal' ? '//' : `
-        window#quicksettings .window-content {
-            margin-right: $wm-gaps;
-        }
-    `;
-
     try {
         const tmp = '/tmp/ags/scss';
-        await writeFile(varo.join('\n'), `${tmp}/options.scss`);
-        await writeFile(additional, `${tmp}/additional.scss`);
-        await execAsync(`sassc ${vars.confDir}/scss/main.scss ${tmp}/style.css`);
-        App.resetCss();
-        App.applyCss(`${tmp}/style.css`);
+        await writeFile(`${tmp}/options.scss`, varo.join('\n'));
+        await subprocess(['sassc', `${SRC}/scss/main.scss`, `${tmp}/style.css`]);
+				App.reset_css();
+        App.apply_css(`${tmp}/style.css`);
     } catch (error) {
         if (error instanceof Error)
             console.error(error.message);

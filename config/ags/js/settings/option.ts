@@ -1,4 +1,4 @@
-import GObject, { register, property } from "astal/gobject"
+import GObject from 'gi://GObject';
 import { exec } from 'astal/process';
 import { readFile, writeFile } from 'astal/file';
 //import { reloadScss } from './scss.ts';
@@ -12,10 +12,15 @@ const CACHE_FILE = vars.cacheDir + '/options.json';
 let cacheObj = JSON.parse(readFile(CACHE_FILE) || '{}');
 
 /** @template T */
-@register({ GTypeName: "Options" })
 export class Opt extends GObject.Object {
-    #value;
-    //#scss = '';
+    static {
+        GObject.registerClass({
+            GTypeName: 'Options',
+            Signals: { 'changed': {} },
+        }, this);
+    }
+		#value;
+    #scss = '';
     unit = 'px';
     noReload = false;
     persist = false;
@@ -32,8 +37,7 @@ export class Opt extends GObject.Object {
     format = v => v;
 
     /** @type {(v: T) => any} */
-    //scssFormat = v => v;
-
+    scssFormat = v => v;
 
     /**
      * @param {T} value
@@ -41,6 +45,7 @@ export class Opt extends GObject.Object {
      */
     constructor(value, config) {
 				super();
+
         this.#value = value;
         this.defaultValue = value;
         this.type = typeof value;
@@ -51,14 +56,14 @@ export class Opt extends GObject.Object {
         import('../options.js').then(this.#init.bind(this));
     }
 
-    /*set scss(scss) { this.#scss = scss; }
+    set scss(scss) { this.#scss = scss; }
     get scss() {
         return this.#scss || this.id
             .split('.')
             .join('-')
             .split('_')
             .join('-');
-    }*/
+    }
 
     #init() {
         getOptions(); // sets the ids as a side effect
@@ -75,14 +80,13 @@ export class Opt extends GObject.Object {
         this.category ||= words.length === 1
             ? 'General'
             : words.at(0) || 'General';
-
-        this.connect('changed', () => {
+				this.connect("changed", () => {
             cacheObj[this.id] = this.value;
             writeFile(
-                JSON.stringify(cacheObj, null, 2),
                 CACHE_FILE,
+                JSON.stringify(cacheObj, null, 2),
             );
-        });
+				})
     }
 
     get value() { return this.#value; }
@@ -99,12 +103,10 @@ export class Opt extends GObject.Object {
 
         if (this.value !== value) {
             this.#value = this.format(value);
-            //this.changed('value');
+						this.emit("changed");
 
             if (reload && !this.noReload) {
-                //reloadScss();
                 wallpaper();
-                //setupHyprland();
             }
         }
     }
@@ -153,12 +155,12 @@ export function getValues() {
 }
 
 export function apply(config) {
-    const options = getOptions();
+    const opti = getOptions();
     const settings = typeof config === 'string'
         ? JSON.parse(config) : config;
 
     for (const id of Object.keys(settings)) {
-        const opt = options.find(opt => opt.id === id);
+        const opt = opti.find(opt => opt.id === id);
         if (!opt) {
             print(`No option with id: "${id}"`);
             continue;

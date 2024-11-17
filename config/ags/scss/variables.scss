@@ -1,10 +1,5 @@
-@use "sass:string";
-
-@function gtkalpha($c, $a) {
-    @return string.unquote("alpha(#{$c},#{$a})");
+* { 
+	font-size: $font-size; 
+	font-family: $mono-font;  
 }
 
-$bg-color: #212223;
-$fg-color: #f1f1f1;
-$accent: #378DF7;
-$radii: 20px;

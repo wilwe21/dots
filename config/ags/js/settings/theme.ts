@@ -2,6 +2,7 @@ import vars from "../vars.ts"
 import options from '../options.ts';
 import themes from '../themes.ts';
 import { wallpaper } from './wallpaper.ts';
+import { reloadScss } from './scss.ts';
 
 /** @param {string} name */
 export function setTheme(name) {
@@ -11,6 +12,8 @@ export function setTheme(name) {
         return print('No theme named ' + name);
 
     options.apply(theme.options);
+		reloadScss();
+		reloadScss();
     wallpaper();
 }
 
