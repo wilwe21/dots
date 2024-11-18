@@ -1,4 +1,12 @@
 @import '/tmp/ags/scss/options';
-@import './variables.scss';
-@import './widgets/bar.scss';
-@import './widgets/Applauncher.scss';
+@import './variables';
+
+//common
+@import './common/button';
+@import './common/spacing';
+@import './common/scrollable';
+@import './common/floating-widget';
+
+// widgets
+@import './widgets/bar';
+@import './widgets/Applauncher';

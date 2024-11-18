@@ -2,43 +2,56 @@ window.Bar {
     centerbox{
       border: none;
       box-shadow: none;
-      background-color: $bg-color;
       color: $fg-color;
       font-weight: bold;
-      border: 2px solid $accent;
-      border-radius: $radii;
-      margin: $wm-gaps;
-    }
+      @if $bar-type == "float" {
+          border: 2px solid $accent;
+          border-radius: $radii;
+          margin: $wm-gaps;
+          background-color: $bg-color;
+      } @if $bar-type == "separated" {
+          margin: $wm-gaps;
+          > * {
+              border: 2px solid $accent;
+              border-radius: $radii;
+              background-color: $bg-color;
+          }
+      } @if $bar-type == "bar" {
+          border-bottom: 2px solid $accent;
+          margin-bottom: $wm-gaps;
+          background-color: $bg-color;
+      }
 
-    .power {
-        margin-right: 15px;
-        margin-left: 5px;
-    }
+      .power {
+          margin-right: 10px;
+          margin-left: 5px;
+      }
 
-    button {
-        all: unset;
-        background-color: transparent;
+      button {
+          all: unset;
+          background-color: transparent;
 
-        &:hover label {
-            background-color: transparentize($fg-color, 0.84);
-            border-color: transparentize($accent, 0.8);
-        }
+          &:hover label {
+              background-color: transparentize($fg-color, 0.84);
+              border-color: transparentize($accent, 0.8);
+          }
 
-        &:active label {
-            background-color: transparentize($fg-color, 0.8)
-        }
-    }
+          &:active label {
+              background-color: transparentize($fg-color, 0.8)
+          }
+      }
 
-    label {
-        transition: 200ms;
-        padding: 0 $padding;
-        margin: 1px;
-        border-radius: $radii;
-        border: 1pt solid transparent;
-    }
+      label {
+          transition: 200ms;
+          padding: 0 $padding;
+          margin: 1px;
+          border-radius: $radii;
+          border: 1pt solid transparent;
+      }
 
-    .Battery label {
-        padding-left: 0;
-        margin-left: 0;
+      .Battery label {
+          padding-left: 0;
+          margin-left: 0;
+      }
     }
 }

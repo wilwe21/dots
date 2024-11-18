@@ -1,5 +1,6 @@
 import { bind } from "astal"
 import Mpris from "gi://AstalMpris"
+import icons from "../icons.ts"
 
 function rep(n, s, e) {
 	let arr = [...n]
@@ -35,9 +36,10 @@ function transformTit(n,a) {
 		return n
 }
 
-export function TitleLabel() {
-		const mpris = Mpris.get_default()
-    return <box>{bind(mpris, "players").as(c => c[0] ? 
+const mpris = Mpris.get_default()
+
+export const TitleLabel = (props) => {
+    return <box {...props}>{bind(mpris, "players").as(c => c[0] ? 
 				<label 
 					label={bind(c[0], "title").as(() =>
          			transformTit(c[0].title,c[0].artist)
@@ -46,3 +48,39 @@ export function TitleLabel() {
 				: <label label="Nothing Playing" />)
 		} </box>
 }
+
+export const CoverArt = (props) => {
+		return <box {...props}>{bind(mpris, "players").as(c => c[0] && <box css={`background-image: url("${c[0].cover_path}")`} />)}</box>
+};
+
+export const ArtistLabel = (props) => {
+	return <box {...props} className="artist">{
+					bind(mpris, "players").as(c => 
+							c[0] && <label 
+							label={bind(c[0], "artist").as(() => {
+										var a = c[0].artist.join(", ") || ""
+										var a = a.split(' - Topic')[0]
+										if (a == "Ponies At Dawn" || a == "Cider Party" || a == "Mumble Etc.") {
+											return c[0].title.split(' - ')[0]
+										}
+										return a
+							})} />)}</box>
+};
+
+const PlayerButton = ({onClick, icon, canProp, cantValue }) => {
+		const playPause = bind(mpris, "players").as(play => bind(play[0], "playbackStatus").as(s => { 				return <icon icon={
+							s === Mpris.PlaybackStatus.PLAYING
+									? icons.mpris.playing
+									: icons.mpris.paused}/>
+					}
+		))
+		return <button {...{visible: bind(mpris, "players").as(play => bind(play[0], canProp).as(c => c !== cantValue))}}>
+		{icon == "playPause" && <playPause />}</button>
+};
+
+export const PlayPauseButton = () => PlayerButton({
+    icon: 'playPause',
+    onClick: 'playPause',
+    canProp: 'canControl',
+    cantValue: false,
+});

@@ -2,33 +2,10 @@ import Apps from "gi://AstalApps"
 import { App, Astal, Gdk, Gtk } from "astal/gtk3"
 import { execAsync } from "astal/process"
 import { Variable } from "astal"
+import AppButton from './applitem.tsx'
 
 function hide() {
     App.get_window("launcher")!.hide()
-}
-
-function AppButton({ app }: { app: Apps.Application }) {
-    return <button
-        className="AppButton"
-        onClicked={() => { hide(); app.launch() }}>
-        <box>
-            <icon icon={app.iconName} />
-            <box valign={Gtk.Align.CENTER} vertical>
-                <label
-                    className="name"
-                    truncate
-                    xalign={0}
-                    label={app.name}
-                />
-                {app.description && <label
-                    className="description"
-                    wrap
-                    xalign={0}
-                    label={app.description}
-                />}
-            </box>
-        </box>
-    </button>
 }
 
 export default function Applauncher() {
@@ -66,7 +43,7 @@ export default function Applauncher() {
             <eventbox widthRequest={4000} expand onClick={hide} />
             <box hexpand={false} vertical>
                 <eventbox heightRequest={100} onClick={hide} />
-                <box widthRequest={500} className="Applauncher" vertical>
+                <box className="Applauncher" vertical>
                     <entry
                         placeholderText="Search"
                         text={text()}
