@@ -16,7 +16,7 @@ function rep(n, s, e) {
 	return n
 }
 
-function transformTit(n,a) {
+function transformTit(n,a, len) {
 		var n = rep(n, "\\(", "\\)")
 		var n = rep(n, "【", "】")
 		var n = rep(n, "「", "」")
@@ -27,22 +27,22 @@ function transformTit(n,a) {
 		} else {
 				var n = split[0]
 		}
-		if (50 !== -1) {
-        	if (n.length > 50) {
+		if (len !== -1) {
+        	if (n.length > len) {
             	var add = '...'
         	} else { var add = '' }
-			return (n).substring(0, 50)+String(`${add}`)
+			return (n).substring(0, len)+String(`${add}`)
 		}
 		return n
 }
 
 const mpris = Mpris.get_default()
 
-export const TitleLabel = ({ props, player }) => {
+export const TitleLabel = ({ props, player, len = -1 }) => {
     return <box {...props}>{player ? 
 				<label 
 					label={bind(player, "title").as(() =>
-         			transformTit(player.title,player.artist)
+         			transformTit(player.title,player.artist, len)
          	)}
 				/> 
 				: <label label="Nothing Playing" />
@@ -75,5 +75,21 @@ export const PlayPauseButton = ({ props, player }) => {
 						visible={bind(player, "canControl")}
 						onClicked={() => player.play_pause()}>
 							<icon icon={playIcon}/>	
+					</button>
+};
+
+export const PlayPrev = ({ props, player }) => {
+		return <button {...props}
+						visible={bind(player, "canGoPrevious")}
+						onClicked={() => player.previous()}>
+							<icon icon={icons.mpris.prev}/>
+					</button>
+};
+
+export const PlayNex = ({ props, player }) => {
+		return <button {...props} 
+						visible={bind(player, "canGoNext")}
+						onClicked={() => player.next()}>
+							<icon icon={icons.mpris.next}/>	
 					</button>
 };
