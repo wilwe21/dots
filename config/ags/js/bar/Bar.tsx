@@ -4,6 +4,7 @@ import QuickBox from "./widgets/quic.tsx"
 import Poffbutt from "./widgets/poweroff.tsx"
 import Media from "./widgets/media.tsx"
 import SysTray from "./widgets/SysTray.tsx"
+import Vitals from "./widgets/sys.tsx"
 import Time from "./widgets/date.tsx"
 import BatteryBox from "./widgets/battery.tsx"
 import options from "../options.ts"
@@ -69,6 +70,7 @@ export default function Bar(monitor: Gdk.Monitor) {
                 <Time />
             </box>
             <box hexpand halign={Gtk.Align.END} >
+								<Vitals />
                 <SysTray />
 								<BatteryBox />
 								<QuickBox />

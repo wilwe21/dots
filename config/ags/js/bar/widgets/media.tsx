@@ -3,7 +3,6 @@ import Mpris from "gi://AstalMpris";
 import { TitleLabel, PlayPauseButton, PlayPrev, PlayNex } from "../../misc/mpris.tsx";
 
 function MBox({ player }) {
-		print(player)
 		return <box>
 				<PlayPrev player={player}/>
 				<PlayPauseButton player={player}/>
