@@ -2,7 +2,7 @@ import { bind } from "astal"
 import { App, Astal, Gtk, Gdk } from "astal/gtk3"
 import QuickBox from "./widgets/quic.tsx"
 import Poffbutt from "./widgets/poweroff.tsx"
-import { TitleLabel, PlayPauseButton } from "../misc/mpris.tsx"
+import Media from "./widgets/media.tsx"
 import SysTray from "./widgets/SysTray.tsx"
 import Time from "./widgets/date.tsx"
 import BatteryBox from "./widgets/battery.tsx"
@@ -40,6 +40,7 @@ function init(s) {
 }
 
 export default function Bar(monitor: Gdk.Monitor) {
+
     return <window
 				name="bar"
         className="Bar"
@@ -62,7 +63,7 @@ export default function Bar(monitor: Gdk.Monitor) {
 				application={App}>
         <centerbox>
             <box hexpand halign={Gtk.Align.START}>
-								<TitleLabel />
+								<Media />
             </box>
             <box>
                 <Time />

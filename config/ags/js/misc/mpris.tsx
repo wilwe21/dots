@@ -38,49 +38,42 @@ function transformTit(n,a) {
 
 const mpris = Mpris.get_default()
 
-export const TitleLabel = (props) => {
-    return <box {...props}>{bind(mpris, "players").as(c => c[0] ? 
+export const TitleLabel = ({ props, player }) => {
+    return <box {...props}>{player ? 
 				<label 
-					label={bind(c[0], "title").as(() =>
-         			transformTit(c[0].title,c[0].artist)
+					label={bind(player, "title").as(() =>
+         			transformTit(player.title,player.artist)
          	)}
 				/> 
-				: <label label="Nothing Playing" />)
+				: <label label="Nothing Playing" />
 		} </box>
 }
 
-export const CoverArt = (props) => {
-		return <box {...props}>{bind(mpris, "players").as(c => c[0] && <box css={`background-image: url("${c[0].cover_path}")`} />)}</box>
+export const CoverArt = ({props, player}) => {
+		return <box {...props} {...{css: bind(player, 'coverArt').as(c => `background-image: url("${c}")`)}} />
 };
 
-export const ArtistLabel = (props) => {
-	return <box {...props} className="artist">{
-					bind(mpris, "players").as(c => 
-							c[0] && <label 
-							label={bind(c[0], "artist").as(() => {
-										var a = c[0].artist.join(", ") || ""
+export const ArtistLabel = ({props, player}) => {
+	return <box {...props} className="artist"><label 
+							label={bind(player, "artist").as(() => {
+										var a = player.artist.join(", ") || ""
 										var a = a.split(' - Topic')[0]
 										if (a == "Ponies At Dawn" || a == "Cider Party" || a == "Mumble Etc.") {
-											return c[0].title.split(' - ')[0]
+											return player.title.split(' - ')[0]
 										}
 										return a
-							})} />)}</box>
+							})} /></box>
 };
 
-const PlayerButton = ({onClick, icon, canProp, cantValue }) => {
-		const playPause = bind(mpris, "players").as(play => bind(play[0], "playbackStatus").as(s => { 				return <icon icon={
-							s === Mpris.PlaybackStatus.PLAYING
-									? icons.mpris.playing
-									: icons.mpris.paused}/>
-					}
-		))
-		return <button {...{visible: bind(mpris, "players").as(play => bind(play[0], canProp).as(c => c !== cantValue))}}>
-		{icon == "playPause" && <playPause />}</button>
+export const PlayPauseButton = ({ props, player }) => {
+		const playIcon = bind(player, "playbackStatus").as(s =>
+        s === Mpris.PlaybackStatus.PLAYING
+            ? "media-playback-pause-symbolic"
+            : "media-playback-start-symbolic"
+    )
+		return <button {...props} 
+						visible={bind(player, "canControl")}
+						onClicked={() => player.play_pause()}>
+							<icon icon={playIcon}/>	
+					</button>
 };
-
-export const PlayPauseButton = () => PlayerButton({
-    icon: 'playPause',
-    onClick: 'playPause',
-    canProp: 'canControl',
-    cantValue: false,
-});

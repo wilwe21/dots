@@ -5,7 +5,8 @@ import { TitleLabel, PlayPauseButton } from "../../misc/mpris.tsx";
 function MBox({ player }) {
 		print(player)
 		return <box>
-				{player}
+				<PlayPauseButton player={player}/>
+				<TitleLabel player={player}/>
 		</box>
 }
 
