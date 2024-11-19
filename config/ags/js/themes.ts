@@ -7,6 +7,11 @@ export default [
 				"colors.bg": "#684A82",
 				"colors.fg": "#371222",
 				"colors.accent": "#770F2C",
+				"ocolor.temp": "$fg-color",
+				"ocolor.upload": "$fg-color",
+				"ocolor.download": "$fg-color",
+				"ocolor.cpu": "$fg-color",
+				"ocolor.play": "$fg-color",
 				"wallpaper": "/home/wilwe/.hyprland.conf/wallpapers/dead.png"
 		}),
 		Theme({

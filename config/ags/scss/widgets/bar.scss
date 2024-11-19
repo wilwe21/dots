@@ -42,16 +42,65 @@ window.Bar {
       }
 
       label {
-          transition: 200ms;
-          padding: 0 $padding;
-          margin: 1px;
-          border-radius: $radii;
-          border: 1pt solid transparent;
+          padding-left: $padding;
+      }
+
+      .cpu {
+          padding-left: $spacing;
+          color: $cpucolor;
+          font-size: $font_size/4.5;
+          border-radius: max($radii - $border_width, 0);
+          margin: $spacing;
+          min-height: $font_size * 1.35;
+          min-width: $font_size * 1.35;
+
+      }
+      .download {
+          color: $download;
+          font-size: $font_size/4.5;
+          border-radius: max($radii - $border_width, 0);
+          margin: $spacing;
+          min-height: $font_size * 1.35;
+          min-width: $font_size * 1.35;
+
+      }
+      .upload {
+          color: $upload;
+          font-size: $font_size/4.5;
+          border-radius: max($radii - $border_width, 0);
+          margin: $spacing;
+          min-height: $font_size * 1.35;
+          min-width: $font_size * 1.35;
+
+      }
+
+      .temp {
+          padding-right: $spacing*2;
+          color: $temp;
+          font-size: $font_size/4.5;
+          border-radius: max($radii - $border_width, 0);
+          margin: $spacing;
+          min-height: $font_size * 1.35;
+          min-width: $font_size * 1.35;
+
       }
 
       .Battery label {
           padding-left: 0;
           margin-left: 0;
+      }
+
+      .media {
+        button {
+            all: unset;
+            color: $playcolor;
+            margin-left: 5px;
+        }
+        label {
+            margin-left: 5px;
+	          font-size: 1em;
+	          color: $fg-color;
+        }
       }
     }
 }

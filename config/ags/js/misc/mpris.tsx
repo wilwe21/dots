@@ -39,14 +39,11 @@ function transformTit(n,a, len) {
 const mpris = Mpris.get_default()
 
 export const TitleLabel = ({ props, player, len = -1 }) => {
-    return <box {...props}>{player ? 
-				<label 
+    return <label className="Title" {...props}
 					label={bind(player, "title").as(() =>
          			transformTit(player.title,player.artist, len)
          	)}
 				/> 
-				: <label label="Nothing Playing" />
-		} </box>
 }
 
 export const CoverArt = ({props, player}) => {
@@ -54,7 +51,7 @@ export const CoverArt = ({props, player}) => {
 };
 
 export const ArtistLabel = ({props, player}) => {
-	return <box {...props} className="artist"><label 
+	return <label className="artist" {...props}
 							label={bind(player, "artist").as(() => {
 										var a = player.artist.join(", ") || ""
 										var a = a.split(' - Topic')[0]
@@ -62,7 +59,7 @@ export const ArtistLabel = ({props, player}) => {
 											return player.title.split(' - ')[0]
 										}
 										return a
-							})} /></box>
+							})} />
 };
 
 export const PlayPauseButton = ({ props, player }) => {
@@ -71,7 +68,7 @@ export const PlayPauseButton = ({ props, player }) => {
             ? "media-playback-pause-symbolic"
             : "media-playback-start-symbolic"
     )
-		return <button {...props} 
+		return <button className="PlayPause" {...props} 
 						visible={bind(player, "canControl")}
 						onClicked={() => player.play_pause()}>
 							<icon icon={playIcon}/>	
@@ -79,7 +76,7 @@ export const PlayPauseButton = ({ props, player }) => {
 };
 
 export const PlayPrev = ({ props, player }) => {
-		return <button {...props}
+		return <button className="Prev" {...props}
 						visible={bind(player, "canGoPrevious")}
 						onClicked={() => player.previous()}>
 							<icon icon={icons.mpris.prev}/>
@@ -87,7 +84,7 @@ export const PlayPrev = ({ props, player }) => {
 };
 
 export const PlayNex = ({ props, player }) => {
-		return <button {...props} 
+		return <button className="Nex" {...props} 
 						visible={bind(player, "canGoNext")}
 						onClicked={() => player.next()}>
 							<icon icon={icons.mpris.next}/>	

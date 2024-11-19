@@ -49,6 +49,13 @@ export default {
             'scss': 'accent-bgradient',
         }),
 		},
+		ocolor: {
+			  temp: Option('#c01c28', { 'scss': 'temp', 'category': 'Other Colors' }),
+        upload: Option('#3584e4', { 'scss': 'upload', 'category': 'Other Colors' }),
+        download: Option('#2ec27e', { 'scss': 'download', 'category': 'Other Colors' }),
+        cpu: Option('#f5c211', { 'scss': 'cpucolor', 'category': 'Other Colors' }),
+				play: Option('#e66100', { 'scss': 'playcolor', 'category': 'Other Colors' }),
+		},
 		theme: {
         name: Option(themes[0].name, {
 						'scss': 'exclude',

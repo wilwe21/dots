@@ -3,7 +3,7 @@ import icons from "../../icons.ts"
 import * as vars from "../../vars.ts"
 
 const SysProgress = ({ type, unit }) => {
-		return <box>
+		return <box className={`progress-box ${type}`}>
 				<icon icon={icons.system[type]} />
 				<label label={bind(vars[type], "value").as(v => `${v}${unit}`)}/>
 		</box>
