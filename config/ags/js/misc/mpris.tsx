@@ -1,4 +1,5 @@
 import { bind } from "astal"
+import { Gtk } from "astal/gtk3"
 import Mpris from "gi://AstalMpris"
 import icons from "../icons.ts"
 

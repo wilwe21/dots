@@ -25,22 +25,12 @@ window.Bar {
       .power {
           margin-left: 5px;
       }
-      > box {
-          padding-right: $padding;
-          padding-left: $padding;
-      }
 
       button {
-          all: unset;
-          background-color: transparent;
-
-          &:hover label {
-              background-color: transparentize($fg-color, 0.84);
-              border-color: transparentize($accent, 0.8);
-          }
-
-          &:active label {
-              background-color: transparentize($fg-color, 0.8)
+          @include button();
+          padding-right: $padding;
+          :not(.Time) {
+              padding-left: $padding;
           }
       }
 
@@ -93,16 +83,19 @@ window.Bar {
       }
 
       .media {
-        button {
-            all: unset;
-            color: $playcolor;
-            margin-left: 5px;
-        }
-        label {
-            margin-left: 5px;
-	          font-size: 1em;
-	          color: $fg-color;
-        }
+          button {
+              all: unset;
+              color: $playcolor;
+              padding-left: $padding/2;
+              icon {
+                  margin-left: -$padding;
+              }
+          }
+          label {
+              padding-right: 5px;
+              font-size: 1em;
+              color: $fg-color;
+          }
       }
     }
 }
