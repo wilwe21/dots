@@ -23,8 +23,11 @@ window.Bar {
       }
 
       .power {
-          margin-right: 10px;
           margin-left: 5px;
+      }
+      > box {
+          padding-right: $padding;
+          padding-left: $padding;
       }
 
       button {
@@ -71,7 +74,6 @@ window.Bar {
           margin: $spacing;
           min-height: $font_size * 1.35;
           min-width: $font_size * 1.35;
-
       }
 
       .temp {
