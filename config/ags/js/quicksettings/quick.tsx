@@ -6,7 +6,16 @@ function hide() {
     App.get_window("qs")!.hide()
 }
 
+function Row( menus = []) {
+	return <box horizontal>{...menus}</box>
+}
+
+function Homo( menus = []) {
+	return <box homogeneous>{...menus}</box>
+}
+
 export default function QuickSettings() {
+		let leb = [Row([<label label="test" />, <label label="test" />]), <label label="test" />]
     return <window
         name="qs"
         anchor={Astal.WindowAnchor.TOP | Astal.WindowAnchor.RIGHT}
@@ -20,7 +29,7 @@ export default function QuickSettings() {
         }}>
         <box vertical>
 					<Header />
-					<label label="test" />
+					{Homo(leb)}
         </box>
     </window>
 }
