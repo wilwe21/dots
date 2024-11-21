@@ -1,6 +1,7 @@
 import { Gdk, Gtk } from "astal/gtk3"
 import { exec, execAsync } from 'astal/process';
 import icons from './icons.ts';
+import options from './options.ts';
 
 /**
   * @param {number} length

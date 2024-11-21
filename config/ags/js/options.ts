@@ -131,12 +131,35 @@ export default {
 				})
 		},
 		hypr: {
-				wm_gaps: Option(3, {
-						'scss': 'wm-gaps',
-						'type': 'float',
-				})
-		},
-    transition: Option(200, {
+        active_border: Option('rgba(378DF7FF)', {
+            'category': 'Border',
+            'note': 'use a hyprland border options w/o scss variables',
+            'title': 'Border on active Windows',
+            'scss': 'exclude',
+        }),
+
+        inactive_border: Option('rgba(333333ff)', {
+            'category': 'Border',
+            'title': 'Border on Inactive Windows',
+            'scss': 'exclude',
+        }),
+				drop_shadow: Option(false, { 'scss': 'drop-shadow'}),
+
+        trail_color: Option('$accent', {
+            'category': 'Misc',
+            'title': 'Trail color',
+            'scss': 'exclude',
+        }),
+
+        wm_gaps: Option(3, {
+            'category': 'General',
+            'scss': 'wm-gaps',
+            'note': 'wm-gaps',
+            'type': 'float',
+            'unit': '',
+        }),
+    },
+transition: Option(200, {
         'category': 'exclude',
         'note': 'Transition time on aminations in ms, e.g on hover',
         'unit': 'ms',

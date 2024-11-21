@@ -1,7 +1,8 @@
 import GObject from 'gi://GObject';
 import { exec } from 'astal/process';
 import { readFile, writeFile } from 'astal/file';
-//import { reloadScss } from './scss.ts';
+import { reloadScss } from './scss.ts';
+import { setupHyprland } from './hyprland.ts';
 import options from "../options.ts";
 import { wallpaper } from './wallpaper.ts';
 import vars from '../vars.ts'
@@ -106,7 +107,9 @@ export class Opt extends GObject.Object {
 						this.emit("changed");
 
             if (reload && !this.noReload) {
-                wallpaper();
+								reloadScss();
+								wallpaper();
+								setupHyprland();
             }
         }
     }

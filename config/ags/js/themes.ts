@@ -12,6 +12,7 @@ export default [
 				"ocolor.download": "$fg-color",
 				"ocolor.cpu": "$fg-color",
 				"ocolor.play": "$fg-color",
+				"hypr.active_border": "rgba(4DB0DDFF)",
 				"wallpaper": "/home/wilwe/.hyprland.conf/wallpapers/dead.png"
 		}),
 		Theme({
