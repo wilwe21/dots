@@ -15,21 +15,32 @@ function Homo( menus = []) {
 }
 
 export default function QuickSettings() {
-		let leb = [Row([<label label="test" />, <label label="test" />]), <label label="test" />]
+		let leb = [Row([<label label="test test test" />, <label label="test test test" />]), <label label="test test test" />]
     return <window
         name="qs"
-        anchor={Astal.WindowAnchor.TOP | Astal.WindowAnchor.RIGHT}
+        anchor={Astal.WindowAnchor.TOP | Astal.WindowAnchor.BOTTOM}
         exclusivity={Astal.Exclusivity.IGNORE}
         keymode={Astal.Keymode.ON_DEMAND}
-				setup={self => App.add_window(self) }
+				application={App}
 				visible={false}
         onKeyPressEvent={function (self, event: Gdk.Event) {
             if (event.get_keyval()[1] === Gdk.KEY_Escape)
                 self.hide()
         }}>
-        <box vertical>
-					<Header />
-					{Homo(leb)}
+				<box>
+            <eventbox widthRequest={4000} expand onClick={hide} />
+            <box hexpand={false} vertical>
+                <eventbox heightRequest={100} onClick={hide} />
+								<centerbox>
+										<box />
+										<box />
+										<box className="Quick" vertical>
+												<Header />
+										</box>
+								</centerbox>
+                <eventbox expand onClick={hide} />
+            </box>
+            <eventbox widthRequest={4000} expand onClick={hide} />
         </box>
-    </window>
+		</window>
 }

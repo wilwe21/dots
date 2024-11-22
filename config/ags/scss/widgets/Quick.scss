@@ -1,0 +1,14 @@
+window#qs {
+    all: unset;
+    background: transparent;
+    centerbox > * {
+        min-width: 800px;
+    }
+    box.Quick {
+        @include floating_widget;
+        border: 2px solid $accent;
+        border-radius: $radii;
+        min-width: 250px;
+        background: $bg-color;
+    }
+}

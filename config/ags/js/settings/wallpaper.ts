@@ -15,7 +15,7 @@ export function wallpaper() {
     if (!dependencies(['swww'])) {
         return;
 		}
-		const cons = ['swww', 'img', options.wallpaper.value]
+		const cons = ['swww', 'img', options.wallpaper.value, "-t", "none"]
 		execAsync(cons
 		).catch(err => console.error("smth", err));
 }

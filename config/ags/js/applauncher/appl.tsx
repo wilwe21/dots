@@ -33,7 +33,7 @@ export default function Applauncher() {
         exclusivity={Astal.Exclusivity.IGNORE}
         keymode={Astal.Keymode.ON_DEMAND}
         onShow={() => text.set("")}
-				setup={self => App.add_window(self) }
+				application={App}
 				visible={false}
         onKeyPressEvent={function (self, event: Gdk.Event) {
             if (event.get_keyval()[1] === Gdk.KEY_Escape)
