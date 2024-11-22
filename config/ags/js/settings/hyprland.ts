@@ -15,10 +15,8 @@ function sendBatch(batch) {
         .map(x => `keyword ${x}`)
         .join('; ');
 
-		print("messagein")
-    hypr.message(`[[BATCH]]/${cmd}`).then(print("good"))
+    hypr.message(`[[BATCH]]/${cmd}`).then(print)
         .catch(err => console.error(`hypr.message:`));
-		print("message end")
 }
 
 export function hyprlandInit() {
