@@ -83,6 +83,7 @@ export class Opt extends GObject.Object {
             : words.at(0) || 'General';
 				this.connect("changed", () => {
             cacheObj[this.id] = this.value;
+						exec(`rm -rf ${CACHE_FILE}`);
             writeFile(
                 CACHE_FILE,
                 JSON.stringify(cacheObj, null, 2),
@@ -142,7 +143,6 @@ export function getOptions(object = options, path = '') {
 }
 
 export function resetOptions() {
-    exec(`rm -rf ${CACHE_FILE}`);
     cacheObj = {};
     getOptions().forEach(opt => opt.reset());
 }
