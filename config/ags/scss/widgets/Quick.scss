@@ -2,7 +2,7 @@ window#qs {
     all: unset;
     background: transparent;
     centerbox > * {
-        min-width: 800px;
+        min-width: 820px;
     }
     box.Quick {
         @include floating_widget;

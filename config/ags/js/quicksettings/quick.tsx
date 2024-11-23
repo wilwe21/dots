@@ -30,10 +30,10 @@ export default function QuickSettings() {
 				<box>
             <eventbox widthRequest={4000} expand onClick={hide} />
             <box hexpand={false} vertical>
-                <eventbox heightRequest={100} onClick={hide} />
+                <eventbox heightRequest={32} onClick={hide} />
 								<centerbox>
-										<box />
-										<box />
+										<box><eventbox hexpand onClick={hide} /></box>
+										<box><eventbox hexpand onClick={hide} /></box>
 										<box className="Quick" vertical>
 												<Header />
 										</box>
