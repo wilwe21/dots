@@ -1,3 +1,4 @@
+import { App } from "astal/gtk3"
 import { Variable, GLib} from "astal"
 
 export default function Time({ format = "%H:%M %d.%m" }) {
@@ -6,6 +7,7 @@ export default function Time({ format = "%H:%M %d.%m" }) {
 
     return <button
         className="Time"
+				onClicked={() => App.get_window("dash").show()}
         onDestroy={() => time.drop()}
         label={time()}
     />
