@@ -5,6 +5,7 @@ import Bar from "./js/bar/Bar.tsx"
 import Applauncher from "./js/applauncher/appl.tsx"
 import QuickSettings from "./js/quicksettings/quick.tsx"
 import Dash from "./js/dashboard/dash.tsx"
+import Over from "./js/overview/Overview.tsx"
 import themes from "./js/themes.ts"
 import { setTheme } from './js/settings/theme.ts'
 
@@ -16,6 +17,7 @@ App.start({
         Applauncher(),
 				QuickSettings(),
 				Dash(),
+				Over(),
         App.get_monitors().map(Bar)
     },
 		requestHandler(request: string, res: (response: any) => void) {

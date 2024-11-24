@@ -1,0 +1,10 @@
+window#over {
+    all: unset;
+    background: transparent;
+    box.Over  {
+        background: $bg-color;
+        color: $fg-color;
+        border: 2px solid $accent;
+        border-radius: $radii;
+    }
+}
