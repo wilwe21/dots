@@ -1,5 +1,5 @@
-import Apps from "gi://AstalApps"
 import { App, Astal, Gdk, Gtk } from "astal/gtk3"
+import { bind } from "astal"
 import Hyprland from "gi://AstalHyprland"
 
 const hypr = Hyprland.get_default();
@@ -9,11 +9,6 @@ function hide() {
 }
 
 export default function Over() {
-		let list = []
-		for (const client of hypr.get_clients()) {
-				list.push(client.title, client.workspace.id)
-		}
-		print(list)
     return <window
         name="over"
         anchor={Astal.WindowAnchor.TOP | Astal.WindowAnchor.BOTTOM}
@@ -30,7 +25,18 @@ export default function Over() {
             <box hexpand={false} vertical>
                 <eventbox heightRequest={100} onClick={hide} />
                 <box className="Over" vertical>
-										{list.map(v => <label label={`${v}`} />)}
+										{bind(hypr, "clients").as(v => {
+												let l = []
+												for (const client of hypr.get_clients()) {
+														l.push(
+														<button 
+																onClicked={() => {client.focus(); hide()}}
+																label={`${client.workspace.id} ${client.title}`} 
+														/>)
+												}
+												return l
+										})
+										}
                 </box>
                 <eventbox expand onClick={hide} />
             </box>
