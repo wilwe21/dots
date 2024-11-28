@@ -1,8 +1,9 @@
 import Apps from "gi://AstalApps"
 import { App, Astal, Gdk, Gtk } from "astal/gtk3"
 import Header from "./widgets/Header.tsx"
+import Volu from "./widgets/volume.tsx"
 
-function hide() {
+export function hide() {
     App.get_window("qs")!.hide()
 }
 
@@ -36,6 +37,7 @@ export default function QuickSettings() {
 										<box><eventbox hexpand onClick={hide} /></box>
 										<box className="Quick" vertical>
 												<Header />
+												<Volu />
 										</box>
 								</centerbox>
                 <eventbox expand onClick={hide} />

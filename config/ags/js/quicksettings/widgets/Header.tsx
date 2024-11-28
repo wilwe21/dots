@@ -1,4 +1,5 @@
-import { exec } from "astal/process"
+import { execAsync } from "astal/process"
+import { hide } from "../quick.tsx"
 
 export default function  Header() {
 		return <box>
@@ -8,7 +9,7 @@ export default function  Header() {
 								<label label="Settings" />
 								<label label="Uptime" />
 								<label label="lock" />
-								<button onClicked={() => exec("poweroff")} >
+								<button onClicked={() => {execAsync(["poweroff"]); hide()}} >
 										<label label="⏻" />
 								</button>
 						</box>
