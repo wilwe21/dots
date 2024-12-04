@@ -107,7 +107,7 @@ export default {
             'unit': '',
         }),
 
-        width: Option(0, {
+        width: Option(2, {
             'category': 'Border',
             'title': 'Border Width',
             'scss': 'border-width',

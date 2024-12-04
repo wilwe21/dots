@@ -5,7 +5,7 @@ $active-bgradient: linear-gradient($accent-bgradient);
 
 $hover-fg: if($color-scheme == 'dark', lighten($fg-color, 10%), darken($fg-color, 8%));
 
-$border-color: transparentize($_border-color, $border-opacity / 100);
+$border-color: $accent;
 $border: $border-width solid $border-color;
 
 $popover-border-color: transparentize($_border-color, max(($border-opacity - 1) / 100, 0));

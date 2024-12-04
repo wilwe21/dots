@@ -27,7 +27,7 @@ window.Bar {
       }
 
       button {
-          @include button();
+          @include button($flat: true);
           padding-right: $padding;
           :not(.Time) {
               padding-left: $padding;
