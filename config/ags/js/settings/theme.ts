@@ -4,6 +4,10 @@ import options from '../options.ts';
 import themes from '../themes.ts';
 import { wallpaper } from './wallpaper.ts';
 import { reloadScss } from './scss.ts';
+import { reloadKitty } from './kitty.ts';
+import { reloadVim } from './vim.ts';
+import { reloadGtk } from './gtk.ts';
+import { reloadStarship } from './starship.ts';
 import { setupHyprland } from './hyprland.ts';
 
 const cacheDir = vars.cacheDir + '/theme.ts'
@@ -21,6 +25,10 @@ export function setTheme(name) {
 		reloadScss();
     wallpaper();
 		setupHyprland();
+		reloadKitty();
+		reloadVim();
+		reloadGtk();
+		reloadStarship();
 }
 
 export function setupTheme() {
