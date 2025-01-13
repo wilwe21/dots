@@ -33,6 +33,7 @@ export default [
 	    	"colors.bg": "#181825",
 	    	"colors.fg": "#CDD6F4",
 	    	"colors.accent": "#CBA6F7",
+				"hypr.active_border": "rgba(CBA6F7FF) rgba(CDD6F4FF) rgba(CBA6F7FF) 45deg",
 				"wallpaper": "/home/wilwe/.hyprland.conf/wallpapers/main.jpg"
 		}),
 ]

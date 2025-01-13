@@ -12,6 +12,7 @@ import { kitty } from './js/settings/kitty.ts'
 import { vim } from './js/settings/vim.ts'
 import { gtkupdate } from './js/settings/gtk.ts'
 import { starship } from './js/settings/starship.ts'
+import { sH } from './js/settings/hyprland.ts'
 
 init()
 
@@ -41,6 +42,10 @@ App.start({
 						if (request.endsWith("gtk")) {
 								gtkupdate()
 								res(`reloaded gtk`)
+						}
+						if (request.endsWith("hyprland")) {
+								sH()
+								res(`reloaded hyprland`)
 						}
 				}
 				const t = themes.find(t => t.name === request.replace("settheme ",""))
