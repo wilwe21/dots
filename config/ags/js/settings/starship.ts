@@ -50,5 +50,5 @@ disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:${tbg} fg:${tfg}"
 format = '[${ldec}](${tbg})[ $time ]($style)[${rdec}](${tbg})'`
-    writeFileAsync(String(conf), `/home/wilwe/.config/starship.toml`)
+    writeFileAsync(`/home/wilwe/.config/starship.toml`, String(conf))
 }

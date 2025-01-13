@@ -95,5 +95,5 @@ background_opacity ${kcsbo}
 background_blur ${kcsbb}
 selection_foreground ${kcssf}
 selection_background ${kcssb}`
-    writeFileAsync(String(conf), `/home/wilwe/.config/kitty/kitty.conf`)
+    writeFileAsync(`/home/wilwe/.config/kitty/kitty.conf`, String(conf))
 }

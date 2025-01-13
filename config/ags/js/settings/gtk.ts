@@ -22,7 +22,7 @@ export function reloadGtk() {
     options.misc.cursor.connect('changed', gtkupdate);
     options.colors.scheme.connect('changed', gtkupdate);
 }
-function gtkupdate() {
+export function gtkupdate() {
     const g = options.misc.gtk.value
     const gi = options.misc.gtkIcons.value
     const c = options.misc.cursor.value
@@ -37,8 +37,8 @@ function gtkupdate() {
     const accentfg = getColor(options.colors.accentfg.value);
     const fg = getColor(options.colors.fg.value);
     const bg = getColor(options.colors.bg.value);
-    writeFileAsync(gtk4(red, green, yellow, blue, magenta, teal, orange, accent, accentfg, fg, bg), '/tmp/ags/gtk4')
-    writeFileAsync(gtk3(red, green, yellow, blue, magenta, teal, orange, accent, accentfg, fg, bg), '/tmp/ags/gtk3')
+    writeFileAsync('/tmp/ags/gtk4', gtk4(red, green, yellow, blue, magenta, teal, orange, accent, accentfg, fg, bg))
+    writeFileAsync('/tmp/ags/gtk3', gtk3(red, green, yellow, blue, magenta, teal, orange, accent, accentfg, fg, bg))
     if ( options.colors.scheme.value == 'dark' ) {
 	execAsync(`gtkthemes -d -U -T "${g}" -I "${gi}" -C "${c}" &`)
     } else {

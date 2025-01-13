@@ -26,9 +26,9 @@ export function setTheme(name) {
     wallpaper();
 		setupHyprland();
 		reloadKitty();
-		reloadVim();
 		reloadGtk();
 		reloadStarship();
+		reloadVim();
 }
 
 export function setupTheme() {

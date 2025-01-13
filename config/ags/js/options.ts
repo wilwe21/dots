@@ -210,7 +210,7 @@ export default {
         }),
 
         username: {
-            bg: Option('$dark-bg-color',{
+            bg: Option('#000000',{
                 'category': 'Terminal',
                 'scssFormat': v => `"${v}"`,
             }),
@@ -221,7 +221,7 @@ export default {
             }),
         },
         directory: {
-            bg: Option('$dark-bg-color',{
+            bg: Option('#000000',{
                 'category': 'Terminal',
                 'scssFormat': v => `"${v}"`,
             }),

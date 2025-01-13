@@ -317,6 +317,6 @@ let g:airline#themes#ags#palette.visual = airline#themes#generate_color_map( s:V
 
 let g:airline_left_sep = "${lsep}"
 let g:airline_right_sep = "${rsep}"`
-    writeFileAsync(String(conf), `/home/wilwe/.vim/colors/ags.vim`)
-    writeFileAsync(String(airline), `/home/wilwe/.vim/autoload/airline/themes/ags.vim`)
+    writeFileAsync(`/home/wilwe/.vim/colors/ags.vim`, String(conf))
+    writeFileAsync(`/home/wilwe/.vim/autoload/airline/themes/ags.vim`, String(airline))
 }
