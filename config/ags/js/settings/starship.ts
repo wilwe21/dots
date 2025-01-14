@@ -37,7 +37,7 @@ add_newline = true
 [username]
 show_always = true
 style_user = "bg:${ubg} fg:${ufg}"
-format = '[${ldec}](${ubg})[$user ]($style)[${rdec}](${ubg})'
+format = '[${ldec}](${ubg})[ $user ]($style)[${rdec}](${ubg})'
 
 [directory]
 style = "bg:${dbg} fg:${dfg}"
