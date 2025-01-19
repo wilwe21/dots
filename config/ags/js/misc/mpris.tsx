@@ -24,7 +24,7 @@ function transformTit(n,a, len) {
 		var n = rep(n, "「", "」")
 		var n = rep(n, "\\[", "\\]")
 		var split = n.split(" - ")
-		if (split.length > 1) {
+		if (split.length > 1 && split[1].search("Fan") == -1 && split[1].search("fan") == -1) {
 				var n = split[1]
 		} else {
 				var n = split[0]
@@ -46,7 +46,13 @@ export const TitleButton = ({ props, player, len = -1 }) => {
          			transformTit(player.title,player.artist, len)
          	)}
 					onClicked={self => {
-								self.label=player.artist
+								var a = player.artist || ""
+								var a = a.split(' - Topic')[0]
+								if (a == "Ponies At Dawn" || a == "Cider Party" || a == "Mumble Etc.") {
+										self.label = player.title.split(' - ')[0]
+								} else {
+									  self.label = a
+								}
 								timeout(1800, ()=> self.label=transformTit(player.title,player.artist, len))
 					}}
 				/> 
