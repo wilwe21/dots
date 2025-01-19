@@ -84,14 +84,19 @@ window.Bar {
           padding-left: 0;
           margin-left: 0;
       }
-
       .media {
           button {
               all: unset;
-              color: $playcolor;
-              padding-left: $padding/2;
-              icon {
-                  margin-left: -$padding;
+              &:not(.Title) {
+                  @include button($flat: true, $reactive: false, $focusable: false);
+                  color: $playcolor;
+                  padding-left: $padding/2;
+                  icon {
+                      margin-left: -$padding;
+                  }
+                  &:active {
+                    box-shadow: none;
+                  }
               }
           }
           label {
