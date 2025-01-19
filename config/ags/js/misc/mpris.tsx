@@ -1,4 +1,5 @@
 import { bind } from "astal"
+import { timeout } from "astal/time"
 import { Gtk } from "astal/gtk3"
 import Mpris from "gi://AstalMpris"
 import icons from "../icons.ts"
@@ -38,6 +39,18 @@ function transformTit(n,a, len) {
 }
 
 const mpris = Mpris.get_default()
+
+export const TitleButton = ({ props, player, len = -1 }) => {
+    return <button className="Title" {...props}
+					label={bind(player, "title").as(() =>
+         			transformTit(player.title,player.artist, len)
+         	)}
+					onClicked={self => {
+								self.label=player.artist
+								timeout(1800, ()=> self.label=transformTit(player.title,player.artist, len))
+					}}
+				/> 
+}
 
 export const TitleLabel = ({ props, player, len = -1 }) => {
     return <label className="Title" {...props}

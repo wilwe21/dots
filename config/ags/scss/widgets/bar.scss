@@ -26,12 +26,15 @@ window.Bar {
           margin-left: 5px;
       }
 
-      button {
+      button:not(.Title) {
           @include button($flat: true);
           padding-right: $padding;
           :not(.Time) {
               padding-left: $padding;
           }
+      }
+      .Title {
+          padding-left: $padding;
       }
 
       label {
