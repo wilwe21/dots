@@ -24,7 +24,7 @@ function transformTit(n,a, len) {
 		var n = rep(n, "「", "」")
 		var n = rep(n, "\\[", "\\]")
 		var split = n.split(" - ")
-		if (split.length > 1 && split[1].search("Fan") == -1 && split[1].search("fan") == -1) {
+		if (split.length > 1 && split[1].search("Fan") == -1 && split[1].search("fan") == -1 && split[1].replaceAll(" ", "").toLowerCase() !== a.replaceAll(" ", "").toLowerCase()) {
 				var n = split[1]
 		} else {
 				var n = split[0]
