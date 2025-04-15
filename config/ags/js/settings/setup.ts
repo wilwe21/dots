@@ -5,8 +5,8 @@ import { setupHyprland } from './hyprland.ts'
 import { setupTheme } from './theme.ts';
 
 export function init() {
-		scssWatcher(),
-		initWallpaper(),
-		setupHyprland(),
-		setupTheme()
+		//scssWatcher(),
+		initWallpaper()
+		//setupHyprland()
+		//setupTheme()
 }

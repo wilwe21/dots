@@ -28,7 +28,6 @@ export default function Dash() {
                 <eventbox heightRequest={32} onClick={hide} />
 								<box className="Dash" vertical>
 										<label label={time()} />
-										{new Gtk.Calendar}
 								</box>
                 <eventbox expand onClick={hide} />
             </box>

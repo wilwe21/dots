@@ -4,18 +4,28 @@ import { execAsync } from "astal/process"
 import { Variable, bind } from "astal"
 import AppButton from './applitem.tsx'
 import Mpris from "gi://AstalMpris";
-import { TitleLabel, PlayPauseButton, PlayPrev, PlayNex } from "../misc/mpris.tsx";
+import { CoverArt, ArtistLabel, TitleLabel, PlayPauseButton, PlayPrev, PlayNex } from "../misc/mpris.tsx";
 
 function hide() {
     App.get_window("launcher")!.hide()
 }
 
 function MBox({ player }) {
-		return <box className="media">
-				<PlayPrev player={player}/>
-				<PlayPauseButton player={player}/>
-				<PlayNex player={player}/>
-				<TitleLabel player={player} len={50} ellipsize={true} justification={"Center"}/>
+		return <box className="media" vertical>
+				<box vertical>
+					<CoverArt player={player} heightRequest={500} widthRequest={500} />
+					<TitleLabel player={player} len={50} ellipsize={true} justification={"Center"}/>
+					<ArtistLabel player={player} ellipsize={true} justification={"Center"} />
+					<centerbox horizontal>
+						<box />
+						<box>
+							<PlayPrev player={player}/>
+							<PlayPauseButton player={player}/>
+							<PlayNex player={player}/>
+						</box>
+						<box />
+					</centerbox>
+				</box>
 		</box>
 }
 
@@ -55,20 +65,27 @@ export default function Applauncher() {
             <eventbox widthRequest={4000} expand onClick={hide} />
             <box hexpand={false} vertical>
                 <eventbox heightRequest={100} onClick={hide} />
-								<box className="Applauncher" vertical>
-										<entry
-												placeholderText="Search"
-												text={text()}
-												onChanged={self => text.set(self.text)}
-												onActivate={onEnter}
-										/>
-										<scrollable vexpand>
-												<box spacing={6}  vertical>
-													{list.as(list => list.map(app => (
-															<AppButton app={app} />
-													)))}
-												</box>
-										</scrollable>
+								<box className="Applauncher" horizontal>
+										<box vertical widthRequest={400}>
+											{bind(mpris, "players").as(arr => arr.length > 0 ? arr.slice(0,1).map(player =>
+												<MBox player={player} />
+												) : <label label="Nothing Playing" />)}
+										</box>
+										<box vertical widthRequest={400}>
+											<entry
+													placeholderText="Search"
+													text={text()}
+													onChanged={self => text.set(self.text)}
+													onActivate={onEnter}
+											/>
+											<scrollable vexpand>
+													<box spacing={6}  vertical>
+														{list.as(list => list.map(app => (
+																<AppButton app={app} />
+														)))}
+													</box>
+											</scrollable>
+										</box>
 								</box>
                 <eventbox expand onClick={hide} />
             </box>
@@ -76,7 +93,3 @@ export default function Applauncher() {
         </box>
     </window>
 }
-										//<box vertical>{bind(mpris, "players").as(arr => arr.length > 0 ? arr.slice(0,1).map(player =>
-										//		<MBox player={player} />
-										//		) : <label label="Nothing Playing" />)}
-										//</box>

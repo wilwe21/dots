@@ -3,6 +3,7 @@ import { timeout } from "astal/time"
 import { Gtk } from "astal/gtk3"
 import Mpris from "gi://AstalMpris"
 import icons from "../icons.ts"
+import options from "../options.ts"
 
 function rep(n, s, e) {
 	let arr = [...n]
@@ -39,6 +40,7 @@ function transformTit(n,a, len) {
 }
 
 const mpris = Mpris.get_default()
+const labelList = ["Ponies At Dawn", "Cider Party", "Mumble Etc.", "MrSuicideSheep"]
 
 export const TitleButton = ({ props, player, len = -1 }) => {
     return <button className="Title" {...props}
@@ -48,7 +50,7 @@ export const TitleButton = ({ props, player, len = -1 }) => {
 					onClicked={self => {
 								var a = player.artist || ""
 								var a = a.split(' - Topic')[0]
-								if (a == "Ponies At Dawn" || a == "Cider Party" || a == "Mumble Etc.") {
+								if (labelList.includes(a)) {
 										self.label = player.title.split(' - ')[0]
 								} else {
 									  self.label = a
@@ -66,16 +68,16 @@ export const TitleLabel = ({ props, player, len = -1 }) => {
 				/> 
 }
 
-export const CoverArt = ({props, player}) => {
-		return <box {...props} {...{css: bind(player, 'coverArt').as(c => `background-image: url("${c}")`)}} />
+export const CoverArt = ({props, player, height, width}) => {
+		return <box {...props} heightRequest={height} widthRequest={width} {...{css: bind(player, 'coverArt').as(c => `background-image: url("${c}"); min-height: ${height}px; min-width: ${width}px`)}} />
 };
 
 export const ArtistLabel = ({props, player}) => {
 	return <label className="artist" {...props}
 							label={bind(player, "artist").as(() => {
-										var a = player.artist.join(", ") || ""
+										var a = player.artist
 										var a = a.split(' - Topic')[0]
-										if (a == "Ponies At Dawn" || a == "Cider Party" || a == "Mumble Etc.") {
+										if (labelList.includes(a)) {
 											return player.title.split(' - ')[0]
 										}
 										return a
