@@ -30,6 +30,7 @@ function transformTit(n,a, len) {
 		} else {
 				var n = split[0]
 		}
+		var n = n.replaceAll('"', '');
 		if (len !== -1) {
         	if (n.length > len) {
             	var add = '...'
@@ -40,7 +41,7 @@ function transformTit(n,a, len) {
 }
 
 const mpris = Mpris.get_default()
-const labelList = ["Ponies At Dawn", "Cider Party", "Mumble Etc.", "MrSuicideSheep"]
+const labelList = ["Ponies At Dawn", "Cider Party", "Mumble Etc.", "MrSuicideSheep", "Dubstep uNk"]
 
 export const TitleButton = ({ props, player, len = -1 }) => {
     return <button className="Title" {...props}
