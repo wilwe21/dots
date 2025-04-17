@@ -41,7 +41,7 @@ function transformTit(n,a, len) {
 }
 
 const mpris = Mpris.get_default()
-const labelList = ["Ponies At Dawn", "Cider Party", "Mumble Etc.", "MrSuicideSheep", "Dubstep uNk"]
+const labelList = ["Ponies At Dawn", "Cider Party", "Mumble Etc.", "MrSuicideSheep", "Dubstep uNk", "CreatureCore"]
 
 export const TitleButton = ({ props, player, len = -1 }) => {
     return <button className="Title" {...props}

@@ -1,14 +1,155 @@
-window#qs {
-    all: unset;
-    background: transparent;
-    centerbox > * {
-        min-width: 820px;
+window.qs {
+  background: $bg-color;
+  color: $fg-color;
+  border-radius: 16px;
+  min-width: 350px;
+  border: 1px solid $accent;
+
+  .view-select {
+    background: #232634;
+    padding: 8px;
+    border-radius: 16px 0 0 16px;
+    margin: 2px;
+
+    > button {
+      padding: 5px;
     }
-    box.Quick {
-        @include floating_widget;
-        border: 2px solid $accent;
-        border-radius: $radii;
-        min-width: 250px;
-        background: $bg-color;
+
+    > .focused {
+      color: $accent;
+      border: red;
+      outline: red;
     }
+  }
+
+  .subwindow-title-line {
+    min-width: 350px;
+    font-weight: bold;
+
+    button {
+      font-size: 16px;
+    }
+    .subwindow-title {
+      font-size: 14px;
+    }
+  }
+
+  .equal-wrapper > * {
+    min-width: 175px;
+  }
+
+  .controll-center-wrapper {
+    margin: 8px;
+  }
+
+  .bordered {
+    border: 2px solid $surface2;
+    border-radius: 8px;
+  }
+
+  .power-line * {
+    margin: 4px;
+  }
+  .power-line {
+    padding: 0 4px;
+  }
+
+  button {
+    .title {
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .value {
+      font-size: 13px;
+    }
+  }
+
+  .big-button > box {
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+
+    .big-icon {
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 100px;
+      min-width: 32px;
+      margin-left: -8px;
+    }
+  }
+
+  .slider {
+    margin-left: 8px;
+    margin-right: 8px;
+
+    .big-icon {
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 100px;
+      min-width: 32px;
+      margin-left: -8px;
+    }
+  }
+
+  .media-player {
+    margin: 6px;
+
+    .title {
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .media-player-cover {
+      min-width: 120px;
+      min-height: 120px;
+      border-radius: 8px;
+      margin: 4px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .actions > button > icon {
+      margin: 4px;
+      font-size: 18px;
+    }
+
+    scale {
+      padding: 0;
+      margin: 0.4rem 0;
+
+      trough {
+        min-height: 8px;
+      }
+
+      highlight {
+        background-color: $fg-color;
+      }
+
+      slider {
+        all: unset;
+      }
+    }
+
+    .media-player-meta {
+      margin: 4px;
+    }
+  }
+
+  .AppButton {
+    .name {
+      font-weight: bold;
+    }
+
+    .description {
+      font-weight: 200;
+    }
+
+    icon {
+      font-size: 30px;
+    }
+  }
 }
+

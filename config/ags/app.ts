@@ -3,7 +3,7 @@ import { init } from "./js/settings/setup.ts"
 import style from "/tmp/ags/scss/style.css"
 import Bar from "./js/bar/Bar.tsx"
 import Applauncher from "./js/applauncher/appl.tsx"
-import QuickSettings from "./js/quicksettings/quick.tsx"
+import ControllCenter from "./js/quicksettings/ControllCenter.tsx"
 import Dash from "./js/dashboard/dash.tsx"
 import Over from "./js/overview/Overview.tsx"
 import themes from "./js/themes.ts"
@@ -20,7 +20,7 @@ App.start({
     css: style,
     main() {
         Applauncher(),
-				QuickSettings(),
+				ControllCenter(),
 				Dash(),
 				Over(),
         App.get_monitors().map(Bar)
