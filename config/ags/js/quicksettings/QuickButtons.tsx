@@ -1,9 +1,25 @@
 import { Binding, execAsync, Variable } from "astal"
+import { App } from "astal/gtk3"
+import icons from "../icons";
 
 type QuickButtonProps = {
 	content: Binding<string> | string
 	command: string | string[]
 }
+
+const QuickButtonIco = ({ content, command }: QuickButtonProps) => (
+		<button
+			vexpand
+			hexpand
+			className="bordered"
+			onClick={() => {
+				App.toggle_window("qs")
+				execAsync(command)
+			}}
+		>
+			<icon icon={content}/>
+		</button>
+	)
 
 const QuickButton = ({ content, command }: QuickButtonProps) => (
 		<button
@@ -11,6 +27,7 @@ const QuickButton = ({ content, command }: QuickButtonProps) => (
 			hexpand
 			className="bordered"
 			onClick={() => {
+				App.toggle_window("qs")
 				execAsync(command)
 			}}
 		>
@@ -29,7 +46,7 @@ export const QuickButtons = () => {
 	return (
 		<box hexpand vexpand vertical spacing={spacing}>
 			<box hexpand vexpand spacing={spacing}>
-				<QuickButton content="󰔎 " command={["bash", "-c", "pkill hyprsunset || hyprsunset -t 5000"]} />
+				<QuickButtonIco content={icons.audio.volume.overamplified} command={["pavucontrol"]} />
 				<QuickButton content=" " command={["bash", "-c", "hyprpicker | wl-copy"]} />
 			</box>
 			<box hexpand vexpand spacing={spacing}>
