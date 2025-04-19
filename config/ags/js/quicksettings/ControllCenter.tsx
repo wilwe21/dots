@@ -1,4 +1,4 @@
-import { App, Astal, Gdk } from "astal/gtk3"
+import { App, Astal, Gdk, Gtk } from "astal/gtk3"
 import { PowerLine } from "./PowerLine"
 import { Connectivity } from "./Connectivity"
 import { QuickButtons } from "./QuickButtons"
@@ -56,8 +56,6 @@ export default function ControllCenter() {
 			exclusivity={Astal.Exclusivity.NORMAL}
 			anchor={TOP | RIGHT}
 			application={App}
-			margin-top={8}
-			margin-left={8}
 			setup={self => App.add_window(self)}
 			visible={false}
 			keymode={Astal.Keymode.EXCLUSIVE}
@@ -67,7 +65,11 @@ export default function ControllCenter() {
 				}
 			}}
 		>
-		<box className="Quick">
+		<centerbox hexpand={false}>
+    <eventbox heightRequest={600} widthRequest={4000} onClick={resetAndClose} />
+    <eventbox heightRequest={600} widthRequest={4000} onClick={resetAndClose} />
+		<box vertical hexpand={false} vexpand={false}>
+		<box className="Quick" hexpand={false} vexpand={false}>
 				<box vertical spacing={8} className="controll-center-wrapper">
 					{currentView((view) => {
 						switch (view) {
@@ -85,6 +87,9 @@ export default function ControllCenter() {
 					})}
 				</box>
 		</box>
+		<eventbox heightRequest={1200} onClick={resetAndClose} />
+		</box>
+    </centerbox>
 		</window>
 	)
 }

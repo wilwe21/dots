@@ -23,7 +23,7 @@ const QuickButtonIco = ({ content, command }: QuickButtonProps) => (
 
 const QuickButton = ({ content, command }: QuickButtonProps) => (
 		<button
-			vexpand
+			vexpand  
 			hexpand
 			className="bordered"
 			onClick={() => {
@@ -52,11 +52,7 @@ export const QuickButtons = () => {
 			<box hexpand vexpand spacing={spacing}>
 				<QuickButton
 					content="󰹑 "
-					command={[
-						"bash",
-						"-c",
-						'grim -g "$(slurp)" - | wl-copy && screenshot-notify'
-					]}
+					command={["flameshot", "gui"]}
 				/>
 				<QuickButton
 					content={isLockingActive((a) => a ? ' ' : " ")}
