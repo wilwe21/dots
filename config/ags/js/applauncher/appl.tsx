@@ -13,12 +13,16 @@ function hide() {
 function MBox({ player }) {
 		return <box className="media" vertical>
 				<box vertical>
-					<CoverArt player={player} heightRequest={500} widthRequest={500} />
-					<TitleLabel player={player} len={50} ellipsize={true} justification={"Center"}/>
+					<centerbox>
+						<box />
+						<CoverArt player={player} />
+						<box />
+					</centerbox>
+					<TitleLabel player={player} ellipsize={true} justification={"Center"}/>
 					<ArtistLabel player={player} ellipsize={true} justification={"Center"} />
 					<centerbox horizontal>
 						<box />
-						<box>
+						<box spacing={4}>
 							<PlayPrev player={player}/>
 							<PlayPauseButton player={player}/>
 							<PlayNex player={player}/>
@@ -64,7 +68,7 @@ export default function Applauncher() {
         <box>
             <eventbox widthRequest={4000} expand onClick={hide} />
             <box hexpand={false} vertical>
-                <eventbox heightRequest={100} onClick={hide} />
+                <eventbox heightRequest={200} onClick={hide} />
 								<box className="Applauncher" horizontal>
 										<box vertical widthRequest={400}>
 											{bind(mpris, "players").as(arr => arr.length > 0 ? arr.slice(0,1).map(player =>

@@ -5,13 +5,14 @@
 
     scrollbar.vertical {
         transition: $transition;
-        background-color: transparentize($bg-color, 0.7);
+        background-color: transparentize($fg-color, 0.9);
 
         &:hover {
-            background-color: transparentize($bg-color, 0.3);
+            background-color: transparentize($fg-color, 0.8);
 
             slider {
-                background-color: transparentize($fg-color, 0.3);
+                //background-color: transparentize($accent, 0.3);
+                background-color: $accent;
                 min-width: .6em;
             }
         }
@@ -19,7 +20,7 @@
 
 
     scrollbar.vertical slider {
-        background-color: transparentize($fg-color, 0.5);
+        background-color: transparentize($accent, 0.5);
         border-radius: $radii;
         min-width: .4em;
         min-height: 2em;

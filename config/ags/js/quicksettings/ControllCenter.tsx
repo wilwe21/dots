@@ -11,7 +11,6 @@ import AstalNetwork from "gi://AstalNetwork"
 import AstalBluetooth from "gi://AstalBluetooth"
 import { Apps } from "./Apps/Apps"
 import { Mixer } from "./Mixer/Mixer"
-import { SidePanel } from "./SidePanel"
 import { View } from "../../types"
 
 type ControllProps = { setCurrentView: (view: View) => void }
@@ -69,7 +68,7 @@ export default function ControllCenter() {
     <eventbox heightRequest={600} widthRequest={4000} onClick={resetAndClose} />
     <eventbox heightRequest={600} widthRequest={4000} onClick={resetAndClose} />
 		<box vertical hexpand={false} vexpand={false}>
-		<box className="Quick" hexpand={false} vexpand={false}>
+		<box className="quick" hexpand={false} vexpand={false}>
 				<box vertical spacing={8} className="controll-center-wrapper">
 					{currentView((view) => {
 						switch (view) {

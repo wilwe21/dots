@@ -11,7 +11,7 @@ const QuickButtonIco = ({ content, command }: QuickButtonProps) => (
 		<button
 			vexpand
 			hexpand
-			className="bordered"
+			className="bordered QuickButton"
 			onClick={() => {
 				App.toggle_window("qs")
 				execAsync(command)
@@ -25,7 +25,7 @@ const QuickButton = ({ content, command }: QuickButtonProps) => (
 		<button
 			vexpand  
 			hexpand
-			className="bordered"
+			className="bordered QuickButton"
 			onClick={() => {
 				App.toggle_window("qs")
 				execAsync(command)
@@ -37,26 +37,20 @@ const QuickButton = ({ content, command }: QuickButtonProps) => (
 
 export const QuickButtons = () => {
 	const spacing = 6
-	const isLockingActive = Variable(true).poll(
-		1_000,
-		["bash", "-c", 'pgrep -x "wlinhibit" > /dev/null && echo "false" || echo "true"'],
-		(str) => str === "true"
-	)
-
 	return (
 		<box hexpand vexpand vertical spacing={spacing}>
 			<box hexpand vexpand spacing={spacing}>
 				<QuickButtonIco content={icons.audio.volume.overamplified} command={["pavucontrol"]} />
-				<QuickButton content=" " command={["bash", "-c", "hyprpicker | wl-copy"]} />
+				<QuickButton content="" command={["bash", "-c", "sleep 1; hyprpicker | wl-copy"]} />
 			</box>
 			<box hexpand vexpand spacing={spacing}>
 				<QuickButton
-					content="󰹑 "
-					command={["flameshot", "gui"]}
+					content="󰹑"
+					command={["bash", "-c", "sleep 1; flameshot gui"]}
 				/>
-				<QuickButton
-					content={isLockingActive((a) => a ? ' ' : " ")}
-					command={["bash", "-c", "pkill wlinhibit || wlinhibit"]}
+				<QuickButtonIco
+					content={icons.system.cpu}
+					command={["kitty", "htop"]}
 				/>
 			</box>
 		</box>

@@ -12,7 +12,7 @@ export function scssWatcher() {
             '--event', 'create,modify',
             '-m', `${SRC}/scss`,
         ],
-        reloadScss,
+       	reloadScss,
         (err) => console.error('Scss Error: ', err),
     );
 }
@@ -25,25 +25,25 @@ export function scssWatcher() {
  * options.bar.style.value => $bar-style
  */
 export async function reloadScss() {
-		if (!dependencies(['sassc'])) {
-        return '';
-		}
-
-    const opts = options.list();
-    const varo = opts.map(opt => {
-    		if (opt.scss === 'exclude') {
-            return '';
-				}
-
-        const unit = typeof opt.value === 'number' ? opt.unit : '';
-        const value = opt.scssFormat ? opt.scssFormat(opt.value) : opt.value;
-        return `$${opt.scss}: ${value}${unit};`;
-    });
-
+//		if (!dependencies(['sassc'])) {
+//        return '';
+//		}
+//
+//    const opts = options.list();
+//    const varo = opts.map(opt => {
+//    		if (opt.scss === 'exclude') {
+//            return '';
+//				}
+//
+//        const unit = typeof opt.value === 'number' ? opt.unit : '';
+//        const value = opt.scssFormat ? opt.scssFormat(opt.value) : opt.value;
+//        return `$${opt.scss}: ${value}${unit};`;
+//    });
+//
     try {
         const tmp = '/tmp/ags/scss';
-        await writeFile(`${tmp}/options.scss`, varo.join('\n'));
-        await subprocess(['sassc', `${SRC}/scss/main.scss`, `${tmp}/style.css`]);
+//        await writeFile(`${tmp}/options.scss`, varo.join('\n'));
+        subprocess(['sassc', `${SRC}/scss/main.scss`, `${tmp}/style.css`]);
 				App.reset_css();
         App.apply_css(`${tmp}/style.css`);
     } catch (error) {

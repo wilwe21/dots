@@ -1,31 +1,16 @@
-window.qs {
+window.qs .quick{
+  @include floating_widget;
   background: $bg-color;
   color: $fg-color;
-  border-radius: 16px;
-  border: 1px solid $accent;
-
-  .view-select {
-    background: #232634;
-    padding: 8px;
-    border-radius: 16px 0 0 16px;
-    margin: 2px;
-
-    > button {
-      padding: 5px;
-    }
-
-    > .focused {
-      color: $accent;
-      border: red;
-      outline: red;
-    }
-  }
+  border-radius: $radii*2;
+  border: 2px solid $accent;
 
   .subwindow-title-line {
     min-width: 350px;
     font-weight: bold;
 
     button {
+      @include button($flat: true);
       font-size: 16px;
     }
     .subwindow-title {
@@ -37,20 +22,24 @@ window.qs {
     min-width: 175px;
   }
 
-  .controll-center-wrapper {
-    margin: 8px;
-  }
-
-  .bordered {
-    border: 2px solid $surface2;
-    border-radius: 8px;
-  }
-
   .power-line * {
     margin: 4px;
   }
   .power-line {
+    button {
+      @include button($flat: true);
+    }
     padding: 0 4px;
+  }
+  
+  .QuickButton {
+    @include button($flat: true);
+  }
+
+  .connectivity {
+    button {
+      @include button($flat: true);
+    }
   }
 
   button {
@@ -73,7 +62,7 @@ window.qs {
     .big-icon {
       font-size: 18px;
       font-weight: bold;
-      border-radius: 100px;
+      border-radius: $radii;
       min-width: 32px;
       margin-left: -8px;
     }
@@ -83,72 +72,46 @@ window.qs {
     margin-left: 8px;
     margin-right: 8px;
 
-    .big-icon {
+    .big-icon, button {
+      all: unset;
       font-size: 18px;
       font-weight: bold;
-      border-radius: 100px;
+      border-radius: $radii;
       min-width: 32px;
       margin-left: -8px;
     }
   }
 
-  .media-player {
-    margin: 6px;
-
+  .media {
     .title {
       font-weight: bold;
       font-size: 15px;
     }
 
-    .media-player-cover {
+    .coverArt {
       min-width: 120px;
       min-height: 120px;
       border-radius: 8px;
       margin: 4px;
-      background-size: contain;
+      margin-left: 8px;
+      background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
     }
 
-    .actions > button > icon {
+    button {
+      all: unset;
+    }
+
+    button > icon {
       margin: 4px;
       font-size: 18px;
     }
-
-    scale {
-      padding: 0;
-      margin: 0.4rem 0;
-
-      trough {
-        min-height: 8px;
-      }
-
-      highlight {
-        background-color: $fg-color;
-      }
-
-      slider {
-        all: unset;
-      }
-    }
-
-    .media-player-meta {
-      margin: 4px;
-    }
   }
 
-  .AppButton {
-    .name {
-      font-weight: bold;
-    }
-
-    .description {
-      font-weight: 200;
-    }
-
-    icon {
-      font-size: 30px;
-    }
+  .bordered {
+    border: 2px solid $accent;
+    border-radius: $radii;
   }
 }
 

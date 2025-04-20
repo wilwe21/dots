@@ -63,14 +63,18 @@ export const TitleButton = ({ props, player, len = -1 }) => {
 
 export const TitleLabel = ({ props, player, len = -1 }) => {
     return <label className="Title" {...props}
+					expand={false}
+					wrap
+					wrapMode={Gtk.WrapMode.WORD}
 					label={bind(player, "title").as(() =>
          			transformTit(player.title,player.artist, len)
          	)}
 				/> 
 }
 
-export const CoverArt = ({props, player, height, width}) => {
-		return <box {...props} heightRequest={height} widthRequest={width} {...{css: bind(player, 'coverArt').as(c => `background-image: url("${c}"); min-height: ${height}px; min-width: ${width}px`)}} />
+export const CoverArt = ({props, player}) => {
+		const art = bind(player, "coverArt").as(c => `background-image: url('${c}')`)
+		return <box {...props} css={art} className="coverArt" />
 };
 
 export const ArtistLabel = ({props, player}) => {
