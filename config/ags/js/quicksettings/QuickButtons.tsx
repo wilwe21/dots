@@ -46,7 +46,7 @@ export const QuickButtons = () => {
 			<box hexpand vexpand spacing={spacing}>
 				<QuickButton
 					content="󰹑"
-					command={["bash", "-c", "sleep 1; flameshot gui"]}
+					command={["bash", "-c", "XDG_CURRENT_DESKTOP=sway; sleep 1; flameshot gui"]}
 				/>
 				<QuickButtonIco
 					content={icons.system.cpu}
