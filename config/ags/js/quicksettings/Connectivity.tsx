@@ -14,6 +14,7 @@ const WiFiButton = ({ onPrimary, onSecondary }: ButtonProps) => {
 
 	return (
 		<button
+			className="wifi"
 			onClick={(_, e) => {
 				if (isPrimaryClick(e) && onPrimary) {
 					onPrimary()
@@ -44,6 +45,7 @@ const BluetoothButton = ({ onPrimary, onSecondary }: ButtonProps) => {
 
 	return (
 		<button
+			className="bluetooth"
 			onClick={(_, e) => {
 				if (isPrimaryClick(e) && onPrimary) {
 					onPrimary()

@@ -15,20 +15,24 @@ function MBox({ player }) {
 				<box vertical>
 					<centerbox>
 						<box />
-						<CoverArt player={player} />
-						<box />
-					</centerbox>
-					<TitleLabel player={player} ellipsize={true} justification={"Center"}/>
-					<ArtistLabel player={player} ellipsize={true} justification={"Center"} />
-					<centerbox horizontal>
-						<box />
-						<box spacing={4}>
-							<PlayPrev player={player}/>
-							<PlayPauseButton player={player}/>
-							<PlayNex player={player}/>
+						<box className="playertop">
+							<CoverArt player={player} />
 						</box>
 						<box />
 					</centerbox>
+					<box vertical className="playerbottom">
+						<TitleLabel player={player} ellipsize={true} justification={"Center"}/>
+						<ArtistLabel player={player} ellipsize={true} justification={"Center"} />
+						<centerbox horizontal>
+							<box />
+							<box spacing={4}>
+								<PlayPrev player={player}/>
+								<PlayPauseButton player={player}/>
+								<PlayNex player={player}/>
+							</box>
+							<box />
+						</centerbox>
+					</box>
 				</box>
 		</box>
 }

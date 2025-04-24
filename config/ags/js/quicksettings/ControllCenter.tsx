@@ -23,10 +23,10 @@ const Controlls = ({ setCurrentView }: ControllProps) => {
         <>
             <box spacing={8} className="equal-wrapper">
                 <Connectivity
-                    onWifiPrimary={() => setCurrentView("wifi")}
-                    onWifiSecondary={() => network.wifi.enabled = !network.wifi.enabled}
-                    onBluetoothPrimary={() => setCurrentView("bluetooth")}
-                    onBluetoothSecondary={() => bluetooth.toggle()} />
+                    onWifiPrimary={() => network.wifi.enabled = !network.wifi.enabled}
+                    onWifiSecondary={() => setCurrentView("wifi")}
+                    onBluetoothPrimary={() => bluetooth.toggle()}
+                    onBluetoothSecondary={() => setCurrentView("bluetooth")} />
                 <QuickButtons />
             </box>
             <box spacing={8} className="equal-wrapper">
