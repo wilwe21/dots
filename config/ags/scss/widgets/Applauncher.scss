@@ -45,7 +45,7 @@ window#launcher {
           padding-top: 5px;
         }
         .playerbottom {
-          background-color: darken($color: $accent, $amount: 65);
+          background-color: $media-bg;
           border: 2px solid $accent;
           border-top: 0px solid transparent;
           margin: -10px 50px 0px 50px;
@@ -54,7 +54,7 @@ window#launcher {
           border-radius: 0 0 $radii*2 $radii*2;
         }
         .playertop {
-          background-color: darken($color: $accent, $amount: 65);
+          background-color: $media-bg;
           border: 2px solid $accent;
           border-bottom: 0px solid transparent;
           margin-top: 20px;

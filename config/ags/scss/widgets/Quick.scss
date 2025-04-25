@@ -84,7 +84,7 @@ window.qs .quick{
 
   .media {
 
-    background-color: darken($color: $accent, $amount: 65);
+    background-color: $media-bg;
     .title {
       font-weight: bold;
       font-size: 15px;
