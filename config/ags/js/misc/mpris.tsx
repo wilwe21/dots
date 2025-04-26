@@ -4,6 +4,7 @@ import { Gtk } from "astal/gtk3"
 import Mpris from "gi://AstalMpris"
 import icons from "../icons.ts"
 import options from "../options.ts"
+import Pango from "gi://Pango?version=1.0"
 
 function rep(n, s, e) {
 	let arr = [...n]
@@ -61,11 +62,13 @@ export const TitleButton = ({ props, player, len = -1 }) => {
 				/> 
 }
 
-export const TitleLabel = ({ props, player, len = -1 }) => {
-    return <label className="Title" {...props}
+export const TitleLabel = ({ player, justify = Gtk.Justification.LEFT, ellipsize = Pango.EllipsizeMode.NONE, len = -1 }) => {
+    return <label className="Title" 
 					expand={false}
 					wrap
 					wrapMode={Gtk.WrapMode.WORD}
+					ellipsize={ellipsize}
+					justify={justify}
 					label={bind(player, "title").as(() =>
          			transformTit(player.title,player.artist, len)
          	)}

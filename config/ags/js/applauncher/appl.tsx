@@ -21,8 +21,8 @@ function MBox({ player }) {
 						<box />
 					</centerbox>
 					<box vertical className="playerbottom">
-						<TitleLabel player={player} ellipsize={true} justification={"Center"}/>
-						<ArtistLabel player={player} ellipsize={true} justification={"Center"} />
+						<TitleLabel justify={Gtk.Justification.CENTER} player={player} />
+						<ArtistLabel justify={Gtk.Justification.CENTER} player={player} />
 						<centerbox horizontal>
 							<box />
 							<box spacing={4}>

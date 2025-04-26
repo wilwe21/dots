@@ -7,8 +7,8 @@ function MBox({ player }) {
 				return <box className="bordered" horizontal>
 					<CoverArt player={player} vexpand/>
 					<centerbox vertical className="titlebox" hexpand>
-						<TitleLabel ellipsize={true} justify={Gtk.Justification.CENTER} player={player} />
-						<ArtistLabel ellipsize={true} justify={Gtk.Justification.CENTER} player={player} /> 
+						<TitleLabel justify={Gtk.Justification.CENTER} player={player} />
+						<ArtistLabel justify={Gtk.Justification.CENTER} player={player} /> 
 						<centerbox>
 							<box />
 							<box>
