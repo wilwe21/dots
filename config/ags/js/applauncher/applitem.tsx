@@ -1,9 +1,22 @@
 import { App, Gtk } from "astal/gtk3"
+import { readFile, writeFileAsync } from "astal";
+import { isPrimaryClick, isSecondaryClick } from "../../utils/astal";
+import vars from "../vars";
 
 export default function AppButton({ app }: { app: Apps.Application }) {
     return <button
         className="AppButton"
-        onClicked={() => { App.get_window("launcher")!.hide(); app.launch() }}>
+        onClick={(_, e) => {
+						if (isPrimaryClick(e)) {
+							App.get_window("launcher")!.hide(); app.launch()
+						}
+						if (isSecondaryClick(e)) {
+							var banned = readFile(vars.cacheDir + "/banned").replaceAll("\n", "").split(", ")
+							console.log(banned)
+							banned.push(app.name)
+							writeFileAsync(vars.cacheDir + "/banned", banned.join(", "))
+						}
+				}}> 
         <box>
             <icon icon={app.iconName} />
             <box valign={Gtk.Align.CENTER} vertical>

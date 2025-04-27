@@ -5,6 +5,8 @@ import { Variable, bind } from "astal"
 import AppButton from './applitem.tsx'
 import Mpris from "gi://AstalMpris";
 import { CoverArt, ArtistLabel, TitleLabel, PlayPauseButton, PlayPrev, PlayNex } from "../misc/mpris.tsx";
+import { readFile } from "astal"
+import vars from "../vars.js"
 
 function hide() {
     App.get_window("launcher")!.hide()
@@ -88,9 +90,14 @@ export default function Applauncher() {
 											/>
 											<scrollable vexpand>
 													<box spacing={6}  vertical>
-														{list.as(list => list.map(app => (
+														{list.as(list => {
+															var banned = readFile(vars.cacheDir + "/banned").replaceAll("\n", "").split(", ")
+															console.log(list)
+															const filterd = list.filter((v) => banned.indexOf(v.name) == -1) 
+															console.log(filterd)
+															return filterd.map(app => (
 																<AppButton app={app} />
-														)))}
+														))})}
 													</box>
 											</scrollable>
 										</box>
