@@ -12,7 +12,6 @@ export default function AppButton({ app }: { app: Apps.Application }) {
 						}
 						if (isSecondaryClick(e)) {
 							var banned = readFile(vars.cacheDir + "/banned").replaceAll("\n", "").split(", ")
-							console.log(banned)
 							banned.push(app.name)
 							writeFileAsync(vars.cacheDir + "/banned", banned.join(", "))
 						}

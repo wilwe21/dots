@@ -84,6 +84,10 @@ window.Bar {
           padding-left: 0;
           margin-left: 0;
       }
+      .quickBarBox {
+          margin-left: -10px;
+          margin-right: -5px;
+      }
       .media {
           button {
               all: unset;

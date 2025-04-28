@@ -92,9 +92,7 @@ export default function Applauncher() {
 													<box spacing={6}  vertical>
 														{list.as(list => {
 															var banned = readFile(vars.cacheDir + "/banned").replaceAll("\n", "").split(", ")
-															console.log(list)
 															const filterd = list.filter((v) => banned.indexOf(v.name) == -1) 
-															console.log(filterd)
 															return filterd.map(app => (
 																<AppButton app={app} />
 														))})}
