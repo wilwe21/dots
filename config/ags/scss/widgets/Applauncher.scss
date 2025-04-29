@@ -62,6 +62,14 @@ window#launcher {
           padding: $padding;
           border-radius: $radii*2 $radii*2 0 0;
         }
+        .mediabox:not(.playertop) {
+          :nth-child(3) {
+            margin-left: 20px;
+          }
+          label {
+            font-size: 50px;
+          }
+        }
       }
 
       button.AppButton {

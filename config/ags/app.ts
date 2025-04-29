@@ -19,8 +19,8 @@ init()
 App.start({
     css: style,
     main() {
-        Applauncher(),
 				ControllCenter(),
+        Applauncher(),
 				Dash(),
 				Over(),
         App.get_monitors().map(Bar)

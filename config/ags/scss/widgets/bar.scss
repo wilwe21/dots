@@ -26,11 +26,16 @@ window.Bar {
           margin-left: 5px;
       }
 
-      button:not(.Title) {
+      button:not(.Title):not(.quickBar) {
           @include button($flat: true);
           padding-right: $padding;
-          :not(.Time) {
+
+          &:not(.Time) {
               padding-left: $padding;
+              border-radius: $radii 0 0 $radii;
+          }
+          &.Time {
+              border-radius: 0px;
           }
       }
       .Title {
@@ -84,8 +89,14 @@ window.Bar {
           padding-left: 0;
           margin-left: 0;
       }
+      .quickBar {
+          @include button($flat: true);
+          border-radius: $radii/1.5;
+          padding-right: $padding;
+          padding-left: $padding;
+      }
       .quickBarBox {
-          margin-left: -10px;
+          margin-left: -15px;
           margin-right: -5px;
       }
       .media {
@@ -98,8 +109,19 @@ window.Bar {
                   icon {
                       margin-left: -$padding;
                   }
-                  &:active {
+                  &:hover {
+                    background-color: $bg-color;
+                    color: $fg-color;
                     box-shadow: none;
+                  }
+                  &:active, &:checked, &.on, &.active {
+                    &:hover {
+                      background-image: none;
+                      background-color: $bg-color;
+                      color: $fg-color;
+                      border: none;
+                      box-shadow: none;
+                    }
                   }
               }
           }

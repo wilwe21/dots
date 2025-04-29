@@ -1,6 +1,7 @@
 import { bind } from "astal"
 import Mpris from "gi://AstalMpris";
 import { TitleButton, PlayPauseButton, PlayPrev, PlayNex } from "../../misc/mpris.tsx";
+import {mediaPlayer} from "../../vars.js";
 
 function MBox({ player }) {
 		return <box className="media">
@@ -13,8 +14,12 @@ function MBox({ player }) {
 
 export default function Media() {
 		const mpris = Mpris.get_default()
-		return <box>{bind(mpris, "players").as(arr => arr.length > 0 ? arr.slice(0,1).map(player =>
+		return <box>{bind(mediaPlayer, "value")
+						.as(v => {
+								const arr = mpris.players
+								return arr.length > 0 ? 
+								arr.slice(v-1, v).map(player =>
 				 <MBox player={player} />
-		) : <label label="Nothing Playing" />)}</box>
+		) : <label label="Nothing Playing" />})}</box>
 }
 

@@ -6,7 +6,7 @@ import AppButton from './applitem.tsx'
 import Mpris from "gi://AstalMpris";
 import { CoverArt, ArtistLabel, TitleLabel, PlayPauseButton, PlayPrev, PlayNex } from "../misc/mpris.tsx";
 import { readFile } from "astal"
-import vars from "../vars.js"
+import vars, {mediaPlayer, mediaPlayerMax} from "../vars.js"
 
 function hide() {
     App.get_window("launcher")!.hide()
@@ -15,12 +15,32 @@ function hide() {
 function MBox({ player }) {
 		return <box className="media" vertical>
 				<box vertical>
-					<centerbox>
-						<box />
+					<centerbox className="mediabox">
+						<box>
+							<button
+						 	visible={bind(mpris, "players").as(p => p.length > 1)}	
+							label="˂" onClick={
+									() => {
+										const cur = parseInt(mediaPlayer.get().toString())
+										const max = parseInt(mediaPlayerMax.get().toString())
+										mediaPlayer.set(cur-1)
+									}
+							}/>
+						</box>
 						<box className="playertop">
 							<CoverArt player={player} />
 						</box>
-						<box />
+						<box>
+							<button 
+						 	visible={bind(mpris, "players").as(p => p.length > 1)}	
+							label="˃" onClick={
+									() => {
+										const cur = parseInt(mediaPlayer.get().toString())
+										const max = parseInt(mediaPlayerMax.get().toString())
+										mediaPlayer.set(cur+1)
+									}
+							}/>
+						</box>
 					</centerbox>
 					<box vertical className="playerbottom">
 						<TitleLabel justify={Gtk.Justification.CENTER} player={player} />
@@ -39,10 +59,11 @@ function MBox({ player }) {
 		</box>
 }
 
+const mpris = Mpris.get_default()
+
 export default function Applauncher() {
     const { CENTER } = Gtk.Align
     const apps = new Apps.Apps()
-		const mpris = Mpris.get_default()
 
     const text = Variable("")
     const list = text(text => apps.fuzzy_query(text))
@@ -77,9 +98,27 @@ export default function Applauncher() {
                 <eventbox heightRequest={200} onClick={hide} />
 								<box className="Applauncher" horizontal>
 										<box vertical widthRequest={400}>
-											{bind(mpris, "players").as(arr => arr.length > 0 ? arr.slice(0,1).map(player =>
-												<MBox player={player} />
-												) : <label label="Nothing Playing" />)}
+											{bind(mediaPlayer, "value")
+												.as(v => {
+														const arr = mpris.players
+														if (v > arr.length) {
+															mediaPlayer.set(1)
+															return arr.length > 0 ? 
+															arr.slice(0, 1).map(player =>
+																<MBox player={player} />
+																) : <label label="Nothing Playing" />
+														} else if (v <= 0) {
+															mediaPlayer.set(arr.length)
+															return arr.length > 0 ? 
+															arr.slice(arr.length-1, arr.length).map(player =>
+																<MBox player={player} />
+																) : <label label="Nothing Playing" />
+														} else {
+															return arr.length > 0 ? 
+															arr.slice(v-1, v).map(player =>
+															<MBox player={player} />
+															) : <label label="Nothing Playing" />
+												}})}
 										</box>
 										<box vertical widthRequest={400}>
 											<entry

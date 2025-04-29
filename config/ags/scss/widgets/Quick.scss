@@ -83,6 +83,9 @@ window.qs .quick{
   }
 
   .media {
+    > box:not(:nth-child(1)) {
+      margin-top: $padding;
+    }
 
     background-color: $media-bg;
     .title {

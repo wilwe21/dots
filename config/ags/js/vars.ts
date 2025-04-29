@@ -29,6 +29,9 @@ export const volumeCheck = Variable(true).poll(2500, ["pactl", "get-sink-volume"
 
 export const volume = Variable(0).poll(20, ["pactl", "get-sink-volume", "@DEFAULT_SINK@"], n => Number(String(n.replaceAll("%", "").split(",   ")[0].split(" / ")[1]).trim()))
 
+export const mediaPlayer = Variable(0)
+export const mediaPlayerMax = Variable(0)
+
 export const cpu = Variable("0").poll(2500, ["/home/wilwe/.hyprland.conf/scripts/cpu"], n => String(n))
 
 export const temp = Variable("0%").poll(2500, ["cat", "/sys/class/thermal/thermal_zone0/temp"], n => 

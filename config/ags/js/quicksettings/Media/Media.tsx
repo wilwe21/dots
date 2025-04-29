@@ -2,6 +2,7 @@ import Mpris from "gi://AstalMpris"
 import { bind } from "astal"
 import { CoverArt, TitleLabel, ArtistLabel, PlayPauseButton, PlayPrev, PlayNex} from "../../misc/mpris"
 import { Astal, Gtk } from "astal/gtk3"
+import {mediaPlayer, mediaPlayerMax} from "../../vars"
 
 function MBox({ player }) {
 				return <box className="bordered" horizontal>
@@ -26,8 +27,16 @@ export const Media = () => {
 	const mpris = Mpris.get_default();
 
 	return (
-		<box className="media">
+		<box className="media" vertical>
 			{bind(mpris, "players").as((p) => {
+				mediaPlayerMax.set(p.length)
+				if (mediaPlayer.get().toString() == "0") {
+						mediaPlayer.set(0)
+						mediaPlayer.set(1)
+				} else {
+						mediaPlayer.set(0)
+						mediaPlayer.set(parseInt(mediaPlayer.get().toString()))
+				}
 				if (p.length === 0) {
 					return <></>
 				}
