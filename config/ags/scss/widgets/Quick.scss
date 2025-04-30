@@ -51,6 +51,14 @@ window.qs .quick{
     .value {
       font-size: 13px;
     }
+
+    &.wifi {
+      border-radius: 0 0 $radii $radii;
+    }
+
+    &.bluetooth {
+      border-radius: $radii $radii 0 0;
+    }
   }
 
   .big-button > box {

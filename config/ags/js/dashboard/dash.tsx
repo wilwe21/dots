@@ -1,6 +1,6 @@
-import Apps from "gi://AstalApps"
 import { App, Astal, Gdk, Gtk } from "astal/gtk3"
-import { Variable, GLib } from "astal"
+import { Variable, GLib, bind } from "astal"
+import Calendar from "./calendar"
 
 function hide() {
     App.get_window("dash")!.hide()
@@ -28,6 +28,7 @@ export default function Dash() {
                 <eventbox heightRequest={32} onClick={hide} />
 								<box className="Dash" vertical>
 										<label label={time()} />
+										<Calendar />
 								</box>
                 <eventbox expand onClick={hide} />
             </box>

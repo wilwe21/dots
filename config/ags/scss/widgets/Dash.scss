@@ -8,4 +8,14 @@ window#dash {
         min-width: 250px;
         background: $bg-color;
     }
+    .calendar {
+      font-family: SourceCodeVF;
+    }
+    .number {
+      min-width: 10px;
+      padding: $padding/1.2;
+    }
+    .month {
+      margin-left: -10px;
+    }
 }

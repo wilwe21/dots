@@ -32,6 +32,17 @@ export const volume = Variable(0).poll(20, ["pactl", "get-sink-volume", "@DEFAUL
 export const mediaPlayer = Variable(0)
 export const mediaPlayerMax = Variable(0)
 
+export const calendar = Variable("now").poll(60000, ["khal", "calendar"], n => {
+				var sus = n.split("\n")
+				sus[0] = "    "+sus[0]
+				for (var i = 0; i < sus.length; i++) {
+						if (sus[i].split("     ")[0] != "") {
+							sus[i] = sus[i].split("     ")[0]
+						}
+				}
+				return sus.join("\n")
+})
+
 export const cpu = Variable("0").poll(2500, ["/home/wilwe/.hyprland.conf/scripts/cpu"], n => String(n))
 
 export const temp = Variable("0%").poll(2500, ["cat", "/sys/class/thermal/thermal_zone0/temp"], n => 

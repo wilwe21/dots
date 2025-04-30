@@ -106,9 +106,6 @@ window.Bar {
                   @include button($flat: true, $reactive: false, $focusable: false);
                   color: $playcolor;
                   padding-left: $padding/2;
-                  icon {
-                      margin-left: -$padding;
-                  }
                   &:hover {
                     background-color: $bg-color;
                     color: $fg-color;
