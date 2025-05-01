@@ -13,14 +13,10 @@ export default function Calendar() {
 										return <label className="days" label={row} />
 								} else {
 										var al = Gtk.Align.START
-										var margin = "margin"
 										if (i == 2) {
 												var al = Gtk.Align.END 
-												margin = `${margin}-right`
-										} else {
-												margin = `${margin}-left`
 										}
-										return <box className={`rows`} css={`${margin}: 10px;`} halign={al}>
+										return <box className={`rows`} halign={al}>
 											{row.split(" ").filter(s => s !== "" && s !== " ")
 											.map(s => { 
 												if (s == GLib.DateTime.new_now_local().format("%d")) {

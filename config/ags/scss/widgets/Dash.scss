@@ -8,14 +8,23 @@ window#dash {
         min-width: 250px;
         background: $bg-color;
     }
-    .calendar {
+    .calendar > box > label, .calendar > label {
       font-family: SourceCodeVF;
+      &.notoday, &.today {
+        margin-left: $padding/1.1;
+        padding: $padding/3;
+      }
+      &.today {
+        padding: $padding/3;
+        background-color: $accent;
+        color: $bg-color;
+        border-radius: $radii;
+      }
     }
-    .number {
-      min-width: 10px;
-      padding: $padding/1.2;
-    }
-    .month {
-      margin-left: -10px;
+    .calendar {
+      margin-top: 10px;
+      padding: $padding;
+      border: 2px solid $accent;
+      border-radius: $radii;
     }
 }

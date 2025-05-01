@@ -28,7 +28,7 @@ export default function Dash() {
                 <eventbox heightRequest={32} onClick={hide} />
 								<box className="Dash" vertical>
 										<label label={time()} />
-										<Calendar />
+										<Calendar day={GLib.DateTime.new_now_local().format("%d")}/>
 								</box>
                 <eventbox expand onClick={hide} />
             </box>

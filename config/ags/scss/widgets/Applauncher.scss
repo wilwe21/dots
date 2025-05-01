@@ -52,6 +52,9 @@ window#launcher {
           padding: $padding;
           padding-bottom: $padding*2.5;
           border-radius: 0 0 $radii*2 $radii*2;
+          button {
+            color: $playcolor;
+          }
         }
         .playertop {
           background-color: $media-bg;
