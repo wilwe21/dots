@@ -23,7 +23,7 @@ export default function Calendar() {
 										return <box className={`rows`} css={`${margin}: 10px;`} halign={al}>
 											{row.split(" ").filter(s => s !== "" && s !== " ")
 											.map(s => { 
-												if (s == GLib.DateTime.new_now_local().format("%d")) {
+												if (s == GLib.DateTime.new_now_local().format("%e")?.replace(" ", "")) {
 													if (s.length == 1) {
 														s = ` ${s}`
 													}
