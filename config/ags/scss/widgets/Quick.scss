@@ -4,6 +4,8 @@ window.qs .quick{
   color: $fg-color;
   border-radius: $radii*2;
   border: 2px solid $accent;
+  margin-top: 0px;
+  margin-right: $wm-gaps;
 
   .subwindow-title-line {
     min-width: 350px;
