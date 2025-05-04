@@ -32,7 +32,7 @@ export const volume = Variable(0).poll(20, ["pactl", "get-sink-volume", "@DEFAUL
 export const mediaPlayer = Variable(0)
 export const mediaPlayerMax = Variable(0)
 
-export const calendar = Variable("now").poll(60000, ["cal"], n => `${n}`)
+export const calendar = Variable("now").poll(60000, ["cal", "-m"], n => `${n}`)
 
 export const cpu = Variable("0").poll(2500, ["/home/wilwe/.hyprland.conf/scripts/cpu"], n => String(n))
 
