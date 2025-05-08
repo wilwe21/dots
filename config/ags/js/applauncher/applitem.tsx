@@ -7,13 +7,12 @@ export default function AppButton({ app }: { app: Apps.Application }) {
     return <button
         className="AppButton"
         onClick={(_, e) => {
-						if (isPrimaryClick(e)) {
-							App.get_window("launcher")!.hide(); app.launch()
-						}
 						if (isSecondaryClick(e)) {
 							var banned = readFile(vars.cacheDir + "/banned").replaceAll("\n", "").split(", ")
 							banned.push(app.name)
 							writeFileAsync(vars.cacheDir + "/banned", banned.join(", "))
+						} else {
+							App.get_window("launcher")!.hide(); app.launch()
 						}
 				}}> 
         <box>
