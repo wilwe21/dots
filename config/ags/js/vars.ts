@@ -1,5 +1,6 @@
 import GLib from "gi://GLib"
-import { Variable } from "astal"
+import { bind, Variable } from "astal"
+import { exec } from "astal"
 
 const HOME = GLib.getenv("HOME")
 
@@ -32,7 +33,12 @@ export const volume = Variable(0).poll(20, ["pactl", "get-sink-volume", "@DEFAUL
 export const mediaPlayer = Variable(0)
 export const mediaPlayerMax = Variable(0)
 
-export const calendar = Variable("now").poll(60000, ["cal", "-m"], n => `${n}`)
+export const month = Variable("01").poll(60000, ["date", "+%m"], n => `${n}`)
+export const year = Variable("2025").poll(60000, ["date", "+%Y"], n => `${n}`)
+
+export function calendar(month, year) {
+		return exec(["cal", "-m", month, year])
+}
 
 export const cpu = Variable("0").poll(2500, ["/home/wilwe/.hyprland.conf/scripts/cpu"], n => String(n))
 
