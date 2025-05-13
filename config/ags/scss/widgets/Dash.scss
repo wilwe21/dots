@@ -22,6 +22,14 @@ window#dash {
       }
     }
     .calendar {
+      button {
+        all: unset;
+        > label {
+          margin-top: 5px;
+          margin-bottom: -10px;
+          font-size: 30px;
+        }
+      }
       margin-top: 10px;
       padding: $padding;
       border: 2px solid $accent;
