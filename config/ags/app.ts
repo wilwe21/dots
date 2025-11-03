@@ -6,13 +6,13 @@ import Applauncher from "./js/applauncher/appl.tsx"
 import ControllCenter from "./js/quicksettings/ControllCenter.tsx"
 import Dash from "./js/dashboard/dash.tsx"
 import Over from "./js/overview/Overview.tsx"
-import themes from "./js/themes.ts"
-import { setTheme } from './js/settings/theme.ts'
-import { kitty } from './js/settings/kitty.ts'
-import { vim } from './js/settings/vim.ts'
-import { gtkupdate } from './js/settings/gtk.ts'
-import { starship } from './js/settings/starship.ts'
-import { sH } from './js/settings/hyprland.ts'
+//import themes from "./js/themes.ts"
+//import { setTheme } from './js/settings/theme.ts'
+//import { kitty } from './js/settings/kitty.ts'
+//import { vim } from './js/settings/vim.ts'
+//import { gtkupdate } from './js/settings/gtk.ts'
+//import { starship } from './js/settings/starship.ts'
+//import { sH } from './js/settings/hyprland.ts'
 
 init()
 

@@ -5,5 +5,5 @@ then
 		astal -q
 		kill $(pidof swww-daemon)
 else
-		ags run
+		ags run --gtk 3
 fi

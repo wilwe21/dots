@@ -41,7 +41,7 @@ export const QuickButtons = () => {
 		<box hexpand vexpand vertical spacing={spacing}>
 			<box hexpand vexpand spacing={spacing}>
 				<QuickButtonIco content={icons.audio.volume.overamplified} command={["pavucontrol"]} />
-				<QuickButton content="" command={["bash", "-c", "sleep 1; hyprpicker | wl-copy"]} />
+				<QuickButton content="" command={["bash", "-c", "sleep 1; color-pick | wl-copy"]} />
 			</box>
 			<box hexpand vexpand spacing={spacing}>
 				<QuickButton
